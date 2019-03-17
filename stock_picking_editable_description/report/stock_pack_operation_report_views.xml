@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Change product description in report_picking -->
+    <template id="report_picking_mvl" inherit_id="stock.report_picking">
+        <xpath expr="//span[@t-field='pack_operation.product_id']" position="attributes">
+            <attribute name="t-att-style">"display: none"</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='pack_operation.product_id']" position="after">
+            <span t-field="pack_operation.name_from_sale_order_line"/>
+        </xpath>
+    </template>
+
+    <!-- Change product description in report_deliveryslip -->
+    <template id="report_delivery_mvl" inherit_id="stock.report_delivery_document">
+        <xpath expr="//span[@t-field='pack_operation.product_id']" position="attributes">
+            <attribute name="t-att-style">"display: none"</attribute>
+        </xpath>
+        <xpath expr="//span[@t-field='pack_operation.product_id']" position="after">
+            <span t-field="pack_operation.name_from_sale_order_line"/>
+        </xpath>
+    </template>
+
+</odoo>
