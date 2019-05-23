@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Change product description form view (Operations tab) -->
+    <!-- Add product description form view (Operations tab) -->
     <record id="view_picking_form" model="ir.ui.view">
         <field name="name">stock.picking.form.d</field>
         <field name="model">stock.picking</field>
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//form/sheet//field[@name='pack_operation_product_ids']/tree//field[@name='product_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
             <xpath expr="//form/sheet//field[@name='pack_operation_product_ids']/tree//field[@name='product_id']" position="after">
                 <field name="name_from_sale_order_line"/>
-             </xpath>
+            </xpath>
         </field>
     </record>
 

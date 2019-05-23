@@ -15,15 +15,30 @@ class PackOperation(models.Model):
 
     @api.depends('product_id')
     def _compute_name_from_sale_order_line(self):
-        for record in self:
-            name_from_sale_order_line = ''
-            found_saleorders = self.env['sale.order'].search(
-                [('name', '=', record.picking_id.origin)])
-            siz = len(found_saleorders)
-            if siz == 1:
-                saleorder = found_saleorders[0]
-                for line in saleorder.order_line:
-                    if line.product_id == record.product_id:
-                        name_from_sale_order_line = line.name
-                        break
-            record.name_from_sale_order_line = name_from_sale_order_line
+        for pack_operation in self:
+            # If external move get description from sale order
+            if pack_operation.picking_id.picking_type_code == 'outgoing':
+                for record in self:
+                    name_from_sale_order_line = ''
+                    found_saleorders = self.env['sale.order'].search(
+                        [('procurement_group_id', '=',
+                          record.picking_id.group_id.id)])
+                    siz = len(found_saleorders)
+                    if siz == 1:
+                        saleorder = found_saleorders[0]
+                        for line in saleorder.order_line:
+                            if line.product_id == record.product_id:
+                                name_from_sale_order_line = line.name
+                                break
+                    record.name_from_sale_order_line = \
+                        name_from_sale_order_line
+            # If not external move get description from move lines or
+            # from product description
+            else:
+                for record in self:
+                    for line in record.picking_id.move_lines:
+                        if line.product_id == record.product_id:
+                            record.name_from_sale_order_line = line.name
+                        else:
+                            record.name_from_sale_order_line = \
+                                record.product_id.name
