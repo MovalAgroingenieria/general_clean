@@ -1,0 +1,475 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* partner_street_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-06 08:37+0000\n"
+"PO-Revision-Date: 2019-08-06 08:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AD - ALDEA"
+msgstr "AD - ALDEA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AG - AGREGADO"
+msgstr "AG - AGREGADO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AL - ALAMEDA"
+msgstr "AL - ALAMEDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AP - APARTAMENTO"
+msgstr "AP - APARTAMENTO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AR - ARRABAL"
+msgstr "AR - ARRABAL"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AU - AUTOPISTA"
+msgstr "AU - AUTOPISTA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AV - AVENIDA"
+msgstr "AV - AVENIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "AY - ARROYO"
+msgstr "AY - ARROYO"
+
+#. module: partner_street_type
+#: model:ir.model.fields,help:partner_street_type.field_res_partner_street_type
+#: model:ir.model.fields,help:partner_street_type.field_res_users_street_type
+msgid "Acronym of street type according to the Spanish cadastral codes."
+msgstr "Acrónimo del tipo de vía según los códigos catastrales."
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "BJ - BAJADA"
+msgstr "BJ - BAJADA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "BL - BLOQUE"
+msgstr "BL - BLOQUE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "BO - BARRIO"
+msgstr "BO - BARRIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "BR - BARRANCO"
+msgstr "BR - BARRANCO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CD - CORREGIDOR"
+msgstr "CD - CORREGIDOR"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CG - COLEGIO"
+msgstr "CG - COLEGIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CH - CHALET"
+msgstr "CH - CHALET"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CI - CINTURÓN"
+msgstr "CI - CINTURÓN"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CJ - CALLEJA"
+msgstr "CJ - CALLEJA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CL - CALLE"
+msgstr "CL - CALLE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CM - CAMINO"
+msgstr "CM - CAMINO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CN - CONJUNTO"
+msgstr "CN - CONJUNTO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CO - COLONIA"
+msgstr "CO - COLONIA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CP - CAMPA"
+msgstr "CP - CAMPA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CR - CARRETERA"
+msgstr "CR - CARRETERA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CS - CASERIO"
+msgstr "CS - CASERIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CT - CUESTA"
+msgstr "CT - CUESTA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CU - CONJUNTO"
+msgstr "CU - CONJUNTO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CY - CARRIL"
+msgstr "CY - CARRIL"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "CÑ - CAÑADA"
+msgstr "CÑ - CAÑADA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "DE - DETRÁS"
+msgstr "DE - DETRÁS"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "DS - DISEMINADO"
+msgstr "DS - DISEMINADO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "ED - EDIFICIO"
+msgstr "ED - EDIFICIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "EM - EXTRAMUROS"
+msgstr "EM - EXTRAMUROS"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "EN - ENTRADA"
+msgstr "EN - ENTRADA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "ER - EXTRARRADIO"
+msgstr "ER - EXTRARRADIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "ES - ESCALINATA"
+msgstr "ES - ESCALINATA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "EX - EXPLANADA"
+msgstr "EX - EXPLANADA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "FC - FERROCARRIL"
+msgstr "FC - FERROCARRIL"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "FN - FINCA"
+msgstr "FN - FINCA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "GL - GLORIETA"
+msgstr "GL - GLORIETA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "GP - DESCONOCIDA"
+msgstr "GP - DESCONOCIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "GR - GRUPO"
+msgstr "GR - GRUPO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "GV - GRAN VIA"
+msgstr "GV - GRAN VIA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "HT - HUERTA"
+msgstr "HT - HUERTA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "JR - JARDINES"
+msgstr "JR - JARDINES"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "LD - LADO"
+msgstr "LD - LADO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "LG - LUGAR"
+msgstr "LG - LUGAR"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "MC - MERCADO"
+msgstr "MC - MERCADO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "ML - MUELLE"
+msgstr "ML - MUELLE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "MN - MUNICIPIO"
+msgstr "MN - MUNICIPIO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "MS - MASIA"
+msgstr "MS - MASIA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "MT - MONTE"
+msgstr "MT - MONTE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "MZ - MANZANA"
+msgstr "MZ - MANZANA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PA - PARCELA"
+msgstr "PA - PARCELA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PB - POBLADO"
+msgstr "PB - POBLADO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PD - PARTIDA"
+msgstr "PD - PARTIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PE - PARAJE"
+msgstr "PE - PARAJE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PG - POLIGONO"
+msgstr "PG - POLIGONO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PJ - PASAJE"
+msgstr "PJ - PASAJE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PM - PÁRAMO"
+msgstr "PM - PÁRAMO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PQ - PARQUE, PARROQUIA"
+msgstr "PQ - PARQUE, PARROQUIA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PR - PROLONGACION"
+msgstr "PR - PROLONGACION"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PS - PASEO"
+msgstr "PS - PASEO"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PT - PUENTE"
+msgstr "PT - PUENTE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PU - PUERTA"
+msgstr "PU - PUERTA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "PZ - PLAZA"
+msgstr "PZ - PLAZA"
+
+#. module: partner_street_type
+#: model:ir.model,name:partner_street_type.model_res_partner
+msgid "Partner of a WUA"
+msgstr "Partner of a WUA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "QT - QUINTA"
+msgstr "QT - QUINTA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RB - RAMBLA"
+msgstr "RB - RAMBLA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RC - RINCÓN"
+msgstr "RC - RINCÓN"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RD - RONDA"
+msgstr "RD - RONDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RM - RAMAL"
+msgstr "RM - RAMAL"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RP - RAMPA"
+msgstr "RP - RAMPA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RR - ROERA"
+msgstr "RR - ROERA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "RU - RUA"
+msgstr "RU - RUA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SA - SALIDA"
+msgstr "SA - SALIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SB - SUBIDA"
+msgstr "SB - SUBIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SD - SENDA"
+msgstr "SD - SENDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SL - SOLAR"
+msgstr "SL - SOLAR"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SN - SALÓN"
+msgstr "SN - SALÓN"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "SU - SUBIDA"
+msgstr "SU - SUBIDA"
+
+#. module: partner_street_type
+#: model:ir.model.fields,field_description:partner_street_type.field_res_partner_street_type
+#: model:ir.model.fields,field_description:partner_street_type.field_res_users_street_type
+msgid "Street type"
+msgstr "Tipo de vía"
+
+#. module: partner_street_type
+#: model:ir.model.fields,field_description:partner_street_type.field_res_partner_street_type_show
+#: model:ir.model.fields,field_description:partner_street_type.field_res_users_street_type_show
+msgid "Street type show"
+msgstr "Tipo de vía"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "TN - TERRENOS"
+msgstr "TN - TERRENOS"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "TO - TORRENTE"
+msgstr "TO - TORRENTE"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "TR - TRAVESIA"
+msgstr "TR - TRAVESIA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "UR - URBANIZACIÓN"
+msgstr "UR - URBANIZACIÓN"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "VD - DESCONOCIDA"
+msgstr "VD - DESCONOCIDA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "VI - VÍA"
+msgstr "VI - VÍA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "VP - VÍA PÚBLICA"
+msgstr "VP - VÍA PÚBLICA"
+
+#. module: partner_street_type
+#: selection:res.partner,street_type:0
+msgid "VR - VEREDA"
+msgstr "VR - VEREDA"
+
