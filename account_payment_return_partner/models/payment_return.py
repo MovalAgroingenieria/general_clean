@@ -10,7 +10,8 @@ class PaymentReturnLine(models.Model):
     # Overwrite original field to remove domain
     expense_partner_id = fields.Many2one(
         comodel_name="res.partner",
-        string="Expense partner")
+        string="Expense partner",
+        domain=[])
 
 class AccountJournal(models.Model):
     _inherit = "account.journal"
@@ -18,4 +19,5 @@ class AccountJournal(models.Model):
     # Overwrite original field to remove domain
     default_expense_partner_id = fields.Many2one(
         comodel_name="res.partner", string="Default Expense Partner",
+        domain=[],
         help='Default partner for commission expenses')

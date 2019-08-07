@@ -3,7 +3,7 @@
 
 {
     "name": "Account Payment Return Partner",
-    "summary": "This module override original fields to \
+    "summary": "This module ovewrite original fields to \
                 remove the filters by supplier.",
     "version": '10.0.1.1.0',
     "category": "Moval General Addons",
