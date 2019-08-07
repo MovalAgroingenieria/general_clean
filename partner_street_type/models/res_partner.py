@@ -101,8 +101,9 @@ class ResPartner(models.Model):
 
     # Field just to show the acronnym
     street_type_show = fields.Char(
-        string="Street type show")
+        string="Street type show",
+        compute="_compute_street_type_show")
 
-    @api.onchange('street_type')
-    def _onchange_street_type(self):
+    @api.multi
+    def _compute_street_type_show(self):
         self.street_type_show = self.street_type
