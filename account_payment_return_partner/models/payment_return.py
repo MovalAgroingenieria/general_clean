@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class PaymentReturnLine(models.Model):
@@ -12,6 +12,7 @@ class PaymentReturnLine(models.Model):
         comodel_name="res.partner",
         string="Expense partner",
         domain=[])
+
 
 class AccountJournal(models.Model):
     _inherit = "account.journal"
