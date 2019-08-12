@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-06 08:37+0000\n"
-"PO-Revision-Date: 2019-08-06 08:37+0000\n"
+"POT-Creation-Date: 2019-08-12 15:34+0000\n"
+"PO-Revision-Date: 2019-08-12 15:34+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -58,8 +58,8 @@ msgstr "AY - ARROYO"
 #. module: partner_street_type
 #: model:ir.model.fields,help:partner_street_type.field_res_partner_street_type
 #: model:ir.model.fields,help:partner_street_type.field_res_users_street_type
-msgid "Acronym of street type according to the Spanish cadastral codes."
-msgstr "Acrónimo del tipo de vía según los códigos catastrales."
+msgid "Acronym of street type according to the Spanish cadastre."
+msgstr "Acrónimo del tipo de vía según el código catastral español."
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -228,8 +228,8 @@ msgstr "GR - GRUPO"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
-msgid "GV - GRAN VIA"
-msgstr "GV - GRAN VIA"
+msgid "GV - GRAN VÍA"
+msgstr "GV - GRAN VÍA"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -268,8 +268,8 @@ msgstr "MN - MUNICIPIO"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
-msgid "MS - MASIA"
-msgstr "MS - MASIA"
+msgid "MS - MASÍA"
+msgstr "MS - MASÍA"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -303,8 +303,8 @@ msgstr "PE - PARAJE"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
-msgid "PG - POLIGONO"
-msgstr "PG - POLIGONO"
+msgid "PG - POLÍGONO"
+msgstr "PG - POLÍGONO"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -323,8 +323,8 @@ msgstr "PQ - PARQUE, PARROQUIA"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
-msgid "PR - PROLONGACION"
-msgstr "PR - PROLONGACION"
+msgid "PR - PROLONGACIÓN"
+msgstr "PR - PROLONGACIÓN"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -349,7 +349,7 @@ msgstr "PZ - PLAZA"
 #. module: partner_street_type
 #: model:ir.model,name:partner_street_type.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Partner of a WUA"
+msgstr "Socio"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
@@ -434,6 +434,11 @@ msgid "Street type show"
 msgstr "Tipo de vía"
 
 #. module: partner_street_type
+#: model:ir.ui.view,arch_db:partner_street_type.view_partner_form
+msgid "Street type..."
+msgstr "Tipo de vía..."
+
+#. module: partner_street_type
 #: selection:res.partner,street_type:0
 msgid "TN - TERRENOS"
 msgstr "TN - TERRENOS"
@@ -445,8 +450,8 @@ msgstr "TO - TORRENTE"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0
-msgid "TR - TRAVESIA"
-msgstr "TR - TRAVESIA"
+msgid "TR - TRAVESÍA"
+msgstr "TR - TRAVESÍA"
 
 #. module: partner_street_type
 #: selection:res.partner,street_type:0

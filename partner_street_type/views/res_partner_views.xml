@@ -6,8 +6,18 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="partner_street_number.view_partner_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='street_name']" position="attributes">
+                <attribute name="class"></attribute>
+                <attribute name="style">float: left; margin-right: 2%; width: 74%;</attribute>
+            </xpath>
+            <xpath expr="//field[@name='street_number']" position="attributes">
+                <attribute name="class">text-right</attribute>
+                <attribute name="style">margin-right: 0%; width: 12%;</attribute>
+            </xpath>
             <xpath expr="//field[@name='street_name']" position="before">
-                <field name="street_type" class="oe_edit_only"/>
+                <field name="street_type" class="oe_edit_only oe_inline"
+                    style="max-width: 44px; float: left; margin-right: 2%;"
+                    placeholder="Street type..."/>
                 <field name="street_type_show" class="o_address_street_name oe_read_only"
                     attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
             </xpath>
