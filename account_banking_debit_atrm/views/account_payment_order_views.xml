@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Account config setting ATRM options -->
+    <record id="account_config_settings_atrm_view" model="ir.ui.view">
+        <field name="name">atrm.account_config_settings.view.form</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//separator[@name='analytic_account']" position="before">
+                <group name="atrm" string="Tax Agency of the Region of Murcia (ATRM)">
+                    <field name="agency_code" widget="selection"/>
+                    <field name="agency_max_amount"/>
+                    <field name="agency_min_amount"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add banking debit ATRM fields to account payment order form -->
+    <record id="account_payment_order_form_atrm" model="ir.ui.view">
+        <field name="name">account.payment.order.form.atrm</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Add print resume ATRM button -->
+            <xpath expr="//button[@name='generated2uploaded']" position="after">
+                <button name="%(action_atrm_resume_report)d"
+                        type="action"
+                        states="generated"
+                        string="Print ATRM resume" class="oe_highlight"
+                        attrs="{'invisible':[ '|',('payment_mode_name', '!=', 'ATRM'),('state', '!=', 'generated')]}"/>
+            </xpath>
+
+            <!-- Lock date_prefered field -->
+            <xpath expr="//field[@name='date_prefered']" position="attributes">
+                <attribute name="attrs" add="{'readonly':[('payment_mode_name','=', 'ATRM')]}"/>
+            </xpath>
+
+            <!-- ATRM options -->
+            <xpath expr="//group[@name='head']" position="after">
+                <group string="ATRM options" name="atrm" col="2" attrs="{'invisible':[('payment_mode_name', '!=', 'ATRM')]}">
+                    <group name="atrm-left">
+                        <field name="payment_mode_name" invisible="1"/>
+                        <field name="registry_type" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
+                        <field name="agency" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
+                        <field name="shipment_num" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
+                    </group>
+                    <group name="atrm-right">
+                        <field name="shipment_date" 
+                               attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
+                        <field name="debt_period"
+                               attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"
+                               widget="selection"/>
+                        <field name="concept_code" 
+                               attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"
+                               widget="selection"/>
+                        <field name="media_notice" 
+                               attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],
+                                      'invisible':[('debt_period','=','V')]}" 
+                               widget="selection"/>
+                        <field name="notification_date" 
+                               attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],
+                                      'invisible':[('debt_period','=','V')]}"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

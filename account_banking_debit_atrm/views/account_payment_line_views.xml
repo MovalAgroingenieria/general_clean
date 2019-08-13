@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="_atrmbank_payment_line_form" model="ir.ui.view">
+        <field name="name">atrm.bank.payment.line.form</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="atrm_ref"/>
+               <field name="atrm_sent"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="atrm_bank_payment_line_tree" model="ir.ui.view">
+        <field name="name">atrm.bank.payment.line.tree</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="atrm_ref"/>
+               <field name="atrm_sent" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="atrm_payment_line_search" model="ir.ui.view">
+        <field name="name">atrm.payment.line.search</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+               <field name="atrm_ref"/>
+               <field name="atrm_sent"/>
+               <filter name="atrm_filter" string="ATRM" domain="[('atrm_sent','=', True)]"/> 
+            </field>
+        </field>
+    </record>
+
+</odoo>

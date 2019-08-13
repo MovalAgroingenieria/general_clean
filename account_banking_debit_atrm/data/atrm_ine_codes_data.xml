@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="ine_atrm_code_0" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">001</field>
+            <field name="city_name">Abanilla</field>
+            <field name="city_name_simplified">ABANILLA</field>
+        </record>
+
+        <record id="ine_atrm_code_1" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">002</field>
+            <field name="city_name">Abarán</field>
+            <field name="city_name_simplified">ABARAN</field>
+        </record>
+
+        <record id="ine_atrm_code_2" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">003</field>
+            <field name="city_name">Águilas</field>
+            <field name="city_name_simplified">AGUILAS</field>
+        </record>
+
+        <record id="ine_atrm_code_3" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">004</field>
+            <field name="city_name">Albudeite</field>
+            <field name="city_name_simplified">ALBUDEITE</field>
+        </record>
+
+        <record id="ine_atrm_code_4" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">005</field>
+            <field name="city_name">Alcantarilla</field>
+            <field name="city_name_simplified">ALCANTARILLA</field>
+        </record>
+
+        <record id="ine_atrm_code_5" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">902</field>
+            <field name="city_name">Los Alcázares</field>
+            <field name="city_name_simplified">LOS ALCAZARES</field>
+        </record>
+
+        <record id="ine_atrm_code_6" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">006</field>
+            <field name="city_name">Aledo</field>
+            <field name="city_name_simplified">ALEDO</field>
+        </record>
+
+        <record id="ine_atrm_code_7" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">007</field>
+            <field name="city_name">Alguazas</field>
+            <field name="city_name_simplified">ALGUAZAS</field>
+        </record>
+
+        <record id="ine_atrm_code_8" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">008</field>
+            <field name="city_name">Alhama de Murcia</field>
+            <field name="city_name_simplified">ALHAMA DE MURCIA</field>
+        </record>
+
+        <record id="ine_atrm_code_9" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">009</field>
+            <field name="city_name">Archena</field>
+            <field name="city_name_simplified">ARCHENA</field>
+        </record>
+
+        <record id="ine_atrm_code_10" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">010</field>
+            <field name="city_name">Beniel</field>
+            <field name="city_name_simplified">BENIEL</field>
+        </record>
+
+        <record id="ine_atrm_code_11" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">011</field>
+            <field name="city_name">Blanca</field>
+            <field name="city_name_simplified">BLANCA</field>
+        </record>
+
+        <record id="ine_atrm_code_12" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">012</field>
+            <field name="city_name">Bullas</field>
+            <field name="city_name_simplified">BULLAS</field>
+        </record>
+
+        <record id="ine_atrm_code_13" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">013</field>
+            <field name="city_name">Calasparra</field>
+            <field name="city_name_simplified">CALASPARRA</field>
+        </record>
+
+        <record id="ine_atrm_code_14" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">014</field>
+            <field name="city_name">Campos del Río</field>
+            <field name="city_name_simplified">CAMPOS DEL RIO</field>
+        </record>
+
+        <record id="ine_atrm_code_15" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">015</field>
+            <field name="city_name">Caravaca de la Cruz</field>
+            <field name="city_name_simplified">CARAVACA DE LA CRUZ</field>
+        </record>
+
+        <record id="ine_atrm_code_16" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">016</field>
+            <field name="city_name">Cartagena</field>
+            <field name="city_name_simplified">CARTAGENA</field>
+        </record>
+
+        <record id="ine_atrm_code_17" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">017</field>
+            <field name="city_name">Cehegín</field>
+            <field name="city_name_simplified">CEHEGIN</field>
+        </record>
+
+        <record id="ine_atrm_code_18" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">018</field>
+            <field name="city_name">Ceutí</field>
+            <field name="city_name_simplified">CEUTI</field>
+        </record>
+
+        <record id="ine_atrm_code_19" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">019</field>
+            <field name="city_name">Cieza</field>
+            <field name="city_name_simplified">CIEZA</field>
+        </record>
+
+        <record id="ine_atrm_code_20" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">020</field>
+            <field name="city_name">Fortuna</field>
+            <field name="city_name_simplified">FORTUNA</field>
+        </record>
+
+        <record id="ine_atrm_code_21" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">021</field>
+            <field name="city_name">Fuente Álamo de Murcia</field>
+            <field name="city_name_simplified">FUENTE ALAMO DE MURCIA</field>
+        </record>
+
+        <record id="ine_atrm_code_22" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">022</field>
+            <field name="city_name">Jumilla</field>
+            <field name="city_name_simplified">JUMILLA</field>
+        </record>
+
+        <record id="ine_atrm_code_23" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">023</field>
+            <field name="city_name">Librilla</field>
+            <field name="city_name_simplified">LIBRILLA</field>
+        </record>
+
+        <record id="ine_atrm_code_24" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">024</field>
+            <field name="city_name">Lorca</field>
+            <field name="city_name_simplified">LORCA</field>
+        </record>
+
+        <record id="ine_atrm_code_25" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">025</field>
+            <field name="city_name">Lorquí</field>
+            <field name="city_name_simplified">LORQUI</field>
+        </record>
+
+        <record id="ine_atrm_code_26" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">026</field>
+            <field name="city_name">Mazarrón</field>
+            <field name="city_name_simplified">MAZARRON</field>
+        </record>
+
+        <record id="ine_atrm_code_27" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">027</field>
+            <field name="city_name">Molina de Segura</field>
+            <field name="city_name_simplified">MOLINA DE SEGURA</field>
+        </record>
+
+        <record id="ine_atrm_code_28" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">028</field>
+            <field name="city_name">Moratalla</field>
+            <field name="city_name_simplified">MORATALLA</field>
+        </record>
+
+        <record id="ine_atrm_code_29" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">029</field>
+            <field name="city_name">Mula</field>
+            <field name="city_name_simplified">MULA</field>
+        </record>
+
+        <record id="ine_atrm_code_30" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">030</field>
+            <field name="city_name">Murcia</field>
+            <field name="city_name_simplified">MURCIA</field>
+        </record>
+
+        <record id="ine_atrm_code_31" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">031</field>
+            <field name="city_name">Ojós</field>
+            <field name="city_name_simplified">OJOS</field>
+        </record>
+
+        <record id="ine_atrm_code_32" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">032</field>
+            <field name="city_name">Pliego</field>
+            <field name="city_name_simplified">PLIEGO</field>
+        </record>
+
+        <record id="ine_atrm_code_33" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">033</field>
+            <field name="city_name">Puerto Lumbreras</field>
+            <field name="city_name_simplified">PUERTO LUMBRERAS</field>
+        </record>
+
+        <record id="ine_atrm_code_34" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">034</field>
+            <field name="city_name">Ricote</field>
+            <field name="city_name_simplified">RICOTE</field>
+        </record>
+
+        <record id="ine_atrm_code_35" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">035</field>
+            <field name="city_name">San Javier</field>
+            <field name="city_name_simplified">SAN JAVIER</field>
+        </record>
+
+        <record id="ine_atrm_code_36" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">036</field>
+            <field name="city_name">San Pedro del Pinatar</field>
+            <field name="city_name_simplified">SAN PEDRO DEL PINATAR</field>
+        </record>
+
+        <record id="ine_atrm_code_37" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">901</field>
+            <field name="city_name">Santomera</field>
+            <field name="city_name_simplified">SANTOMERA</field>
+        </record>
+
+        <record id="ine_atrm_code_38" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">037</field>
+            <field name="city_name">Torre-Pacheco</field>
+            <field name="city_name_simplified">TORRE-PACHECO</field>
+        </record>
+
+        <record id="ine_atrm_code_39" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">038</field>
+            <field name="city_name">Las Torres de Cotillas</field>
+            <field name="city_name_simplified">LAS TORRES DE COTILLAS</field>
+        </record>
+
+        <record id="ine_atrm_code_40" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">039</field>
+            <field name="city_name">Totana</field>
+            <field name="city_name_simplified">TOTANA</field>
+        </record>
+
+        <record id="ine_atrm_code_41" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">040</field>
+            <field name="city_name">Ulea</field>
+            <field name="city_name_simplified">ULEA</field>
+        </record>
+
+        <record id="ine_atrm_code_42" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">041</field>
+            <field name="city_name">La Unión</field>
+            <field name="city_name_simplified">LA UNION</field>
+        </record>
+
+        <record id="ine_atrm_code_43" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">042</field>
+            <field name="city_name">Villanueva del Río Segura</field>
+            <field name="city_name_simplified">VILLANUEVA DEL RIO SEGURA</field>
+        </record>
+
+        <record id="ine_atrm_code_44" model="res.ine.codes">
+            <field name="ine_code_state">14</field>
+            <field name="ine_code_province">30</field>
+            <field name="ine_code_city">043</field>
+            <field name="city_name">Yecla</field>
+            <field name="city_name_simplified">YECLA</field>
+        </record>
+
+    </data>
+</odoo>
