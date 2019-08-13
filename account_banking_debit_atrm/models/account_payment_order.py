@@ -1017,8 +1017,7 @@ class AccountPaymentOrder(models.Model):
         total_amount_padded = str(total_amount).zfill(13).replace('.', ',')
 
         # Set atrm_total_amount for ATRM resume
-        # @INFO: in line write
-        # self.atrm_total_amount = total_amount
+        self.atrm_total_amount = total_amount
 
         # Log header fields with length
         _log.info('HEADER FIELD Header registry code (length %s [001]): %s'
@@ -1063,14 +1062,11 @@ class AccountPaymentOrder(models.Model):
         filename = shipment_num[:4] + agency_code + shipment_num[4:] + ".txt"
 
         # Set atrm_filename for ATRM resume
-        # @INFO: in line write
-        # self.atrm_filename = filename
+        self.atrm_filename = filename
 
         line.write({
                 'atrm_ref': fixed_num,
                 'atrm_sent': True,
-                'atrm_total_amount': total_amount,
-                'atrm_filename': filename,
         })
 
         return payment_file_str, filename
