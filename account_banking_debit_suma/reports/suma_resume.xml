@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Paper format for atrm reports -->
+    <record id="paperformat_suma_reports" model="report.paperformat">
+        <field name="name">European A4 SUMA Reports</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">38</field>
+        <field name="margin_bottom">28</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">30</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!-- QWeb Report -->
+    <report id="action_suma_resume_report"
+        string="SUMA_resume"
+        model="account.payment.order"
+        report_type="qweb-pdf"
+        paperformat="paperformat_suma_reports"
+        file="account_banking_debit_suma.print_suma_resume_main"
+        name="account_banking_debit_suma.print_suma_resume_main"
+        attachment="('Resume_' + object.suma_filename[:-4] + '.pdf')"
+        menu="False">
+    </report>
+    <record id="account_banking_debit_suma.action_suma_resume_report" model="ir.actions.report.xml">
+        <field name="print_report_name"><![CDATA[('Resume_' + object.suma_filename[:-4] + '.pdf')]]></field>
+    </record>
+
+    <!-- Define suma external layout -->
+    <template id="suma_external_layout">
+        <!-- Multicompany -->
+        <t t-if="not o and doc">
+            <t t-set="o" t-value="doc"/>
+        </t>
+        <t t-if="o and 'company_id' in o">
+            <t t-set="company" t-value="o.company_id"></t>
+        </t>
+        <t t-if="not o or not 'company_id' in o">
+            <t t-set="company" t-value="res_company"></t>
+        </t>
+        <t t-call="account_banking_debit_suma.suma_external_layout_header"/>
+        <t t-raw="0" />
+        <t t-call="account_banking_debit_suma.suma_external_layout_footer"/>
+    </template>
+
+    <!-- Header -->
+    <template id="suma_external_layout_header">
+        <div class="header">
+            <div class="col-xs-10"></div>
+            <div class="col-xs-2">
+                <img src='/account_banking_debit_suma/static/src/img/suma_logo.jpg'
+                     style="height: 40px; margin-bottom: 12px; float: right;"/>
+            </div>
+            <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"></div>
+                    <div style="border-bottom: 1px solid black; margin-top: 1px;"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Footer -->
+    <template id="suma_external_layout_footer">
+        <div class="footer">
+             <div class="row zero_min_height">
+                <div class="col-xs-12">
+                    <div style="border-bottom: 1px solid black;"></div>
+                </div>
+            </div>
+            <div>
+                <!-- Page numbers 
+                <div class="text-right">
+                    <span class="page" style="font-size: 10px;"/>
+                    <span style="font-size: 8px;">/</span>
+                    <span class="topage" style="font-size: 10px;"/>
+                </div>
+                -->
+            </div>
+        </div>
+    </template>
+
+    <!-- Document -->
+    <template id="suma_resume_document">
+        <t t-set="doc" t-value="doc.with_context({'lang':doc.generated_user_id.lang})" />
+        <t t-call="account_banking_debit_suma.suma_external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <div name="title" class="text-center" style="font-size: 16px;">
+                    <strong><u>DOCUMENTO DE ENTREGA DE PADRÓN EN SOPORTE MAGNÉTICO</u></strong>
+                </div>
+                <div name="resume" style="margin-top: 48px;">
+                    <div class="col-xs-1"></div>
+                    <div class="col-xs-10">
+                        <div style="border: 1px solid lightgrey;">
+                            <div style="margin-left: 24px;">
+                                <strong>COMUNIDAD DE REGANTES DE </strong>
+                                <t t-if="doc.entity">
+                                    <t t-set="entity" t-value="doc.entity[5:]"/>
+                                    <span t-esc="entity"/>
+                                </t>
+                            </div>
+                        </div>
+                        <div style="border: 1px solid lightgrey; margin-top:18px;">
+                            <div style="margin-left: 24px;">
+                                <strong>DESCRIPCIÓN DEL CONCEPTO:</strong>
+                                <t t-if="doc.concept_description">
+                                    <t t-set="concept" t-value="doc.concept_description"/>
+                                    <span t-esc="concept"/>
+                                </t>
+                            </div>
+                        </div>
+                        <div style="border: 1px solid lightgrey; margin-top:18px;">
+                            <div style="margin-left: 24px;">
+                                <strong>PERIODO IMPOSITIVO / AÑO:</strong>
+                                <!-- Get from date today -->
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                            </div>
+                        </div>
+                        <div style="border: 1px solid lightgrey; margin-top:18px;">
+                            <div style="margin-left: 24px; display: inline; margin-right: 128px;">
+                                <strong>Nº TOTAL DE VALORES:</strong>
+                                <t t-if="doc.bank_line_count">
+                                    <span t-field="doc.bank_line_count" style="margin-left: 6px;"/>
+                                </t>
+                            </div>
+                            <div style="padding-left: 24px; display: inline; border-left: 1px solid lightgrey;">
+                                <strong>TOTAL IMPORTE:</strong>
+                                <t t-if="doc.suma_total_amount">
+                                    <field name="currency_id" invisible="1"/>
+                                    <span t-field="doc.suma_total_amount"
+                                          widget='monetary'
+                                          options="{'currency_field': 'currency_id'}"
+                                          style="margin-left: 6px;"/>
+                                </t>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 48px;">
+                            <div style="margin-left: 24px; margin-bottom: 12px;">
+                                <strong>DESGLOSE POR SUBCONCEPTOS (TIPO 2):</strong>
+                            </div>
+                        </div>
+                        <table class="table table-bordered" style="width: 100%;">
+                            <col width="50%"/>
+                            <col width="15%"/>
+                            <col width="15%"/>
+                            <col width="20%"/>
+                            <thead>
+                                <tr>
+                                    <th style="padding: 1px 8px;">SUBCONCEPTO</th>
+                                    <th style="padding: 1px 8px;">SIGLA</th>
+                                    <th style="padding: 1px 8px;">VALORES</th>
+                                    <th style="padding: 1px 8px;">IMPORTE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                                <tr><td></td><td></td><td></td><td></td></tr>
+                            </tbody>
+                        </table>
+
+                        <div style="margin-top: 48px;">
+                            <div style="margin-left: 24px;">
+                                <strong>OBSERVACIONES:</strong>
+                            </div>
+                        </div>
+                        <table class="table table-bordered" style="width: 100%;">
+                            <tbody>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                                <tr><td></td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="text-center" name="date" style="margin-top: 40px; padding-left: 100px;">
+                            <t t-if="doc.company_id.city">
+                                <span t-field="doc.company_id.city"/>
+                            </t>
+                            <strong>a</strong>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d')"/>
+                            <strong>de</strong>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%B')"/>
+                            <strong>de</strong>
+                            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                        </div>
+                    </div>
+                    <div class="col-xs-1"></div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <!-- Main template -->
+    <template id="print_suma_resume_main">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="account_banking_debit_suma.suma_resume_document" t-lang="doc.generated_user_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

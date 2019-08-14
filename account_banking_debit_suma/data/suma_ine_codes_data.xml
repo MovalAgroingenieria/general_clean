@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="ine_suma_code_1" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">002</field>
+            <field name="city_name">Agost</field>
+            <field name="city_name_simplified">AGOST</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_2" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">003</field>
+            <field name="city_name">Agres</field>
+            <field name="city_name_simplified">AGRES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_3" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">004</field>
+            <field name="city_name">Aigües</field>
+            <field name="city_name_simplified">AIGUES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_4" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">005</field>
+            <field name="city_name">Albatera</field>
+            <field name="city_name_simplified">ALBATERA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_5" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">006</field>
+            <field name="city_name">Alcalalí</field>
+            <field name="city_name_simplified">ALCALALI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_6" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">007</field>
+            <field name="city_name">Alcocer de Planes</field>
+            <field name="city_name_simplified">ALCOCER DE PLANES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_7" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">008</field>
+            <field name="city_name">Alcoleja</field>
+            <field name="city_name_simplified">ALCOLEJA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_8" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">009</field>
+            <field name="city_name">Alcoy</field>
+            <field name="city_name_simplified">ALCOY</field>
+            <field name="city_name_aka">Alcoi</field>
+            <field name="city_name_aka_simplified">ALCOI</field>
+        </record>
+
+        <record id="ine_suma_code_9" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">010</field>
+            <field name="city_name">Alfafara</field>
+            <field name="city_name_simplified">ALFAFARA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_10" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">011</field>
+            <field name="city_name">L'Alfàs del Pi</field>
+            <field name="city_name_simplified">ALFAS DEL PI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_11" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">012</field>
+            <field name="city_name">Algorfa</field>
+            <field name="city_name_simplified">ALGORFA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_12" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">013</field>
+            <field name="city_name">Algueña</field>
+            <field name="city_name_simplified">ALGUEÑA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_13" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">014</field>
+            <field name="city_name">Alicante</field>
+            <field name="city_name_simplified">ALICANTE</field>
+            <field name="city_name_aka">Alacant</field>
+            <field name="city_name_aka_simplified">ALACANT</field>
+        </record>
+
+        <record id="ine_suma_code_14" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">015</field>
+            <field name="city_name">Almoradí</field>
+            <field name="city_name_simplified">ALMORADI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_15" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">016</field>
+            <field name="city_name">Almudaina</field>
+            <field name="city_name_simplified">ALMUDAINA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_16" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">017</field>
+            <field name="city_name">L'Alqueria d'Asnar</field>
+            <field name="city_name_simplified">ALQUERIA D'ASNAR</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_17" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">018</field>
+            <field name="city_name">Altea</field>
+            <field name="city_name_simplified">ALTEA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_18" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">019</field>
+            <field name="city_name">Aspe</field>
+            <field name="city_name_simplified">ASPE</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_19" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">001</field>
+            <field name="city_name">L'Atzúbia</field>
+            <field name="city_name_simplified">ATZUBIA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_20" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">020</field>
+            <field name="city_name">Balones</field>
+            <field name="city_name_simplified">BALONES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_21" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">021</field>
+            <field name="city_name">Banyeres de Mariola</field>
+            <field name="city_name_simplified">BANYERES DE MARIOLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_22" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">022</field>
+            <field name="city_name">Benasau</field>
+            <field name="city_name_simplified">BENASAU</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_23" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">023</field>
+            <field name="city_name">Beneixama</field>
+            <field name="city_name_simplified">BENEIXAMA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_24" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">024</field>
+            <field name="city_name">Benejúzar</field>
+            <field name="city_name_simplified">BENEJUZAR</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_25" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">025</field>
+            <field name="city_name">Benferri</field>
+            <field name="city_name_simplified">BENFERRI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_26" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">026</field>
+            <field name="city_name">Beniarbeig</field>
+            <field name="city_name_simplified">BENIARBEIG</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_27" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">027</field>
+            <field name="city_name">Beniardá</field>
+            <field name="city_name_simplified">BENIARDA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_28" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">028</field>
+            <field name="city_name">Beniarrés</field>
+            <field name="city_name_simplified">BENIARRES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_29" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">030</field>
+            <field name="city_name">Benidoleig</field>
+            <field name="city_name_simplified">BENIDOLEIG</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_30" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">031</field>
+            <field name="city_name">Benidorm</field>
+            <field name="city_name_simplified">BENIDORM</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_31" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">032</field>
+            <field name="city_name">Benifallim</field>
+            <field name="city_name_simplified">BENIFALLIM</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_32" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">033</field>
+            <field name="city_name">Benifato</field>
+            <field name="city_name_simplified">BENIFATO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_33" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">029</field>
+            <field name="city_name">Benigembla</field>
+            <field name="city_name_simplified">BENIGEMBLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_34" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">034</field>
+            <field name="city_name">Benijófar</field>
+            <field name="city_name_simplified">BENIJOFAR</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_35" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">035</field>
+            <field name="city_name">Benilloba</field>
+            <field name="city_name_simplified">BENILLOBA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_36" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">036</field>
+            <field name="city_name">Benillup</field>
+            <field name="city_name_simplified">BENILLUP</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_37" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">037</field>
+            <field name="city_name">Benimantell</field>
+            <field name="city_name_simplified">BENIMANTELL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_38" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">038</field>
+            <field name="city_name">Benimarfull</field>
+            <field name="city_name_simplified">BENIMARFULL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_39" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">039</field>
+            <field name="city_name">Benimassot</field>
+            <field name="city_name_simplified">BENIMASSOT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_40" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">040</field>
+            <field name="city_name">Benimeli</field>
+            <field name="city_name_simplified">BENIMELI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_41" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">041</field>
+            <field name="city_name">Benissa</field>
+            <field name="city_name_simplified">BENISSA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_42" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">042</field>
+            <field name="city_name">Benitachell</field>
+            <field name="city_name_simplified">BENITACHELL</field>
+            <field name="city_name_aka">El Poble Nou de Benitatxell</field>
+            <field name="city_name_aka_simplified">EL POBLE NOU DE BENITATXELL</field>
+        </record>
+
+        <record id="ine_suma_code_43" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">043</field>
+            <field name="city_name">Biar</field>
+            <field name="city_name_simplified">BIAR</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_44" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">044</field>
+            <field name="city_name">Bigastro</field>
+            <field name="city_name_simplified">BIGASTRO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_45" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">045</field>
+            <field name="city_name">Bolulla</field>
+            <field name="city_name_simplified">BOLULLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_46" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">046</field>
+            <field name="city_name">Busot</field>
+            <field name="city_name_simplified">BUSOT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_47" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">049</field>
+            <field name="city_name">Callosa de Segura</field>
+            <field name="city_name_simplified">CALLOSA DE SEGURA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_48" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">048</field>
+            <field name="city_name">Callosa d'en Sarrià</field>
+            <field name="city_name_simplified">CALLOSA D'EN SARRIA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_49" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">047</field>
+            <field name="city_name">Calp</field>
+            <field name="city_name_simplified">CALP</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_50" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">050</field>
+            <field name="city_name">Campello</field>
+            <field name="city_name_simplified">CAMPELLO</field>
+            <field name="city_name_aka"> el</field>
+            <field name="city_name_aka_simplified"> EL</field>
+        </record>
+
+        <record id="ine_suma_code_51" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">051</field>
+            <field name="city_name">Campo de Mirra/Camp de Mirra</field>
+            <field name="city_name_simplified">CAMPO DE MIRRA/CAMP DE MIRRA</field>
+            <field name="city_name_aka"> el</field>
+            <field name="city_name_aka_simplified"> EL</field>
+        </record>
+
+        <record id="ine_suma_code_52" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">052</field>
+            <field name="city_name">Cañada</field>
+            <field name="city_name_simplified">CAÑADA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_53" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">053</field>
+            <field name="city_name">Castalla</field>
+            <field name="city_name_simplified">CASTALLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_54" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">054</field>
+            <field name="city_name">Castell de Castells</field>
+            <field name="city_name_simplified">CASTELL DE CASTELLS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_55" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">075</field>
+            <field name="city_name">Castell de Guadalest</field>
+            <field name="city_name_simplified">CASTELL DE GUADALEST</field>
+            <field name="city_name_aka"> el</field>
+            <field name="city_name_aka_simplified"> EL</field>
+        </record>
+
+        <record id="ine_suma_code_56" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">055</field>
+            <field name="city_name">Catral</field>
+            <field name="city_name_simplified">CATRAL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_57" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">056</field>
+            <field name="city_name">Cocentaina</field>
+            <field name="city_name_simplified">COCENTAINA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_58" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">057</field>
+            <field name="city_name">Confrides</field>
+            <field name="city_name_simplified">CONFRIDES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_59" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">058</field>
+            <field name="city_name">Cox</field>
+            <field name="city_name_simplified">COX</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_60" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">059</field>
+            <field name="city_name">Crevillent</field>
+            <field name="city_name_simplified">CREVILLENT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_61" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">061</field>
+            <field name="city_name">Daya Nueva</field>
+            <field name="city_name_simplified">DAYA NUEVA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_62" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">062</field>
+            <field name="city_name">Daya Vieja</field>
+            <field name="city_name_simplified">DAYA VIEJA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_63" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">063</field>
+            <field name="city_name">Dénia</field>
+            <field name="city_name_simplified">DENIA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_64" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">064</field>
+            <field name="city_name">Dolores</field>
+            <field name="city_name_simplified">DOLORES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_65" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">065</field>
+            <field name="city_name">Elche/Elx</field>
+            <field name="city_name_simplified">ELCHE/ELX</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_66" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">066</field>
+            <field name="city_name">Elda</field>
+            <field name="city_name_simplified">ELDA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_67" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">067</field>
+            <field name="city_name">Facheca</field>
+            <field name="city_name_simplified">FACHECA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_68" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">068</field>
+            <field name="city_name">Famorca</field>
+            <field name="city_name_simplified">FAMORCA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_69" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">069</field>
+            <field name="city_name">Finestrat</field>
+            <field name="city_name_simplified">FINESTRAT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_70" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">077</field>
+            <field name="city_name">Hondón de las Nieves</field>
+            <field name="city_name_simplified">HONDON DE LAS NIEVES</field>
+            <field name="city_name_aka">El Fondó de les Neus</field>
+            <field name="city_name_aka_simplified">EL FONDO DE LES NEUS</field>
+        </record>
+
+        <record id="ine_suma_code_71" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">070</field>
+            <field name="city_name">Formentera del Segura</field>
+            <field name="city_name_simplified">FORMENTERA DEL SEGURA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_72" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">072</field>
+            <field name="city_name">Gaianes</field>
+            <field name="city_name_simplified">GAIANES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_73" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">071</field>
+            <field name="city_name">Gata de Gorgos</field>
+            <field name="city_name_simplified">GATA DE GORGOS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_74" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">073</field>
+            <field name="city_name">Gorga</field>
+            <field name="city_name_simplified">GORGA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_75" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">074</field>
+            <field name="city_name">Granja de Rocamora</field>
+            <field name="city_name_simplified">GRANJA DE ROCAMORA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_76" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">076</field>
+            <field name="city_name">Guardamar del Segura</field>
+            <field name="city_name_simplified">GUARDAMAR DEL SEGURA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_77" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">078</field>
+            <field name="city_name">Hondón de los Frailes</field>
+            <field name="city_name_simplified">HONDON DE LOS FRAILES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_78" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">079</field>
+            <field name="city_name">Ibi</field>
+            <field name="city_name_simplified">IBI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_79" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">080</field>
+            <field name="city_name">Jacarilla</field>
+            <field name="city_name_simplified">JACARILLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_80" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">082</field>
+            <field name="city_name">Jávea</field>
+            <field name="city_name_simplified">JAVEA</field>
+            <field name="city_name_aka">Xàbia</field>
+            <field name="city_name_aka_simplified">XABIA</field>
+        </record>
+
+        <record id="ine_suma_code_81" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">083</field>
+            <field name="city_name">Jijona</field>
+            <field name="city_name_simplified">JIJONA</field>
+            <field name="city_name_aka">Xixona</field>
+            <field name="city_name_aka_simplified">XIXONA</field>
+        </record>
+
+        <record id="ine_suma_code_82" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">085</field>
+            <field name="city_name">Llíber</field>
+            <field name="city_name_simplified">LLIBER</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_83" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">084</field>
+            <field name="city_name">Lorcha</field>
+            <field name="city_name_simplified">LORCHA</field>
+            <field name="city_name_aka">L’Orxa</field>
+            <field name="city_name_aka_simplified">L’ORXA</field>
+        </record>
+
+        <record id="ine_suma_code_84" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">086</field>
+            <field name="city_name">Millena</field>
+            <field name="city_name_simplified">MILLENA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_85" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">088</field>
+            <field name="city_name">Monforte del Cid</field>
+            <field name="city_name_simplified">MONFORTE DEL CID</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_86" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">089</field>
+            <field name="city_name">Monóvar</field>
+            <field name="city_name_simplified">MONOVAR</field>
+            <field name="city_name_aka">Monòver</field>
+            <field name="city_name_aka_simplified">MONOVER</field>
+        </record>
+
+        <record id="ine_suma_code_87" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">903</field>
+            <field name="city_name">Los Montesinos</field>
+            <field name="city_name_simplified">LOS MONTESINOS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_88" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">091</field>
+            <field name="city_name">Murla</field>
+            <field name="city_name_simplified">MURLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_89" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">092</field>
+            <field name="city_name">Muro de Alcoy</field>
+            <field name="city_name_simplified">MURO DE ALCOY</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_90" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">090</field>
+            <field name="city_name">Mutxamel</field>
+            <field name="city_name_simplified">MUTXAMEL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_91" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">093</field>
+            <field name="city_name">Novelda</field>
+            <field name="city_name_simplified">NOVELDA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_92" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">094</field>
+            <field name="city_name">Nucia</field>
+            <field name="city_name_simplified">NUCIA</field>
+            <field name="city_name_aka"> la</field>
+            <field name="city_name_aka_simplified"> LA</field>
+        </record>
+
+        <record id="ine_suma_code_93" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">095</field>
+            <field name="city_name">Ondara</field>
+            <field name="city_name_simplified">ONDARA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_94" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">096</field>
+            <field name="city_name">Onil</field>
+            <field name="city_name_simplified">ONIL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_95" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">097</field>
+            <field name="city_name">Orba</field>
+            <field name="city_name_simplified">ORBA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_96" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">099</field>
+            <field name="city_name">Orihuela</field>
+            <field name="city_name_simplified">ORIHUELA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_97" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">098</field>
+            <field name="city_name">Orxeta</field>
+            <field name="city_name_simplified">ORXETA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_98" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">100</field>
+            <field name="city_name">Parcent</field>
+            <field name="city_name_simplified">PARCENT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_99" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">101</field>
+            <field name="city_name">Pedreguer</field>
+            <field name="city_name_simplified">PEDREGUER</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_100" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">102</field>
+            <field name="city_name">Pego</field>
+            <field name="city_name_simplified">PEGO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_101" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">103</field>
+            <field name="city_name">Penàguila</field>
+            <field name="city_name_simplified">PENAGUILA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_102" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">104</field>
+            <field name="city_name">Petrer</field>
+            <field name="city_name_simplified">PETRER</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_103" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">902</field>
+            <field name="city_name">Pilar de la Horadada</field>
+            <field name="city_name_simplified">PILAR DE LA HORADADA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_104" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">105</field>
+            <field name="city_name">Pinoso</field>
+            <field name="city_name_simplified">PINOSO</field>
+            <field name="city_name_aka">El Pinós</field>
+            <field name="city_name_aka_simplified">EL PINOS</field>
+        </record>
+
+        <record id="ine_suma_code_105" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">106</field>
+            <field name="city_name">Planes</field>
+            <field name="city_name_simplified">PLANES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_106" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">901</field>
+            <field name="city_name">Els Poblets</field>
+            <field name="city_name_simplified">ELS POBLETS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_107" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">107</field>
+            <field name="city_name">Polop</field>
+            <field name="city_name_simplified">POLOP</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_108" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">060</field>
+            <field name="city_name">Quatretondeta</field>
+            <field name="city_name_simplified">QUATRETONDETA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_109" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">109</field>
+            <field name="city_name">Rafal</field>
+            <field name="city_name_simplified">RAFAL</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_110" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">110</field>
+            <field name="city_name">El Ràfol d'Almúnia</field>
+            <field name="city_name_simplified">EL RAFOL D'ALMUNIA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_111" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">111</field>
+            <field name="city_name">Redován</field>
+            <field name="city_name_simplified">REDOVAN</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_112" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">112</field>
+            <field name="city_name">Relleu</field>
+            <field name="city_name_simplified">RELLEU</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_113" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">113</field>
+            <field name="city_name">Rojales</field>
+            <field name="city_name_simplified">ROJALES</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_114" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">114</field>
+            <field name="city_name">Romana</field>
+            <field name="city_name_simplified">ROMANA</field>
+            <field name="city_name_aka"> la</field>
+            <field name="city_name_aka_simplified"> LA</field>
+        </record>
+
+        <record id="ine_suma_code_115" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">115</field>
+            <field name="city_name">Sagra</field>
+            <field name="city_name_simplified">SAGRA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_116" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">116</field>
+            <field name="city_name">Salinas</field>
+            <field name="city_name_simplified">SALINAS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_117" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">118</field>
+            <field name="city_name">San Fulgencio</field>
+            <field name="city_name_simplified">SAN FULGENCIO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_118" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">904</field>
+            <field name="city_name">San Isidro</field>
+            <field name="city_name_simplified">SAN ISIDRO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_119" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">120</field>
+            <field name="city_name">San Miguel de Salinas</field>
+            <field name="city_name_simplified">SAN MIGUEL DE SALINAS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_120" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">122</field>
+            <field name="city_name">San Vicente del Raspeig</field>
+            <field name="city_name_simplified">SAN VICENTE DEL RASPEIG</field>
+            <field name="city_name_aka">Sant Vicent del Raspeig</field>
+            <field name="city_name_aka_simplified">SANT VICENT DEL RASPEIG</field>
+        </record>
+
+        <record id="ine_suma_code_121" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">117</field>
+            <field name="city_name">Sanet y Negrals</field>
+            <field name="city_name_simplified">SANET Y NEGRALS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_122" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">119</field>
+            <field name="city_name">Sant Joan d'Alacant</field>
+            <field name="city_name_simplified">SANT JOAN D'ALACANT</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_123" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">121</field>
+            <field name="city_name">Santa Pola</field>
+            <field name="city_name_simplified">SANTA POLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_124" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">123</field>
+            <field name="city_name">Sax</field>
+            <field name="city_name_simplified">SAX</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_125" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">124</field>
+            <field name="city_name">Sella</field>
+            <field name="city_name_simplified">SELLA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_126" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">125</field>
+            <field name="city_name">Senija</field>
+            <field name="city_name_simplified">SENIJA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_127" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">127</field>
+            <field name="city_name">Tàrbena</field>
+            <field name="city_name_simplified">TARBENA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_128" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">128</field>
+            <field name="city_name">Teulada</field>
+            <field name="city_name_simplified">TEULADA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_129" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">129</field>
+            <field name="city_name">Tibi</field>
+            <field name="city_name_simplified">TIBI</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_130" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">130</field>
+            <field name="city_name">Tollos</field>
+            <field name="city_name_simplified">TOLLOS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_131" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">131</field>
+            <field name="city_name">Tormos</field>
+            <field name="city_name_simplified">TORMOS</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_132" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">132</field>
+            <field name="city_name">Torremanzanas</field>
+            <field name="city_name_simplified">TORREMANZANAS</field>
+            <field name="city_name_aka">La Torre de les Maçanes</field>
+            <field name="city_name_aka_simplified">LA TORRE DE LES MAÇANES</field>
+        </record>
+
+        <record id="ine_suma_code_133" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">133</field>
+            <field name="city_name">Torrevieja</field>
+            <field name="city_name_simplified">TORREVIEJA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_134" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">134</field>
+            <field name="city_name">La Vall d'Alcalà</field>
+            <field name="city_name_simplified">LA VALL D'ALCALA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_135" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">136</field>
+            <field name="city_name">Vall de Gallinera</field>
+            <field name="city_name_simplified">VALL DE GALLINERA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_136" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">137</field>
+            <field name="city_name">La Vall de Laguar</field>
+            <field name="city_name_simplified">LA VALL DE LAGUAR</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_137" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">135</field>
+            <field name="city_name">LA Vall d'Ebo</field>
+            <field name="city_name_simplified">LA VALL D'EBO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_138" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">138</field>
+            <field name="city_name">El Verger</field>
+            <field name="city_name_simplified">EL VERGER</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_139" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">139</field>
+            <field name="city_name">Villajoyosa</field>
+            <field name="city_name_simplified">VILLAJOYOSA</field>
+            <field name="city_name_aka">La Vila Joiosa</field>
+            <field name="city_name_aka_simplified">LA VILA JOIOSA</field>
+        </record>
+
+        <record id="ine_suma_code_140" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">140</field>
+            <field name="city_name">Villena</field>
+            <field name="city_name_simplified">VILLENA</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+        <record id="ine_suma_code_141" model="res.ine.codes">
+            <field name="ine_code_state">10</field>
+            <field name="ine_code_province">03</field>
+            <field name="ine_code_city">081</field>
+            <field name="city_name">Xaló</field>
+            <field name="city_name_simplified">XALO</field>
+            <field name="city_name_aka"></field>
+            <field name="city_name_aka_simplified"></field>
+        </record>
+
+    </data>
+</odoo>
