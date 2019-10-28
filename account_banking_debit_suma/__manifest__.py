@@ -15,6 +15,7 @@
         "partner_street_type",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/suma_ine_codes_data.xml",
         "data/account_payment_method_data.xml",
         "reports/suma_resume.xml",

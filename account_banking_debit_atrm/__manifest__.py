@@ -16,6 +16,7 @@
         "partner_street_type",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/atrm_ine_codes_data.xml",
         "data/account_payment_method_data.xml",
         "reports/atrm_resume.xml",

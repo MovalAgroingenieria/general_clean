@@ -748,19 +748,47 @@ class AccountPaymentOrder(models.Model):
                 else:
                     debtor_street_number = str(" " * 5)
 
-                # Simplify city name to compare
                 if line.partner_id.city:
+                    city_name = ""
+                    city_name2 = ""
+                    city_name_simplified=""
+                    city_name_simplified2=""
+
+                    if '(' in line.partner_id.city:
+                        # Get name between parenthesis
+                        city_name = line.partner_id.city[
+                            line.partner_id.city.find(
+                                "(")+1:line.partner_id.city.find(")")]
+                        # Get name before parenthesis
+                        city_name2 = line.partner_id.city.split('(')[0]
+                    else:
+                        city_name = line.partner_id.city
+
+                    # Simplify city name to compare
                     city_name_simplified = \
                         unicodedata.normalize(
-                            'NFKD', line.partner_id.city).encode('ASCII',
-                                                                 'ignore'
-                                                                 ).upper()
+                            'NFKD', city_name).encode('ASCII',
+                                                      'ignore'
+                                                      ).upper()
+                    if city_name2:
+                        city_name_simplified2 = \
+                            unicodedata.normalize(
+                                'NFKD', city_name2
+                                ).encode('ASCII',
+                                         'ignore'
+                                        ).upper()
+                    else:
+                        city_name_simplified2 = ""
 
                     # Get ine codes using partner city simplified
                     ine_codes = \
-                        self.env['res.ine.codes'].search([(
-                            'city_name_simplified', '=',
-                            city_name_simplified)])
+                        self.env['res.ine.codes'].search(['|','|','|','|','|',
+                            ('city_name_simplified', '=', city_name_simplified),
+                            ('city_name_aka_simplified', '=', city_name_simplified),
+                            ('city_name_simplified', '=', city_name_simplified2),
+                            ('city_name_aka_simplified', '=', city_name_simplified2),
+                            ('city_name_reordered_simplified', '=', city_name_simplified),
+                            ('city_name_reordered_simplified', '=', city_name_simplified2)])
 
                     if ine_codes:
                         debtor_province_ine_code = \
@@ -772,9 +800,10 @@ class AccountPaymentOrder(models.Model):
                             failed, debtor ine city code not found for city\
                             %s.\nSometimes this is because the name of the\
                             city is not well written (first capital letter,\
-                            accents, hyphens, etc.)." %
+                            accents, hyphens, etc.) or is the name of a\
+                            district instead of a city." %
                                                 (entry_num_padded,
-                                                 line.partner_id.city)))
+                                                 city_name)))
                 else:
                     raise ValidationError(_("The entry number %s has failed,\
                         debtor city not found for partner %s" %

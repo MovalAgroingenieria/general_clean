@@ -12,6 +12,10 @@
                     <field name="ine_code_city"/>
                     <field name="city_name"/>
                     <field name="city_name_simplified"/>
+                    <field name="city_name_aka"/>
+                    <field name="city_name_aka_simplified"/>
+                    <field name="city_name_reordered"/>
+                    <field name="city_name_reordered_simplified"/>
                 </group>
             </form>
         </field>
@@ -27,6 +31,10 @@
                 <field name="ine_code_city"/>
                 <field name="city_name"/>
                 <field name="city_name_simplified"/>
+                <field name="city_name_aka"/>
+                <field name="city_name_aka_simplified"/>
+                <field name="city_name_reordered"/>
+                <field name="city_name_reordered_simplified"/>
             </tree>
         </field>
     </record>
