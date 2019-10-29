@@ -630,21 +630,55 @@ class AccountPaymentOrder(models.Model):
                                              line.partner_id.name)))
 
                 # INE codes
-                # Simplify city name to compare
                 if line.partner_id.city:
+                    city_name = ""
+                    city_name2 = ""
+                    city_name_simplified = ""
+                    city_name_simplified2 = ""
+
+                    if '(' in line.partner_id.city:
+                        # Get name between parenthesis
+                        city_name = line.partner_id.city[
+                            line.partner_id.city.find(
+                                "(")+1:line.partner_id.city.find(")")]
+                        # Get name before parenthesis
+                        city_name2 = line.partner_id.city.split('(')[0]
+                    else:
+                        city_name = line.partner_id.city
+
+                    # Simplify city name to compare
                     city_name_simplified = \
                         unicodedata.normalize(
-                            'NFKD', line.partner_id.city).encode('utf-8',
-                                                                 'replace'
-                                                                 ).upper()
+                            'NFKD', city_name).encode('utf-8',
+                                                      'replace'
+                                                      ).upper()
+
+                    if city_name2:
+                        city_name_simplified2 = \
+                            unicodedata.normalize(
+                                'NFKD', city_name2).encode('utf-8',
+                                                           'replace'
+                                                           ).upper()
+                    else:
+                        city_name_simplified2 = ""
 
                     # Get ine codes using partner city simplified
                     ine_codes = \
-                        self.env['res.ine.codes'].search([(
-                            'city_name_simplified', '=',
-                            city_name_simplified) or (
-                            'city_name_aka_simplified', '=',
-                            city_name_simplified)])
+                        self.env[
+                            'res.ine.codes'].search(
+                                ['|', '|', '|', '|', '|',
+                                 ('city_name_simplified', '=',
+                                  city_name_simplified),
+                                 ('city_name_aka_simplified', '=',
+                                  city_name_simplified),
+                                 ('city_name_simplified', '=',
+                                  city_name_simplified2),
+                                 ('city_name_aka_simplified', '=',
+                                  city_name_simplified2),
+                                 ('city_name_reordered_simplified', '=',
+                                  city_name_simplified),
+                                 ('city_name_reordered_simplified', '=',
+                                  city_name_simplified2)])
 
                     if ine_codes:
                         # County INE code - Position [138-140] Length 3
@@ -658,8 +692,8 @@ class AccountPaymentOrder(models.Model):
                             failed, taxpayer ine city code not found for city\
                             %s.\nSometimes this is because the name of the\
                             city is not well written (first capital letter,\
-                            accents, hyphens, etc.) or because the city does\
-                            not belong to the province of Alicante " %
+                            accents, hyphens, etc.) or is the name of a\
+                            district instead of a city." %
                                                 (entry_num_padded,
                                                  line.partner_id.city)))
                 else:

@@ -748,6 +748,7 @@ class AccountPaymentOrder(models.Model):
                 else:
                     debtor_street_number = str(" " * 5)
 
+                # INE codes
                 if line.partner_id.city:
                     city_name = ""
                     city_name2 = ""

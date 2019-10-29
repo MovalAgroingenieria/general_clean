@@ -17,3 +17,6 @@ class IneCodes(models.Model):
     city_name_aka = fields.Char(string="City alternative name")
     city_name_aka_simplified = fields.Char(
         string="City alternative name simplified")
+    city_name_reordered = fields.Char(string="City reordered name")
+    city_name_reordered_simplified = fields.Char(
+        string="City reordered name simplified")

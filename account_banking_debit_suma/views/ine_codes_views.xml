@@ -14,6 +14,8 @@
                     <field name="city_name_simplified"/>
                     <field name="city_name_aka"/>
                     <field name="city_name_aka_simplified"/>
+                    <field name="city_name_reordered"/>
+                    <field name="city_name_reordered_simplified"/>
                 </group>
             </form>
         </field>
@@ -31,7 +33,30 @@
                 <field name="city_name_simplified"/>
                 <field name="city_name_aka"/>
                 <field name="city_name_aka_simplified"/>
+                <field name="city_name_reordered"/>
+                <field name="city_name_reordered_simplified"/>
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="ine_codes_search">
+        <field name="name">res.ine.codes.search</field>
+        <field name="model">res.ine.codes</field>
+        <field name="arch" type="xml">
+            <search string="Cities INE Codes">
+                <field name="ine_code_state"/>
+                <field name="ine_code_province"/>
+                <field name="ine_code_city"/>
+                <field name="city_name"/>
+                <field name="city_name_aka"/>
+                <field name="city_name_reordered"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" name="state"
+                     context="{'group_by':'ine_code_state'}"/>
+                    <filter string="Province" name="province"
+                     context="{'group_by':'ine_code_province'}"/>
+                </group>
+            </search>
         </field>
     </record>
 
