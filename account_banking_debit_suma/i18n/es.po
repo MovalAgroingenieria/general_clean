@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-11 13:41+0000\n"
-"PO-Revision-Date: 2019-09-11 13:41+0000\n"
+"POT-Creation-Date: 2019-10-29 11:08+0000\n"
+"PO-Revision-Date: 2019-10-29 11:08+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -958,7 +958,7 @@ msgid "AP - DRINKING WATERS"
 msgstr "AP - AGUAS POTABLES"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:782
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:816
 #, python-format
 msgid "Amount: "
 msgstr "Importe: "
@@ -985,6 +985,7 @@ msgstr "Tipo de cargo"
 
 #. module: account_banking_debit_suma
 #: model:ir.actions.act_window,name:account_banking_debit_suma.action_ine_codes_tree
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_tree
 msgid "Cities INE Codes"
 msgstr "Códigos ciudades INE"
@@ -1013,6 +1014,16 @@ msgstr "Nombre alternavito ciudad"
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka_simplified
 msgid "City alternative name simplified"
 msgstr "Nombre alternavito ciudad simplificado"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered
+msgid "City reordered name"
+msgstr "Nombre de ciudad reordenado"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered_simplified
+msgid "City reordered name simplified"
+msgstr "Nombre de ciudad reordenado simplificado"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_simplified
@@ -1049,12 +1060,12 @@ msgstr "Creado por"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creado en"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_currency_id
 msgid "Currency"
-msgstr "Moneda"
+msgstr "Divisa"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
@@ -1092,7 +1103,7 @@ msgid "D7 - FEES MAINTENANCE ACUEDUCTSS"
 msgstr "D7 - CUOTAS MANT. ACUEDUCTOS"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1152
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1186
 #, python-format
 msgid "Direct Debit File"
 msgstr "Direct Debit File"
@@ -1100,7 +1111,7 @@ msgstr "Direct Debit File"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre mostrado"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity
@@ -1118,7 +1129,7 @@ msgid "Entity type"
 msgstr "Tipo entidad"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:931
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:965
 #, python-format
 msgid "Entity type code not set"
 msgstr "El código del tipo de entidad no ha sido establecido."
@@ -1142,6 +1153,11 @@ msgstr "Periodo final"
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Generate Direct Debit file"
 msgstr "Generar archico domiciliaciones"
+
+#. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
+msgid "Group By"
+msgstr "Agrupar por"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_id
@@ -1169,7 +1185,7 @@ msgid "Initial period"
 msgstr "Periodo initial"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:781
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:815
 #, python-format
 msgid "Invoice num: "
 msgstr "Nº factura: "
@@ -1177,7 +1193,7 @@ msgstr "Nº factura: "
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_uid
@@ -1187,7 +1203,7 @@ msgstr "Última actualización por"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualización en"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
@@ -1205,7 +1221,7 @@ msgid "NUMBER OF QUARTERS"
 msgstr "NÚMERO DE TRIMESTRE"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:776
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:810
 #, python-format
 msgid "Not found"
 msgstr "No encontrado"
@@ -1234,6 +1250,11 @@ msgstr "Periodicidad"
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Print SUMA resume"
 msgstr "Imprimir informe SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
+msgid "Province"
+msgstr "Provincia"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_province
@@ -1291,6 +1312,11 @@ msgid "SUMA_resume"
 msgstr "informe_SUMA"
 
 #. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
+msgid "State"
+msgstr "Estado"
+
+#. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_state
 msgid "State INE code"
 msgstr "Código Comunidad Autónoma INE"
@@ -1315,27 +1341,26 @@ msgstr "La periodicidad bimestral solo acepta los valores 01 a 06, tanto en el p
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:446
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:950
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:984
 #, python-format
 msgid "The entity has not been configured.                Set it in Accounting/Settings."
 msgstr "La entidad no ha sido configurada. Configúrela en Contabilidad/Configuración."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:663
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:697
 #, python-format
 msgid "The entry number %s has                            failed, taxpayer ine city code not found for city                            %s.\n"
-"Sometimes this is because the name of the                            city is not well written (first capital letter,                            accents, hyphens, etc.) or because the city does                            not belong to the province of Alicante "
-msgstr "El número de entrada %s ha fallado, no se encontró el código INE para la ciudad %s.\n"
-"A veces esto se debe a que el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, paréntesis, etc.) o porque la ciudad no pertenece a la provincia de Alicante."
+"Sometimes this is because the name of the                            city is not well written (first capital letter,                            accents, hyphens, etc.) or is the name of a                            district instead of a city."
+msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE para ciudad %s. A veces esto se produce porque el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, etc.) o porque se ha indicado el nombre de una pedanía."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:696
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:730
 #, python-format
 msgid "The entry number %s has failed,                            the vat %s for partner %s is not valid."
 msgstr "El número de entrada %s ha fallado, el NIF %s para el socio/empresa %s no es válido."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:668
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:702
 #, python-format
 msgid "The entry number %s has failed,                        debtor city not found for partner %s"
 msgstr "El número de entrada %s ha fallado, ciudad no encontrada para el socio/empresa %s."
@@ -1354,38 +1379,38 @@ msgstr "El número de entrada %s ha fallado, código postal (C.P.) no encontrado
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:569
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1032
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1066
 #, python-format
 msgid "The entry number %s has failed,                        the lastname for partner %s not found."
 msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:990
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1024
 #, python-format
 msgid "The entry number %s has failed,                    banks accounts not found for partner %s."
 msgstr "El número de entrada %s ha fallado, no se han encontrado cuentas bancarias para el socio %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:984
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1018
 #, python-format
 msgid "The entry number %s has failed,                    partner %s has no banks accounts."
 msgstr "El número de entrada %s ha fallado, el socio %s no tiene cuentas bancarias configuradas."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1059
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1093
 #, python-format
 msgid "The entry number %s has failed,                    suma reference not found."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado su referencia SUMA."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:581
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1044
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1078
 #, python-format
 msgid "The entry number %s has failed,                    taxpayer name not found."
 msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:677
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:711
 #, python-format
 msgid "The entry number %s has failed,                    the address type %s is not supported."
 msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de dirección %s."
@@ -1398,31 +1423,31 @@ msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:576
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1039
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1073
 #, python-format
 msgid "The entry number %s has failed,                    the firstname for partner %s not found."
 msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:721
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:755
 #, python-format
 msgid "The entry number %s has failed,                    the format type %s is not supported."
 msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de formato %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:733
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:767
 #, python-format
 msgid "The entry number %s has failed,                    the partner id not found for partner %s."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el ID para el socio %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:702
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:736
 #, python-format
 msgid "The entry number %s has failed,                    vat not found for partner %s."
 msgstr "El número de entrada %s ha fallado, NIF no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1071
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1105
 #, python-format
 msgid "The entry number %s has failed,                bank BIC not found. For foreign IBANs the BIC is mandatory."
 msgstr "El número de entrada %s ha fallado, BIC no encontrado. Para los IBAN extranjeros, el BIC es obligatorio."
