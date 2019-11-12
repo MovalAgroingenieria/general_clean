@@ -643,6 +643,11 @@ class AccountPaymentOrder(models.Model):
                                 "(")+1:line.partner_id.city.find(")")]
                         # Get name before parenthesis
                         city_name2 = line.partner_id.city.split('(')[0]
+                    elif '/' in line.partner_id.city:
+                        # Get name after bar
+                        city_name = line.partner_id.city.split('/')[0]
+                        # Get name before bar
+                        city_name2 = line.partner_id.city.split('/')[1]
                     else:
                         city_name = line.partner_id.city
 
