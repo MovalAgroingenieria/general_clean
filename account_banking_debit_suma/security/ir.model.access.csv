@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_ine_codes,access_res_ine_codes,model_res_ine_codes,base.group_user,1,0,0,0
-access_res_ine_codes_manager,access_res_ine_codes_manager,model_res_ine_codes,base.root_user,1,1,1,1
+
+access_res_ine_codes_user,access.res.ine.codes.user,account_banking_debit_suma.model_res_ine_codes,base.group_user,1,0,0,0
+access_res_ine_codes_manager,access.res.ine.codes.manager,account_banking_debit_suma.model_res_ine_codes,base.group_manager,1,1,1,1
