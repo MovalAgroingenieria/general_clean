@@ -721,6 +721,7 @@ class AccountPaymentOrder(models.Model):
 
             # Taxpayer VAT - Position [172-181] Length 10
             # @INFO: The two first chars are sliced
+            #        Now this is not mandatory
             if line.partner_id.vat:
                 taxpayer_vat = line.partner_id.vat[2:]
                 if len(taxpayer_vat) > 9 or not \
@@ -732,9 +733,10 @@ class AccountPaymentOrder(models.Model):
                 else:
                     taxpayer_vat = str(taxpayer_vat).ljust(10)
             else:
-                raise ValidationError(_("The entry number %s has failed,\
-                    vat not found for partner %s." % (entry_num_padded,
-                                                      line.partner_id.name)))
+                taxpayer_vat = str(" " * 10)
+                #raise ValidationError(_("The entry number %s has failed,\
+                #    vat not found for partner %s." % (entry_num_padded,
+                #                                      line.partner_id.name)))
 
             # Value format type - Position [182-182] Length 1
             # value_format_type = (static, outside the loop)
