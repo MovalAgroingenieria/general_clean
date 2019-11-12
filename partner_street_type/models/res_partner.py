@@ -106,4 +106,5 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_street_type_show(self):
-        self.street_type_show = self.street_type
+        for record in self:
+            record.street_type_show = record.street_type
