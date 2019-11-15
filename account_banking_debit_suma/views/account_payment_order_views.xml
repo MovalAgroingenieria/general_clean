@@ -45,6 +45,12 @@
                 <attribute name="attrs" add="{'readonly':[('payment_mode_name','=', 'SUMA')]}"/>
             </xpath>
 
+            <!-- Make date_scheduled non required when SUMA -->
+            <xpath expr="//field[@name='date_scheduled']" position="replace">
+                <field name="date_scheduled" attrs="{'invisible': [('date_prefered', '!=', 'fixed')],
+                    'required': [('date_prefered', '=', 'fixed'), ('payment_mode_name','!=', 'SUMA')]}"/>
+            </xpath>
+
             <!-- Set description as required field -->
             <xpath expr="//field[@name='description']" position="attributes">
                 <attribute name="attrs" add="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
@@ -55,6 +61,7 @@
                 <group string="SUMA options" name="suma" col="2" attrs="{'invisible':[('payment_mode_name', '!=', 'SUMA')]}">
                     <group name="suma-left">
                         <field name="payment_mode_name" invisible="1"/>
+                        <field name="error_mode" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="entity" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="entity_type_code"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
@@ -80,6 +87,14 @@
                     </group>
                 </group>
             </xpath>
+
+            <!-- Add errors tap -->
+            <xpath expr="//page[@name='bank-payment-lines']" position="after">
+                <page name="errors" string="Errors" attrs="{'invisible':['|',('payment_mode_name', '!=', 'SUMA'), ('error_mode', '!=', 'permissive')]}">
+                    <field name="errors_found" nolabel="1"/>
+                </page>
+            </xpath>
+
         </field>
     </record>
 

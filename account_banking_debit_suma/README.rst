@@ -13,8 +13,9 @@ This module generate a normalized payment file for 'Tax management. Alicante Cou
 
 Notes
 =====
-After installation, it is mandatory to create a payment mode called 'SUMA' associated with the
-payment method Tax management. Alicante County Council (SUMA)'.
+After installation, it is mandatory to create a payment mode called 'SUMA' associated with the payment method Tax management. Alicante County Council (SUMA)'.
+
+It is also advisable not to use the option "Group transactions in payment orders", in the configuration options of the SUMA payment mode (each transaction will be a bank payment line).
 
 Credits
 =======
