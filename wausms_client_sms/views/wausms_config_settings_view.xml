@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Config view -->
+    <record id="wausms_config_settings_view_form" model="ir.ui.view">
+        <field name="name">WauSMS parameters</field>
+        <field name="model">wau.sms.configuration</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                    <button string="Save" type="object"
+                        name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object"
+                        name="cancel" class="oe_link"/>
+                </header>
+                <group name="wausms_data" string="WuaSMS config settings"
+                    style="width: 50%">
+                    <field name="service_url"/>
+                    <field name="service_user"/>
+                    <field name="service_passwd" password="True"/>
+                    <field name="default_sender"/>
+                    <field name="test_phone_number"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action config -->
+    <record id="action_wausms_config_settings_form" model="ir.actions.act_window">
+        <field name="name">WauSMS configuration</field>
+        <field name="res_model">wau.sms.configuration</field>
+        <field name="view_id" ref="wausms_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <!-- Entries menu (root and config)-->
+    <menuitem id="wausms_root_menu" name="WauSMS" parent="base.menu_custom" sequence="10"/>
+    <menuitem name="Configuration" id="wausms_config_menu" parent="wausms_root_menu"
+        action="action_wausms_config_settings_form"/>
+
+</odoo>
