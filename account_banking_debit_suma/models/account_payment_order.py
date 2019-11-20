@@ -1167,6 +1167,11 @@ class AccountPaymentOrder(models.Model):
             entry_num += 1
             entry_num_padded = str(entry_num).zfill(6)
 
+            # Reset vars
+            iban = ""
+            bic = ""
+            taxpayer_name = ""
+
             # Construct CCC from IBAN
             # @INFO: Format  EEEE OOOO DD NNNNNNNNNN
             #        We get the account number associated
