@@ -798,7 +798,7 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, debtor city "
                               "not found for partner %s" %
-                              (entry_num_padded, line.partner_id.name)) + 'n'
+                              (entry_num_padded, line.partner_id.name)) + '\n'
                         county_ine_code = str(" " * 3)
                         province_ine_code = str(" " * 2)
                     else:
@@ -1093,7 +1093,9 @@ class AccountPaymentOrder(models.Model):
 
         # Fill error tab
         if self.error_mode == 'permissive':
-            self.errors_found = errors
+            self.errors_found = \
+                _("Errors in payment file ") + "[" + str(error_num) \
+                + " errors]\n" + errors
 
         # Send to the file and encode
         payment_file_str = bank_lines.encode(
@@ -1167,18 +1169,14 @@ class AccountPaymentOrder(models.Model):
             entry_num += 1
             entry_num_padded = str(entry_num).zfill(6)
 
-            # Reset vars
-            iban = ""
-            bic = ""
-            taxpayer_name = ""
-
             # Construct CCC from IBAN
             # @INFO: Format  EEEE OOOO DD NNNNNNNNNN
             #        We get the account number associated
             #        to mandate_id instead of from partner_id
-            if line.mandate_id:
+            if line.mandate_id and \
+               line.mandate_id.partner_id.mandate_count > 0:
                 iban = line.mandate_id.partner_bank_id.sanitized_acc_number
-                if iban:
+                if iban and len(iban) != 0:
                     try:
                         bic = line.mandate_id.partner_bank_id.bank_bic
                     except not line.mandate_id.partner_bank_id.bank_bic:
@@ -1191,6 +1189,8 @@ class AccountPaymentOrder(models.Model):
                     ccc_control_digits = str(iban[12:14])
                     # Bank account number - Position [011-020] Length 10
                     ccc_account_num = str(iban[14:]).ljust(10)
+            else:
+                continue
 
             # Taxpayer name - Position [021-080] Length 60
             # @INFO: lastname1 lastname2 firstname
@@ -1274,7 +1274,8 @@ class AccountPaymentOrder(models.Model):
 
             # IBAN
             # Position [111-144] Length 34
-            iban_num = str(iban).ljust(34)
+            if iban:
+                iban_num = str(iban).ljust(34)
 
             # BIC
             # Position [145-156] Length 11
@@ -1352,7 +1353,9 @@ class AccountPaymentOrder(models.Model):
 
         # Fill error tab
         if self.error_mode == 'permissive':
-            self.errors_found = errors
+            self.errors_found = \
+                _("Errors in direct debit file ") + "[" + str(error_num) \
+                + " errors]\n" + errors
 
         # Filename with associate suma payment filename
         filename = "DB_" + self.suma_filename[:-4] + ".txt"

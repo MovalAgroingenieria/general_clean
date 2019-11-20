@@ -61,26 +61,24 @@
                 <group string="SUMA options" name="suma" col="2" attrs="{'invisible':[('payment_mode_name', '!=', 'SUMA')]}">
                     <group name="suma-left">
                         <field name="payment_mode_name" invisible="1"/>
-                        <field name="error_mode" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
+                        <field name="error_mode" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="entity" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="entity_type_code"
+                        <field name="entity_type_code" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
+                        <field name="charge_type" style="width: 50%;" widget="selection"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="charge_type"
-                               attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"
-                               widget="selection"/>
                     </group>
                     <group name="suma-right">
                         <field name="concept"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"
                                widget="selection"/>
-                        <field name="periodicity"
+                        <field name="periodicity" style="width: 50%;"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"
                                widget="selection"/>
-                        <field name="initial_period"
+                        <field name="initial_period" style="width: 10%;"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')],
                                        'invisible': [('periodicity', '=', 'A')]}"
                                widget="selection"/>
-                        <field name="final_period" 
+                        <field name="final_period" style="width: 10%;"
                                attrs="{'required':[('payment_mode_name','=', 'SUMA')],
                                        'invisible': [('periodicity', '=', 'A')]}"
                                widget="selection"/>
@@ -90,7 +88,8 @@
 
             <!-- Add errors tap -->
             <xpath expr="//page[@name='bank-payment-lines']" position="after">
-                <page name="errors" string="Errors" attrs="{'invisible':['|',('payment_mode_name', '!=', 'SUMA'), ('error_mode', '!=', 'permissive')]}">
+                <page name="errors" string="Errors"
+                      attrs="{'invisible':['|',('payment_mode_name', '!=', 'SUMA'), ('error_mode', '!=', 'permissive')]}">
                     <field name="errors_found" nolabel="1"/>
                 </page>
             </xpath>
