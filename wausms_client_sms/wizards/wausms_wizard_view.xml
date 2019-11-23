@@ -9,12 +9,9 @@
             <field name="arch" type="xml">
                 <form string="WauSMS">
                     <group name="wausms_send_data">
-                        <field name="sender" style="width: 50%;"/>
+                        <field name="subject" style="width: 50%;"/>
                         <field name="sms_message"/>
                     </group>
-                    <div style="font-size: 10px;">
-                        The maximum size is 160 characters. The message will be sent in ASCII, so the special characters will not be displayed.
-                     </div>
                     <footer>
                         <button string="Send SMS" name="send_sms_action" type="object" class="btn-primary"/>
                         <button string="Cancel" class="btn-default" special="cancel" />

@@ -18,8 +18,12 @@
                     <field name="service_url"/>
                     <field name="service_user"/>
                     <field name="service_passwd" password="True"/>
+                </group>
+                <group name="default_data" string="Default and test settings"
+                    style="width: 50%">
                     <field name="default_sender"/>
                     <field name="test_phone_number"/>
+                    <field name="default_subject"/>
                 </group>
             </form>
         </field>
@@ -37,6 +41,6 @@
     <!-- Entries menu (root and config)-->
     <menuitem id="wausms_root_menu" name="WauSMS" parent="base.menu_custom" sequence="10"/>
     <menuitem name="Configuration" id="wausms_config_menu" parent="wausms_root_menu"
-        action="action_wausms_config_settings_form"/>
-
+        action="action_wausms_config_settings_form" />
+        <!-- groups="wausms_client_sms.group_wausms_manager" -->
 </odoo>

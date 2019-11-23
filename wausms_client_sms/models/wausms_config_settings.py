@@ -2,7 +2,8 @@
 # 2019 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 
 class WauSMSConfiguration(models.TransientModel):
@@ -24,8 +25,14 @@ class WauSMSConfiguration(models.TransientModel):
     default_sender = fields.Char(
         string="Default sender",
         required=True,
-        size=12,
-        help="Limit to 12 characters")
+        size=15,
+        help="Limit to 15 numbers (only numbers) or 11 alphanumeric "
+             "characters.")
+
+    default_subject = fields.Char(
+        string="Default subject",
+        size=100,
+        help="Limit to 100 characters")
 
     test_phone_number = fields.Char(
         string="Test phone number",
@@ -50,4 +57,13 @@ class WauSMSConfiguration(models.TransientModel):
         values.set_default('wau.sms.configuration',
                            'test_phone_number',
                            self.test_phone_number)
+        values.set_default('wau.sms.configuration',
+                           'default_subject',
+                           self.default_subject)
 
+    @api.constrains('default_sender')
+    def _check_default_sender_size(self):
+        if not self.default_sender.isdigit() and len(self.default_sender) > 11:
+            raise ValidationError(_("Sender size is limited to 15 numbers "
+                                    "(ex. 34XXXXXXXXX) or 11 alphanumeric "
+                                    "characters (ex. company xxx)"))

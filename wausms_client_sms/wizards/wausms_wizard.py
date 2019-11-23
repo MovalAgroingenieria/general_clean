@@ -10,6 +10,7 @@ import json
 import phonenumbers
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
+from datetime import datetime
 
 
 class WauSMSConfirmation(models.Model):
@@ -29,6 +30,11 @@ class WauSMSWizard(models.Model):
     _name = "wausms.wizard"
     _description = "Wizard to send SMS through WauSMS service"
 
+    def _get_default_subject(self):
+        default_subject = self.env['ir.values'].get_default(
+            'wau.sms.configuration', 'default_subject')
+        return default_subject
+
     def _get_default_sender(self):
         default_sender = self.env['ir.values'].get_default(
             'wau.sms.configuration', 'default_sender')
@@ -40,6 +46,12 @@ class WauSMSWizard(models.Model):
         string="Credentials",
         compute="_compute_credentials")
 
+    subject = fields.Char(
+        string="Subject",
+        size=100,
+        default=_get_default_subject,
+        help="Subject description (will be searchable in tracking system)")
+
     phone_number = fields.Char(
         string="Phone number",
         size=15,
@@ -50,11 +62,15 @@ class WauSMSWizard(models.Model):
         string="From",
         size=15,
         required=True,
-        default=_get_default_sender)
+        readonly=True,
+        default=_get_default_sender,
+        help="The sender that will appear in the message.")
 
     sms_message = fields.Text(
         string="Message",
-        size=160)
+        size=160,
+        help="The maximum size is 160 characters. The message will be sent in "
+             "ASCII, so the special characters will not be displayed.")
 
     def _compute_credentials(self):
         # Get config params
@@ -70,7 +86,8 @@ class WauSMSWizard(models.Model):
                 base64.b64encode(service_user + ':' + service_passwd)
 
     def _check_phone_number(self, phone_number):
-        # Check if only digits
+        # Checks
+        phone_number = phone_number.replace(" ", "").strip()
         if phone_number.startswith('+'):
             phone_number = phone_number.strip('+')
         if not phone_number.isdigit():
@@ -98,23 +115,37 @@ class WauSMSWizard(models.Model):
                 'wau.sms.configuration', 'test_phone_number')
             if not test_phone_number:
                 raise ValidationError(_("No test phone number has been set."))
+            # Get default subject
+            default_subject = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'default_subject')
+            # Set active_ids to 0
             active_ids = (0,)
         else:
+            # Get active_ids
             active_ids = context.get('active_ids')
 
         if not active_ids:
-            raise ValidationError(_("There are no parters selected."))
+            raise ValidationError(_("There are no partners selected."))
 
         # Reset variables
         sms_confirmations = ""
         response_messages = ""
 
-        for id in active_ids:
-            if id == 0:
+        for active_id in active_ids:
+            if active_id == 0:
                 phone_number = test_phone_number
+                subject = default_subject
+                if not subject:
+                    subject = ""
             else:
+                # Get subject
+                if self.subject:
+                    subject = self.subject
+                else:
+                    subject = ""
+
                 # Get partner data
-                partner = self.env['res.partner'].browse(id)
+                partner = self.env['res.partner'].browse(active_id)
 
                 # Get mobile number
                 if partner.mobile:
@@ -162,44 +193,90 @@ class WauSMSWizard(models.Model):
 
             # Response codes
             if response.status_code == 202:
-                sms_confirmation = _("Accepted - The message has been "
-                                     "accepted for further processing.")
+                sms_confirmation_info = _("Accepted - The message has been "
+                                          "accepted for further processing.")
+                sms_confirmation = _("Accepted")
             elif response.status_code == 207:
-                sms_confirmation = _("Multi-status - The message has been "
-                                     "accepted for further processing, but "
-                                     "some of the recipients are incorrect.")
+                sms_confirmation_info = _("Multi-status - The message has "
+                                          "been accepted for further "
+                                          "processing, but some of the "
+                                          "recipients are incorrect.")
+                sms_confirmation = _("Multi-status")
             elif response.status_code == 400:
-                sms_confirmation = _("Bad request - The request contains "
-                                     "errors, the message has not been "
-                                     "accepted.")
+                sms_confirmation_info = _("Bad request - The request contains "
+                                          "errors, the message has not been "
+                                          "accepted.")
+                sms_confirmation_info = _("Bad request")
             elif response.status_code == 401:
-                sms_confirmation = _("Unauthorized - Client authentication "
-                                     "failed.\n")
+                sms_confirmation_info = _("Unauthorized - Client "
+                                          "authentication failed.")
+                sms_confirmation = _("Unauthorized")
             elif response.status_code == 402:
-                sms_confirmation = _("Payment required - The client does not "
-                                     "have sufficient balance.")
+                sms_confirmation_info = _("Payment required - The client does "
+                                          "not have sufficient balance.")
+                sms_confirmation = _("Payment required")
             elif response.status_code == 500:
-                sms_confirmation = _("Internal server error - The server had "
-                                     "an internal error.")
+                sms_confirmation_info = _("Internal server error - The server "
+                                          "had an internal error.")
+                sms_confirmation = _("Internal server error")
             else:
-                sms_confirmation = _("Unknown error")
+                sms_confirmation_info = sms_confirmation = _("Unknown error")
 
             # Add sms_confirmation message to sms_confirmations
-            if id == 0:
-                sms_confirmations += sms_confirmation + '\n'
+            if active_id == 0:
+                sms_confirmations += \
+                    sms_confirmation + " -- [" + subject + "]" + '\n'
             else:
                 sms_confirmations += \
-                    sms_confirmation + " [" + partner.name + "]" + '\n'
+                    sms_confirmation + " -- [" + subject + " - " + \
+                    partner.name + "]" + '\n'
 
             # Response message (only shown in debug mode)
             response_message = json.dumps(response.json(), indent=4)
+            response_message_data = json.loads(response.text)[0]
 
             # Add sms_confirmation message to sms_confirmations
-            if id == 0:
-                response_messages += response_message + "\n"
+            if active_id == 0:
+                response_messages += "Subject: " + subject + '\n' \
+                                     "Sender: " + sender + '\n' \
+                                     "To: " + reformated_phone_number + '\n' \
+                                     "Response: " + response_message + '\n'
             else:
-                response_messages += \
-                    partner.name + '\n' + response_message + "\n"
+                response_messages += "Subject: " + subject + '\n' \
+                                     "Sender: " + sender + '\n' \
+                                     "To: " + reformated_phone_number + '\n' \
+                                     "Partner: " + partner.name + '\n' \
+                                     "Confirmation: " + sms_confirmation_info \
+                                     + '\n' \
+                                     "Response: " + '\n' + response_message \
+                                     + '\n'
+
+            # Insert tracking data
+            if active_id == 0:
+                partner_id = ""
+            else:
+                partner_id = partner.id
+
+            wausms_user = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'service_user')
+
+            tracking_data = {
+                "wausms_sms_id": response_message_data["id"],
+                "wausms_url": service_url,
+                "wausms_user": wausms_user,
+                "user_id": self._uid,
+                "sms_time_data": datetime.today(),
+                "credentials": self.credentials,
+                "subject": subject,
+                "partner_id": partner_id,
+                "phone_number": reformated_phone_number,
+                "sender": sender,
+                "sms_message": sms_message,
+                "response_code": response.status_code,
+                "sms_confirmation": sms_confirmation,
+                "sms_confirmation_info": sms_confirmation_info,
+                "response_message": response_message, }
+            self.env['wausms.tracking'].create(tracking_data)
 
         return {
               'name': _("SMS confirmation"),
@@ -213,9 +290,14 @@ class WauSMSWizard(models.Model):
               'target': 'new',
               }
 
+    @api.constrains('sender')
+    def _check_default_sender_size(self):
+        if not self.sender.isdigit() and len(self.sender) > 11:
+            raise ValidationError(_("Sender size is limited to 15 numbers or "
+                                    "11 alphanumeric characters"))
+
     @api.constrains('sms_message')
     def _check_sms_message_size(self):
         if len(self.sms_message) > 160:
             raise ValidationError(_("Number of characters must not exceed "
                                     "160"))
-

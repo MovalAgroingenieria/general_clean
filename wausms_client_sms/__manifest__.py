@@ -13,9 +13,12 @@
         "base",
     ],
     "data": [
+        "security/security.xml",
         "security/ir.model.access.csv",
+        "views/res_partner_view.xml",
         "views/wausms_config_settings_view.xml",
         "views/wausms_view.xml",
+        "views/wausms_tracking_view.xml",
         "wizards/wausms_wizard_view.xml",
     ],
     'external_dependencies': {

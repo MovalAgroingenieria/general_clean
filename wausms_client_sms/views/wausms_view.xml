@@ -18,12 +18,13 @@
         name="Send SMS"
         res_model="wausms.wizard"
         src_model="res.partner"
-        key2="client_action_multi" 
+        key2="client_action_multi"
         view_mode="form"
-        target="new"/>
+        target="new"
+        groups="wausms_client_sms.group_send_wausms_sms"/>
 
     <!-- Menuentry -->
     <menuitem name="Test SMS" id="wausms_sms_test_menu" parent="wausms_root_menu"
-        action="action_wausms_test_wizard" />
+        action="action_wausms_test_wizard"/>
 
 </odoo>

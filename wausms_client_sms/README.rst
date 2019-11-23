@@ -8,18 +8,27 @@ WauSMS client SMS
 
 Description
 ===========
-Send SMS message to one or several partners using WauSMS services.
+Send SMS message to one or several partners using WauSMS services and keep a
+record of the SMS sent.
 
 Configuration
 =============
 In Configuration/Technical/WauSMS/Configuration set the WauSMS parameters:
 
-* URL
+* URL (usually https://dashboard.wausms.com/Api/rest/message)
 * username
 * password
 
-The default sender is also mandatory, although it can be changed on the flight.
+The default sender is also mandatory.
 The mobile test phone is only necessary for sending SMS test.
+The default subject is optional.
+
+Set permission
+--------------
+
+By default everybody can see the SMS sent to particular partner, but in order to be able
+to send SMS message the checkbox in Technical Settings/Can send SMS has to be marked for
+each user that needs to send SMS messages.
 
 Credits
 =======
