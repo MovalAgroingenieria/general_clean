@@ -75,9 +75,9 @@ class WauSMSWizard(models.Model):
     def _compute_credentials(self):
         # Get config params
         service_user = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'service_user')
+            'wau.sms.configuration', 'service_user')
         service_passwd = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'service_passwd')
+            'wau.sms.configuration', 'service_passwd')
 
         if not service_user or not service_passwd:
             raise ValidationError(_("User or password not set."))
@@ -96,10 +96,10 @@ class WauSMSWizard(models.Model):
 
         # Reformat phone number to E.164
         reformated_phone_number = phonenumbers.format_number(
-                phonenumbers.parse(phone_number, "ES"),
-                phonenumbers.PhoneNumberFormat.E164)
-        if not carrier._is_mobile(number_type(
-               phonenumbers.parse(reformated_phone_number, "ES"))):
+            phonenumbers.parse(phone_number, "ES"),
+            phonenumbers.PhoneNumberFormat.E164)
+        if (not carrier._is_mobile(
+           number_type(phonenumbers.parse(reformated_phone_number, "ES")))):
             raise ValidationError(_("Error in phone number, or is not a "
                                     "mobile, or is not Spanish or does not "
                                     "have the correct format."))
@@ -174,7 +174,7 @@ class WauSMSWizard(models.Model):
 
             # Get URL from cofig parm
             service_url = self.env['ir.values'].get_default(
-                    'wau.sms.configuration', 'service_url')
+                'wau.sms.configuration', 'service_url')
 
             # Header
             headers = {
@@ -279,16 +279,17 @@ class WauSMSWizard(models.Model):
             self.env['wausms.tracking'].create(tracking_data)
 
         return {
-              'name': _("SMS confirmation"),
-              'view_type': 'form',
-              "view_mode": 'form',
-              'res_model': 'wausms.confirmation',
-              'type': 'ir.actions.act_window',
-              'context': {'default_response_code': '%s' % sms_confirmations,
-                          'default_response_message': '%s' % response_messages
-                          },
-              'target': 'new',
-              }
+            'name': _("SMS confirmation"),
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'wausms.confirmation',
+            'type': 'ir.actions.act_window',
+            'context': {
+                'default_response_code': '%s' % sms_confirmations,
+                'default_response_message': '%s' % response_messages
+                },
+            'target': 'new',
+            }
 
     @api.constrains('sender')
     def _check_default_sender_size(self):
