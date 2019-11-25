@@ -224,7 +224,7 @@ class BankPaymentLine(models.Model):
 class AccountPaymentOrder(models.Model):
     _inherit = 'account.payment.order'
 
-    ENCODING_NAME = 'utf-8'
+    ENCODING_NAME = 'ascii'
     ENCODING_TYPE = 'replace'
 
     def _get_entity_config_suma(self):
@@ -464,9 +464,9 @@ class AccountPaymentOrder(models.Model):
         today_date = datetime.today()
         charge_year = str(today_date.year)
 
-        # Province INE code - Position [006-007] Length 2
+        # Alicante province INE code - Position [006-007] Length 2
         # @INFO: It's always the same 03=Alicante
-        province_ine_code = "03"
+        alicante_province_ine_code = "03"
 
         # Entity code - Position [008-010] Length 3
         if self.entity == 'Unconfigured':
@@ -852,6 +852,7 @@ class AccountPaymentOrder(models.Model):
                               "for partner %s is not valid." %
                               (entry_num_padded, taxpayer_vat,
                                line.partner_id.name)))
+                taxpayer_vat = str(taxpayer_vat).ljust(10)
             else:
                 if self.error_mode == 'permissive':
                     error_num += 1
@@ -859,7 +860,7 @@ class AccountPaymentOrder(models.Model):
                         _("The entry number %s has failed, vat not found "
                           "for partner %s." % (entry_num_padded,
                                                line.partner_id.name)) + '\n'
-                    taxpayer_vat = str(" " * 9)
+                    taxpayer_vat = str(" " * 10)
                 else:
                     raise ValidationError(
                         _("The entry number %s has failed, vat not found "
@@ -981,8 +982,8 @@ class AccountPaymentOrder(models.Model):
             _log.info('BANK LINE FIELD Charge year       (length %s [004]): %s'
                       % (str(len(charge_year)).zfill(3), charge_year))
             _log.info('BANK LINE FIELD Province code     (length %s [002]): %s'
-                      % (str(len(province_ine_code)).zfill(3),
-                         province_ine_code))
+                      % (str(len(alicante_province_ine_code)).zfill(3),
+                         alicante_province_ine_code))
             _log.info('BANK LINE FIELD Entity code       (length %s [003]): %s'
                       % (str(len(entity_code)).zfill(3), entity_code))
             _log.info('BANK LINE FIELD Concept code      (length %s [002]): %s'
@@ -1062,7 +1063,8 @@ class AccountPaymentOrder(models.Model):
                       % (str(len(blank_space2)).zfill(3), blank_space2))
 
             # Construct bank line
-            bank_line = charge_type + charge_year + province_ine_code + \
+            bank_line = charge_type + charge_year + \
+                alicante_province_ine_code + \
                 entity_code + concept_code + charge_issuance + \
                 entity_type_code + value_type + entry_num_padded + \
                 internal_ref + taxpayer_type + taxpayer_name_padded + \
@@ -1135,7 +1137,7 @@ class AccountPaymentOrder(models.Model):
         # Static fields
         # Province code - Position [081-082] Length 2
         # @INFO: It's always the same 03=Alicante
-        province_ine_code = "03"
+        alicante_province_ine_code = "03"
 
         # Entity code - Positions [083-085] Length 3
         if self.entity == 'Unconfigured':
@@ -1316,8 +1318,8 @@ class AccountPaymentOrder(models.Model):
                       % (str(len(taxpayer_name_padded)).zfill(3),
                          taxpayer_name_padded))
             _log.info('DB LINE FIELD Province INE code   (length %s [002]): %s'
-                      % (str(len(province_ine_code)).zfill(3),
-                         province_ine_code))
+                      % (str(len(alicante_province_ine_code)).zfill(3),
+                         alicante_province_ine_code))
             _log.info('DB LINE FIELD Entity code         (length %s [003]): %s'
                       % (str(len(entity_code)).zfill(3), entity_code))
             _log.info('DB LINE FIELD Concept code        (length %s [002]): %s'
@@ -1337,7 +1339,7 @@ class AccountPaymentOrder(models.Model):
             # Construct direct debit line
             db_line = ccc_bank_entity_code + ccc_bank_office_code + \
                 ccc_control_digits + ccc_account_num + taxpayer_name_padded + \
-                province_ine_code + entity_code + concept_code + \
+                alicante_province_ine_code + entity_code + concept_code + \
                 charge_issuance + entry_num_padded + internal_ref + \
                 iban_num + iban_bic + '\r\n'
 
