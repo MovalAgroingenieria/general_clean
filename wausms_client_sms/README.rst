@@ -20,7 +20,9 @@ In Configuration/Technical/WauSMS/Configuration set the WauSMS parameters:
 * password
 
 The default sender is also mandatory.
+
 The mobile test phone is only necessary for sending SMS test.
+
 The default subject is optional.
 
 Set permission
@@ -28,7 +30,7 @@ Set permission
 
 By default everybody can see the SMS sent to particular partner, but in order to be able
 to send SMS message the checkbox in Technical Settings/Can send SMS has to be marked for
-each user that needs to send SMS messages.
+each user that needs to send SMS messages. Admin user is added to this group by default.
 
 Credits
 =======
