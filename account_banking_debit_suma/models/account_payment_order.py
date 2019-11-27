@@ -224,7 +224,7 @@ class BankPaymentLine(models.Model):
 class AccountPaymentOrder(models.Model):
     _inherit = 'account.payment.order'
 
-    ENCODING_NAME = 'ascii'
+    ENCODING_NAME = '8859'
     ENCODING_TYPE = 'replace'
 
     def _get_entity_config_suma(self):
