@@ -692,7 +692,7 @@ class AccountPaymentOrder(models.Model):
                 # County code - Position [135-137] Length 3
                 # @INFO: The last 3 zip numbers
                 if line.partner_id.zip:
-                    county_code = line.partner_id.zip[:3]
+                    county_code = line.partner_id.zip[2:]
                 else:
                     if self.error_mode == 'permissive':
                         error_num += 1
