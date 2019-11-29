@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-29 12:32+0000\n"
-"PO-Revision-Date: 2019-11-29 12:32+0000\n"
+"POT-Creation-Date: 2019-11-29 12:42+0000\n"
+"PO-Revision-Date: 2019-11-29 12:42+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "01"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "01 (volunteer)"
-msgstr "01 (voluntario)"
+msgstr "01 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -35,7 +35,7 @@ msgstr "02"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "02 (volunteer)"
-msgstr "02 (voluntario)"
+msgstr "02 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -46,7 +46,7 @@ msgstr "03"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "03 (volunteer)"
-msgstr "03 (voluntario)"
+msgstr "03 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -57,7 +57,7 @@ msgstr "04"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "04 (volunteer)"
-msgstr "04 (voluntario)"
+msgstr "04 (voluntarir)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -68,7 +68,7 @@ msgstr "05"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "05 (volunteer)"
-msgstr "05 (voluntario)"
+msgstr "05 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -79,7 +79,7 @@ msgstr "06"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "06 (volunteer)"
-msgstr "06 (voluntario)"
+msgstr "06 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -90,7 +90,7 @@ msgstr "07"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "07 (volunteer)"
-msgstr "07 (voluntario)"
+msgstr "07 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -101,7 +101,7 @@ msgstr "08"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "08 (volunteer)"
-msgstr "08 (voluntario)"
+msgstr "08 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -112,7 +112,7 @@ msgstr "09"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "09 (volunteer)"
-msgstr "09 (voluntario)"
+msgstr "09 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -123,7 +123,7 @@ msgstr "10"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "10 (volunteer)"
-msgstr "10 (voluntario)"
+msgstr "10 (voluntari)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -134,7 +134,7 @@ msgstr "11"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "11 (executive)"
-msgstr "11 (ejecutivo)"
+msgstr "11 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
@@ -145,47 +145,47 @@ msgstr "12"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "12 (executive)"
-msgstr "12 (ejecutivo)"
+msgstr "12 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "13 (executive)"
-msgstr "13 (ejecutivo)"
+msgstr "13 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "14 (executive)"
-msgstr "14 (ejecutivo)"
+msgstr "14 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "15 (executive)"
-msgstr "15 (ejecutivo)"
+msgstr "15 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "16 (executive)"
-msgstr "16 (ejecutivo)"
+msgstr "16 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "17 (executive)"
-msgstr "17 (ejecutivo)"
+msgstr "17 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "18 (executive)"
-msgstr "18 (ejecutivo)"
+msgstr "18 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "19 (executive)"
-msgstr "19 (ejecutivo)"
+msgstr "19 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "20 (executive)"
-msgstr "20 (ejecutivo)"
+msgstr "20 (executiu)"
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
@@ -1055,42 +1055,42 @@ msgstr "364 - Villena - C. Gral. del Alto Vinalopó de Villena"
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong><u>DOCUMENTO DE ENTREGA DE PADRÓN EN SOPORTE MAGNÉTICO</u></strong>"
-msgstr "<strong><u>DOCUMENTO DE ENTREGA DE PADRÓN EN SOPORTE MAGNÉTICO</u></strong>"
+msgstr "<strong><u>DOCUMENT DE LLIURAMENT DE PADRÓ EN SUPORT MAGNÈTIC</u></strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>COMUNIDAD DE REGANTES DE </strong>"
-msgstr "<strong>COMUNIDAD DE REGANTES DE </strong>"
+msgstr "<strong>COMUNITAT DE REGANTS DE </strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>DESCRIPCIÓN DEL CONCEPTO:</strong>"
-msgstr "<strong>DESCRIPCIÓN DEL CONCEPTO:</strong>"
+msgstr "<strong>DESCRIPCIÓ DEL CONCEPTE:</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>DESGLOSE POR SUBCONCEPTOS (TIPO 2):</strong>"
-msgstr "<strong>DESGLOSE POR SUBCONCEPTOS (TIPO 2):</strong>"
+msgstr "<strong>DESGLOSSAMENT PER SUBCONCEPTOS (TIPUS 2):</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>Nº TOTAL DE VALORES:</strong>"
-msgstr "<strong>Nº TOTAL DE VALORES:</strong>"
+msgstr "<strong>Nº TOTAL DE VALORS:</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>OBSERVACIONES:</strong>"
-msgstr "<strong>OBSERVACIONES:</strong>"
+msgstr "<strong>OBSERVACIONS:</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>PERIODO IMPOSITIVO / AÑO:</strong>"
-msgstr "<strong>PERIODO IMPOSITIVO / AÑO:</strong>"
+msgstr "<strong>PERÍODE IMPOSITIVO / ANY:</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>TOTAL IMPORTE:</strong>"
-msgstr "<strong>TOTAL IMPORTE:</strong>"
+msgstr "<strong>TOTAL IMPORT:</strong>"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
@@ -1100,23 +1100,23 @@ msgstr "<strong>de</strong>"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "ANNUAL"
-msgstr "ANUAL"
+msgstr "ANNUAL"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "AO - WATER CONSUMPTION IRRIGATION AND DRIP"
-msgstr "AO - CONSUMO AGUA DE RIEGO Y GOTEO"
+msgstr "AO - CONSUM AIGUA DE REG I DEGOTEIG"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "AP - DRINKING WATERS"
-msgstr "AP - AGUAS POTABLES"
+msgstr "AP - AIGÜES POTABLES"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1025
 #, python-format
 msgid "Amount: "
-msgstr "Importe: "
+msgstr "Import: "
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
@@ -1131,113 +1131,113 @@ msgstr "BIMESTRAL"
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_bank_payment_line
 msgid "Bank Payment Lines"
-msgstr "Líneas de pago bancario"
+msgstr "Línies de pagament bancari"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_issuance
 msgid "Charge issuance"
-msgstr "Emisión cargo"
+msgstr "Emissió càrrec"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:444
 #, python-format
 msgid "Charge issuance for executive period has to be greater than 10."
-msgstr "La emisión de cargo en período ejecutivo debe ser superior a 10."
+msgstr "L'emissió de càrrec en període executiu ha de ser superior a 10."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:436
 #, python-format
 msgid "Charge issuance for volunteer period has to be less than 10."
-msgstr "La emisión de cargo en período voluntario debe ser inferior a 10."
+msgstr "L'emissió de càrrec en període voluntari ha de ser inferior a 10."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_type
 msgid "Charge type"
-msgstr "Tipo de cargo"
+msgstr "Tipus de càrrec"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_year
 msgid "Charge year"
-msgstr "Año cargo"
+msgstr "Any càrrec"
 
 #. module: account_banking_debit_suma
 #: model:ir.actions.act_window,name:account_banking_debit_suma.action_ine_codes_tree
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_tree
 msgid "Cities INE Codes"
-msgstr "Códigos ciudades INE"
+msgstr "Cities INE Codes"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name
 msgid "City"
-msgstr "Ciudad"
+msgstr "Ciutat"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_form
 msgid "City INE Codes"
-msgstr "Códigos cuidad INE"
+msgstr "Codis ciutats INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_city
 msgid "City INE code"
-msgstr "Código ciudad INE"
+msgstr "Codi ciutats INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka
 msgid "City alternative name"
-msgstr "Nombre alternavito ciudad"
+msgstr "Nom alternatiu ciutat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka_simplified
 msgid "City alternative name simplified"
-msgstr "Nombre alternavito ciudad simplificado"
+msgstr "Nom alternatiu ciutat simplificat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered
 msgid "City reordered name"
-msgstr "Nombre de ciudad reordenado"
+msgstr "Nom de ciutat reordenat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered_simplified
 msgid "City reordered name simplified"
-msgstr "Nombre de ciudad reordenado simplificado"
+msgstr "Nom de ciutat reordenat simplificat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_simplified
 msgid "City simplified"
-msgstr "Ciudad simplificada"
+msgstr "Ciutat simplificat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_res_ine_codes
 msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
-msgstr "Códigos INE para ciudades"
+msgstr "Codis per a ciutats de l'INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept"
-msgstr "Concepto"
+msgstr "Concepte"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept by which the settlement or receipt is made.\n"
 "It will be applied to all transactions"
-msgstr "Concepto por el cual se realiza la liquidación o recibo.\n"
-"Se aplicará a todas las transacciones"
+msgstr "Concepte pel qual es realitza la liquidació o rebut.\n"
+"S'aplicarà a totes les transaccions"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept_description
 msgid "Concept description"
-msgstr "Descripción concepto"
+msgstr "Descripció concepte"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creat per"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creat el"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_currency_id
@@ -1247,117 +1247,117 @@ msgstr "Moneda"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D1 - FEES AND SPILLS"
-msgstr "D1 - CUOTAS Y DERRAMAS"
+msgstr "D1 - QUOTES I VESSES"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D2 - MAINTENANCE SPILLS"
-msgstr "D2 - DERRAMAS DE MANTENIMIENTO"
+msgstr "D2 - VESSES DE MANTENIMENT"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D3 - JUCARVINALOPO TRASVASE SPILL"
-msgstr "D3 - DERRAMA TRASVASE JUCARVINALOPO"
+msgstr "D3 - VESSA TRANSVASAMENT XÚQUER-VINALOPÓ"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D4 - MODERNIZATION FEES IRRIGATIONS"
-msgstr "D4 - CUOTAS MODERNIZACIÓN REGADÍOS"
+msgstr "D4 - QUOTES MODERNITZACIÓ REGADIUS"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D5 - IRRIGATIONS MADE BY PARTICIPANTS"
-msgstr "D5 - RIEGOS REALIZADOS PARTÍCIPES"
+msgstr "D5 - REGS REALITZATS PARTÍCIPS"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D6 - SERVICES PROVIDED BY PARTICIPANTS"
-msgstr "D6 - SERVICIOS PRESTADOS PARTÍCIPES"
+msgstr "D6 - SERVEIS PRESTATS PARTÍCIPS"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D7 - FEES MAINTENANCE ACUEDUCTSS"
-msgstr "D7 - CUOTAS MANT. ACUEDUCTOS"
+msgstr "D7 - QUOTES MANT. AQÜEDUCTES"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1445
 #, python-format
 msgid "Direct Debit File"
-msgstr "Archivo de domiciliaciones"
+msgstr "Arxiu de domiciliacions"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Nom mostrat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity
 msgid "Entity"
-msgstr "Entidad"
+msgstr "Entitat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_config_settings_entity_code
 msgid "Entity Code"
-msgstr "Código entidad"
+msgstr "Codi entitat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity_type_code
 msgid "Entity type"
-msgstr "Tipo entidad"
+msgstr "Typus entitat"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1183
 #, python-format
 msgid "Entity type code not set"
-msgstr "El código del tipo de entidad no ha sido establecido."
+msgstr "El codi de el tipus d'entitat no ha estat establert."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_error_mode
 msgid "Error mode"
-msgstr "Modo error"
+msgstr "Mode error"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_errors_found
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Errors"
-msgstr "Errores"
+msgstr "Errors"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1420
 #, python-format
 msgid "Errors in direct debit file "
-msgstr "Errores en el archivo de domiciliaciones "
+msgstr "Errors a l'arxiu de domiciliacions "
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1162
 #, python-format
 msgid "Errors in payment file "
-msgstr "Errores en el archivo de pago "
+msgstr "Errors a l'arxiu de pagament "
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_type:0
 msgid "Executive"
-msgstr "Ejecutivo"
+msgstr "Executiu"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "FOUR-MONTHLY"
-msgstr "CUATRIMESTRAL"
+msgstr "QUADRIMESTRAL"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_final_period
 msgid "Final period"
-msgstr "Periodo final"
+msgstr "Període final"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Generate Direct Debit file"
-msgstr "Generar archivo domiciliaciones"
+msgstr "Crear fitxer domiciliacions"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr "Agrupar per"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_id
@@ -1367,22 +1367,22 @@ msgstr "ID"
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "IMPORTE"
-msgstr "IMPORTE"
+msgstr "IMPORT"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_root_menu
 msgid "INE Codes Management"
-msgstr "Gestión códigos INE"
+msgstr "Gestió codis INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "Indicates whether this payment has already been added to an SUMA payment file"
-msgstr "Indica si este pago ya se ha agregado a un archivo de pago SUMA"
+msgstr "Indica si aquest pagament ja s'ha afegit a un arxiu de pagament SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "Initial period"
-msgstr "Periodo inicial"
+msgstr "Període inicial"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1024
@@ -1393,22 +1393,22 @@ msgstr "Nº factura: "
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Darrera modificació el"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Darrera Actualització per"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Darrera Actualització el"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "MJ - IRRIGATION PENALTIES AND SANCTIONS"
-msgstr "MJ - MULTAS Y SANCIONES DE RIEGO"
+msgstr "MJ - MULTES I SANCIONS DE REG"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
@@ -1418,38 +1418,38 @@ msgstr "MENSUAL"
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "NUMBER OF QUARTERS"
-msgstr "NÚMERO DE TRIMESTRE"
+msgstr "NOMBRE DE TRIMESTRE"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1019
 #, python-format
 msgid "Not found"
-msgstr "No encontrado"
+msgstr "No trobatd"
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_payment_order
 msgid "Payment Order"
-msgstr "Orden de pago"
+msgstr "Ordre de pagament"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_payment_mode_name
 msgid "Payment mode name"
-msgstr "Nombre del modo de pago"
+msgstr "Nom de la manera de pagament"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_type
 msgid "Period in which debts should be managed"
-msgstr "Período en el cual las deudas deben ser gestionadas"
+msgstr "Període en el qual els deutes han de ser gestionades"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Periodicity"
-msgstr "Periodicidad"
+msgstr "Periodicitat"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
 msgid "Permissive"
-msgstr "Permisivo"
+msgstr "Permissiu"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
@@ -1459,12 +1459,12 @@ msgstr "Imprimir informe SUMA"
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "Province"
-msgstr "Provincia"
+msgstr "Província"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_province
 msgid "Province INE code"
-msgstr "Código provincia INE"
+msgstr "Codi INE de província"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
@@ -1479,7 +1479,7 @@ msgstr "SIGLA"
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "SUBCONCEPTO"
-msgstr "SUBCONCEPTO"
+msgstr "SUBCONCEPTE"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_payment_line_search
@@ -1489,27 +1489,27 @@ msgstr "SUMA"
 #. module: account_banking_debit_suma
 #: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_menu
 msgid "SUMA INE codes"
-msgstr "Códigos SUMA INE"
+msgstr "Codis SUMA INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "SUMA done"
-msgstr "Hecho por SUMA"
+msgstr "Fet per SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "SUMA options"
-msgstr "Opciones SUMA"
+msgstr "Opcions SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "SUMA reference"
-msgstr "Referecia SUMA"
+msgstr "Referència SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_total_amount
 msgid "SUMA total amount"
-msgstr "Importe total SUMA"
+msgstr "Import total SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.actions.report.xml,name:account_banking_debit_suma.action_suma_resume_report
@@ -1519,68 +1519,68 @@ msgstr "informe_SUMA"
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "State"
-msgstr "Estado"
+msgstr "Estat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_state
 msgid "State INE code"
-msgstr "Código Comunidad Autónoma INE"
+msgstr "Codi Comunitat Autònoma INE"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
 msgid "Strict"
-msgstr "Estricto"
+msgstr "Estricte"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_error_mode
 msgid "Strict mode does not allow errors. The permissive mode allows but they are collected in the 'Errors' tab.' This applies to both payment file and direct debit file"
-msgstr "El modo estricto no permite errores, el modo permisivo permite errores, pero se recopilan en la pestaña 'Errores'. Afecta tanto al archivo de pago como al de domiciliaciones"
+msgstr "La manera estricte no permet errors, la manera permissiu permet errors, però es recopilen a la pestanya 'Errors'. Afecta tant a l'arxiu de pagament com a el de domiciliacions"
 
 #. module: account_banking_debit_suma
 #: model:account.payment.method,name:account_banking_debit_suma.payment_method_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_config_settings_suma_view
 msgid "Tax management. Alicante County Council (SUMA)"
-msgstr "Gestión Tributaria. Diputación de Alicante (SUMA)"
+msgstr "Gestió Tributària. Diputació d'Alacant (SUMA)"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:460
 #, python-format
 msgid "The biannual periodicity only accepts the values 01 and 02, in both the initial and the final period."
-msgstr "La periodicidad semestral solo acepta los valores 01 y 02, tanto en el período inicial como en el final."
+msgstr "La periodicitat semestral només accepta els valors 01 i 02, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:487
 #, python-format
 msgid "The bimonthly periodicity only accepts the values 01 to 06, in both the initial and the final period."
-msgstr "La periodicidad bimestral solo acepta los valores 01 a 06, tanto en el período inicial como en el final."
+msgstr "La periodicitat bimestral només accepta els valors 01 a 06, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:539
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1208
 #, python-format
 msgid "The entity has not been configured. Set it in Accounting/Settings."
-msgstr "La entidad no ha sido configurada. Configúrela en Contabilidad/Configuración."
+msgstr "L'entitat no ha estat configurada. Configureu a Comptabilitat / Configuració."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1352
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1357
 #, python-format
 msgid "The entry number %s has failed, bank BIC not found. For foreign IBANs the BIC is mandatory."
-msgstr "El número de entrada %s ha fallado, BIC no encontrado. Para los IBANs extranjeros, el BIC es obligatorio."
+msgstr "El nombre d'entrada %s ha fallat, BIC no trobat. Per als IBANs estrangers, el BIC és obligatori."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:864
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:871
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
-msgstr "El número de entrada %s ha fallado, ciudad no encontrada para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, ciutat no trobada per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1331
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1336
 #, python-format
 msgid "The entry number %s has failed, suma reference not found."
-msgstr "El número de entrada %s ha fallado, no se ha encontrado la referencia SUMA."
+msgstr "El nombre d'entrada %s ha fallat, no s'ha trobat la referència SUMA."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:845
@@ -1588,7 +1588,7 @@ msgstr "El número de entrada %s ha fallado, no se ha encontrado la referencia S
 #, python-format
 msgid "The entry number %s has failed, taxpayer ine city code not found for city %s.\n"
 "Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
-msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE para ciudad %s. A veces esto se produce porque el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, etc.) o porque se ha indicado el nombre de una pedanía."
+msgstr "L'entrada númer %s ha fallat, no s'ha trobat el codi INE per ciutat %s. De vegades això es produeix perquè el nom de la ciutat no està ben escrit (primera lletra majúscula, accents, guions, etc.) o perquè s'ha indicat el nom d'una pedania."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:697
@@ -1597,35 +1597,35 @@ msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE par
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1313
 #, python-format
 msgid "The entry number %s has failed, taxpayer name not found."
-msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, nom no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:727
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:734
 #, python-format
 msgid "The entry number %s has failed, taxpayer street not found for partner %s"
-msgstr "El número de entrada %s ha fallado, calle no encontrada para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, carrer no trobada per al soci / empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:765
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:772
 #, python-format
 msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
-msgstr "El número de entrada %s ha fallado, código postal (C.P.) no encontrado para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, codi postal (C.P.) no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:882
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:888
 #, python-format
 msgid "The entry number %s has failed, the address type %s is not supported."
-msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de dirección %s."
+msgstr "El nombre d'entrada %s ha fallat, el programa no suporta el tipus de direcció %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:631
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:636
 #, python-format
 msgid "The entry number %s has failed, the bank line %s seems that it has already been sent through SUMA"
-msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya fue enviada a través de SUMA."
+msgstr "El nombre d'entrada %s ha fallat, sembla que la línia bancària %s ja va ser enviada a través de SUMA."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:685
@@ -1634,148 +1634,148 @@ msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1300
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
-msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, nom no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:952
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:958
 #, python-format
 msgid "The entry number %s has failed, the format type %s is not supported."
-msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de formato %s."
+msgstr "El nombre d'entrada %s ha fallat, el programa no suporta el tipus de format %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1279
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1285
 #, python-format
 msgid "The entry number %s has failed, the lastname for partner %s not found."
-msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, cognom no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:671
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:676
 #, python-format
 msgid "The entry number %s has failed, the lastnamefor partner %s not found."
-msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio %s."
+msgstr "El nombre d'entrada %s ha fallat, cognom no trobat per al soci %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:969
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:976
 #, python-format
 msgid "The entry number %s has failed, the partner id not found for partner %s."
-msgstr "El número de entrada %s ha fallado, no se ha encontrado el ID para el socio %s."
+msgstr "El nombre d'entrada %s ha fallat, no s'ha trobat l'ID per al soci %s."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:909
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:916
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
-msgstr "El número de entrada %s ha fallado, el NIF %s para el socio/empresa %s no es válido."
+msgstr "El nombre d'entrada %s ha fallat, el NIF %s per al soci/empresa %s no és vàlid."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:924
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:930
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
-msgstr "El número de entrada %s ha fallado, NIF no encontrado para el socio/empresa %s."
+msgstr "El nombre d'entrada %s ha fallat, NIF no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_final_period
 msgid "The final period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "El período final depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
-"Vacío si la periodicidad es anual."
+msgstr "El període final depèn de la periodicitat. Per exemple, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
+"Buit si la periodicitat és anual."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:496
 #, python-format
 msgid "The four-monthly periodicity only accepts the values 01 to 03, in both the initial and the final period."
-msgstr "La periodicidad cuatrimestral solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
+msgstr "La periodicitat quadrimestral només accepta els valors 01 a 03, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "The initial period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "El período inicial depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
-"Vacío si la periodicidad es anual."
+msgstr "El període inicial depèn de la periodicitat. Per exemple, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
+"Buit si la periodicitat és anual."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:478
 #, python-format
 msgid "The monthly periodicity only accepts the values 01 to 12, in both the initial and the final period."
-msgstr "La periodicidad mensual solo acepta los valores 01 a 12, tanto en el período inicial como en el final."
+msgstr "La periodicitat mensual només accepta els valors 01 a 12, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:504
 #, python-format
 msgid "The number of quarters only accepts the values 01 to  03, in both the initial and the final period."
-msgstr "El número de cuatrimestres solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
+msgstr "El nombre de quadrimestres només accepta els valors 01 a 03, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:469
 #, python-format
 msgid "The quarterly periodicity only accepts the values 01 to 04, in both the initial and the final period."
-msgstr "La periodicidad trimestral solo acepta los valores 01 a 04, tanto en el período inicial como en el final."
+msgstr "La periodicitat trimestral només accepta els valors 01 a 04, tant en el període inicial com en el final."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_entity_type_code
 msgid "The type of entity"
-msgstr "El tipo de entidad."
+msgstr "El tipus d'entitat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_year
 msgid "The year in which the charge is charged"
-msgstr "El año en que se cobra el cargo"
+msgstr "L'any en què es cobra el càrrec"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_config_settings_entity_code
 msgid "This code identifies the entity that sends the delegated charge to SUMA"
-msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA"
+msgstr "Aquest codi identifica l'entitat que envia el càrrec delegat a SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_entity
 msgid "This code identifies the entity that sends the delegated charge to SUMA.\n"
 "This parameter is set in the accounting configuration"
-msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA.\n"
-"Este parámetro se establece en la configuración de Contabilidad"
+msgstr "Aquest codi identifica l'entitat que envia el càrrec delegat a SUMA.\n"
+"Aquest paràmetre s'estableix en la configuració de Comptabilitat"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "This number indicates the payment reference if it has been made by SUMA"
-msgstr "Este número indica la referencia de pago si ha sido realizado por SUMA"
+msgstr "Aquest número indica la referència de pagament si ha estat realitzat per SUMA"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
 msgid "Town hall"
-msgstr "Ayuntamiento"
+msgstr "Ajuntament"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Type of period settled.\n"
 "It will be applied to all transactions"
-msgstr "Tipo de período liquidado.\n"
-"Se aplicará a todas las transacciones."
+msgstr "Tipus de període liquidat.\n"
+"S'aplicarà a totes les transaccions"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_issuance
 msgid "Used to differentiate charges in the same year\n"
 "The numbering will be correlative within the same year"
-msgstr "Se usa para diferenciar cargos en el mismo año\n"
-"La numeración será correlativa dentro del mismo año"
+msgstr "S'usa per diferenciar càrrecs en el mateix any\n"
+"La numeració serà correlativa dins de el mateix any"
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "VALORES"
-msgstr "VALORES"
+msgstr "VALORS"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_type:0
 msgid "Volunteer"
-msgstr "Voluntario"
+msgstr "Voluntari"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
 msgid "Water user assotiation"
-msgstr "Comunidad de regantes"
+msgstr "Comunitat de regants"
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_config_settings
@@ -1785,5 +1785,5 @@ msgstr "account.config.settings"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_filename
 msgid "suma filename"
-msgstr "Nombre de archivo SUMA"
+msgstr "Nom d'arxiu SUMA"
 

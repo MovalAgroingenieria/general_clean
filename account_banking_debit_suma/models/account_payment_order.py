@@ -276,6 +276,22 @@ class AccountPaymentOrder(models.Model):
         string="Entity type",
         help="The type of entity")
 
+    charge_year = fields.Selection([
+        ('2019', '2019'),
+        ('2020', '2020'),
+        ('2021', '2021'),
+        ('2022', '2022'),
+        ('2023', '2023'),
+        ('2024', '2024'),
+        ('2025', '2025'),
+        ('2026', '2026'),
+        ('2027', '2027'),
+        ('2028', '2028'),
+        ('2029', '2029')],
+        string="Charge year",
+        help="The year in which the charge is charged",
+        default="2019")
+
     concept = fields.Selection([
         ('AO', 'AO - WATER CONSUMPTION IRRIGATION AND DRIP'),
         ('AP', 'AP - DRINKING WATERS'),
@@ -296,6 +312,32 @@ class AccountPaymentOrder(models.Model):
         string="Concept description",
         compute="_compute_concept_description",
         readonly=True)
+
+    charge_issuance = fields.Selection([
+        ('01', '01 (volunteer)'),
+        ('02', '02 (volunteer)'),
+        ('03', '03 (volunteer)'),
+        ('04', '04 (volunteer)'),
+        ('05', '05 (volunteer)'),
+        ('06', '06 (volunteer)'),
+        ('07', '07 (volunteer)'),
+        ('08', '08 (volunteer)'),
+        ('09', '09 (volunteer)'),
+        ('10', '10 (volunteer)'),
+        ('11', '11 (executive)'),
+        ('12', '12 (executive)'),
+        ('13', '13 (executive)'),
+        ('14', '14 (executive)'),
+        ('15', '15 (executive)'),
+        ('16', '16 (executive)'),
+        ('17', '17 (executive)'),
+        ('18', '18 (executive)'),
+        ('19', '19 (executive)'),
+        ('20', '20 (executive)')],
+        string="Charge issuance",
+        default="01",
+        help="Used to differentiate charges in the same year\n"
+             "The numbering will be correlative within the same year")
 
     periodicity = fields.Selection([
         ('A', 'ANNUAL'),
@@ -359,7 +401,8 @@ class AccountPaymentOrder(models.Model):
     @api.depends('payment_mode_id')
     def _compute_payment_mode_name(self):
         # @INFO: payment mode name SUMA (mandatory)
-        self.payment_mode_name = self.payment_mode_id.name
+        for record in self:
+            record.payment_mode_name = record.payment_mode_id.name
 
     # On change payment mode force date_prefered
     @api.onchange('payment_mode_name')
@@ -370,13 +413,38 @@ class AccountPaymentOrder(models.Model):
     # Set entity
     @api.depends('payment_mode_name')
     def _compute_entity(self):
-        self.entity = self._get_entity_config_suma()
+        for record in self:
+            record.entity = record._get_entity_config_suma()
 
     @api.depends('payment_mode_name', 'concept')
     def _compute_concept_description(self):
-        concept_desc = dict(self.env['account.payment.order'].fields_get(
-                allfields=['concept'])['concept']['selection'])[self.concept]
-        self.concept_description = concept_desc
+        for record in self:
+            concept_desc = dict(
+                self.env['account.payment.order'].fields_get(
+                    allfields=['concept'])['concept']['selection']
+                )[record.concept]
+            record.concept_description = concept_desc
+
+    # Warning user when charge issuance is not valid
+    @api.onchange('payment_mode_name', 'charge_issuance', 'charge_type')
+    def _onchange_charge_issuance(self):
+        if self.payment_mode_name == 'SUMA':
+            if self.charge_type == "V":
+                title = "Charge issuance error"
+                if int(self.charge_issuance) > 10:
+                    message = \
+                        _("Charge issuance for volunteer period has to "
+                          "be less than 10.")
+                    warning = {'title': title, 'message': message}
+                    return {'warning': warning}
+            elif self.charge_type == "E":
+                title = "Charge issuance error"
+                if int(self.charge_issuance) < 10:
+                    message = \
+                        _("Charge issuance for executive period has to "
+                          "be greater than 10.")
+                    warning = {'title': title, 'message': message}
+                    return {'warning': warning}
 
     # Warning user when initial and final periods are incompatible
     @api.onchange('payment_mode_name', 'periodicity',
@@ -460,12 +528,9 @@ class AccountPaymentOrder(models.Model):
         charge_type = self.charge_type
 
         # Charge year - Position [002-005] Length 4
-        # @INFO: The year in which the charge is charged
-        today_date = datetime.today()
-        charge_year = str(today_date.year)
+        charge_year = str(self.charge_year)
 
         # Alicante province INE code - Position [006-007] Length 2
-        # @INFO: It's always the same 03=Alicante
         alicante_province_ine_code = "03"
 
         # Entity code - Position [008-010] Length 3
@@ -481,9 +546,7 @@ class AccountPaymentOrder(models.Model):
         concept_code = self.concept
 
         # Charge_issuance - Position [013-014] Length 2
-        # @INFO: Used to differentiate charges in the same year
-        #        The numbering will be correlative within the same year
-        charge_issuance = "01"
+        charge_issuance = str(self.charge_issuance)
 
         # Entity type code - Position [015-015] Length 1
         # @INFO: The method of this part is overridden by other modules as
@@ -1152,9 +1215,7 @@ class AccountPaymentOrder(models.Model):
         concept_code = self.concept
 
         # Charge_issuance - Positions [088-089] Length 2
-        # @INFO: It is used to differentiate charges in the same year
-        #        The numbering will be correlative within the same year
-        charge_issuance = "01"
+        charge_issuance = str(self.charge_issuance)
 
         # Reset variables
         db_lines = ""

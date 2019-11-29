@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-29 12:32+0000\n"
-"PO-Revision-Date: 2019-11-29 12:32+0000\n"
+"POT-Creation-Date: 2019-11-29 12:33+0000\n"
+"PO-Revision-Date: 2019-11-29 12:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,1568 +19,1567 @@ msgstr ""
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "01"
-msgstr "01"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "01 (volunteer)"
-msgstr "01 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "02"
-msgstr "02"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "02 (volunteer)"
-msgstr "02 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "03"
-msgstr "03"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "03 (volunteer)"
-msgstr "03 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "04"
-msgstr "04"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "04 (volunteer)"
-msgstr "04 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "05"
-msgstr "05"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "05 (volunteer)"
-msgstr "05 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "06"
-msgstr "06"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "06 (volunteer)"
-msgstr "06 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "07"
-msgstr "07"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "07 (volunteer)"
-msgstr "07 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "08"
-msgstr "08"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "08 (volunteer)"
-msgstr "08 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "09"
-msgstr "09"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "09 (volunteer)"
-msgstr "09 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "10"
-msgstr "10"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "10 (volunteer)"
-msgstr "10 (voluntario)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "11"
-msgstr "11"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "11 (executive)"
-msgstr "11 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,final_period:0
 #: selection:account.payment.order,initial_period:0
 msgid "12"
-msgstr "12"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "12 (executive)"
-msgstr "12 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "13 (executive)"
-msgstr "13 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "14 (executive)"
-msgstr "14 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "15 (executive)"
-msgstr "15 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "16 (executive)"
-msgstr "16 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "17 (executive)"
-msgstr "17 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "18 (executive)"
-msgstr "18 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "19 (executive)"
-msgstr "19 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
 msgid "20 (executive)"
-msgstr "20 (ejecutivo)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "200 - Agost - C.R. L’Alcavonet"
-msgstr "200 - Agost - C.R. L’Alcavonet"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "201 - Agost - C.R. Virgen de la Paz"
-msgstr "201 - Agost - C.R. Virgen de la Paz"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2019"
-msgstr "2019"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "202 - Agres - C.R. de Agres"
-msgstr "202 - Agres - C.R. de Agres"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2020"
-msgstr "2020"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2021"
-msgstr "2021"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2022"
-msgstr "2022"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2023"
-msgstr "2023"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2024"
-msgstr "2024"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2025"
-msgstr "2025"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2026"
-msgstr "2026"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2027"
-msgstr "2027"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2028"
-msgstr "2028"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_year:0
 msgid "2029"
-msgstr "2029"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "203 - Albatera - C.R. de Albatera"
-msgstr "203 - Albatera - C.R. de Albatera"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "204 - Albatera - Sindicato Local de Riegos de la Huerta"
-msgstr "204 - Albatera - Sindicato Local de Riegos de la Huerta"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "205 - Alcalalí - C.R. de Alcalalí-Xaló"
-msgstr "205 - Alcalalí - C.R. de Alcalalí-Xaló"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "206 - Algorfa - C.R. Virgen del Carmen"
-msgstr "206 - Algorfa - C.R. Virgen del Carmen"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "207 - Algueña - SAT 7566 Riegos La Algueña"
-msgstr "207 - Algueña - SAT 7566 Riegos La Algueña"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "208 - Alicante - C.R. de Alicante"
-msgstr "208 - Alicante - C.R. de Alicante"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "209 - Almoradí - Juzgado Privativo de Aguas del Azud de Alfeitami"
-msgstr "209 - Almoradí - Juzgado Privativo de Aguas del Azud de Alfeitami"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "210 - Altea - C.R. de Altea la Vella"
-msgstr "210 - Altea - C.R. de Altea la Vella"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "211 - Altea - C.R. Riego de la Pila y Cap Negret"
-msgstr "211 - Altea - C.R. Riego de la Pila y Cap Negret"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "212 - Altea - C.R. Riego Mayor y de Debajo de Altea"
-msgstr "212 - Altea - C.R. Riego Mayor y de Debajo de Altea"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "213 - Altea - C.R. Riego de Pere Chaume"
-msgstr "213 - Altea - C.R. Riego de Pere Chaume"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "214 - Altea - C.R. Riego Nuevo"
-msgstr "214 - Altea - C.R. Riego Nuevo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "215 - Aspe - C.R. Virgen de las Nieves"
-msgstr "215 - Aspe - C.R. Virgen de las Nieves"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "216 - Banyeres de Mariola - C.R. Riego Mayor de la Villa"
-msgstr "216 - Banyeres de Mariola - C.R. Riego Mayor de la Villa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "218 - Beneixama - C.R. Valle de Beneixama"
-msgstr "218 - Beneixama - C.R. Valle de Beneixama"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "219 - Beneixama - C.R. Almizra"
-msgstr "219 - Beneixama - C.R. Almizra"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "220 - Benejúzar - C.R. Los Rubes"
-msgstr "220 - Benejúzar - C.R. Los Rubes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "221 - Benejúzar - C.R. San Pedro-Lo Maté"
-msgstr "221 - Benejúzar - C.R. San Pedro-Lo Maté"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "222 - Benejúzar - C.R. La Pilarica"
-msgstr "222 - Benejúzar - C.R. La Pilarica"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "223 - Benferri - C.R. de Benferri"
-msgstr "223 - Benferri - C.R. de Benferri"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "224 - Benferri - C.R. de Las Cuevas"
-msgstr "224 - Benferri - C.R. de Las Cuevas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "225 - Beniarbeig - C.R. Hortes de Baix"
-msgstr "225 - Beniarbeig - C.R. Hortes de Baix"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "226 - Beniarbeig - C.R. Els Plans"
-msgstr "226 - Beniarbeig - C.R. Els Plans"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "227 - Beniarbeig - C.R. La Acequia de los Comunes"
-msgstr "227 - Beniarbeig - C.R. La Acequia de los Comunes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "228 - Beniardá - C.R. y Usuarios La Font Benialet"
-msgstr "228 - Beniardá - C.R. y Usuarios La Font Benialet"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "229 - Beniarrés - C.R. de la Huerta de Benillup"
-msgstr "229 - Beniarrés - C.R. de la Huerta de Benillup"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "230 - Benidorm - Sindicato Canal Bajo del Algar"
-msgstr "230 - Benidorm - Sindicato Canal Bajo del Algar"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "231 - Benidorm - C.R. Canal Bajo del Algar"
-msgstr "231 - Benidorm - C.R. Canal Bajo del Algar"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "232 - Benigembla - C.R. Benigembla"
-msgstr "232 - Benigembla - C.R. Benigembla"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "233 - Benijófar - Juzgado Privativo de Aguas"
-msgstr "233 - Benijófar - Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "234 - Benimantell - C.R. Font del Molí d ́Ondara"
-msgstr "234 - Benimantell - C.R. Font del Molí d ́Ondara"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "235 - Benimeli - C.R. de Benimeli"
-msgstr "235 - Benimeli - C.R. de Benimeli"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "236 - Biar - C.R. San Cristobal-Biar"
-msgstr "236 - Biar - C.R. San Cristobal-Biar"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "237 - Biar - C.R. Borrel-Pontarro"
-msgstr "237 - Biar - C.R. Borrel-Pontarro"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "238 - Bigastro - C.R. San Joaquin Nuevos Riegos"
-msgstr "238 - Bigastro - C.R. San Joaquin Nuevos Riegos"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "239 - Bigastro - C.R. Santo Domingo de Bigastro"
-msgstr "239 - Bigastro - C.R. Santo Domingo de Bigastro"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "240 - Bolulla - C.R. Riego de Bolulla"
-msgstr "240 - Bolulla - C.R. Riego de Bolulla"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "241 - Bolulla - C.R. Fuente del Salt"
-msgstr "241 - Bolulla - C.R. Fuente del Salt"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "242 - Callosa d'en Sarriá - Cdad.Gral. de Regants i Usuaris"
-msgstr "242 - Callosa d'en Sarriá - Cdad.Gral. de Regants i Usuaris"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "243 - Callosa de Segura - Juzgado Privativo de Aguas"
-msgstr "243 - Callosa de Segura - Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "244 - Cañada - SAT 6830 Baldona"
-msgstr "244 - Cañada - SAT 6830 Baldona"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "245 - Castalla - C.R. La Foia de Castalla"
-msgstr "245 - Castalla - C.R. La Foia de Castalla"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "246 - Catral - C.R. de Catral"
-msgstr "246 - Catral - C.R. de Catral"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "247 - Catral - Sindicato de Riegos de Catral"
-msgstr "247 - Catral - Sindicato de Riegos de Catral"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "248 - Cocentaina - C.R. Pla de la Font Jovades Alcudia y Reg Sic"
-msgstr "248 - Cocentaina - C.R. Pla de la Font Jovades Alcudia y Reg Sic"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "249 - Cocentaina - C.R. Viver de L ́Horta de Fraga y Real Blanc"
-msgstr "249 - Cocentaina - C.R. Viver de L ́Horta de Fraga y Real Blanc"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "252 - Cocentaina - C.R. de Bolta de Rosidol"
-msgstr "252 - Cocentaina - C.R. de Bolta de Rosidol"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "253 - Cocentaina - C.R. de Terrache-Foya-Furianes"
-msgstr "253 - Cocentaina - C.R. de Terrache-Foya-Furianes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "254 - Cocentaina - C.R. de Duque de Medinaceli"
-msgstr "254 - Cocentaina - C.R. de Duque de Medinaceli"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "255 - Cox - Sindicato Local de Riegos"
-msgstr "255 - Cox - Sindicato Local de Riegos"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "256 - Cox - Sindicato Gral. de Riegos de la Acequia de Cox-Albatera-Granja"
-msgstr "256 - Cox - Sindicato Gral. de Riegos de la Acequia de Cox-Albatera-Granja"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "257 - Crevillent - C.R. Km.35 Toma 12 del Trasvase (Canal margen izda)"
-msgstr "257 - Crevillent - C.R. Km.35 Toma 12 del Trasvase (Canal margen izda)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "258 - Crevillent - C.R. Los Fontes"
-msgstr "258 - Crevillent - C.R. Los Fontes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "259 - Crevillent - C.R. San Cayetano de Crevillent"
-msgstr "259 - Crevillent - C.R. San Cayetano de Crevillent"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "260 - Crevillent - C.R. San Felipe Neri"
-msgstr "260 - Crevillent - C.R. San Felipe Neri"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "261 - Daya Vieja - C.R. Acequia de Daya Vieja"
-msgstr "261 - Daya Vieja - C.R. Acequia de Daya Vieja"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "262 - Denia - C.R. Pinella y Casablanca"
-msgstr "262 - Denia - C.R. Pinella y Casablanca"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "263 - Dolores Sindicato Gral. de Aguas Dolores"
-msgstr "263 - Dolores Sindicato Gral. de Aguas Dolores"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "264 - El Verger - C.R. Agricultores de Verger, Aguas y Riegos"
-msgstr "264 - El Verger - C.R. Agricultores de Verger, Aguas y Riegos"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "265 - El Verger - C.R. de la Acequia de Verger, Setla y Mirarrosa"
-msgstr "265 - El Verger - C.R. de la Acequia de Verger, Setla y Mirarrosa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "266 - Elda - C.R. Elda"
-msgstr "266 - Elda - C.R. Elda"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "267 - Els Poblets - C.R. Virgen del Socorro"
-msgstr "267 - Els Poblets - C.R. Virgen del Socorro"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "268 - Elx - C.R. El Canal"
-msgstr "268 - Elx - C.R. El Canal"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "269 - Elx - C.G de Regantes Riegos de Levante LS"
-msgstr "269 - Elx - C.G de Regantes Riegos de Levante LS"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "270 - Elx - C.R. de Carrizales"
-msgstr "270 - Elx - C.R. de Carrizales"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "271 - Elx - C.R. Tercero de Levante"
-msgstr "271 - Elx - C.R. Tercero de Levante"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "272 - Elx - SAT 2281 San Enrique"
-msgstr "272 - Elx - SAT 2281 San Enrique"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "273 - Elx - C.R. San Pascual"
-msgstr "273 - Elx - C.R. San Pascual"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "274 - Elx - C.R. Riegos el Porvenir"
-msgstr "274 - Elx - C.R. Riegos el Porvenir"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "275 - Elx - C.R. Azud del Comuns"
-msgstr "275 - Elx - C.R. Azud del Comuns"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "276 - Elx - C.R. Sexta y Séptima Elevación de Elche"
-msgstr "276 - Elx - C.R. Sexta y Séptima Elevación de Elche"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "277 - Elx - C.R. Cuarto de Levante y Séptima de la Peña"
-msgstr "277 - Elx - C.R. Cuarto de Levante y Séptima de la Peña"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "278 - Elx - C.R. de Bacarot"
-msgstr "278 - Elx - C.R. de Bacarot"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "279 - Finestrat - C.R. de Finestrat"
-msgstr "279 - Finestrat - C.R. de Finestrat"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "280 - Formentera de Segura - Juzgado Privativo de Aguas"
-msgstr "280 - Formentera de Segura - Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "281 - Granja de Rocamora - Sindicato local de riegos de Granja de Rocamora"
-msgstr "281 - Granja de Rocamora - Sindicato local de riegos de Granja de Rocamora"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "282 - Guardamar - C.R. Riegos de Levante en la Margen Dcha. del Rio Segura"
-msgstr "282 - Guardamar - C.R. Riegos de Levante en la Margen Dcha. del Rio Segura"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "283 - Guardamar - Juzgado Privativo de Aguas"
-msgstr "283 - Guardamar - Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "284 - Hondón de las Nieves - SAT 3539 Riegos de Hondón de las Nieves "
-msgstr "284 - Hondón de las Nieves - SAT 3539 Riegos de Hondón de las Nieves "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "285 - Hondón de los Frailes - Comisión Mixta H.F. S.Antón y S.Isidro "
-msgstr "285 - Hondón de los Frailes - Comisión Mixta H.F. S.Antón y S.Isidro "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "286 - Ibi - C.R. Santa María"
-msgstr "286 - Ibi - C.R. Santa María"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "287 - Ibi - C.R. Sagarest"
-msgstr "287 - Ibi - C.R. Sagarest"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "288 - Jacarilla - C.R. Fuensanta"
-msgstr "288 - Jacarilla - C.R. Fuensanta"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "289 - Jacarilla - C.R. Ntra Sra. de Belen"
-msgstr "289 - Jacarilla - C.R. Ntra Sra. de Belen"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "290 - La Nucía - C.R. Riego Mayor de Alfaz del Pí y Benidorm"
-msgstr "290 - La Nucía - C.R. Riego Mayor de Alfaz del Pí y Benidorm"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "291 - La Nucía - C.R. del Armaig"
-msgstr "291 - La Nucía - C.R. del Armaig"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "292 - La Nucía - C.R. del Planet"
-msgstr "292 - La Nucía - C.R. del Planet"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "293 - La Nucía - C.R. de Sentenilla de Baix"
-msgstr "293 - La Nucía - C.R. de Sentenilla de Baix"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "294 - La Nucía - C.R. de Sentenilla de Dalt"
-msgstr "294 - La Nucía - C.R. de Sentenilla de Dalt"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "295 - La Romana - Coop. Riegos La Romana C.Val"
-msgstr "295 - La Romana - Coop. Riegos La Romana C.Val"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "296 - La Romana - C.R. La Romana"
-msgstr "296 - La Romana - C.R. La Romana"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "297 - La Romana - SAT 5914 Casas de Juan Blanco"
-msgstr "297 - La Romana - SAT 5914 Casas de Juan Blanco"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "298 - La Vila Joiosa - C.R. de Villajoyosa"
-msgstr "298 - La Vila Joiosa - C.R. de Villajoyosa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "299 - L'Orxa - C.R. de L'Orxa"
-msgstr "299 - L'Orxa - C.R. de L'Orxa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "300 - Monforte del Cid - C.R. Monforte del Cid"
-msgstr "300 - Monforte del Cid - C.R. Monforte del Cid"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "301 - Monovar - SAT 1780 Alciri"
-msgstr "301 - Monovar - SAT 1780 Alciri"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "302 - Monovar - SAT 3509 Percamp"
-msgstr "302 - Monovar - SAT 3509 Percamp"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "303 - Monovar - C.R. Chinorlet-Monóvar"
-msgstr "303 - Monovar - C.R. Chinorlet-Monóvar"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "304 - Murla - C.R. San Miguel"
-msgstr "304 - Murla - C.R. San Miguel"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "305 - Muro de Alcoy - C.R. San Joaquin de Cela de Nuñez y Alcocer de Planes"
-msgstr "305 - Muro de Alcoy - C.R. San Joaquin de Cela de Nuñez y Alcocer de Planes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "306 - Mutxamel - C.R. Sindicato de Riegos de la Huerta de Alicante"
-msgstr "306 - Mutxamel - C.R. Sindicato de Riegos de la Huerta de Alicante"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "307 - Novelda - Cdad. de Aguas de Novelda"
-msgstr "307 - Novelda - Cdad. de Aguas de Novelda"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "308 - Novelda - C.R. Monteagudo"
-msgstr "308 - Novelda - C.R. Monteagudo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "309 - Ondara - C.R. de la Villa de Ondara"
-msgstr "309 - Ondara - C.R. de la Villa de Ondara"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "310 - Orihuela - Juzgado Privativo de Aguas"
-msgstr "310 - Orihuela - Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "311 - Orihuela - C.R. La Murada Norte"
-msgstr "311 - Orihuela - C.R. La Murada Norte"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "312 - Orihuela - C.R. San Onofre-Torremendo"
-msgstr "312 - Orihuela - C.R. San Onofre-Torremendo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "313 - Orihuela - C.R. Lo Marqués"
-msgstr "313 - Orihuela - C.R. Lo Marqués"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "314 - Orihuela - C.R. El Mojón"
-msgstr "314 - Orihuela - C.R. El Mojón"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "315 - Orihuela - C.R. Pozo de Ntra. Sra.del Perpetuo Socorro"
-msgstr "315 - Orihuela - C.R. Pozo de Ntra. Sra.del Perpetuo Socorro"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "316 - Orihuela - C.R. Zona 4º Canal de Poniente"
-msgstr "316 - Orihuela - C.R. Zona 4º Canal de Poniente"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "317 - Orihuela - C.R. El Granjero"
-msgstr "317 - Orihuela - C.R. El Granjero"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "318 - Orxeta - C.R. El Granjero 317C.R. del Riego Mayor de la Huerta de Orxeta"
-msgstr "318 - Orxeta - C.R. El Granjero 317C.R. del Riego Mayor de la Huerta de Orxeta"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "319 - Parcent - C.R. y Usuarios del Vall del Pop "
-msgstr "319 - Parcent - C.R. y Usuarios del Vall del Pop "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "320 - Pedreguer - C.R. de Pedreguer y Caragús"
-msgstr "320 - Pedreguer - C.R. de Pedreguer y Caragús"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "321 - Pego - C.R. Pego y Tierras Arrozales"
-msgstr "321 - Pego - C.R. Pego y Tierras Arrozales"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "322 - Pilar de la Horadada - C.R. Margen Dcha. Pilar Horadada"
-msgstr "322 - Pilar de la Horadada - C.R. Margen Dcha. Pilar Horadada"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "323 - Pinoso - C.R. Hondón-Monóvar"
-msgstr "323 - Pinoso - C.R. Hondón-Monóvar"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "324 - Pinoso - SAT 3481 Aguas de Pinoso"
-msgstr "324 - Pinoso - SAT 3481 Aguas de Pinoso"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "325 - Pinoso - SAT 3505 Santa Barbara"
-msgstr "325 - Pinoso - SAT 3505 Santa Barbara"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "326 - Planes - C.R. La Vall de Planes"
-msgstr "326 - Planes - C.R. La Vall de Planes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "327 - Polop - C. Riegos Cotelles"
-msgstr "327 - Polop - C. Riegos Cotelles"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "328 - Polop - C.R. Riego Mayor de Polop"
-msgstr "328 - Polop - C.R. Riego Mayor de Polop"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "329 - Rafol de Almunia - C.R. Pozo de San Fco. de Paula"
-msgstr "329 - Rafol de Almunia - C.R. Pozo de San Fco. de Paula"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "330 - Relleu - Cdad. de Riego Mayor"
-msgstr "330 - Relleu - Cdad. de Riego Mayor"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "331 - Rojales - C.R. La Iniciativa"
-msgstr "331 - Rojales - C.R. La Iniciativa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "332 - Rojales Juzgado Privativo de Aguas"
-msgstr "332 - Rojales Juzgado Privativo de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "333 - Sagra - C.R. Racó Mortits"
-msgstr "333 - Sagra - C.R. Racó Mortits"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "334 - Salinas - C.R. Salinas"
-msgstr "334 - Salinas - C.R. Salinas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "335 - San Fulgencio - Sindicato Gral. de Aguas"
-msgstr "335 - San Fulgencio - Sindicato Gral. de Aguas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "336 - San Isidro - C.R. San Isidro y Realengo"
-msgstr "336 - San Isidro - C.R. San Isidro y Realengo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "337 - San Miguel de Salinas - C.R. San Miguel"
-msgstr "337 - San Miguel de Salinas - C.R. San Miguel"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "338 - San Miguel de Salinas - C.R. Campo de Salinas"
-msgstr "338 - San Miguel de Salinas - C.R. Campo de Salinas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "339 - Sant Vicent del Raspeig - C.R. Alicante Norte"
-msgstr "339 - Sant Vicent del Raspeig - C.R. Alicante Norte"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "340 - Sant Vicent del Raspeig - Cdad. Gral. de Regantes 'Aralvi'"
-msgstr "340 - Sant Vicent del Raspeig - Cdad. Gral. de Regantes 'Aralvi'"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "341 - Sax - Sindicato Riegos Sax"
-msgstr "341 - Sax - Sindicato Riegos Sax"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "342 - Sella - Cdad. Gral. de Regantes"
-msgstr "342 - Sella - Cdad. Gral. de Regantes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "343 - Sella - C.R. Azud de Murtera"
-msgstr "343 - Sella - C.R. Azud de Murtera"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "344 - Sella - C.R. Azud de Toll del Molí"
-msgstr "344 - Sella - C.R. Azud de Toll del Molí"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "345 - Sella - C.R. El Azud del Ters"
-msgstr "345 - Sella - C.R. El Azud del Ters"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "346 - Tárbena - C.R. Font del Hort"
-msgstr "346 - Tárbena - C.R. Font del Hort"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "347 - Tárbena - C.R. Font de la Murta"
-msgstr "347 - Tárbena - C.R. Font de la Murta"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "348 - Tárbena - C.R. Casivañes"
-msgstr "348 - Tárbena - C.R. Casivañes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "349 - Torrevieja - C.R. Torre Miguel"
-msgstr "349 - Torrevieja - C.R. Torre Miguel"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "350 - Vall de Gallinera - C.R. Mineola"
-msgstr "350 - Vall de Gallinera - C.R. Mineola"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "351 - Vall de Gallinera - Cdad. de Usuaris de La Vall"
-msgstr "351 - Vall de Gallinera - Cdad. de Usuaris de La Vall"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "352 - Villena - C.R. de la Huerta y Partidas"
-msgstr "352 - Villena - C.R. de la Huerta y Partidas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "353 - Villena - C.R. La Armonía"
-msgstr "353 - Villena - C.R. La Armonía"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "354 - Villena - C.R. El Pinar Alto"
-msgstr "354 - Villena - C.R. El Pinar Alto"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "355 - Villena - C.R. San Cristobal, Villena y Cañada"
-msgstr "355 - Villena - C.R. San Cristobal, Villena y Cañada"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "356 - Villena - SAT 3495 Pinar Bajo"
-msgstr "356 - Villena - SAT 3495 Pinar Bajo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "357 - Villena - C.R. Boquera-Carboneras"
-msgstr "357 - Villena - C.R. Boquera-Carboneras"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "358 - Villena - SAT 3565 El Puerto"
-msgstr "358 - Villena - SAT 3565 El Puerto"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "359 - Villena - C.R. de Villena"
-msgstr "359 - Villena - C.R. de Villena"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "360 - Xaló - C.R. de Xaló"
-msgstr "360 - Xaló - C.R. de Xaló"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "361 - Xixona - C.R. de Xixona"
-msgstr "361 - Xixona - C.R. de Xixona"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "362 - Cocentaina - C.R. de la Acequia de Calandria, Benideu y Bolta de Callosa"
-msgstr "362 - Cocentaina - C.R. de la Acequia de Calandria, Benideu y Bolta de Callosa"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "363 - Cocentaina - C.R. Beniaset-Algars de Cocentaina"
-msgstr "363 - Cocentaina - C.R. Beniaset-Algars de Cocentaina"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "364 - Villena - C. Gral. del Alto Vinalopó de Villena"
-msgstr "364 - Villena - C. Gral. del Alto Vinalopó de Villena"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong><u>DOCUMENTO DE ENTREGA DE PADRÓN EN SOPORTE MAGNÉTICO</u></strong>"
-msgstr "<strong><u>DOCUMENTO DE ENTREGA DE PADRÓN EN SOPORTE MAGNÉTICO</u></strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>COMUNIDAD DE REGANTES DE </strong>"
-msgstr "<strong>COMUNIDAD DE REGANTES DE </strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>DESCRIPCIÓN DEL CONCEPTO:</strong>"
-msgstr "<strong>DESCRIPCIÓN DEL CONCEPTO:</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>DESGLOSE POR SUBCONCEPTOS (TIPO 2):</strong>"
-msgstr "<strong>DESGLOSE POR SUBCONCEPTOS (TIPO 2):</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>Nº TOTAL DE VALORES:</strong>"
-msgstr "<strong>Nº TOTAL DE VALORES:</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>OBSERVACIONES:</strong>"
-msgstr "<strong>OBSERVACIONES:</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>PERIODO IMPOSITIVO / AÑO:</strong>"
-msgstr "<strong>PERIODO IMPOSITIVO / AÑO:</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>TOTAL IMPORTE:</strong>"
-msgstr "<strong>TOTAL IMPORTE:</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "<strong>de</strong>"
-msgstr "<strong>de</strong>"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "ANNUAL"
-msgstr "ANUAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "AO - WATER CONSUMPTION IRRIGATION AND DRIP"
-msgstr "AO - CONSUMO AGUA DE RIEGO Y GOTEO"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "AP - DRINKING WATERS"
-msgstr "AP - AGUAS POTABLES"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1025
 #, python-format
 msgid "Amount: "
-msgstr "Importe: "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "BIANNUAL"
-msgstr "SEMESTRAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "BIMONTHLY"
-msgstr "BIMESTRAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_bank_payment_line
 msgid "Bank Payment Lines"
-msgstr "Líneas de pago bancario"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_issuance
 msgid "Charge issuance"
-msgstr "Emisión cargo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:444
 #, python-format
 msgid "Charge issuance for executive period has to be greater than 10."
-msgstr "La emisión de cargo en período ejecutivo debe ser superior a 10."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:436
 #, python-format
 msgid "Charge issuance for volunteer period has to be less than 10."
-msgstr "La emisión de cargo en período voluntario debe ser inferior a 10."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_type
 msgid "Charge type"
-msgstr "Tipo de cargo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_year
 msgid "Charge year"
-msgstr "Año cargo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.actions.act_window,name:account_banking_debit_suma.action_ine_codes_tree
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_tree
 msgid "Cities INE Codes"
-msgstr "Códigos ciudades INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name
 msgid "City"
-msgstr "Ciudad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_form
 msgid "City INE Codes"
-msgstr "Códigos cuidad INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_city
 msgid "City INE code"
-msgstr "Código ciudad INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka
 msgid "City alternative name"
-msgstr "Nombre alternavito ciudad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka_simplified
 msgid "City alternative name simplified"
-msgstr "Nombre alternavito ciudad simplificado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered
 msgid "City reordered name"
-msgstr "Nombre de ciudad reordenado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered_simplified
 msgid "City reordered name simplified"
-msgstr "Nombre de ciudad reordenado simplificado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_simplified
 msgid "City simplified"
-msgstr "Ciudad simplificada"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_res_ine_codes
 msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
-msgstr "Códigos INE para ciudades"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept"
-msgstr "Concepto"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept by which the settlement or receipt is made.\n"
 "It will be applied to all transactions"
-msgstr "Concepto por el cual se realiza la liquidación o recibo.\n"
-"Se aplicará a todas las transacciones"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept_description
 msgid "Concept description"
-msgstr "Descripción concepto"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_currency_id
 msgid "Currency"
-msgstr "Moneda"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D1 - FEES AND SPILLS"
-msgstr "D1 - CUOTAS Y DERRAMAS"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D2 - MAINTENANCE SPILLS"
-msgstr "D2 - DERRAMAS DE MANTENIMIENTO"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D3 - JUCARVINALOPO TRASVASE SPILL"
-msgstr "D3 - DERRAMA TRASVASE JUCARVINALOPO"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D4 - MODERNIZATION FEES IRRIGATIONS"
-msgstr "D4 - CUOTAS MODERNIZACIÓN REGADÍOS"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D5 - IRRIGATIONS MADE BY PARTICIPANTS"
-msgstr "D5 - RIEGOS REALIZADOS PARTÍCIPES"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D6 - SERVICES PROVIDED BY PARTICIPANTS"
-msgstr "D6 - SERVICIOS PRESTADOS PARTÍCIPES"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "D7 - FEES MAINTENANCE ACUEDUCTSS"
-msgstr "D7 - CUOTAS MANT. ACUEDUCTOS"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1445
 #, python-format
 msgid "Direct Debit File"
-msgstr "Archivo de domiciliaciones"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity
 msgid "Entity"
-msgstr "Entidad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_config_settings_entity_code
 msgid "Entity Code"
-msgstr "Código entidad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity_type_code
 msgid "Entity type"
-msgstr "Tipo entidad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1183
 #, python-format
 msgid "Entity type code not set"
-msgstr "El código del tipo de entidad no ha sido establecido."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_error_mode
 msgid "Error mode"
-msgstr "Modo error"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_errors_found
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Errors"
-msgstr "Errores"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1420
 #, python-format
 msgid "Errors in direct debit file "
-msgstr "Errores en el archivo de domiciliaciones "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1162
 #, python-format
 msgid "Errors in payment file "
-msgstr "Errores en el archivo de pago "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_type:0
 msgid "Executive"
-msgstr "Ejecutivo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "FOUR-MONTHLY"
-msgstr "CUATRIMESTRAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_final_period
 msgid "Final period"
-msgstr "Periodo final"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Generate Direct Debit file"
-msgstr "Generar archivo domiciliaciones"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "IMPORTE"
-msgstr "IMPORTE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_root_menu
 msgid "INE Codes Management"
-msgstr "Gestión códigos INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "Indicates whether this payment has already been added to an SUMA payment file"
-msgstr "Indica si este pago ya se ha agregado a un archivo de pago SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "Initial period"
-msgstr "Periodo inicial"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1024
 #, python-format
 msgid "Invoice num: "
-msgstr "Nº factura: "
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
 msgid "MJ - IRRIGATION PENALTIES AND SANCTIONS"
-msgstr "MJ - MULTAS Y SANCIONES DE RIEGO"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "MONTHLY"
-msgstr "MENSUAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "NUMBER OF QUARTERS"
-msgstr "NÚMERO DE TRIMESTRE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1019
 #, python-format
 msgid "Not found"
-msgstr "No encontrado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_payment_order
 msgid "Payment Order"
-msgstr "Orden de pago"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_payment_mode_name
 msgid "Payment mode name"
-msgstr "Nombre del modo de pago"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_type
 msgid "Period in which debts should be managed"
-msgstr "Período en el cual las deudas deben ser gestionadas"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Periodicity"
-msgstr "Periodicidad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
 msgid "Permissive"
-msgstr "Permisivo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Print SUMA resume"
-msgstr "Imprimir informe SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "Province"
-msgstr "Provincia"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_province
 msgid "Province INE code"
-msgstr "Código provincia INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "QUARTERLY"
-msgstr "TRIMESTRAL"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "SIGLA"
-msgstr "SIGLA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "SUBCONCEPTO"
-msgstr "SUBCONCEPTO"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_payment_line_search
 msgid "SUMA"
-msgstr "SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_menu
 msgid "SUMA INE codes"
-msgstr "Códigos SUMA INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "SUMA done"
-msgstr "Hecho por SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "SUMA options"
-msgstr "Opciones SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "SUMA reference"
-msgstr "Referecia SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_total_amount
 msgid "SUMA total amount"
-msgstr "Importe total SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.actions.report.xml,name:account_banking_debit_suma.action_suma_resume_report
 msgid "SUMA_resume"
-msgstr "informe_SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
 msgid "State"
-msgstr "Estado"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_state
 msgid "State INE code"
-msgstr "Código Comunidad Autónoma INE"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
 msgid "Strict"
-msgstr "Estricto"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_error_mode
 msgid "Strict mode does not allow errors. The permissive mode allows but they are collected in the 'Errors' tab.' This applies to both payment file and direct debit file"
-msgstr "El modo estricto no permite errores, el modo permisivo permite errores, pero se recopilan en la pestaña 'Errores'. Afecta tanto al archivo de pago como al de domiciliaciones"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:account.payment.method,name:account_banking_debit_suma.payment_method_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_config_settings_suma_view
 msgid "Tax management. Alicante County Council (SUMA)"
-msgstr "Gestión Tributaria. Diputación de Alicante (SUMA)"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:460
 #, python-format
 msgid "The biannual periodicity only accepts the values 01 and 02, in both the initial and the final period."
-msgstr "La periodicidad semestral solo acepta los valores 01 y 02, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:487
 #, python-format
 msgid "The bimonthly periodicity only accepts the values 01 to 06, in both the initial and the final period."
-msgstr "La periodicidad bimestral solo acepta los valores 01 a 06, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:539
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1208
 #, python-format
 msgid "The entity has not been configured. Set it in Accounting/Settings."
-msgstr "La entidad no ha sido configurada. Configúrela en Contabilidad/Configuración."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1352
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1357
 #, python-format
 msgid "The entry number %s has failed, bank BIC not found. For foreign IBANs the BIC is mandatory."
-msgstr "El número de entrada %s ha fallado, BIC no encontrado. Para los IBANs extranjeros, el BIC es obligatorio."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:864
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:871
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
-msgstr "El número de entrada %s ha fallado, ciudad no encontrada para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1331
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1336
 #, python-format
 msgid "The entry number %s has failed, suma reference not found."
-msgstr "El número de entrada %s ha fallado, no se ha encontrado la referencia SUMA."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:845
@@ -1588,7 +1587,7 @@ msgstr "El número de entrada %s ha fallado, no se ha encontrado la referencia S
 #, python-format
 msgid "The entry number %s has failed, taxpayer ine city code not found for city %s.\n"
 "Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
-msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE para ciudad %s. A veces esto se produce porque el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, etc.) o porque se ha indicado el nombre de una pedanía."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:697
@@ -1597,35 +1596,35 @@ msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE par
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1313
 #, python-format
 msgid "The entry number %s has failed, taxpayer name not found."
-msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:727
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:734
 #, python-format
 msgid "The entry number %s has failed, taxpayer street not found for partner %s"
-msgstr "El número de entrada %s ha fallado, calle no encontrada para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:765
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:772
 #, python-format
 msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
-msgstr "El número de entrada %s ha fallado, código postal (C.P.) no encontrado para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:882
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:888
 #, python-format
 msgid "The entry number %s has failed, the address type %s is not supported."
-msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de dirección %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:631
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:636
 #, python-format
 msgid "The entry number %s has failed, the bank line %s seems that it has already been sent through SUMA"
-msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya fue enviada a través de SUMA."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:685
@@ -1634,156 +1633,151 @@ msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1300
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
-msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:952
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:958
 #, python-format
 msgid "The entry number %s has failed, the format type %s is not supported."
-msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de formato %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1279
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1285
 #, python-format
 msgid "The entry number %s has failed, the lastname for partner %s not found."
-msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:671
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:676
 #, python-format
 msgid "The entry number %s has failed, the lastnamefor partner %s not found."
-msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:969
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:976
 #, python-format
 msgid "The entry number %s has failed, the partner id not found for partner %s."
-msgstr "El número de entrada %s ha fallado, no se ha encontrado el ID para el socio %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:909
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:916
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
-msgstr "El número de entrada %s ha fallado, el NIF %s para el socio/empresa %s no es válido."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:924
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:930
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
-msgstr "El número de entrada %s ha fallado, NIF no encontrado para el socio/empresa %s."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_final_period
 msgid "The final period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "El período final depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
-"Vacío si la periodicidad es anual."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:496
 #, python-format
 msgid "The four-monthly periodicity only accepts the values 01 to 03, in both the initial and the final period."
-msgstr "La periodicidad cuatrimestral solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "The initial period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "El período inicial depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
-"Vacío si la periodicidad es anual."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:478
 #, python-format
 msgid "The monthly periodicity only accepts the values 01 to 12, in both the initial and the final period."
-msgstr "La periodicidad mensual solo acepta los valores 01 a 12, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:504
 #, python-format
 msgid "The number of quarters only accepts the values 01 to  03, in both the initial and the final period."
-msgstr "El número de cuatrimestres solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:469
 #, python-format
 msgid "The quarterly periodicity only accepts the values 01 to 04, in both the initial and the final period."
-msgstr "La periodicidad trimestral solo acepta los valores 01 a 04, tanto en el período inicial como en el final."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_entity_type_code
 msgid "The type of entity"
-msgstr "El tipo de entidad."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_year
 msgid "The year in which the charge is charged"
-msgstr "El año en que se cobra el cargo"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_config_settings_entity_code
 msgid "This code identifies the entity that sends the delegated charge to SUMA"
-msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_entity
 msgid "This code identifies the entity that sends the delegated charge to SUMA.\n"
 "This parameter is set in the accounting configuration"
-msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA.\n"
-"Este parámetro se establece en la configuración de Contabilidad"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "This number indicates the payment reference if it has been made by SUMA"
-msgstr "Este número indica la referencia de pago si ha sido realizado por SUMA"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
 msgid "Town hall"
-msgstr "Ayuntamiento"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Type of period settled.\n"
 "It will be applied to all transactions"
-msgstr "Tipo de período liquidado.\n"
-"Se aplicará a todas las transacciones."
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_issuance
 msgid "Used to differentiate charges in the same year\n"
 "The numbering will be correlative within the same year"
-msgstr "Se usa para diferenciar cargos en el mismo año\n"
-"La numeración será correlativa dentro del mismo año"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "VALORES"
-msgstr "VALORES"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_type:0
 msgid "Volunteer"
-msgstr "Voluntario"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
 msgid "Water user assotiation"
-msgstr "Comunidad de regantes"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_config_settings
 msgid "account.config.settings"
-msgstr "account.config.settings"
+msgstr ""
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_filename
 msgid "suma filename"
-msgstr "Nombre de archivo SUMA"
+msgstr ""
 
