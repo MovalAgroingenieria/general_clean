@@ -2,14 +2,15 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================
-Account Payment Order HTML
-==========================
+=======================================
+Account Payment Order Comments Template
+=======================================
 
 Description
 ===========
 
-This module add two comments HTML fields to account_payment_order changes in order to improve the editing.
+This module add two comments HTML fields to account_payment_order in order to add comments
+above and below of detail lines of payment order report.
 
 Credits
 =======

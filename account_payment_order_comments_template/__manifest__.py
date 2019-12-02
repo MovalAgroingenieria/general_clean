@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    "name": "Account Payment Order HTML",
+    "name": "Account Payment Order Comments Template",
     "summary": "Add two comment HTML fields",
     "version": '10.0.1.1.0',
     "category": "Moval General Addons",
