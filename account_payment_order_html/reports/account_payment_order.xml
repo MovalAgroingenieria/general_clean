@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add paymentorder comments to payment order report -->
+    <template id="account_payment_order_document_html" inherit_id="account_payment_order.print_account_payment_order_document">
+        <xpath expr="//div[@class='row mt32 mb32']" position="after">
+             <t t-if="doc.note_paymentorder1">
+                <div t-field="doc.note_paymentorder1"/>
+            </t>
+        </xpath>
+        <xpath expr="//div[@class='row'][2]" position="after">
+             <t t-if="doc.note_paymentorder2">
+                <div t-field="doc.note_paymentorder2"/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

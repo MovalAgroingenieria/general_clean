@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Modifications form view payment order -->
+    <record id="account_payment_order_form_html" model="ir.ui.view">
+        <field name="name">account.payment.order.form.html</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='bank-payment-lines']" position="after">
+                <page string="Comments" name="paymentorder_comments">
+                    <group string="Top Comments">
+                        <field name="paymentorder_comment_template1_id" string="Load a template"
+                            domain="[('position','=','before_lines')]" context="{'default_position': 'before_lines'}"/>
+                        <field name="note_paymentorder1" nolabel="1" colspan="2"/>
+                    </group>
+                    <group string="Bottom Comments">
+                        <field name="paymentorder_comment_template2_id" string="Load a template"
+                            domain="[('position','=','after_lines')]" context="{'default_position': 'after_lines'}"/>
+                        <field name="note_paymentorder2" nolabel="1" colspan="2"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
