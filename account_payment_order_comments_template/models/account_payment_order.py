@@ -26,6 +26,10 @@ class AccountPaymentOrder(models.Model):
         string='Bottom comment',
         translate=True)
 
+    partner_id = fields.Many2one(
+        'res.partner',
+        string='Partner')
+
     @api.onchange('paymentorder_comment_template1_id')
     def _set_note_paymentorder1(self):
         comment = self.paymentorder_comment_template1_id
@@ -40,7 +44,8 @@ class AccountPaymentOrder(models.Model):
 
     @api.onchange('partner_id', 'company_id')
     def _onchange_partner_id(self):
-        res = super(AccountPaymentOrder, self).onchange_partner_id()
+        #res = super(AccountPaymentOrder, self)._onchange_partner_id()
+        res = ""
         paymentorder_comment_template = \
             self.partner_id.paymentorder_comment_template_id
         if paymentorder_comment_template.position == 'before_lines':
