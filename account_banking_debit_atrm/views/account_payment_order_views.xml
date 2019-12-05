@@ -26,11 +26,10 @@
 
             <!-- Add print resume ATRM button -->
             <xpath expr="//button[@name='generated2uploaded']" position="after">
+                <field name="state" invisible="1"/>
                 <button name="%(action_atrm_resume_report)d"
-                        type="action"
-                        states="generated"
-                        string="Print ATRM resume" class="oe_highlight"
-                        attrs="{'invisible':[ '|',('payment_mode_name', '!=', 'ATRM'),('state', '!=', 'generated')]}"/>
+                        type="action" string="Print ATRM resume" class="oe_highlight"
+                        attrs="{'invisible':[('payment_mode_name', '!=', 'ATRM'),('state', '!=', 'generated')]}"/>
             </xpath>
 
             <!-- Lock date_prefered field -->

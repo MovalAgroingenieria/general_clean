@@ -658,8 +658,16 @@ class AccountPaymentOrder(models.Model):
         # Position [397-398] Length 2
         # media_notice = (in the loop)
 
-        # The positions from 407 to 629 are not used
-        blank_space4 = str(" " * 223)
+        # Position [407-414] Length 8 Format DDMMYYYY
+        # certification_date = we use the notification_date from form
+        if debt_period == "V":
+            certification_date = str(" " * 8)
+        else:
+            certification_date = datetime.strptime(
+                self.notification_date, '%Y-%m-%d').strftime("%d%m%Y")
+
+        # The positions from 415 to 629 are not used
+        blank_space4 = str(" " * 215)
 
         # Position [630-729] Length 100
         # debt_description = (in the loop)
@@ -703,9 +711,8 @@ class AccountPaymentOrder(models.Model):
                 'atrm_seq_fix_number')
 
             # Associate this number to each bank line and set as done
-            # @ INFO: in line write
-            # line.atrm_ref = fixed_num
-            # line.atrm_sent = True
+            line.atrm_ref = fixed_num
+            line.atrm_sent = True
 
             # Get vat (2 first characters are sliced)
             if line.partner_id.vat:
@@ -1008,27 +1015,15 @@ class AccountPaymentOrder(models.Model):
             else:
                 amount_after_deadline = str(" " * 13)      # Never filled
                 amount_after_deadline_date = str(" " * 8)  # Never filled
-                voluntary_notification_date = datetime.strptime(
-                    self.notification_date, '%Y-%m-%d').strftime("%d%m%Y")
+
+                # Set voluntary_notification_date = obligation_birthdate
+                voluntary_notification_date = obligation_birthdate
+
+                # Media notice for E and B
                 media_notice = self.media_notice
-                # Set voluntary_expiration_date
-                # If notified between 1 and 15, until 20 same month
-                # If notified between 16 and 31, until 5 next month
-                notification_day = int(datetime.strptime(
-                    self.notification_date, '%Y-%m-%d').strftime("%d"))
-                if 1 <= notification_day <= 15:
-                    voluntary_expiration_date = \
-                        datetime.strptime(
-                            self.notification_date,
-                            '%Y-%m-%d').replace(day=20).strftime("%d%m%Y")
-                else:
-                    # Increase notification date by one month
-                    next_month_date = \
-                        datetime.strptime(
-                            self.notification_date,
-                            "%Y-%m-%d") + relativedelta(months=+1)
-                    voluntary_expiration_date = \
-                        next_month_date.replace(day=5).strftime("%d%m%Y")
+
+                # Set voluntary_expiration_date = settlement_date
+                voluntary_expiration_date = settlement_date
 
             # Check dates ranges and year
             # 01.- Check that obligation_birthdate is previous or equal
@@ -1116,8 +1111,11 @@ class AccountPaymentOrder(models.Model):
                                                 " after 1986."
                                                 % (entry_num_padded, year)))
 
-            # The positions from 407 to 629 are not used
-            # blank_space4 = str(" " * 223)
+            # Position [407-414] Length 8 Format DDMMYYYY
+            # certification_date = static
+
+            # The positions from 415 to 629 are not used
+            # blank_space4 = static
 
             # Get debt_description
             # @INFO: We take the invoice name to fill this field
@@ -1192,7 +1190,10 @@ class AccountPaymentOrder(models.Model):
             _log.info('BANK LINE FIELD Vol expira date   (length %s [008]): %s'
                       % (str(len(voluntary_expiration_date)).zfill(3),
                          voluntary_expiration_date))
-            _log.info('BANK LINE FIELD Blank spaces 4    (length %s [223]): %s'
+            _log.info('BANK LINE FIELD Certificaf date   (length %s [008]): %s'
+                      % (str(len(certification_date)).zfill(3),
+                         certification_date))
+            _log.info('BANK LINE FIELD Blank spaces 4    (length %s [215]): %s'
                       % (str(len(blank_space4)).zfill(3), blank_space4))
             _log.info('BANK LINE FIELD Debt description  (length %s [100]): %s'
                       % (str(len(debt_description_padded)).zfill(3),
@@ -1210,8 +1211,8 @@ class AccountPaymentOrder(models.Model):
                 recurred + amount_to_voluntary_date_padded +\
                 amount_after_deadline + amount_after_deadline_date +\
                 voluntary_notification_date + media_notice +\
-                voluntary_expiration_date + blank_space4 +\
-                debt_description_padded + blank_space5 + "\r\n"
+                voluntary_expiration_date + certification_date + blank_space4\
+                + debt_description_padded + blank_space5 + "\r\n"
 
             _log.info('FULL BANK LINE                    (length %s [840]): %s'
                       % (str(len(bank_line)).zfill(3),
@@ -1272,11 +1273,6 @@ class AccountPaymentOrder(models.Model):
 
         # Set atrm_filename for ATRM resume
         self.atrm_filename = filename
-
-        line.write({
-                'atrm_ref': fixed_num,
-                'atrm_sent': True,
-        })
 
         # Fill error tab
         if self.error_mode == 'permissive':
