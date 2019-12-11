@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# 2019 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, _
@@ -7,7 +8,6 @@ from odoo.exceptions import ValidationError
 import logging
 import unicodedata
 from datetime import datetime
-from dateutil.relativedelta import relativedelta
 
 
 class AccountConfigSettings(models.TransientModel):
@@ -464,13 +464,13 @@ class AccountPaymentOrder(models.Model):
         ('AG', 'Notifying agent'),
         ('DH', 'Enabled e-mail address'),
         ('ED', 'Edict')],
-        string="Media notice",
+        string="Media notice volunteer",
         default="PE",
         help="Means used for the notification of the end of the voluntary\
             expiration date.\nIt will be applied to all payment lines.")
 
-    notification_date = fields.Date(
-        string='Notification date',
+    certification_date = fields.Date(
+        string='Certification date',
         help="Date on which the debtor was notified.\n\
             It will be applied to all payment lines.")
 
@@ -659,12 +659,12 @@ class AccountPaymentOrder(models.Model):
         # media_notice = (in the loop)
 
         # Position [407-414] Length 8 Format DDMMYYYY
-        # certification_date = we use the notification_date from form
+        # certification_date = we use the certification_date from form
         if debt_period == "V":
             certification_date = str(" " * 8)
         else:
             certification_date = datetime.strptime(
-                self.notification_date, '%Y-%m-%d').strftime("%d%m%Y")
+                self.certification_date, '%Y-%m-%d').strftime("%d%m%Y")
 
         # The positions from 415 to 629 are not used
         blank_space4 = str(" " * 215)
@@ -963,16 +963,12 @@ class AccountPaymentOrder(models.Model):
             # Get dates and year
             for l in line.payment_line_ids:
                 if line.name == l.bank_line_id.name:
-                    # Get obligation_birthdate (invoice date)
-                    obligation_birthdate = \
+                    # Set obligation_birthdate and settlement to invoice date
+                    settlement_date = obligation_birthdate = \
                         datetime.strptime(l.move_line_id.date,
                                           '%Y-%m-%d').strftime("%d%m%Y")
                     # Get year
                     year = obligation_birthdate[4:]
-                    # Get settlement date (maturity date)
-                    settlement_date = datetime.strptime(
-                        l.move_line_id.date_maturity,
-                        '%Y-%m-%d').strftime("%d%m%Y")
 
             # Get amount voluntary (equal in V, E or B)
             # @INFO: Has to be between max. and min. allowed

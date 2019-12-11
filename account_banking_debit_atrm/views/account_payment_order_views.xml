@@ -29,7 +29,7 @@
                 <field name="state" invisible="1"/>
                 <button name="%(action_atrm_resume_report)d"
                         type="action" string="Print ATRM resume" class="oe_highlight"
-                        attrs="{'invisible':[('payment_mode_name', '!=', 'ATRM'),('state', '!=', 'generated')]}"/>
+                        attrs="{'invisible':['|',('payment_mode_name', '!=', 'ATRM'),('state', '!=', 'generated')]}"/>
             </xpath>
 
             <!-- Lock date_prefered field -->
@@ -60,7 +60,7 @@
                                attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],
                                       'invisible':[('debt_period','=','V')]}" 
                                widget="selection"/>
-                        <field name="notification_date" 
+                        <field name="certification_date"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],
                                       'invisible':[('debt_period','=','V')]}"/>
                     </group>
