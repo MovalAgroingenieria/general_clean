@@ -274,6 +274,7 @@ class AccountPaymentOrder(models.Model):
         ('A', 'Town hall'),
         ('C', 'Water user assotiation')],
         string="Entity type",
+        compute="get_entity_type_code",
         help="The type of entity")
 
     charge_year = fields.Selection([
@@ -755,7 +756,7 @@ class AccountPaymentOrder(models.Model):
                 # County code - Position [135-137] Length 3
                 # @INFO: The last 3 zip numbers
                 if line.partner_id.zip:
-                    county_code = line.partner_id.zip[2:]
+                    county_code = str(line.partner_id.zip[2:]).zfill(3)
                 else:
                     if self.error_mode == 'permissive':
                         error_num += 1
