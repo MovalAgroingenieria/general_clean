@@ -10,7 +10,7 @@ Description
 ===========
 
 This module add the selection field street_type to the partner form with the abbreviations of the street
-types according to the Spanish cadastre.
+types according to the Spanish cadastre. The module also adds the dependency to partner_address_street3.
 
 Credits
 =======

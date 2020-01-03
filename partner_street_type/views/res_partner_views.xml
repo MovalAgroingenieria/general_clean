@@ -21,6 +21,9 @@
                 <field name="street_type_show" class="o_address_street_name oe_read_only"
                     attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
             </xpath>
+            <xpath expr="//field[@name='street_number']" position="attributes">
+                <attribute name="style">margin-right:4%;</attribute>
+            </xpath>
         </field>
     </record>
 
