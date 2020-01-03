@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError
 import logging
 import unicodedata
 from datetime import datetime
-
+from decimal import *
 
 class AccountConfigSettings(models.TransientModel):
     _inherit = 'account.config.settings'
@@ -967,6 +967,12 @@ class AccountPaymentOrder(models.Model):
                     settlement_date = obligation_birthdate = \
                         datetime.strptime(l.move_line_id.date,
                                           '%Y-%m-%d').strftime("%d%m%Y")
+
+                    # Set voluntary_expiration_date to
+                    # l.move_line_id.date_maturity
+                    voluntary_expiration_date = \
+                        datetime.strptime(l.move_line_id.date_maturity,
+                                          '%Y-%m-%d').strftime("%d%m%Y")
                     # Get year
                     year = obligation_birthdate[4:]
 
@@ -994,7 +1000,8 @@ class AccountPaymentOrder(models.Model):
                                             % (entry_num_padded,
                                                line.amount_currency)))
             else:
-                amount_to_voluntary_date = line.amount_currency
+                # Show always two decimal position
+                amount_to_voluntary_date = "%0.2f" % (line.amount_currency,)
                 amount_to_voluntary_date_padded = \
                     str(amount_to_voluntary_date).zfill(13).replace('.', ',')
 
@@ -1018,8 +1025,9 @@ class AccountPaymentOrder(models.Model):
                 # Media notice for E and B
                 media_notice = self.media_notice
 
-                # Set voluntary_expiration_date = settlement_date
-                voluntary_expiration_date = settlement_date
+                # Set voluntary_expiration_date to l.move_line_id.date_maturity
+                # This is done in move lines loop (see above)
+                voluntary_expiration_date = voluntary_expiration_date
 
             # Check dates ranges and year
             # 01.- Check that obligation_birthdate is previous or equal
@@ -1120,7 +1128,7 @@ class AccountPaymentOrder(models.Model):
             debt_description_padded = str(debt_description).ljust(100)
 
             # The positions from 730 to 838 are not used
-            # blank_space5 = str(" " * 109)
+            # blank_space5 = static
 
             # Log bank line fields with length [and expected length]
             _log.info('NEW BANK LINE. Number %s #############################'
