@@ -104,7 +104,51 @@ class ResPartner(models.Model):
         string="Street type show",
         compute="_compute_street_type_show")
 
+    # Field just to show the number
+    street_number_show = fields.Char(
+        string="Street number show",
+        compute="_compute_street_number_show")
+
     @api.multi
     def _compute_street_type_show(self):
         for record in self:
             record.street_type_show = record.street_type
+
+    @api.multi
+    def _compute_street_number_show(self):
+        for record in self:
+            record.street_number_show = record.street_number
+
+    # Overwrite original method from partner_street_number module
+    # Each field is saved independently but they are injected into the
+    # street field for printing.
+    @api.depends('street_type', 'street_name', 'street_number', 'street3')
+    def _get_street(self):
+        for record in self:
+            if record.street_type:
+                street_type = record.street_type.lower().capitalize() + '. '
+            else:
+                street_type = ""
+            if record.street_name:
+                record.street_name = record.street_name
+            else:
+                record.street_name = ""
+            if record.street_number:
+                separator_1 = " "
+                record.street_number = record.street_number
+            else:
+                separator_1 = ""
+                record.street_number = ""
+            if record.street3:
+                separator_2 = ", "
+                record.street3 = record.street3
+            else:
+                separator_2 = ""
+                record.street3 = ""
+            record.street = street_type + record.street_name + \
+                separator_1 + record.street_number + separator_2 + \
+                record.street3
+
+    # Inhibit original reformatting method
+    def _write_street(self):
+        pass
