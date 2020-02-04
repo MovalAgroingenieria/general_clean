@@ -1010,6 +1010,8 @@ class AccountPaymentOrder(models.Model):
 
             # Detail line 2 - Position [319-393] Length 75
             # @INFO: invoice number and total amount
+            # Detail line 3 - Position [394-468] Length 75
+            # @INFO: surface and surface unit
             if line.communication:
                 invoice = ""
                 try:
@@ -1018,6 +1020,7 @@ class AccountPaymentOrder(models.Model):
                             [('number', '=', line.communication)])
                 except not invoice:
                     invoice = _("Not found")
+            # Detail line 2
             if invoice:
                 num = invoice.number
                 # qty = invoice.quantity (invoice.line)
@@ -1026,11 +1029,18 @@ class AccountPaymentOrder(models.Model):
                     _("Amount: ") + str(invoice_amount) + ' ' + \
                     invoice.currency_id.name
                 line_detail_2 = line_detail_2[:75].ljust(75)
+
+                # Detail line 3
+                quantity = 0.0
+                if invoice.invoice_line_ids:
+                    unit = invoice.invoice_line_ids[0].uom_id.display_name
+                    for invoice_line in invoice.invoice_line_ids:
+                        quantity += invoice_line.quantity
+                    line_detail_3 = _("Surface: ") + str(quantity) + ' ' + unit
+                    line_detail_3 = line_detail_3[:75].ljust(75)
             else:
                 line_detail_2 = str(" " * 75)
-
-            # Detail line 3 - Position [394-468] Length 75
-            line_detail_3 = str(" " * 75)
+                line_detail_3 = str(" " * 75)
 
             # Detail line 4 - Position [469-543] Length 75
             line_detail_4 = str(" " * 75)
