@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError
 import logging
 import unicodedata
 from datetime import datetime
-from decimal import *
+
 
 class AccountConfigSettings(models.TransientModel):
     _inherit = 'account.config.settings'
@@ -1283,3 +1283,31 @@ class AccountPaymentOrder(models.Model):
             self.errors_found = errors
 
         return payment_file_str, filename
+
+    @api.multi
+    def generated2uploaded_atrm(self):
+        res = super(AccountPaymentOrder, self).generated2uploaded()
+        for order in self:
+            if order.payment_mode_id.name == 'ATRM':
+                for bline in order.bank_line_ids:
+                    if bline.atrm_sent:
+                        invoice = self.env['account.invoice'].search([
+                            ('number', '=', bline.communication)])
+                        invoice.write({
+                            'in_atrm': True,
+                            'atrm_ref': bline.atrm_ref,
+                        })
+        return res
+
+    @api.multi
+    def action_done_cancel_atrm(self):
+        for order in self:
+            if order.payment_mode_id.name == 'ATRM':
+                for bline in order.bank_line_ids:
+                    invoice = self.env['account.invoice'].search([
+                            ('number', '=', bline.communication)])
+                    invoice.write({
+                            'in_atrm': False,
+                            'atrm_ref': False,
+                        })
+        return super(AccountPaymentOrder, self).action_done_cancel()

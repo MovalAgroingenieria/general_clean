@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-11 15:50+0000\n"
-"PO-Revision-Date: 2019-12-11 15:50+0000\n"
+"POT-Creation-Date: 2020-02-05 16:46+0000\n"
+"PO-Revision-Date: 2020-02-05 16:46+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1494,6 +1494,7 @@ msgstr "<strong>Sr. DIRECTOR DE LA AGENCIA TRIBUTARIA DE LA REGION DE MURCIA</st
 
 #. module: account_banking_debit_atrm
 #: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_payment_line_search
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.view_account_invoice_filter
 msgid "ATRM"
 msgstr "ATRM"
 
@@ -1501,6 +1502,22 @@ msgstr "ATRM"
 #: model:ir.ui.menu,name:account_banking_debit_atrm.ine_codes_menu
 msgid "ATRM INE codes"
 msgstr "Códigos INE [ATRM]"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_leave_requested
+msgid "ATRM Leave Requested"
+msgstr "Baja solicitada ATRM"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_ref
+msgid "ATRM Reference"
+msgstr "Referencia ATRM"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_rejected
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.view_account_invoice_filter
+msgid "ATRM Rejected"
+msgstr "Rechazada ATRM"
 
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_bank_payment_line_atrm_sent
@@ -1556,6 +1573,11 @@ msgstr "Boletín"
 #: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
 msgid "COMUNICACIÓN DE CARGOS A LA AGENCIA TRIBUTARIA"
 msgstr "COMUNICACIÓN DE CARGOS A LA AGENCIA TRIBUTARIA"
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_payment_order_form_atrm
+msgid "Cancel Payments"
+msgstr "Cancelar pagos"
 
 #. module: account_banking_debit_atrm
 #: selection:account.payment.order,media_notice:0
@@ -1637,7 +1659,7 @@ msgstr "Creado por"
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_create_date
 msgid "Created on"
-msgstr "Creado en"
+msgstr "Creado el"
 
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_currency_id
@@ -1720,6 +1742,11 @@ msgid "FICHERO"
 msgstr "FICHERO"
 
 #. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_payment_order_form_atrm
+msgid "File Successfully Uploaded"
+msgstr "Fichero subido satisfactoriamente"
+
+#. module: account_banking_debit_atrm
 #: model:ir.ui.view,arch_db:account_banking_debit_atrm.ine_codes_search
 msgid "Group By"
 msgstr "Agrupar por"
@@ -1745,9 +1772,34 @@ msgid "INE Codes Management"
 msgstr "Gestón códigos INE"
 
 #. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_in_atrm
+msgid "In ATRM"
+msgstr "En ATRM"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_leave_requested
+msgid "Indicates that a ATRM leave has been requested"
+msgstr "Indica si se ha solicitado una baja de ATRM"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_rejected
+msgid "Indicates that the invoice has been rejected by ATRM"
+msgstr "Indica si una factura ha sido rechazada por ATRM"
+
+#. module: account_banking_debit_atrm
 #: model:ir.model.fields,help:account_banking_debit_atrm.field_bank_payment_line_atrm_sent
 msgid "Indicates whether this payment has already been            added to an ATRM payment file."
 msgstr "Indica si este pago ya se ha agregado a un archivo de pago ATRM."
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_in_atrm
+msgid "Indicates whether this payment has already been done and uploaded successfully"
+msgstr "Indica si esta factura ha sido enviada correctamente a ATRM"
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
 
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes___last_update
@@ -1762,7 +1814,7 @@ msgstr "Última actualización por"
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Última actualización el"
 
 #. module: account_banking_debit_atrm
 #: selection:account.payment.order,registry_type:0
@@ -1888,61 +1940,61 @@ msgid "Tax Agency of the Region of Murcia (ATRM)"
 msgstr "Agencia Tributaria Región de Murcia (ATRM)"
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:564
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:563
 #, python-format
 msgid "The agency has not been configured.                Set it in Accounting/Settings."
 msgstr "El organismo no ha sido configurado. Se puede configurar en Contabilidad/Configuración."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:606
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:605
 #, python-format
 msgid "The concept code %s is not allowed                at the moment."
 msgstr "El código de concepto %s todavía no está permitido."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:927
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:935
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:926
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:934
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
 msgstr "La entrada número %s ha fallado, no se ha encontrado la ciudad para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:797
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:802
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:796
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:801
 #, python-format
 msgid "The entry number %s has failed, debtor name not found."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el nombre del socio."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:823
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:830
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:822
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:829
 #, python-format
 msgid "The entry number %s has failed, debtor street not found for partner %s"
 msgstr "La entrada número %s ha fallado, no se ha encontrado el nombre de la calle para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:946
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:952
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:945
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:951
 #, python-format
 msgid "The entry number %s has failed, debtor zip not found for partner %s"
 msgstr "La entrada número %s ha fallado, no se ha encontrado el código postal para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:907
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:919
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:906
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:918
 #, python-format
 msgid "The entry number %s has failed, debtorine city code not found for city %s.\n"
 "Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE para ciudad %s. A veces esto se produce porque el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, etc.) o porque se ha indicado el nombre de una pedanía."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:990
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:994
 #, python-format
 msgid "The entry number %s has failed, the amount %s exceeds the limits allowed by the agency agreement."
 msgstr "The entry number %s has failed, the amount %s exceeds the limits allowed by the agency agreement."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:700
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:699
 #, python-format
 msgid "The entry number %s has failed, the bank line %s seems that it has already been sent \n"
 ""
@@ -1950,81 +2002,81 @@ msgstr "La entrada número %s ha fallado, la línea de pago bancario %s parece q
 ""
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:784
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:790
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:783
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:789
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el nombre para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:769
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:775
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:768
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:774
 #, python-format
 msgid "The entry number %s has failed, the lastname for partner %s not found."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el apellido para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1039
 #: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1045
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1051
 #, python-format
 msgid "The entry number %s has failed, the obligation birthdate (%s) is after the settlement date (%s)."
 msgstr "La entrada número %s ha fallado, la fecha de nacimiento de la obligación (%s) es posterior a la fecha de liquidación (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1074
 #: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1080
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1086
 #, python-format
 msgid "The entry number %s has failed, the settlement date (%s) is after expiration date (%s)."
 msgstr "La entrada número %s ha fallado, la fecha de liquidación (%s) es posterior a la fecha actual (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1057
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1062
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1063
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1068
 #, python-format
 msgid "The entry number %s has failed, the settlement date (%s) is after the current date (%s)."
 msgstr "La entrada número %s ha fallado, la fecha de liquidación (%s) es posterior a la fecha actual (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:728
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:735
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:727
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:734
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
 msgstr "La entrada número %s ha fallado, el NIF %s para el socio %s no es válido."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1104
 #: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1110
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1116
 #, python-format
 msgid "The entry number %s has failed, the year (%s) is after 1986."
 msgstr "La entrada número %s ha fallado, el año (%s) es anterior al año actual (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1091
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1097
 #, python-format
 msgid "The entry number %s has failed, the year (%s) is after of current year (%s)."
 msgstr "The entry number %s has failed, the year (%s) is after of current year (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1096
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1102
 #, python-format
 msgid "The entry number %s has failed, the year (%s) is after of currentyear (%s)."
 msgstr "La entrada número %s ha fallado, el año (%s) es anterior al año actual (%s)."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:742
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:749
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:741
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:748
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el NIF para el socio %s."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:996
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1000
 #, python-format
 msgid "The entry number %s has failed,the amount %s exceeds the limits allowed by the agency agreement."
 msgstr "La entrada número %s ha fallado, el importe %s sobrepasa los límites permitidos por el acuerdo entre el organismo y la ATRM."
 
 #. module: account_banking_debit_atrm
-#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:705
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:704
 #, python-format
 msgid "The entry number %s has failed,the bank line %s seems that it has already been sent"
 msgstr "La entrada número %s ha fallado, la línea de pago bancario %s parece que ya ha sido enviada mediante ATRM."
@@ -2052,6 +2104,11 @@ msgstr "Este es el tipo de registro enviado: Liquidación, Notificación ejecuti
 #: model:ir.model.fields,help:account_banking_debit_atrm.field_bank_payment_line_atrm_ref
 msgid "This number indicates the payment reference            if it has been made by ATRM."
 msgstr "Este número indica la referencia de la línea de pago si ha sido realizado por ATRM."
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_ref
+msgid "This number indicates the payment reference when has been made by ATRM"
+msgstr "This number indicates the payment reference when has been made by ATRM"
 
 #. module: account_banking_debit_atrm
 #: selection:account.payment.order,debt_period:0
