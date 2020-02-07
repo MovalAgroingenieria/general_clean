@@ -24,24 +24,6 @@
         <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
         <field name="arch" type="xml">
 
-            <!-- Replace button File sucessfully uploaded -->
-            <xpath expr="//button[@name='generated2uploaded']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <xpath expr="//button[@name='generated2uploaded']" position="before">
-                <button name="generated2uploaded_atrm" type="object" states="generated"
-                    string="File Successfully Uploaded" class="oe_highlight"/>
-            </xpath>
-
-            <!-- Replace button Cancel payments -->
-            <xpath expr="//button[@name='action_done_cancel']" position="attributes">
-                <attribute name="invisible">1</attribute>
-            </xpath>
-            <xpath expr="//button[@name='action_done_cancel']" position="before">
-                <button name="action_done_cancel_atrm" type="object" states="uploaded"
-                    string="Cancel Payments"/>
-            </xpath>
-
             <!-- Add print resume ATRM button -->
             <xpath expr="//button[@name='generated2uploaded']" position="after">
                 <field name="state" invisible="1"/>

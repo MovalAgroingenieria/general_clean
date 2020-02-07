@@ -1284,8 +1284,9 @@ class AccountPaymentOrder(models.Model):
 
         return payment_file_str, filename
 
+    # This method is replicated by wua_account_banking_debit_atrm
     @api.multi
-    def generated2uploaded_atrm(self):
+    def generated2uploaded(self):
         res = super(AccountPaymentOrder, self).generated2uploaded()
         for order in self:
             if order.payment_mode_id.name == 'ATRM':
@@ -1300,7 +1301,7 @@ class AccountPaymentOrder(models.Model):
         return res
 
     @api.multi
-    def action_done_cancel_atrm(self):
+    def action_done_cancel(self):
         for order in self:
             if order.payment_mode_id.name == 'ATRM':
                 for bline in order.bank_line_ids:
