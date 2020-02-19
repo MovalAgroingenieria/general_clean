@@ -166,9 +166,13 @@ class WauSMSWizard(models.Model):
             else:
                 sender = self.sender
 
-            # Change sms message encoding
+            # Change sms message encoding and escape json special chars
             if self.sms_message:
-                sms_message = self.sms_message.encode('ascii', 'replace')
+                sms_message = \
+                    self.sms_message.replace('\n', '\\n').replace(
+                        '"', '\\"').replace('\b', '\\b').replace(
+                        '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
+                sms_message = sms_message.encode('ascii', 'replace')
             else:
                 sms_message = "empty message".encode('ascii', 'replace')
 
@@ -206,7 +210,7 @@ class WauSMSWizard(models.Model):
                 sms_confirmation_info = _("Bad request - The request contains "
                                           "errors, the message has not been "
                                           "accepted.")
-                sms_confirmation_info = _("Bad request")
+                sms_confirmation = _("Bad request")
             elif response.status_code == 401:
                 sms_confirmation_info = _("Unauthorized - Client "
                                           "authentication failed.")
@@ -233,7 +237,11 @@ class WauSMSWizard(models.Model):
 
             # Response message (only shown in debug mode)
             response_message = json.dumps(response.json(), indent=4)
-            response_message_data = json.loads(response.text)[0]
+            if 'error' in response.text:
+                response_message_data = json.loads(response.text)
+                response_message_data['id'] = "no-id"
+            else:
+                response_message_data = json.loads(response.text)[0]
 
             # Add sms_confirmation message to sms_confirmations
             if active_id == 0:
