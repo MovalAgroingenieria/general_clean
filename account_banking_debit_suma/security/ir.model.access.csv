@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_res_ine_codes_user,access.res.ine.codes.user,account_banking_debit_suma.model_res_ine_codes,base.group_user,1,1,1,1

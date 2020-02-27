@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-04 14:29+0000\n"
-"PO-Revision-Date: 2020-02-04 14:29+0000\n"
+"POT-Creation-Date: 2020-02-27 15:05+0000\n"
+"PO-Revision-Date: 2020-02-27 15:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1161,58 +1161,6 @@ msgid "Charge year"
 msgstr "Any càrrec"
 
 #. module: account_banking_debit_suma
-#: model:ir.actions.act_window,name:account_banking_debit_suma.action_ine_codes_tree
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_tree
-msgid "Cities INE Codes"
-msgstr "Cities INE Codes"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name
-msgid "City"
-msgstr "Ciutat"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_form
-msgid "City INE Codes"
-msgstr "Codis ciutats INE"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_city
-msgid "City INE code"
-msgstr "Codi ciutats INE"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka
-msgid "City alternative name"
-msgstr "Nom alternatiu ciutat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka_simplified
-msgid "City alternative name simplified"
-msgstr "Nom alternatiu ciutat simplificat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered
-msgid "City reordered name"
-msgstr "Nom de ciutat reordenat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered_simplified
-msgid "City reordered name simplified"
-msgstr "Nom de ciutat reordenat simplificat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_simplified
-msgid "City simplified"
-msgstr "Ciutat simplificat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model,name:account_banking_debit_suma.model_res_ine_codes
-msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
-msgstr "Codis per a ciutats de l'INE"
-
-#. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept"
 msgstr "Concepte"
@@ -1228,16 +1176,6 @@ msgstr "Concepte pel qual es realitza la liquidació o rebut.\n"
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept_description
 msgid "Concept description"
 msgstr "Descripció concepte"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_uid
-msgid "Created by"
-msgstr "Creat per"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_date
-msgid "Created on"
-msgstr "Creat el"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_currency_id
@@ -1284,11 +1222,6 @@ msgstr "D7 - QUOTES MANT. AQÜEDUCTES"
 #, python-format
 msgid "Direct Debit File"
 msgstr "Arxiu de domiciliacions"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_display_name
-msgid "Display Name"
-msgstr "Mostrar Nom"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity
@@ -1355,24 +1288,9 @@ msgid "Generate Direct Debit file"
 msgstr "Crear fitxer domiciliacions"
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "Group By"
-msgstr "Agrupar per"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_id
-msgid "ID"
-msgstr "ID"
-
-#. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "IMPORTE"
 msgstr "IMPORT"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_root_menu
-msgid "INE Codes Management"
-msgstr "Gestió codis INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_sent
@@ -1389,21 +1307,6 @@ msgstr "Període inicial"
 #, python-format
 msgid "Invoice num: "
 msgstr "Nº factura: "
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes___last_update
-msgid "Last Modified on"
-msgstr "Última modificació el "
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_uid
-msgid "Last Updated by"
-msgstr "Última actualització per"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_date
-msgid "Last Updated on"
-msgstr "Última actualització el"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
@@ -1457,16 +1360,6 @@ msgid "Print SUMA resume"
 msgstr "Imprimir informe SUMA"
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "Province"
-msgstr "Província"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_province
-msgid "Province INE code"
-msgstr "Codi INE de província"
-
-#. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "QUARTERLY"
 msgstr "TRIMESTRAL"
@@ -1485,11 +1378,6 @@ msgstr "SUBCONCEPTE"
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_payment_line_search
 msgid "SUMA"
 msgstr "SUMA"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_menu
-msgid "SUMA INE codes"
-msgstr "Codis SUMA INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
@@ -1515,16 +1403,6 @@ msgstr "Import total SUMA"
 #: model:ir.actions.report.xml,name:account_banking_debit_suma.action_suma_resume_report
 msgid "SUMA_resume"
 msgstr "informe_SUMA"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "State"
-msgstr "Estat"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_state
-msgid "State INE code"
-msgstr "Codi Comunitat Autònoma INE"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0

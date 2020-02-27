@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-04 14:28+0000\n"
-"PO-Revision-Date: 2020-02-04 14:28+0000\n"
+"POT-Creation-Date: 2020-02-27 15:03+0000\n"
+"PO-Revision-Date: 2020-02-27 15:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1161,58 +1161,6 @@ msgid "Charge year"
 msgstr "Año cargo"
 
 #. module: account_banking_debit_suma
-#: model:ir.actions.act_window,name:account_banking_debit_suma.action_ine_codes_tree
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_tree
-msgid "Cities INE Codes"
-msgstr "Códigos ciudades INE"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name
-msgid "City"
-msgstr "Ciudad"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_form
-msgid "City INE Codes"
-msgstr "Códigos cuidad INE"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_city
-msgid "City INE code"
-msgstr "Código ciudad INE"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka
-msgid "City alternative name"
-msgstr "Nombre alternavito ciudad"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_aka_simplified
-msgid "City alternative name simplified"
-msgstr "Nombre alternavito ciudad simplificado"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered
-msgid "City reordered name"
-msgstr "Nombre de ciudad reordenado"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_reordered_simplified
-msgid "City reordered name simplified"
-msgstr "Nombre de ciudad reordenado simplificado"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_city_name_simplified
-msgid "City simplified"
-msgstr "Ciudad simplificada"
-
-#. module: account_banking_debit_suma
-#: model:ir.model,name:account_banking_debit_suma.model_res_ine_codes
-msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
-msgstr "Códigos INE para ciudades"
-
-#. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept"
 msgstr "Concepto"
@@ -1221,23 +1169,13 @@ msgstr "Concepto"
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_concept
 msgid "Concept by which the settlement or receipt is made.\n"
 "It will be applied to all transactions"
-msgstr "Concept by which the settlement or receipt is made.\n"
-"It will be applied to all transactions"
+msgstr "Concepto por el cual se realiza la liquidación o recibo.\n"
+"Se aplicará a todas las transacciones"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept_description
 msgid "Concept description"
 msgstr "Descripción concepto"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_uid
-msgid "Created by"
-msgstr "Creado por"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_create_date
-msgid "Created on"
-msgstr "Creado el"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_currency_id
@@ -1283,12 +1221,7 @@ msgstr "D7 - CUOTAS MANT. ACUEDUCTOS"
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1456
 #, python-format
 msgid "Direct Debit File"
-msgstr "Direct Debit File"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_display_name
-msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Archivo de domiciliaciones"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_entity
@@ -1355,55 +1288,25 @@ msgid "Generate Direct Debit file"
 msgstr "Generar archivo domiciliaciones"
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "Group By"
-msgstr "Agrupar por"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_id
-msgid "ID"
-msgstr "ID"
-
-#. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_resume_document
 msgid "IMPORTE"
 msgstr "IMPORTE"
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_root_menu
-msgid "INE Codes Management"
-msgstr "Gestión códigos INE"
-
-#. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "Indicates whether this payment has already been added to an SUMA payment file"
-msgstr "Indicates whether this payment has already been added to an SUMA payment file"
+msgstr "Indica si este pago ya se ha agregado a un archivo de pago SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "Initial period"
-msgstr "Periodo initial"
+msgstr "Periodo inicial"
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1028
 #, python-format
 msgid "Invoice num: "
 msgstr "Nº factura: "
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes___last_update
-msgid "Last Modified on"
-msgstr "Última modificación en"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_uid
-msgid "Last Updated by"
-msgstr "Última actualización por"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_write_date
-msgid "Last Updated on"
-msgstr "Última actualización el"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,concept:0
@@ -1439,7 +1342,7 @@ msgstr "Nombre del modo de pago"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_type
 msgid "Period in which debts should be managed"
-msgstr "Period in which debts should be managed"
+msgstr "Período en el cual las deudas deben ser gestionadas"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_periodicity
@@ -1455,16 +1358,6 @@ msgstr "Permisivo"
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Print SUMA resume"
 msgstr "Imprimir informe SUMA"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "Province"
-msgstr "Provincia"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_province
-msgid "Province INE code"
-msgstr "Código provincia INE"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
@@ -1485,11 +1378,6 @@ msgstr "SUBCONCEPTO"
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_payment_line_search
 msgid "SUMA"
 msgstr "SUMA"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.menu,name:account_banking_debit_suma.ine_codes_menu
-msgid "SUMA INE codes"
-msgstr "Códigos SUMA INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
@@ -1515,16 +1403,6 @@ msgstr "Importe total SUMA"
 #: model:ir.actions.report.xml,name:account_banking_debit_suma.action_suma_resume_report
 msgid "SUMA_resume"
 msgstr "informe_SUMA"
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.ine_codes_search
-msgid "State"
-msgstr "Estado"
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_res_ine_codes_ine_code_state
-msgid "State INE code"
-msgstr "Código Comunidad Autónoma INE"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
@@ -1688,8 +1566,8 @@ msgstr "El número de entrada %s ha fallado, NIF no encontrado para el socio/emp
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_final_period
 msgid "The final period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "The final period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
-"Empty if the periodicity is annual"
+msgstr "El período final depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
+"Vacío si la periodicidad es anual."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:497
@@ -1701,8 +1579,8 @@ msgstr "La periodicidad cuatrimestral solo acepta los valores 01 a 03, tanto en 
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_initial_period
 msgid "The initial period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
 "Empty if the periodicity is annual"
-msgstr "The initial period depends on the periodicity. For example, first semester or quarter: 01; third quarter: 03.\n"
-"Empty if the periodicity is annual"
+msgstr "El período inicial depende de la periodicidad. Por ejemplo, primer semestre o trimestre: 01; tercer trimestre: 03.\n"
+"Vacío si la periodicidad es anual."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:479
@@ -1735,19 +1613,19 @@ msgstr "El año en que se cobra el cargo"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_config_settings_entity_code
 msgid "This code identifies the entity that sends the delegated charge to SUMA"
-msgstr "This code identifies the entity that sends the delegated charge to SUMA"
+msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_entity
 msgid "This code identifies the entity that sends the delegated charge to SUMA.\n"
 "This parameter is set in the accounting configuration"
-msgstr "This code identifies the entity that sends the delegated charge to SUMA.\n"
-"This parameter is set in the accounting configuration"
+msgstr "Este código identifica la entidad que envía el cargo delegado a SUMA.\n"
+"Este parámetro se establece en la configuración de Contabilidad"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "This number indicates the payment reference if it has been made by SUMA"
-msgstr "This number indicates the payment reference if it has been made by SUMA"
+msgstr "Este número indica la referencia de pago si ha sido realizado por SUMA"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
@@ -1758,8 +1636,8 @@ msgstr "Ayuntamiento"
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Type of period settled.\n"
 "It will be applied to all transactions"
-msgstr "Type of period settled.\n"
-"It will be applied to all transactions"
+msgstr "Tipo de período liquidado.\n"
+"Se aplicará a todas las transacciones."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_charge_issuance
