@@ -1,0 +1,2080 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_debit_atrm
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-27 10:40+0000\n"
+"PO-Revision-Date: 2020-02-27 10:40+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "(<strong>AAAA/NNNN</strong>), para que se proceda a su cobro en vía:\n"
+"                            <br/>\n"
+"                            <br/>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "001 - ABANILLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "001 - RB - IMPUESTO SOBRE BIENES INMUEBLES DE NATURALEZA        URBANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "002 - ABARAN"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "002 - RB - IMPUESTO SOBRE BIENES INMUEBLES DE NATURALEZA        RUSTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "003 - AGUILAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "003 - LQ - LIQUIDACION IBI URBANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "004 - ALBUDEITE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "004 - LQ - LIQUIDACION IBI RUSTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "005 - ALCANTARILLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "005 - RB - I.S/ACTIVIDADES ECONOMICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "006 - ALEDO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "006 - LQ - LIQUIDACION DEL IMPUESTO SOBRE ACTIVIDADES        ECONOMICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "007 - ALGUAZAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "007 - RB - I. VEHICULOS TRACCION MECANICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "008 - ALHAMA DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "008 - LQ - IMPUESTO CONTR.INSTAL. Y OBRAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "009 - ARCHENA "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "009 - LQ - INCRE.VALOR TERRENOS (PLUSVALIA)"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "010 - BENIEL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "010 - RB - CONT. URBANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "011 - BLANCA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "011 - LQ - LIQ. CONT. URBANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "012 - BULLAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "012 - RB - CONT. RUSTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "013 - CALASPARRA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "013 - LQ - LIQ. CONT. RUSTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "014 - CAMPOS DEL RIO "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "014 - RB - CONT. RUST.- GANADERIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "015 - CARAVACA DE LA CRUZ"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "015 - RB - L.F. INDUSTRIAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "016 - CARTAGENA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "016 - RB - L.F. PROFESIONAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "017 - CEHEGIN"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "017 - RB - CIRC. VEHICULOS TRAC.MECANICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "018 - CEUTI"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "018 - LQ - IMPUESTO INCREMENTO VALOR TERRENOS URBANOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "019 - CIEZA "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "019 - RB - TASA DE RECOGIDA DE BASURAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "020 - FORTUNA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "020 - LQ - LICENC.APERTURA ACTIV.-ESTABLEC"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "021 - FUENTE ALAMO "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "021 - LQ - LICENCIAS AUTO-TAXIS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "022 - JUMILLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "022 - LQ - LICENCIAS URBANISTICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "023 - LIBRILLA "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "023 - LQ - TASAS Y OTROS INGRESOS MUNICIPALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "024 - LORCA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "024 - RB - ALCANTARILLADO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "025 - LORQUI "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "025 - RB - CANALIZAC.AGUAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "026 - MAZARRON "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "026 - RB - CANALONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "027 - MOLINA DE SEGURA "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "027 - RB - ESCAPARATES LETREROS VITRINAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "028 - MORATALLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "028 - RB - EXACCIONES S/INMUEBLES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "029 - LQ - EXPLOTACION BAR POLIDEPORTIVO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "029 - MULA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "030 - LQ - LIQUIDACION G.S.-COTOS CAZA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "030 - MURCIA "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "031 - OJOS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "031 - RB - KIOSCOS VIA PUBLICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "032 - PLIEGO "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "032 - RB - MIRADORES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "033 - PUERTO-LUMBRERAS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "033 - RB - MOTORES Y TRANSFORMADORES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "034 - LQ - OCUPACION VIA PUB. MATERIALES CONSTRUCCION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "034 - RICOTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "035 - LQ - OCUPACION V. PUB-MESAS/SILLAS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "035 - SAN JAVIER"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "036 - LQ - OCUP.VIA PUB.-PUESTOS-BARRACAS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "036 - SAN PEDRO DEL PINATAR"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "037 - RB - LICENCIAS/PARADAS AUTOTAXIS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "037 - TORRE-PACHECO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "038 - LAS TORRES DE COTILLAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "038 - RB - PILAS DE BAÑOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "039 - RB - PRECIO PUBLICO ESCUELA DEPORTIVA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "039 - TOTANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "040 - RB - GUARDERIAS - ESC. INFANTILES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "040 - ULEA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "041 - RB - PRECIO PUBLICO LONJAS MERCADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "041 - UNION (LA)"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "042 - RB - REJAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "042 - VILLANUEVA DEL RIO SEGURA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "043 - LQ - CEMENTERIO MUNICIPAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "043 - YECLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "044 - LQ - SERVICIO DE MATADERO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "044 - SANTOMERA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "045 - LOS ALCAZARES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "045 - RB - SOLARES SIN EDIFICAR"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "046 - RB - TENENCIA DE PERROS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "047 - RB - VADOS-ENTRADA VEHICULOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "048 - LQ - INFRACCIONES URBANISTICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "049 - LQ - MULTAS TRAFICO DE VEHICULOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "050 - LQ - MULTAS Y SANCIONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "051 - RB - SUMINISTRO AGUA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "052 - RB - LIQUIDACION DEUDA CONTRACTUAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "053 - RB - VIVIENDAS SOCIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "054 - LQ - ACTAS GANADERIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "055 - LQ - ACTAS RUSTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "056 - LQ - LICENC.OBRAS Y CONSTRUCCIONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "073 - COMUNIDAD AUTÓNOMA REGIÓN DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "074 - LQ - IMPUESTO DE SUCESIONES Y DONACIONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "075 - LQ - ACTAS I. SUCESIONES/DONACIONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "076 - LQ - TRANSMISIONES ONEROSAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "077 - LQ - ACTOS JURIDICOS DOCUMENTADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "078 - LQ - RESIDENCIA TIEMPO LIBRE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "079 - LQ - MULTAS Y SANCIONES TRIBUTARIAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "080 - LQ - RECARGO LICENCIA FISCAL AÑOS ANTERIORES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "081 - LQ - REINTEGROS DE PAGO DE EJERCICIOS CERRADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "082 - LQ - CUOTA URBANIZACION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "083 - LQ - LIQUIDACION DEL IMPUESTO VEHICULOS TRACCION        MECANICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "084 - RB - AGUA, BASURA Y ALCANTARILLADO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "085 - RB - DESAGUES-CANALONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "086 - RB - CULTIVOS AGRICOLAS-ROTURADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "087 - LQ - PRESTACION SERVICIO DERRIBOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "088 - LQ - UTILIZACION ALTAVOCES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "089 - LQ - LIQUIDACION VADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "090 - LQ - LIQUIDACION TASA BASURAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "091 - LQ - GESTION RECAUDACION MULTAS TRAFICO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "092 - LQ - LIQUIDACION OCUPACION VIA PUBLICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "093 - LQ - LIQ. I.S/TRANSMISIONES PATRIMONIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "094 - RB - NO ALCANTARILLADO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "095 - RB - RECAUDACION EJECUTIVA TRIBUTOS LOCALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "096 - LQ - RECAUDACION EJECUTIVA SANCIONES AYUNTAMIENTO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "097 - LQ - LIQUIDACION NICHOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "098 - LQ - AUTOLIQUIDACION IMP. VEHICULOS TRACCION MECANICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "099 - LQ - GASTOS DE CONSOLIDACION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "100 - LQ - ESCAPARATES LETREROS VITRINAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "100 - SERVICIO MURCIANO DE SALUD "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "101 - INSTITUTO DE FOMENTO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "101 - LQ - DAÑOS FORESTALES "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "102 - CONSORCIO GESTION RESIDUOS SOLIDOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "102 - LQ - TASA SERVICIO LONJAS MERCADOS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "103 - MANCOMUNIDAD MUNICIPIOS VALLE RICOTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "104 - CONSORCIO EXT.INCEND.Y SALVAM.DE LA CARM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "105 - CMDAD.REGANTES HEREDAM.AGUAS DE ALGUAZAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "106 - COMUNIDAD DE REGANTES LAS TOSQUILLAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "107 - CMDAD.REGANTES POZO ROMAN NOSTRUM No3"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "108 - CMDAD.REGAN.PUENTE DEL CALDO Y MIRAVETES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "109 - CMDAD.REGANTES MINAS Y SANTA INES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "110 - MANCOMUNIDAD SERVIC.TURISTICOS NORDESTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "111 - HEREDAMIENTO REGANTE DE MOLINA DE SEGURA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "112 - TRIBUNAL ECONOMICO ADMVO.REGIONAL(TEAR)"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "113 - MANCOMUNIDAD COMARCA ORIENTAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "114 - JUNTA HACENDADOS DE LA HUERTA DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "115 - CMDAD.REGANTES NTRA.SRA.DE LA ESPERANZA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "116 - CMDAD.REGANTES FUENTES DEL MARQUES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "117 - CMDAD.REGANTES ZONA V SECTORES I Y II"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "118 - CMDAD.REGANTES POZO SAN MANUEL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "119 - CONSORCIO TURISTICO DESFILADERO DE ALMAD"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "119 - LQ - APROVECHAMIENTOS AGRICOLAS Y FORESTALES "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "120 - CMDAD.REGANTES AGUAS REGULADAS EMB.ARGOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "121 - CMDAD.REGANTES HUERTA ALTA-PLIEGO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "122 - CMDAD.REGANTES EL CAMPILLO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "123 - CMDAD.REGANTES POZO SAN JOSE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "124 - CMDAD.REGANTES ACEQUIA DE ARCHENA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "125 - CMDAD.REGANTES FUENTE DE LA COPA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "125 - RB - PUESTO PLAZA DE ABASTOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "126 - RB - TASA APARCAMIENTO MUNICIPAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "127 - LQ - TASA APARCAMIENTO MUNICIPAL "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "128 - RB - G.S.-COTOS CAZA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "143 - LQ - SUBVENCIONES DE CAPITAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "147 - LQ - SUBVENCIONES DE CAPITAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "163 - RB - ESCUELAS INFANTILES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "167 - LQ - LIQUID. SUMUNISTRO AGUA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "168 - LQ - REINTEGRO IMPORTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "169 - LQ - TASA POR PUBLICIDAD CON VEHICULOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "170 - LQ - PRECIOS PUBLICOS MUNICIPALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "171 - LQ - CONTRIBUCIONES ESPECIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "177 - RB - OCUPACION VIA PUBLICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "178 - RB - MERCADO SEMANAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "179 - LQ - LIQUIDACION MERCADO SEMANAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "180 - LQ - EXTRACCION DE CANTERA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "181 - LQ - LIQUIDACION PUESTO PLAZA DE ABASTOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "182 - LQ - LIQUIDACION INGRESO DIRECTO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "183 - LQ - LIQUIDACION DESAGUES-CANALONES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "184 - RB - TASA CONSERVACION CEMENTERIO MUNICIPAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "185 - RB - MERCADO SEMANAL BENIEL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "186 - LQ - LIQUIDACION MERCADO SEMANAL BENIEL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "187 - LQ - TASACION COSTAS ASAMBLEA REGIONAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "188 - RB - IBI DE CARACTERÍSTICAS ESPECIALES "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "189 - LQ - PRESTACION DE SERVICIOS SANITARIOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "190 - LQ - TASAS SERVICIO MURCIANO DE SALUD"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "191 - LQ - PROCESAMIENTO HEMODERIVADOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "192 - LQ - CANONES Y OTROS INGRESOS DE DERECHO PUBLICO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "193 - RB - TASA ANUAL RESERVA PUESTOS MERCADO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "194 - RB - OCUPACION V. PUB-MESAS/SILLAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "195 - RB - TELEASISTENCIA DOMICILIARIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "196 - LQ - LIQUIDACION TELEASISTENCIA DOMICILIARIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "197 - LQ - REINTEGROS VOLUNTARIA P.A.C."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "198 - LQ - LIQUIDACIONES REINTEGROS P.A.C."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "199 - RB - CANON DE SANEAMIENTO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "200 - CARM - ORGANISMO PAGADOR AGRICULTURA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "200 - RB - RECIBO I.B.I. URBANO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "201 - ENTE PUBLICO AGUA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "201 - RB - RECIBO I.B.I. RUSTICO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "202 - RB - RECIBO IMPUESTO ACTIVIDADES ECONOMICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "203 - RB - ROTULOS LETREROS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "204 - LQ - LIQUIDACION ROTULOS LETREROS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "205 - LQ - CANON DE VERTIDOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "206 - RB - APORTACION AYUNTAMIENTOS AL CONSORCIO RESIDUOS        SOLIDOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "207 - RB - INTERESES/COSTAS A FAVOR CONSORCIO RESIDUOS        SOLIDOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "208 - LQ - LIQUIDACION AGUA RESIDUAL USO RIEGO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "209 - RB - SERVICIO ESTANCIAS DIURNAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "210 - RB - SERVICIO AYUDA DOMICILIO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "211 - RB - APROVECHAMIENTOS ESPECIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "212 - LQ - TASA OCUPACION SUELO/SUBSUELO/VUELO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "213 - RB - TASA VOLADIZOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "216 - LQ - AUTOLIQUIDACION IMPUESTO INCR. VALOR TERRENOS        URBANOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "217 - LQ - INTERESES DE DEMORA AGENCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "220 - LQ - TASAS Y OTROS INGRESOS DE DERECHO PUBLICO        DEL IMAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "221 - LQ - TASAS Y OTROS INGRESOS DE DERECHO PUBLICO        DEL SEF"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "222 - LQ - TASAS Y OTROS INGRESOS DE DERECHO PUBLICO        DE LA ARR"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "223 - LQ - MULTAS Y SANCIONES TRIBUTARIAS ARR"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "224 - RB - IMPUESTO BIENES INMUEBLES CARACTERISTICAS        ESPECIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "225 - LQ - TASA DE VERTIDOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "226 - LQ - TASA LICENCIAS PRIMERA OCUPACION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "227 - LQ - ESCUELAS MUNICIPALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "228 - LQ - LIQ. IMPUESTO BIENES DE CARACTERISTICAS        ESPECIALES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "229 - RB - APORTACION DE AYUNTAMIENTOS A        CONSORCIOS/ORGANISMOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "230 - RB - REPARTOS ORDINARIOS DE COMUNIDADES DE REGANTES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "231 - RB - DERRAMAS DE LAS COMUNIDADES DE REGANTES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "232 - RB - INTERESES/COSTAS A FAVOR CONSORCIOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "233 - LQ - SANCIONES DE TRAFICO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "235 - LQ - TASAS Y OTROS INGRESOS DE DERECHO PUBLICO        DE LA CARM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "236 - LQ - RECARGO DECLARAC. EXTEMPORÁNEA SIN REQUERIMIENTO        PREVIO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "237 - LQ - APROVECHAMIENTO ESPECIAL DEL DOMINIO PÚBLICO LOCAL        CON CAJEROS AUTOMÁTICOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "238 - RB - APROVECHAMIENTO ESPECIAL DEL DOMINIO PÚBLICO LOCAL        CON CAJEROS AUTOMÁTICOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "239 - LQ - LIQUIDACION TASA VOLADIZOS "
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "240 - LQ - LIQUIDACIONES REINTEGROS P.A.C. FEAGA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "241 - LQ - LIQUIDACIONES REINTEGROS P.A.C. FEADER"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "242 - LQ - INTERESES VOLUNTARIA LIQUIDACIONES REINTEGROS        P.A.C. FEAGA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "243 - LQ - INTERESES VOLUNTARIA LIQUIDACIONES REINTEGROS        P.A.C. FEADER"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "244 - LQ - TASA DE ENTIDADES DE CONSERVACION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "245 - LQ - APROVECHAMIENTO DOMINIO PÚBLICO LOCAL POR EMPRESAS        DE TELEFONÍA MÓVIL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "246 - RB - APROVECHAMIENTO DOMINIO PÚBLICO LOCAL POR EMPRESAS        DE TELEFONÍA MÓVIL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "247 - LQ - LIQUIDACIÓN IAE DERIVACIÓN DE RESPONSABILIDAD"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "248 - LQ - EJECUCION SUBSIDIARIA MUNICIPAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "249 - LQ - CUOTA ENTIDAD CONSERVADORA URBANISTICA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "251 - RB - OTROS INGRESOS MUNICIPALES PERIODICOS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "252 - LQ - TASA CONSORCIO EXTINCION INCENDIOS Y SALVAMENTO        CARM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "253 - LQ - SANCIONES LEY 6/1997-FALTAS LEVES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "254 - LQ - SANCIONES LEY 6/1997-FALTAS GRAVES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "255 - LQ - SANCIONES LEY 6/1997-FALTAS MUY GRAVES"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "258 - LQ - EXIGENCIA DE REDUCCION DE SANCION TRIBUTARIA        ART.188.1 LEY 58/2003"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "259 - LQ - EXIGENCIA DE REDUCCION DE SANCION TRIBUTARIA        ART.188.3 LEY 58/2003"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "260 - LQ - LIQUIDACION INSPECCION DEL IMPUESTO SOBRE        ACTIVIDADES ECONOMICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "261 - LQ - INTERESES DEMORA INSPECCION DEL IMPUESTO        SOBRE ACTIVIDADES ECONOMICAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "262 - LQ - SANCION DE INSPECCION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,concept_code:0
+msgid "263 - LQ - SANCION DE TRAFICO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "300 - AGENCIA TRIBUTARIA REGION DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "501 - GISCARMSA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "502 - INSTITUTO TURISMO DE LA REGION DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "503 - CONSEJO ECONOMICO Y SOCIAL REGION MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "504 - INSTITUTO CREDITO Y FINANZAS REGION MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "505 - ENTIDAD PUBLICA DEL TRANSPORTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "506 - INDUSTRIALHAMA, S.A."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "507 - INST.MURCIANO INV.Y DESAR.AGRAR.Y ALIMEN"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "508 - SOC.PUB.SUELO EQUIP.EMPRESAR.REG.MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "509 - BOLETIN OFICIAL DE LA REGION DE MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "700 - AGENCIA ESTATAL ADMINISTRACION TRIBUTARIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "703 - OF.LIQ. DE AGUILAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "715 - OF.LIQ. DE CARAVACA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "716 - ASAMBLEA REGIONAL"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "717 - ESAMUR"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "719 - OF.LIQ. DE CIEZA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "724 - OF.LIQ. DE LORCA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "726 - OF.LIQ. DE MAZARRON"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "727 - OF.LIQ. DE MOLINA SEGURA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "729 - OF.LIQ. DE MULA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "735 - OF.LIQ. DE SAN JAVIER"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "739 - OF.LIQ. DE TOTANA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "741 - OF.LIQ. DE LA UNION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "743 - OF.LIQ. DE YECLA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "794 - INSTITUTO DE TURISMO DE LA REGION MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "795 - INSTITUTO DE LA VIVIENDA Y SUELO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "796 - INSTITUTO SEGURIDAD Y SALUD LABORAL CARM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "797 - INSTITUTO JUVENTUD REGION MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "798 - SERVICIO DE EMPLEO Y FORMACION"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "799 - IMAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.config.settings,agency_code:0
+msgid "900 - MURCIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<br/>\n"
+"                            <strong>TELÉFONO:</strong>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<span style=\"padding-left: 10px;\">EJECUTIVA</span>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<span style=\"padding-left: 10px;\">EMBARGO</span>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<span style=\"padding-left: 10px;\">VOLUNTARIA</span>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<strong>AYUNTAMIENTO / ORGANISMO:</strong>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<strong>COMUNICACIÓN:</strong>\n"
+"                            <br/>\n"
+"                            <br/>\n"
+"                            Adjunto remito cargo nº"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "<strong>NIF:</strong>"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_external_layout_footer
+msgid "<strong>Sr. DIRECTOR DE LA AGENCIA TRIBUTARIA DE LA REGION DE MURCIA</strong>\n"
+"            <br/>\n"
+"            En cumplimiento de lo dispuesto en la Ley Orgánica 3/2018, de 5 de diciembre, de protección de datos personales\n"
+"            y garantía de los derechos digitales, se informa que los datos facilitados a través del presente formulario serán\n"
+"            incorporados a los ficheros de la Agencia Tributaria de la Región de Murcia, ante la cual podrán ejercitar los\n"
+"            derechos de acceso, rectificación, cancelación y oposición previstos en la citada ley."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_payment_line_search
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.invoice_form
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.invoice_tree
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.view_account_invoice_filter
+msgid "ATRM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_leave_requested
+msgid "ATRM Leave Requested"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_ref
+msgid "ATRM Reference"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_atrm_rejected
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.view_account_invoice_filter
+msgid "ATRM Rejected"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_bank_payment_line_atrm_sent
+msgid "ATRM done"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_payment_order_form_atrm
+msgid "ATRM options"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_bank_payment_line_atrm_ref
+msgid "ATRM reference"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.actions.report.xml,name:account_banking_debit_atrm.action_atrm_resume_report
+msgid "ATRM_resume"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_agency
+msgid "Agency"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_config_settings_agency_code
+msgid "Agency Code"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_config_settings_agency_max_amount
+msgid "Amount max"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_config_settings_agency_min_amount
+msgid "Amount min"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_bank_payment_line
+msgid "Bank Payment Lines"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Bulletin"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "COMUNICACIÓN DE CARGOS A LA AGENCIA TRIBUTARIA"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Certificate"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_certification_date
+msgid "Certification date"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name
+msgid "City"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_city
+msgid "City INE code"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_aka
+msgid "City alternative name"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_aka_simplified
+msgid "City alternative name simplified"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_reordered
+msgid "City reordered name"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_reordered_simplified
+msgid "City reordered name simplified"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_simplified
+msgid "City simplified"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_res_ine_codes
+msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_concept_code
+msgid "Concept"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_concept_code
+msgid "Concept by which the settlement or receipt is made. It will            be applied to all transactions."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_certification_date
+msgid "Date on which the debtor was notified.\n"
+"            It will be applied to all payment lines."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_debt_period
+msgid "Debt period"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Edict"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Electronic office"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,debt_period:0
+msgid "Embargo"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "En"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "En virtud del Convenio de Recaudación entre este Ayuntamiento/Organismo y\n"
+"                            la Agencia Tributaria de la Región de Murcia."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Enabled e-mail address"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_error_mode
+msgid "Error mode"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_errors_found
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_payment_order_form_atrm
+msgid "Errors"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,debt_period:0
+msgid "Executive"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,registry_type:0
+msgid "Executive notification"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "FICHERO"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,registry_type:0
+msgid "Guarantees"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_id
+msgid "ID"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "IMPORTE"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_invoice_in_atrm
+msgid "In ATRM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_leave_requested
+msgid "Indicates that a ATRM leave has been requested"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_rejected
+msgid "Indicates that the invoice has been rejected by ATRM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_bank_payment_line_atrm_sent
+msgid "Indicates whether this payment has already been            added to an ATRM payment file."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_in_atrm
+msgid "Indicates whether this payment has already been done and uploaded successfully"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,registry_type:0
+msgid "Liquidation"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Manifestation interested party"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_config_settings_agency_max_amount
+msgid "Maximum amount allowed by the agency agreement."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_media_notice
+msgid "Means used for the notification of the end of the voluntary            expiration date.\n"
+"It will be applied to all payment lines."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_media_notice
+msgid "Media notice volunteer"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_config_settings_agency_min_amount
+msgid "Minimum amount allowed by the agency agreement."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Notifying agent"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "Nº DEUDAS"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_account_payment_order
+msgid "Payment Order"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_payment_mode_name
+msgid "Payment mode name"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_debt_period
+msgid "Period in which debts should be managed."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,error_mode:0
+msgid "Permissive"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,media_notice:0
+msgid "Personal"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_payment_order_form_atrm
+msgid "Print ATRM resume"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_province
+msgid "Province INE code"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_registry_type
+msgid "Registry type"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_shipment_date
+msgid "Shipment date"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_shipment_num
+msgid "Shipment number"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_state
+msgid "State INE code"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,error_mode:0
+msgid "Strict"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_error_mode
+msgid "Strict mode does not allow errors. The permissive mode allows errors but they are collected in the \"Errors\" tab."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:account.payment.method,name:account_banking_debit_atrm.payment_method_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.account_config_settings_atrm_view
+msgid "Tax Agency of the Region of Murcia (ATRM)"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:563
+#, python-format
+msgid "The agency has not been configured.                Set it in Accounting/Settings."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:605
+#, python-format
+msgid "The concept code %s is not allowed                at the moment."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:926
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:934
+#, python-format
+msgid "The entry number %s has failed, debtor city not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:796
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:801
+#, python-format
+msgid "The entry number %s has failed, debtor name not found."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:822
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:829
+#, python-format
+msgid "The entry number %s has failed, debtor street not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:945
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:951
+#, python-format
+msgid "The entry number %s has failed, debtor zip not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:906
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:918
+#, python-format
+msgid "The entry number %s has failed, debtorine city code not found for city %s.\n"
+"Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:994
+#, python-format
+msgid "The entry number %s has failed, the amount %s exceeds the limits allowed by the agency agreement."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:699
+#, python-format
+msgid "The entry number %s has failed, the bank line %s seems that it has already been sent \n"
+""
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:783
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:789
+#, python-format
+msgid "The entry number %s has failed, the firstname for partner %s not found."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:768
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:774
+#, python-format
+msgid "The entry number %s has failed, the lastname for partner %s not found."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1045
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1051
+#, python-format
+msgid "The entry number %s has failed, the obligation birthdate (%s) is after the settlement date (%s)."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1080
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1086
+#, python-format
+msgid "The entry number %s has failed, the settlement date (%s) is after expiration date (%s)."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1063
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1068
+#, python-format
+msgid "The entry number %s has failed, the settlement date (%s) is after the current date (%s)."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:727
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:734
+#, python-format
+msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1110
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1116
+#, python-format
+msgid "The entry number %s has failed, the year (%s) is after 1986."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1097
+#, python-format
+msgid "The entry number %s has failed, the year (%s) is after of current year (%s)."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1102
+#, python-format
+msgid "The entry number %s has failed, the year (%s) is after of currentyear (%s)."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:741
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:748
+#, python-format
+msgid "The entry number %s has failed, vat not found for partner %s."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:1000
+#, python-format
+msgid "The entry number %s has failed,the amount %s exceeds the limits allowed by the agency agreement."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: code:addons/account_banking_debit_atrm/models/account_payment_order.py:704
+#, python-format
+msgid "The entry number %s has failed,the bank line %s seems that it has already been sent"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_config_settings_agency_code
+msgid "This code identifies the agency or municipality that sends            the delegated charge to ATRM."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_agency
+msgid "This code identifies the agency or municipality that sends            the delegated charge to ATRM.\n"
+"This parameter is set in the            accounting configuration."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_registry_type
+msgid "This is the type of registry sent: Liquidation, Executive            notification or Guarantees.\n"
+"At this time only the Liquidation            type is possible."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_bank_payment_line_atrm_ref
+msgid "This number indicates the payment reference            if it has been made by ATRM."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_invoice_atrm_ref
+msgid "This number indicates the payment reference when has been made by ATRM"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: selection:account.payment.order,debt_period:0
+msgid "Volunteer"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_shipment_num
+msgid "Year and shipment number. Format YYYYNNNNN. Self generated."
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model,name:account_banking_debit_atrm.model_account_config_settings
+msgid "account.config.settings"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_atrm_filename
+msgid "atrm filename"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_atrm_total_amount
+msgid "atrm total amount"
+msgstr ""
+
+#. module: account_banking_debit_atrm
+#: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
+msgid "de"
+msgstr ""
+
