@@ -1571,46 +1571,6 @@ msgid "Certification date"
 msgstr ""
 
 #. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name
-msgid "City"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_city
-msgid "City INE code"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_aka
-msgid "City alternative name"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_aka_simplified
-msgid "City alternative name simplified"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_reordered
-msgid "City reordered name"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_reordered_simplified
-msgid "City reordered name simplified"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_city_name_simplified
-msgid "City simplified"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model,name:account_banking_debit_atrm.model_res_ine_codes
-msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
-msgstr ""
-
-#. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_concept_code
 msgid "Concept"
 msgstr ""
@@ -1618,16 +1578,6 @@ msgstr ""
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,help:account_banking_debit_atrm.field_account_payment_order_concept_code
 msgid "Concept by which the settlement or receipt is made. It will            be applied to all transactions."
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_create_uid
-msgid "Created by"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_create_date
-msgid "Created on"
 msgstr ""
 
 #. module: account_banking_debit_atrm
@@ -1644,11 +1594,6 @@ msgstr ""
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_debt_period
 msgid "Debt period"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_display_name
-msgid "Display Name"
 msgstr ""
 
 #. module: account_banking_debit_atrm
@@ -1714,11 +1659,6 @@ msgid "Guarantees"
 msgstr ""
 
 #. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_id
-msgid "ID"
-msgstr ""
-
-#. module: account_banking_debit_atrm
 #: model:ir.ui.view,arch_db:account_banking_debit_atrm.atrm_resume_document
 msgid "IMPORTE"
 msgstr ""
@@ -1751,21 +1691,6 @@ msgstr ""
 #. module: account_banking_debit_atrm
 #: model:ir.model,name:account_banking_debit_atrm.model_account_invoice
 msgid "Invoice"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes___last_update
-msgid "Last Modified on"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_write_uid
-msgid "Last Updated by"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_write_date
-msgid "Last Updated on"
 msgstr ""
 
 #. module: account_banking_debit_atrm
@@ -1840,11 +1765,6 @@ msgid "Print ATRM resume"
 msgstr ""
 
 #. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_province
-msgid "Province INE code"
-msgstr ""
-
-#. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_registry_type
 msgid "Registry type"
 msgstr ""
@@ -1857,11 +1777,6 @@ msgstr ""
 #. module: account_banking_debit_atrm
 #: model:ir.model.fields,field_description:account_banking_debit_atrm.field_account_payment_order_shipment_num
 msgid "Shipment number"
-msgstr ""
-
-#. module: account_banking_debit_atrm
-#: model:ir.model.fields,field_description:account_banking_debit_atrm.field_res_ine_codes_ine_code_state
-msgid "State INE code"
 msgstr ""
 
 #. module: account_banking_debit_atrm
