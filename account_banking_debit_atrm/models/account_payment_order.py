@@ -873,7 +873,7 @@ class AccountPaymentOrder(models.Model):
 
                     # Get ine codes using partner city simplified
                     ine_codes = \
-                        self.env['res.ine.codes'].search(
+                        self.env['res.ine.code'].search(
                             ['|', '|', '|', '|', '|',
                              ('city_name_simplified', '=',
                               city_name_simplified),

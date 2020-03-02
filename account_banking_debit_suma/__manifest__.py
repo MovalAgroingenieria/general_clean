@@ -13,7 +13,7 @@
         "account_banking_pain_base",
         "partner_second_lastname",
         "partner_street_type",
-        "l10n_es_ine_codes",
+        "l10n_es_ine_code",
     ],
     "data": [
         "data/account_payment_method_data.xml",
