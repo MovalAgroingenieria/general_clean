@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2019 Moval Agroingeniería
+# 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -28,9 +28,9 @@ class IneCode(models.Model):
         if 'ine_code_state' in groupby and 'ine_code_province' in groupby:
             fields_to_remove = ['ine_code_city']
         elif 'ine_code_state' in groupby:
-            fields_to_remove = ['ine_code_province','ine_code_city']
+            fields_to_remove = ['ine_code_province', 'ine_code_city']
         elif 'ine_code_province' in groupby:
-            fields_to_remove = ['ine_code_state','ine_code_city']
+            fields_to_remove = ['ine_code_state', 'ine_code_city']
         else:
             fields_to_remove = []
         for field_to_remove in fields_to_remove:

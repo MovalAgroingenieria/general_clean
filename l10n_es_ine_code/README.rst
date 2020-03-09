@@ -16,11 +16,29 @@ to facilitate comparison.
 
 If the city name is found, the city, province and state codes can be obtained.
 
+Example
+-------
+
+.. code-block:: python
+
+   city_name = self.partner_id.city
+   city_name_simplified = unicodedata.normalize(‘NFKD’, city_name).upper()
+   codes = self.env['res.ine.code'].search(
+       ['|', '|', '|',
+       ('city_name_simplified', '=', city_name_simplified),
+       ('city_name_aka_simplified', '=', city_name_simplified),
+       ('city_name_reordered_simplified', '=', city_name_simplified)])
+   if codes:
+       state_code = codes.ine_code_state
+       province_code = codes.ine_code_province
+       city_code = codes.ine_code_city
+
 
 Credits
 =======
 
 * Moval Agroingeniería S.L.
+
 
 Contributors
 ------------
