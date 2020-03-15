@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_street_type_view_tree" model="ir.ui.view">
+        <field name="name">Street Types (tree view)</field>
+        <field name="model">res.street.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="abbreviation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_street_type_view_search" model="ir.ui.view">
+        <field name="name">Street Types (search view)</field>
+        <field name="model">res.street.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="abbreviation"/>
+                <group expand="0" string="Group By">
+                    <filter string="Abbreviation" name="group_by_abbreviation"
+                        context="{'group_by':'abbreviation'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_res_street_type_tree" model="ir.actions.act_window">
+        <field name="name">Street Types</field>
+        <field name="res_model">res.street.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="res_street_type_view_tree" name="view_id"/>
+    </record>
+
+    <menuitem
+        name="Street types"
+        id="street_type_menu"
+        parent="street_type_root_menu"
+        action="action_res_street_type_tree"
+        sequence="2"/>
+
+</odoo>
