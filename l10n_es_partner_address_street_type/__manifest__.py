@@ -7,7 +7,7 @@
     "summary": "Add the Spanish street types and their abbreviations \
                 according 'to the Spanish cadastre.",
     "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
+    "category": "Localization",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",

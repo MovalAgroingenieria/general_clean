@@ -14,6 +14,11 @@ their abbreviations according to the `Spanish cadastre <http://www.catastro.meh.
 types of street are accepted by most Spanish public entities, such as the Treasury or the
 National Statistics Institute (INE).
 
+The Spanish cadastre accepts other languages besides the Castilian, which increases the list
+to more than 300 street types, so only some of them have been marked to appear on the list by
+default. The type of streets shown can be configured in /Settings/Street Type Management/Street
+types.
+
 
 Credits
 =======

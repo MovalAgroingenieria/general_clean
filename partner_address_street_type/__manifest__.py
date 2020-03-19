@@ -6,7 +6,7 @@
     "name": "Partner Address Street Type",
     "summary": "This module add street type to partner address (base module).",
     "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
+    "category": "Partner Management",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",

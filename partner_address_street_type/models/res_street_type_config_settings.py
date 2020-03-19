@@ -19,7 +19,7 @@ class ResStreetTypeConfiguration(models.TransientModel):
         ("long", "Name")],
         string="Street type shown",
         required=True,
-        default="not_show",
+        default="long",
         help="Determine how the street type will be displayed.")
 
     address_format_set = fields.Text(

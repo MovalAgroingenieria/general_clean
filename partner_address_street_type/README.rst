@@ -9,16 +9,18 @@ Partner Addresss Street Type
 Description
 ===========
 
-This module add street type field to the partner address fields. The street type is shown before the street field
-in views and printable documents. How the street type field is shown (full street type name, abbreviation or not shown)
-is set in "/Settings/Street Type Management/Settings" (by default it is set to "Not show").
+This module add street type field to the partner address fields. The street type is shown before the
+street field in views and printable documents. After install, how the street type field is shown (full
+street type name, abbreviation or not shown) has to be set in "/Settings/Street Type Management/Settings".
 
-To display the street type in the direction of the printable documents, the variable address_format has been modified
-by adding the field before the street field and will be apply to all countries. However this order can changed in
-street type settings (for all countries) or for each country in "Sales/Configuration/Contacts/Localization/Countries".
+To display the street type in the direction of the printable documents, the variable address_format
+will modified by adding the field before the street field and will be apply to all countries. This
+order can changed in street type settings (affecting all countries) or for each country in
+"Sales/Configuration/Contacts/Localization/Countries". If you want to avoid this address reformatting
+delete the hook 'post_init_hook' in the manifest.
 
-The types of street and their abbreviations are dependent on each country, so this is a base module that introduces the
-model and the views, the data must be provided by another module.
+The types of street and their abbreviations are dependent on each country, so this is a base module
+that introduces the model and the views, the data must be provided by another module or has to be imported.
 
 
 Credits

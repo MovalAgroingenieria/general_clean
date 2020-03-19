@@ -5,9 +5,11 @@
         <field name="name">Street Types (tree view)</field>
         <field name="model">res.street.type</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="name"/>
                 <field name="abbreviation"/>
+                <field name="show_in_list"/>
+                <field name="is_default"/>
             </tree>
         </field>
     </record>
@@ -22,6 +24,8 @@
                 <group expand="0" string="Group By">
                     <filter string="Abbreviation" name="group_by_abbreviation"
                         context="{'group_by':'abbreviation'}"/>
+                    <filter string="Show in list" name="group_by_showinlist"
+                        context="{'group_by':'show_in_list'}"/>
                 </group>
             </search>
         </field>
