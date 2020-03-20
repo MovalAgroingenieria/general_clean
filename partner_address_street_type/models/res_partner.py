@@ -20,7 +20,8 @@ class ResPartner(models.Model):
     street_type_id = fields.Many2one(
         string='Street type',
         comodel_name='res.street.type',
-        ondelete="set null")
+        ondelete="set null",
+        default=_default_street_type_id)
 
     street_type_show = fields.Char(
         string="Street type show",
@@ -29,7 +30,7 @@ class ResPartner(models.Model):
     @api.multi
     def _compute_street_type_show(self):
         config_type_shown = self.env['ir.values'].get_default(
-                'res.street.type.configuration', 'street_type_shown')
+            'res.street.type.configuration', 'street_type_shown')
         for record in self:
             street_type_show = ''
             if record.street_type_id:
@@ -71,9 +72,9 @@ class ResPartner(models.Model):
             street_type_id = vals.get('street_type_id')
             street_type = self.env['res.street.type'].browse(street_type_id)
             if config_type_shown == 'long':
-                vals.update({'street_type_show': street_type.name,})
+                vals.update({'street_type_show': street_type.name})
             elif config_type_shown == 'short':
-                vals.update({'street_type_show': street_type.abbreviation,})
+                vals.update({'street_type_show': street_type.abbreviation})
             else:
-                vals.update({'street_type_show': "",})
+                vals.update({'street_type_show': ""})
         return super(ResPartner, self).write(vals)

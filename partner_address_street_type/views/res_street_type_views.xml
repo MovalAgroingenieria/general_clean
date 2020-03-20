@@ -5,7 +5,29 @@
         <field name="name">Street Types (tree view)</field>
         <field name="model">res.street.type</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree>
+                <field name="name"/>
+                <field name="abbreviation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_street_type_view_search" model="ir.ui.view">
+        <field name="name">Street Types (search view)</field>
+        <field name="model">res.street.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="abbreviation"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_street_type_config_view_tree" model="ir.ui.view">
+        <field name="name">Street Types (tree view)</field>
+        <field name="model">res.street.type</field>
+        <field name="arch" type="xml">
+            <tree create="false" delete="false" editable="top">
                 <field name="name"/>
                 <field name="abbreviation"/>
                 <field name="show_in_list"/>
@@ -14,7 +36,7 @@
         </field>
     </record>
 
-    <record id="res_street_type_view_search" model="ir.ui.view">
+    <record id="res_street_type_config_view_search" model="ir.ui.view">
         <field name="name">Street Types (search view)</field>
         <field name="model">res.street.type</field>
         <field name="arch" type="xml">
@@ -36,7 +58,11 @@
         <field name="res_model">res.street.type</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field ref="res_street_type_view_tree" name="view_id"/>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_street_type_config_view_tree')})]"/>
+        <field name="search_view_id" ref="res_street_type_config_view_search"/>
     </record>
 
     <menuitem

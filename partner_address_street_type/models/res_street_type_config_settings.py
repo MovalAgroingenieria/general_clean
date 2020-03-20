@@ -4,6 +4,7 @@
 
 from odoo import models, fields, api
 
+
 class ResStreetTypeConfiguration(models.TransientModel):
     _inherit = 'res.config.settings'
     _name = 'res.street.type.configuration'

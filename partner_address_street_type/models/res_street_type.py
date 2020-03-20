@@ -32,12 +32,10 @@ class ResStreetType(models.Model):
         result = []
         if self.env.context.get('in_combo', False):
             for record in self:
-                if record.show_in_list:
-                    result.append((record.id,
-                                   record.abbreviation + ' - ' + record.name))
+                result.append((record.id,
+                               record.abbreviation + ' - ' + record.name))
         else:
             for record in self:
-                #if record.show_in_list:
                 result.append((record.id, record.abbreviation))
         return result
 

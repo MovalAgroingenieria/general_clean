@@ -14,6 +14,7 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "data/res_street_type_config_settings.xml",
         "views/res_street_type_config_settings_view.xml",
         "views/res_street_type_views.xml",
         "views/res_partner_views.xml",
