@@ -13,6 +13,7 @@
                 <field name="street_num" style="width: 23%;"
                     attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                     placeholder="Num..."/>
+                <span style="display: block"/>
             </xpath>
 
         </field>
@@ -30,6 +31,7 @@
                 <field name="street_num" style="width: 23%;"
                     attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"
                     placeholder="Num..."/>
+                <span style="display: block"/>
             </xpath>
         </field>
     </record>
