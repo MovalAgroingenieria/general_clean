@@ -2,19 +2,14 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==========================
-Account Banking Debit ATRM
-==========================
+====================
+FontAwesome Extended
+====================
 
 Description
 ===========
 
-This module generate a normalized payment file for 'Tax Agency of the Region of Murcia (ATRM)' and associated resume report.
-
-Notes
-=====
-After installation, it is mandatory to create a payment mode called 'ATRM' associated with the
-payment method 'Tax Agency of the Region of Murcia (ATRM)'.
+This module add custom fontawesome fonts.
 
 Credits
 =======
@@ -24,12 +19,11 @@ Credits
 Contributors
 ------------
 
-* Javier Abril <jabril@moval.es>
-* Ana Gómez <anaj.gomez@carm.es>
 * Alberto Hernández <ahernandez@moval.es>
 * Eduardo Iniesta <einiesta@moval.es>
 * Miguel Mora <mmora@moval.es>
 * Juanu Sandoval <jsandoval@moval.es>
+* Salvador sánchez <ssanchez@moval.es>
 * Jorge Vera <jvera@moval.es>
 
 Maintainer

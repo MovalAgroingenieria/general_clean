@@ -2,10 +2,11 @@
 
 <odoo>
 
-	<template id="assets_common" inherit_id="web.assets_common">
-		<xpath expr="link[@href='/base_fontawesome/static/lib/fontawesome-4.7.0/css/font-awesome.css']" position="after">
-			<link rel="stylesheet" type="text/css" href="/fontawesome_ext/static/lib/custom_fontawsome/css/fontello.css" />
-		</xpath>
-	</template>
+    <template id="assets_ext" inherit_id="web.assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/fontawesome_ext/static/lib/custom_fontawsome/css/fontello.css"/>
+        </xpath>
+    </template>
 
 </odoo>
