@@ -11,6 +11,8 @@ Description
 
 This module add custom fontawesome fonts.
 
+The font has been generated using `Fontello <http://fontello.com/>`_ web service.
+
 Credits
 =======
 
