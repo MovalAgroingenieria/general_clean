@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="app_sidebar_mod" inherit_id="backend_theme_v10.app_sidebar" name="Apps Sidebar Modificated">
+        <xpath expr="//ul[@id='sidebar']" position="before">
+           <ul class="app-sidebar-panel text-center fa-moval-logo"
+                style="flex">
+           </ul>
+        </xpath>
+    </template>
+     
+</odoo>
