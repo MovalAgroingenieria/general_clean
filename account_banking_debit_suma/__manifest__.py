@@ -13,7 +13,7 @@
     "depends": [
         "account_banking_pain_base",
         "partner_second_lastname",
-        "partner_street_type",
+        "l10n_es_partner_address_street_type",
         "l10n_es_ine_code",
     ],
     "data": [

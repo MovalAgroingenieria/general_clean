@@ -708,17 +708,17 @@ class AccountPaymentOrder(models.Model):
             # Taxpayer address - Position [101-161] Length 61
             if taxpayer_address_type == "04":
                 # Street type - Position [101-102] Length 2
-                # @INFO: partner_street_type module dependence
-                if line.partner_id.street_type:
-                    taxpayer_address_street_type = line.partner_id.street_type
+                # @INFO: l10n_es_partner_street_type dependence
+                if line.partner_id.street_type_id:
+                    taxpayer_address_street_type = \
+                        line.partner_id.street_type_id.abbreviation
                 else:
                     taxpayer_address_street_type = "CL"
 
                 # Street name - Position [103-122] Length 20
-                # @INFO: partner_street_type module dependence
-                if line.partner_id.street_name:
+                if line.partner_id.street:
                     taxpayer_address_street_name = \
-                        line.partner_id.street_name[:20].ljust(20)
+                        line.partner_id.street[:20].ljust(20)
                 else:
                     if self.error_mode == 'permissive':
                         error_num += 1
@@ -735,12 +735,12 @@ class AccountPaymentOrder(models.Model):
                               (entry_num_padded, line.partner_id.name)))
 
                 # Street number - Position [123-127] Length 5
-                # @INFO: street_number module dependence
-                if line.partner_id.street_number:
+                # @INFO: partner_address_street_number dependence
+                if line.partner_id.street_num:
                     # Get only numbers
                     taxpayer_address_street_number = \
                         filter(lambda x: x.isdigit(),
-                               line.partner_id.street_number)
+                               line.partner_id.street_num)
                     taxpayer_address_street_number = \
                         str(taxpayer_address_street_number.encode(
                             self.ENCODING_NAME,
@@ -749,8 +749,9 @@ class AccountPaymentOrder(models.Model):
                     taxpayer_address_street_number = str(" " * 5)
 
                 # Street description - Position [128-134] Length 7
-                # @INFO: It allows format Escalera(1), Piso(2), Puerta(2),
-                #        Letra(1), Tipo(1)
+                # @INFO: - It allows format Escalera(1), Piso(2), Puerta(2),
+                #          Letra(1), Tipo(1)
+                #        - The field street2 can be used
                 taxpayer_address_street_description = str(" " * 7)
 
                 # County code - Position [135-137] Length 3

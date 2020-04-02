@@ -11,7 +11,6 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "depends": [
-        "partner_street_number",
         "partner_address_street3",
     ],
     "data": [

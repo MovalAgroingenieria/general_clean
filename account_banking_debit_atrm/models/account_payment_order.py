@@ -804,14 +804,14 @@ class AccountPaymentOrder(models.Model):
             if debt_period == "V":
                 # @INFO: Try to get road acronym from street_type or give
                 # default CL (the tax agency will process the errors).
-                if line.partner_id.street_type:
-                    debtor_public_road_acronym = line.partner_id.street_type
+                if line.partner_id.street_type_id:
+                    debtor_public_road_acronym = \
+                        line.partner_id.street_type_id.abbreviation
                 else:
                     debtor_public_road_acronym = "CL"
 
-                # @INFO: street_name is a dependence of partner_street_number
-                if line.partner_id.street_name:
-                    debtor_street = line.partner_id.street_name
+                if line.partner_id.street:
+                    debtor_street = line.partner_id.street
                     debtor_street_padded = debtor_street.ljust(100)
                 else:
                     if self.error_mode == 'permissive':
@@ -830,11 +830,11 @@ class AccountPaymentOrder(models.Model):
                                                  line.partner_id.name)))
 
                 # Get street number
-                if line.partner_id.street_number:
+                if line.partner_id.street_num:
                     # Get only numbers
                     debtor_street_num = \
                         filter(lambda x: x.isdigit(),
-                               line.partner_id.street_number)
+                               line.partner_id.street_num)
                     debtor_street_number = \
                         str(debtor_street_num).zfill(5)
                 else:
