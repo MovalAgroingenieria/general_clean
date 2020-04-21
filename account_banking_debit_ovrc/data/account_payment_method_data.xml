@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Add OVRc payment method -->
+        <record id="payment_method_ovrv" model="account.payment.method">
+            <field name="name">Virtual Collection Office of Castellon (OVRc)</field>
+            <field name="code">debit_ovrc</field>
+            <field name="payment_type">inbound</field>
+            <field name="prefix">ovrc_</field>
+            <field name="bank_account_required">False</field>
+            <field name="mandate_required">False</field>
+        </record>
+
+        <!-- Sequence for value_number variable -->
+        <record model="ir.sequence" id="ovrc_value_number">
+            <field name="name">Value Number for OVRc</field>
+            <field name="code">ovrc_seq_value_number</field>
+            <field name="prefix"></field>
+            <field name="padding">11</field>
+        </record>  
+
+    </data>
+</odoo>

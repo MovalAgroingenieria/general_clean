@@ -1,0 +1,1074 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_debit_ovrc
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-21 08:15+0000\n"
+"PO-Revision-Date: 2020-04-21 08:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,receipt_period:0
+msgid "1 - First quarter, semester, etc"
+msgstr "1 - Primer trimestre, quadrimestre, semestre..."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,receipt_period:0
+msgid "2 - Second quarter, semester, etc"
+msgstr "2 - Segon trimestre, quadrimestre, semestre..."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,receipt_period:0
+msgid "3 - Third quarter, four-month, etc"
+msgstr "3 - Tercer trimestre, quadrimestre..."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,receipt_period:0
+msgid "4 - Fourth quarter, etc"
+msgstr "4 - Quart quadrimestre..."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "AIN"
+msgstr "AIN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALBOCACE"
+msgstr "ALBOCACE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALCALA"
+msgstr "ALCALA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALCORA"
+msgstr "ALCORA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALCUDIA"
+msgstr "ALCUDIA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALFONDEG"
+msgstr "ALFONDEG"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALGIMIA"
+msgstr "ALGIMIA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALMASSOR"
+msgstr "ALMASSOR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALMEDIJA"
+msgstr "ALMEDIJA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALMENARA"
+msgstr "ALMENARA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ALTURA"
+msgstr "ALTURA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ARAÑUEL"
+msgstr "ARAÑUEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ARES"
+msgstr "ARES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ARGELITA"
+msgstr "ARGELITA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ARTANA"
+msgstr "ARTANA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ATZENETA"
+msgstr "ATZENETA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "AYODAR"
+msgstr "AYODAR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "AZUEBAR"
+msgstr "AZUEBAR"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_config_settings_agency
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_agency
+msgid "Agency"
+msgstr "Organisme"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BALLESTA"
+msgstr "BALLESTA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BARRACAS"
+msgstr "BARRACAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BEJIS"
+msgstr "BEJIS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENAFER"
+msgstr "BENAFER"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENAFIGO"
+msgstr "BENAFIGO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENASSAL"
+msgstr "BENASSAL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENICARL"
+msgstr "BENICARL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENICASS"
+msgstr "BENICASS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BENLLOCH"
+msgstr "BENLLOCH"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BETXI"
+msgstr "BETXI"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BOJAR"
+msgstr "BOJAR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "BORDER IRRIGATION"
+msgstr "REG A MANTA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BORRIOL"
+msgstr "BORRIOL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "BURRIANA"
+msgstr "BURRIANA"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model,name:account_banking_debit_ovrc.model_bank_payment_line
+msgid "Bank Payment Lines"
+msgstr "Línies de pagament bancari"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CABANES"
+msgstr "CABANES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CALIG"
+msgstr "CALIG"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CANET"
+msgstr "CANET"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CASTECAB"
+msgstr "CASTECAB"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CASTEFOR"
+msgstr "CASTEFOR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CASTELLO"
+msgstr "CASTELLO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CASTENOV"
+msgstr "CASTENOV"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CASTILLO"
+msgstr "CASTILLO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CATI"
+msgstr "CATI"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CAUDIEL"
+msgstr "CAUDIEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CERVERA"
+msgstr "CERVERA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CHIVA"
+msgstr "CHIVA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CHOVAR"
+msgstr "CHOVAR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CINCTORR"
+msgstr "CINCTORR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CIRAT"
+msgstr "CIRAT"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "CLEANING IRRIGATION DITCHES"
+msgstr "NETEJA SÉQUIES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CORACHAR"
+msgstr "CORACHAR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CORTES"
+msgstr "CORTES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "COSTUR"
+msgstr "COSTUR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "COVES"
+msgstr "COVES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "CULLA"
+msgstr "CULLA"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.ui.view,arch_db:account_banking_debit_ovrc.account_config_settings_ovrc_view
+msgid "Castellon Virtual Colletion Office (OVRc)"
+msgstr "Oficina Virtual de Recaptació de Castelló (OVRc)"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_concept_code
+msgid "Concept"
+msgstr "Concepte"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_concept_code
+msgid "Concept. It will be applied to all transactions."
+msgstr "Concepte. S'aplicarà a totes les transaccions."
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_receipt_period
+msgid "Coverage time. Example: 1, if it is 1st quarter, semester, etc.\n"
+"It will be applied to all transactions."
+msgstr "Període de cobertura (Exemple: 1, si és 1r trimestre, etc).\n"
+"S'aplicarà a totes les transaccions."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ESLIDA"
+msgstr "ESLIDA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ESPADILL"
+msgstr "ESPADILL"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_error_mode
+msgid "Error mode"
+msgstr "Mode error"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_errors_found
+#: model:ir.ui.view,arch_db:account_banking_debit_ovrc.account_payment_order_form_ovrc
+msgid "Errors"
+msgstr "Errors"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_exaction_type
+msgid "Exaction type"
+msgstr "Tipus Exacció"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FANZARA"
+msgstr "FANZARA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "FEE DISTRIBUTION DELIVERY 1ST SEMESTER"
+msgstr "QUOTA REPARTIMENT SEQUIATGE 1 SEMESTRE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "FEE DISTRIBUTION DELIVERY 2ND SEMESTER"
+msgstr "QUOTA REPARTIMENT SEQUIATGE 2 SEMESTRE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FIGUEROL"
+msgstr "FIGUEROL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "FINES AND INDEMNIFICATIONS JURY OF IRRIGATIONS"
+msgstr "MULTES I INDEMNITZACIONS JURAT DE REGS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FORCALL"
+msgstr "FORCALL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FREDES"
+msgstr "FREDES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FUENAYOD"
+msgstr "FUENAYOD"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "FUENREIN"
+msgstr "FUENREIN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "GAIBIEL"
+msgstr "GAIBIEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "GELDO"
+msgstr "GELDO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "HERBES"
+msgstr "HERBES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "HIGUERAS"
+msgstr "HIGUERAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "IRRIGATION DITCH WORKS"
+msgstr "OBRES SÈQUIES"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_income_type
+msgid "Income type"
+msgstr "Tipus ingrés"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_income_type
+msgid "Income type. It will be applied to all transactions."
+msgstr "Tipus ingrés. S'aplicarà a totes les transaccions."
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_bank_payment_line_ovrc_sent
+msgid "Indicates whether this payment has already been added to an OVRc payment file."
+msgstr "Indica si aquest pagament ja ha estat afegit a un fitxer de pagament OVRc."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "JANA LA"
+msgstr "JANA LA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "JERICA"
+msgstr "JERICA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "LLOSA LA"
+msgstr "LLOSA LA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "LOCATED IRRIGATION 1-10 A 28-2"
+msgstr "REG LOCALITZAT 1-10 A 28-2"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "LOCATED IRRIGATION 1-3  A 30-6"
+msgstr "REG LOCALITZAT 1-3  A 30-6"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,concept_code:0
+msgid "LOCATED IRRIGATION 1-7 A 30-9"
+msgstr "REG LOCALITZAT 1-7 A 30-9"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "LUCENA"
+msgstr "LUCENA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "LUDIENTE"
+msgstr "LUDIENTE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MATA LA"
+msgstr "MATA LA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MATET"
+msgstr "MATET"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MONCOFAR"
+msgstr "MONCOFAR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MONTAN"
+msgstr "MONTAN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MONTANEJ"
+msgstr "MONTANEJ"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "MORELLA"
+msgstr "MORELLA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "NAVAJAS"
+msgstr "NAVAJAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "NULES"
+msgstr "NULES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "OLOCAU"
+msgstr "OLOCAU"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ONDA"
+msgstr "ONDA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "OROPESA"
+msgstr "OROPESA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ORTELLS"
+msgstr "ORTELLS"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_bank_payment_line_ovrc_sent
+msgid "OVR done"
+msgstr "Fet OVRc"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.ui.view,arch_db:account_banking_debit_ovrc.account_payment_order_form_ovrc
+msgid "OVRc options"
+msgstr "Opcions OVRc"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_bank_payment_line_ovrc_ref
+msgid "OVRc reference"
+msgstr "Referència OVRc"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PALANQUE"
+msgstr "PALANQUE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PAVIAS"
+msgstr "PAVIAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PEÑISCOL"
+msgstr "PEÑISCOL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PINA"
+msgstr "PINA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "POBLABEN"
+msgstr "POBLABEN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "POBLATOR"
+msgstr "POBLATOR"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PORTELL"
+msgstr "PORTELL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "PUEBAREN"
+msgstr "PUEBAREN"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model,name:account_banking_debit_ovrc.model_account_payment_order
+msgid "Payment Order"
+msgstr "Ordre de pagament"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_payment_mode_name
+msgid "Payment mode name"
+msgstr "Nom manera de pagament"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,field_description:account_banking_debit_ovrc.field_account_payment_order_receipt_period
+msgid "Period"
+msgstr "Període"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,error_mode:0
+msgid "Permissive"
+msgstr "Permissiu"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "REGALM"
+msgstr "REGALM"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "RIBESALB"
+msgstr "RIBESALB"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ROSELL"
+msgstr "ROSELL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,exaction_type:0
+msgid "Receipt"
+msgstr "Rebut"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SACAÑET"
+msgstr "SACAÑET"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SALZADEL"
+msgstr "SALZADEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SANJORDI"
+msgstr "SANJORDI"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SANMATEU"
+msgstr "SANMATEU"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SANRAFAE"
+msgstr "SANRAFAE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SANTAMAG"
+msgstr "SANTAMAG"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SANTJOAN"
+msgstr "SANTJOAN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SARRATEL"
+msgstr "SARRATEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SEGORBE"
+msgstr "SEGORBE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SIERRA"
+msgstr "SIERRA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SONEJA"
+msgstr "SONEJA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SOTFERRE"
+msgstr "SOTFERRE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "SUERAS"
+msgstr "SUERAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,exaction_type:0
+msgid "Settlement"
+msgstr "Liquidació"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,error_mode:0
+msgid "Strict"
+msgstr "Estricte"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_error_mode
+msgid "Strict mode does not allow errors. The permissive mode allows errors but they are collected in the Errors tab."
+msgstr "La manera estricte no permet errors. La manera permissiu permet errors, però es recopilen a la pestanya \"Errors \"."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TALES"
+msgstr "TALES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TERESA"
+msgstr "TERESA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TIRIG"
+msgstr "TIRIG"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TODOLELL"
+msgstr "TODOLELL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TOGA"
+msgstr "TOGA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORAS"
+msgstr "TORAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORO"
+msgstr "TORO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORRALBA"
+msgstr "TORRALBA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORREBLA"
+msgstr "TORREBLA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORRECHI"
+msgstr "TORRECHI"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORREMBE"
+msgstr "TORREMBE"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TORRENDO"
+msgstr "TORRENDO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "TRAIGUER"
+msgstr "TRAIGUER"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:475
+#, python-format
+msgid "The entry number %s has failed, INE codes not found for city %s"
+msgstr "L'entrada número %s ha fallat, no s'han trobat els codis INE per ciutat %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:470
+#, python-format
+msgid "The entry number %s has failed, INE codes not found for city %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'han trobat els codis INE per ciutat %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:506
+#, python-format
+msgid "The entry number %s has failed, ZIP not found for partner %s"
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el codi postal per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:501
+#, python-format
+msgid "The entry number %s has failed, ZIP not found for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el codi postal per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:488
+#, python-format
+msgid "The entry number %s has failed, city not found for partner %s"
+msgstr "L'entrada número %s ha fallat, no s'ha trobat la ciutat per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:483
+#, python-format
+msgid "The entry number %s has failed, city not found for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'ha trobat la ciutat per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:629
+#, python-format
+msgid "The entry number %s has failed, invoices dates failed for partner %s"
+msgstr "L'entrada número %s ha fallat, les dates de la factura van fallar per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:624
+#, python-format
+msgid "The entry number %s has failed, invoices dates failed for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, les dates de la factura van fallar per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:405
+#, python-format
+msgid "The entry number %s has failed, lastname not found for partner %s"
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el primer cognom per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:400
+#, python-format
+msgid "The entry number %s has failed, lastname not found for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el primer cognom per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:544
+#, python-format
+msgid "The entry number %s has failed, street not found for partner %s"
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el carrer per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:539
+#, python-format
+msgid "The entry number %s has failed, street not found for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el carrer per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:526
+#, python-format
+msgid "The entry number %s has failed, street type not found for partner %s"
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el tipus de via per al soci %s"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:521
+#, python-format
+msgid "The entry number %s has failed, street type not found for partner %s \n"
+""
+msgstr "L'entrada número %s ha fallat, no s'ha trobat el tipus de via per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:364
+#, python-format
+msgid "The entry number %s has failed, vat not found for partner %s \n"
+""
+msgstr "L'entrada número% s ha fallat, no s'ha trobat el tipus de via per al soci %s \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:369
+#, python-format
+msgid "The entry number %s has failed, vat not found for partner %s."
+msgstr "L'entrada número% s ha fallat, no s'ha trobat el tipus de via per al soci %s."
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:340
+#, python-format
+msgid "The entry number %s has failed,the bank line %s seems that it has already been sent"
+msgstr "L'entrada número %s ha fallat, la línia de pagament bancari %s sembla que ja ha estat enviada mitjançant OVRc"
+
+#. module: account_banking_debit_ovrc
+#: code:addons/account_banking_debit_ovrc/models/account_payment_order.py:335
+#, python-format
+msgid "The entry number %s has failed,the bank line %s seems that it has already been sent \n"
+""
+msgstr "L'entrada número %s ha fallat, la línia de pagament bancari %s sembla que ja ha estat enviada mitjançant OVRc \n"
+""
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_config_settings_agency
+msgid "This code identifies the agency or municipality that sends the delegated charge to OVR of Castellon."
+msgstr "Aquest codi identifica l'organisme o municipi que envia el càrrec delegat a l'OVR de Castelló."
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_agency
+msgid "This code identifies the agency or municipality that sends the delegated charge to OVRc.\n"
+"This parameter is set in the accounting configuration."
+msgstr "Aquest codi identifica l'organisme o municipi que envia el càrrec delegat a l'OVR de Castelló. \n"
+"Aquest paràmetre es configura en Comptabilitat/Configuració."
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_bank_payment_line_ovrc_ref
+msgid "This number indicates the payment reference if it has been made by OVRc."
+msgstr "Aquest número indica la referència de la línia de pagament si ha estat realitzat per OVRc."
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model.fields,help:account_banking_debit_ovrc.field_account_payment_order_exaction_type
+msgid "Type of exaction. It will be applied to all transactions."
+msgstr "Tipus d'exacció. S'aplicarà a totes les transaccions."
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "USERAS"
+msgstr "USERAS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VALLALBA"
+msgstr "VALLALBA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VALLALMO"
+msgstr "VALLALMO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VALLAT"
+msgstr "VALLAT"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VALLDUXO"
+msgstr "VALLDUXO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VALLIBON"
+msgstr "VALLIBON"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILAFAME"
+msgstr "VILAFAME"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILAFRAN"
+msgstr "VILAFRAN"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILAREAL"
+msgstr "VILAREAL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILAVELL"
+msgstr "VILAVELL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLAHER"
+msgstr "VILLAHER"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLALCO"
+msgstr "VILLALCO"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLAMAL"
+msgstr "VILLAMAL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLARCA"
+msgstr "VILLARCA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLAVIV"
+msgstr "VILLAVIV"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VILLORES"
+msgstr "VILLORES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VINAROS"
+msgstr "VINAROS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VISTABEL"
+msgstr "VISTABEL"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "VIVER"
+msgstr "VIVER"
+
+#. module: account_banking_debit_ovrc
+#: model:account.payment.method,name:account_banking_debit_ovrc.payment_method_ovrv
+msgid "Virtual Collection Office of Castellon (OVRc)"
+msgstr "Oficina Virtual de Recaptació de Castelló (OVRc)"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "XERT"
+msgstr "XERT"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "XILXES"
+msgstr "XILXES"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "XODOS"
+msgstr "XODOS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,income_type:0
+msgid "ZCRAL - EX.W.U.A ALMASSORA"
+msgstr "ZCRAL - EX.C.R. ALMASSORA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.payment.order,income_type:0
+msgid "ZCRALM - EX.W.U.A ALMASSORA FINES AND PENALTIES"
+msgstr "ZCRALM - EX.C.R ALMASSORA MULTES I SANCIONS"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ZORITA"
+msgstr "ZORITA"
+
+#. module: account_banking_debit_ovrc
+#: selection:account.config.settings,agency:0
+msgid "ZUCAINA"
+msgstr "ZUCAINA"
+
+#. module: account_banking_debit_ovrc
+#: model:ir.model,name:account_banking_debit_ovrc.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
