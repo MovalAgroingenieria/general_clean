@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Account config setting OVRV options -->
+    <record id="account_config_settings_ovrv_view" model="ir.ui.view">
+        <field name="name">ovrv.account_config_settings.view.form</field>
+        <field name="model">account.config.settings</field>
+        <field name="inherit_id" ref="account.view_account_config_settings"/>
+        <field name="arch" type="xml">
+            <xpath expr="//separator[@name='analytic_account']" position="before">
+                <group name="ovrv" string="Valencia Virtual Colletion Office (OVRv)">
+                    <field name="agency_code" widget="selection"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add banking debit OVRv fields to account payment order form -->
+    <record id="account_payment_order_form_ovrv" model="ir.ui.view">
+        <field name="name">account.payment.order.form.ovrv</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Lock date_prefered field -->
+            <xpath expr="//field[@name='date_prefered']" position="attributes">
+                <attribute name="attrs" add="{'readonly':[('payment_mode_name','=', 'OVRv')]}"/>
+            </xpath>
+
+            <!-- OVRv options -->
+            <xpath expr="//group[@name='head']" position="after">
+                <group string="OVRv options" name="ovrv" col="2" attrs="{'invisible':[('payment_mode_name', '!=', 'OVRv')]}">
+                    <group name="ovrv-left">
+                        <field name="payment_mode_name" invisible="1"/>
+                        <field name="agency" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="debt_period" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="income_type" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="concept_code" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="settlement_year" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                    </group>
+                    <group name="ovrv-right">
+                        <field name="add_direct_debit" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="periodicity" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="surcharge_percentage" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="generation_date" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                        <field name="error_mode" attrs="{'required':[('payment_mode_name','=', 'OVRv')]}"/>
+                    </group>
+                </group>
+            </xpath>
+
+            <!-- Add errors tap -->
+            <xpath expr="//page[@name='bank-payment-lines']" position="after">
+                <page name="errors" string="Errors" attrs="{'invisible':['|',('payment_mode_name', '!=', 'OVRv'), ('error_mode', '!=', 'permissive')]}">
+                    <field name="errors_found" nolabel="1"/>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
