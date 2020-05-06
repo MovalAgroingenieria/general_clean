@@ -5,7 +5,7 @@
     <template id="assets_ext" inherit_id="web.assets_common">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/css"
-                href="/fontawesome_ext/static/lib/custom_fontawsome/css/fontello.css"/>
+                href="/fontawesome_ext/static/lib/custom_fontawsome/css/moval_iconset.css"/>
         </xpath>
     </template>
 
