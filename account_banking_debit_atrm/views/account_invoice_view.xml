@@ -27,6 +27,7 @@
             </xpath>
             <xpath expr="//field[@name='type']" position="after">
                 <field name="in_atrm" string="ATRM"/>
+                <field name="atrm_ref" string="ATRM Ref" invisible="1"/>
             </xpath>
         </field>
     </record>
