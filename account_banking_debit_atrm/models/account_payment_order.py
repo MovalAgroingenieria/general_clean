@@ -153,6 +153,12 @@ class AccountConfigSettings(models.TransientModel):
             'account.config.settings', 'agency_min_amount',
             self.agency_min_amount)
 
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
+
+    atrm_ref = fields.Char(
+        readonly=False,
+        string="ATRM Ref")
 
 class BankPaymentLine(models.Model):
     _inherit = 'bank.payment.line'

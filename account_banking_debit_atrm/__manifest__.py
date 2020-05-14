@@ -23,6 +23,7 @@
         "views/account_invoice_view.xml",
         "views/account_payment_line_views.xml",
         "views/account_payment_order_views.xml",
+        "views/account_view.xml",
         "views/resources.xml",
     ],
     "installable": True,
