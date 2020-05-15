@@ -157,7 +157,7 @@ class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     atrm_ref = fields.Char(
-        readonly=False,
+        readonly=True,
         string="ATRM Ref")
 
 class BankPaymentLine(models.Model):
