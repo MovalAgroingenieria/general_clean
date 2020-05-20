@@ -942,7 +942,10 @@ class AccountPaymentOrder(models.Model):
             #        option group in payment mode is active it chains all names
             if value_format_type == "3":
                 if line.communication:
-                    tax_object = str(line.communication[:40]).ljust(40)
+                    tax_object_raw = line.communication.encode(
+                        self.ENCODING_NAME,
+                        self.ENCODING_TYPE).decode(self.ENCODING_NAME)
+                    tax_object = tax_object_raw[:40].ljust(40)
                 else:
                     tax_object = str(" " * 40)
             else:
@@ -1034,9 +1037,11 @@ class AccountPaymentOrder(models.Model):
                 # Detail line 3
                 quantity = 0.0
                 if invoice.invoice_line_ids:
-                    unit = invoice.invoice_line_ids[0].uom_id.display_name
+                    unit = \
+                        invoice.invoice_line_ids[0].uom_id.display_name or ""
                     for invoice_line in invoice.invoice_line_ids:
-                        quantity += invoice_line.quantity
+                        if invoice_line.quantity:
+                            quantity += invoice_line.quantity
                     line_detail_3 = _("Surface: ") + str(quantity) + ' ' + unit
                     line_detail_3 = line_detail_3[:75].ljust(75)
             else:
@@ -1246,15 +1251,28 @@ class AccountPaymentOrder(models.Model):
 
             # Construct CCC from IBAN
             # @INFO: Format  EEEE OOOO DD NNNNNNNNNN
-            #        We get the account number associated
-            #        to mandate_id instead of from partner_id
-            if line.mandate_id and \
-               line.mandate_id.partner_id.mandate_count > 0:
-                iban = line.mandate_id.partner_bank_id.sanitized_acc_number
+            #        We only add the bank account number if move.line of
+            #        associated account.payment.line has as payment mode equals
+            #        to Domiciliacion. The account number is the number of the
+            #        mandate_id associated to it.
+            moveline_mandate_id = ""
+            iban = ""
+            for l in line.payment_line_ids:
+                if line.name == l.bank_line_id.name \
+                        and l.move_line_id.mandate_id \
+                        and l.move_line_id.payment_mode_id:
+                    iban = l.mandate_id.partner_bank_id.sanitized_acc_number
+                    try:
+                        bic = l.mandate_id.partner_bank_id.bank_bic
+                    except:
+                        bic = ""
+                    moveline_mandate_id = l.move_line_id.mandate_id
+
+            if moveline_mandate_id:
                 if iban and len(iban) != 0:
                     try:
                         bic = line.mandate_id.partner_bank_id.bank_bic
-                    except not line.mandate_id.partner_bank_id.bank_bic:
+                    except:
                         bic = ""
                     # Bank entity code - Position [001-004] Length 4
                     ccc_bank_entity_code = str(iban[4:8])
@@ -1262,8 +1280,13 @@ class AccountPaymentOrder(models.Model):
                     ccc_bank_office_code = str(iban[8:12])
                     # Bank control digits - Position [009-010] Length 2
                     ccc_control_digits = str(iban[12:14])
-                    # Bank account number - Position [011-020] Length 10
+                    # Bank account number - Position [011-020]Length 10
                     ccc_account_num = str(iban[14:]).ljust(10)
+                else:
+                    ccc_bank_entity_code = str(' ' * 4)
+                    ccc_bank_office_code = str(' ' * 4)
+                    ccc_control_digits = str(' ' * 2)
+                    ccc_account_num = str(' ' * 10)
             else:
                 continue
 
@@ -1351,6 +1374,8 @@ class AccountPaymentOrder(models.Model):
             # Position [111-144] Length 34
             if iban:
                 iban_num = str(iban).ljust(34)
+            else:
+                iban_num = str(' ' * 34)
 
             # BIC
             # Position [145-156] Length 11

@@ -1392,7 +1392,7 @@ msgstr "Opciones SUMA"
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "SUMA reference"
-msgstr "Referecia SUMA"
+msgstr "Referencia SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_total_amount
