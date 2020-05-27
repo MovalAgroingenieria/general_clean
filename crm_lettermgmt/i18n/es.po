@@ -1,0 +1,629 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* crm_lettermgmt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-28 11:55+0000\n"
+"PO-Revision-Date: 2020-05-28 11:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_state
+msgid "\n"
+"            * Draft: not confirmed yet.\n"
+"\n"
+"            * Sent: has been sent, can't be modified anymore.\n"
+"\n"
+"            * Received: has arrived.\n"
+"\n"
+"            * Received Damage: has been received with damages.\n"
+"\n"
+"            * Received But Returned: has been received but returned.\n"
+"\n"
+"            * Cancel: has been cancelled, can't be sent anymore."
+msgstr "\n"
+"            * Borrador: aún no confirmado.\n"
+"\n"
+"            * Enviado: ya ha sido enviado, no se puede modificar.\n"
+"\n"
+"            * Recibido: ha llegado correctamente.\n"
+"\n"
+"            * Recibido dañado: ha sido recibido con daños.\n"
+"\n"
+"            * Recibido pero devuelto: ha sido recibido pero devuelto.\n"
+"\n"
+"            * Cancelado: ha sido cancelado, ya no se puede enviar."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Additional Information"
+msgstr "Información adicional"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_number
+msgid "Auto Generated Number of letter."
+msgstr "Número de carta autogenerado."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Back to Draft"
+msgstr "Devolver a borrador"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_channel_id
+msgid "Channel"
+msgstr "Canal"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_category_ids
+msgid "Classification of Document."
+msgstr "Clasificación del documento."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_category_tree_view
+msgid "Click to create a letter category."
+msgstr "Clic para crear una categoría de carta."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_channel_tree_view
+msgid "Click to create a letter channel."
+msgstr "Clic para crear un nuevo canal de cartas."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_folder_tree_view
+msgid "Click to create a letter folder.\n"
+"            Use folders to group a series of letters."
+msgstr "Clic para crear una carpeta de cartas.\n"
+"            Utilice carpetas para agrupar series de cartas."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_type_tree_view
+msgid "Click to create a letter type."
+msgstr "Clic para crear un tipo de carta."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_code
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_code
+msgid "Code"
+msgstr "Código"
+
+#. module: crm_lettermgmt
+#: sql_constraint:letter.folder:0
+#: sql_constraint:letter.type:0
+msgid "Code must be unique !"
+msgstr "El código debe ser único!"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_comment
+msgid "Comment"
+msgstr "Comentario"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_comment
+msgid "Comment for user explaining forward."
+msgstr "Comentario para el usuario explicando el reenvío."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_log_config_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_note
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Delivery Notes"
+msgstr "Notas de entrega"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_expeditor_ref
+msgid "Expeditor Reference"
+msgstr "Referencia del expedidor"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_folder_id
+msgid "Folder"
+msgstr "Carpeta"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_folder_id
+msgid "Folder which contains letter."
+msgstr "Carpeta que contiene cartas."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_id
+msgid "ID"
+msgstr "ID"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,move:0
+msgid "IN"
+msgstr "IN"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_in_tree_view
+#: model:ir.ui.menu,name:crm_lettermgmt.res_letter_in_menu
+msgid "Inbound Letters"
+msgstr "Cartas entrantes"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_move
+msgid "Incoming or Outgoing Letter."
+msgstr "Carta entrante o saliente."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_note
+msgid "Indications for the delivery officer."
+msgstr "Indicaciones para el oficial de entrega."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_letter_id
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Letter"
+msgstr "Carta"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_category_tree_view
+#: model:ir.model,name:crm_lettermgmt.model_letter_category
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_category_menu
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_category_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_category_tree_view
+msgid "Letter Category"
+msgstr "Categoría carta"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_channel_tree_view
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_channel_menu
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_channel_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_channel_tree_view
+msgid "Letter Channel"
+msgstr "Canal carta"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_date
+msgid "Letter Date"
+msgstr "Fecha carta"
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_letter_folder
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_folder_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_folder_tree_view
+msgid "Letter Folder"
+msgstr "Carpeta carta"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_folder_tree_view
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_folder_menu
+msgid "Letter Folders"
+msgstr "Carpetas de cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_child_line
+msgid "Letter Lines"
+msgstr "Líneas carta"
+
+#. module: crm_lettermgmt
+#: model:ir.module.category,name:crm_lettermgmt.module_category
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_log_menu
+msgid "Letter Management"
+msgstr "Gestión de cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_reassignment_tree_view
+msgid "Letter Reassignment"
+msgstr "Reasignación de cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_type_tree_view
+#: model:ir.model,name:crm_lettermgmt.model_letter_type
+#: model:ir.ui.menu,name:crm_lettermgmt.letter_type_menu
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_type_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_type_tree_view
+msgid "Letter Type"
+msgstr "Tipo de carta"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_letter_id
+msgid "Letter in question."
+msgstr "Carta en cuestion."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_letter_ids
+#: model:ir.ui.menu,name:crm_lettermgmt.res_letter_menu
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_calendar_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_tree_view
+msgid "Letters"
+msgstr "Cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_letter_folder_letter_ids
+msgid "Letters contained in this folder."
+msgstr "Cartas contenidas en esta carpeta."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
+msgid "Letters that haven't arrived to its destination yet."
+msgstr "Cartas que aún no han llegado a su destino."
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_res_letter
+msgid "Log of Letter Movements"
+msgstr "Registro de movimientos de cartas"
+
+#. module: crm_lettermgmt
+#: model:res.groups,comment:crm_lettermgmt.group_letter_thread
+msgid "Members of this group can set letters' parent and/or childs."
+msgstr "Los miembros de este grupo pueden configurar las carta padre e hijas."
+
+#. module: crm_lettermgmt
+#: model:res.groups,comment:crm_lettermgmt.group_letter_reasignment
+msgid "Members of this group can view and edit Letter Reasignments."
+msgstr "Los miembros de este grupo pueden ver y editar reasignaciones de cartas."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_move
+msgid "Move"
+msgstr "Mover"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_number
+msgid "Number"
+msgstr "Número"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,move:0
+msgid "OUT"
+msgstr "OUT"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_orig_ref
+msgid "Original Reference"
+msgstr "Referencia original"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_out_tree_view
+#: model:ir.ui.menu,name:crm_lettermgmt.res_letter_out_menu
+msgid "Outbound Letters"
+msgstr "Cartas salientes"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Outbound Source"
+msgstr "Fuente de salida"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_parent_id
+msgid "Parent"
+msgstr "Padre"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Parent..."
+msgstr "Padre..."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
+msgid "Pending"
+msgstr "Pendiente"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_reassignment_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.letter_reassignment_tree_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Reassignment"
+msgstr "Reasignación"
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_letter_reassignment
+msgid "Reassignment line"
+msgstr "Línea de reasignación"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_reassignment_ids
+msgid "Reassignment lines"
+msgstr "Líneas de reasignación"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_reassignment_ids
+msgid "Reassignment users and comments"
+msgstr "Reasignación de usuarios y comentarios"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+#: selection:res.letter,state:0
+msgid "Received"
+msgstr "Recibido"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,state:0
+msgid "Received But Returned"
+msgstr "Recibido pero devuelto"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+#: selection:res.letter,state:0
+msgid "Received Damage"
+msgstr "Recibido dañado"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_rec_date
+msgid "Received Date"
+msgstr "Fecha de recepción"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Received but Returned"
+msgstr "Recibido pero devuelto"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_recipient_partner_id
+msgid "Recipient"
+msgstr "Destinatario"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_extern_partner_ids
+msgid "Recipients"
+msgstr "Destinatarios"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_orig_ref
+msgid "Reference Number at Origin."
+msgstr "Número de referencia en origen."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_expeditor_ref
+msgid "Reference Number used by Expeditor."
+msgstr "Número de referencia utilizado por el expeditor."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_track_ref
+msgid "Reference Number used for Tracking."
+msgstr "Número de referencia utilizado para el seguimiento."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
+msgid "Search Letters"
+msgstr "Buscar cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Send"
+msgstr "Enviar"
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_letter_channel
+msgid "Send/Receive channel"
+msgstr "Canal de envío/recepción"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_sender_partner_id
+msgid "Sender"
+msgstr "Remitente"
+
+#. module: crm_lettermgmt
+#: selection:res.letter,state:0
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_channel_id
+msgid "Sent / Receive Source"
+msgstr "Fuente de envío/recepción"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_snd_date
+msgid "Sent Date"
+msgstr "Fecha envío"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_size
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_size
+msgid "Size of the package."
+msgstr "Tamaño del paquete."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_state
+msgid "State"
+msgstr "Estado"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_name
+msgid "Subject"
+msgstr "Asunto"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_name
+msgid "Subject of letter."
+msgstr "Asunto de la carta."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_category_ids
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Tags..."
+msgstr "Etiquetas..."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_rec_date
+msgid "The date the letter was received."
+msgstr "Fecha en la que se recibió la carta."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_snd_date
+msgid "The date the letter was sent."
+msgstr "Fecha en la que la carta fue enviada."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_date
+msgid "The letter's date."
+msgstr "La fecha de la carta."
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Thread"
+msgstr "Hilo"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_track_ref
+msgid "Tracking Reference"
+msgstr "Referencia de seguimiento"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_type_id
+msgid "Type of Letter, Depending upon size."
+msgstr "Tipo de carta, dependiendo del tamaño."
+
+#. module: crm_lettermgmt
+#: model:res.groups,name:crm_lettermgmt.group_letter_thread
+msgid "Use Letter Parent and Thread"
+msgstr "Utilice la carta padre y el hilo."
+
+#. module: crm_lettermgmt
+#: model:res.groups,name:crm_lettermgmt.group_letter_reasignment
+msgid "Use Letter Reasignments"
+msgstr "Use reasignaciones de cartas"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_category_tree_view
+msgid "Use categories to classify letters. \n"
+"            Eg: Classified, Confidential, Personal..."
+msgstr "Use categorías para clasificar cartas. \n"
+"            Ej: Clasificada, Confidencial, Personal..."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_channel_tree_view
+msgid "Use channels to specify the different ways a letter can be sent or received.\n"
+"            Eg: The Post, Fax, Email.."
+msgstr "Use canales para especificar las diferentes formas en que se puede enviar o recibir una carta.\n"
+"            Ej: correo, fax, correo electrónico..."
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_type_tree_view
+msgid "Use types to specify the type of letter sent or received.\n"
+"            Eg: Envelope, Parcel, Package..."
+msgstr "Use canales para especificar las diferentes formas en que se puede enviar o recibir una carta.\n"
+"            Por ejemplo: sobre, paquete..."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_name
+msgid "User to forward letter to."
+msgstr "Usuario a quien reenviar la carta."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_weight
+msgid "Weight"
+msgstr "Peso"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_weight
+msgid "Weight (in KG)"
+msgstr "Peso (en kg)"
+
