@@ -1,15 +1,15 @@
 @font-face {
   font-family: 'moval_iconset';
-  src: url('../font/moval_iconset.eot?24666386');
-  src: url('../font/moval_iconset.eot?24666386#iefix') format('embedded-opentype'),
-       url('../font/moval_iconset.woff2?24666386') format('woff2'),
-       url('../font/moval_iconset.woff?24666386') format('woff'),
-       url('../font/moval_iconset.ttf?24666386') format('truetype'),
-       url('../font/moval_iconset.svg?24666386#moval_iconset') format('svg');
+  src: url('../font/moval_iconset.eot?67202622');
+  src: url('../font/moval_iconset.eot?67202622#iefix') format('embedded-opentype'),
+       url('../font/moval_iconset.woff2?67202622') format('woff2'),
+       url('../font/moval_iconset.woff?67202622') format('woff'),
+       url('../font/moval_iconset.ttf?67202622') format('truetype'),
+       url('../font/moval_iconset.svg?67202622#moval_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
- 
+
  [class^="fa-moval-"]:before, [class*=" fa-moval-"]:before {
    display:inline-block;
    font:normal normal normal 14px/1 moval_iconset;
@@ -18,6 +18,7 @@
    -webkit-font-smoothing:antialiased;
    -moz-osx-font-smoothing:grayscale;
 }
+ 
  
 .fa-moval-logo:before { content: '\e800'; } /* '' */
 .fa-moval-parcel:before { content: '\e801'; } /* '' */
@@ -39,6 +40,7 @@
 .fa-moval-intake-wall-drop:before { content: '\e811'; } /* '' */
 .fa-moval-water-valve:before { content: '\e812'; } /* '' */
 .fa-moval-water-counter:before { content: '\e813'; } /* '' */
+.fa-moval-letter-mgmt:before { content: '\e814'; } /* '' */
 .fa-moval-flowmeter:before { content: '\e815'; } /* '' */
 .fa-moval-flow-divider:before { content: '\e816'; } /* '' */
 .fa-moval-valve-shed:before { content: '\e817'; } /* '' */
