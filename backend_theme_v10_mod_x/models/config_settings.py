@@ -55,21 +55,21 @@ class CustomColorConfiguration(models.TransientModel):
         backendcss_file = False
         addons_path = tools.config['addons_path'].split(',')
         for path in addons_path:
-            if '/moval_addons/general' in path:
+            if '/wua/custom/x' in path:
                 path = os.path.dirname(path)
-                varless_file = \
-                    path + '/general/backend_theme_v10_mod_x/static/src/less/'\
+                varless_file = path + '/x/'\
+                    'backend_theme_v10_mod_x/static/src/less/'\
                     'variables_mod.less'
-                varless_file_new = \
-                    path + '/general/backend_theme_v10_mod_x/static/src/'\
-                    'less/variables_mod_new.less'
-                backendcss_file = \
-                    path + '/general/backend_theme_v10_mod_x/static/src/css/'\
+                varless_file_new = path + '/x/'\
+                    'backend_theme_v10_mod_x/static/src/less/'\
+                    'variables_mod_new.less'
+                backendcss_file = path + '/x/'\
+                    'backend_theme_v10_mod_x/static/src/css/'\
                     'backend_mod.css'
-                backendcss_file_new = \
-                    path + '/general/backend_theme_v10_mod_x/static/src/'\
-                    'css/backend_mod_new.css'
-        if varless_file:
+                backendcss_file_new = path + '/x/'\
+                    'backend_theme_v10_mod_x/static/src/css/'\
+                    'backend_mod_new.css'
+        if os.path.exists(varless_file):
             with open(varless_file) as fin, \
                     open(varless_file_new, 'w') as fout:
                 for line in fin:
@@ -86,7 +86,15 @@ class CustomColorConfiguration(models.TransientModel):
                     fout.write(lineout)
             fout.close()
             os.rename(varless_file_new, varless_file)
-        if backendcss_file:
+        elif not os.path.exists(varless_file):
+            with open(varless_file, 'w') as fout:
+                fout.write(
+                    "@gray-base:             %s;\n"
+                    "@brand-primary:         %s;\n"
+                    "@brand-info:            %s;\n" %
+                    (self.sidebar_background_color, self.backend_primary_color,
+                     self.backend_primary_color))
+        if os.path.exists(backendcss_file):
             with open(backendcss_file) as fin, \
                     open(backendcss_file_new, 'w') as fout:
                 for line in fin:
@@ -97,4 +105,8 @@ class CustomColorConfiguration(models.TransientModel):
                     fout.write(lineout)
             fout.close()
             os.rename(backendcss_file_new, backendcss_file)
+        elif not os.path.exists(backendcss_file):
+            with open(backendcss_file, 'w') as fout:
+                fout.write(".report-color { background-color: %s; }\n" %
+                           self.report_motive_color)
         return values

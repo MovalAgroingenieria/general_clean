@@ -2,11 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-================================================
+===============================================
 Backend Theme v10 Modifications for X (TEMPLATE)
-================================================
-
-Template module
+===============================================
 
 Description
 ===========
@@ -17,7 +15,7 @@ Some of this parameters can be ajusted through application in
 
 It also adds some css classes with the selected parameters (as colors) that can be used in reports for armonization.
 
-Note that variables_mod.less and sidebar_mod.less files are not tracked by git.
+Note that variables_mod.less and backend_mod.css files are not tracked by git.
 
 General changes
 ----------------
@@ -25,7 +23,6 @@ General changes
 * Sidebar is smaller
 * Front-end color is customizable
 * Sidebar background color is customizable
-
 
 
 Credits

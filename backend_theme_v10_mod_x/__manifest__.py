@@ -4,7 +4,7 @@
 
 {
     'name': 'Backend theme v10 Modification X',
-    'summary': "TEMPLATE",
+    'summary': "Custom backend v10 template",
     "version": '10.0.1.1.0',
     "category": "Moval General Addons",
     "website": "http://www.moval.es",
