@@ -16,10 +16,10 @@ class PackOperation(models.Model):
     @api.depends('product_id')
     def _compute_name_from_sale_order_line(self):
         for pack_operation in self:
-            # If external move get description from sale order
             if pack_operation.picking_id.picking_type_code == 'outgoing':
                 for record in self:
-                    name_from_sale_order_line = ''
+                    # By default fill with product name
+                    name_from_sale_order_line = record.product_id.name
                     found_saleorders = self.env['sale.order'].search(
                         [('procurement_group_id', '=',
                           record.picking_id.group_id.id)])
@@ -30,10 +30,15 @@ class PackOperation(models.Model):
                             if line.product_id == record.product_id:
                                 name_from_sale_order_line = line.name
                                 break
+                    else:  # Not sale order
+                        for line in record.picking_id.move_lines:
+                            if line.product_id == record.product_id:
+                                name_from_sale_order_line = line.name
+                            else:
+                                name_from_sale_order_line = \
+                                    record.product_id.name
                     record.name_from_sale_order_line = \
                         name_from_sale_order_line
-            # If not external move get description from move lines or
-            # from product description
             else:
                 for record in self:
                     for line in record.picking_id.move_lines:
