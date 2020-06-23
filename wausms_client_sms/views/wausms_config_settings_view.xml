@@ -13,18 +13,25 @@
                     <button string="Cancel" type="object"
                         name="cancel" class="oe_link"/>
                 </header>
-                <group name="wausms_data" string="WuaSMS config settings"
-                    style="width: 50%">
+                <group name="wausms_data" string="WuaSMS config settings" style="width: 50%">
                     <field name="service_url"/>
                     <field name="service_user"/>
                     <field name="service_passwd" password="True"/>
                 </group>
-                <group name="default_data" string="Default and test settings"
-                    style="width: 50%">
+                <group name="default_data" string="Default and test settings" style="width: 50%">
                     <field name="default_sender"/>
                     <field name="test_phone_number"/>
                     <field name="default_subject"/>
                 </group>
+                <group name="invoice_template_data" string="Invoice template" style="width: 50%">
+                    <field name="invoice_subject"/>
+                    <field name="invoice_template" placeholder="Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."/>
+                </group>
+                <div style="margin-top: 0px; width: 50%;">
+                    The template uses jinja2 variables: {{ object.attribute }}. The available objects are
+                    'partner' and 'invoice'. Any attribute of these objects can be used as a variable:
+                    {{ invoice.number }}, {{ partner.name }}, etc.
+                </div>
             </form>
         </field>
     </record>

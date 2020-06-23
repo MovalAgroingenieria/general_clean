@@ -11,6 +11,7 @@
     "license": "AGPL-3",
     "depends": [
         "base",
+        "account",
     ],
     "data": [
         "security/security.xml",
@@ -19,6 +20,7 @@
         "views/wausms_config_settings_view.xml",
         "views/wausms_view.xml",
         "views/wausms_tracking_view.xml",
+        "views/account_invoice_view.xml",
         "wizards/wausms_wizard_view.xml",
     ],
     'external_dependencies': {

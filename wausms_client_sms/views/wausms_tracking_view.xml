@@ -18,6 +18,7 @@
                 <field name="user_id"/>
                 <field name="sender"/>
                 <field name="partner_id" string="To"/>
+                <field name="invoice_id"/>
                 <field name="subject"/>
                 <field name="sms_confirmation"/>
                 <field name="sms_message"/>
@@ -54,6 +55,7 @@
                         <group name="sms_info" string="SMS info">
                             <field name="sender"/>
                             <field name="partner_id"/>
+                            <field name="invoice_id"/>
                             <field name="subject"/>
                             <field name="response_code"/>
                             <field name="sms_confirmation_info"/>
@@ -88,6 +90,7 @@
                 <field name="phone_number"/>
                 <field name="sender"/>
                 <field name="partner_id"/>
+                <field name="invoice_id"/>
                 <field name="subject"/>
                 <field name="response_code"/>
                 <field name="sms_confirmation_info"/>

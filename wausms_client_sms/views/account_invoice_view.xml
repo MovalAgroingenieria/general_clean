@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+        <record id="wausms_view_account_invoice_form" model="ir.ui.view">
+            <field name="name">view_account_invoice_form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//h1[@class='mt0']" position="before">
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_see_wausms_invoice"
+                            class="oe_stat_button"
+                            icon="fa-envelope" type="object"
+                            attrs="{'invisible': [('num_sms','=', 0)]}"
+                            help="SMS sent related to this invoice">
+                            <div class="o_form_field o_stat_info">
+                                <field name="num_sms"/>
+                                <span> SMS </span>
+                            </div>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+</odoo>

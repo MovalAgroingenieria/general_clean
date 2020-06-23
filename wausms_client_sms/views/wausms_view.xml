@@ -15,9 +15,21 @@
 
     <!-- Droplist action (res.partner) -->
     <act_window id="action_wausms_wizard"
+        context="{'mode': 'partner'}"
         name="Send SMS"
         res_model="wausms.wizard"
         src_model="res.partner"
+        key2="client_action_multi"
+        view_mode="form"
+        target="new"
+        groups="wausms_client_sms.group_send_wausms_sms"/>
+
+    <!-- Droplist action (account.invoice) -->
+    <act_window id="action_wausms_wizard_invoice"
+        context="{'mode': 'invoice'}"
+        name="Send SMS"
+        res_model="wausms.wizard"
+        src_model="account.invoice"
         key2="client_action_multi"
         view_mode="form"
         target="new"

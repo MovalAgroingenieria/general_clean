@@ -51,6 +51,12 @@ class WauSMSTracking(models.Model):
         index=True,
         comodel_name='res.partner')
 
+    invoice_id = fields.Many2one(
+        string='Invoice',
+        store=True,
+        index=True,
+        comodel_name='account.invoice')
+
     phone_number = fields.Char(
         string="Phone number",
         readonly=True,

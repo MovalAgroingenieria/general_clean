@@ -11,7 +11,7 @@ import phonenumbers
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
-
+from jinja2 import Template
 
 class WauSMSConfirmation(models.Model):
     _name = "wausms.confirmation"
@@ -31,9 +31,22 @@ class WauSMSWizard(models.Model):
     _description = "Wizard to send SMS through WauSMS service"
 
     def _get_default_subject(self):
-        default_subject = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'default_subject')
+        context = self._context
+        if context.get("mode") == 'invoice':
+            default_subject = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'invoice_subject')
+        elif context.get("mode") == 'partner':
+            default_subject = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'default_subject')
         return default_subject
+
+    def _get_default_sms_message(self):
+        context = self._context
+        template = ""
+        if context.get("mode") == 'invoice':
+            template = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'invoice_template')
+        return template
 
     def _get_default_sender(self):
         default_sender = self.env['ir.values'].get_default(
@@ -50,7 +63,7 @@ class WauSMSWizard(models.Model):
         string="Subject",
         size=100,
         default=_get_default_subject,
-        help="Subject description (will be searchable in tracking system)")
+        help="Subject description (it will be searchable in tracking system)")
 
     phone_number = fields.Char(
         string="Phone number",
@@ -69,6 +82,7 @@ class WauSMSWizard(models.Model):
     sms_message = fields.Text(
         string="Message",
         size=160,
+        default=_get_default_sms_message,
         help="The maximum size is 160 characters. The message will be sent in "
              "ASCII, so the special characters will not be displayed.")
 
@@ -107,6 +121,13 @@ class WauSMSWizard(models.Model):
             reformated_phone_number = reformated_phone_number.strip('+')
         return reformated_phone_number
 
+    def _compute_sms_template(self,context):
+        if context.get("mode") == 'invoice':
+            invoice_template = self.env['ir.values'].get_default(
+                'wau.sms.configuration', 'invoice_template')
+            for record in self:
+                record.sms_message = invoice_template
+
     @api.multi
     def send_sms_action(self, context):
         if context.get("mode") == 'test':
@@ -120,12 +141,23 @@ class WauSMSWizard(models.Model):
                 'wau.sms.configuration', 'default_subject')
             # Set active_ids to 0
             active_ids = (0,)
-        else:
-            # Get active_ids
+
+        if context.get("mode") == 'invoice':
+            partner_active_ids = []
+            dict_partner_invoice = {}
+            invoice_ids = context.get('active_ids')
+            for invoice_id in invoice_ids:
+                invoice = self.env['account.invoice'].browse(invoice_id)
+                partner_active_ids.append(invoice.partner_id.id)
+                dict_partner_invoice[invoice.partner_id.id] = invoice_id
+            active_ids = partner_active_ids
+
+        if context.get("mode") == 'partner':
+            invoice_id = False
             active_ids = context.get('active_ids')
 
         if not active_ids:
-            raise ValidationError(_("There are no partners selected."))
+            raise ValidationError(_("There are no items selected."))
 
         # Reset variables
         sms_confirmations = ""
@@ -166,6 +198,14 @@ class WauSMSWizard(models.Model):
             else:
                 sender = self.sender
 
+            # Render jinja2 variables
+            if self.sms_message and context.get("mode") == 'invoice':
+                raw_template = Template(self.sms_message)
+                invoice_id = dict_partner_invoice.get(partner.id)
+                invoice = self.env['account.invoice'].browse(invoice_id)
+                msg = raw_template.render(partner=partner,invoice=invoice)
+                self.sms_message = msg
+
             # Change sms message encoding and escape json special chars
             if self.sms_message:
                 sms_message = \
@@ -176,7 +216,7 @@ class WauSMSWizard(models.Model):
             else:
                 sms_message = "empty message".encode('ascii', 'replace')
 
-            # Get URL from cofig parm
+            # Get URL from config params
             service_url = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'service_url')
 
@@ -262,8 +302,14 @@ class WauSMSWizard(models.Model):
             # Insert tracking data
             if active_id == 0:
                 partner_id = ""
+                invoice_id = ""
             else:
-                partner_id = partner.id
+                if context.get("mode") == 'invoice':
+                    partner_id = partner.id
+                    invoice_id = dict_partner_invoice.get(partner_id)
+                if context.get("mode") == 'partner':
+                    partner_id = partner.id
+                    invoice_id = ""
 
             wausms_user = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'service_user')
@@ -277,6 +323,7 @@ class WauSMSWizard(models.Model):
                 "credentials": self.credentials,
                 "subject": subject,
                 "partner_id": partner_id,
+                "invoice_id": invoice_id,
                 "phone_number": reformated_phone_number,
                 "sender": sender,
                 "sms_message": sms_message,

@@ -5,4 +5,5 @@
 from . import wausms_config_settings
 from . import wausms_tracking
 from . import res_partner
+from . import account_invoice
 

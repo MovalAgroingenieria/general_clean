@@ -25,56 +25,56 @@ msgstr "<span> SMS </span>"
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:242
 #, python-format
 msgid "Accepted"
-msgstr "Aceptado"
+msgstr "Acceptat"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:240
 #, python-format
 msgid "Accepted - The message has been accepted for further processing."
-msgstr "Aceptado - El mensaje se ha aceptado para su posterior proceso."
+msgstr "Acceptat - El missatge s'ha acceptat per a processaments addicionals."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:253
 #, python-format
 msgid "Bad request"
-msgstr "Solicitud incorrecta"
+msgstr "Sol·licitud incorrecta"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:250
 #, python-format
 msgid "Bad request - The request contains errors, the message has not been accepted."
-msgstr "Solicitud incorrecta - La petición contiene errores, el mensaje no ha sido aceptado."
+msgstr "Sol·licitud incorrecta - La petició conté errors, el missatge no ha estat acceptat."
 
 #. module: wausms_client_sms
 #: model:res.groups,name:wausms_client_sms.group_send_wausms_sms
 msgid "Can send SMS (WauSMS service)"
-msgstr "Puede enviar SMS (servicio WauSMS)"
+msgstr "Podeu enviar SMS (servei WauSMS)"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_test_wizard_form
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Cancel·la"
 
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_config_menu
 msgid "Configuration"
-msgstr "Configuración"
+msgstr "Configuració"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Confirmation"
-msgstr "Confirmación"
+msgstr "Confirmació"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Confirmation: Accepted"
-msgstr "Confirmación: Aceptado"
+msgstr "Confirmació: Acceptat"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Confirmation: Not accepted"
-msgstr "Confirmación: No aceptado"
+msgstr "Confirmació: No acceptat"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_create_uid
@@ -82,7 +82,7 @@ msgstr "Confirmación: No aceptado"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_create_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_create_uid
 msgid "Created by"
-msgstr "Creado por"
+msgstr "Creat per"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_create_date
@@ -90,50 +90,50 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_create_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_create_date
 msgid "Created on"
-msgstr "Creado el"
+msgstr "Creat el"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_credentials
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_credentials
 msgid "Credentials"
-msgstr "Credenciales"
+msgstr "Credentials"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_credentials
 msgid "Credentials used (b64 encoded)"
-msgstr "Credenciales usadas (codificadas en base64)"
+msgstr "Credencials usades (codificades en base64)"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_time_data
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Date"
-msgstr "Fecha"
+msgstr "Data"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_sms_time_data
 msgid "Date on which SMS was sent"
-msgstr "Fecha en la que se envió el SMS"
+msgstr "Data en què es va enviar l'SMS"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Default and test settings"
-msgstr "Parámetros por defecto y de test"
+msgstr "Paràmetres per defecte i de test"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_default_sender
 msgid "Default sender"
-msgstr "Remitente (defecto)"
+msgstr "Remitent (defecte)"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_default_subject
 msgid "Default subject"
-msgstr "Asunto (defecto)"
+msgstr "Assumpte (defecte)"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/models/wausms_config_settings.py:90
 #, python-format
 msgid "Default subject is limited to 100 characters"
-msgstr "El asunto por defecto está limitado a 100 caracteres"
+msgstr "L'assumpte per defecte està limitat a 100 caràcters"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_display_name
@@ -141,19 +141,19 @@ msgstr "El asunto por defecto está limitado a 100 caracteres"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_display_name
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Mostrar Nom"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:117
 #, python-format
 msgid "Error in phone number, or is not a mobile, or is not Spanish or does not have the correct format."
-msgstr "Error en el número de teléfono, o el número no es de un móvil, o no es español o no tiene el formato correcto."
+msgstr "Error en el nombre de telèfon, o el nombre no és d'un mòbil, o no és espanyol o no té el format correcte."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:108
 #, python-format
 msgid "Error in phone number, there are characters that are not digits."
-msgstr "Error en el número de teléfono, hay caracteres que no son dígitos."
+msgstr "Error en el nombre de telèfon, hi ha caràcters que no són dígits."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sender
@@ -164,7 +164,7 @@ msgstr "De"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Group By"
-msgstr "Agrupar por"
+msgstr "Agrupar per"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_id
@@ -178,13 +178,13 @@ msgstr "ID"
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:265
 #, python-format
 msgid "Internal server error"
-msgstr "Error del servidor"
+msgstr "Error de servidor"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:263
 #, python-format
 msgid "Internal server error - The server had an internal error."
-msgstr "Error del servidor - El servidor ha tenido un error interno."
+msgstr "Error de servidor - El servidor ha tingut un error intern."
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_account_invoice
@@ -195,18 +195,18 @@ msgstr "Factura"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."
-msgstr "La factura número {{ invoice.number }} con fecha {{ invoice.date_invoice }} está a punto de vencer."
+msgstr "La factura nombre {{ invoice.number }} amb data {{ invoice.date_invoice }} està a punt de vèncer."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_invoice_subject
 msgid "Invoice subject"
-msgstr "Asunto factura"
+msgstr "Assumpte factura"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/models/wausms_config_settings.py:96
 #, python-format
 msgid "Invoice subject is limited to 100 characters"
-msgstr "El asunto por defecto para la factura está limitado a 100 caracteres."
+msgstr "L'assumpte per defecte per a la factura està limitat a 100 caràcters"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_invoice_template
@@ -218,7 +218,7 @@ msgstr "Plantilla factura"
 #: code:addons/wausms_client_sms/models/wausms_config_settings.py:102
 #, python-format
 msgid "Invoice template is limited to 160 characters"
-msgstr "La plantilla para la factura está limitada a 160 caracteres"
+msgstr "La plantilla per a la factura està limitada a 160 caràcters"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration___last_update
@@ -226,7 +226,7 @@ msgstr "La plantilla para la factura está limitada a 160 caracteres"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking___last_update
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificació el "
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_write_uid
@@ -234,7 +234,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_write_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última actualització per"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_write_date
@@ -242,53 +242,53 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_write_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualització el"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wau_sms_configuration_default_subject
 #: model:ir.model.fields,help:wausms_client_sms.field_wau_sms_configuration_invoice_subject
 msgid "Limit to 100 characters"
-msgstr "Limitado a 100 caracteres"
+msgstr "Limitat a 100 caràcters"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wau_sms_configuration_default_sender
 msgid "Limit to 15 numbers (only numbers) or 11 alphanumeric characters."
-msgstr "Limitado a 15 números (solo números) o 11 caracteres alfanuméricos"
+msgstr "Limitat a 15 números (només números) o 11 caràcters alfanumèrics."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_message
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_sms_message
 msgid "Message"
-msgstr "Mensaje"
+msgstr "Missatge"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_sms_message
 msgid "Message sent"
-msgstr "Mensaje enviado"
+msgstr "Missatge enviat"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:248
 #, python-format
 msgid "Multi-status"
-msgstr "Multi-estado"
+msgstr "Multi-estat"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:244
 #, python-format
 msgid "Multi-status - The message has been accepted for further processing, but some of the recipients are incorrect."
-msgstr "Multi-estado - El mensaje se ha aceptado para su posterior proceso, pero algunos de los destinatarios son incorrectos."
+msgstr "Multi-estat - El missatge s'ha acceptat per a la seva posterior procés, però alguns dels destinataris són incorrectes."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:197
 #, python-format
 msgid "No sender has been set."
-msgstr "No se ha establecido ningún remitente."
+msgstr "No s'ha establert cap remitent."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:138
 #, python-format
 msgid "No test phone number has been set."
-msgstr "No se ha establecido un número de teléfono de test."
+msgstr "No s'ha establert un número de telèfon de test."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_account_invoice_num_sms
@@ -301,74 +301,74 @@ msgstr "Nº de SMS"
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:358
 #, python-format
 msgid "Number of characters must not exceed 160"
-msgstr "160 caracteres máximo"
+msgstr "160 caràcters màxim"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_phone_number
 msgid "Only for Spanish mobile numbers"
-msgstr "Solo para números de móvil españoles"
+msgstr "Només per a nombres de mòbil espanyols"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_partner_id
 msgid "Partner"
-msgstr "Socio"
+msgstr "Soci"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:186
 #, python-format
 msgid "Partner %s does not have a mobile number"
-msgstr "El socio %s no tiene un número de teléfono móvil."
+msgstr "El soci %s no té un número de telèfon mòbil"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Socio de una CR"
+msgstr "Soci d'una CR"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_service_passwd
 msgid "Password"
-msgstr "Contraseña"
+msgstr "Contrasenya"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:261
 #, python-format
 msgid "Payment required"
-msgstr "Pago requerido"
+msgstr "Pagament requerit"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:259
 #, python-format
 msgid "Payment required - The client does not have sufficient balance."
-msgstr "Pago requerido - El cliente no dispone de saldo suficiente."
+msgstr "Pagament requerit - El client no disposa de saldo suficient."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_phone_number
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_phone_number
 msgid "Phone number"
-msgstr "Nº móvil"
+msgstr "Nº mòbil"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_phone_number
 msgid "Phone number used"
-msgstr "Nº de teléfono utilizado"
+msgstr "Nº de telèfon utilitzat"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_response_code
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_response_code
 msgid "Response"
-msgstr "Respuesta"
+msgstr "Resposta"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_response_message
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_response_message
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 msgid "Response message"
-msgstr "Mensaje de respuesta"
+msgstr "Missatge de resposta"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_wausms_confirmation
 msgid "Response to SMS sent"
-msgstr "Respuesta al SMS enviado"
+msgstr "Resposta a l'SMS enviat"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/models/account_invoice.py:30
@@ -386,45 +386,45 @@ msgstr "SMS"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
 msgid "SMS confirmation"
-msgstr "Confirmación del SMS"
+msgstr "Confirmació de l'SMS"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_wausms_sms_id
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_wausms_sms_id
 msgid "SMS id"
-msgstr "id SMS"
+msgstr "Id SMS"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 msgid "SMS info"
-msgstr "Información SMS"
+msgstr "Informació SMS"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 msgid "SMS message"
-msgstr "Mensaje SMS"
+msgstr "Missatge SMS"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_account_invoice_form
 msgid "SMS sent related to this invoice"
-msgstr "SMS enviados relacionados con esta factura"
+msgstr "SMS enviats relacionats amb aquesta factura"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
 msgid "SMS that have been sent"
-msgstr "SMS que han sido enviados"
+msgstr "SMS que han estat enviats"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_account_invoice_wausms_ids
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_wausms_ids
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_wausms_ids
 msgid "SMS's sent"
-msgstr "SMS's enviados"
+msgstr "SMS 's enviats"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Save"
-msgstr "Guardar"
+msgstr "Desar"
 
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_wizard
@@ -436,58 +436,58 @@ msgstr "Enviar SMS"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Sender"
-msgstr "Remitente"
+msgstr "Remitent"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/models/wausms_config_settings.py:83
 #, python-format
 msgid "Sender size is limited to 15 numbers (ex. 34XXXXXXXXX) or 11 alphanumeric characters (ex. company xxx)"
-msgstr "El tamaño del remitente está limitado a 15 números (ej. 34XXXXXXXXX) o 11 caracteres alfanuméricos (ej. company xxx)."
+msgstr "La mida de l'emissor està limitat a 15 números (ex. 34XXXXXXXXX) o 11 caràcters alfanumèrics (ex. Company xxx)"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:352
 #, python-format
 msgid "Sender size is limited to 15 numbers or 11 alphanumeric characters"
-msgstr "El tamaño del remitente está limitado a 15 números (solo números) o 11 caracteres alfanuméricos"
+msgstr "La mida de l'emissor està limitat a 15 números (només números) o 11 caràcters alfanumèrics"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_sender
 msgid "Sender used"
-msgstr "Remitente utilizado"
+msgstr "Remitent utilitzat"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_service_url
 msgid "Service URL"
-msgstr "Servicio URL"
+msgstr "Servei URL"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 msgid "Shipping info"
-msgstr "Información de envío"
+msgstr "Informació d'enviament"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_subject
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_subject
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Subject"
-msgstr "Asunto"
+msgstr "Assumpte"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_subject
 msgid "Subject description (it will be searchable in tracking system)"
-msgstr "Asunto (se podrá buscar en el sistema de rastreo)"
+msgstr "Assumpte (es podrà buscar en el sistema de rastreig)"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_subject
 msgid "Subject used"
-msgstr "Asunto utilizado"
+msgstr "Assumpte utilitzat"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wau_sms_configuration_invoice_template
 msgid "Template with jinja2 variables for invoice SMS.\n"
 "Limit to 160 characters"
-msgstr "Plantilla con variables jinja2 para SMS de factura.\n"
-"Limitado a 160 caracteres"
+msgstr "Plantilla amb variables jinja2 per SMS de factura.\n"
+"Limitat a 160 caràcters"
 
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_sms_test_menu
@@ -497,101 +497,101 @@ msgstr "Enviar Test SMS"
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_test_phone_number
 msgid "Test phone number"
-msgstr "Nº móvil test"
+msgstr "Nº mòbil test"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_wausms_url
 msgid "The URL used to contect WauSMS service"
-msgstr "La URL utilizada para conectar con el servicio WauSMS"
+msgstr "La URL utilitzada per connectar amb el servei WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_wausms_user
 msgid "The WauSMS user used in credentials"
-msgstr "El usuario WauSMS utilizado en las credenciales"
+msgstr "L'usuari WauSMS utilitzat en les credencials"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sms_message
 msgid "The maximum size is 160 characters. The message will be sent in ASCII, so the special characters will not be displayed."
-msgstr "El tamaño máximo es de 160 caracteres. El mensaje será enviado codificado en ASCII por lo que los caracteres especiales no se mostrarán."
+msgstr "La mida màxima és de 160 caràcters. El missatge serà enviat codificat en ASCII de manera que els caràcters especials no es mostraran."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sender
 msgid "The sender that will appear in the message."
-msgstr "El remitente que aparecerá en el mensaje."
+msgstr "El remitent que apareixerà en el missatge."
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "The template uses jinja2 variables: {{ object.attribute }}. The available objects are\n"
 "                    'partner' and 'invoice'. Any attribute of these objects can be used as a variable:\n"
 "                    {{ invoice.number }}, {{ partner.name }}, etc."
-msgstr "La plantilla usa variables jinja2: {{ objecto.atributo }}. Los objetos disponibles son\n"
-"                    'partner' (socio/empresa) e 'invoice' (factura). Cualquier atributo de estos objetos se puede usar como variable:\n"
+msgstr "La plantilla fa servir variables jinja2: {{ objecte.atribut }}. Els objectes disponibles són\n"
+"                    'partner' (soci/empresa) i 'invoice' (factura). Qualsevol atribut d'aquests objectes es pot fer servir com a variable:\n"
 "                    {{ invoice.number }}, {{ partner.name }}, etc."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_user_id
 msgid "The user who sent the sms"
-msgstr "El usuario que envió el SMS"
+msgstr "L'usuari que va enviar l'SMS"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:160
 #, python-format
 msgid "There are no items selected."
-msgstr "No hay elementos seleccionados."
+msgstr "No hi ha elements seleccionats."
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_tree
 msgid "To"
-msgstr "Para"
+msgstr "Per"
 
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_sms_tracking_menu
 msgid "Tracking SMS"
-msgstr "Rastreo de SMS"
+msgstr "Rastreig de SMS"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_wausms_tracking
 msgid "Tracking of SMS sent"
-msgstr "Rastreo de SMS enviados"
+msgstr "Rastreig de SMS enviats"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:257
 #, python-format
 msgid "Unauthorized"
-msgstr "No autorizado"
+msgstr "No autoritzat"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:255
 #, python-format
 msgid "Unauthorized - Client authentication failed."
-msgstr "No autorizado - La autenticación ha fallado."
+msgstr "No autoritzat - L'autenticació ha fallat."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:267
 #, python-format
 msgid "Unknown error"
-msgstr "Error desconocido."
+msgstr "Error desconegut"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wau_sms_configuration_test_phone_number
 msgid "Used to test configuration.\n"
 "Only Spanish mobile numbers"
-msgstr "Utilizado para probar la conexión.\n"
-"Solo móviles españoles"
+msgstr "Utilitzat per provar la connexió.\n"
+"Només mòbils espanyols"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_service_user
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_user_id
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "User"
-msgstr "Usuario"
+msgstr "Usuari"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:97
 #, python-format
 msgid "User or password not set."
-msgstr "El usuario o la contraseña no han sido establecidos."
+msgstr "L'usuari o la contrasenya no han estat establerts."
 
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_root_menu
@@ -602,12 +602,12 @@ msgstr "WauSMS"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_confirmation_form
 msgid "WauSMS Confirmation"
-msgstr "Confirmación WauSMS"
+msgstr "Confirmació WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_tracking_tree
 msgid "WauSMS Tracking"
-msgstr "Rastreo WauSMS"
+msgstr "Rastreig WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_wausms_url
@@ -617,17 +617,17 @@ msgstr "URL WauSMS"
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_config_settings_form
 msgid "WauSMS configuration"
-msgstr "Configuración WauSMS"
+msgstr "Configuració WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_wausms_user
 msgid "WauSMS user"
-msgstr "Usuario WauSMS"
+msgstr "Usuari WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_wausms_wizard
 msgid "Wizard to send SMS through WauSMS service"
-msgstr "Asistente para enviar mensajes a través del servicio WauSMS"
+msgstr "Assistent per enviar missatges a través de l'servei WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_test_wizard
@@ -637,7 +637,7 @@ msgstr "Redactar SMS"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "WuaSMS config settings"
-msgstr "Configuración WauSMS"
+msgstr "Configuració WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_wau_sms_configuration
