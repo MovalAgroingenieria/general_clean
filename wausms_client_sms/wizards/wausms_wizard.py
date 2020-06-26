@@ -32,6 +32,7 @@ class WauSMSWizard(models.Model):
 
     def _get_default_subject(self):
         context = self._context
+        default_subject = ""
         if context.get("mode") == 'invoice':
             default_subject = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'invoice_subject')

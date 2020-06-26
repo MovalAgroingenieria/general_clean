@@ -86,18 +86,18 @@ class WauSMSConfiguration(models.TransientModel):
 
     @api.constrains('default_subject')
     def _check_default_subject_size(self):
-        if len(self.default_subject) > 99:
+        if self.default_subject and len(self.default_subject) > 99:
             raise ValidationError(_("Default subject is limited to 100 "
                                     "characters"))
 
     @api.constrains('invoice_subject')
     def _check_invoice_subject_size(self):
-        if len(self.invoice_subject) > 99:
+        if self.invoice_subject and len(self.invoice_subject) > 99:
             raise ValidationError(_("Invoice subject is limited to 100 "
                                     "characters"))
 
     @api.constrains('invoice_template')
     def _check_invoice_template_size(self):
-        if len(self.invoice_template) > 159:
+        if self.invoice_template and len(self.invoice_template) > 159:
             raise ValidationError(_("Invoice template is limited to 160 "
                                     "characters"))
