@@ -23,6 +23,7 @@
         'data/letter_sequence.xml',
         'security/ir.model.access.csv',
         'security/lettermgmt_security.xml',
+        'views/resources.xml',
     ],
     'demo': ['data/letter_demo.xml'],
     'application': False,
