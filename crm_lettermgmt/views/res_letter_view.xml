@@ -3,6 +3,7 @@
      © 2015 Holger Brunn <hbrunn@therp.nl>
      © 2009 Sandy Carter <sandy.carter@savoirfairelinux.com>
      © 2009 Parthiv Patel, Tech Receptives
+     2020 Moval Agroingeniería
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
      
 <odoo>
@@ -22,6 +23,22 @@
           <field name="category_ids" widget="many2many_tags"/>
           <field name="date"/>
           <field name="channel_id"/>
+          <field name="track_ref"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_letter_tree_o2m_view">
+      <field name="name">Letter Tree (o2m)</field>
+      <field name="model">res.letter</field>
+      <field name="arch" type="xml">
+        <tree colors="blue:state in ('draft','created','validated');black:state in ('sent','rec');red:state in ('rec_bad','rec_ret');gray:state == 'cancel'" string="Letters">
+          <field name="number"/>
+          <field name="sender_partner_id"    invisible="context.get('move',False) == 'out'"/>
+          <field name="recipient_partner_id" invisible="context.get('move',False) == 'in'" />
+          <field name="name"/>
+          <field name="date"/>
           <field name="track_ref"/>
           <field name="state"/>
         </tree>

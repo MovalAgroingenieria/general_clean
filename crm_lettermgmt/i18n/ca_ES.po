@@ -1,26 +1,23 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* crm_lettermgmt
+#	* crm_lettermgmt
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-29 06:32+0000\n"
-"PO-Revision-Date: 2020-05-29 08:39+0200\n"
+"POT-Creation-Date: 2020-07-05 09:30+0000\n"
+"PO-Revision-Date: 2020-07-05 09:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: ca_ES\n"
-"X-Generator: Poedit 2.3.1\n"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_state
-msgid ""
-"\n"
+msgid "\n"
 "            * Draft: not confirmed yet.\n"
 "\n"
 "            * Sent: has been sent, can't be modified anymore.\n"
@@ -32,34 +29,33 @@ msgid ""
 "            * Received But Returned: has been received but returned.\n"
 "\n"
 "            * Cancel: has been cancelled, can't be sent anymore."
-msgstr ""
+msgstr "\n"
+"            * Draft: not confirmed yet.\n"
 "\n"
-"            * Esborrany: encara no confirmat.\n"
+"            * Sent: has been sent, can't be modified anymore.\n"
 "\n"
-"            * Enviat: ja ha estat enviat, no es pot modificar.\n"
+"            * Received: has arrived.\n"
 "\n"
-"            * Rebut: ha arribat correctament.\n"
+"            * Received Damage: has been received with damages.\n"
 "\n"
-"            * Rebut danyat: ha estat rebut amb danys.\n"
+"            * Received But Returned: has been received but returned.\n"
 "\n"
-"            * Rebut però retornat: ha estat rebut però retornat.\n"
-"\n"
-"            * Cancel·lat: ha estat cancel·lat, ja no es pot enviar."
+"            * Cancel: has been cancelled, can't be sent anymore."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Additional Information"
-msgstr "Informació addicional"
+msgstr "Additional Information"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_number
 msgid "Auto Generated Number of letter."
-msgstr "Nombre de registre autogenerat."
+msgstr "Auto Generated Number of letter."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Back to Draft"
-msgstr "Torna a l'esborrany"
+msgstr "Back to Draft"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -69,7 +65,7 @@ msgstr "Cancel·la"
 #. module: crm_lettermgmt
 #: selection:res.letter,state:0
 msgid "Cancelled"
-msgstr "Cancel·la"
+msgstr "Cancelled"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_channel_id
@@ -79,42 +75,41 @@ msgstr "Canal"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_category_ids
 msgid "Classification of Document."
-msgstr "Classificació de el document."
+msgstr "Classification of Document."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_category_tree_view
 msgid "Click to create a letter category."
-msgstr "Clic per crear una categoria de registre."
+msgstr "Click to create a letter category."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_channel_tree_view
 msgid "Click to create a letter channel."
-msgstr "Clic per crear un nou canal de registre."
+msgstr "Click to create a letter channel."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_folder_tree_view
-msgid ""
-"Click to create a letter folder.\n"
+msgid "Click to create a letter folder.\n"
 "            Use folders to group a series of letters."
-msgstr ""
-"Clic per crear una carpeta de registres.\n"
-"            Utilitzeu carpetes per agrupar sèries de registres."
+msgstr "Click to create a letter folder.\n"
+"            Use folders to group a series of letters."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_type_tree_view
 msgid "Click to create a letter type."
-msgstr "Clic per crear un tipus de registre."
+msgstr "Click to create a letter type."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_code
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_code
 msgid "Code"
-msgstr "Codi"
+msgstr "Code"
 
 #. module: crm_lettermgmt
-#: sql_constraint:letter.folder:0 sql_constraint:letter.type:0
+#: sql_constraint:letter.folder:0
+#: sql_constraint:letter.type:0
 msgid "Code must be unique !"
-msgstr "El codi ha de ser únic!"
+msgstr "Code must be unique !"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_comment
@@ -124,7 +119,7 @@ msgstr "Comentari"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_comment
 msgid "Comment for user explaining forward."
-msgstr "Comentari per a l'usuari explicant el reenviament."
+msgstr "Comment for user explaining forward."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.menu,name:crm_lettermgmt.letter_log_config_menu
@@ -155,7 +150,7 @@ msgstr "Creat el"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_note
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Delivery Notes"
-msgstr "Notes de lliurament"
+msgstr "Delivery Notes"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_display_name
@@ -170,22 +165,22 @@ msgstr "Mostrar Nom"
 #. module: crm_lettermgmt
 #: selection:res.letter,state:0
 msgid "Draft"
-msgstr "Esborrany"
+msgstr "Draft"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_expeditor_ref
 msgid "Expeditor Reference"
-msgstr "Referència de l'expedidor"
+msgstr "Expeditor Reference"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_folder_id
 msgid "Folder"
-msgstr "Carpeta"
+msgstr "Folder"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_folder_id
 msgid "Folder which contains letter."
-msgstr "Carpeta que conté registres."
+msgstr "Folder which contains letter."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_id
@@ -206,17 +201,17 @@ msgstr "IN"
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_in_tree_view
 #: model:ir.ui.menu,name:crm_lettermgmt.res_letter_in_menu
 msgid "Inbound Letters"
-msgstr "Registres d'entrada"
+msgstr "Inbound Letters"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_move
 msgid "Incoming or Outgoing Letter."
-msgstr "Registre d'entrada o entrant o sortida."
+msgstr "Incoming or Outgoing Letter."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_note
 msgid "Indications for the delivery officer."
-msgstr "Indicacions per a l'oficial de lliurament."
+msgstr "Indications for the delivery officer."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category___last_update
@@ -252,7 +247,7 @@ msgstr "Última actualització el"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_letter_id
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Letter"
-msgstr "Registre"
+msgstr "Letter"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_category_tree_view
@@ -261,7 +256,7 @@ msgstr "Registre"
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_category_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_category_tree_view
 msgid "Letter Category"
-msgstr "Categoria del registre"
+msgstr "Letter Category"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_channel_tree_view
@@ -269,41 +264,41 @@ msgstr "Categoria del registre"
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_channel_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_channel_tree_view
 msgid "Letter Channel"
-msgstr "Canal"
+msgstr "Letter Channel"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_date
 msgid "Letter Date"
-msgstr "Data"
+msgstr "Letter Date"
 
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_letter_folder
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_folder_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_folder_tree_view
 msgid "Letter Folder"
-msgstr "Carpeta del registre"
+msgstr "Letter Folder"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_folder_tree_view
 #: model:ir.ui.menu,name:crm_lettermgmt.letter_folder_menu
 msgid "Letter Folders"
-msgstr "Carpetas registre"
+msgstr "Letter Folders"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_child_line
 msgid "Letter Lines"
-msgstr "Línies registre"
+msgstr "Letter Lines"
 
 #. module: crm_lettermgmt
 #: model:ir.module.category,name:crm_lettermgmt.module_category
 #: model:ir.ui.menu,name:crm_lettermgmt.letter_log_menu
 msgid "Letter Management"
-msgstr "Registre Entrada/Sortida"
+msgstr "Letter Management"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_reassignment_tree_view
 msgid "Letter Reassignment"
-msgstr "Reassignació de registres"
+msgstr "Letter Reassignment"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_letter_type_tree_view
@@ -312,50 +307,51 @@ msgstr "Reassignació de registres"
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_type_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_type_tree_view
 msgid "Letter Type"
-msgstr "Tipus de regsitre"
+msgstr "Letter Type"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_letter_id
 msgid "Letter in question."
-msgstr "Registre en qüestió."
+msgstr "Letter in question."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_letter_ids
 #: model:ir.ui.menu,name:crm_lettermgmt.res_letter_menu
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_calendar_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_tree_o2m_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_tree_view
 msgid "Letters"
-msgstr "Registres"
+msgstr "Letters"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_folder_letter_ids
 msgid "Letters contained in this folder."
-msgstr "Registres contingudes en aquesta carpeta."
+msgstr "Letters contained in this folder."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
 msgid "Letters that haven't arrived to its destination yet."
-msgstr "Registres que encara no han arribat al seu destí."
+msgstr "Letters that haven't arrived to its destination yet."
 
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_letter
 msgid "Log of Letter Movements"
-msgstr "Log de moviments de registres"
+msgstr "Log of Letter Movements"
 
 #. module: crm_lettermgmt
 #: model:res.groups,comment:crm_lettermgmt.group_letter_thread
 msgid "Members of this group can set letters' parent and/or childs."
-msgstr "Els membres d'aquest grup poden configurar les registres pare i filles."
+msgstr "Members of this group can set letters' parent and/or childs."
 
 #. module: crm_lettermgmt
 #: model:res.groups,comment:crm_lettermgmt.group_letter_reasignment
 msgid "Members of this group can view and edit Letter Reasignments."
-msgstr "Els membres d'aquest grup poden veure i editar reassignacions de registres."
+msgstr "Members of this group can view and edit Letter Reasignments."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_move
 msgid "Move"
-msgstr "Assent."
+msgstr "Move"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_name
@@ -369,7 +365,7 @@ msgstr "Nom"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_number
 msgid "Number"
-msgstr "Número"
+msgstr "Number"
 
 #. module: crm_lettermgmt
 #: selection:res.letter,move:0
@@ -379,18 +375,18 @@ msgstr "OUT"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_orig_ref
 msgid "Original Reference"
-msgstr "Referència original"
+msgstr "Original Reference"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_out_tree_view
 #: model:ir.ui.menu,name:crm_lettermgmt.res_letter_out_menu
 msgid "Outbound Letters"
-msgstr "Registres de sortida"
+msgstr "Outbound Letters"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Outbound Source"
-msgstr "Font de sortida"
+msgstr "Outbound Source"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_parent_id
@@ -400,34 +396,34 @@ msgstr "Pare"
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Parent..."
-msgstr "Pare..."
+msgstr "Parent..."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
 msgid "Pending"
-msgstr "Pendent"
+msgstr "Pending"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_reassignment_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.letter_reassignment_tree_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Reassignment"
-msgstr "Reassignació"
+msgstr "Reassignment"
 
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_letter_reassignment
 msgid "Reassignment line"
-msgstr "Línia de reassignació"
+msgstr "Reassignment line"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_reassignment_ids
 msgid "Reassignment lines"
-msgstr "Línies de reassignació"
+msgstr "Reassignment lines"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_reassignment_ids
 msgid "Reassignment users and comments"
-msgstr "Reassignació d'usuaris i comentaris"
+msgstr "Reassignment users and comments"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -438,23 +434,23 @@ msgstr "Rebuda"
 #. module: crm_lettermgmt
 #: selection:res.letter,state:0
 msgid "Received But Returned"
-msgstr "Rebut però retornat"
+msgstr "Received But Returned"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 #: selection:res.letter,state:0
 msgid "Received Damage"
-msgstr "Rebut danyat"
+msgstr "Received Damage"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_rec_date
 msgid "Received Date"
-msgstr "Data de recepció"
+msgstr "Received Date"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Received but Returned"
-msgstr "Rebut però retornat"
+msgstr "Received but Returned"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_recipient_partner_id
@@ -469,22 +465,22 @@ msgstr "Destinataris"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_orig_ref
 msgid "Reference Number at Origin."
-msgstr "Número de referència en origen."
+msgstr "Reference Number at Origin."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_expeditor_ref
 msgid "Reference Number used by Expeditor."
-msgstr "Número de referència utilitzat per l'expeditor."
+msgstr "Reference Number used by Expeditor."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_track_ref
 msgid "Reference Number used for Tracking."
-msgstr "Número de referència utilitzat per al seguiment."
+msgstr "Reference Number used for Tracking."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
 msgid "Search Letters"
-msgstr "Cercar registres"
+msgstr "Search Letters"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -494,27 +490,27 @@ msgstr "Envia"
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_letter_channel
 msgid "Send/Receive channel"
-msgstr "Canal d'enviament/recepció"
+msgstr "Send/Receive channel"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_sender_partner_id
 msgid "Sender"
-msgstr "Remitent"
+msgstr "Sender"
 
 #. module: crm_lettermgmt
 #: selection:res.letter,state:0
 msgid "Sent"
-msgstr "Enviat"
+msgstr "Sent"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_channel_id
 msgid "Sent / Receive Source"
-msgstr "Font d'enviament/recepció"
+msgstr "Sent / Receive Source"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_snd_date
 msgid "Sent Date"
-msgstr "Data enviament"
+msgstr "Sent Date"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_size
@@ -524,7 +520,7 @@ msgstr "Mida"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_size
 msgid "Size of the package."
-msgstr "Mida de el paquet."
+msgstr "Size of the package."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_state
@@ -539,7 +535,7 @@ msgstr "Assumpte"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_name
 msgid "Subject of letter."
-msgstr "Assumpte del registre"
+msgstr "Subject of letter."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_category_ids
@@ -554,17 +550,17 @@ msgstr "Etiquetes..."
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_rec_date
 msgid "The date the letter was received."
-msgstr "Data en què es va rebre el registre"
+msgstr "The date the letter was received."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_snd_date
 msgid "The date the letter was sent."
-msgstr "Data en què el registre va ser enviada."
+msgstr "The date the letter was sent."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_date
 msgid "The letter's date."
-msgstr "La data del registre."
+msgstr "The letter's date."
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -574,7 +570,7 @@ msgstr "Fil"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_track_ref
 msgid "Tracking Reference"
-msgstr "Referència de seguiment"
+msgstr "Tracking Reference"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_type_id
@@ -584,56 +580,51 @@ msgstr "Tipus"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_type_id
 msgid "Type of Letter, Depending upon size."
-msgstr "Tipus, depenent de la mida."
+msgstr "Type of Letter, Depending upon size."
 
 #. module: crm_lettermgmt
 #: model:res.groups,name:crm_lettermgmt.group_letter_thread
 msgid "Use Letter Parent and Thread"
-msgstr "Utilitzeu el registre pare i el fil."
+msgstr "Use Letter Parent and Thread"
 
 #. module: crm_lettermgmt
 #: model:res.groups,name:crm_lettermgmt.group_letter_reasignment
 msgid "Use Letter Reasignments"
-msgstr "Utilitza reassignacions de registres"
+msgstr "Use Letter Reasignments"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_category_tree_view
-msgid ""
-"Use categories to classify letters. \n"
+msgid "Use categories to classify letters. \n"
 "            Eg: Classified, Confidential, Personal..."
-msgstr ""
-"Utilitza categories per classificar registres. \n"
-"            Ex: classificada, Confidencial, Personal..."
+msgstr "Use categories to classify letters. \n"
+"            Eg: Classified, Confidential, Personal..."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_channel_tree_view
-msgid ""
-"Use channels to specify the different ways a letter can be sent or received.\n"
+msgid "Use channels to specify the different ways a letter can be sent or received.\n"
 "            Eg: The Post, Fax, Email.."
-msgstr ""
-"Utilitza canals per especificar les diferents formes en què es pot enviar o rebre un registre.\n"
-"            Ex: correu, fax, correu electrònic..."
+msgstr "Use channels to specify the different ways a letter can be sent or received.\n"
+"            Eg: The Post, Fax, Email.."
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,help:crm_lettermgmt.action_letter_type_tree_view
-msgid ""
-"Use types to specify the type of letter sent or received.\n"
+msgid "Use types to specify the type of letter sent or received.\n"
 "            Eg: Envelope, Parcel, Package..."
-msgstr ""
-"Utilitza canals per especificar les diferents formes en què es pot enviar o rebre una registre.\n"
-"            Ex: sobre, paquet..."
+msgstr "Use types to specify the type of letter sent or received.\n"
+"            Eg: Envelope, Parcel, Package..."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_name
 msgid "User to forward letter to."
-msgstr "Usuari a qui reenviar la carta."
+msgstr "User to forward letter to."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_weight
 msgid "Weight"
-msgstr "Pes"
+msgstr "Weight"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_weight
 msgid "Weight (in KG)"
-msgstr "Pes (en kg)"
+msgstr "Weight (in KG)"
+

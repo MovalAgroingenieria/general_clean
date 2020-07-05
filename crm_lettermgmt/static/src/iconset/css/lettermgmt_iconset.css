@@ -1,15 +1,14 @@
 @font-face {
   font-family: 'lettermgmt_iconset';
-  src: url('../font/lettermgmt_iconset.eot?53458704');
-  src: url('../font/lettermgmt_iconset.eot?53458704#iefix') format('embedded-opentype'),
-       url('../font/lettermgmt_iconset.woff2?53458704') format('woff2'),
-       url('../font/lettermgmt_iconset.woff?53458704') format('woff'),
-       url('../font/lettermgmt_iconset.ttf?53458704') format('truetype'),
-       url('../font/lettermgmt_iconset.svg?53458704#lettermgmt_iconset') format('svg');
+  src: url('../font/lettermgmt_iconset.eot?80146266');
+  src: url('../font/lettermgmt_iconset.eot?80146266#iefix') format('embedded-opentype'),
+       url('../font/lettermgmt_iconset.woff2?80146266') format('woff2'),
+       url('../font/lettermgmt_iconset.woff?80146266') format('woff'),
+       url('../font/lettermgmt_iconset.ttf?80146266') format('truetype'),
+       url('../font/lettermgmt_iconset.svg?80146266#lettermgmt_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
  
  [class^="fa-lettermgmt-"]:before, [class*=" fa-lettermgmt-"]:before {
    display:inline-block;
@@ -21,4 +20,4 @@
 
 }
  
-.fa-lettermgmt-letter_movs:before { content: '\e800'; } /* '' */
+.fa-lettermgmt-inout:before { content: '\e800'; } /* '' */
