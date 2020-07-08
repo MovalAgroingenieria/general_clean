@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-27 15:05+0000\n"
-"PO-Revision-Date: 2020-02-27 15:05+0000\n"
+"POT-Creation-Date: 2020-07-08 17:57+0000\n"
+"PO-Revision-Date: 2020-07-08 17:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1113,7 +1113,7 @@ msgid "AP - DRINKING WATERS"
 msgstr "AP - AIGÜES POTABLES"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1029
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1033
 #, python-format
 msgid "Amount: "
 msgstr "Import: "
@@ -1159,6 +1159,11 @@ msgstr "Tipus de càrrec"
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_year
 msgid "Charge year"
 msgstr "Any càrrec"
+
+#. module: account_banking_debit_suma
+#: model:ir.model,name:account_banking_debit_suma.model_res_ine_codes
+msgid "Codes for cities in the INE         (Spanish Statistics National Institute)"
+msgstr "Codis per a ciutats de l'INE"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_concept
@@ -1218,7 +1223,7 @@ msgid "D7 - FEES MAINTENANCE ACUEDUCTSS"
 msgstr "D7 - QUOTES MANT. AQÜEDUCTES"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1456
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1482
 #, python-format
 msgid "Direct Debit File"
 msgstr "Arxiu de domiciliacions"
@@ -1239,7 +1244,7 @@ msgid "Entity type"
 msgstr "Typus entitat"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1194
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1200
 #, python-format
 msgid "Entity type code not set"
 msgstr "El codi de el tipus d'entitat no ha estat establert."
@@ -1256,13 +1261,13 @@ msgid "Errors"
 msgstr "Errors"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1431
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1457
 #, python-format
 msgid "Errors in direct debit file "
 msgstr "Errors a l'arxiu de domiciliacions "
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1173
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1179
 #, python-format
 msgid "Errors in payment file "
 msgstr "Errors a l'arxiu de pagament "
@@ -1293,9 +1298,29 @@ msgid "IMPORTE"
 msgstr "IMPORT"
 
 #. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_invoice_in_suma
+msgid "In SUMA"
+msgstr "In SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,help:account_banking_debit_suma.field_account_invoice_suma_leave_requested
+msgid "Indicates that a SUMA leave has been requested"
+msgstr "Indica si una baixa de SUMA ha estat sol·licitada"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,help:account_banking_debit_suma.field_account_invoice_suma_rejected
+msgid "Indicates that the invoice has been rejected by SUMA"
+msgstr "Indica si la factura ha estat rebutjada per SUMA"
+
+#. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "Indicates whether this payment has already been added to an SUMA payment file"
 msgstr "Indica si aquest pagament ja s'ha afegit a un arxiu de pagament SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,help:account_banking_debit_suma.field_account_invoice_in_suma
+msgid "Indicates whether this payment has already been done and uploaded successfully"
+msgstr "Indicates whether this payment has already been done and uploaded successfully"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_initial_period
@@ -1303,7 +1328,12 @@ msgid "Initial period"
 msgstr "Període inicial"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1028
+#: model:ir.model,name:account_banking_debit_suma.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_banking_debit_suma
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1032
 #, python-format
 msgid "Invoice num: "
 msgstr "Nº factura: "
@@ -1324,7 +1354,7 @@ msgid "NUMBER OF QUARTERS"
 msgstr "NOMBRE DE TRIMESTRE"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1022
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1026
 #, python-format
 msgid "Not found"
 msgstr "No trobatd"
@@ -1375,9 +1405,33 @@ msgid "SUBCONCEPTO"
 msgstr "SUBCONCEPTE"
 
 #. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.invoice_form
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.invoice_tree
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.suma_payment_line_search
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_account_invoice_filter
 msgid "SUMA"
 msgstr "SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_invoice_suma_leave_requested
+msgid "SUMA Leave Requested"
+msgstr "Baixa sol·licitada SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.invoice_tree
+msgid "SUMA Ref"
+msgstr "Ref. SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_invoice_suma_ref
+msgid "SUMA Reference"
+msgstr "Referència SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_invoice_suma_rejected
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_account_invoice_filter
+msgid "SUMA Rejected"
+msgstr "Rebutjada SUMA"
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
@@ -1415,7 +1469,7 @@ msgid "Strict mode does not allow errors. The permissive mode allows but they ar
 msgstr "La manera estricte no permet errors, la manera permissiu permet errors, però es recopilen a la pestanya 'Errors'. Afecta tant a l'arxiu de pagament com a el de domiciliacions"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1039
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1045
 #, python-format
 msgid "Surface: "
 msgstr "Superfície: "
@@ -1440,35 +1494,35 @@ msgstr "La periodicitat bimestral només accepta els valors 01 a 06, tant en el 
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:540
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1219
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1225
 #, python-format
 msgid "The entity has not been configured. Set it in Accounting/Settings."
 msgstr "L'entitat no ha estat configurada. Configureu a Comptabilitat / Configuració."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1363
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1368
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1389
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1394
 #, python-format
 msgid "The entry number %s has failed, bank BIC not found. For foreign IBANs the BIC is mandatory."
 msgstr "El nombre d'entrada %s ha fallat, BIC no trobat. Per als IBANs estrangers, el BIC és obligatori."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:865
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:872
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:866
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:873
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
 msgstr "El nombre d'entrada %s ha fallat, ciutat no trobada per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1342
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1347
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1366
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1371
 #, python-format
 msgid "The entry number %s has failed, suma reference not found."
 msgstr "El nombre d'entrada %s ha fallat, no s'ha trobat la referència SUMA."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:846
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:858
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:847
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:859
 #, python-format
 msgid "The entry number %s has failed, taxpayer ine city code not found for city %s.\n"
 "Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
@@ -1477,8 +1531,8 @@ msgstr "L'entrada númer %s ha fallat, no s'ha trobat el codi INE per ciutat %s.
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:698
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:703
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1318
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1324
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1342
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1348
 #, python-format
 msgid "The entry number %s has failed, taxpayer name not found."
 msgstr "El nombre d'entrada %s ha fallat, nom no trobat per al soci/empresa %s."
@@ -1491,15 +1545,15 @@ msgid "The entry number %s has failed, taxpayer street not found for partner %s"
 msgstr "El nombre d'entrada %s ha fallat, carrer no trobada per al soci / empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:766
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:773
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:767
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:774
 #, python-format
 msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
 msgstr "El nombre d'entrada %s ha fallat, codi postal (C.P.) no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:883
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:889
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:884
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:890
 #, python-format
 msgid "The entry number %s has failed, the address type %s is not supported."
 msgstr "El nombre d'entrada %s ha fallat, el programa no suporta el tipus de direcció %s."
@@ -1514,22 +1568,22 @@ msgstr "El nombre d'entrada %s ha fallat, sembla que la línia bancària %s ja v
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:686
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:691
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1305
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1311
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1329
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1335
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
 msgstr "El nombre d'entrada %s ha fallat, nom no trobat per al soci/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:953
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:959
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:957
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:963
 #, python-format
 msgid "The entry number %s has failed, the format type %s is not supported."
 msgstr "El nombre d'entrada %s ha fallat, el programa no suporta el tipus de format %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1290
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1296
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1314
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1320
 #, python-format
 msgid "The entry number %s has failed, the lastname for partner %s not found."
 msgstr "El nombre d'entrada %s ha fallat, cognom no trobat per al soci/empresa %s."
@@ -1542,22 +1596,22 @@ msgid "The entry number %s has failed, the lastnamefor partner %s not found."
 msgstr "El nombre d'entrada %s ha fallat, cognom no trobat per al soci %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:970
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:977
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:974
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:981
 #, python-format
 msgid "The entry number %s has failed, the partner id not found for partner %s."
 msgstr "El nombre d'entrada %s ha fallat, no s'ha trobat l'ID per al soci %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:910
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:917
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:911
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:918
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
 msgstr "El nombre d'entrada %s ha fallat, el NIF %s per al soci/empresa %s no és vàlid."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:925
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:931
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:926
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:932
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
 msgstr "El nombre d'entrada %s ha fallat, NIF no trobat per al soci/empresa %s."
@@ -1626,6 +1680,11 @@ msgstr "Aquest codi identifica l'entitat que envia el càrrec delegat a SUMA.\n"
 #: model:ir.model.fields,help:account_banking_debit_suma.field_bank_payment_line_suma_ref
 msgid "This number indicates the payment reference if it has been made by SUMA"
 msgstr "Aquest número indica la referència de pagament si ha estat realitzat per SUMA"
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,help:account_banking_debit_suma.field_account_invoice_suma_ref
+msgid "This number indicates the payment reference when has been made by SUMA"
+msgstr "This number indicates the payment reference when has been made by SUMA"
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">Invoices (form view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group" position="after">
+                <group>
+                    <field name="in_suma" string="SUMA"/>
+                    <field name="suma_ref"/>
+                    <field name="suma_rejected"/>
+                    <field name="suma_leave_requested"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">Invoices (tree view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">o_account_banking_debit_suma_invoice_tree_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="in_suma" string="SUMA"/>
+                <field name="suma_ref" string="SUMA Ref" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">Invoices (search view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='unpaid']" position="before">
+                <field name="suma_ref"/>
+                <filter name="suma_done" string="SUMA" domain="[('in_suma', '=', True)]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='status']" position="before">
+                <filter name="group_by_suma" string="SUMA" context="{'group_by':'in_suma'}"/>
+                <filter name="group_by_suma_rejected" string="SUMA Rejected" context="{'group_by':'suma_rejected'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

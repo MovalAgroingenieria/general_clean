@@ -1493,3 +1493,32 @@ class AccountPaymentOrder(models.Model):
             'generated_user_id': self._uid,
             })
         return action
+
+    # This method is replicated by wua_account_banking_debit_suma
+    @api.multi
+    def generated2uploaded(self):
+        res = super(AccountPaymentOrder, self).generated2uploaded()
+        for order in self:
+            if order.payment_mode_id.name == 'SUMA':
+                for bline in order.bank_line_ids:
+                    if bline.suma_sent:
+                        invoice = self.env['account.invoice'].search([
+                            ('number', '=', bline.communication)])
+                        invoice.write({
+                            'in_suma': True,
+                            'suma_ref': bline.suma_ref,
+                        })
+        return res
+
+    @api.multi
+    def action_done_cancel(self):
+        for order in self:
+            if order.payment_mode_id.name == 'SUMA':
+                for bline in order.bank_line_ids:
+                    invoice = self.env['account.invoice'].search([
+                            ('number', '=', bline.communication)])
+                    invoice.write({
+                            'in_suma': False,
+                            'suma_ref': False,
+                        })
+        return super(AccountPaymentOrder, self).action_done_cancel()
