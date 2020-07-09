@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Communication wizard -->
+        <record model="ir.ui.view" id="communication_wizard_form">
+            <field name="name">communication.wizard.form</field>
+            <field name="model">communication.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Communication wizard">
+                    <group name="edit_communication">
+                        <field name="communication_template"
+                         placeholder="Payment order {{ payment_order.name }} Ref. {{ payment_line.name }} for invoice {{ invoice.number }}. Amount: {{ invoice.amount_total }}"/>
+                    </group>
+                    <div style="margin-top: 0px; font-size: 12px;">
+                        The template uses jinja2 variables: {{ object.attribute }}.
+                        The available objects are 'payment_order', 'payment_line' and 'invoice'.
+                        It will be cut to 140 characters after solving the variables.
+                    </div>
+                    <footer>
+                        <button string="Apply" name="edit_communication_action" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

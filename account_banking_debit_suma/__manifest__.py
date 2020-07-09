@@ -16,6 +16,7 @@
         "l10n_es_partner_address_street_type",
         "l10n_es_ine_code",
         "base_wua_invoicing",
+        "account_banking_communitacion_wizard",
     ],
     "data": [
         "data/account_payment_method_data.xml",
