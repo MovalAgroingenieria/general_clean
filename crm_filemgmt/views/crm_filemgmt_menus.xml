@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="main_menu"
+              name="Files"
+              web_icon="crm_filemgmt,static/description/icon.png"
+              groups="crm_filemgmt.group_file_user"/>
+
+    <menuitem id="filemgmt_menu"
+              name="File Management"
+              parent="main_menu"
+              sequence="1"/>
+
+    <menuitem id="configuration_menu"
+              name="Configuration"
+              parent="main_menu"
+              sequence="1001"/>
+
+</odoo>

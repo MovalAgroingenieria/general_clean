@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+         <record id="res_letter_form_view" model="ir.ui.view">
+             <field name="name">Letter Form</field>
+             <field name="model">res.letter</field>
+             <field name="inherit_id" ref="crm_lettermgmt.res_letter_form_view"/>
+             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='track_ref']" position="after">
+                     <field name="file_id"
+                        options="{'no_quick_create':True,
+                                  'no_create_edit':True}"/>
+                 </xpath>
+             </field>
+         </record>
+
+         <record id="res_letter_tree_view" model="ir.ui.view">
+             <field name="name">Letter Tree</field>
+             <field name="model">res.letter</field>
+             <field name="inherit_id" ref="crm_lettermgmt.res_letter_tree_view"/>
+             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='track_ref']" position="after">
+                     <field name="file_id"/>
+                 </xpath>
+             </field>
+         </record>
+
+        <!-- 
+         <record id="res_letterlink_tree_view" model="ir.ui.view">
+             <field name="name">Letter Tree</field>
+             <field name="model">res.letter</field>
+             <field name="arch" type="xml">
+                  <field name="date"/>
+                  <field name="sender_partner_id"/>
+                  <field name="recipient_partner_id"/>
+             </field>
+         </record>
+         -->
+
+         <record id="res_letter_calendar_view" model="ir.ui.view">
+             <field name="name">Letter Calendar</field>
+             <field name="model">res.letter</field>
+             <field name="inherit_id" ref="crm_lettermgmt.res_letter_calendar_view"/>
+             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='recipient_partner_id']" position="after">
+                     <field name="file_id"/>
+                 </xpath>
+             </field>
+         </record>
+
+         <record id="res_letter_filter" model="ir.ui.view">
+             <field name="name">Letter Calendar</field>
+             <field name="model">res.letter</field>
+             <field name="inherit_id" ref="crm_lettermgmt.res_letter_filter"/>
+             <field name="arch" type="xml">
+                 <xpath expr="//field[@name='date']" position="after">
+                     <field name="file_id"/>
+                 </xpath>
+                 <xpath expr="//filter[@name='pending']" position="after">
+                      <group expand="0" string="Group By">
+                          <filter string="File" name="groupby_file" context="{'group_by':'file_id'}"/>
+                      </group>
+                 </xpath>
+             </field>
+         </record>
+
+    </data>
+</odoo>
