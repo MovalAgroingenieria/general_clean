@@ -62,7 +62,7 @@
                     <group name="suma-left">
                         <field name="payment_mode_name" invisible="1"/>
                         <field name="entity" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="entity_type_code" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
+                        <field name="entity_type_code" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="error_mode" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="charge_type" style="width: 50%;" widget="selection" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
                         <field name="charge_year" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}" widget="selection"/>

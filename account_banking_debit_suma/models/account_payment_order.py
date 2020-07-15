@@ -274,6 +274,8 @@ class AccountPaymentOrder(models.Model):
         ('A', 'Town hall'),
         ('C', 'Water user assotiation')],
         string="Entity type",
+        readonly=False,
+        store=True,
         compute="get_entity_type_code",
         help="The type of entity")
 
@@ -941,13 +943,15 @@ class AccountPaymentOrder(models.Model):
             #        field in bank_line. Usually it's a simple number but if
             #        option group in payment mode is active it chains all names
             if value_format_type == "3":
-                if line.communication:
-                    tax_object_raw = line.communication.encode(
-                        self.ENCODING_NAME,
-                        self.ENCODING_TYPE).decode(self.ENCODING_NAME)
-                    tax_object = tax_object_raw[:40].ljust(40)
-                else:
-                    tax_object = str(" " * 40)
+                for l in line.payment_line_ids:
+                    if line.name == l.bank_line_id.name:
+                        try:
+                            invoice = l.invoice_id
+                            tax_object_raw = invoice.number
+                            tax_object = tax_object_raw[:40].ljust(40)
+                        except not invoice:
+                            invoice = False
+                            tax_object = str(" " * 40)
             else:
                 if self.error_mode == 'permissive':
                     error_num += 1
@@ -1016,14 +1020,13 @@ class AccountPaymentOrder(models.Model):
             # @INFO: invoice number and total amount
             # Detail line 3 - Position [394-468] Length 75
             # @INFO: surface and surface unit
-            if line.communication:
-                invoice = ""
-                try:
-                    invoice = self.env[
-                        'account.invoice'].search(
-                            [('number', '=', line.communication)])
-                except not invoice:
-                    invoice = _("Not found")
+            for l in line.payment_line_ids:
+                if line.name == l.bank_line_id.name:
+                    try:
+                        invoice = l.invoice_id
+                    except not invoice:
+                        invoice = False
+
             # Detail line 2
             if invoice:
                 num = invoice.number
@@ -1168,7 +1171,7 @@ class AccountPaymentOrder(models.Model):
             line.write({
                 'suma_ref': internal_ref,
                 'suma_sent': True,
-             })
+                })
 
         # Set total amout for SUMA resume
         self.suma_total_amount = total_amount
@@ -1255,18 +1258,19 @@ class AccountPaymentOrder(models.Model):
             #        associated account.payment.line has as payment mode equals
             #        to Domiciliacion. The account number is the number of the
             #        mandate_id associated to it.
-            moveline_mandate_id = ""
-            iban = ""
             for l in line.payment_line_ids:
-                if line.name == l.bank_line_id.name \
-                        and l.move_line_id.mandate_id \
-                        and l.move_line_id.payment_mode_id:
-                    iban = l.mandate_id.partner_bank_id.sanitized_acc_number
-                    try:
+                try:
+                    if line.name == l.bank_line_id.name \
+                            and l.move_line_id.mandate_id \
+                            and l.move_line_id.payment_mode_id:
+                        iban = \
+                            l.mandate_id.partner_bank_id.sanitized_acc_number
                         bic = l.mandate_id.partner_bank_id.bank_bic
-                    except:
-                        bic = ""
-                    moveline_mandate_id = l.move_line_id.mandate_id
+                        moveline_mandate_id = l.move_line_id.mandate_id
+                except:
+                    bic = ""
+                    moveline_mandate_id = ""
+                    iban = ""
 
             if moveline_mandate_id:
                 if iban and len(iban) != 0:
@@ -1502,12 +1506,13 @@ class AccountPaymentOrder(models.Model):
             if order.payment_mode_id.name == 'SUMA':
                 for bline in order.bank_line_ids:
                     if bline.suma_sent:
-                        invoice = self.env['account.invoice'].search([
-                            ('number', '=', bline.communication)])
-                        invoice.write({
-                            'in_suma': True,
-                            'suma_ref': bline.suma_ref,
-                        })
+                        for l in bline.payment_line_ids:
+                            if bline.name == l.bank_line_id.name:
+                                invoice = l.invoice_id
+                                invoice.write({
+                                    'in_suma': True,
+                                    'suma_ref': bline.suma_ref,
+                                })
         return res
 
     @api.multi
@@ -1515,10 +1520,11 @@ class AccountPaymentOrder(models.Model):
         for order in self:
             if order.payment_mode_id.name == 'SUMA':
                 for bline in order.bank_line_ids:
-                    invoice = self.env['account.invoice'].search([
-                            ('number', '=', bline.communication)])
-                    invoice.write({
-                            'in_suma': False,
-                            'suma_ref': False,
-                        })
+                    for l in bline.payment_line_ids:
+                        if bline.name == l.bank_line_id.name:
+                            invoice = l.invoice_id
+                            invoice.write({
+                                'in_suma': False,
+                                'suma_ref': False,
+                                })
         return super(AccountPaymentOrder, self).action_done_cancel()

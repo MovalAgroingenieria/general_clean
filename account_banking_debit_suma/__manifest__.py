@@ -14,9 +14,9 @@
         "account_banking_pain_base",
         "partner_second_lastname",
         "l10n_es_partner_address_street_type",
+        "partner_address_street_number",
         "l10n_es_ine_code",
-        "base_wua_invoicing",
-        "account_banking_communitacion_wizard",
+        "account_banking_communication_wizard",
     ],
     "data": [
         "data/account_payment_method_data.xml",

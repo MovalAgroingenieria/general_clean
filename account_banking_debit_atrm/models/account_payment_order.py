@@ -1129,9 +1129,16 @@ class AccountPaymentOrder(models.Model):
 
             # Get debt_description
             # @INFO: We take the invoice name to fill this field
-            #        which becomes communication in bank_line
-            debt_description = line.communication or ""
-            debt_description_padded = str(debt_description).ljust(100)
+            for l in line.payment_line_ids:
+                if line.name == l.bank_line_id.name:
+                    try:
+                        invoice = l.invoice_id
+                        debt_description = invoice.number
+                        debt_description_padded = \
+                            str(debt_description).ljust(100)
+                    except not invoice:
+                        invoice = False
+                        debt_description = str(" " * 100)
 
             # The positions from 730 to 838 are not used
             # blank_space5 = static
@@ -1298,12 +1305,13 @@ class AccountPaymentOrder(models.Model):
             if order.payment_mode_id.name == 'ATRM':
                 for bline in order.bank_line_ids:
                     if bline.atrm_sent:
-                        invoice = self.env['account.invoice'].search([
-                            ('number', '=', bline.communication)])
-                        invoice.write({
-                            'in_atrm': True,
-                            'atrm_ref': bline.atrm_ref,
-                        })
+                        for l in bline.payment_line_ids:
+                            if bline.name == l.bank_line_id.name:
+                                invoice = l.invoice_id
+                                invoice.write({
+                                    'in_atrm': True,
+                                    'atrm_ref': bline.atrm_ref,
+                                    })
         return res
 
     @api.multi
@@ -1311,10 +1319,11 @@ class AccountPaymentOrder(models.Model):
         for order in self:
             if order.payment_mode_id.name == 'ATRM':
                 for bline in order.bank_line_ids:
-                    invoice = self.env['account.invoice'].search([
-                            ('number', '=', bline.communication)])
-                    invoice.write({
-                            'in_atrm': False,
-                            'atrm_ref': False,
-                        })
+                    for l in bline.payment_line_ids:
+                        if bline.name == l.bank_line_id.name:
+                            invoice = l.invoice_id
+                            invoice.write({
+                                'in_atrm': False,
+                                'atrm_ref': False,
+                                })
         return super(AccountPaymentOrder, self).action_done_cancel()
