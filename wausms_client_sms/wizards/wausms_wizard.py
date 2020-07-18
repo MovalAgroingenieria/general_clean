@@ -12,6 +12,8 @@ from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
 from jinja2 import Template
+import unicodedata
+
 
 class WauSMSConfirmation(models.Model):
     _name = "wausms.confirmation"
@@ -122,12 +124,20 @@ class WauSMSWizard(models.Model):
             reformated_phone_number = reformated_phone_number.strip('+')
         return reformated_phone_number
 
-    def _compute_sms_template(self,context):
+    def _compute_sms_template(self, context):
         if context.get("mode") == 'invoice':
             invoice_template = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'invoice_template')
             for record in self:
                 record.sms_message = invoice_template
+
+    def strip_accents(self, string, accents=('COMBINING ACUTE ACCENT',
+                                             'COMBINING GRAVE ACCENT')):
+        accents = set(map(unicodedata.lookup, accents))
+        chars = \
+            [c for c in unicodedata.normalize('NFD',
+                                              string) if c not in accents]
+        return unicodedata.normalize('NFC', ''.join(chars))
 
     @api.multi
     def send_sms_action(self, context):
@@ -204,18 +214,18 @@ class WauSMSWizard(models.Model):
                 raw_template = Template(self.sms_message)
                 invoice_id = dict_partner_invoice.get(partner.id)
                 invoice = self.env['account.invoice'].browse(invoice_id)
-                msg = raw_template.render(partner=partner,invoice=invoice)
+                msg = raw_template.render(partner=partner, invoice=invoice)
                 self.sms_message = msg
 
-            # Change sms message encoding and escape json special chars
+            # Escape json special chars and accents
             if self.sms_message:
                 sms_message = \
                     self.sms_message.replace('\n', '\\n').replace(
                         '"', '\\"').replace('\b', '\\b').replace(
                         '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
-                sms_message = sms_message.encode('ascii', 'replace')
+                sms_message = self.strip_accents(sms_message)
             else:
-                sms_message = "empty message".encode('ascii', 'replace')
+                sms_message = 'empty message'
 
             # Get URL from config params
             service_url = self.env['ir.values'].get_default(
@@ -228,10 +238,12 @@ class WauSMSWizard(models.Model):
                 'Authorization': 'Basic '+self.credentials,
             }
 
-            # Data
-            data = \
-                '{"to":[ "%s" ], "text": "%s", "from": "%s", "trsec": "1"}' % \
-                (reformated_phone_number, sms_message, sender)
+            data_raw = {
+                "to": [reformated_phone_number],
+                "text": sms_message,
+                "from": sender,
+                "trsec": "1"}
+            data = json.dumps(data_raw)
 
             # Send and catch response
             response = requests.post(service_url, headers=headers, data=data)
