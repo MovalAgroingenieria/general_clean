@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-23 15:44+0000\n"
-"PO-Revision-Date: 2020-06-23 15:44+0000\n"
+"POT-Creation-Date: 2020-07-20 08:55+0000\n"
+"PO-Revision-Date: 2020-07-20 08:55+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,25 +22,25 @@ msgid "<span> SMS </span>"
 msgstr "<span> SMS </span>"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:242
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:265
 #, python-format
 msgid "Accepted"
 msgstr "Aceptado"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:240
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:263
 #, python-format
 msgid "Accepted - The message has been accepted for further processing."
 msgstr "Aceptado - El mensaje se ha aceptado para su posterior proceso."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:253
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:276
 #, python-format
 msgid "Bad request"
 msgstr "Solicitud incorrecta"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:250
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:273
 #, python-format
 msgid "Bad request - The request contains errors, the message has not been accepted."
 msgstr "Solicitud incorrecta - La petición contiene errores, el mensaje no ha sido aceptado."
@@ -144,16 +144,22 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:117
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:119
 #, python-format
 msgid "Error in phone number, or is not a mobile, or is not Spanish or does not have the correct format."
 msgstr "Error en el número de teléfono, o el número no es de un móvil, o no es español o no tiene el formato correcto."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:108
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:110
 #, python-format
 msgid "Error in phone number, there are characters that are not digits."
 msgstr "Error en el número de teléfono, hay caracteres que no son dígitos."
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:222
+#, python-format
+msgid "Error resolving template: {}"
+msgstr "Error resolviendo la plantilla: {}"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sender
@@ -175,13 +181,13 @@ msgid "ID"
 msgstr "ID"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:265
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:288
 #, python-format
 msgid "Internal server error"
 msgstr "Error del servidor"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:263
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:286
 #, python-format
 msgid "Internal server error - The server had an internal error."
 msgstr "Error del servidor - El servidor ha tenido un error interno."
@@ -267,25 +273,25 @@ msgid "Message sent"
 msgstr "Mensaje enviado"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:248
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:271
 #, python-format
 msgid "Multi-status"
 msgstr "Multi-estado"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:244
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:267
 #, python-format
 msgid "Multi-status - The message has been accepted for further processing, but some of the recipients are incorrect."
 msgstr "Multi-estado - El mensaje se ha aceptado para su posterior proceso, pero algunos de los destinatarios son incorrectos."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:197
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:207
 #, python-format
 msgid "No sender has been set."
 msgstr "No se ha establecido ningún remitente."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:138
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:148
 #, python-format
 msgid "No test phone number has been set."
 msgstr "No se ha establecido un número de teléfono de test."
@@ -298,7 +304,7 @@ msgid "Number of SMS"
 msgstr "Nº de SMS"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:358
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:238
 #, python-format
 msgid "Number of characters must not exceed 160"
 msgstr "160 caracteres máximo"
@@ -311,18 +317,18 @@ msgstr "Solo para números de móvil españoles"
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_partner_id
 msgid "Partner"
-msgstr "Socio"
+msgstr "Empresa"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:186
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:196
 #, python-format
 msgid "Partner %s does not have a mobile number"
 msgstr "El socio %s no tiene un número de teléfono móvil."
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_res_partner
-msgid "Partner of a WUA"
-msgstr "Socio de una CR"
+msgid "Partner extension for WauSMS"
+msgstr "Partner extension for WauSMS"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_service_passwd
@@ -330,13 +336,13 @@ msgid "Password"
 msgstr "Contraseña"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:261
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:284
 #, python-format
 msgid "Payment required"
 msgstr "Pago requerido"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:259
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:282
 #, python-format
 msgid "Payment required - The client does not have sufficient balance."
 msgstr "Pago requerido - El cliente no dispone de saldo suficiente."
@@ -381,7 +387,7 @@ msgid "SMS"
 msgstr "SMS"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:337
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:360
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
@@ -445,7 +451,7 @@ msgid "Sender size is limited to 15 numbers (ex. 34XXXXXXXXX) or 11 alphanumeric
 msgstr "El tamaño del remitente está limitado a 15 números (ej. 34XXXXXXXXX) o 11 caracteres alfanuméricos (ej. company xxx)."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:352
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:375
 #, python-format
 msgid "Sender size is limited to 15 numbers or 11 alphanumeric characters"
 msgstr "El tamaño del remitente está limitado a 15 números (solo números) o 11 caracteres alfanuméricos"
@@ -511,8 +517,8 @@ msgstr "El usuario WauSMS utilizado en las credenciales"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sms_message
-msgid "The maximum size is 160 characters. The message will be sent in ASCII, so the special characters will not be displayed."
-msgstr "El tamaño máximo es de 160 caracteres. El mensaje será enviado codificado en ASCII por lo que los caracteres especiales no se mostrarán."
+msgid "The maximum size is 160 characters after resolving variables. Some special characters will not be displayed."
+msgstr "El tamaño máximo es de 160 caracteres tras resolver las variables. Algunos caracteres especiales no serán mostrados."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sender
@@ -534,7 +540,7 @@ msgid "The user who sent the sms"
 msgstr "El usuario que envió el SMS"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:160
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:170
 #, python-format
 msgid "There are no items selected."
 msgstr "No hay elementos seleccionados."
@@ -556,19 +562,19 @@ msgid "Tracking of SMS sent"
 msgstr "Rastreo de SMS enviados"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:257
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:280
 #, python-format
 msgid "Unauthorized"
 msgstr "No autorizado"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:255
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:278
 #, python-format
 msgid "Unauthorized - Client authentication failed."
 msgstr "No autorizado - La autenticación ha fallado."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:267
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:290
 #, python-format
 msgid "Unknown error"
 msgstr "Error desconocido."
@@ -588,7 +594,7 @@ msgid "User"
 msgstr "Usuario"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:97
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:99
 #, python-format
 msgid "User or password not set."
 msgstr "El usuario o la contraseña no han sido establecidos."

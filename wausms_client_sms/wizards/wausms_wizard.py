@@ -11,7 +11,7 @@ import phonenumbers
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
-from jinja2 import Template
+from jinja2 import Template, TemplateError
 import unicodedata
 
 
@@ -84,10 +84,9 @@ class WauSMSWizard(models.Model):
 
     sms_message = fields.Text(
         string="Message",
-        size=160,
         default=_get_default_sms_message,
-        help="The maximum size is 160 characters. The message will be sent in "
-             "ASCII, so the special characters will not be displayed.")
+        help="The maximum size is 160 characters after resolving variables. "
+             "Some special characters will not be displayed.")
 
     def _compute_credentials(self):
         # Get config params
@@ -214,7 +213,13 @@ class WauSMSWizard(models.Model):
                 raw_template = Template(self.sms_message)
                 invoice_id = dict_partner_invoice.get(partner.id)
                 invoice = self.env['account.invoice'].browse(invoice_id)
-                msg = raw_template.render(partner=partner, invoice=invoice)
+                msg = False
+                try:
+                    msg = raw_template.render(
+                        partner=partner, invoice=invoice, datetime=datetime)
+                except TemplateError as err:
+                    raise ValidationError(
+                        _("Error resolving template: {}".format(err.message)))
                 self.sms_message = msg
 
             # Escape json special chars and accents
@@ -226,6 +231,11 @@ class WauSMSWizard(models.Model):
                 sms_message = self.strip_accents(sms_message)
             else:
                 sms_message = 'empty message'
+
+            # Check size
+            if len(sms_message) > 160:
+                raise ValidationError(
+                    _("Number of characters must not exceed 160"))
 
             # Get URL from config params
             service_url = self.env['ir.values'].get_default(
@@ -364,9 +374,3 @@ class WauSMSWizard(models.Model):
         if not self.sender.isdigit() and len(self.sender) > 11:
             raise ValidationError(_("Sender size is limited to 15 numbers or "
                                     "11 alphanumeric characters"))
-
-    @api.constrains('sms_message')
-    def _check_sms_message_size(self):
-        if len(self.sms_message) > 160:
-            raise ValidationError(_("Number of characters must not exceed "
-                                    "160"))
