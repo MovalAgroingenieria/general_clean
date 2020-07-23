@@ -2,7 +2,7 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class ResPartner(models.Model):
@@ -21,8 +21,9 @@ class ResPartner(models.Model):
     def _compute_number_of_files(self):
         for record in self:
             number_of_files = 0
-            partnerlinks_of_partner = self.env['res.file.partnerlink'].search(
-                [('partner_id', '=', record.id)])
+            partnerlinks_of_partner = \
+                self.sudo().env['res.file.partnerlink'].search(
+                    [('partner_id', '=', record.id)])
             if partnerlinks_of_partner:
                 number_of_files = len(partnerlinks_of_partner)
             record.number_of_files = number_of_files
@@ -34,9 +35,6 @@ class ResPartner(models.Model):
             id_tree_view = \
                 self.env.ref('crm_filemgmt.'
                              'res_file_partnerlink_of_partner_view_tree').id
-            id_form_view = \
-                self.env.ref('crm_filemgmt.'
-                             'res_file_partnerlink_view_form').id
             search_view = \
                 self.env.ref('crm_filemgmt.res_file_partnerlink_view_search')
             act_window = {
@@ -45,8 +43,7 @@ class ResPartner(models.Model):
                 'res_model': 'res.file.partnerlink',
                 'view_type': 'form',
                 'view_mode': 'tree',
-                'views': [(id_tree_view, 'tree'),
-                          (id_form_view, 'form')],
+                'views': [(id_tree_view, 'tree')],
                 'search_view_id': (search_view.id, search_view.name),
                 'target': 'current',
                 'domain': [('id', 'in', self.file_ids.ids)],

@@ -334,7 +334,8 @@
         <field name="name">File Partnerlink of partner (tree view)</field>
         <field name="model">res.file.partnerlink</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_partnerlink_of_partner_view_tree">
+            <tree create="false" edit="false" delete="false" 
+                  class="o_res_file_partnerlink_of_partner_view_tree">
                 <field name="file_id"/>
                 <field name="subject"/>
                 <field name="is_main"/>
