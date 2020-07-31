@@ -153,6 +153,10 @@ class ResFile(models.Model):
         store=True,
         compute="_compute_closing_date")
 
+    container_id = fields.Many2one(
+        string='Container',
+        comodel_name='res.file.container')
+
     _sql_constraints = [
         ('unique_name',
          'UNIQUE (name)',

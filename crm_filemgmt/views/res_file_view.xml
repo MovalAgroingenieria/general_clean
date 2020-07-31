@@ -107,6 +107,8 @@
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             <field name="category_id" colspan="4"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
+                            <field name="container_id" colspan="4"
+                                   attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             <field name="tag_ids" colspan="2" widget="many2many_tags"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             <field name="closing_date" colspan="2" attrs="{'invisible':[('state','!=','03_closed')]}"/>

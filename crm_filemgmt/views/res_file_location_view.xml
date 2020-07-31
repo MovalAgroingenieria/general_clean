@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_file_location_view_form" model="ir.ui.view">
+        <field name="name">Files Location (form view)</field>
+        <field name="model">res.file.location</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                </header>
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                        <button name="action_get_containers"
+                                type="object" class="oe_stat_button"
+                                icon="fa-archive"
+                                attrs="{'invisible': [('number_of_containers','=', 0)]}">
+                            <div class="o_form_field o_stat_info">
+                                <field name="number_of_containers"/>
+                                <span attrs="{'invisible': [('number_of_containers','>', 1)]}"> container</span>
+                                <span attrs="{'invisible': [('number_of_containers','=', 1)]}"> containers</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group name="master_data" col="9">
+                        <group name="master_data_image" colspan="3">
+                            <field name="image" widget="image"/>
+                        </group>
+                        <group name="master_data_fields" colspan="6" col="4">
+                            <field name="location_code"/>
+                            <field name="name"/>
+                            <field name="description" colspan="4"/>
+                            <field name="location_id" colspan="4"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_file_location_view_tree" model="ir.ui.view">
+        <field name="name">Files Location (tree view)</field>
+        <field name="model">res.file.location</field>
+        <field name="arch" type="xml">
+            <tree class="o_res_file_location_view_tree">
+                <field name="image" widget="image" invisible="1"/>
+                <field name="location_code"/>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="location_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_file_location_view_search" model="ir.ui.view">
+        <field name="name">Files Location (search view)</field>
+        <field name="model">res.file.location</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="location_code"/>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_file_location_action" model="ir.actions.act_window">
+        <field name="name">File Location</field>
+        <field name="res_model">res.file.location</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_file_location_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_file_location_view_form')})]"/>
+        <field name="search_view_id" ref="res_file_location_view_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new file location
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="files_location_menu"
+              name="Locations"
+              parent="configuration_menu"
+              sequence="3"
+              action="res_file_location_action"/>
+
+</odoo>

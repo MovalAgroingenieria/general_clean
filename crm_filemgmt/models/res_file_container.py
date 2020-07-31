@@ -5,32 +5,54 @@
 from odoo import models, fields, api, exceptions, _
 
 
-class ResFileCategory(models.Model):
-    _name = 'res.file.category'
-    _description = "Categories of Files"
+class ResFileContainer(models.Model):
+    _name = 'res.file.container'
+    _description = "Container of Files"
 
-    name = fields.Char(
-        string='Category Name',
-        size=50,
+    def _default_container_code(self):
+        resp = 0
+        file_containers = self.search(
+            [('container_code', '>', 0)], limit=1, order='container_code desc')
+        if len(file_containers) == 1:
+            resp = file_containers[0].container_code + 1
+        else:
+            resp = 1
+        return resp
+
+    container_code = fields.Integer(
+        string='Code',
+        default=_default_container_code,
         required=True,
-        translate=True,
         index=True)
 
-    is_readonly = fields.Boolean(
-        string='Read-only Category',
-        default=False)
+    name = fields.Char(
+        string='Name',
+        size=100,
+        required=True,
+        index=True)
 
-    parent_id = fields.Many2one(
-        string='Parent Category',
-        comodel_name='res.file.category')
+    description = fields.Char(
+        string='Description',
+        size=255)
+
+    location_id = fields.Many2one(
+        string='Location',
+        comodel_name='res.file.location',
+        required=True,
+        index=True,
+        ondelete='restrict')
+
+    image = fields.Binary(
+        string='Photo / Image',
+        attachment=True)
+
+    file_ids = fields.One2many(
+        string='Files',
+        comodel_name='res.file',
+        inverse_name='container_id')
 
     notes = fields.Html(
         string='Notes')
-
-    file_ids = fields.One2many(
-        string='Associated Files',
-        comodel_name='res.file',
-        inverse_name='category_id')
 
     number_of_files = fields.Integer(
         string='Files',
@@ -38,30 +60,11 @@ class ResFileCategory(models.Model):
         compute='_compute_number_of_files')
 
     _sql_constraints = [
-        ('unique_name',
-         'UNIQUE (name)',
-         'Existing category name.'),
-        ]
-
-#     @api.multi
-#     def name_get(self):
-#         def get_names(cat):
-#             """ Return the list [cat.name, cat.parent_id.name, ...] """
-#             res = []
-#             while cat:
-#                 res.append(cat.name)
-#                 cat = cat.parent_id
-#             return res
-#         return [(cat.id, " / ".join(reversed(get_names(cat)))) for cat in self]
-
-    @api.multi
-    def unlink(self):
-        for record in self:
-            if record.is_readonly:
-                raise exceptions.UserError(
-                    _('The read only categories cannot be removed.'))
-        res = super(ResFileCategory, self).unlink()
-        return res
+        ('unique_container_code', 'UNIQUE (container_code)',
+         'Existing container code.'),
+        ('container_code_positive', 'CHECK (container_code > 0 )',
+         'The container code has to be positive.'),
+        ('unique_name', 'UNIQUE (name)', 'Existing container name.')]
 
     @api.depends('file_ids')
     def _compute_number_of_files(self):
