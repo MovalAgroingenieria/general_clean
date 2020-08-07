@@ -9,3 +9,7 @@ access_file_partnerlink_filemgmt_user,access.file.partnerlink.filemgmt.user,mode
 access_file_partnerlink_filemgmt_manager,access.file.partnerlink.filemgmt.manager,model_res_file_partnerlink,crm_filemgmt.group_file_manager,1,1,1,1
 access_file_filelink_filemgmt_user,access.file.filelink.filemgmt.user,model_res_file_filelink,crm_filemgmt.group_file_user,1,0,0,0
 access_file_filelink_filemgmt_manager,access.file.filelink.filemgmt.manager,model_res_file_filelink,crm_filemgmt.group_file_manager,1,1,1,1
+access_file_location_filemgmt_user,access.file.location.filemgmt.user,model_res_file_location,crm_filemgmt.group_file_user,1,0,0,0
+access_file_location_filemgmt_manager,access.file.location.filemgmt.manager,model_res_file_location,crm_filemgmt.group_file_manager,1,1,1,1
+access_file_container_filemgmt_user,access.file.container.filemgmt.user,model_res_file_container,crm_filemgmt.group_file_user,1,0,0,0
+access_file_container_filemgmt_manager,access.file.container.filemgmt.manager,model_res_file_container,crm_filemgmt.group_file_manager,1,1,1,1
