@@ -147,8 +147,10 @@ class WauSMSWizard(models.Model):
             if not test_phone_number:
                 raise ValidationError(_("No test phone number has been set."))
             # Get default subject
-            default_subject = self.env['ir.values'].get_default(
+            default_subject_raw = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'default_subject')
+            default_subject = \
+                self.strip_accents(default_subject_raw.decode('utf8'))
             # Set active_ids to 0
             active_ids = (0,)
 
@@ -183,6 +185,7 @@ class WauSMSWizard(models.Model):
                 # Get subject
                 if self.subject:
                     subject = self.subject
+                    
                 else:
                     subject = ""
 
