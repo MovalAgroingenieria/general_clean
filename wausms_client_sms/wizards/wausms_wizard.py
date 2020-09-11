@@ -185,7 +185,6 @@ class WauSMSWizard(models.Model):
                 # Get subject
                 if self.subject:
                     subject = self.subject
-                    
                 else:
                     subject = ""
 
@@ -223,12 +222,12 @@ class WauSMSWizard(models.Model):
                 except TemplateError as err:
                     raise ValidationError(
                         _("Error resolving template: {}".format(err.message)))
-                self.sms_message = msg
+                raw_sms_message = msg
 
             # Escape json special chars and accents
-            if self.sms_message:
+            if raw_sms_message:
                 sms_message = \
-                    self.sms_message.replace('\n', '\\n').replace(
+                    raw_sms_message.replace('\n', '\\n').replace(
                         '"', '\\"').replace('\b', '\\b').replace(
                         '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
                 sms_message = self.strip_accents(sms_message)
