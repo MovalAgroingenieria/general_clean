@@ -43,17 +43,6 @@ class ResFileCategory(models.Model):
          'Existing category name.'),
         ]
 
-#     @api.multi
-#     def name_get(self):
-#         def get_names(cat):
-#             """ Return the list [cat.name, cat.parent_id.name, ...] """
-#             res = []
-#             while cat:
-#                 res.append(cat.name)
-#                 cat = cat.parent_id
-#             return res
-#         return [(cat.id, " / ".join(reversed(get_names(cat)))) for cat in self]
-
     @api.multi
     def unlink(self):
         for record in self:

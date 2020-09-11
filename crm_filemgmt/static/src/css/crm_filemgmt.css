@@ -81,12 +81,24 @@
 }
 
 /* file_partnerlink_of_partner_view_tree */
-.o_res_file_partnerlink_of_partner_view_tree [data-id="file_id"] {
-    width: 30%;
+.o_res_file_partnerlink_of_partner_view_tree [data-id="date_file"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="date_file"] {
+    text-align: center;
 }
 
-.o_res_file_partnerlink_of_partner_view_tree [data-id="subject"] {
-    width: 60%;
+.o_res_file_partnerlink_of_partner_view_tree [data-id="file_id"] {
+    width: 70%;
+}
+
+.o_res_file_partnerlink_of_partner_view_tree [data-id="state"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="state"] {
+    text-align: center;
 }
 
 .o_res_file_partnerlink_of_partner_view_tree [data-id="is_main"] {

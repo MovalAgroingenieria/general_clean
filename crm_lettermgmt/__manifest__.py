@@ -24,6 +24,7 @@
         'security/ir.model.access.csv',
         'security/lettermgmt_security.xml',
         'views/resources.xml',
+        'views/res_partner_view.xml',
     ],
     'demo': ['data/letter_demo.xml'],
     'application': False,

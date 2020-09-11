@@ -7,4 +7,5 @@ from . import letter_channel
 from . import letter_type
 from . import letter_folder
 from . import letter_reassignment
+from . import res_partner
 

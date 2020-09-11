@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-06 15:45+0000\n"
-"PO-Revision-Date: 2020-08-06 15:45+0000\n"
+"POT-Creation-Date: 2020-09-11 09:17+0000\n"
+"PO-Revision-Date: 2020-09-11 09:17+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,18 +37,37 @@ msgstr "<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> expedien
 "                                <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> expedientes</span>"
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
-msgid "<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
-"                          <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>"
-msgstr "<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> expediente</span>\n"
-"                          <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> expedientes</span>"
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "<span class=\"o_stat_text\">\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> file register</span>\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> file registers</span>\n"
+"                               </span>"
+msgstr "<span class=\"o_stat_text\">\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> registro expediente</span>\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> registros expediente</span>\n"
+"                               </span>"
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "<span attrs=\"{'invisible': [('number_of_registers','&gt;', 1)]}\"> register</span>\n"
-"                                 <span attrs=\"{'invisible': [('number_of_registers','=', 1)]}\"> registers</span>"
-msgstr "<span attrs=\"{'invisible': [('number_of_registers','&gt;', 1)]}\"> registro</span>\n"
-"                                 <span attrs=\"{'invisible': [('number_of_registers','=', 1)]}\"> registros</span>"
+#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> file register</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> file registers</span>\n"
+"                        </span>"
+msgstr "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> registro expediente</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> registros expediente</span>\n"
+"                        </span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>\n"
+"                        </span>"
+msgstr "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> expediente</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> expedientes</span>\n"
+"                        </span>"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
@@ -66,6 +85,11 @@ msgstr "¿Está seguro de realizar esta operación? La fecha de cierre del exped
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_file_ids
 msgid "Associated Files"
 msgstr "Expedientes asociados"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Attachments"
+msgstr "Adjuntos"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -274,6 +298,7 @@ msgstr "Descripción"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_date_file
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_date_file
 msgid "Discharge date"
 msgstr "Fecha de alta"
 
@@ -287,7 +312,7 @@ msgstr "Fecha de alta"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre mostrado"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
@@ -341,7 +366,7 @@ msgstr "Expedientes Externos"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_letter_file_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
 msgid "File"
-msgstr "Expediente"
+msgstr "Archivo"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -376,7 +401,7 @@ msgid "File Management Settings"
 msgstr "Parámetros Gestión Expedientes"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_partner.py:42
+#: code:addons/crm_filemgmt/models/res_partner.py:52
 #, python-format
 msgid "File Partnerlinks"
 msgstr "Socios"
@@ -394,7 +419,26 @@ msgid "File Tags"
 msgstr "Etiquetas"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file_category.py:82
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_attachment_ids
+msgid "File attachments"
+msgstr "Adjuntos"
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:225
+#: code:addons/crm_filemgmt/models/res_partner.py:79
+#, python-format
+msgid "File registers"
+msgstr "Registros expediente"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_res_letter_ids
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_file_res_letter_ids
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_file_res_letter_ids
+msgid "File registry"
+msgstr "Registro expediente"
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file_category.py:71
 #: code:addons/crm_filemgmt/models/res_file_container.py:85
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_action
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_number_of_files
@@ -419,12 +463,12 @@ msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_2136
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_13455
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_2192
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_13481
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_id_2178
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_id
 msgid "ID"
@@ -447,7 +491,7 @@ msgid "Internal Files"
 msgstr "Expedientes Internos"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:247
+#: code:addons/crm_filemgmt/models/res_file.py:326
 #, python-format
 msgid "It is mandatory to check the primary partner."
 msgstr "Es obligatorio marcar un socio principal"
@@ -486,7 +530,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualización en"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_location_id
@@ -540,12 +584,14 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_number_of_registers
-msgid "Number of registers"
-msgstr "Nº de registros"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_number_of_file_registers
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_number_of_file_registers
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_number_of_file_registers
+msgid "Num. file registers"
+msgstr "Nº registros expediente"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:250
+#: code:addons/crm_filemgmt/models/res_file.py:329
 #, python-format
 msgid "Only one primary partner is allowed."
 msgstr "Solo se permite un socio principal."
@@ -561,7 +607,6 @@ msgid "Parent Category"
 msgstr "Categoría padre"
 
 #. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_partner
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partner_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
@@ -572,6 +617,11 @@ msgstr "Socio"
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
 msgstr "Socios"
+
+#. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_partner
+msgid "Partner of a WUA"
+msgstr "Socio"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
@@ -606,17 +656,6 @@ msgid "Read-only Category"
 msgstr "Categoría de solo lectura"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:322
-#, python-format
-msgid "Registers"
-msgstr "Registros"
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_res_letter_ids
-msgid "Registry"
-msgstr "Registro"
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_id
 msgid "Related File"
 msgstr "Expediente relacionado"
@@ -632,6 +671,7 @@ msgid "Site"
 msgstr "Ubicación"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_state
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_state
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "State"
@@ -665,19 +705,19 @@ msgid "The container code has to be positive."
 msgstr "El código del contenedor debe ser positivo."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:267
+#: code:addons/crm_filemgmt/models/res_file.py:346
 #, python-format
 msgid "The file cannot be self-referenced."
 msgstr "Un expediente no puede ser auto-referenciado."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:293
+#: code:addons/crm_filemgmt/models/res_file.py:298
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
 msgstr "El nombre del expediente no puede empezar o terminar con una barra (/)."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:307
+#: code:addons/crm_filemgmt/models/res_file.py:312
 #, python-format
 msgid "The file number must be an integer."
 msgstr "El número del expediente debe ser un número entero."
@@ -688,31 +728,31 @@ msgid "The location code has to be positive."
 msgstr "El código de la ubicación debe ser positivo."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:287
+#: code:addons/crm_filemgmt/models/res_file.py:292
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr "El prefijo debe ser separado del resto del nombre de archivo por un guión (-)."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file_category.py:62
+#: code:addons/crm_filemgmt/models/res_file_category.py:51
 #, python-format
 msgid "The read only categories cannot be removed."
 msgstr "Las categorías de solo lectura no pueden ser eliminadas."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:274
+#: code:addons/crm_filemgmt/models/res_file.py:353
 #, python-format
 msgid "There are repeated files."
 msgstr "Hay Expedientes repetidos."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:256
+#: code:addons/crm_filemgmt/models/res_file.py:335
 #, python-format
 msgid "There are repeated partners."
 msgstr "Hay socios repetidos."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:301
+#: code:addons/crm_filemgmt/models/res_file.py:306
 #, python-format
 msgid "There cannot be more than one slash in the name of the file."
 msgstr "No puede haber más de una barra en el nombre del expediente."
@@ -731,6 +771,12 @@ msgstr "Usuario"
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Validate"
 msgstr "Validar"
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:244
+#, python-format
+msgid "[no subject]"
+msgstr "[sin asunto]"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_file_filelink

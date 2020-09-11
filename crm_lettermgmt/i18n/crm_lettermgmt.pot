@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-05 09:27+0000\n"
-"PO-Revision-Date: 2020-07-05 09:27+0000\n"
+"POT-Creation-Date: 2020-09-10 16:27+0000\n"
+"PO-Revision-Date: 2020-09-10 16:27+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -29,6 +29,14 @@ msgid "\n"
 "            * Received But Returned: has been received but returned.\n"
 "\n"
 "            * Cancel: has been cancelled, can't be sent anymore."
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_total_registers','&gt;', 1)]}\"> register</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_total_registers','=', 1)]}\"> registers</span>\n"
+"                        </span>"
 msgstr ""
 
 #. module: crm_lettermgmt
@@ -351,6 +359,24 @@ msgid "Name"
 msgstr ""
 
 #. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_number_of_total_registers
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_number_of_total_registers
+msgid "Num. registers"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_number_of_registers_as_recipent
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_number_of_registers_as_recipent
+msgid "Num. registers as recipient"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_number_of_registers_as_sender
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_number_of_registers_as_sender
+msgid "Num. registers as sender"
+msgstr ""
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_number
 msgid "Number"
 msgstr ""
@@ -384,6 +410,11 @@ msgstr ""
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Parent..."
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_res_partner
+msgid "Partner of a WUA"
 msgstr ""
 
 #. module: crm_lettermgmt
@@ -446,11 +477,6 @@ msgid "Recipient"
 msgstr ""
 
 #. module: crm_lettermgmt
-#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_extern_partner_ids
-msgid "Recipients"
-msgstr ""
-
-#. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_orig_ref
 msgid "Reference Number at Origin."
 msgstr ""
@@ -463,6 +489,30 @@ msgstr ""
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_track_ref
 msgid "Reference Number used for Tracking."
+msgstr ""
+
+#. module: crm_lettermgmt
+#: code:addons/crm_lettermgmt/models/res_partner.py:66
+#, python-format
+msgid "Registers"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_total_res_letter_ids
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_total_res_letter_ids
+msgid "Registry"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_recipient_res_letter_ids
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_recipient_res_letter_ids
+msgid "Registry as recipient"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_sender_res_letter_ids
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_sender_res_letter_ids
+msgid "Registry as sender"
 msgstr ""
 
 #. module: crm_lettermgmt

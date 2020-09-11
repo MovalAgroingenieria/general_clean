@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-06 15:45+0000\n"
-"PO-Revision-Date: 2020-08-06 15:45+0000\n"
+"POT-Creation-Date: 2020-09-11 09:15+0000\n"
+"PO-Revision-Date: 2020-09-11 09:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,15 +35,27 @@ msgid "<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</spa
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
-msgid "<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
-"                          <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>"
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "<span class=\"o_stat_text\">\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> file register</span>\n"
+"                                   <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> file registers</span>\n"
+"                               </span>"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "<span attrs=\"{'invisible': [('number_of_registers','&gt;', 1)]}\"> register</span>\n"
-"                                 <span attrs=\"{'invisible': [('number_of_registers','=', 1)]}\"> registers</span>"
+#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> file register</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> file registers</span>\n"
+"                        </span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
+"                            <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>\n"
+"                        </span>"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -61,6 +73,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_file_ids
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_file_ids
 msgid "Associated Files"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Attachments"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -270,6 +287,7 @@ msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_date_file
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_date_file
 msgid "Discharge date"
 msgstr ""
 
@@ -372,7 +390,7 @@ msgid "File Management Settings"
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_partner.py:42
+#: code:addons/crm_filemgmt/models/res_partner.py:52
 #, python-format
 msgid "File Partnerlinks"
 msgstr ""
@@ -390,7 +408,26 @@ msgid "File Tags"
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file_category.py:82
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_attachment_ids
+msgid "File attachments"
+msgstr ""
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:225
+#: code:addons/crm_filemgmt/models/res_partner.py:79
+#, python-format
+msgid "File registers"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_res_letter_ids
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_file_res_letter_ids
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_file_res_letter_ids
+msgid "File registry"
+msgstr ""
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file_category.py:71
 #: code:addons/crm_filemgmt/models/res_file_container.py:85
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_action
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_number_of_files
@@ -415,12 +452,12 @@ msgid "Group By"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_2136
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_13455
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_2192
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_13481
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_id_2178
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_id
 msgid "ID"
@@ -443,7 +480,7 @@ msgid "Internal Files"
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:247
+#: code:addons/crm_filemgmt/models/res_file.py:326
 #, python-format
 msgid "It is mandatory to check the primary partner."
 msgstr ""
@@ -536,12 +573,14 @@ msgid "Notes"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_number_of_registers
-msgid "Number of registers"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_number_of_file_registers
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_number_of_file_registers
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_number_of_file_registers
+msgid "Num. file registers"
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:250
+#: code:addons/crm_filemgmt/models/res_file.py:329
 #, python-format
 msgid "Only one primary partner is allowed."
 msgstr ""
@@ -557,7 +596,6 @@ msgid "Parent Category"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_partner
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partner_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
@@ -567,6 +605,11 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_partner
+msgid "Partner of a WUA"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -602,17 +645,6 @@ msgid "Read-only Category"
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:322
-#, python-format
-msgid "Registers"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_res_letter_ids
-msgid "Registry"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_id
 msgid "Related File"
 msgstr ""
@@ -628,6 +660,7 @@ msgid "Site"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_state
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_state
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "State"
@@ -661,19 +694,19 @@ msgid "The container code has to be positive."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:267
+#: code:addons/crm_filemgmt/models/res_file.py:346
 #, python-format
 msgid "The file cannot be self-referenced."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:293
+#: code:addons/crm_filemgmt/models/res_file.py:298
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:307
+#: code:addons/crm_filemgmt/models/res_file.py:312
 #, python-format
 msgid "The file number must be an integer."
 msgstr ""
@@ -684,31 +717,31 @@ msgid "The location code has to be positive."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:287
+#: code:addons/crm_filemgmt/models/res_file.py:292
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file_category.py:62
+#: code:addons/crm_filemgmt/models/res_file_category.py:51
 #, python-format
 msgid "The read only categories cannot be removed."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:274
+#: code:addons/crm_filemgmt/models/res_file.py:353
 #, python-format
 msgid "There are repeated files."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:256
+#: code:addons/crm_filemgmt/models/res_file.py:335
 #, python-format
 msgid "There are repeated partners."
 msgstr ""
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:301
+#: code:addons/crm_filemgmt/models/res_file.py:306
 #, python-format
 msgid "There cannot be more than one slash in the name of the file."
 msgstr ""
@@ -726,6 +759,12 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Validate"
+msgstr ""
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:244
+#, python-format
+msgid "[no subject]"
 msgstr ""
 
 #. module: crm_filemgmt

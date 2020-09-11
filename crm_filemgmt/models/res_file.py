@@ -133,14 +133,14 @@ class ResFile(models.Model):
         comodel_name='res.file.filelink',
         inverse_name='file_id')
 
-    res_letter_ids = fields.One2many(
-        string='Registry',
+    file_res_letter_ids = fields.One2many(
+        string='File registry',
         comodel_name='res.letter',
         inverse_name='file_id')
 
-    number_of_registers = fields.Integer(
-        string='Number of registers',
-        compute='_compute_number_of_registers')
+    number_of_file_registers = fields.Integer(
+        string='Num. file registers',
+        compute='_compute_number_of_file_registers')
 
     color = fields.Integer(
         string='Color Index',
@@ -156,6 +156,11 @@ class ResFile(models.Model):
     container_id = fields.Many2one(
         string='Container',
         comodel_name='res.file.container')
+
+    file_attachment_ids = fields.One2many(
+        string="File attachments",
+        comodel_name="ir.attachment",
+        compute="_compute_attachments_ids")
 
     _sql_constraints = [
         ('unique_name',
@@ -206,6 +211,45 @@ class ResFile(models.Model):
         self.ensure_one()
         self.state = '02_inprogress'
 
+    @api.multi
+    def action_get_file_registers(self):
+        self.ensure_one()
+        if self.file_res_letter_ids:
+            id_tree_view = self.env.ref('crm_lettermgmt.'
+                                        'res_letter_tree_o2m_view').id
+            id_form_view = self.env.ref('crm_lettermgmt.'
+                                        'res_letter_form_view').id
+            search_view = self.env.ref('crm_lettermgmt.res_letter_filter')
+            act_window = {
+                'type': 'ir.actions.act_window',
+                'name': _('File registers'),
+                'res_model': 'res.letter',
+                'view_type': 'form',
+                'view_mode': 'tree',
+                'views': [(id_tree_view, 'tree'),
+                          (id_form_view, 'form')],
+                'search_view_id': (search_view.id, search_view.name),
+                'target': 'current',
+                'domain': [('id', 'in', self.file_res_letter_ids.ids)],
+                }
+            return act_window
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            if record.subject:
+                name = record.name + ' ' + '[' + record.subject + ']'
+            else:
+                name = record.name + ' ' + _('[no subject]')
+            result.append((record.id, name))
+        return result
+
+    @api.multi
+    def _compute_attachments_ids(self):
+        self.file_attachment_ids = self.env['ir.attachment'].search(
+            [('res_model', '=', self._name), ('res_id', '=', self.id)])
+
     @api.depends('partnerlink_ids')
     def _compute_partner_id(self):
         for record in self:
@@ -216,15 +260,15 @@ class ResFile(models.Model):
                     break
             record.partner_id = partner_id
 
-    @api.depends('res_letter_ids')
-    def _compute_number_of_registers(self):
+    @api.depends('file_res_letter_ids')
+    def _compute_number_of_file_registers(self):
         for record in self:
-            number_of_registers = 0
+            number_of_file_registers = 0
             file_registers = self.env['res.letter'].search(
                 [('file_id', '=', record.id)])
             if file_registers:
-                number_of_registers = len(file_registers)
-            record.number_of_registers = number_of_registers
+                number_of_file_registers = len(file_registers)
+            record.number_of_file_registers = number_of_file_registers
 
     @api.depends('state')
     def _compute_closing_date(self):
@@ -233,6 +277,41 @@ class ResFile(models.Model):
                 record.closing_date = datetime.datetime.now()
             else:
                 record.closing_date = False
+
+    @api.model
+    def create(self, vals):
+        if 'name' in vals:
+            current_file_name = vals['name']
+            default_annual_seq_prefix = self.env['ir.values'].get_default(
+                'res.file.config.settings', 'default_annual_seq_prefix')
+            if default_annual_seq_prefix:
+                after_prefix = \
+                    current_file_name[len(default_annual_seq_prefix):]
+                if not after_prefix.startswith('-'):
+                    raise exceptions.UserError(
+                        _('The prefix must be separated from the rest of the '
+                          'file name by a hyphen (-).'))
+            if '/' in current_file_name:
+                if current_file_name.startswith('/') or \
+                        current_file_name.endswith('/'):
+                    raise exceptions.UserError(
+                        _('The file name cannot start or end with a '
+                          'slash (/).'))
+                count = 0
+                for i in current_file_name:
+                    if i == '/':
+                        count += 1
+                if count > 1:
+                    raise exceptions.UserError(
+                        _('There cannot be more than one slash in the name of '
+                          'the file.'))
+                try:
+                    file_number = int(current_file_name.split('/')[1])
+                except Exception:
+                    raise exceptions.UserError(
+                        _('The file number must be an integer.'))
+        new_file = super(ResFile, self).create(vals)
+        return new_file
 
     @api.constrains('partnerlink_ids')
     def _check_partnerlink_ids(self):
@@ -273,64 +352,6 @@ class ResFile(models.Model):
             if len(unique_ids_of_file) != len(file.filelink_ids):
                 raise exceptions.UserError(_('There are repeated files.'))
 
-    @api.model
-    def create(self, vals):
-        if 'name' in vals:
-            current_file_name = vals['name']
-            default_annual_seq_prefix = self.env['ir.values'].get_default(
-                'res.file.config.settings', 'default_annual_seq_prefix')
-            if default_annual_seq_prefix:
-                after_prefix = \
-                    current_file_name[len(default_annual_seq_prefix):]
-                if not after_prefix.startswith('-'):
-                    raise exceptions.UserError(
-                        _('The prefix must be separated from the rest of the '
-                          'file name by a hyphen (-).'))
-            if '/' in current_file_name:
-                if current_file_name.startswith('/') or \
-                        current_file_name.endswith('/'):
-                    raise exceptions.UserError(
-                        _('The file name cannot start or end with a '
-                          'slash (/).'))
-                count = 0
-                for i in current_file_name:
-                    if i == '/':
-                        count += 1
-                if count > 1:
-                    raise exceptions.UserError(
-                        _('There cannot be more than one slash in the name of '
-                          'the file.'))
-                try:
-                    file_number = int(current_file_name.split('/')[1])
-                except Exception:
-                    raise exceptions.UserError(
-                        _('The file number must be an integer.'))
-        new_file = super(ResFile, self).create(vals)
-        return new_file
-
-    @api.multi
-    def action_get_registers(self):
-        self.ensure_one()
-        if self.res_letter_ids:
-            id_tree_view = self.env.ref('crm_lettermgmt.'
-                                        'res_letter_tree_o2m_view').id
-            id_form_view = self.env.ref('crm_lettermgmt.'
-                                        'res_letter_form_view').id
-            search_view = self.env.ref('crm_lettermgmt.res_letter_filter')
-            act_window = {
-                'type': 'ir.actions.act_window',
-                'name': _('Registers'),
-                'res_model': 'res.letter',
-                'view_type': 'form',
-                'view_mode': 'tree',
-                'views': [(id_tree_view, 'tree'),
-                          (id_form_view, 'form')],
-                'search_view_id': (search_view.id, search_view.name),
-                'target': 'current',
-                'domain': [('id', 'in', self.res_letter_ids.ids)],
-                }
-            return act_window
-
 
 class ResFilePartnerlink(models.Model):
     _name = 'res.file.partnerlink'
@@ -357,6 +378,14 @@ class ResFilePartnerlink(models.Model):
     subject = fields.Char(
         string='Subject',
         related='file_id.subject')
+
+    date_file = fields.Date(
+        string='Discharge date',
+        related='file_id.date_file')
+
+    state = fields.Selection(
+        string='State',
+        related='file_id.state')
 
 
 class ResFileFilelink(models.Model):
