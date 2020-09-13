@@ -223,6 +223,8 @@ class WauSMSWizard(models.Model):
                     raise ValidationError(
                         _("Error resolving template: {}".format(err.message)))
                 raw_sms_message = msg
+            else:
+                raw_sms_message = self.sms_message
 
             # Escape json special chars and accents
             if raw_sms_message:

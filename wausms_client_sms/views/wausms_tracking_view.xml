@@ -6,7 +6,7 @@
         <field name="name">WauSMS Tracking Tree</field>
         <field name="model">wausms.tracking</field>
         <field name="arch" type="xml">
-            <tree string="SMS" create="false" duplicate="false"
+            <tree string="SMS" default_order='sms_time_data desc' create="false" duplicate="false"
                 colors="green:response_code=='202';
                         orange:response_code=='207';
                         red:response_code=='400';
@@ -109,10 +109,10 @@
                         context="{'group_by':'partner_id'}"/>
                     <filter string="Subject" name="subject_filter"
                         context="{'group_by':'subject'}"/>
-                        <filter string="Sender" name="sender_filter"
+                    <filter string="Invoice" name="invoice_filter"
+                        context="{'group_by':'invoice_id'}"/>
+                    <filter string="Sender" name="sender_filter"
                         context="{'group_by':'sender'}"/>
-                    <filter string="Subject" name="subject_filter"
-                        context="{'group_by':'subject'}"/>
                     <filter string="Date" name="sms_time_data_filter"
                         context="{'group_by':'sms_time_data'}"/>
                 </group>
