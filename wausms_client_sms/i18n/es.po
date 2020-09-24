@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 10:31+0000\n"
-"PO-Revision-Date: 2020-09-13 10:31+0000\n"
+"POT-Creation-Date: 2020-09-24 20:51+0000\n"
+"PO-Revision-Date: 2020-09-24 20:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -201,8 +201,33 @@ msgstr "Factura"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Invoice amount"
+msgstr "Importe factura"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Invoice date (dd-mm-yyyy)"
+msgstr "Fecha factura (dd-mm-yyyy)"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Invoice due date (dd/mm/yyyy)"
+msgstr "Fecha vencimiento (dd/mm/yyyy)"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Invoice number"
+msgstr "Nº Factura"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."
 msgstr "La factura número {{ invoice.number }} con fecha {{ invoice.date_invoice }} está a punto de vencer."
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Invoice set description"
+msgstr "Descripción lote facturas"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_invoice_subject
@@ -319,6 +344,11 @@ msgstr "Socio"
 #, python-format
 msgid "Partner %s does not have a mobile number"
 msgstr "El socio %s no tiene un número de teléfono móvil."
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Partner name"
+msgstr "Nombre socio"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_res_partner
@@ -476,7 +506,7 @@ msgstr "Asunto"
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_subject
 msgid "Subject description (it will be searchable in tracking system)"
-msgstr "Asunto (se podrá buscar por este asunto en el sistema de rastreo)"
+msgstr "Asunto (se podrá buscar y agrupar en el sistema de rastreo)"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_subject
@@ -488,7 +518,7 @@ msgstr "Asunto utilizado"
 msgid "Template with jinja2 variables for invoice SMS.\n"
 "Limit to 160 characters"
 msgstr "Plantilla con variables jinja2 para SMS de factura.\n"
-"Limitado a 160 caracteres tras resolver las variables"
+"Limitado a 160 caracteres"
 
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_sms_test_menu
@@ -522,12 +552,14 @@ msgstr "El remitente que aparacerá en el mensaje."
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "The template uses jinja2 variables: {{ object.attribute }}. The available objects are\n"
-"                    'partner' and 'invoice'. Any attribute of these objects can be used as a variable:\n"
-"                    {{ invoice.number }}, {{ partner.name }}, etc."
-msgstr "La plantilla usa variables jinja2: {{ objecto.atributo }}. Los objetos disponibles son\n"
-"                    'partner' (socio/empresa) e 'invoice' (factura). Cualquier atributo de estos objetos se puede usar como variable:\n"
-"                    {{ invoice.number }}, {{ partner.name }}, etc."
+msgid "The template uses jinja2 variables: {{ object.attribute }}. The available objects are 'partner' and 'invoice'.\n"
+"                            The object 'datetime' is also available to regionally format dates. Limit to 160 characters after solving the variables.<br/>\n"
+"                            <br/>\n"
+"                            Commonly used variables:<br/>"
+msgstr "La plantilla usa variables jinja2: {{ objecto.atributo }}. Los objetos disponibles son 'partner' (socio) e 'invoice' (factura).\n"
+"                            El objecto 'datetime' también está disponible para dar formato regional a las fechas. El tamaño es de 160 caracteres tras resolver las variables.<br/>\n"
+"                            <br/>\n"
+"                            Variables de uso común:<br/>"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_user_id
@@ -644,4 +676,34 @@ msgstr "Configuración WauSMS"
 #: model:ir.model,name:wausms_client_sms.model_wau_sms_configuration
 msgid "wau.sms.configuration"
 msgstr "wau.sms.configuration"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
+msgstr "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ datetime.strptime(<i>invoice.due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
+msgstr "{{ datetime.strptime(<i>invoice.due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ invoice.amount_total }}"
+msgstr "{{ invoice.amount_total }}"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ invoice.invoiceset_id.description }}"
+msgstr "{{ invoice.invoiceset_id.description }}"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ invoice.number }}"
+msgstr "{{ invoice.number }}"
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "{{ partner.name }}"
+msgstr "{{ partner.name }}"
 

@@ -8,10 +8,8 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <header>
-                    <button string="Save" type="object"
-                        name="execute" class="oe_highlight"/>
-                    <button string="Cancel" type="object"
-                        name="cancel" class="oe_link"/>
+                    <button string="Save" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                 </header>
                 <group name="wausms_data" string="WuaSMS config settings" style="width: 50%">
                     <field name="service_url"/>
@@ -23,15 +21,52 @@
                     <field name="test_phone_number"/>
                     <field name="default_subject"/>
                 </group>
-                <group name="invoice_template_data" string="Invoice template" style="width: 50%">
-                    <field name="invoice_subject"/>
-                    <field name="invoice_template" placeholder="Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."/>
+                 <group name="invoice_template_data" string="Invoice template">
+                    <group>
+                        <field name="invoice_subject"/>
+                        <field name="invoice_template" placeholder="Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."/>
+                    </group>
+                    <group>
+                        <div style="margin-top: 0px;">
+                            The template uses jinja2 variables: {{ object.attribute }}. The available objects are 'partner' and 'invoice'.
+                            The object 'datetime' is also available to regionally format dates. Limit to 160 characters after solving the variables.<br/>
+                            <br/>
+                            Commonly used variables:<br/>
+                            <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
+                                <tr>
+                                    <td>Partner name</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ partner.name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice number</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ invoice.number }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice amount</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ invoice.amount_total }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice set description</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ invoice.invoiceset_id.description }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice date (dd-mm-yyyy)</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}.</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoice due date (dd/mm/yyyy)</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}.</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </group>
                 </group>
-                <div style="margin-top: 0px; width: 50%;">
-                    The template uses jinja2 variables: {{ object.attribute }}. The available objects are
-                    'partner' and 'invoice'. Any attribute of these objects can be used as a variable:
-                    {{ invoice.number }}, {{ partner.name }}, etc.
-                </div>
             </form>
         </field>
     </record>
