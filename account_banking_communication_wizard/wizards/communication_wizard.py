@@ -4,7 +4,7 @@
 
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
-from jinja2 import Template
+from jinja2 import Template, TemplateError
 
 
 class CommunicationWizard(models.TransientModel):
@@ -39,10 +39,15 @@ class CommunicationWizard(models.TransientModel):
                     if payment_line.invoice_id:
                         invoice = payment_line.invoice_id
                     if invoice:
-                        new_communication = raw_template.render(
-                            payment_order=payment_order,
-                            payment_line=payment_line,
-                            invoice=invoice)
+                        try:
+                            new_communication = raw_template.render(
+                                payment_order=payment_order,
+                                payment_line=payment_line,
+                                invoice=invoice)
+                        except TemplateError as err:
+                            raise ValidationError(
+                                _('Error resolving template: '
+                                  '{}'.format(err.message)))
                     if new_communication:
                         new_communication = new_communication[:140]
                         payment_line.communication = new_communication

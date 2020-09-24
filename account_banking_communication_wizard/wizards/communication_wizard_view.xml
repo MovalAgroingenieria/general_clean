@@ -8,14 +8,48 @@
             <field name="model">communication.wizard</field>
             <field name="arch" type="xml">
                 <form string="Communication wizard">
+                    <label for="communication_template"/>
                     <group name="edit_communication">
-                        <field name="communication_template"
+                        <field name="communication_template" nolabel="1"
                          placeholder="Payment order {{ payment_order.name }} Ref. {{ payment_line.name }} for invoice {{ invoice.number }}. Amount: {{ invoice.amount_total }}"/>
                     </group>
                     <div style="margin-top: 0px; font-size: 12px;">
-                        The template uses jinja2 variables: {{ object.attribute }}.
-                        The available objects are 'payment_order', 'payment_line' and 'invoice'.
-                        It will be cut to 140 characters after solving the variables.
+                        The template uses jinja2 variables: {{ object.attribute }}.<br/>
+                        The available objects are 'payment_order', 'payment_line' and 'invoice'.<br/>
+                        Commonly used variables:<br/>
+                        <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
+                            <tr>
+                                <td>Invoice number</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ invoice.number }}</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice amount</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ invoice.amount_total }}</td>
+                            </tr>
+                            <tr>
+                                <td>Invoice set description</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ invoice.invoiceset_id.description }}</td>
+                            </tr>
+                            <tr>
+                                <td>Payment order number</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ payment_order.name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Payment order description</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ payment_order.description }}</td>
+                            </tr>
+                            <tr>
+                                <td>Payment reference</td>
+                                <td style="padding: 0px 4px"> -> </td>
+                                <td>{{ payment_line.name }}</td>
+                            </tr>
+                        </table>
+                       (*) It will be cut to 140 characters after solving the variables.
                     </div>
                     <footer>
                         <button string="Apply" name="edit_communication_action" type="object" class="btn-primary"/>

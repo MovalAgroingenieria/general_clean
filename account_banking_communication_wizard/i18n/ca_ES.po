@@ -6,14 +6,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-10 16:56+0000\n"
-"PO-Revision-Date: 2020-07-10 16:56+0000\n"
+"POT-Creation-Date: 2020-09-24 14:52+0000\n"
+"PO-Revision-Date: 2020-09-24 14:52+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "(*) It will be cut to 140 characters after solving the variables."
+msgstr "(*) Limitat a 140 caràcters després de resoldre les variables."
 
 #. module: account_banking_communication_wizard
 #: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
@@ -62,6 +67,12 @@ msgid "Edit Communication"
 msgstr "Edita comunicació"
 
 #. module: account_banking_communication_wizard
+#: code:addons/account_banking_communication_wizard/wizards/communication_wizard.py:50
+#, python-format
+msgid "Error resolving template: {}"
+msgstr "Error resolent les variables de la plantilla: {}"
+
+#. module: account_banking_communication_wizard
 #: model:ir.model.fields,field_description:account_banking_communication_wizard.field_communication_wizard_id
 msgid "ID"
 msgstr "ID"
@@ -70,6 +81,21 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:account_banking_communication_wizard.field_account_payment_line_invoice_id
 msgid "Invoice"
 msgstr "Factura"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Invoice amount"
+msgstr "Import factura"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Invoice number"
+msgstr "Nº Factura"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Invoice set description"
+msgstr "Descripció lot factures"
 
 #. module: account_banking_communication_wizard
 #: model:ir.model.fields,field_description:account_banking_communication_wizard.field_communication_wizard___last_update
@@ -93,24 +119,39 @@ msgstr "Línies de pagament"
 
 #. module: account_banking_communication_wizard
 #: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Payment order description"
+msgstr "Descripció ordre de pagament"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Payment order number"
+msgstr "Nº Ordre de pagament"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
 msgid "Payment order {{ payment_order.name }} Ref. {{ payment_line.name }} for invoice {{ invoice.number }}. Amount: {{ invoice.amount_total }}"
 msgstr "L'ordre {{ payment_order.name }} Ref. {{ payment_line.name }} per {{ invoice.number }}. Import: {{ invoice.amount_total }}"
 
 #. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "Payment reference"
+msgstr "Referència de l'pagament"
+
+#. module: account_banking_communication_wizard
 #: model:ir.model.fields,help:account_banking_communication_wizard.field_communication_wizard_communication_template
 msgid "Template with jinja2 variables for Communication fields.\n"
-"Limit to 140 characters after resolve variables."
+"It will be cut to 140 characters after solving the variables."
 msgstr "Plantilla amb variables jinja2 per al camp Comunicació.\n"
-"Limitada a 140 caràcters després de resoldre les variables."
+"Limitat a 140 caràcters després de resoldre les variables."
 
 #. module: account_banking_communication_wizard
 #: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
-msgid "The template uses jinja2 variables: {{ object.attribute }}.\n"
-"                        The available objects are 'payment_order', 'payment_line' and 'invoice'.\n"
-"                        It will be cut to 140 characters after solving the variables."
-msgstr "La plantilla fa servir variables jinja2: {{ objecte.atribut }}.\n"
-"                        Els objectes disponibles són 'payment_order' (ordre de pagament/cobrament), 'payment_line' (transacció) i 'invoice' (factura).\n"
-"                        Serà tallat a 140 caràcters després de resoldre les variables."
+msgid "The template uses jinja2 variables: {{ object.attribute }}.<br/>\n"
+"                        The available objects are 'payment_order', 'payment_line' and 'invoice'.<br/>\n"
+"                        Commonly used variables:<br/>"
+msgstr "La plantilla fa servir variables jinja2: {{ object.attribute }}.<br/>\n"
+"                        Els objectes disponibles són 'payment_order' (ordre de cobrament/pagament), 'payment_line' (línia de joc) i 'invoice' (factura).<br/>\n"
+"                        Variables d'ús comú:<br/>"
 
 #. module: account_banking_communication_wizard
 #: code:addons/account_banking_communication_wizard/wizards/communication_wizard.py:23
@@ -122,4 +163,34 @@ msgstr "No hi ha elements seleccionats."
 #: model:ir.model,name:account_banking_communication_wizard.model_communication_wizard
 msgid "Wizard to edit communication field"
 msgstr "Assistent per editar el camp Comunicació"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ invoice.amount_total }}"
+msgstr "{{ invoice.amount_total }}"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ invoice.invoiceset_id.description }}"
+msgstr "{{ invoice.invoiceset_id.description }}"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ invoice.number }}"
+msgstr "{{ invoice.number }}"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ payment_line.name }}"
+msgstr "{{ payment_line.name }}"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ payment_order.description }}"
+msgstr "{{ payment_order.description }}"
+
+#. module: account_banking_communication_wizard
+#: model:ir.ui.view,arch_db:account_banking_communication_wizard.communication_wizard_form
+msgid "{{ payment_order.name }}"
+msgstr "{{ payment_order.name }}"
 
