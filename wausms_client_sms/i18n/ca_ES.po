@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-24 20:51+0000\n"
-"PO-Revision-Date: 2020-09-24 20:51+0000\n"
+"POT-Creation-Date: 2020-09-25 07:21+0000\n"
+"PO-Revision-Date: 2020-09-25 07:21+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -207,12 +207,12 @@ msgstr "Import factura"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Invoice date (dd-mm-yyyy)"
-msgstr "Invoice date (dd-mm-yyyy)"
+msgstr "Data factura (dd-mm-yyyy)"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
 msgid "Invoice due date (dd/mm/yyyy)"
-msgstr "Invoice due date (dd/mm/yyyy)"
+msgstr "Data venciment (dd/mm/yyyy)"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
@@ -337,7 +337,7 @@ msgstr "Només per a nombres de mòbil espanyols"
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_partner_id
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Soci"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:198
@@ -346,14 +346,14 @@ msgid "Partner %s does not have a mobile number"
 msgstr "El soci %s no té un número de telèfon mòbil"
 
 #. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "Partner name"
-msgstr "Partner name"
+#: model:ir.model,name:wausms_client_sms.model_res_partner
+msgid "Partner extension for WauSMS"
+msgstr "Extensió soci per WauSMS"
 
 #. module: wausms_client_sms
-#: model:ir.model,name:wausms_client_sms.model_res_partner
-msgid "Partner of a WUA"
-msgstr "Soci"
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Partner name"
+msgstr "Nom soci"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wau_sms_configuration_service_passwd
@@ -543,7 +543,7 @@ msgstr "L'usuari WauSMS utilitzat en les credencials"
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sms_message
 msgid "The maximum size is 160 characters after resolving variables. Some special characters will not be displayed."
-msgstr "The maximum size is 160 characters after resolving variables. Some special characters will not be displayed."
+msgstr "La mida màxima és de 160 després de resoldre les variables jinja2. Alguns caràcters especials no són mostrats."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_wizard_sender
@@ -556,10 +556,10 @@ msgid "The template uses jinja2 variables: {{ object.attribute }}. The available
 "                            The object 'datetime' is also available to regionally format dates. Limit to 160 characters after solving the variables.<br/>\n"
 "                            <br/>\n"
 "                            Commonly used variables:<br/>"
-msgstr "The template uses jinja2 variables: {{ object.attribute }}. The available objects are 'partner' and 'invoice'.\n"
-"                            The object 'datetime' is also available to regionally format dates. Limit to 160 characters after solving the variables.<br/>\n"
+msgstr "La plantilla fa servir variables jinja2: {{ objecte.atribut }}. Els objectes disponibles són 'partner' (soci) i 'invoice' (factura).\n"
+"                            L'objecte 'datetime' també està disponible per donar format regional a les dates. La mida és de 160 caràcters després de resoldre les variables.<br/>\n"
 "                            <br/>\n"
-"                            Commonly used variables:<br/>"
+"                            Variables d'ús comú:<br/>"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_user_id
@@ -679,13 +679,13 @@ msgstr "wau.sms.configuration"
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
-msgstr "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
+msgid "{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
+msgstr "{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "{{ datetime.strptime(<i>invoice.due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
-msgstr "{{ datetime.strptime(<i>invoice.due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}."
+msgid "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
+msgstr "{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}."
 
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form

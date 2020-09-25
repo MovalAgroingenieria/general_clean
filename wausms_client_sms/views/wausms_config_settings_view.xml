@@ -84,6 +84,5 @@
     <menuitem id="wausms_root_menu" name="WauSMS" parent="base.menu_custom" sequence="10"/>
     <menuitem name="Configuration" id="wausms_config_menu" parent="wausms_root_menu"
         action="action_wausms_config_settings_form" />
-        <!-- groups="wausms_client_sms.group_wausms_manager" -->
 
 </odoo>
