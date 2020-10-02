@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_invoice_supplier_comments_template
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-02 10:37+0000\n"
+"PO-Revision-Date: 2020-10-02 10:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_account_invoice_note_supp1ier2
+msgid "Bottom Comment"
+msgstr "Comentari inferior"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_account_invoice_supplier_comment_template2_id
+msgid "Bottom Comment Template"
+msgstr "Plantilla de comentari inferior"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.ui.view,arch_db:account_invoice_supplier_comments_template.invoice_form_add_comment_supplier
+msgid "Bottom Comments"
+msgstr "Comentaris inferiors"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.ui.view,arch_db:account_invoice_supplier_comments_template.invoice_form_add_comment_supplier
+msgid "Comments"
+msgstr "Comentaris"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model,name:account_invoice_supplier_comments_template.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.ui.view,arch_db:account_invoice_supplier_comments_template.invoice_form_add_comment_supplier
+msgid "Load a template"
+msgstr "Carregar una plantilla"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model,name:account_invoice_supplier_comments_template.model_res_partner
+msgid "Partner of a WUA"
+msgstr "Soci"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_res_partner_supplier_comment_template_id
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_res_users_supplier_comment_template_id
+msgid "Supplier conditions template"
+msgstr "Plantilla de condicions de l'proveïdor"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.ui.view,arch_db:account_invoice_supplier_comments_template.invoice_form_add_comment_supplier
+msgid "The comments will be displayed on the printed document.\n"
+"                        You can load a predefined template, write your own text\n"
+"                        or load a template and then modify it only for this document."
+msgstr "Els comentaris es mostraran en el document imprès.\n"
+"                        Pot carregar una plantilla predefinida, escriure el seu propi text\n"
+"                        o carregar una plantilla i després modificar-la només per a aquest document."
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_account_invoice_note_supp1ier1
+msgid "Top Comment"
+msgstr "Comentari superior"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.model.fields,field_description:account_invoice_supplier_comments_template.field_account_invoice_supplier_comment_template1_id
+msgid "Top Comment Template"
+msgstr "Plantilla de comentari superior"
+
+#. module: account_invoice_supplier_comments_template
+#: model:ir.ui.view,arch_db:account_invoice_supplier_comments_template.invoice_form_add_comment_supplier
+msgid "Top Comments"
+msgstr "Comentaris superiors"
+

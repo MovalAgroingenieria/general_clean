@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add supplier comments -->
+    <template id="report_invoice_document_comments" inherit_id="invoice_comment_template.report_invoice_document_comments">
+        <xpath expr="//p[@t-if='o.note1']" position="after">
+            <p t-field="o.note_supp1ier1"/>
+        </xpath>
+        <xpath expr="//p[@t-if='o.note2']" position="after">
+            <p t-field="o.note_supp1ier2"/>
+        </xpath>
+    </template>
+
+</odoo>
