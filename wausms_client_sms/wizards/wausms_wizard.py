@@ -38,7 +38,7 @@ class WauSMSWizard(models.Model):
         if context.get("mode") == 'invoice':
             default_subject = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'invoice_subject')
-        elif context.get("mode") == 'partner':
+        else:
             default_subject = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'default_subject')
         return default_subject
@@ -149,20 +149,29 @@ class WauSMSWizard(models.Model):
             # Get default subject
             default_subject_raw = self.env['ir.values'].get_default(
                 'wau.sms.configuration', 'default_subject')
-            default_subject = \
-                self.strip_accents(default_subject_raw.decode('utf8'))
+            if self.subject:
+                default_subject_raw = self.subject
+                default_subject = \
+                    self.strip_accents(default_subject_raw.decode('utf8'))
+            elif default_subject_raw:
+                default_subject = \
+                    self.strip_accents(default_subject_raw.decode('utf8'))
+            else:
+                default_subject = ""
             # Set active_ids to 0
             active_ids = (0,)
 
         if context.get("mode") == 'invoice':
             partner_active_ids = []
-            dict_partner_invoice = {}
+            partner_invoice_list = []
             invoice_ids = context.get('active_ids')
             for invoice_id in invoice_ids:
                 invoice = self.env['account.invoice'].browse(invoice_id)
                 partner_active_ids.append(invoice.partner_id.id)
-                dict_partner_invoice[invoice.partner_id.id] = invoice_id
-            active_ids = partner_active_ids
+                partner_invoice_list.append([invoice.partner_id.id,
+                                             invoice_id])
+            # Set active_ids as list of list [[partner_id, invoice_id],)
+            active_ids = partner_invoice_list
 
         if context.get("mode") == 'partner':
             invoice_id = False
@@ -189,7 +198,10 @@ class WauSMSWizard(models.Model):
                     subject = ""
 
                 # Get partner data
-                partner = self.env['res.partner'].browse(active_id)
+                if context.get("mode") == 'invoice':
+                    partner = self.env['res.partner'].browse(active_id[0])
+                else:
+                    partner = self.env['res.partner'].browse(active_id)
 
                 # Get mobile number
                 if partner.mobile:
@@ -213,7 +225,7 @@ class WauSMSWizard(models.Model):
             # Render jinja2 variables
             if self.sms_message and context.get("mode") == 'invoice':
                 raw_template = Template(self.sms_message)
-                invoice_id = dict_partner_invoice.get(partner.id)
+                invoice_id = active_id[1]
                 invoice = self.env['account.invoice'].browse(invoice_id)
                 msg = False
                 try:
@@ -333,7 +345,7 @@ class WauSMSWizard(models.Model):
             else:
                 if context.get("mode") == 'invoice':
                     partner_id = partner.id
-                    invoice_id = dict_partner_invoice.get(partner_id)
+                    invoice_id = invoice_id
                 if context.get("mode") == 'partner':
                     partner_id = partner.id
                     invoice_id = ""
