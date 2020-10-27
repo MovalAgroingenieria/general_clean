@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="crm_lettermgmt.res_letter_form_view"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='track_ref']" position="after">
-                    <field name="file_id" options="{'no_quick_create':True, 'no_create_edit':True}"/>
+                    <field name="file_id"/>
                 </xpath>
             </field>
         </record>
@@ -47,7 +47,7 @@
          </record>
 
          <record id="res_letter_filter" model="ir.ui.view">
-             <field name="name">Letter Calendar</field>
+             <field name="name">Letter Filter</field>
              <field name="model">res.letter</field>
              <field name="inherit_id" ref="crm_lettermgmt.res_letter_filter"/>
              <field name="arch" type="xml">

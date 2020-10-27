@@ -110,9 +110,8 @@ class ResLetter(models.Model):
         string="Type",
         help="Type of Letter, Depending upon size.")
 
-    weight = fields.Float(help='Weight (in KG)')
-
-    size = fields.Char(help='Size of the package.')
+    #weight = fields.Float(help='Weight (in KG)')
+    #size = fields.Char(help='Size of the package.')
 
     track_ref = fields.Char(
         string='Tracking Reference',
@@ -143,6 +142,17 @@ class ResLetter(models.Model):
         string='Reassignment lines',
         help='Reassignment users and comments',
         groups='crm_lettermgmt.group_letter_reasignment')
+
+    res_letter_attachment_ids = fields.One2many(
+        string="Attachments",
+        comodel_name="ir.attachment",
+        compute="_compute_res_letter_attachment_ids")
+
+    @api.multi
+    def _compute_res_letter_attachment_ids(self):
+        self.res_letter_attachment_ids = \
+            self.env['ir.attachment'].search(
+                [('res_model', '=', self._name), ('res_id', '=', self.id)])
 
     @api.model
     def create(self, vals):

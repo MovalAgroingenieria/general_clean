@@ -60,6 +60,6 @@
               name="File Tags"
               parent="configuration_menu"
               action="res_filetag_action"
-              sequence="5"/>
+              sequence="6"/>
 
 </odoo>

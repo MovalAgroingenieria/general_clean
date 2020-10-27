@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 16:27+0000\n"
-"PO-Revision-Date: 2020-09-10 16:27+0000\n"
+"POT-Creation-Date: 2020-10-27 16:09+0000\n"
+"PO-Revision-Date: 2020-10-27 16:09+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -42,6 +42,11 @@ msgstr ""
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Additional Information"
+msgstr ""
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Attachments"
 msgstr ""
 
 #. module: crm_lettermgmt
@@ -551,16 +556,6 @@ msgid "Sent Date"
 msgstr ""
 
 #. module: crm_lettermgmt
-#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_size
-msgid "Size"
-msgstr ""
-
-#. module: crm_lettermgmt
-#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_size
-msgid "Size of the package."
-msgstr ""
-
-#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_state
 msgid "State"
 msgstr ""
@@ -651,15 +646,5 @@ msgstr ""
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_name
 msgid "User to forward letter to."
-msgstr ""
-
-#. module: crm_lettermgmt
-#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_weight
-msgid "Weight"
-msgstr ""
-
-#. module: crm_lettermgmt
-#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_weight
-msgid "Weight (in KG)"
 msgstr ""
 

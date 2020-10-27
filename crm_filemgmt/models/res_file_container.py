@@ -2,7 +2,7 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api, _
 
 
 class ResFileContainer(models.Model):
@@ -59,6 +59,12 @@ class ResFileContainer(models.Model):
         store=True,
         compute='_compute_number_of_files')
 
+    containertype_id = fields.Many2one(
+        string='Type',
+        comodel_name='res.file.containertype',
+        index=True,
+        ondelete='restrict')
+
     _sql_constraints = [
         ('unique_container_code', 'UNIQUE (container_code)',
          'Existing container code.'),
@@ -93,3 +99,38 @@ class ResFileContainer(models.Model):
                 'domain': [('id', 'in', self.file_ids.ids)],
                 }
             return act_window
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            name = record.name
+            if self.env.context.get('show_container_data', False):
+                if record.location_id:
+                    name += _(' [location: ') + record.location_id.name + ']'
+                if record.containertype_id:
+                    name += _(' [type: ') + record.containertype_id.name + ']'
+            result.append((record.id, name))
+        return result
+
+
+class ResFileContainerType(models.Model):
+    _name = 'res.file.containertype'
+    _description = "Type of containers"
+
+    name = fields.Char(
+        string='Name',
+        size=100,
+        required=True,
+        index=True)
+
+    description = fields.Char(
+        string='Description',
+        size=255)
+
+    notes = fields.Html(
+        string='Notes')
+
+    _sql_constraints = [
+        ('unique_container_type', 'UNIQUE (name)',
+         'Existing container type.')]

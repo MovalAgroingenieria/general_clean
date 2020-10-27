@@ -9,7 +9,7 @@ class ResLetter(models.Model):
     _inherit = 'res.letter'
 
     file_id = fields.Many2one(
-        string='File',
+        string='File_',
         comodel_name='res.file',
         ondelete='restrict',
         track_visibility='onchange')

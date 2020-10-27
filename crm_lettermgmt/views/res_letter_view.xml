@@ -124,11 +124,13 @@
                     <field name="rec_date"/>
                   </group>
                   <group>
+                    <field name="orig_ref" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
+                    <!--
                     <field name="size" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                     <field name="weight" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
+                    -->
                   </group>
                   <group>
-                    <field name="orig_ref" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
                     <field name="expeditor_ref" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
                   </group>
                 </group>
@@ -138,6 +140,16 @@
               </page>
               <page string="Reassignment" groups="crm_lettermgmt.group_letter_reasignment">
                 <field name="reassignment_ids" nolabel="1"/>
+              </page>
+              <page name="attachments" string="Attachments">
+                  <field name="res_letter_attachment_ids" >
+                      <tree editable="top">
+                          <field name="name"/>
+                          <field name="mimetype"/>
+                          <field name="datas"/>
+                          <field name="create_uid"/>
+                      </tree>
+                  </field>
               </page>
             </notebook>
           </sheet>
