@@ -105,7 +105,8 @@ class Report(models.Model):
     # Report generation helpers
     # --------------------------------------------------------------------------
 
-    def changes_after_generate_pdf(self, pdf_path, report_name):
+    def changes_after_generate_pdf(self, pdf_path, report_name,
+                                   temporary_files):
         report = self._get_report_from_name(report_name)
         print report.report_page_adjustment
         new_pdf_path = pdf_path
@@ -129,6 +130,7 @@ class Report(models.Model):
                     writer.addBlankPage(w, h)
                     merged_file_fd, merged_file_path = tempfile.mkstemp(
                         suffix='.pdf', prefix='report.blank.page.tmp.')
+                    temporary_files.append(merged_file_path)
                     with closing(os.fdopen(merged_file_fd, 'w')) as \
                             merged_file:
                         writer.write(merged_file)
@@ -411,7 +413,7 @@ class Report(models.Model):
 
                 # HERE THE PDF IS CREATED, ADDED NEW PAGE
                 pdfreport_path = self.changes_after_generate_pdf(
-                    pdfreport_path, report_name)
+                    pdfreport_path, report_name, temporary_files)
                 # Save the pdf in attachment if marked
                 if reporthtml[0] is not False and \
                         save_in_attachment.get(reporthtml[0]):
