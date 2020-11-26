@@ -37,7 +37,7 @@
                     </div>
                     <div class="oe_title">
                         <h1>
-                            <field name="wausms_sms_id"/>
+                            <field name="name"/>
                         </h1>
                         <div class="o_row">
                             <field name="sms_confirmation"/>
@@ -80,7 +80,7 @@
         <field name="model">wausms.tracking</field>
         <field name="arch" type="xml">
             <search string="SMS">
-                <field name="wausms_sms_id"/>
+                <field name="name"/>
                 <field name="sms_confirmation"/>
                 <field name="wausms_url"/>
                 <field name="wausms_user"/>
@@ -132,7 +132,6 @@
 
     <!-- Menuentry -->
     <menuitem name="Tracking SMS" id="wausms_sms_tracking_menu" parent="wausms_root_menu"
-        action="action_wausms_tracking_tree"/>
-        <!-- groups="wausms_client_sms.group_wausms_manager" -->
+        action="action_wausms_tracking_tree" sequence="3"/>
 
 </odoo>

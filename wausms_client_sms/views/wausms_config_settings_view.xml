@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Config view -->
     <record id="wausms_config_settings_view_form" model="ir.ui.view">
         <field name="name">WauSMS parameters</field>
         <field name="model">wau.sms.configuration</field>
@@ -15,56 +14,24 @@
                     <field name="service_url"/>
                     <field name="service_user"/>
                     <field name="service_passwd" password="True"/>
-                </group>
-                <group name="default_data" string="Default and test settings" style="width: 50%">
                     <field name="default_sender"/>
-                    <field name="test_phone_number"/>
-                    <field name="default_subject"/>
                 </group>
-                 <group name="invoice_template_data" string="Invoice template">
-                    <group>
-                        <field name="invoice_subject"/>
-                        <field name="invoice_template" placeholder="Invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."/>
+                <group name="default_data" string="Defaults templates" style="width: 50%">
+                    <field name="default_partner_template_id" domain="[('type','=','partner')]"/>
+                    <field name="default_invoice_template_id" domain="[('type','=','invoice')]"/>
+                </group>
+               <group>
+                    <group style="width: 40%;">
+                        <field name="test_phone_number" />
                     </group>
                     <group>
-                        <div style="margin-top: 0px;">
-                            The template uses jinja2 variables: {{ object.attribute }}. The available objects are 'partner' and 'invoice'.
-                            The object 'datetime' is also available to regionally format dates. Limit to 160 characters after solving the variables.<br/>
-                            <br/>
-                            Commonly used variables:<br/>
-                            <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
-                                <tr>
-                                    <td>Partner name</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ partner.name }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice number</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ invoice.number }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice amount</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ invoice.amount_total }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice set description</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ invoice.invoiceset_id.description }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice date (dd-mm-yyyy)</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}.</td>
-                                </tr>
-                                <tr>
-                                    <td>Invoice due date (dd/mm/yyyy)</td>
-                                    <td style="padding: 0px 4px"> -> </td>
-                                    <td>{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}.</td>
-                                </tr>
-                            </table>
-                        </div>
+                        <button name="%(action_wausms_test_wizard)d" type="action" class="oe_highlight"
+                            help="Send message to test mobile number. No template is used.">
+                            <div class="o_form_field">
+                                <span class="fa fa-envelope"/>
+                                <span style="margin-left:8px;">Test</span>
+                            </div>
+                        </button>
                     </group>
                 </group>
             </form>
@@ -80,9 +47,21 @@
         <field name="target">inline</field>
     </record>
 
-    <!-- Entries menu (root and config)-->
+    <!-- Action test -->
+    <record id="action_wausms_test_wizard" model="ir.actions.act_window">
+        <field name="name">WuaSMS compose SMS</field>
+        <field name="res_model">wausms.wizard</field>
+        <field name="src_model">wausms.wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'mode': 'test'}</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Entries menu (root and config) -->
     <menuitem id="wausms_root_menu" name="WauSMS" parent="base.menu_custom" sequence="10"/>
     <menuitem name="Configuration" id="wausms_config_menu" parent="wausms_root_menu"
-        action="action_wausms_config_settings_form" />
+        action="action_wausms_config_settings_form" sequence="1"/>
 
 </odoo>

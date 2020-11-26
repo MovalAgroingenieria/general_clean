@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_wausms_wizard,Model WauSMS wizard user access,wausms_client_sms.model_wausms_wizard,base.group_user,1,0,0,0
-access_wausms_confirmation,Model WauSMS confirmation user access,wausms_client_sms.model_wausms_confirmation,base.group_user,1,0,0,0
-access_wausms_tracking,Model WauSMS tracking user access,wausms_client_sms.model_wausms_tracking,base.group_user,1,0,0,0
 access_wausms_wizard_user,Model WauSMS wizard user access,wausms_client_sms.model_wausms_wizard,wausms_client_sms.group_send_wausms_sms,1,1,1,1
+access_wausms_confirmation,Model WauSMS confirmation user access,wausms_client_sms.model_wausms_confirmation,base.group_user,1,0,0,0
+access_wausms_template,Model WauSMS Tempalte user access,wausms_client_sms.model_wausms_template,base.group_user,1,1,1,1
+access_wausms_tracking,Model WauSMS tracking user access,wausms_client_sms.model_wausms_tracking,base.group_user,1,0,0,0
 access_wausms_tracking_user,Model WauSMS tracking user access,wausms_client_sms.model_wausms_tracking,wausms_client_sms.group_send_wausms_sms,1,1,1,0
 access_wausms_tracking_portal,Model WauSMS tracking portal user access,wausms_client_sms.model_wausms_tracking,base.group_portal,1,0,0,0

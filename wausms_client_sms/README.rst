@@ -11,13 +11,16 @@ Description
 Send SMS message to one or several partners using WauSMS services and keep a
 record of the SMS sent.
 
+You can also send SMS from invoices and use partner and invoice templates with
+jinja2 variables for mass or individual sending.
+
 Configuration
 =============
 In Configuration/Technical/WauSMS/Configuration set the WauSMS parameters:
 
 * URL (usually https://dashboard.wausms.com/Api/rest/message)
-* username
-* password
+* API username
+* API password
 
 The default sender is also mandatory.
 

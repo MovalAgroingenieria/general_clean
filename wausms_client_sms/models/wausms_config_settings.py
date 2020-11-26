@@ -23,31 +23,26 @@ class WauSMSConfiguration(models.TransientModel):
         required=True)
 
     default_sender = fields.Char(
-        string="Default sender",
+        string="Sender",
         required=True,
         size=15,
-        help="Limit to 15 numbers (only numbers) or 11 alphanumeric "
-             "characters.")
-
-    default_subject = fields.Char(
-        string="Default subject",
-        size=100,
-        help="Limit to 100 characters")
+        help="The sender that will appear in all messages. Limit to 15 "
+             "numbers (only numbers) or 11 alphanumeric characters.")
 
     test_phone_number = fields.Char(
         string="Test phone number",
         size=15,
         help="Used to test configuration.\nOnly Spanish mobile numbers")
 
-    invoice_subject = fields.Char(
-        string="Invoice subject",
-        size=100,
-        help="Limit to 100 characters")
+    default_partner_template_id = fields.Many2one(
+        comodel_name='wausms.template',
+        string='Partner',
+        ondelete="set null")
 
-    invoice_template = fields.Text(
-        string="Invoice template",
-        help="Template with jinja2 variables for invoice SMS.\nLimit to 160 "
-             "characters")
+    default_invoice_template_id = fields.Many2one(
+        comodel_name='wausms.template',
+        string='Invoice',
+        ondelete="set null")
 
     @api.multi
     def set_default_values(self):
@@ -68,14 +63,11 @@ class WauSMSConfiguration(models.TransientModel):
                            'test_phone_number',
                            self.test_phone_number)
         values.set_default('wau.sms.configuration',
-                           'default_subject',
-                           self.default_subject)
+                           'default_partner_template_id',
+                           self.default_partner_template_id.id)
         values.set_default('wau.sms.configuration',
-                           'invoice_subject',
-                           self.invoice_subject)
-        values.set_default('wau.sms.configuration',
-                           'invoice_template',
-                           self.invoice_template)
+                           'default_invoice_template_id',
+                           self.default_invoice_template_id.id)
 
     @api.constrains('default_sender')
     def _check_default_sender_size(self):
@@ -83,15 +75,3 @@ class WauSMSConfiguration(models.TransientModel):
             raise ValidationError(_("Sender size is limited to 15 numbers "
                                     "(ex. 34XXXXXXXXX) or 11 alphanumeric "
                                     "characters (ex. company xxx)"))
-
-    @api.constrains('default_subject')
-    def _check_default_subject_size(self):
-        if self.default_subject and len(self.default_subject) > 99:
-            raise ValidationError(_("Default subject is limited to 100 "
-                                    "characters"))
-
-    @api.constrains('invoice_subject')
-    def _check_invoice_subject_size(self):
-        if self.invoice_subject and len(self.invoice_subject) > 99:
-            raise ValidationError(_("Invoice subject is limited to 100 "
-                                    "characters"))

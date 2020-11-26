@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="wausms_template_view_form" model="ir.ui.view">
+        <field name="name">WauSMS Template Form</field>
+        <field name="model">wausms.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="template_data">
+                        <group style="width: 60%;">
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="subject"/>
+                            <field name="template" placeholder="The invoice number {{ invoice.number }} dated {{ invoice.date_invoice }} is about to expire."/>
+                        </group>
+                        <group style="width: 40%;">
+                           <div>
+                                <div>
+                                    <div style="background-color: #F8F8F8; margin-bottom: 2%; margin-right:2%; padding: 10px;
+                                        border-top-right-radius: 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
+                                        <field name="template_resolved" nolabel="1"/>
+                                    </div>
+                                </div>
+                                <button name="action_resolve_template" type="object" class="oe_highlight"
+                                    help="Try to resolve the template using a random item (partner or invoice).
+                                        Note that not all error are catch by the system.">
+                                    <div class="o_form_field">
+                                        <span class="fa fa-retweet fa-lg"/>
+                                        <span style="margin-left:8px;">Resolve </span>
+                                    </div>
+                                </button>
+                            </div>
+                        </group>
+                    </group>
+                    <group name="help">
+                        <group style="width: 70%;">
+                            <div name="help_invoice" style="margin-top: 0px;" class="oe_edit_only">
+                                Templates use jinja2 variables: {{ object.attribute }}. The available objects are 'partner' for partner templates and
+                                'partner' and 'invoice' for invoice templates. The object 'datetime' is also available to regionally format dates.
+                                Limit to 160 characters after solving the variables.<br/>
+                                <br/>
+                                Commonly used expressions and variables:<br/>
+                                <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
+                                    <tr>
+                                        <td>Partner full name</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ partner.display_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partner lastname</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ partner.lastname }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partner name fixed length (40 chars)</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ partner.display_name[:40] }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partner firstname initial letter</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ partner.firstname[:1]. }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partner data if exists</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td> {{ partner.phone or "" }} {{ partner.mobile or "" }} {{ partner.email or "" }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Partner VAT</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ partner.vat }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice number</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ invoice.number }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice amount</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ invoice.amount_total }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice amount plus surcharge (20%)</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ invoice.amount_total + (0.20 * invoice.amount_total) }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice set description</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ invoice.invoiceset_id.description }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice date (dd-mm-yyyy)</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}</td>
+                                    </tr>
+                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                        <td>Invoice due date (dd/mm/yyyy)</td>
+                                        <td style="padding: 0px 4px"> -> </td>
+                                        <td>{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="wausms_template_view_tree" model="ir.ui.view">
+        <field name="name">WauSMS Template Tree</field>
+        <field name="model">wausms.template</field>
+        <field name="arch" type="xml">
+            <tree string="Templates" class="o_wausms_template_view_tree">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="subject"/>
+                <field name="template"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="wausms_template_view_search" model="ir.ui.view">
+        <field name="name">WauSMS Template Search</field>
+        <field name="model">wausms.template</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="subject"/>
+                <field name="template"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Window action -->
+    <record id="action_wausms_template_tree" model="ir.actions.act_window">
+        <field name="name">SMS Templates</field>
+        <field name="res_model">wausms.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="wausms_template_view_tree" name="view_id"/>
+        <field name="search_view_id" ref="wausms_template_view_search"/>
+    </record>
+
+    <!-- Menuentry -->
+    <menuitem name="Templates" id="wausms_template_menu" parent="wausms_root_menu"
+        action="action_wausms_template_tree" sequence="2"/>
+
+</odoo>

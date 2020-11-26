@@ -8,12 +8,22 @@
             <field name="model">wausms.wizard</field>
             <field name="arch" type="xml">
                 <form string="WauSMS">
-                    <group name="wausms_send_data">
+                    <field name="is_test_wizard" invisible="1"/>
+                    <group>
+                        <field name="template_id" style="width: 50%;" attrs="{'invisible':[('is_test_wizard','=',True)]}"/>
+                    </group>
+                    <group>
                         <field name="subject" style="width: 50%;"/>
-                        <field name="sms_message"/>
+                        <field name="sms_message" style="background-color: #F8F8F8; padding: 10px;
+                            border-top-right-radius: 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;"/>
                     </group>
                     <footer>
-                        <button string="Send SMS" name="send_sms_action" type="object" class="btn-primary"/>
+                        <button name="send_sms_action" type="object" class="oe_highlight">
+                            <div class="o_form_field">
+                                <span class="fa fa-envelope"/>
+                                <span style="margin-left:8px;">Send</span>
+                            </div>
+                        </button>
                         <button string="Cancel" class="btn-default" special="cancel" />
                     </footer>
                 </form>

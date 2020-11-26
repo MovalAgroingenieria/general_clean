@@ -22,6 +22,8 @@
         "views/wausms_tracking_view.xml",
         "views/account_invoice_view.xml",
         "wizards/wausms_wizard_view.xml",
+        "views/wausms_template_view.xml",
+        "views/resources.xml",
     ],
     'external_dependencies': {
         'python': [

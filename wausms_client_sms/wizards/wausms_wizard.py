@@ -32,31 +32,23 @@ class WauSMSWizard(models.Model):
     _name = "wausms.wizard"
     _description = "Wizard to send SMS through WauSMS service"
 
-    def _get_default_subject(self):
+    def _get_default_template_id(self):
         context = self._context
-        default_subject = ""
+        default_template_id = ""
+        if context.get("mode") == 'partner':
+            default_template_id = self.env['ir.values'].get_default(
+                    'wau.sms.configuration', 'default_partner_template_id')
         if context.get("mode") == 'invoice':
-            default_subject = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'invoice_subject')
-        else:
-            default_subject = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'default_subject')
-        return default_subject
+            default_template_id = self.env['ir.values'].get_default(
+                    'wau.sms.configuration', 'default_invoice_template_id')
+        return default_template_id
 
-    def _get_default_sms_message(self):
+    def _default_is_test_wizard(self):
         context = self._context
-        template = ""
-        if context.get("mode") == 'invoice':
-            template = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'invoice_template')
-        return template
-
-    def _get_default_sender(self):
-        default_sender = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'default_sender')
-        if not default_sender:
-            default_sender = "Unconfigured"
-        return default_sender
+        is_test_wizard = False
+        if context.get("mode") == 'test':
+            is_test_wizard = True
+        return is_test_wizard
 
     credentials = fields.Char(
         string="Credentials",
@@ -65,8 +57,8 @@ class WauSMSWizard(models.Model):
     subject = fields.Char(
         string="Subject",
         size=100,
-        default=_get_default_subject,
-        help="Subject description (it will be searchable in tracking system)")
+        help="Subject description (It is not sent, but it will be searchable "
+             "in the tracking system.)")
 
     phone_number = fields.Char(
         string="Phone number",
@@ -76,20 +68,41 @@ class WauSMSWizard(models.Model):
 
     sender = fields.Char(
         string="From",
-        size=15,
-        required=True,
-        readonly=True,
-        default=_get_default_sender,
-        help="The sender that will appear in the message.")
+        compute="_compute_sender")
 
     sms_message = fields.Text(
         string="Message",
-        default=_get_default_sms_message,
         help="The maximum size is 160 characters after resolving variables. "
              "Some special characters will not be displayed.")
 
+    template_id = fields.Many2one(
+        comodel_name='wausms.template',
+        string='Template',
+        default=_get_default_template_id,
+        ondelete="set null")
+
+    is_test_wizard = fields.Boolean(
+        string="Test wizard",
+        default=_default_is_test_wizard)
+
+    @api.onchange('template_id')
+    def compute_template_id_fields(self):
+        template = self.env['wausms.template'].browse(self.template_id.id)
+        for record in self:
+            record.subject = template.subject
+            record.sms_message = template.template
+
+    @api.multi
+    def _compute_sender(self):
+        default_sender = self.env['ir.values'].get_default(
+            'wau.sms.configuration', 'default_sender')
+        if not default_sender:
+            raise ValidationError(_("No sender has been set."))
+        for record in self:
+            record.sender = default_sender
+
+    @api.multi
     def _compute_credentials(self):
-        # Get config params
         service_user = self.env['ir.values'].get_default(
             'wau.sms.configuration', 'service_user')
         service_passwd = self.env['ir.values'].get_default(
@@ -102,14 +115,12 @@ class WauSMSWizard(models.Model):
                 base64.b64encode(service_user + ':' + service_passwd)
 
     def _check_phone_number(self, phone_number):
-        # Checks
         phone_number = phone_number.replace(" ", "").strip()
         if phone_number.startswith('+'):
             phone_number = phone_number.strip('+')
         if not phone_number.isdigit():
             raise ValidationError(_("Error in phone number, there are "
                                     "characters that are not digits."))
-
         # Reformat phone number to E.164
         reformated_phone_number = phonenumbers.format_number(
             phonenumbers.parse(phone_number, "ES"),
@@ -126,41 +137,89 @@ class WauSMSWizard(models.Model):
     def _compute_sms_template(self, context):
         if context.get("mode") == 'invoice':
             invoice_template = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'invoice_template')
+                'wau.sms.configuration', 'default_invoice_template')
             for record in self:
                 record.sms_message = invoice_template
 
-    def strip_accents(self, string, accents=('COMBINING ACUTE ACCENT',
+    def _escape_json_special_chars(self, string):
+        escaped_string = string.replace('\n', '\\n').replace(
+                        '"', '\\"').replace('\b', '\\b').replace(
+                        '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
+        return escaped_string
+
+    def _strip_accents(self, string, accents=('COMBINING ACUTE ACCENT',
                                              'COMBINING GRAVE ACCENT')):
         accents = set(map(unicodedata.lookup, accents))
-        chars = \
-            [c for c in unicodedata.normalize('NFD',
-                                              string) if c not in accents]
+        chars = [c for c in unicodedata.normalize(
+            'NFD', string) if c not in accents]
         return unicodedata.normalize('NFC', ''.join(chars))
+
+    def _get_confirmation_messages(self, response_code):
+        sms_confirmation = ""
+        sms_confirmation_info = ""
+        if response_code == 202:
+            sms_confirmation = _("Accepted")
+            sms_confirmation_info = \
+                _("Accepted - The message has been accepted for further "
+                  "processing.")
+        elif response_code == 207:
+            sms_confirmation = _("Multi-status")
+            sms_confirmation_info = \
+                _("Multi-status - The message has been accepted for further "
+                  "processing, but some of the recipients are incorrect.")
+        elif response_code == 400:
+            sms_confirmation = _("Bad request")
+            sms_confirmation_info = \
+                _("Bad request - The request contains errors, the message has "
+                  "not been accepted.")
+        elif response_code == 401:
+            sms_confirmation = _("Unauthorized")
+            sms_confirmation_info = \
+                _("Unauthorized - Client authentication failed.")
+        elif response_code == 402:
+            sms_confirmation = _("Payment required")
+            sms_confirmation_info = \
+                _("Payment required - The client does not have sufficient "
+                  "balance.")
+        elif response_code == 500:
+            sms_confirmation = _("Internal server error")
+            sms_confirmation_info = \
+                _("Internal server error - The server had an internal error.")
+        else:
+            sms_confirmation = sms_confirmation_info = _("Unknown error")
+        return sms_confirmation, sms_confirmation_info
 
     @api.multi
     def send_sms_action(self, context):
-        if context.get("mode") == 'test':
-            # Get test phone number
-            test_phone_number = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'test_phone_number')
-            if not test_phone_number:
-                raise ValidationError(_("No test phone number has been set."))
-            # Get default subject
-            default_subject_raw = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'default_subject')
-            if self.subject:
-                default_subject_raw = self.subject
-                default_subject = \
-                    self.strip_accents(default_subject_raw.decode('utf8'))
-            elif default_subject_raw:
-                default_subject = \
-                    self.strip_accents(default_subject_raw.decode('utf8'))
-            else:
-                default_subject = ""
-            # Set active_ids to 0
-            active_ids = (0,)
+        # Get config params
+        service_url = self.env['ir.values'].get_default(
+            'wau.sms.configuration', 'service_url')
+        wausms_user = self.env['ir.values'].get_default(
+            'wau.sms.configuration', 'service_user')
+        sender = self.sender
+        headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic '+self.credentials,}
 
+        # Reset variables
+        subject = ""
+        active_ids = ""
+        raw_sms_message = ""
+        sms_confirmations = ""
+        response_messages = ""
+
+        # Set subject
+        if self.subject:
+            subject_raw = self.subject
+            subject = self._strip_accents(subject_raw.decode('utf8'))
+
+        # Set active_ids
+        if context.get("mode") == 'test':
+            active_ids = (0,)
+        if context.get("mode") == 'partner':
+            invoice_id = False
+            active_ids = context.get('active_ids')
         if context.get("mode") == 'invoice':
             partner_active_ids = []
             partner_invoice_list = []
@@ -172,98 +231,61 @@ class WauSMSWizard(models.Model):
                                              invoice_id])
             # Set active_ids as list of list [[partner_id, invoice_id],)
             active_ids = partner_invoice_list
-
-        if context.get("mode") == 'partner':
-            invoice_id = False
-            active_ids = context.get('active_ids')
-
         if not active_ids:
             raise ValidationError(_("There are no items selected."))
 
-        # Reset variables
-        sms_confirmations = ""
-        response_messages = ""
-
         for active_id in active_ids:
-            if active_id == 0:
-                phone_number = test_phone_number
-                subject = default_subject
-                if not subject:
-                    subject = ""
+            # Set active partner and invoice (x_id is for tracking)
+            if context.get("mode") == 'test':
+                partner = partner_id = ""
+                invoice = invoice_id = ""
+            if context.get("mode") == 'partner':
+                partner = self.env['res.partner'].browse(active_id)
+                partner_id = partner.id
+                invoice = invoice_id = ""
+            if context.get("mode") == 'invoice':
+                partner = self.env['res.partner'].browse(active_id[0])
+                partner_id = partner.id
+                invoice = self.env['account.invoice'].browse(active_id[1])
+                invoice_id = invoice.id
+            # Set and check mobile number
+            if context.get("mode") == 'test':
+                phone_number = self.env['ir.values'].get_default(
+                    'wau.sms.configuration', 'test_phone_number')
+                if not phone_number:
+                    raise ValidationError(
+                        _("The phone number for testing has not been set."))
             else:
-                # Get subject
-                if self.subject:
-                    subject = self.subject
-                else:
-                    subject = ""
-
-                # Get partner data
-                if context.get("mode") == 'invoice':
-                    partner = self.env['res.partner'].browse(active_id[0])
-                else:
-                    partner = self.env['res.partner'].browse(active_id)
-
-                # Get mobile number
                 if partner.mobile:
                     phone_number = partner.mobile
                 else:
                     raise ValidationError(_("Partner %s does not have a "
                                             "mobile number" % partner.name))
+            reformated_phone_number = self._check_phone_number(phone_number)
 
-            # Check phone number
-            reformated_phone_number = \
-                self._check_phone_number(phone_number)
-
-            # Check sender
-            if not self.sender:
-                sender = self._get_default_sender()
-                if not sender:
-                    raise ValidationError(_("No sender has been set."))
-            else:
-                sender = self.sender
-
-            # Render jinja2 variables
-            if self.sms_message and context.get("mode") == 'invoice':
+            # Resolve template
+            if self.sms_message:
                 raw_template = Template(self.sms_message)
-                invoice_id = active_id[1]
-                invoice = self.env['account.invoice'].browse(invoice_id)
-                msg = False
                 try:
-                    msg = raw_template.render(
-                        partner=partner, invoice=invoice, datetime=datetime)
+                    raw_sms_message = raw_template.render(
+                        partner=partner, invoice=invoice,datetime=datetime)
                 except TemplateError as err:
                     raise ValidationError(
                         _("Error resolving template: {}".format(err.message)))
-                raw_sms_message = msg
             else:
-                raw_sms_message = self.sms_message
+                sms_message = _('empty message')
 
-            # Escape json special chars and accents
+            # Eliminate accents and escape json special characters
             if raw_sms_message:
-                sms_message = \
-                    raw_sms_message.replace('\n', '\\n').replace(
-                        '"', '\\"').replace('\b', '\\b').replace(
-                        '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
-                sms_message = self.strip_accents(sms_message)
-            else:
-                sms_message = 'empty message'
+                sms_message = self._escape_json_special_chars(raw_sms_message)
+                sms_message = self._strip_accents(sms_message)
 
             # Check size
             if len(sms_message) > 160:
                 raise ValidationError(
                     _("Number of characters must not exceed 160"))
 
-            # Get URL from config params
-            service_url = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'service_url')
-
-            # Header
-            headers = {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': 'Basic '+self.credentials,
-            }
-
+            # Encode json
             data_raw = {
                 "to": [reformated_phone_number],
                 "text": sms_message,
@@ -274,45 +296,22 @@ class WauSMSWizard(models.Model):
             # Send and catch response
             response = requests.post(service_url, headers=headers, data=data)
 
-            # Response codes
-            if response.status_code == 202:
-                sms_confirmation_info = _("Accepted - The message has been "
-                                          "accepted for further processing.")
-                sms_confirmation = _("Accepted")
-            elif response.status_code == 207:
-                sms_confirmation_info = _("Multi-status - The message has "
-                                          "been accepted for further "
-                                          "processing, but some of the "
-                                          "recipients are incorrect.")
-                sms_confirmation = _("Multi-status")
-            elif response.status_code == 400:
-                sms_confirmation_info = _("Bad request - The request contains "
-                                          "errors, the message has not been "
-                                          "accepted.")
-                sms_confirmation = _("Bad request")
-            elif response.status_code == 401:
-                sms_confirmation_info = _("Unauthorized - Client "
-                                          "authentication failed.")
-                sms_confirmation = _("Unauthorized")
-            elif response.status_code == 402:
-                sms_confirmation_info = _("Payment required - The client does "
-                                          "not have sufficient balance.")
-                sms_confirmation = _("Payment required")
-            elif response.status_code == 500:
-                sms_confirmation_info = _("Internal server error - The server "
-                                          "had an internal error.")
-                sms_confirmation = _("Internal server error")
-            else:
-                sms_confirmation_info = sms_confirmation = _("Unknown error")
+            # Get confirmations messages based in response status code
+            sms_confirmation, sms_confirmation_info = \
+                self._get_confirmation_messages(response.status_code)
 
             # Add sms_confirmation message to sms_confirmations
-            if active_id == 0:
+            if context.get("mode") == 'test':
                 sms_confirmations += \
                     sms_confirmation + " -- [" + subject + "]" + '\n'
-            else:
+            if context.get("mode") == 'partner':
                 sms_confirmations += \
                     sms_confirmation + " -- [" + subject + " - " + \
                     partner.name + "]" + '\n'
+            if context.get("mode") == 'invoice':
+                sms_confirmations += \
+                    sms_confirmation + " -- [" + subject + " - " + \
+                    invoice.number + " - " +  partner.name + "]" + '\n'
 
             # Response message (only shown in debug mode)
             response_message = json.dumps(response.json(), indent=4)
@@ -339,22 +338,8 @@ class WauSMSWizard(models.Model):
                                      + '\n'
 
             # Insert tracking data
-            if active_id == 0:
-                partner_id = ""
-                invoice_id = ""
-            else:
-                if context.get("mode") == 'invoice':
-                    partner_id = partner.id
-                    invoice_id = invoice_id
-                if context.get("mode") == 'partner':
-                    partner_id = partner.id
-                    invoice_id = ""
-
-            wausms_user = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'service_user')
-
             tracking_data = {
-                "wausms_sms_id": response_message_data["id"],
+                "name": response_message_data["id"],
                 "wausms_url": service_url,
                 "wausms_user": wausms_user,
                 "user_id": self._uid,
@@ -384,9 +369,3 @@ class WauSMSWizard(models.Model):
                 },
             'target': 'new',
             }
-
-    @api.constrains('sender')
-    def _check_default_sender_size(self):
-        if not self.sender.isdigit() and len(self.sender) > 11:
-            raise ValidationError(_("Sender size is limited to 15 numbers or "
-                                    "11 alphanumeric characters"))

@@ -9,10 +9,10 @@ class WauSMSTracking(models.Model):
     _name = "wausms.tracking"
     _description = "Tracking of SMS sent"
 
-    wausms_sms_id = fields.Char(
+    name = fields.Char(
         string="SMS id",
         readonly=True,
-        help="SMS id")
+        help="SMS id assigned by WauSMS service")
 
     wausms_user = fields.Char(
         string="WauSMS user",
