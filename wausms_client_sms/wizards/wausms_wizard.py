@@ -188,8 +188,10 @@ class WauSMSWizard(models.Model):
         context = self._context
         if context.get('mode') == 'partner':
             context_filter = "[('type', '=', 'partner')]"
-        if context.get('mode') == 'invoice':
+        elif context.get('mode') == 'invoice':
             context_filter = "[('type', '=', 'invoice')]"
+        else:
+            context_filter = ""
         res = super(WauSMSWizard, self).fields_view_get(
             view_id=view_id, view_type=view_type, toolbar=toolbar,
             submenu=submenu)
