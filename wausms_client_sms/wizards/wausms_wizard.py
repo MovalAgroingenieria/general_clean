@@ -12,7 +12,7 @@ from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
 from jinja2 import Template, TemplateError
-import unicodedata
+from lxml import etree
 
 
 class WauSMSConfirmation(models.Model):
@@ -37,10 +37,10 @@ class WauSMSWizard(models.Model):
         default_template_id = ""
         if context.get("mode") == 'partner':
             default_template_id = self.env['ir.values'].get_default(
-                    'wau.sms.configuration', 'default_partner_template_id')
+                'wau.sms.configuration', 'default_partner_template_id')
         if context.get("mode") == 'invoice':
             default_template_id = self.env['ir.values'].get_default(
-                    'wau.sms.configuration', 'default_invoice_template_id')
+                'wau.sms.configuration', 'default_invoice_template_id')
         return default_template_id
 
     def _default_is_test_wizard(self):
@@ -86,7 +86,7 @@ class WauSMSWizard(models.Model):
         default=_default_is_test_wizard)
 
     @api.onchange('template_id')
-    def compute_template_id_fields(self):
+    def _compute_template_id_fields(self):
         template = self.env['wausms.template'].browse(self.template_id.id)
         for record in self:
             record.subject = template.subject
@@ -143,16 +143,9 @@ class WauSMSWizard(models.Model):
 
     def _escape_json_special_chars(self, string):
         escaped_string = string.replace('\n', '\\n').replace(
-                        '"', '\\"').replace('\b', '\\b').replace(
-                        '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
+            '"', '\\"').replace('\b', '\\b').replace(
+            '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
         return escaped_string
-
-    def _strip_accents(self, string, accents=('COMBINING ACUTE ACCENT',
-                                             'COMBINING GRAVE ACCENT')):
-        accents = set(map(unicodedata.lookup, accents))
-        chars = [c for c in unicodedata.normalize(
-            'NFD', string) if c not in accents]
-        return unicodedata.normalize('NFC', ''.join(chars))
 
     def _get_confirmation_messages(self, response_code):
         sms_confirmation = ""
@@ -189,9 +182,25 @@ class WauSMSWizard(models.Model):
             sms_confirmation = sms_confirmation_info = _("Unknown error")
         return sms_confirmation, sms_confirmation_info
 
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        context = self._context
+        if context.get('mode') == 'partner':
+            context_filter = "[('type', '=', 'partner')]"
+        if context.get('mode') == 'invoice':
+            context_filter = "[('type', '=', 'invoice')]"
+        res = super(WauSMSWizard, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar,
+            submenu=submenu)
+        doc = etree.XML(res['arch'])
+        for node in doc.xpath("//field[@name='template_id']"):
+            node.set('domain', context_filter)
+        res['arch'] = etree.tostring(doc)
+        return res
+
     @api.multi
     def send_sms_action(self, context):
-        # Get config params
         service_url = self.env['ir.values'].get_default(
             'wau.sms.configuration', 'service_url')
         wausms_user = self.env['ir.values'].get_default(
@@ -200,19 +209,14 @@ class WauSMSWizard(models.Model):
         headers = {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Basic '+self.credentials,}
+            'Authorization': 'Basic '+self.credentials, }
+        subject = self.subject
 
         # Reset variables
-        subject = ""
         active_ids = ""
         raw_sms_message = ""
         sms_confirmations = ""
         response_messages = ""
-
-        # Set subject
-        if self.subject:
-            subject_raw = self.subject
-            subject = self._strip_accents(subject_raw.decode('utf8'))
 
         # Set active_ids
         if context.get("mode") == 'test':
@@ -268,17 +272,16 @@ class WauSMSWizard(models.Model):
                 raw_template = Template(self.sms_message)
                 try:
                     raw_sms_message = raw_template.render(
-                        partner=partner, invoice=invoice,datetime=datetime)
+                        partner=partner, invoice=invoice, datetime=datetime)
                 except TemplateError as err:
                     raise ValidationError(
                         _("Error resolving template: {}".format(err.message)))
             else:
                 sms_message = _('empty message')
 
-            # Eliminate accents and escape json special characters
+            # Eliminate json special characters
             if raw_sms_message:
                 sms_message = self._escape_json_special_chars(raw_sms_message)
-                sms_message = self._strip_accents(sms_message)
 
             # Check size
             if len(sms_message) > 160:
@@ -311,7 +314,7 @@ class WauSMSWizard(models.Model):
             if context.get("mode") == 'invoice':
                 sms_confirmations += \
                     sms_confirmation + " -- [" + subject + " - " + \
-                    invoice.number + " - " +  partner.name + "]" + '\n'
+                    str(invoice.number) + " - " + partner.name + "]" + '\n'
 
             # Response message (only shown in debug mode)
             response_message = json.dumps(response.json(), indent=4)

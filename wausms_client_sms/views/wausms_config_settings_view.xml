@@ -22,7 +22,7 @@
                 </group>
                <group>
                     <group style="width: 40%;">
-                        <field name="test_phone_number" />
+                        <field name="test_phone_number" placeholder="Has to be saved before use."/>
                     </group>
                     <group>
                         <button name="%(action_wausms_test_wizard)d" type="action" class="oe_highlight"

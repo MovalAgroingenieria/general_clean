@@ -10,7 +10,10 @@
                 <form string="WauSMS">
                     <field name="is_test_wizard" invisible="1"/>
                     <group>
-                        <field name="template_id" style="width: 50%;" attrs="{'invisible':[('is_test_wizard','=',True)]}"/>
+                        <field name="template_id" style="width: 50%;"/>
+                        <!-- attrs="{'invisible':[('is_test_wizard','=',True)]}"/> -->
+                        <!-- attrs="{'invisible':['|','|',('state','!=','open'),('journal_type','!=','cash'),('cashbox_start_id','!=',False)]}"
+                        context="{'mode':'partner'}" -->  
                     </group>
                     <group>
                         <field name="subject" style="width: 50%;"/>

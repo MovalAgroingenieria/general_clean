@@ -4,7 +4,6 @@
 
 from jinja2 import Template, TemplateError
 from datetime import datetime
-import unicodedata
 import random
 from odoo import models, fields, api, exceptions, _
 
@@ -44,65 +43,61 @@ class WauSMSTemplate(models.Model):
         ('unique_wausms_template', 'UNIQUE (name, type)', 'Existing template.')
         ]
 
-    def strip_accents(self, string, accents=('COMBINING ACUTE ACCENT',
-                                             'COMBINING GRAVE ACCENT')):
-        accents = set(map(unicodedata.lookup, accents))
-        chars = [c for c in unicodedata.normalize(
-            'NFD', string) if c not in accents]
-        return unicodedata.normalize('NFC', ''.join(chars))
+    def _escape_json_special_chars(self, string):
+        escaped_string = string.replace('\n', '\\n').replace(
+            '"', '\\"').replace('\b', '\\b').replace(
+            '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
+        return escaped_string
 
-    def get_random_invoice(self):
+    def _get_random_invoice(self):
+        invoice = ""
         invoice_ids = self.env['account.invoice'].search([], limit=1000).ids
-        random_invoice_id = random.choice(invoice_ids)
-        invoice = self.env['account.invoice'].browse(random_invoice_id)
+        if len(invoice_ids) > 0:
+            random_invoice_id = random.choice(invoice_ids)
+            invoice = self.env['account.invoice'].browse(random_invoice_id)
+        else:
+            raise exceptions.ValidationError(_("No invoice found"))
         return invoice
 
-    def get_random_partner(self):
+    def _get_random_partner(self):
+        partner = ""
         partner_ids = self.env['res.partner'].search([], limit=1000).ids
-        random_partner_id = random.choice(partner_ids)
-        partner = self.env['res.partner'].browse(random_partner_id)
+        if len(partner_ids) > 0:
+            random_partner_id = random.choice(partner_ids)
+            partner = self.env['res.partner'].browse(random_partner_id)
+        else:
+            raise exceptions.ValidationError(_("No partner found"))
         return partner
 
     @api.multi
     def action_resolve_template(self):
         self.ensure_one()
-        raw_template = ""
-        msg = ""
-        raw_sms_message = ""
-        sms_message = ""
+        partner = invoice = raw_message = message = ""
         if self.template:
-            raw_template = Template(self.template)
-        if raw_template and self.type == 'partner':
-            partner = self.get_random_partner()
+            template = Template(self.template)
+        if self.type == 'partner':
+            partner = self._get_random_partner()
             try:
-                msg = raw_template.render(
+                raw_message = template.render(
                     partner=partner, datetime=datetime)
             except TemplateError as err:
                 raise exceptions.ValidationError(
                     _("Error resolving template: {}".format(err.message)))
-            raw_sms_message = msg
-        if raw_template and self.type == 'invoice':
-            invoice = self.get_random_invoice()
+        if self.type == 'invoice':
+            invoice = self._get_random_invoice()
             partner = self.env['res.partner'].browse(invoice.partner_id.id)
             try:
-                msg = raw_template.render(
+                raw_message = template.render(
                     partner=partner, invoice=invoice, datetime=datetime)
             except TemplateError as err:
                 raise exceptions.ValidationError(
                     _("Error resolving template: {}".format(err.message)))
-            raw_sms_message = msg
-        # Escape json special chars and accents
-        if raw_sms_message:
-            sms_message = \
-                raw_sms_message.replace('\n', '\\n').replace(
-                    '"', '\\"').replace('\b', '\\b').replace(
-                    '\t', '\\t').replace('\f', '\\f').replace('\r', '\\r')
-            sms_message = self.strip_accents(sms_message)
-        # Check size
-        if len(sms_message) > 160:
+        if raw_message:
+            message = self._escape_json_special_chars(raw_message)
+        if len(message) > 160:
             raise exceptions.ValidationError(
                 _('The size of the SMS after solving the variables exceeds '
                   '160 characters. Try setting a fixed length for variables '
                   '{{ object.attribute[:10] }}'))
-        if sms_message:
-            self.template_resolved = sms_message
+        if message:
+            self.template_resolved = message
