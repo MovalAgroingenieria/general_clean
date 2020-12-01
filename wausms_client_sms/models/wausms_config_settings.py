@@ -8,7 +8,7 @@ from odoo.exceptions import ValidationError
 
 class WauSMSConfiguration(models.TransientModel):
     _inherit = 'res.config.settings'
-    _name = 'wau.sms.configuration'
+    _name = 'wausms.configuration'
 
     service_url = fields.Char(
         string="Service URL",
@@ -32,7 +32,8 @@ class WauSMSConfiguration(models.TransientModel):
     test_phone_number = fields.Char(
         string="Test phone number",
         size=15,
-        help="Used to test configuration.\nOnly Spanish mobile numbers")
+        help="For test configuration\nHave to be saved before to be "
+             "used.\nOnly Spanish mobile numbers")
 
     default_partner_template_id = fields.Many2one(
         comodel_name='wausms.template',
@@ -47,25 +48,25 @@ class WauSMSConfiguration(models.TransientModel):
     @api.multi
     def set_default_values(self):
         values = self.env['ir.values'].sudo()
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'service_url',
                            self.service_url)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'service_user',
                            self.service_user)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'service_passwd',
                            self.service_passwd)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'default_sender',
                            self.default_sender)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'test_phone_number',
                            self.test_phone_number)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'default_partner_template_id',
                            self.default_partner_template_id.id)
-        values.set_default('wau.sms.configuration',
+        values.set_default('wausms.configuration',
                            'default_invoice_template_id',
                            self.default_invoice_template_id.id)
 

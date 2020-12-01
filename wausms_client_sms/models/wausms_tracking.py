@@ -22,13 +22,13 @@ class WauSMSTracking(models.Model):
     wausms_url = fields.Char(
         string="WauSMS URL",
         readonly=True,
-        help="The URL used to contect WauSMS service")
+        help="The URL used to connect WauSMS service")
 
     user_id = fields.Many2one(
         string='User',
         comodel_name='res.users',
         store=True,
-        help="The user who sent the sms")
+        help="The user who sent the SMS")
 
     sms_time_data = fields.Datetime(
         string="Date",
@@ -60,7 +60,7 @@ class WauSMSTracking(models.Model):
     phone_number = fields.Char(
         string="Phone number",
         readonly=True,
-        help="Phone number used")
+        help="The phone number to which the SMS was sent")
 
     sender = fields.Char(
         string="From",
@@ -70,7 +70,7 @@ class WauSMSTracking(models.Model):
     sms_message = fields.Text(
         string="Message",
         readonly=True,
-        help="Message sent")
+        help="Text of the SMS sent")
 
     response_code = fields.Text(
         string="Response",

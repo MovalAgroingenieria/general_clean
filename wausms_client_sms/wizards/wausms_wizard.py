@@ -37,10 +37,10 @@ class WauSMSWizard(models.Model):
         default_template_id = ""
         if context.get("mode") == 'partner':
             default_template_id = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'default_partner_template_id')
+                'wausms.configuration', 'default_partner_template_id')
         if context.get("mode") == 'invoice':
             default_template_id = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'default_invoice_template_id')
+                'wausms.configuration', 'default_invoice_template_id')
         return default_template_id
 
     def _default_is_test_wizard(self):
@@ -95,7 +95,7 @@ class WauSMSWizard(models.Model):
     @api.multi
     def _compute_sender(self):
         default_sender = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'default_sender')
+            'wausms.configuration', 'default_sender')
         if not default_sender:
             raise ValidationError(_("No sender has been set."))
         for record in self:
@@ -104,9 +104,9 @@ class WauSMSWizard(models.Model):
     @api.multi
     def _compute_credentials(self):
         service_user = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'service_user')
+            'wausms.configuration', 'service_user')
         service_passwd = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'service_passwd')
+            'wausms.configuration', 'service_passwd')
 
         if not service_user or not service_passwd:
             raise ValidationError(_("User or password not set."))
@@ -137,7 +137,7 @@ class WauSMSWizard(models.Model):
     def _compute_sms_template(self, context):
         if context.get("mode") == 'invoice':
             invoice_template = self.env['ir.values'].get_default(
-                'wau.sms.configuration', 'default_invoice_template')
+                'wausms.configuration', 'default_invoice_template')
             for record in self:
                 record.sms_message = invoice_template
 
@@ -204,9 +204,9 @@ class WauSMSWizard(models.Model):
     @api.multi
     def send_sms_action(self, context):
         service_url = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'service_url')
+            'wausms.configuration', 'service_url')
         wausms_user = self.env['ir.values'].get_default(
-            'wau.sms.configuration', 'service_user')
+            'wausms.configuration', 'service_user')
         sender = self.sender
         headers = {
             'Content-Type': 'application/json',
@@ -257,7 +257,7 @@ class WauSMSWizard(models.Model):
             # Set and check mobile number
             if context.get("mode") == 'test':
                 phone_number = self.env['ir.values'].get_default(
-                    'wau.sms.configuration', 'test_phone_number')
+                    'wausms.configuration', 'test_phone_number')
                 if not phone_number:
                     raise ValidationError(
                         _("The phone number for testing has not been set."))

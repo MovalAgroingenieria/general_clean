@@ -7,11 +7,12 @@
             <field name="name">wausms.wizard.form</field>
             <field name="model">wausms.wizard</field>
             <field name="arch" type="xml">
-                <form string="WauSMS">
+                <form string="Compose SMS">
                     <field name="is_test_wizard" invisible="1"/>
                     <group>
                         <field name="template_id" style="width: 50%;"
                             attrs="{'invisible':[('is_test_wizard','=',True)]}"/>
+                            <!--options="{'no_quick_create':True,'no_create_edit':True}"-->
                     </group>
                     <group>
                         <field name="subject" style="width: 50%;"/>
@@ -36,7 +37,7 @@
             <field name="name">wausms.confirmation.form</field>
             <field name="model">wausms.confirmation</field>
             <field name="arch" type="xml">
-                <form string="WauSMS Confirmation">
+                <form string="SMS Confirmation">
                     <group name="wausms_sent_data">
                         <field name="response_code"/>
                         <field name="response_message" groups="base.group_no_one"/>
