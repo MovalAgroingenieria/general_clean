@@ -50,6 +50,11 @@ class WauSMSWizard(models.Model):
             is_test_wizard = True
         return is_test_wizard
 
+    def _get_default_sender(self):
+        default_sender = self.env['ir.values'].get_default(
+            'wausms.configuration', 'default_sender')
+        return default_sender
+
     credentials = fields.Char(
         string="Credentials",
         compute="_compute_credentials")
@@ -68,6 +73,7 @@ class WauSMSWizard(models.Model):
 
     sender = fields.Char(
         string="From",
+        default=_get_default_sender,
         compute="_compute_sender")
 
     sms_message = fields.Text(
@@ -94,8 +100,7 @@ class WauSMSWizard(models.Model):
 
     @api.multi
     def _compute_sender(self):
-        default_sender = self.env['ir.values'].get_default(
-            'wausms.configuration', 'default_sender')
+        default_sender = self._get_default_sender()
         if not default_sender:
             raise ValidationError(_("No sender has been set."))
         for record in self:
@@ -306,6 +311,8 @@ class WauSMSWizard(models.Model):
                 self._get_confirmation_messages(response.status_code)
 
             # Add sms_confirmation message to sms_confirmations
+            if not subject:
+                subject = ""
             if context.get("mode") == 'test':
                 sms_confirmations += \
                     sms_confirmation + " -- [" + subject + "]" + '\n'

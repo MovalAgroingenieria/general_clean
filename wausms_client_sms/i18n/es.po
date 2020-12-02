@@ -703,7 +703,7 @@ msgstr "Registro de SMS enviados"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_template_view_form
 msgid "Try to resolve the template using a random item (partner or invoice).                                         Note that not all error are catch by the system."
-msgstr "Intenta resolver la plantilla utilizando un elemento aleatorio (socio o factura). Tenga en cuenta que el sistema no detecta todos los errores."
+msgstr "Intenta resolver la plantilla utilizando un elemento aleatorio (socio o factura).\nTenga en cuenta que el sistema no detecta todos los errores."
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_type

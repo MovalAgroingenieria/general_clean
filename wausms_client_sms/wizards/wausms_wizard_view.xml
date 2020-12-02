@@ -10,12 +10,12 @@
                 <form string="Compose SMS">
                     <field name="is_test_wizard" invisible="1"/>
                     <group>
-                        <field name="template_id" style="width: 50%;"
-                            attrs="{'invisible':[('is_test_wizard','=',True)]}"/>
-                            <!--options="{'no_quick_create':True,'no_create_edit':True}"-->
+                        <field name="template_id" style="width: 70%;" context="{'from_wizard': True}"
+                            attrs="{'invisible':[('is_test_wizard','=',True)]}"
+                            options="{'no_quick_create':True}"/>
                     </group>
                     <group>
-                        <field name="subject" style="width: 50%;"/>
+                        <field name="subject" style="width: 70%;"/>
                         <field name="sms_message" style="background-color: #F8F8F8; padding: 10px;
                             border-top-right-radius: 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;"/>
                     </group>

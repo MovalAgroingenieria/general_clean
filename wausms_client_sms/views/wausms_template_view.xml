@@ -9,6 +9,7 @@
             <form>
                 <sheet>
                     <group name="template_data">
+                        <field name="template_from_wizard" invisible="1"/>
                         <group style="width: 60%;">
                             <field name="name"/>
                             <field name="type"/>
@@ -24,6 +25,7 @@
                                     </div>
                                 </div>
                                 <button name="action_resolve_template" type="object" class="oe_highlight"
+                                    attrs="{'invisible':[('template_from_wizard','=',True)]}"
                                     help="Try to resolve the template using a random item (partner or invoice).
                                         Note that not all error are catch by the system.">
                                     <div class="o_form_field">
@@ -34,7 +36,7 @@
                             </div>
                         </group>
                     </group>
-                    <group name="help">
+                    <group name="help" attrs="{'invisible':[('template_from_wizard','=',True)]}">
                         <group style="width: 70%;">
                             <div name="help_invoice" style="margin-top: 0px;" class="oe_edit_only">
                                 Templates use jinja2 variables: {{ object.attribute }}. The available objects are 'partner' for partner templates and

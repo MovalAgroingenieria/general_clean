@@ -39,6 +39,10 @@ class WauSMSTemplate(models.Model):
         readonly=True,
         help="The template after resolve variables using random item.")
 
+    template_from_wizard = fields.Boolean(
+        default=False,
+        compute="_compute_template_from_wizard")
+
     _sql_constraints = [
         ('unique_wausms_template', 'UNIQUE (name, type)', 'Existing template.')
         ]
@@ -72,10 +76,10 @@ class WauSMSTemplate(models.Model):
     @api.multi
     def action_resolve_template(self):
         self.ensure_one()
-        partner = invoice = raw_message = message = ""
+        template = partner = invoice = raw_message = message = ""
         if self.template:
             template = Template(self.template)
-        if self.type == 'partner':
+        if template and self.type == 'partner':
             partner = self._get_random_partner()
             try:
                 raw_message = template.render(
@@ -83,7 +87,7 @@ class WauSMSTemplate(models.Model):
             except TemplateError as err:
                 raise exceptions.ValidationError(
                     _("Error resolving template: {}".format(err.message)))
-        if self.type == 'invoice':
+        if template and self.type == 'invoice':
             invoice = self._get_random_invoice()
             partner = self.env['res.partner'].browse(invoice.partner_id.id)
             try:
@@ -101,3 +105,10 @@ class WauSMSTemplate(models.Model):
                   '{{ object.attribute[:10] }}'))
         if message:
             self.template_resolved = message
+
+    @api.multi
+    def _compute_template_from_wizard(self):
+        self.ensure_one()
+        context = self._context
+        if context.get("from_wizard"):
+            self.template_from_wizard = True
