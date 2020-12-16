@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="param_res_street_type_configuration" model="res.street.type.configuration">
+            <field name="street_type_shown">long</field>
+        </record>
+
+    </data>
+</odoo>

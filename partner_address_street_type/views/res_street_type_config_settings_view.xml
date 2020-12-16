@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_street_type_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Street type settings</field>
+        <field name="model">res.street.type.configuration</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                    <button string="Save" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                </header>
+                <group name="street_type_config" style="width: 50%">
+                    <field name="street_type_shown"/>
+                    <field name="address_format_set"/>
+                </group>
+                <group>
+                    <group>
+                        <div name="help" style="margin-top: 0px;" class="oe_edit_only">
+                            The address format field can be used to change the address format of printed documents using python-style
+                            string pattern with address fields (see below). Be careful, there is no error control.<br/><br/>
+                            <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
+                                <tr>
+                                    <td>% (street_type_shown)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Street type</td>
+                                </tr>
+                                <tr>
+                                    <td>% (street)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Street</td>
+                                </tr>
+                                <tr>
+                                    <td>% (street2)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Street second line</td>
+                                </tr>
+                                <tr>
+                                    <td>% (city)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>City name</td>
+                                </tr>
+                                <tr>
+                                    <td>% (zip)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Zip code</td>
+                                </tr>
+                                <tr>
+                                    <td>% (state_name)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>State name</td>
+                                </tr>
+                                <tr>
+                                    <td>% (state_code)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>State code</td>
+                                </tr>
+                                <tr>
+                                    <td>% (country_name)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Country name</td>
+                                </tr>
+                                <tr>
+                                    <td>% (country_code)s</td>
+                                    <td style="padding: 0px 4px"> -> </td>
+                                    <td>Country code</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_res_street_type_config_settings_view_form" model="ir.actions.act_window">
+        <field name="name">Street type configuration</field>
+        <field name="res_model">res.street.type.configuration</field>
+        <field name="view_id" ref="res_street_type_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <menuitem
+        id="street_type_root_menu"
+        name="Street type Management"
+        parent="contacts.res_partner_menu_config"
+        sequence="6"/>
+
+    <menuitem
+        name="Settings"
+        id="street_type_settings_menu"
+        parent="street_type_root_menu"
+        action="action_res_street_type_config_settings_view_form"
+        sequence="1"/>
+
+</odoo>

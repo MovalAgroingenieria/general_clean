@@ -1,0 +1,484 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_address_street_type
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-18 13:20+0000\n"
+"PO-Revision-Date: 2020-12-18 13:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (city)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (country_code)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (country_name)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (state_code)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (state_name)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (street)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (street2)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (street_type_shown)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "% (zip)s"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__abbreviation
+#: model:ir.model.fields.selection,name:partner_address_street_type.selection__res_street_type_configuration__street_type_shown__short
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_view_search
+msgid "Abbreviation"
+msgstr "Abreviatura"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__unsplash_access_key
+msgid "Access Key"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__snailmail_cover
+msgid "Add a Cover Page"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__address_format_set
+msgid "Address format"
+msgstr "Format de direcció"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__alias_domain
+msgid "Alias Domain"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_google_calendar
+msgid "Allow the users to synchronize their calendar  with Google Calendar"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_base_import
+msgid "Allow users to import data from CSV/XLS/XLSX/ODS files"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,help:partner_address_street_type.field_res_street_type_configuration__group_multi_currency
+msgid "Allows to work in a multi currency environment"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_voip
+msgid "Asterisk (VoIP)"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_google_drive
+msgid "Attach Google documents to any record"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "City name"
+msgstr "Nom de la ciutat"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_pad
+msgid "Collaborative Pads"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__company_id
+msgid "Company"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__company_informations
+msgid "Company Informations"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__company_name
+msgid "Company Name"
+msgstr "Nom de la companyia"
+
+#. module: partner_address_street_type
+#: model:ir.model,name:partner_address_street_type.model_res_partner
+msgid "Contact"
+msgstr "Contacte"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Country code"
+msgstr "Codi de país"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Country name"
+msgstr "Nom de país"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__create_uid
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__create_date
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__report_footer
+msgid "Custom Report Footer"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__auth_signup_uninvited
+msgid "Customer Account"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__user_default_rights
+msgid "Default Access Rights"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__is_default
+msgid "Default Type"
+msgstr "Tipus per defecte"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,help:partner_address_street_type.field_res_street_type_configuration__street_type_shown
+msgid "Determine how the street type will be displayed."
+msgstr "Determina com es mostrarà el tipus de via."
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__display_name
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__external_report_layout_id
+msgid "Document Template"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__auth_signup_reset_password
+msgid "Enable password reset from Login page"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.constraint,message:partner_address_street_type.constraint_res_street_type_unique_street
+#: type
+msgid "Existing type of street."
+msgstr "El tipus de via ja existeix."
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__external_email_server_default
+msgid "External Email Servers"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__fail_counter
+msgid "Fail Mail"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,help:partner_address_street_type.field_res_street_type_configuration__report_footer
+msgid "Footer text displayed at the bottom of all reports."
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_base_geolocalize
+msgid "GeoLocalize"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_google_spreadsheet
+msgid "Google Spreadsheet"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__id
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,help:partner_address_street_type.field_res_street_type_configuration__alias_domain
+msgid ""
+"If you have setup a catch-all email domain redirected to the Odoo server, "
+"enter the domain name here."
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__partner_autocomplete_insufficient_credit
+msgid "Insufficient credit"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_auth_ldap
+msgid "LDAP Authentication"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type____last_update
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__write_uid
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__write_date
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_inter_company_rules
+msgid "Manage Inter Company"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__group_multi_currency
+msgid "Multi-Currencies"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields.selection,name:partner_address_street_type.selection__res_street_type_configuration__street_type_shown__long
+msgid "Name"
+msgstr "Tipus de via complet"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields.selection,name:partner_address_street_type.selection__res_street_type_configuration__street_type_shown__not_show
+msgid "Not show"
+msgstr "No mostrar"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__active_user_count
+msgid "Number of Active Users"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__company_count
+msgid "Number of Companies"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__language_count
+msgid "Number of Languages"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__paperformat_id
+msgid "Paper format"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_partner_autocomplete
+msgid "Partner Autocomplete"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__snailmail_duplex
+msgid "Print Both sides"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__snailmail_color
+msgid "Print In Color"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Save"
+msgstr "Desar"
+
+#. module: partner_address_street_type
+#: model:ir.ui.menu,name:partner_address_street_type.street_type_settings_menu
+msgid "Settings"
+msgstr "Configuració"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__show_effect
+msgid "Show Effect"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__show_in_list
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_view_search
+msgid "Show in list"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "State code"
+msgstr "Codi de província"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "State name"
+msgstr "Nom de província"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Street"
+msgstr "Carrer"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__name
+msgid "Street Type"
+msgstr "Tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.actions.act_window,name:partner_address_street_type.action_res_street_type_tree
+msgid "Street Types"
+msgstr "Tipus de via"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Street second line"
+msgstr "Segona línia per al nom de carrer"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_partner__street_type_id
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_users__street_type_id
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Street type"
+msgstr "Tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.ui.menu,name:partner_address_street_type.street_type_root_menu
+msgid "Street type Management"
+msgstr "Gestió tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.actions.act_window,name:partner_address_street_type.action_res_street_type_config_settings_view_form
+msgid "Street type configuration"
+msgstr "Configuració tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.model,name:partner_address_street_type.model_res_street_type_configuration
+msgid "Street type settings"
+msgstr "Configuració tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_partner__street_type_shown
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__street_type_shown
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_users__street_type_shown
+msgid "Street type shown"
+msgstr "Tipus de via mostrat"
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.view_partner_address_form
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.view_partner_form
+msgid "Street type..."
+msgstr "Tipus de via..."
+
+#. module: partner_address_street_type
+#: model:ir.ui.menu,name:partner_address_street_type.street_type_menu
+msgid "Street types"
+msgstr "Tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__auth_signup_template_user_id
+msgid "Template user for new users created through signup"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid ""
+"The address format field can be used to change the address format of printed documents using python-style\n"
+"                            string pattern with address fields (see below). Be careful, there is no error control.<br/><br/>"
+msgstr ""
+"El camp 'Format de direcció' pot ser usat per a donar format a la direcció dels documents impresos usant variables\n"
+"                            python amb els camps de la direcció (veure a baix). Atenció, no hi ha control d'errors.<br/><br/>"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,help:partner_address_street_type.field_res_street_type_configuration__address_format_set
+msgid ""
+"This field shows the current address format for company country.            You can change it with the python-style string pattern with all             address fields.\n"
+"This format will be apply to company country.\n"
+"            Errors in the format are not detected."
+msgstr ""
+"Aquest camp mostra el format de direcció de país de la companyia. El format es pot canviar usant variables python amb els camps de la direcció.\n"
+"Aquest format s'aplicarà únicament a país de la companyia.\n"
+"            Els errors en el format no són avaluats."
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_base_gengo
+msgid "Translate Your Website with Gengo"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model,name:partner_address_street_type.model_res_street_type
+msgid "Types of street"
+msgstr "Tipus de via"
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_web_unsplash
+msgid "Unsplash Image Library"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type_configuration__module_auth_oauth
+msgid "Use external authentication providers (OAuth)"
+msgstr ""
+
+#. module: partner_address_street_type
+#: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_street_type_config_settings_view_form
+msgid "Zip code"
+msgstr "Codi postal"
