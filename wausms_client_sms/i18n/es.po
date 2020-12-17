@@ -693,7 +693,7 @@ msgstr "Para"
 #. module: wausms_client_sms
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_sms_tracking_menu
 msgid "Tracking SMS"
-msgstr "Resgistro"
+msgstr "Registro"
 
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_wausms_tracking
