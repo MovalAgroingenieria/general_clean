@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_file_container_view_form" model="ir.ui.view">
+        <field name="name">Files Container (form view)</field>
+        <field name="model">res.file.container</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <header>
+                </header>
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                        <button name="action_get_files"
+                                type="object" class="oe_stat_button"
+                                icon="fa-filemgmt-files"
+                                attrs="{'invisible': [('number_of_files','=', 0)]}">
+                            <div class="o_form_field o_stat_info">
+                                <field name="number_of_files"/>
+                                <span attrs="{'invisible': [('number_of_files','>', 1)]}"> file</span>
+                                <span attrs="{'invisible': [('number_of_files','=', 1)]}"> files</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group name="master_data" col="9">
+                        <group name="master_data_image" colspan="3">
+                            <field name="image" widget="image"/>
+                        </group>
+                        <group name="master_data_fields" colspan="6" col="4">
+                            <field name="container_code"/>
+                            <field name="name"/>
+                            <field name="location_id"/>
+                            <field name="containertype_id"/>
+                            <field name="description" colspan="4"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_file_container_view_tree" model="ir.ui.view">
+        <field name="name">Files Container (tree view)</field>
+        <field name="model">res.file.container</field>
+        <field name="arch" type="xml">
+            <tree class="o_res_file_container_view_tree">
+                <field name="image" widget="image" invisible="1"/>
+                <field name="container_code"/>
+                <field name="location_id"/>
+                <field name="containertype_id"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_file_container_view_tree_related" model="ir.ui.view">
+        <field name="name">Files Container (tree related view)</field>
+        <field name="model">res.file.container</field>
+        <field name="arch" type="xml">
+            <tree class="o_res_file_container_view_tree">
+                <field name="image" widget="image" invisible="1"/>
+                <field name="container_code"/>
+                <field name="containertype_id"/>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_file_container_view_search" model="ir.ui.view">
+        <field name="name">Files Container (search view)</field>
+        <field name="model">res.file.container</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="container_code"/>
+                <field name="name"/>
+                <field name="containertype_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Location" name="groupby_location" context="{'group_by':'location_id'}"/>
+                    <filter string="Type" name="groupby_type" context="{'group_by':'containertype_id'}"/>
+                 </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_file_container_action" model="ir.actions.act_window">
+        <field name="name">File Container</field>
+        <field name="res_model">res.file.container</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_file_container_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_file_container_view_form')})]"/>
+        <field name="search_view_id" ref="res_file_container_view_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new file container
+            </p>
+        </field>
+    </record>
+
+    <record id="res_file_containertype_view_form" model="ir.ui.view">
+        <field name="name">Files Container Type (form view)</field>
+        <field name="model">res.file.containertype</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group name="master_data">
+                        <group name="master_data_image" colspan="3">
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_file_containertype_view_tree" model="ir.ui.view">
+        <field name="name">Files Container Type (tree view)</field>
+        <field name="model">res.file.containertype</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_file_containertype_view_search" model="ir.ui.view">
+        <field name="name">Files Container Type (search view)</field>
+        <field name="model">res.file.containertype</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_file_containertype_action" model="ir.actions.act_window">
+        <field name="name">File Container type</field>
+        <field name="res_model">res.file.containertype</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_file_containertype_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_file_containertype_view_form')})]"/>
+        <field name="search_view_id" ref="res_file_containertype_view_search"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new container type
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="files_container_menu" name="Containers"
+              parent="configuration_menu"
+              sequence="4"
+              action="res_file_container_action"/>
+
+    <menuitem id="files_containertype_menu" name="Containers Type"
+              parent="configuration_menu"
+              sequence="5"
+              action="res_file_containertype_action"/>
+
+</odoo>

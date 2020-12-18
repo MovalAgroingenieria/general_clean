@@ -1,0 +1,156 @@
+/* file_view_tree */
+.o_res_file_view_tree [data-id="image"] {
+    width: 6%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="image"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="name"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="name"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="partner_id"] {
+    width: 18%;
+}
+
+.o_res_file_view_tree [data-id="date_file"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="date_file"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="is_blocked"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="is_blocked"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="is_cancelled"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="is_cancelled"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="category_id"] {
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="category_id"] {
+    text-align: center;
+}
+
+.o_res_file_view_tree [data-id="state"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_view_tree [data-field="state"] {
+    text-align: center;
+}
+
+/* file_category_view_tree */
+.res_file_category_view_tree [data-id="number_of_files"] {
+    width: 10%;
+    text-align: center;
+}
+.res_file_category_view_tree [data-field="number_of_files"] {
+    text-align: center;
+}
+
+/* file_partnerlink_view_tree */
+.o_res_file_partnerlink_view_tree [data-id="partner_id"] {
+    width: 90%;
+}
+
+.o_res_file_partnerlink_view_tree [data-id="is_main"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_view_tree [data-field="is_main"] {
+    text-align: center;
+}
+
+/* file_partnerlink_of_partner_view_tree */
+.o_res_file_partnerlink_of_partner_view_tree [data-id="date_file"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="date_file"] {
+    text-align: center;
+}
+
+.o_res_file_partnerlink_of_partner_view_tree [data-id="file_id"] {
+    width: 70%;
+}
+
+.o_res_file_partnerlink_of_partner_view_tree [data-id="state"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="state"] {
+    text-align: center;
+}
+
+.o_res_file_partnerlink_of_partner_view_tree [data-id="is_main"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="is_main"] {
+    text-align: center;
+}
+
+
+/* file_filelink_view_tree */
+.o_res_file_filelink_view_tree [data-id="related_file_id"] {
+    width: 20%;
+}
+
+.o_res_file_filelink_view_tree [data-id="related_file_subject"] {
+    width: 80%;
+}
+
+
+/* file_location_view_tree */
+.o_res_file_location_view_tree [data-id="image"] {
+    width: 6%;
+    text-align: center;
+}
+.o_res_file_location_view_tree [data-field="image"] {
+    text-align: center;
+}
+
+.o_res_file_location_view_tree [data-id="location_code"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_location_view_tree [data-field="location_code"] {
+    text-align: center;
+}
+
+
+/* file_location_view_tree */
+.o_res_file_container_view_tree [data-id="image"] {
+    width: 6%;
+    text-align: center;
+}
+.o_res_file_container_view_tree [data-field="image"] {
+    text-align: center;
+}
+
+.o_res_file_container_view_tree [data-id="container_code"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_container_view_tree [data-field="container_code"] {
+    text-align: center;
+}
