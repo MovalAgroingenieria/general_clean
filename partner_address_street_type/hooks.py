@@ -12,7 +12,7 @@ def post_init_hook(cr, registry):
         limit=1).code
     if not company_country_code:
         company_country_code = "ES"
-    # Add street type to address format of company state
+    # Add street type to address format of company country
     query = f"""
         UPDATE res_country
         SET address_format = replace(address_format,
