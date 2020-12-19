@@ -24,7 +24,7 @@
         'views/res_filetag_view.xml',
         'views/resources.xml',
         'views/res_file_category_view.xml',
-        #'views/res_partner_view.xml',
+        'views/res_partner_view.xml',
         #'views/res_letter_view.xml',
         'views/res_file_location_view.xml',
         'views/res_file_container_view.xml',

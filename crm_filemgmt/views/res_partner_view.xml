@@ -21,6 +21,7 @@
                         </span>
                     </div>
                 </button>
+                <!-- 
                 <button name="action_get_file_registers"
                        type="object" class="oe_stat_button"
                        icon="fa-filemgmt-file-register"
@@ -35,6 +36,7 @@
                         </span>
                    </div>
                </button>
+                -->
             </xpath>
         </field>
     </record>
