@@ -1,4 +1,13 @@
+# Folders
+.settings
+__pycache__
+
+# Files
 *.pyc
 *.prefs
 .project
 .pydevproject
+
+# Backends
+#backend_mod.css
+#variables_mod.less
