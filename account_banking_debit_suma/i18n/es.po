@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-08 17:58+0000\n"
-"PO-Revision-Date: 2020-07-08 17:58+0000\n"
+"POT-Creation-Date: 2021-01-20 16:38+0000\n"
+"PO-Revision-Date: 2021-01-20 16:38+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1113,7 +1113,7 @@ msgid "AP - DRINKING WATERS"
 msgstr "AP - AGUAS POTABLES"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1033
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1191
 #, python-format
 msgid "Amount: "
 msgstr "Importe: "
@@ -1139,13 +1139,13 @@ msgid "Charge issuance"
 msgstr "Emisión cargo"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:445
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:447
 #, python-format
 msgid "Charge issuance for executive period has to be greater than 10."
 msgstr "La emisión de cargo en período ejecutivo debe ser superior a 10."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:437
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:439
 #, python-format
 msgid "Charge issuance for volunteer period has to be less than 10."
 msgstr "La emisión de cargo en período voluntario debe ser inferior a 10."
@@ -1223,7 +1223,7 @@ msgid "D7 - FEES MAINTENANCE ACUEDUCTSS"
 msgstr "D7 - CUOTAS MANT. ACUEDUCTOS"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1482
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1487
 #, python-format
 msgid "Direct Debit File"
 msgstr "Archivo de domiciliaciones"
@@ -1244,7 +1244,7 @@ msgid "Entity type"
 msgstr "Tipo entidad"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1200
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1161
 #, python-format
 msgid "Entity type code not set"
 msgstr "El código del tipo de entidad no ha sido establecido."
@@ -1261,13 +1261,13 @@ msgid "Errors"
 msgstr "Errores"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1457
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1462
 #, python-format
 msgid "Errors in direct debit file "
 msgstr "Errores en el archivo de domiciliaciones "
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1179
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1140
 #, python-format
 msgid "Errors in payment file "
 msgstr "Errores en el archivo de pago "
@@ -1333,7 +1333,7 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1032
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1190
 #, python-format
 msgid "Invoice num: "
 msgstr "Nº factura: "
@@ -1352,12 +1352,6 @@ msgstr "MENSUAL"
 #: selection:account.payment.order,periodicity:0
 msgid "NUMBER OF QUARTERS"
 msgstr "NÚMERO DE TRIMESTRE"
-
-#. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1026
-#, python-format
-msgid "Not found"
-msgstr "No encontrado"
 
 #. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_payment_order
@@ -1469,7 +1463,7 @@ msgid "Strict mode does not allow errors. The permissive mode allows but they ar
 msgstr "El modo estricto no permite errores, el modo permisivo permite errores, pero se recopilan en la pestaña 'Errores'. Afecta tanto al archivo de pago como al de domiciliaciones"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1045
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1202
 #, python-format
 msgid "Surface: "
 msgstr "Surperficie: "
@@ -1481,137 +1475,137 @@ msgid "Tax management. Alicante County Council (SUMA)"
 msgstr "Gestión Tributaria. Diputación de Alicante (SUMA)"
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:461
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:463
 #, python-format
 msgid "The biannual periodicity only accepts the values 01 and 02, in both the initial and the final period."
 msgstr "La periodicidad semestral solo acepta los valores 01 y 02, tanto en el período inicial como en el final."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:488
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:490
 #, python-format
 msgid "The bimonthly periodicity only accepts the values 01 to 06, in both the initial and the final period."
 msgstr "La periodicidad bimestral solo acepta los valores 01 a 06, tanto en el período inicial como en el final."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:540
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1225
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:542
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1229
 #, python-format
 msgid "The entity has not been configured. Set it in Accounting/Settings."
 msgstr "La entidad no ha sido configurada. Configúrela en Contabilidad/Configuración."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1389
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1394
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1399
 #, python-format
 msgid "The entry number %s has failed, bank BIC not found. For foreign IBANs the BIC is mandatory."
 msgstr "El número de entrada %s ha fallado, BIC no encontrado. Para los IBANs extranjeros, el BIC es obligatorio."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:866
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:873
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:868
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:875
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
 msgstr "El número de entrada %s ha fallado, ciudad no encontrada para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1366
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1371
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1376
 #, python-format
 msgid "The entry number %s has failed, suma reference not found."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado la referencia SUMA."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:847
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:859
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:849
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:861
 #, python-format
 msgid "The entry number %s has failed, taxpayer ine city code not found for city %s.\n"
 "Sometimes this is because the name of the city is not well written (first capital letter, accents, hyphens, etc.) or is the name of a district instead of a city."
 msgstr "La entrada número %s ha fallado, no se ha encontrado el código INE para ciudad %s. A veces esto se produce porque el nombre de la ciudad no está bien escrito (primera letra mayúscula, acentos, guiones, etc.) o porque se ha indicado el nombre de una pedanía."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:698
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:703
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1342
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1348
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:700
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:705
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1347
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1353
 #, python-format
 msgid "The entry number %s has failed, taxpayer name not found."
 msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:728
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:735
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:730
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:737
 #, python-format
 msgid "The entry number %s has failed, taxpayer street not found for partner %s"
 msgstr "El número de entrada %s ha fallado, calle no encontrada para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:767
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:774
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:769
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:776
 #, python-format
 msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
 msgstr "El número de entrada %s ha fallado, código postal (C.P.) no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:884
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:890
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:886
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:892
 #, python-format
 msgid "The entry number %s has failed, the address type %s is not supported."
 msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de dirección %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:632
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:637
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:634
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:639
 #, python-format
 msgid "The entry number %s has failed, the bank line %s seems that it has already been sent through SUMA"
 msgstr "El número de entrada %s ha fallado, parece que la línea bancaria %s ya fue enviada a través de SUMA."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:686
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:691
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1329
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1335
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:688
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:693
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1334
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1340
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
 msgstr "El número de entrada %s ha fallado, nombre no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:957
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:963
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:961
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:967
 #, python-format
 msgid "The entry number %s has failed, the format type %s is not supported."
 msgstr "El número de entrada %s ha fallado, el programa no soporta el tipo de formato %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1314
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1320
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1319
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:1325
 #, python-format
 msgid "The entry number %s has failed, the lastname for partner %s not found."
 msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio/empresa %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:672
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:677
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:674
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:679
 #, python-format
 msgid "The entry number %s has failed, the lastnamefor partner %s not found."
 msgstr "El número de entrada %s ha fallado, apellido no encontrado para el socio %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:974
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:981
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:978
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:985
 #, python-format
 msgid "The entry number %s has failed, the partner id not found for partner %s."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el ID para el socio %s."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:911
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:918
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:913
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:920
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
 msgstr "El número de entrada %s ha fallado, el NIF %s para el socio/empresa %s no es válido."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:926
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:932
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:928
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:934
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
 msgstr "El número de entrada %s ha fallado, NIF no encontrado para el socio/empresa %s."
@@ -1624,7 +1618,7 @@ msgstr "El período final depende de la periodicidad. Por ejemplo, primer semest
 "Vacío si la periodicidad es anual."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:497
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:499
 #, python-format
 msgid "The four-monthly periodicity only accepts the values 01 to 03, in both the initial and the final period."
 msgstr "La periodicidad cuatrimestral solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
@@ -1637,19 +1631,19 @@ msgstr "El período inicial depende de la periodicidad. Por ejemplo, primer seme
 "Vacío si la periodicidad es anual."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:479
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:481
 #, python-format
 msgid "The monthly periodicity only accepts the values 01 to 12, in both the initial and the final period."
 msgstr "La periodicidad mensual solo acepta los valores 01 a 12, tanto en el período inicial como en el final."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:505
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:507
 #, python-format
 msgid "The number of quarters only accepts the values 01 to  03, in both the initial and the final period."
 msgstr "El número de cuatrimestres solo acepta los valores 01 a 03, tanto en el período inicial como en el final."
 
 #. module: account_banking_debit_suma
-#: code:addons/account_banking_debit_suma/models/account_payment_order.py:470
+#: code:addons/account_banking_debit_suma/models/account_payment_order.py:472
 #, python-format
 msgid "The quarterly periodicity only accepts the values 01 to 04, in both the initial and the final period."
 msgstr "La periodicidad trimestral solo acepta los valores 01 a 04, tanto en el período inicial como en el final."

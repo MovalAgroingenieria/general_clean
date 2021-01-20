@@ -1008,51 +1008,9 @@ class AccountPaymentOrder(models.Model):
             else:
                 final_period = self.final_period
 
-            # Detail lines #
-            # Detail line 1 - Position [244-318] Length 75
-            # @INFO: It is filled with payment order description
-            if self.description:
-                line_detail_1 = self.description[:75].ljust(75)
-            else:
-                line_detail_1 = str(" " * 75)
-
-            # Detail line 2 - Position [319-393] Length 75
-            # @INFO: invoice number and total amount
-            # Detail line 3 - Position [394-468] Length 75
-            # @INFO: surface and surface unit
-            for l in line.payment_line_ids:
-                if line.name == l.bank_line_id.name:
-                    try:
-                        invoice = l.invoice_id
-                    except not invoice:
-                        invoice = False
-
-            # Detail line 2
-            if invoice:
-                num = invoice.number
-                # qty = invoice.quantity (invoice.line)
-                invoice_amount = invoice.residual
-                line_detail_2 = _("Invoice num: ") + num + ' ' + \
-                    _("Amount: ") + str(invoice_amount) + ' ' + \
-                    invoice.currency_id.name
-                line_detail_2 = line_detail_2[:75].ljust(75)
-
-                # Detail line 3
-                quantity = 0.0
-                if invoice.invoice_line_ids:
-                    unit = \
-                        invoice.invoice_line_ids[0].uom_id.display_name or ""
-                    for invoice_line in invoice.invoice_line_ids:
-                        if invoice_line.quantity:
-                            quantity += invoice_line.quantity
-                    line_detail_3 = _("Surface: ") + str(quantity) + ' ' + unit
-                    line_detail_3 = line_detail_3[:75].ljust(75)
-            else:
-                line_detail_2 = str(" " * 75)
-                line_detail_3 = str(" " * 75)
-
-            # Detail line 4 - Position [469-543] Length 75
-            line_detail_4 = str(" " * 75)
+            # Detail lines (hook). Return detail lines
+            line_detail_1, line_detail_2, line_detail_3, line_detail_4 = \
+                self.create_details_lines(self.description, line, invoice)
 
             # Blank space - Position [544-643] Length 100
             blank_space2 = str(" " * 100)
@@ -1206,6 +1164,49 @@ class AccountPaymentOrder(models.Model):
     def get_fixed_number(self, partner):
         fixed_number = str(partner.id).ljust(12)
         return fixed_number
+
+    def create_details_lines(self, description, line, invoice):
+        # Detail line 1 - Position [244-318] Length 75
+        # @INFO: It is filled with payment order description
+        if description:
+            line_detail_1 = description[:75].ljust(75)
+        else:
+            line_detail_1 = str(" " * 75)
+        # Detail line 2 - Position [319-393] Length 75
+        # @INFO: invoice number and total amount
+        # Detail line 3 - Position [394-468] Length 75
+        # @INFO: surface and surface unit
+        for l in line.payment_line_ids:
+            if line.name == l.bank_line_id.name:
+                try:
+                    invoice = l.invoice_id
+                except not invoice:
+                    invoice = False
+        # Detail line 2
+        if invoice:
+            num = invoice.number
+            # qty = invoice.quantity (invoice.line)
+            invoice_amount = invoice.residual
+            line_detail_2 = _("Invoice num: ") + num + ' ' + \
+                _("Amount: ") + str(invoice_amount) + ' ' + \
+                invoice.currency_id.name
+            line_detail_2 = line_detail_2[:75].ljust(75)
+            # Detail line 3
+            quantity = 0.0
+            if invoice.invoice_line_ids:
+                unit = \
+                    invoice.invoice_line_ids[0].uom_id.display_name or ""
+                for invoice_line in invoice.invoice_line_ids:
+                    if invoice_line.quantity:
+                        quantity += invoice_line.quantity
+                line_detail_3 = _("Surface: ") + str(quantity) + ' ' + unit
+                line_detail_3 = line_detail_3[:75].ljust(75)
+        else:
+            line_detail_2 = str(" " * 75)
+            line_detail_3 = str(" " * 75)
+        # Detail line 4 - Position [469-543] Length 75
+        line_detail_4 = str(" " * 75)
+        return line_detail_1, line_detail_2, line_detail_3, line_detail_4
 
     # Generate direct debit file
     @api.multi
