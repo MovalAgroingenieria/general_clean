@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import SUPERUSER_ID, api
 
+
 def post_init_hook(cr, registry):
     env = api.Environment(cr, SUPERUSER_ID, {})
+    env['ir.config_parameter'].set_param(
+        'partner_address_street_type.street_type_shown', 'long')
     company_country_code = False
     company_country_code = env['res.country'].search(
         [('code', '=', env.company.country_id.code)],
@@ -20,8 +23,9 @@ def post_init_hook(cr, registry):
         WHERE code = '{company_country_code}';"""
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass
+
 
 def uninstall_hook(cr, registry):
     # Remove street type from address format (all countries)
@@ -35,5 +39,5 @@ def uninstall_hook(cr, registry):
     """
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass

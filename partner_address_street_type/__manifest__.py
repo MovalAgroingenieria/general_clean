@@ -1,4 +1,4 @@
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -14,10 +14,10 @@
     ],
     "data": [
         "security/ir.model.access.csv",
-        "data/res_street_type_config_settings.xml",
-        "views/res_street_type_config_settings_view.xml",
+        "views/res_config_settings_view.xml",
         "views/res_street_type_views.xml",
         "views/res_partner_views.xml",
+        "views/res_street_type_menus.xml",
     ],
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",

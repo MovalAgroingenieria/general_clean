@@ -1,4 +1,5 @@
-# 2020 Moval Agroingeniería
+# -*- coding: utf-8 -*-
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -27,8 +28,8 @@ class ResPartner(models.Model):
         compute="_compute_street_type_shown")
 
     def _compute_street_type_shown(self):
-        config_type_shown = self.env['ir.default'].get(
-            'res.street.type.configuration', 'street_type_shown')
+        config_type_shown = self.env['ir.config_parameter'].sudo().get_param(
+            'partner_address_street_type.street_type_shown')
         for record in self:
             street_type_shown = ''
             if record.street_type_id:
@@ -50,8 +51,9 @@ class ResPartner(models.Model):
     @api.model
     def create(self, vals):
         if 'street_type_id' in vals:
-            config_type_shown = self.env['ir.default'].get(
-                'res.street.type.configuration', 'street_type_shown')
+            config_type_shown = \
+                self.env['ir.config_parameter'].sudo().get_param(
+                    'partner_address_street_type.street_type_shown')
             street_type_id = vals.get('street_type_id')
             street_type = self.env['res.street.type'].browse(street_type_id)
             if config_type_shown == 'long':
@@ -64,8 +66,9 @@ class ResPartner(models.Model):
 
     def write(self, vals):
         if 'street_type_id' in vals:
-            config_type_shown = self.env['ir.default'].get(
-                'res.street.type.configuration', 'street_type_shown')
+            config_type_shown = \
+                self.env['ir.config_parameter'].sudo().get_param(
+                    'partner_address_street_type.street_type_shown')
             street_type_id = vals.get('street_type_id')
             street_type = self.env['res.street.type'].browse(street_type_id)
             if config_type_shown == 'long':
