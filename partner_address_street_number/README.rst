@@ -12,8 +12,11 @@ Description
 This module add street number field to the partner address fields. By default
 the number is shown after street field in views. For printable documents, only
 the company country address format is altered. The number position can be
-changed for each country in "Sales/Configuration/Contacts/Localization/Countries".
+changed for each country in "/Sales/Configuration/Contacts/Localization/Countries".
 
+Note that if the "Partner Address Street Type" module is also installed, you can
+change the address format also in "/Contacts/Configuration/Street Type Management/Settings".
+This change only affects the address format of the company's country.
 
 Credits
 =======

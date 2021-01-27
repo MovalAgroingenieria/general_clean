@@ -21,7 +21,7 @@ def post_init_hook(cr, registry):
         WHERE code = '{company_country_code}';"""
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass
 
 
@@ -37,5 +37,5 @@ def uninstall_hook(cr, registry):
     """
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass

@@ -16,9 +16,8 @@ National Statistics Institute (INE).
 
 The Spanish cadastre accepts other languages besides the Castilian, which increases the list
 to more than 300 street types, so only some of them have been marked to appear on the list by
-default. The type of streets shown can be configured in /Contacts/Configuration/Street Type
-Management/Street types.
-
+default. You can adapt this list to your needs by configuring the street types shown in
+/Contacts/Configuration/Street Type Management/Street types.
 
 Credits
 =======

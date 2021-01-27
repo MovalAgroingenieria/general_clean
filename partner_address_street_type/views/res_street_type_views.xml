@@ -64,11 +64,4 @@
         <field name="search_view_id" ref="res_street_type_config_view_search"/>
     </record>
 
-    <menuitem
-        name="Street types"
-        id="street_type_menu"
-        parent="street_type_root_menu"
-        action="action_res_street_type_tree"
-        sequence="2"/>
-
 </odoo>
