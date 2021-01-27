@@ -116,8 +116,12 @@ class ResMunicipality(models.Model):
 
     def name_get(self):
         resp = []
+        add_province = \
+            self.env.context.get('municipality_with_province', False)
         for record in self:
-            name = record.alphanum_code + ' [' + record.cadastral_code + ']'
+            name = record.alphanum_code
+            if add_province:
+                name = name + ' (' + record.province_id.alphanum_code + ')'
             resp.append((record.id, name))
         return resp
 
@@ -139,7 +143,7 @@ class ResMunicipality(models.Model):
             'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
             'search_view_id': (search_view.id, search_view.name),
             'target': 'current',
-            'domain': [('id', 'in', current_municipality.place_ids.ids)],
+            'domain': [('municipality_id', '=', current_municipality.id)],
             'context': {'current_municipality_id': current_municipality.id, }
             }
         return act_window

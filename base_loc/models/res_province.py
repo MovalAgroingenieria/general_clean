@@ -113,7 +113,7 @@ class ResProvince(models.Model):
             'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
             'search_view_id': (search_view.id, search_view.name),
             'target': 'current',
-            'domain': [('id', 'in', current_province.municipality_ids.ids)],
+            'domain': [('province_id', '=', current_province.id)],
             'context': {'current_province_id': current_province.id, }
             }
         return act_window

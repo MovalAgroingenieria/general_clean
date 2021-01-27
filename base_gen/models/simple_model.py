@@ -59,7 +59,7 @@ class SimpleModel(models.AbstractModel):
         index=True,)
 
     name = fields.Char(
-        string='Code',
+        string='Code (name)',
         size=MAX_SIZE_NAME_FIELD,
         store=True,
         index=True,

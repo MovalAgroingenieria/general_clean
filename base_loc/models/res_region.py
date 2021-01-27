@@ -65,7 +65,7 @@ class ResRegion(models.Model):
             'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
             'search_view_id': (search_view.id, search_view.name),
             'target': 'current',
-            'domain': [('id', 'in', current_region.province_ids.ids)],
+            'domain': [('region_id', '=', current_region.id)],
             'context': {'current_region_id': current_region.id, }
             }
         return act_window

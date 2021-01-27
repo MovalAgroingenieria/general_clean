@@ -30,7 +30,8 @@
                                                          False)"/>
                         </group>
                         <group name="master_data_right">
-                            <field name="cadastral_code"/>
+                            <field name="cadastral_code"
+                                   class="text-info"/>
                         </group>
                     </group>
                     <group name="slave_data">
