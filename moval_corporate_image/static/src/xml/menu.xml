@@ -3,7 +3,7 @@
 
     <t t-name="AppsMenu" t-extend="AppsMenu" >
          <t t-jquery="i.fa-th-large" t-operation="replace">
-            <i class="fa fa-moval-logo" style="font-size:180%;padding-top:26%;padding-bottom:14%; margin-left:-16%;"/>
+            <i class="fa fa-2x fa-moval-logo" style="padding-top: 14%;"/>
          </t>
     </t>
 
