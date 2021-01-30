@@ -8,32 +8,21 @@ from odoo import models, fields, api, _
 class ResFileContainer(models.Model):
     _name = 'res.file.container'
     _description = "Container of Files"
+    _inherit = 'simple.model'
 
-    def _default_container_code(self):
-        resp = 0
-        file_containers = self.search(
-            [('container_code', '>', 0)], limit=1, order='container_code desc')
-        if len(file_containers) == 1:
-            resp = file_containers[0].container_code + 1
-        else:
-            resp = 1
-        return resp
+    _size_name = 50
+    _size_description = 100
+    _set_num_code = True
 
-    container_code = fields.Integer(
+    num_code = fields.Integer(
         string='Code',
-        default=_default_container_code,
         required=True,
         index=True)
 
-    name = fields.Char(
+    alphanum_code = fields.Char(
         string='Name',
-        size=100,
         required=True,
         index=True)
-
-    description = fields.Char(
-        string='Description',
-        size=255)
 
     location_id = fields.Many2one(
         string='Location',
@@ -51,9 +40,6 @@ class ResFileContainer(models.Model):
         comodel_name='res.file',
         inverse_name='container_id')
 
-    notes = fields.Html(
-        string='Notes')
-
     number_of_files = fields.Integer(
         string='Number of Files',
         store=True,
@@ -64,13 +50,6 @@ class ResFileContainer(models.Model):
         comodel_name='res.file.containertype',
         index=True,
         ondelete='restrict')
-
-    _sql_constraints = [
-        ('unique_container_code', 'UNIQUE (container_code)',
-         'Existing container code.'),
-        ('container_code_positive', 'CHECK (container_code > 0 )',
-         'The container code has to be positive.'),
-        ('unique_name', 'UNIQUE (name)', 'Existing container name.')]
 
     @api.depends('file_ids')
     def _compute_number_of_files(self):
@@ -100,35 +79,43 @@ class ResFileContainer(models.Model):
             return act_window
 
     def name_get(self):
-        result = []
+        resp = []
         for record in self:
-            name = record.name
-            if self.env.context.get('show_container_data', False):
-                if record.location_id:
-                    name += _(' [location: ') + record.location_id.name + ']'
-                if record.containertype_id:
-                    name += _(' [type: ') + record.containertype_id.name + ']'
-            result.append((record.id, name))
-        return result
+            name = record.alphanum_code
+            if self._set_num_code:
+                if record.num_code:
+                    name += ' [' + str(record.num_code) + ']'
+                if self.env.context.get('show_container_data', False):
+                    if record.location_id:
+                        name += _(' [location: ') + \
+                            record.location_id.alphanum_code + ']'
+                    if record.containertype_id:
+                        name += _(' [type: ') + \
+                            record.containertype_id.alphanum_code + ']'
+            resp.append((record.id, name))
+        return resp
 
 
 class ResFileContainerType(models.Model):
     _name = 'res.file.containertype'
     _description = "Type of containers"
+    _inherit = 'simple.model'
 
-    name = fields.Char(
+    _size_name = 50
+    _size_description = 100
+    _set_num_code = False
+
+    alphanum_code = fields.Char(
         string='Name',
-        size=100,
         required=True,
         index=True)
 
-    description = fields.Char(
-        string='Description',
-        size=255)
-
-    notes = fields.Html(
-        string='Notes')
-
-    _sql_constraints = [
-        ('unique_container_type', 'UNIQUE (name)',
-         'Existing container type.')]
+    def name_get(self):
+        resp = []
+        for record in self:
+            name = record.alphanum_code
+            if self._set_num_code:
+                if record.num_code:
+                    name += ' [' + str(record.num_code) + ']'
+            resp.append((record.id, name))
+        return resp

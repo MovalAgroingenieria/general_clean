@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <group name="master_data">
-                    <field name="name" style="width:200px"/>
-                    <field name="color"/>
+                    <field name="alphanum_code" style="width:200px;"/>
+                    <field name="color" style="width:40px"/>
                 </group>
                 <group name="slave_data">
                     <notebook name="slave_data_notebook">
@@ -26,7 +26,7 @@
         <field name="model">res.filetag</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="alphanum_code"/>
                 <field name="color"/>
             </tree>
         </field>
@@ -37,7 +37,7 @@
         <field name="model">res.filetag</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="alphanum_code"/>
             </search>
         </field>
     </record>
@@ -49,7 +49,7 @@
         <field name="view_id" ref="res_filetag_view_tree"/>
         <field name="search_view_id" ref="res_filetag_view_search"/>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
+            <p class="o_view_nocontent_smiling_face">
                 Click to add a new file tag
             </p>
         </field>

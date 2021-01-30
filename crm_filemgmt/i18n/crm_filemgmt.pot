@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 11:58+0000\n"
-"PO-Revision-Date: 2020-12-20 11:58+0000\n"
+"POT-Creation-Date: 2021-02-02 19:06+0000\n"
+"PO-Revision-Date: 2021-02-02 19:06+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,8 +31,8 @@ msgstr ""
 #: model:ir.model.fields,help:crm_filemgmt.field_res_file__color
 #: model:ir.model.fields,help:crm_filemgmt.field_res_filetag__color
 msgid ""
-"0:grey, 1:green, 2:yellow, 3:orange, 4:red, 5:purple, 6:blue, 7:cyan, "
-"8:light-green, 9:magenta"
+"0:no-color, 1:red, 2:orange, 3:yellow, 4:Cyan, 5:dark-purple, 6:pink, "
+"7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -51,6 +51,11 @@ msgid ""
 msgstr ""
 
 #. module: crm_filemgmt
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Prefix for Files code</span>"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
 msgid ""
 "<span class=\"o_stat_text\">\n"
@@ -60,38 +65,15 @@ msgid ""
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__unsplash_access_key
-msgid "Access Key"
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
+msgid ""
+"<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">C A"
+" N C E L L E D</span>"
 msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__message_needaction
 msgid "Action Needed"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__alias_domain
-msgid "Alias Domain"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_google_calendar
-msgid "Allow the users to synchronize their calendar  with Google Calendar"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_base_import
-msgid "Allow users to import data from CSV/XLS/XLSX/ODS files"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings__group_multi_currency
-msgid "Allows to work in a multi currency environment"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
-msgid "Apply"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -106,16 +88,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner__file_ids
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_users__file_ids
 msgid "Associated Files"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_voip
-msgid "Asterisk (VoIP)"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_google_drive
-msgid "Attach Google documents to any record"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -154,7 +126,6 @@ msgid "C A N C E L L E D"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Cancel"
 msgstr ""
@@ -191,7 +162,7 @@ msgid "Category"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__alphanum_code
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_category_view_form
 msgid "Category Name"
 msgstr ""
@@ -248,15 +219,28 @@ msgid "Closing date:"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__name
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__container_code
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__location_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__num_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__num_code
 msgid "Code"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_pad
-msgid "Collaborative Pads"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__name
+msgid "Code (name)"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__num_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__num_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__num_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__num_code
+msgid "Code (numeric value)"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -266,32 +250,17 @@ msgid "Color Index"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__company_id
-msgid "Company"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__company_informations
-msgid "Company Informations"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__company_name
-msgid "Company Name"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.configuration_menu
 msgid "Configuration"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_file_config_settings
+#: model:ir.model,name:crm_filemgmt.model_res_config_settings
 msgid "Configuration of File Management"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.actions.act_window,name:crm_filemgmt.filemgmt_configuration_action
+#: model:ir.actions.act_window,name:crm_filemgmt.action_res_config_settings_files
 msgid "Configure File Management"
 msgstr ""
 
@@ -327,7 +296,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__create_uid
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__create_uid
@@ -340,7 +308,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__create_date
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__create_date
@@ -351,28 +318,8 @@ msgid "Created on"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__report_footer
-msgid "Custom Report Footer"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__auth_signup_uninvited
-msgid "Customer Account"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
 msgid "Date:"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__user_default_rights
-msgid "Default Access Rights"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings__annual_seq_prefix
-msgid "Default Code for Files: <prefix>/<year>/num"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -381,9 +328,12 @@ msgid "Delete File"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__description
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__description
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__description
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__description
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__description
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__description
 msgid "Description"
 msgstr ""
 
@@ -396,7 +346,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__display_name
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__display_name
@@ -407,14 +356,14 @@ msgid "Display Name"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__external_report_layout_id
-msgid "Document Template"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields.selection,name:crm_filemgmt.selection__res_file__state__01_draft
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Draft"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
+msgid "Dropdown menu"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -423,58 +372,8 @@ msgid "Edit File"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__auth_signup_reset_password
-msgid "Enable password reset from Login page"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_category_unique_name
-msgid "Existing category name."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_container_unique_container_code
-msgid "Existing container code."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_container_unique_name
-msgid "Existing container name."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_containertype_unique_container_type
-msgid "Existing container type."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_unique_name
-msgid "Existing file code."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_location_unique_location_code
-msgid "Existing location code."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_location_unique_name
-msgid "Existing location name."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__external_email_server_default
-msgid "External Email Servers"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:res.file.category,name:crm_filemgmt.resfilecategory_external_file
+#: model:res.file.category,alphanum_code:crm_filemgmt.resfilecategory_external_file
 msgid "External Files"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__fail_counter
-msgid "Fail Mail"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -511,13 +410,8 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.module.category,name:crm_filemgmt.module_category
 #: model:ir.ui.menu,name:crm_filemgmt.filemgmt_menu
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 msgid "File Management"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
-msgid "File Management Settings"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -527,7 +421,7 @@ msgid "File Partnerlinks"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__alphanum_code
 msgid "File Tag"
 msgstr ""
 
@@ -541,6 +435,11 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__file_attachment_ids
 msgid "File attachments"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_file_filelink
+msgid "File filelinks"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -558,7 +457,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__number_of_containers
 #: model:ir.ui.menu,name:crm_filemgmt.files_menu
 #: model:ir.ui.menu,name:crm_filemgmt.main_menu
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_calendar
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 #, python-format
 msgid "Files"
 msgstr ""
@@ -579,18 +480,12 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings__report_footer
-msgid "Footer text displayed at the bottom of all reports."
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_base_geolocalize
-msgid "GeoLocalize"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_google_spreadsheet
-msgid "Google Spreadsheet"
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
+msgid ""
+"Format: <b>prefix-year/4-digit-number</b><br/>\n"
+"                                  Prefix maximum size: 10 characters.<br/>\n"
+"                                  A hyphen (-) separator is added after the prefix.<br/>\n"
+"                                  Example: FILE --&gt; FILE-2021/0001"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -602,7 +497,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__id
@@ -629,20 +523,13 @@ msgid "If checked, this partner will be the primary"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings__alias_domain
-msgid ""
-"If you have setup a catch-all email domain redirected to the Odoo server, "
-"enter the domain name here."
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields.selection,name:crm_filemgmt.selection__res_file__state__02_inprogress
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "In progress"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:res.file.category,name:crm_filemgmt.resfilecategory_internal_file
+#: model:res.file.category,alphanum_code:crm_filemgmt.resfilecategory_internal_file
 msgid "Internal Files"
 msgstr ""
 
@@ -658,14 +545,8 @@ msgid "It is mandatory to check the primary partner."
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_auth_ldap
-msgid "LDAP Authentication"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file____last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category____last_update
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings____last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container____last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype____last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink____last_update
@@ -678,7 +559,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__write_uid
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__write_uid
@@ -691,7 +571,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__write_date
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__write_date
@@ -728,11 +607,6 @@ msgid "Main Attachment"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_inter_company_rules
-msgid "Manage Inter Company"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:res.groups,name:crm_filemgmt.group_file_manager
 msgid "Manager"
 msgstr ""
@@ -748,14 +622,9 @@ msgid "Messages"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__group_multi_currency
-msgid "Multi-Currencies"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__name
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__name
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__alphanum_code
 msgid "Name"
 msgstr ""
 
@@ -787,23 +656,8 @@ msgid "Number of Actions"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__active_user_count
-msgid "Number of Active Users"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__company_count
-msgid "Number of Companies"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__number_of_files
 msgid "Number of Files"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__language_count
-msgid "Number of Languages"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -833,11 +687,6 @@ msgid "Only one primary partner is allowed."
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__paperformat_id
-msgid "Paper format"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.parameters_menu
 msgid "Parameters"
 msgstr ""
@@ -852,11 +701,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink__partner_id
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_partner_autocomplete
-msgid "Partner Autocomplete"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -877,7 +721,12 @@ msgid "Photo / Image"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__annual_seq_prefix
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
+msgid "Prefix"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_config_settings__annual_seq_prefix
 msgid "Prefix (annual seq.)"
 msgstr ""
 
@@ -904,11 +753,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Revert"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__show_effect
-msgid "Show Effect"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -946,16 +790,6 @@ msgid "Tags for files"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__auth_signup_template_user_id
-msgid "Template user for new users created through signup"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_container_container_code_positive
-msgid "The container code has to be positive."
-msgstr ""
-
-#. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file.py:0
 #, python-format
 msgid "The file cannot be self-referenced."
@@ -970,12 +804,15 @@ msgstr ""
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file.py:0
 #, python-format
-msgid "The file number must be an integer."
+msgid ""
+"The file number must have an integer the same length as the size of the "
+"annual sequence %s digits."
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.constraint,message:crm_filemgmt.constraint_res_file_location_location_code_positive
-msgid "The location code has to be positive."
+#: code:addons/crm_filemgmt/models/res_file.py:0
+#, python-format
+msgid "The prefix for the file names has not been set."
 msgstr ""
 
 #. module: crm_filemgmt
@@ -1010,11 +847,6 @@ msgid "There cannot be more than one slash in the name of the file."
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_base_gengo
-msgid "Translate Your Website with Gengo"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__containertype_id
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_search
 msgid "Type"
@@ -1041,16 +873,6 @@ msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_web_unsplash
-msgid "Unsplash Image Library"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings__module_auth_oauth
-msgid "Use external authentication providers (OAuth)"
-msgstr ""
-
-#. module: crm_filemgmt
 #: model:res.groups,name:crm_filemgmt.group_file_user
 msgid "User"
 msgstr ""
@@ -1064,9 +886,4 @@ msgstr ""
 #: code:addons/crm_filemgmt/models/res_file.py:0
 #, python-format
 msgid "[no subject]"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_file_filelink
-msgid "res.file.filelink"
 msgstr ""

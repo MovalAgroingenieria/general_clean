@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, exceptions, _
@@ -10,19 +10,26 @@ class ResFile(models.Model):
     """A register class to log all movements regarding files"""
     _name = 'res.file'
     _description = "Log of Files Movements"
-    _inherit = ['mail.thread',]
+    _inherit = ['mail.thread', 'simple.model']
+
+    _size_name = 50
+    _size_description = 100
+    _set_num_code = False
 
     SIZE_ANNUALSEQ_CODE = 4
 
-    def _default_file_code(self):
+    def _default_alphanum_code(self):
         current_year = datetime.datetime.now().year
         prefix = ''
-        annual_seq_prefix = self.env['ir.default'].get(
-            'res.file.config.settings', 'annual_seq_prefix')
+        annual_seq_prefix = self.env['ir.config_parameter'].sudo().get_param(
+            'crm_filemgmt.annual_seq_prefix')
         if annual_seq_prefix:
             annual_seq_prefix = annual_seq_prefix.strip()
             if annual_seq_prefix != '':
                 prefix = annual_seq_prefix
+        else:
+            raise exceptions.UserError(
+                _('The prefix for the file names has not been set.'))
         if prefix != '':
             prefix = prefix + '-'
         full_prefix = prefix + str(current_year).zfill(4) + '/'
@@ -52,10 +59,9 @@ class ResFile(models.Model):
             resp = proposed_category.id
         return resp
 
-    name = fields.Char(
+    alphanum_code = fields.Char(
         string='Code',
-        size=30,
-        default=_default_file_code,
+        default=_default_alphanum_code,
         required=True,
         index=True)
 
@@ -103,9 +109,6 @@ class ResFile(models.Model):
         default=False,
         track_visibility='onchange')
 
-    notes = fields.Html(
-        string='Notes')
-
     category_id = fields.Many2one(
         string='Category',
         comodel_name='res.file.category',
@@ -133,20 +136,11 @@ class ResFile(models.Model):
         comodel_name='res.file.filelink',
         inverse_name='file_id')
 
-#     file_res_letter_ids = fields.One2many(
-#         string='File registry',
-#         comodel_name='res.letter',
-#         inverse_name='file_id')
-# 
-#     number_of_file_registers = fields.Integer(
-#         string='Num. file registers',
-#         compute='_compute_number_of_file_registers')
-
     color = fields.Integer(
         string='Color Index',
         default="0",
-        help='0:grey, 1:green, 2:yellow, 3:orange, 4:red, 5:purple, 6:blue, '
-             '7:cyan, 8:light-green, 9:magenta')
+        help='0:no-color, 1:red, 2:orange, 3:yellow, 4:Cyan, 5:dark-purple, '
+             '6:pink, 7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple')
 
     closing_date = fields.Date(
         string='Closing date',
@@ -161,12 +155,6 @@ class ResFile(models.Model):
         string="File attachments",
         comodel_name="ir.attachment",
         compute="_compute_attachments_ids")
-
-    _sql_constraints = [
-        ('unique_name',
-         'UNIQUE (name)',
-         'Existing file code.'),
-        ]
 
     def action_validate_file(self):
         self.ensure_one()
@@ -203,34 +191,13 @@ class ResFile(models.Model):
         self.ensure_one()
         self.state = '02_inprogress'
 
-#     def action_get_file_registers(self):
-#         self.ensure_one()
-#         if self.file_res_letter_ids:
-#             id_tree_view = self.env.ref('crm_lettermgmt.'
-#                                         'res_letter_tree_o2m_view').id
-#             id_form_view = self.env.ref('crm_lettermgmt.'
-#                                         'res_letter_form_view').id
-#             search_view = self.env.ref('crm_lettermgmt.res_letter_filter')
-#             act_window = {
-#                 'type': 'ir.actions.act_window',
-#                 'name': _('File registers'),
-#                 'res_model': 'res.letter',
-#                 'view_mode': 'tree',
-#                 'views': [(id_tree_view, 'tree'),
-#                           (id_form_view, 'form')],
-#                 'search_view_id': (search_view.id, search_view.name),
-#                 'target': 'current',
-#                 'domain': [('id', 'in', self.file_res_letter_ids.ids)],
-#                 }
-#             return act_window
-
     def name_get(self):
         result = []
         for record in self:
             if record.subject:
-                name = record.name + ' ' + '[' + record.subject + ']'
+                name = record.alphanum_code + ' ' + '[' + record.subject + ']'
             else:
-                name = record.name + ' ' + _('[no subject]')
+                name = record.alphanum_code + ' ' + _('[no subject]')
             result.append((record.id, name))
         return result
 
@@ -248,16 +215,6 @@ class ResFile(models.Model):
                     break
             record.partner_id = partner_id
 
-#     @api.depends('file_res_letter_ids')
-#     def _compute_number_of_file_registers(self):
-#         for record in self:
-#             number_of_file_registers = 0
-#             file_registers = self.env['res.letter'].search(
-#                 [('file_id', '=', record.id)])
-#             if file_registers:
-#                 number_of_file_registers = len(file_registers)
-#             record.number_of_file_registers = number_of_file_registers
-
     @api.depends('state')
     def _compute_closing_date(self):
         for record in self:
@@ -266,12 +223,13 @@ class ResFile(models.Model):
             else:
                 record.closing_date = False
 
-    @api.model
-    def create(self, vals):
-        if 'name' in vals:
-            current_file_name = vals['name']
-            annual_seq_prefix = self.env['ir.default'].get(
-                'res.file.config.settings', 'annual_seq_prefix')
+    def _process_vals(self, vals):
+        vals = super(ResFile, self)._process_vals(vals)
+        if 'alphanum_code' in vals:
+            current_file_name = vals['alphanum_code']
+            annual_seq_prefix = \
+                self.env['ir.config_parameter'].sudo().get_param(
+                    'crm_filemgmt.annual_seq_prefix')
             if annual_seq_prefix:
                 after_prefix = \
                     current_file_name[len(annual_seq_prefix):]
@@ -294,12 +252,13 @@ class ResFile(models.Model):
                         _('There cannot be more than one slash in the name of '
                           'the file.'))
                 try:
-                    file_number = int(current_file_name.split('/')[1])
+                    file_number = int(current_file_name.split('/')[1].strip())
                 except Exception:
                     raise exceptions.UserError(
-                        _('The file number must be an integer.'))
-        new_file = super(ResFile, self).create(vals)
-        return new_file
+                        _('The file number must have an integer the same '
+                          'length as the size of the annual sequence '
+                          '%s digits.') % self.SIZE_ANNUALSEQ_CODE)
+        return vals
 
     @api.constrains('partnerlink_ids')
     def _check_partnerlink_ids(self):
@@ -380,6 +339,7 @@ class ResFilePartnerlink(models.Model):
 
 class ResFileFilelink(models.Model):
     _name = 'res.file.filelink'
+    _description = 'File filelinks'
 
     file_id = fields.Many2one(
         string='File',
@@ -397,4 +357,3 @@ class ResFileFilelink(models.Model):
     related_file_subject = fields.Char(
         string='Subject',
         related='related_file_id.subject')
-

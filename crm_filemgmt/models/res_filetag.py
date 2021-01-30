@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields
@@ -8,16 +8,20 @@ from odoo import models, fields
 class ResFiletag(models.Model):
     _name = 'res.filetag'
     _description = 'Tags for files'
+    _inherit = 'simple.model'
 
-    name = fields.Char(
+    _size_name = 30
+    _set_num_code = False
+    _set_alphanum_code_to_lowercase = False
+    _set_alphanum_code_to_uppercase = False
+
+    alphanum_code = fields.Char(
         string='File Tag',
-        size=25,
-        translate=True)
+        required=True,
+        translate=True,)
 
     color = fields.Integer(
+        size=2,
         string='Color Index',
-        help='0:grey, 1:green, 2:yellow, 3:orange, 4:red, 5:purple, 6:blue, '
-             '7:cyan, 8:light-green, 9:magenta')
-
-    notes = fields.Html(
-        string="Notes")
+        help='0:no-color, 1:red, 2:orange, 3:yellow, 4:Cyan, 5:dark-purple, '
+             '6:pink, 7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple')

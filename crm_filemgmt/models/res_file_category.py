@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, exceptions, _
@@ -8,10 +8,15 @@ from odoo import models, fields, api, exceptions, _
 class ResFileCategory(models.Model):
     _name = 'res.file.category'
     _description = "Categories of Files"
+    _inherit = 'simple.model'
 
-    name = fields.Char(
+    _size_name = 50
+    _set_num_code = False
+    _set_alphanum_code_to_lowercase = False
+    _set_alphanum_code_to_uppercase = False
+
+    alphanum_code = fields.Char(
         string='Category Name',
-        size=50,
         required=True,
         translate=True,
         index=True)
@@ -24,9 +29,6 @@ class ResFileCategory(models.Model):
         string='Parent Category',
         comodel_name='res.file.category')
 
-    notes = fields.Html(
-        string='Notes')
-
     file_ids = fields.One2many(
         string='Associated Files',
         comodel_name='res.file',
@@ -36,12 +38,6 @@ class ResFileCategory(models.Model):
         string='Files',
         store=True,
         compute='_compute_number_of_files')
-
-    _sql_constraints = [
-        ('unique_name',
-         'UNIQUE (name)',
-         'Existing category name.'),
-        ]
 
     def unlink(self):
         for record in self:
@@ -56,6 +52,16 @@ class ResFileCategory(models.Model):
         for record in self:
             if record.file_ids:
                 record.number_of_files = len(record.file_ids)
+
+    def name_get(self):
+        resp = []
+        for record in self:
+            name = record.alphanum_code
+            if self._set_num_code:
+                if record.num_code:
+                    name += ' [' + str(record.num_code) + ']'
+            resp.append((record.id, name))
+        return resp
 
     def action_get_files(self):
         self.ensure_one()

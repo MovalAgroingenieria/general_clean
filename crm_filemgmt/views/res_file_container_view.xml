@@ -25,12 +25,12 @@
                         <group name="master_data_image" colspan="3">
                             <field name="image" widget="image"/>
                         </group>
-                        <group name="master_data_fields" colspan="6" col="4">
-                            <field name="container_code"/>
-                            <field name="name"/>
-                            <field name="location_id"/>
-                            <field name="containertype_id"/>
-                            <field name="description" colspan="4"/>
+                        <group name="master_data_fields" colspan="9" col="9">
+                            <field name="num_code" colspan="4"/>
+                            <field name="alphanum_code" colspan="4"/>
+                            <field name="location_id" colspan="4"/>
+                            <field name="containertype_id" colspan="4"/>
+                            <field name="description" colspan="6"/>
                         </group>
                     </group>
                     <group name="slave_data">
@@ -49,13 +49,13 @@
         <field name="name">Files Container (tree view)</field>
         <field name="model">res.file.container</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_container_view_tree">
-                <field name="image" widget="image" invisible="1"/>
-                <field name="container_code"/>
-                <field name="location_id"/>
-                <field name="containertype_id"/>
-                <field name="name"/>
-                <field name="description"/>
+            <tree class="o_res_file_container">
+                <field name="image" widget="image" optional="hide" class="align-middle o_res_file_container_image"/>
+                <field name="num_code" class="align-middle o_res_file_container_num_code"/>
+                <field name="location_id" class="align-middle"/>
+                <field name="containertype_id" class="align-middle"/>
+                <field name="alphanum_code" class="align-middle"/>
+                <field name="description" class="align-middle" optional="show"/>
             </tree>
         </field>
     </record>
@@ -64,12 +64,12 @@
         <field name="name">Files Container (tree related view)</field>
         <field name="model">res.file.container</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_container_view_tree">
-                <field name="image" widget="image" invisible="1"/>
-                <field name="container_code"/>
-                <field name="containertype_id"/>
-                <field name="name"/>
-                <field name="description"/>
+            <tree class="o_res_file_container">
+                <field name="image" widget="image" optional="hide" class="align-middle o_res_file_container_image"/>
+                <field name="num_code" class="align-middle o_res_file_container_container_code"/>
+                <field name="containertype_id" class="align-middle"/>
+                <field name="alphanum_code" class="align-middle"/>
+                <field name="description" class="align-middle" optional="show"/>
             </tree>
         </field>
     </record>
@@ -79,8 +79,8 @@
         <field name="model">res.file.container</field>
         <field name="arch" type="xml">
             <search>
-                <field name="container_code"/>
-                <field name="name"/>
+                <field name="num_code"/>
+                <field name="alphanum_code"/>
                 <field name="containertype_id"/>
                 <group expand="0" string="Group By">
                     <filter string="Location" name="groupby_location" context="{'group_by':'location_id'}"/>
@@ -102,7 +102,7 @@
                         'view_id': ref('res_file_container_view_form')})]"/>
         <field name="search_view_id" ref="res_file_container_view_search"/>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
+            <p class="o_view_nocontent_smiling_face">
                 Click to add a new file container
             </p>
         </field>
@@ -116,7 +116,7 @@
                 <sheet>
                     <group name="master_data">
                         <group name="master_data_image" colspan="3">
-                            <field name="name"/>
+                            <field name="alphanum_code"/>
                             <field name="description"/>
                         </group>
                     </group>
@@ -137,7 +137,7 @@
         <field name="model">res.file.containertype</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="alphanum_code"/>
                 <field name="description"/>
             </tree>
         </field>
@@ -148,7 +148,7 @@
         <field name="model">res.file.containertype</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="alphanum_code"/>
                 <field name="description"/>
             </search>
         </field>
@@ -166,7 +166,7 @@
                         'view_id': ref('res_file_containertype_view_form')})]"/>
         <field name="search_view_id" ref="res_file_containertype_view_search"/>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
+            <p class="o_view_nocontent_smiling_face">
                 Click to add a new container type
             </p>
         </field>

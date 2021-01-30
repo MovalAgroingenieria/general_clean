@@ -4,13 +4,13 @@
 
         <record id="resfilecategory_internal_file"
                 model="res.file.category" forcecreate="False">
-            <field name="name">Internal Files</field>
+            <field name="alphanum_code">Internal Files</field>
             <field name="is_readonly">True</field>
         </record>
 
         <record id="resfilecategory_external_file"
                 model="res.file.category" forcecreate="False">
-            <field name="name">External Files</field>
+            <field name="alphanum_code">External Files</field>
             <field name="is_readonly">True</field>
         </record>
 

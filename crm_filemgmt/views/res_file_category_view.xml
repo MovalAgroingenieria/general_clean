@@ -25,7 +25,7 @@
                     <div class="oe_title">
                         <label class="oe_edit_only" for="name" string="Category Name"/>
                         <h1>
-                            <field name="name" placeholder="Category Name"
+                            <field name="alphanum_code" placeholder="Category Name"
                                    attrs="{'readonly': [('is_readonly','=',True)]}"/>
                         </h1>
                         <field name="parent_id" attrs="{'readonly': [('is_readonly','=',True)]}"/>
@@ -48,9 +48,9 @@
         <field name="name">File Category (tree view)</field>
         <field name="model">res.file.category</field>
         <field name="arch" type="xml">
-            <tree class="res_file_category_view_tree">
-                <field name="name"/>
-                <field name="number_of_files"/>
+            <tree class="res_file_category">
+                <field name="alphanum_code" class="align-middle"/>
+                <field name="number_of_files" class="align-middle res_file_category_number_of_files"/>
             </tree>
         </field>
     </record>
@@ -60,7 +60,7 @@
         <field name="model">res.file.category</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
+                <field name="alphanum_code"/>
             </search>
         </field>
     </record>
@@ -77,7 +77,7 @@
                         'view_id': ref('res_file_category_view_form')})]"/>
         <field name="search_view_id" ref="res_file_category_view_search"/>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create">
+             <p class="o_view_nocontent_smiling_face">
                 Click to add a new file category
             </p>
         </field>

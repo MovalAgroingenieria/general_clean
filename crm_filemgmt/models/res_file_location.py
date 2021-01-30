@@ -8,32 +8,21 @@ from odoo import models, fields, api, _
 class ResFileLocation(models.Model):
     _name = 'res.file.location'
     _description = "Locations of Files"
+    _inherit = 'simple.model'
 
-    def _default_location_code(self):
-        resp = 0
-        file_locations = self.search(
-            [('location_code', '>', 0)], limit=1, order='location_code desc')
-        if len(file_locations) == 1:
-            resp = file_locations[0].location_code + 1
-        else:
-            resp = 1
-        return resp
+    _size_name = 50
+    _size_description = 100
+    _set_num_code = True
 
-    location_code = fields.Integer(
+    num_code = fields.Integer(
         string='Code',
-        default=_default_location_code,
         required=True,
-        index=True)
+        index=True,)
 
-    name = fields.Char(
+    alphanum_code = fields.Char(
         string='Name',
-        size=100,
         required=True,
         index=True)
-
-    description = fields.Char(
-        string='Description',
-        size=255)
 
     location_id = fields.Many2one(
         string='Site',
@@ -49,26 +38,26 @@ class ResFileLocation(models.Model):
         comodel_name='res.file.container',
         inverse_name='location_id')
 
-    notes = fields.Html(
-        string='Notes')
-
     number_of_containers = fields.Integer(
         string='Files',
         store=True,
         compute='_compute_number_of_containers')
-
-    _sql_constraints = [
-        ('unique_location_code', 'UNIQUE (location_code)',
-         'Existing location code.'),
-        ('location_code_positive', 'CHECK (location_code > 0 )',
-         'The location code has to be positive.'),
-        ('unique_name', 'UNIQUE (name)', 'Existing location name.')]
 
     @api.depends('container_ids')
     def _compute_number_of_containers(self):
         for record in self:
             if record.container_ids:
                 record.number_of_containers = len(record.container_ids)
+
+    def name_get(self):
+        resp = []
+        for record in self:
+            name = record.alphanum_code
+            if self._set_num_code:
+                if record.num_code:
+                    name += ' [' + str(record.num_code) + ']'
+            resp.append((record.id, name))
+        return resp
 
     def action_get_containers(self):
         self.ensure_one()
