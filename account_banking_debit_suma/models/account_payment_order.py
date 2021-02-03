@@ -1260,14 +1260,18 @@ class AccountPaymentOrder(models.Model):
             #        to Domiciliacion. The account number is the number of the
             #        mandate_id associated to it.
             for l in line.payment_line_ids:
+                moveline_mandate_id = ""
                 try:
                     if line.name == l.bank_line_id.name \
                             and l.move_line_id.mandate_id \
                             and l.move_line_id.payment_mode_id:
-                        iban = \
-                            l.mandate_id.partner_bank_id.sanitized_acc_number
-                        bic = l.mandate_id.partner_bank_id.bank_bic
-                        moveline_mandate_id = l.move_line_id.mandate_id
+                        payment_mode = \
+                            l.move_line_id.payment_mode_id.name
+                        if 'bancaria' in payment_mode:
+                            iban = \
+                                l.mandate_id.partner_bank_id.sanitized_acc_number
+                            bic = l.mandate_id.partner_bank_id.bank_bic
+                            moveline_mandate_id = l.move_line_id.mandate_id
                 except:
                     bic = ""
                     moveline_mandate_id = ""
