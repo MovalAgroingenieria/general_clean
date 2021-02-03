@@ -1006,10 +1006,10 @@ class AccountPaymentOrder(models.Model):
                                             % (entry_num_padded,
                                                line.amount_currency)))
             else:
-                # Show always two decimal position
+                # Show always two decimal position but no separator
                 amount_to_voluntary_date = "%0.2f" % (line.amount_currency,)
                 amount_to_voluntary_date_padded = \
-                    str(amount_to_voluntary_date).zfill(13).replace('.', ',')
+                    str(amount_to_voluntary_date).replace('.', '').zfill(13)
 
             # Sum amount to total_amount (for header)
             total_amount += line.amount_currency
@@ -1240,8 +1240,8 @@ class AccountPaymentOrder(models.Model):
             bank_lines += bank_line
 
         # Construct header (wait until to have the total amount)
-        # Change decimal point by comma total_amount
-        total_amount_padded = str(total_amount).zfill(13).replace('.', ',')
+        # Do not show decimal separator
+        total_amount_padded = str(total_amount).replace('.', '').zfill(13)
 
         # Set atrm_total_amount for ATRM resume
         self.atrm_total_amount = total_amount
@@ -1258,7 +1258,7 @@ class AccountPaymentOrder(models.Model):
                   % (str(len(agency_code)).zfill(3), agency_code))
         _log.info('HEADER FIELD Num of settlements   (length %s [009]): %s'
                   % (str(len(num_settlements)).zfill(3), num_settlements))
-        _log.info('HEADER FIELD Total amount         (length %s [006]): %s'
+        _log.info('HEADER FIELD Total amount         (length %s [013]): %s'
                   % (str(len(total_amount_padded)).zfill(3),
                      total_amount_padded))
         _log.info('HEADER FIELD Blank spaces 1       (length %s [025]): %s'
