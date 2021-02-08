@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
 
         <record id="l10n_es_aeat_mod347.aeat_mod347_map_a" model="l10n.es.aeat.map.tax.line">
             <field name="map_parent_id" ref="l10n_es_aeat_mod347.aeat_mod347_map"/>
