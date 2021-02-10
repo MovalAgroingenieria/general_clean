@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
 
-    <template id="assets_backend" name="static_resources_crm_filemgmt" inherit_id="web.assets_backend">
+    <template id="assets_backend" name="static_resources_crm_filemgmt"
+        inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" href="/crm_filemgmt/static/src/css/crm_filemgmt.css"/>
         </xpath>
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css"/>
+            <link rel="stylesheet" type="text/css"
+                href="/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css"/>
+        </xpath>
+    </template>
+
+    <template id="report_assets_common_filemgmt" name="crm_filemgmt iconset"
+        inherit_id="web.report_assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css"/>
         </xpath>
     </template>
 
