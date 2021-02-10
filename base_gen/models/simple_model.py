@@ -31,6 +31,20 @@ class SimpleModel(models.AbstractModel):
     # If the code is an alphanumeric value, convert it to uppercase?
     _set_alphanum_code_to_uppercase = False
 
+    # Name of a possible sequence to generate alphanumeric codes (parameter,
+    # registered in "ir.config.parameter").
+    _sequence_for_codes = ''
+
+    def _default_alphanum_code(self):
+        resp = ''
+        if self._sequence_for_codes:
+            sequence = self._get_sequence(self._sequence_for_codes)
+            if sequence:
+                number_next_actual = \
+                    sequence._get_current_sequence().number_next_actual
+                resp = sequence.get_next_char(number_next_actual)
+        return resp
+
     def _default_num_code(self):
         resp = 0
         if self._set_num_code:
@@ -46,6 +60,7 @@ class SimpleModel(models.AbstractModel):
     alphanum_code = fields.Char(
         string='Code (alphanumeric value)',
         size=MAX_SIZE_NAME_FIELD,
+        default=_default_alphanum_code,
         index=True,)
 
     num_code = fields.Integer(
@@ -115,12 +130,26 @@ class SimpleModel(models.AbstractModel):
 
     @api.model_create_multi
     def create(self, vals_list):
+        value_to_add_to_sequence = 0
+        sequence = None
+        if self._sequence_for_codes:
+            sequence = self._get_sequence(self._sequence_for_codes)
         for vals in vals_list:
             if 'alphanum_code' in vals and vals['alphanum_code']:
-                original_alphanum_code = vals['alphanum_code']
-                final_alphanum_code = self._process_alphanum_code(
-                    original_alphanum_code)
-                vals['alphanum_code'] = final_alphanum_code
+                if sequence:
+                    number_next_actual = \
+                        sequence._get_current_sequence().number_next_actual
+                    next_code = sequence.get_next_char(number_next_actual)
+                    if next_code == vals['alphanum_code']:
+                        sequence.next_by_id()
+                else:
+                    original_alphanum_code = vals['alphanum_code']
+                    final_alphanum_code = self._process_alphanum_code(
+                        original_alphanum_code)
+                    vals['alphanum_code'] = final_alphanum_code
+            else:  # if "alphanum_code" is read-only, then it is not in vals
+                if sequence:
+                    value_to_add_to_sequence = value_to_add_to_sequence + 1
             if 'description' in vals and vals['description']:
                 original_description = vals['description']
                 final_description = self._process_description(
@@ -128,6 +157,11 @@ class SimpleModel(models.AbstractModel):
                 vals['description'] = final_description
             vals = self._process_vals(vals)
         records = super(SimpleModel, self).create(vals_list)
+        if value_to_add_to_sequence > 0 and sequence:
+            i = 0
+            while i < value_to_add_to_sequence:
+                sequence.next_by_id()
+                i = i + 1
         return records
 
     def write(self, vals):
@@ -143,6 +177,19 @@ class SimpleModel(models.AbstractModel):
             vals['description'] = final_description
         vals = self._process_vals(vals)
         resp = super(SimpleModel, self).write(vals)
+        return resp
+
+    def _get_sequence(self, param_name):
+        resp = None
+        sequence_id = \
+            self.env['ir.config_parameter'].sudo().get_param(param_name)
+        if sequence_id:
+            sequence_id = int(sequence_id) if sequence_id.isdigit() else 0
+            if sequence_id > 0:
+                resp = self.env['ir.sequence'].search(
+                    [('id', '=', sequence_id)])
+                if resp:
+                    resp = resp[0]
         return resp
 
     def _process_alphanum_code(self, value):
