@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, _
+from odoo import models, fields, _
 
 
 class ResPartner(models.Model):
@@ -11,11 +11,11 @@ class ResPartner(models.Model):
     file_ids = fields.One2many(
         string='Associated Files',
         comodel_name='res.file.partnerlink',
-        inverse_name='partner_id')
+        inverse_name='partner_id',)
 
     number_of_files = fields.Integer(
         string='Num. of files',
-        compute='_compute_number_of_files')
+        compute='_compute_number_of_files',)
 
     def _compute_number_of_files(self):
         for record in self:

@@ -83,10 +83,10 @@
         </field>
     </record>
 
-    <menuitem id="file_category_menu"
+    <menuitem id="menu_file_category"
               name="Categories"
-              parent="configuration_menu"
-              sequence="2"
+              parent="menu_configuration"
+              sequence="20"
               action="res_file_category_action"/>
 
 </odoo>

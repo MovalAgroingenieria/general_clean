@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, _
@@ -10,46 +10,45 @@ class ResFileContainer(models.Model):
     _description = "Container of Files"
     _inherit = 'simple.model'
 
-    _size_name = 50
+    _size_name = 6
     _size_description = 100
     _set_num_code = True
 
     num_code = fields.Integer(
         string='Code',
-        required=True,
-        index=True)
+        required=True,)
 
-    alphanum_code = fields.Char(
+    long_name = fields.Char(
         string='Name',
+        size=100,
         required=True,
-        index=True)
+        index=True,)
 
     location_id = fields.Many2one(
         string='Location',
         comodel_name='res.file.location',
         required=True,
         index=True,
-        ondelete='restrict')
+        ondelete='restrict',)
 
-    image = fields.Binary(
-        string='Photo / Image',
-        attachment=True)
+    image = fields.Image(
+        string='Photo / Image',)
 
     file_ids = fields.One2many(
         string='Files',
         comodel_name='res.file',
-        inverse_name='container_id')
+        inverse_name='container_id',)
 
     number_of_files = fields.Integer(
         string='Number of Files',
         store=True,
-        compute='_compute_number_of_files')
+        compute='_compute_number_of_files',)
 
     containertype_id = fields.Many2one(
         string='Type',
         comodel_name='res.file.containertype',
         index=True,
-        ondelete='restrict')
+        ondelete='restrict',)
 
     @api.depends('file_ids')
     def _compute_number_of_files(self):
@@ -81,41 +80,13 @@ class ResFileContainer(models.Model):
     def name_get(self):
         resp = []
         for record in self:
-            name = record.alphanum_code
-            if self._set_num_code:
-                if record.num_code:
-                    name += ' [' + str(record.num_code) + ']'
-                if self.env.context.get('show_container_data', False):
-                    if record.location_id:
-                        name += _(' [location: ') + \
-                            record.location_id.alphanum_code + ']'
-                    if record.containertype_id:
-                        name += _(' [type: ') + \
-                            record.containertype_id.alphanum_code + ']'
-            resp.append((record.id, name))
-        return resp
-
-
-class ResFileContainerType(models.Model):
-    _name = 'res.file.containertype'
-    _description = "Type of containers"
-    _inherit = 'simple.model'
-
-    _size_name = 50
-    _size_description = 100
-    _set_num_code = False
-
-    alphanum_code = fields.Char(
-        string='Name',
-        required=True,
-        index=True)
-
-    def name_get(self):
-        resp = []
-        for record in self:
-            name = record.alphanum_code
-            if self._set_num_code:
-                if record.num_code:
-                    name += ' [' + str(record.num_code) + ']'
+            name = record.long_name + \
+                ' [' + str(record.num_code) + ']'
+            if self.env.context.get('show_container_data', False):
+                name += _(' [location: ') + \
+                    record.location_id.long_name + ']'
+                if record.containertype_id:
+                    name += _(' [type: ') + \
+                        record.containertype_id.alphanum_code + ']'
             resp.append((record.id, name))
         return resp

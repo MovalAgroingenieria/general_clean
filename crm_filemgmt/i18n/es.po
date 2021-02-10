@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-02 19:07+0000\n"
-"PO-Revision-Date: 2021-02-02 19:07+0000\n"
+"POT-Creation-Date: 2021-02-11 15:54+0000\n"
+"PO-Revision-Date: 2021-02-11 15:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -160,7 +160,7 @@ msgid "Cancelled: Yes"
 msgstr "Cancelado: Sí"
 
 #. module: crm_filemgmt
-#: model:ir.ui.menu,name:crm_filemgmt.file_category_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_file_category
 msgid "Categories"
 msgstr "Categorías"
 
@@ -240,6 +240,12 @@ msgid "Code"
 msgstr "Código"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__alphanum_code
+msgid "Code (alphanumeric value)"
+msgstr "Name"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__name
@@ -255,7 +261,7 @@ msgstr "Código (nombre)"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__num_code
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag__num_code
 msgid "Code (numeric value)"
-msgstr "Código (valor númerico)"
+msgstr "Código"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__color
@@ -264,7 +270,7 @@ msgid "Color Index"
 msgstr "Índice de Colores"
 
 #. module: crm_filemgmt
-#: model:ir.ui.menu,name:crm_filemgmt.configuration_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_configuration
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -297,13 +303,13 @@ msgstr "Contenedor de expdientes"
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file_location.py:0
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__container_ids
-#: model:ir.ui.menu,name:crm_filemgmt.files_container_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_files_container
 #, python-format
 msgid "Containers"
 msgstr "Contenedores"
 
 #. module: crm_filemgmt
-#: model:ir.ui.menu,name:crm_filemgmt.files_containertype_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_files_containertype
 msgid "Containers Type"
 msgstr "Tipos contenedor"
 
@@ -423,7 +429,7 @@ msgstr "Ubicación"
 
 #. module: crm_filemgmt
 #: model:ir.module.category,name:crm_filemgmt.module_category
-#: model:ir.ui.menu,name:crm_filemgmt.filemgmt_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 msgid "File Management"
 msgstr "Gestión Expedientes"
@@ -442,7 +448,7 @@ msgstr "Etiqueta"
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_filetag_action
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__tag_ids
-#: model:ir.ui.menu,name:crm_filemgmt.res_filetag_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_res_filetag
 msgid "File Tags"
 msgstr "Etiquetas"
 
@@ -469,8 +475,8 @@ msgstr "Socios"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__number_of_files
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__file_ids
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__number_of_containers
-#: model:ir.ui.menu,name:crm_filemgmt.files_menu
-#: model:ir.ui.menu,name:crm_filemgmt.main_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_files
+#: model:ir.ui.menu,name:crm_filemgmt.menu_main
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_calendar
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -605,7 +611,7 @@ msgid "Location"
 msgstr "Ubicación"
 
 #. module: crm_filemgmt
-#: model:ir.ui.menu,name:crm_filemgmt.files_location_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_files_location
 msgid "Locations"
 msgstr "Ubicaciones"
 
@@ -622,7 +628,7 @@ msgstr "Bitácora de movimientos de expedientes"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adjunto principal"
 
 #. module: crm_filemgmt
 #: model:res.groups,name:crm_filemgmt.group_file_manager
@@ -640,9 +646,9 @@ msgid "Messages"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__long_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype__alphanum_code
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__alphanum_code
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__long_name
 msgid "Name"
 msgstr "Nombre"
 
@@ -705,7 +711,7 @@ msgid "Only one primary partner is allowed."
 msgstr "Solo se permite un socio principal."
 
 #. module: crm_filemgmt
-#: model:ir.ui.menu,name:crm_filemgmt.parameters_menu
+#: model:ir.ui.menu,name:crm_filemgmt.menu_parameters
 msgid "Parameters"
 msgstr "Parámetros"
 
@@ -817,7 +823,8 @@ msgstr "Un expediente no puede ser auto-referenciado."
 #: code:addons/crm_filemgmt/models/res_file.py:0
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
-msgstr "El nombre del expediente no puede empezar o terminar con una barra (/)."
+msgstr ""
+"El nombre del expediente no puede empezar o terminar con una barra (/)."
 
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file.py:0
@@ -827,7 +834,7 @@ msgid ""
 "annual sequence %s digits."
 msgstr ""
 "El número de expediente debe ser un entero de la misma longitud que la "
-"secuencia anual (%4 dígitos)."
+"secuencia anual (%s dígitos)."
 
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file.py:0
@@ -841,7 +848,8 @@ msgstr "El prefijo para los nombres de expediente no ha sido establecido."
 msgid ""
 "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr ""
-"El prefijo debe ser separado del resto del nombre de archivo por un guión (-)."
+"El prefijo debe ser separado del resto del nombre de archivo por un guión "
+"(-)."
 
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file_category.py:0

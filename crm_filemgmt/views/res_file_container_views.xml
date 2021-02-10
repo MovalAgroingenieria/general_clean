@@ -27,7 +27,7 @@
                         </group>
                         <group name="master_data_fields" colspan="9" col="9">
                             <field name="num_code" colspan="4"/>
-                            <field name="alphanum_code" colspan="4"/>
+                            <field name="long_name" colspan="4"/>
                             <field name="location_id" colspan="4"/>
                             <field name="containertype_id" colspan="4"/>
                             <field name="description" colspan="6"/>
@@ -54,7 +54,7 @@
                 <field name="num_code" class="align-middle o_res_file_container_num_code"/>
                 <field name="location_id" class="align-middle"/>
                 <field name="containertype_id" class="align-middle"/>
-                <field name="alphanum_code" class="align-middle"/>
+                <field name="long_name" class="align-middle"/>
                 <field name="description" class="align-middle" optional="show"/>
             </tree>
         </field>
@@ -68,7 +68,7 @@
                 <field name="image" widget="image" optional="hide" class="align-middle o_res_file_container_image"/>
                 <field name="num_code" class="align-middle o_res_file_container_container_code"/>
                 <field name="containertype_id" class="align-middle"/>
-                <field name="alphanum_code" class="align-middle"/>
+                <field name="long_name" class="align-middle"/>
                 <field name="description" class="align-middle" optional="show"/>
             </tree>
         </field>
@@ -80,7 +80,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="num_code"/>
-                <field name="alphanum_code"/>
+                <field name="long_name"/>
                 <field name="containertype_id"/>
                 <group expand="0" string="Group By">
                     <filter string="Location" name="groupby_location" context="{'group_by':'location_id'}"/>
@@ -108,78 +108,9 @@
         </field>
     </record>
 
-    <record id="res_file_containertype_view_form" model="ir.ui.view">
-        <field name="name">Files Container Type (form view)</field>
-        <field name="model">res.file.containertype</field>
-        <field name="arch" type="xml">
-            <form duplicate="0">
-                <sheet>
-                    <group name="master_data">
-                        <group name="master_data_image" colspan="3">
-                            <field name="alphanum_code"/>
-                            <field name="description"/>
-                        </group>
-                    </group>
-                    <group name="slave_data">
-                        <notebook name="slave_data_notebook">
-                            <page name="notes_page" string="Notes">
-                                <field name="notes"/>
-                            </page>
-                        </notebook>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record id="res_file_containertype_view_tree" model="ir.ui.view">
-        <field name="name">Files Container Type (tree view)</field>
-        <field name="model">res.file.containertype</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="alphanum_code"/>
-                <field name="description"/>
-            </tree>
-        </field>
-    </record>
-
-    <record id="res_file_containertype_view_search" model="ir.ui.view">
-        <field name="name">Files Container Type (search view)</field>
-        <field name="model">res.file.containertype</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="alphanum_code"/>
-                <field name="description"/>
-            </search>
-        </field>
-    </record>
-
-    <record id="res_file_containertype_action" model="ir.actions.act_window">
-        <field name="name">File Container type</field>
-        <field name="res_model">res.file.containertype</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_ids"
-         eval="[(5, 0),
-                (0, 0, {'view_mode': 'tree',
-                        'view_id': ref('res_file_containertype_view_tree')}),
-                (0, 0, {'view_mode': 'form',
-                        'view_id': ref('res_file_containertype_view_form')})]"/>
-        <field name="search_view_id" ref="res_file_containertype_view_search"/>
-        <field name="help" type="html">
-            <p class="o_view_nocontent_smiling_face">
-                Click to add a new container type
-            </p>
-        </field>
-    </record>
-
-    <menuitem id="files_container_menu" name="Containers"
-              parent="configuration_menu"
-              sequence="4"
+    <menuitem id="menu_files_container" name="Containers"
+              parent="menu_configuration"
+              sequence="40"
               action="res_file_container_action"/>
-
-    <menuitem id="files_containertype_menu" name="Containers Type"
-              parent="configuration_menu"
-              sequence="5"
-              action="res_file_containertype_action"/>
 
 </odoo>

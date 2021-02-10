@@ -21,7 +21,6 @@ class ResFiletag(models.Model):
         translate=True,)
 
     color = fields.Integer(
-        size=2,
         string='Color Index',
         help='0:no-color, 1:red, 2:orange, 3:yellow, 4:Cyan, 5:dark-purple, '
              '6:pink, 7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple')

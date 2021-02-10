@@ -10,7 +10,7 @@ class ResFileCategory(models.Model):
     _description = "Categories of Files"
     _inherit = 'simple.model'
 
-    _size_name = 50
+    _size_name = 30
     _set_num_code = False
     _set_alphanum_code_to_lowercase = False
     _set_alphanum_code_to_uppercase = False
@@ -19,25 +19,31 @@ class ResFileCategory(models.Model):
         string='Category Name',
         required=True,
         translate=True,
-        index=True)
+        index=True,)
 
     is_readonly = fields.Boolean(
         string='Read-only Category',
-        default=False)
+        default=False,)
 
     parent_id = fields.Many2one(
         string='Parent Category',
-        comodel_name='res.file.category')
+        comodel_name='res.file.category',)
 
     file_ids = fields.One2many(
         string='Associated Files',
         comodel_name='res.file',
-        inverse_name='category_id')
+        inverse_name='category_id',)
 
     number_of_files = fields.Integer(
         string='Files',
         store=True,
-        compute='_compute_number_of_files')
+        compute='_compute_number_of_files',)
+
+    @api.depends('file_ids')
+    def _compute_number_of_files(self):
+        for record in self:
+            if record.file_ids:
+                record.number_of_files = len(record.file_ids)
 
     def unlink(self):
         for record in self:
@@ -46,22 +52,6 @@ class ResFileCategory(models.Model):
                     _('The read only categories cannot be removed.'))
         res = super(ResFileCategory, self).unlink()
         return res
-
-    @api.depends('file_ids')
-    def _compute_number_of_files(self):
-        for record in self:
-            if record.file_ids:
-                record.number_of_files = len(record.file_ids)
-
-    def name_get(self):
-        resp = []
-        for record in self:
-            name = record.alphanum_code
-            if self._set_num_code:
-                if record.num_code:
-                    name += ' [' + str(record.num_code) + ']'
-            resp.append((record.id, name))
-        return resp
 
     def action_get_files(self):
         self.ensure_one()

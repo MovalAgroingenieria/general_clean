@@ -43,10 +43,10 @@
         <field name="context">{'module' : 'crm_filemgmt'}</field>
     </record>
 
-    <menuitem id="parameters_menu"
+    <menuitem id="menu_parameters"
               name="Parameters"
-              parent="configuration_menu"
-              sequence="1"
+              parent="menu_configuration"
+              sequence="10"
               action="action_res_config_settings_files"
               groups="base.group_system"/>
 

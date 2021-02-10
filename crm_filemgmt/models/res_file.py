@@ -62,30 +62,28 @@ class ResFile(models.Model):
     alphanum_code = fields.Char(
         string='Code',
         default=_default_alphanum_code,
-        required=True,
-        index=True)
+        required=True,)
 
     date_file = fields.Date(
         string='Discharge date',
         default=lambda self: fields.datetime.now(),
         required=True,
-        index=True)
+        index=True,)
 
     subject = fields.Char(
         string='Subject',
         size=150,
         required=True,
-        index=True)
+        index=True,)
 
     tag_ids = fields.Many2many(
         string='File Tags',
         comodel_name='res.filetag',
         relation='res_file_filetag_rel',
-        column1='file_id', column2='filetag_id')
+        column1='file_id', column2='filetag_id',)
 
-    image = fields.Binary(
-        string='Photo / Image',
-        attachment=True)
+    image = fields.Image(
+        string='Photo / Image',)
 
     state = fields.Selection(
         selection=[
@@ -97,17 +95,17 @@ class ResFile(models.Model):
         default='01_draft',
         required=True,
         index=True,
-        track_visibility='onchange')
+        tracking=True,)
 
     is_blocked = fields.Boolean(
         string='Blocked',
         default=False,
-        track_visibility='onchange')
+        tracking=True,)
 
     is_cancelled = fields.Boolean(
         string='Cancelled',
         default=False,
-        track_visibility='onchange')
+        tracking=True,)
 
     category_id = fields.Many2one(
         string='Category',
@@ -115,12 +113,12 @@ class ResFile(models.Model):
         index=True,
         required=True,
         ondelete='restrict',
-        default=_default_category_id)
+        default=_default_category_id,)
 
     partnerlink_ids = fields.One2many(
         string='Partners',
         comodel_name='res.file.partnerlink',
-        inverse_name='file_id')
+        inverse_name='file_id',)
 
     partner_id = fields.Many2one(
         string='Partner',
@@ -129,32 +127,32 @@ class ResFile(models.Model):
         ondelete='restrict',
         store=True,
         compute='_compute_partner_id',
-        track_visibility='onchange')
+        tracking=True,)
 
     filelink_ids = fields.One2many(
         string='Files',
         comodel_name='res.file.filelink',
-        inverse_name='file_id')
+        inverse_name='file_id',)
 
     color = fields.Integer(
         string='Color Index',
         default="0",
         help='0:no-color, 1:red, 2:orange, 3:yellow, 4:Cyan, 5:dark-purple, '
-             '6:pink, 7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple')
+             '6:pink, 7:blue, 8:dark-blue, 9:magenta, 10:green, 11:purple',)
 
     closing_date = fields.Date(
         string='Closing date',
         store=True,
-        compute="_compute_closing_date")
+        compute="_compute_closing_date",)
 
     container_id = fields.Many2one(
         string='Container',
-        comodel_name='res.file.container')
+        comodel_name='res.file.container',)
 
     file_attachment_ids = fields.One2many(
         string="File attachments",
         comodel_name="ir.attachment",
-        compute="_compute_attachments_ids")
+        compute="_compute_attachments_ids",)
 
     def action_validate_file(self):
         self.ensure_one()

@@ -405,9 +405,9 @@
         </field>
     </record>
 
-    <menuitem id="files_menu" name="Files"
-              parent="filemgmt_menu"
-              sequence="1"
+    <menuitem id="menu_files" name="Files"
+              parent="menu_filemgmt"
+              sequence="10"
               action="res_file_action"/>
 
 </odoo>

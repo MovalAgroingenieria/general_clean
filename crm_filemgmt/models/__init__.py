@@ -8,3 +8,4 @@ from . import res_file_category
 from . import res_partner
 from . import res_file_location
 from . import res_file_container
+from . import res_file_containertype

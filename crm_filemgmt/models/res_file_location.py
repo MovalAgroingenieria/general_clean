@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2020 Moval Agroingeniería
+# 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api, _
@@ -10,7 +10,7 @@ class ResFileLocation(models.Model):
     _description = "Locations of Files"
     _inherit = 'simple.model'
 
-    _size_name = 50
+    _size_name = 6
     _size_description = 100
     _set_num_code = True
 
@@ -19,29 +19,29 @@ class ResFileLocation(models.Model):
         required=True,
         index=True,)
 
-    alphanum_code = fields.Char(
+    long_name = fields.Char(
         string='Name',
+        size=100,
         required=True,
-        index=True)
+        index=True,)
 
     location_id = fields.Many2one(
         string='Site',
         comodel_name='res.file.location',
-        ondelete='restrict')
+        ondelete='restrict',)
 
-    image = fields.Binary(
-        string='Photo / Image',
-        attachment=True)
+    image = fields.Image(
+        string='Photo / Image',)
 
     container_ids = fields.One2many(
         string='Containers',
         comodel_name='res.file.container',
-        inverse_name='location_id')
+        inverse_name='location_id',)
 
     number_of_containers = fields.Integer(
         string='Files',
         store=True,
-        compute='_compute_number_of_containers')
+        compute='_compute_number_of_containers',)
 
     @api.depends('container_ids')
     def _compute_number_of_containers(self):
@@ -52,10 +52,9 @@ class ResFileLocation(models.Model):
     def name_get(self):
         resp = []
         for record in self:
-            name = record.alphanum_code
-            if self._set_num_code:
-                if record.num_code:
-                    name += ' [' + str(record.num_code) + ']'
+            name = record.long_name
+            if record.num_code:
+                name += ' [' + str(record.num_code) + ']'
             resp.append((record.id, name))
         return resp
 

@@ -46,7 +46,12 @@
         <field name="name">File Tags</field>
         <field name="res_model">res.filetag</field>
         <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="res_filetag_view_tree"/>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_filetag_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_filetag_view_form')})]"/>
         <field name="search_view_id" ref="res_filetag_view_search"/>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
@@ -55,9 +60,9 @@
         </field>
     </record>
 
-    <menuitem id="res_filetag_menu" name="File Tags"
-              parent="configuration_menu"
+    <menuitem id="menu_res_filetag" name="File Tags"
+              parent="menu_configuration"
               action="res_filetag_action"
-              sequence="6"/>
+              sequence="60"/>
 
 </odoo>

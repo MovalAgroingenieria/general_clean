@@ -27,7 +27,7 @@
                         </group>
                         <group name="master_data_fields" colspan="9" col="9">
                             <field name="num_code" colspan="4"/>
-                            <field name="alphanum_code" colspan="4"/>
+                            <field name="long_name" colspan="4"/>
                             <field name="description" colspan="6"/>
                             <field name="location_id" colspan="6"/>
                         </group>
@@ -51,7 +51,7 @@
             <tree class="o_res_file_location">
                 <field name="image" widget="image" optional="hide" class="o_res_file_location_image"/>
                 <field name="num_code" class="align-middle o_res_file_location_num_code"/>
-                <field name="alphanum_code" class="align-middle"/>
+                <field name="long_name" class="align-middle"/>
                 <field name="description" class="align-middle"/>
                 <field name="location_id" class="align-middle"/>
             </tree>
@@ -64,7 +64,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="num_code"/>
-                <field name="alphanum_code"/>
+                <field name="long_name"/>
             </search>
         </field>
     </record>
@@ -87,9 +87,9 @@
         </field>
     </record>
 
-    <menuitem id="files_location_menu" name="Locations"
-              parent="configuration_menu"
-              sequence="3"
+    <menuitem id="menu_files_location" name="Locations"
+              parent="menu_configuration"
+              sequence="30"
               action="res_file_location_action"/>
 
 </odoo>
