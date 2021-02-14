@@ -162,6 +162,22 @@ class ResFile(models.Model):
         comodel_name="ir.attachment",
         compute="_compute_attachments_ids")
 
+    has_filelinks = fields.Boolean(
+        string='Has filelinks',
+        default=False,
+        compute="_compute_has_filelinks")
+
+    has_attachments = fields.Boolean(
+        string='Has attachments',
+        default=False,
+        compute="_compute_has_attachments")
+
+    has_registres = fields.Boolean(
+        string='Has registres',
+        default=False,
+        compute="_compute_has_registres")
+
+
     _sql_constraints = [
         ('unique_name',
          'UNIQUE (name)',
@@ -247,8 +263,9 @@ class ResFile(models.Model):
 
     @api.multi
     def _compute_attachments_ids(self):
-        self.file_attachment_ids = self.env['ir.attachment'].search(
-            [('res_model', '=', self._name), ('res_id', '=', self.id)])
+        for record in self:
+            record.file_attachment_ids = record.env['ir.attachment'].search(
+                [('res_model', '=', record._name), ('res_id', '=', record.id)])
 
     @api.depends('partnerlink_ids')
     def _compute_partner_id(self):
@@ -277,6 +294,30 @@ class ResFile(models.Model):
                 record.closing_date = datetime.datetime.now()
             else:
                 record.closing_date = False
+
+    @api.depends('filelink_ids')
+    def _compute_has_filelinks(self):
+        for record in self:
+            has_filelinks = False
+            if record.filelink_ids:
+                has_filelinks = True
+            record.has_filelinks = has_filelinks
+
+    @api.depends('file_attachment_ids')
+    def _compute_has_attachments(self):
+        for record in self:
+            has_attachments = False
+            if record.file_attachment_ids:
+                has_attachments = True
+            record.has_attachments = has_attachments
+
+    @api.depends('file_res_letter_ids')
+    def _compute_has_registres(self):
+        for record in self:
+            has_registres = False
+            if record.file_res_letter_ids:
+                has_registres = True
+            record.has_registres = has_registres
 
     @api.model
     def create(self, vals):
