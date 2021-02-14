@@ -154,6 +154,50 @@ class ResFile(models.Model):
         comodel_name="ir.attachment",
         compute="_compute_attachments_ids",)
 
+    has_filelinks = fields.Boolean(
+        string='Has filelinks',
+        default=False,
+        compute="_compute_has_filelinks",)
+
+    has_attachments = fields.Boolean(
+        string='Has attachments',
+        default=False,
+        compute="_compute_has_attachments",)
+
+    @api.depends('partnerlink_ids')
+    def _compute_partner_id(self):
+        for record in self:
+            partner_id = None
+            for partnerlink in record.partnerlink_ids:
+                if partnerlink.is_main:
+                    partner_id = partnerlink.partner_id
+                    break
+            record.partner_id = partner_id
+
+    @api.depends('state')
+    def _compute_closing_date(self):
+        for record in self:
+            if record.state == '03_closed':
+                record.closing_date = datetime.datetime.now()
+            else:
+                record.closing_date = False
+
+    @api.depends('filelink_ids')
+    def _compute_has_filelinks(self):
+        for record in self:
+            has_filelinks = False
+            if record.filelink_ids:
+                has_filelinks = True
+            record.has_filelinks = has_filelinks
+
+    @api.depends('file_attachment_ids')
+    def _compute_has_attachments(self):
+        for record in self:
+            has_attachments = False
+            if record.file_attachment_ids:
+                has_attachments = True
+            record.has_attachments = has_attachments
+
     def action_validate_file(self):
         self.ensure_one()
         self.state = '02_inprogress'
@@ -200,26 +244,9 @@ class ResFile(models.Model):
         return result
 
     def _compute_attachments_ids(self):
-        self.file_attachment_ids = self.env['ir.attachment'].search(
-            [('res_model', '=', self._name), ('res_id', '=', self.id)])
-
-    @api.depends('partnerlink_ids')
-    def _compute_partner_id(self):
         for record in self:
-            partner_id = None
-            for partnerlink in record.partnerlink_ids:
-                if partnerlink.is_main:
-                    partner_id = partnerlink.partner_id
-                    break
-            record.partner_id = partner_id
-
-    @api.depends('state')
-    def _compute_closing_date(self):
-        for record in self:
-            if record.state == '03_closed':
-                record.closing_date = datetime.datetime.now()
-            else:
-                record.closing_date = False
+            record.file_attachment_ids = record.env['ir.attachment'].search(
+                [('res_model', '=', record._name), ('res_id', '=', record.id)])
 
     def _process_vals(self, vals):
         vals = super(ResFile, self)._process_vals(vals)

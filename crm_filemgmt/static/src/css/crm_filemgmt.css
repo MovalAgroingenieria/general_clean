@@ -69,11 +69,11 @@
 
 /* res_file_partnerlink */
 .o_res_file_partnerlink [data-name="partner_id"] {
-    width: 90%;
+    width: 80%;
 }
 
 .o_res_file_partnerlink [data-name="is_main"] {
-    width: 10%;
+    width: 20%;
     text-align: center;
 }
 .o_res_file_partnerlink_is_main {
@@ -110,16 +110,10 @@
     text-align: center;
 }
 
-
-/* res_file_filelink */
+/* res_file_filelink
 .o_res_file_filelink [data-name="related_file_id"] {
-    width: 20%;
-}
-
-.o_res_file_filelink [data-name="related_file_subject"] {
     width: 80%;
-}
-
+} */
 
 /* res_file_location */
 .o_res_file_location [data-name="image"] {

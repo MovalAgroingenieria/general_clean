@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 15:55+0000\n"
-"PO-Revision-Date: 2021-02-11 15:55+0000\n"
+"POT-Creation-Date: 2021-02-14 19:10+0000\n"
+"PO-Revision-Date: 2021-02-14 19:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -38,41 +38,9 @@ msgstr ""
 "6: rosa,7: blau, 8: blau-fosc, 9: magenta, 10: verd, 11: violeta"
 
 #. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_location_view_form
-msgid ""
-"<span attrs=\"{'invisible': [('number_of_containers','&gt;', 1)]}\"> container</span>\n"
-"                                <span attrs=\"{'invisible': [('number_of_containers','=', 1)]}\"> containers</span>"
-msgstr ""
-"<span attrs=\"{'invisible': [('number_of_containers','&gt;', 1)]}\"> contenidor</span>\n"
-"                                <span attrs=\"{'invisible': [('number_of_containers','=', 1)]}\"> contenidors</span>"
-
-#. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_category_view_form
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_form
-msgid ""
-"<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
-"                                <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>"
-msgstr ""
-"<span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> expedient</span>\n"
-"                                <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> expedients</span>"
-
-#. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 msgid "<span class=\"o_form_label\">Prefix for Files code</span>"
 msgstr "<span class=\"o_form_label\">Prefix per al codi d'expedients</span>"
-
-#. module: crm_filemgmt
-#: model_terms:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
-msgid ""
-"<span class=\"o_stat_text\">\n"
-"                            <span attrs=\"{'invisible': [('number_of_files','&gt;', 1)]}\"> file</span>\n"
-"                            <span attrs=\"{'invisible': [('number_of_files','=', 1)]}\"> files</span>\n"
-"                        </span>"
-msgstr ""
-"<span class=\"o_stat_text\">\n"
-"                                   <span attrs=\"{'invisible': [('number_of_file_registers','&gt;', 1)]}\"> registre expedient</span>\n"
-"                                   <span attrs=\"{'invisible': [('number_of_file_registers','=', 1)]}\"> registres expedient</span>\n"
-"                               </span>"
 
 #. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -216,6 +184,7 @@ msgstr "Tancar"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields.selection,name:crm_filemgmt.selection__res_file__state__03_closed
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Closed"
 msgstr "Tancat"
@@ -275,7 +244,7 @@ msgstr "Configuració"
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_config_settings
 msgid "Configuration of File Management"
-msgstr "Configuració d'Expedients"
+msgstr "Configuració"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.action_res_config_settings_files
@@ -302,6 +271,7 @@ msgstr "Contenidor d'expedients"
 #: code:addons/crm_filemgmt/models/res_file_location.py:0
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location__container_ids
 #: model:ir.ui.menu,name:crm_filemgmt.menu_files_container
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_location_view_form
 #, python-format
 msgid "Containers"
 msgstr "Contenidors"
@@ -476,8 +446,11 @@ msgstr "Socis"
 #: model:ir.ui.menu,name:crm_filemgmt.menu_files
 #: model:ir.ui.menu,name:crm_filemgmt.menu_main
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_category_view_form
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_calendar
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.view_partner_form
 #, python-format
 msgid "Files"
 msgstr "Expedients"
@@ -517,6 +490,16 @@ msgid "Group By"
 msgstr "Agrupa per"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__has_attachments
+msgid "Has attachments"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__has_filelinks
+msgid "Has filelinks"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container__id
@@ -546,6 +529,7 @@ msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields.selection,name:crm_filemgmt.selection__res_file__state__02_inprogress
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "In progress"
 msgstr "En progrés"
@@ -664,7 +648,7 @@ msgstr "Nom"
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_filetag_view_form
 msgid "Notes"
-msgstr "Notes"
+msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner__number_of_files
@@ -745,7 +729,7 @@ msgstr "Foto / Imatge"
 #. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_config_settings_view_form
 msgid "Prefix"
-msgstr "Prefix"
+msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_config_settings__annual_seq_prefix
