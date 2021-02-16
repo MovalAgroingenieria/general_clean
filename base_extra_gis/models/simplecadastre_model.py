@@ -40,6 +40,7 @@ class SimplecadastreModel(models.AbstractModel):
 
     cadastral_link = fields.Char(
         string='Cadastral Link',
+        default='',
         compute='_compute_cadastral_link',)
 
     def _compute_cadastral_area(self):
@@ -76,9 +77,9 @@ class SimplecadastreModel(models.AbstractModel):
 
     @api.onchange('cadastral_reference')
     def _onchange_cadastral_reference(self):
+        self._compute_cadastral_link()
         if self._automatic_update_cadastral_data:
             self._compute_cadastral_area()
-            self._compute_cadastral_link()
 
     def action_show_cadastral_form(self):
         self.ensure_one()
