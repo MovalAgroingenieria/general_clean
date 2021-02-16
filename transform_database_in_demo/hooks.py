@@ -68,10 +68,10 @@ def post_init_hook(cr, registry):
 #         WHERE c.id = res_users.id AND c.id != 1);
 
     # Delete attachments
-    query_5 = """
-        DELETE FROM ir_attachment WHERE store_fname IS NOT NULL
-            AND store_fname<>'';
-    """
+#    query_5 = """
+#        DELETE FROM ir_attachment WHERE store_fname IS NOT NULL
+#            AND store_fname<>'';
+#    """
 
     # Block mail server
     query_6 = """
@@ -113,12 +113,12 @@ def post_init_hook(cr, registry):
     except:
         cr.rollback()
 
-    try:
-        cr.savepoint()
-        cr.execute(query_5)
-        cr.commit()
-    except:
-        cr.rollback()
+#     try:
+#         cr.savepoint()
+#         cr.execute(query_5)
+#         cr.commit()
+#     except:
+#         cr.rollback()
 
     try:
         cr.savepoint()
