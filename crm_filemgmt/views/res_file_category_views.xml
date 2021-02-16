@@ -7,19 +7,12 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <field name="is_readonly" invisible="1"/>
-                <header>
-                </header>
+                <header></header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_get_files"
-                                type="object" class="oe_stat_button"
-                                icon="fa-filemgmt-files"
-                                attrs="{'invisible': [('number_of_files','=', 0)]}">
-                            <div class="o_form_field o_stat_info">
-                                <field name="number_of_files"/>
-                                <span attrs="{'invisible': [('number_of_files','>', 1)]}"> file</span>
-                                <span attrs="{'invisible': [('number_of_files','=', 1)]}"> files</span>
-                            </div>
+                        <button name="action_get_files" class="oe_stat_button"
+                            type="object" icon="fa-filemgmt-files">
+                            <field name="number_of_files" string="Files" widget="statinfo"/>
                         </button>
                     </div>
                     <div class="oe_title">

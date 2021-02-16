@@ -81,7 +81,15 @@
                          attrs="{'invisible':[('is_blocked','=',False)]}">
                         <span class="fa fa-lock" style="font-size: 300%;"/>
                     </div>
-                    <div name="buttons" class="oe_button_box"></div>
+                    <div name="buttons" class="oe_button_box"/>
+                    <widget name="web_ribbon" title="In progress" bg_color="bg-warning"
+                        attrs="{'invisible': [
+                            '|',('state','!=','02_inprogress'),
+                            '|',('is_blocked','=',True),('is_cancelled', '=',True)]}"/>
+                    <widget name="web_ribbon" title="Closed" bg_color="bg-success"
+                        attrs="{'invisible': [
+                            '|',('state','!=','03_closed'),
+                            '|',('is_blocked','=',True),('is_cancelled', '=',True)]}"/>
                     <group name="master_data" col="12">
                         <group name="master_data_image" colspan="3">
                             <label for="image"/>
@@ -117,8 +125,8 @@
                                        context="{'tree_view_ref': 'crm_filemgmt.res_file_filelink_view_tree'}"/>
                             </page>
                             <page name="attachments" string="Attachments">
-                                <field name="file_attachment_ids" >
-                                    <tree editable="top">
+                                <field name="file_attachment_ids" attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}">
+                                    <tree create="false">
                                         <field name="name"/>
                                         <field name="mimetype"/>
                                         <field name="datas"/>
@@ -127,8 +135,7 @@
                                 </field>
                             </page>
                             <page name="notes_page" string="Notes">
-                                <field name="notes"
-                                       attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
+                                <field name="notes" attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             </page>
                         </notebook>
                     </group>
@@ -224,6 +231,8 @@
                 <field name="closing_date"/>
                 <field name="is_blocked"/>
                 <field name="is_cancelled"/>
+                <field name="has_filelinks"/>
+                <field name="has_attachments"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
@@ -234,7 +243,7 @@
                                 <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                                     <a type="edit" class="dropdown-item">Edit File</a>
                                     <a type="delete" class="dropdown-item">Delete File</a>
-                                    <li><ul class="oe_kanban_colorpicker" data-field="color"/></li>
+                                    <li><ul class="oe_kanban_colorpicker" data-field="color" role="menu"/></li>
                                 </div>
                             </div>
                             <div class="oe_kanban_details" style="max-width:30%; margin-left:2%; margin-top:2%;">
@@ -255,6 +264,12 @@
                                     <strong class="o_kanban_record_title" style="float:left;"><field name="alphanum_code"/></strong>
                                     <t t-if="record.is_blocked.raw_value">
                                         <span style="color:red; float:right; margin-right:3%;" class="fa fa-lock fa-lg"/>
+                                    </t>
+                                    <t t-if="record.has_attachments.raw_value">
+                                        <span style="float:right; margin-right:3%;" class="fa fa-paperclip o_button_icon"/>
+                                    </t>
+                                    <t t-if="record.has_filelinks.raw_value">
+                                        <span style="float:right; margin-right:3%;" class="fa fa-filemgmt-files o_button_icon"/>
                                     </t>
                                 </div>
                                 <div style="clear:both;"></div>
@@ -389,8 +404,7 @@
         <field name="model">res.file.filelink</field>
         <field name="arch" type="xml">
             <tree class="o_res_file_filelink" editable="bottom">
-                <field name="related_file_id" class="align-middle"/>
-                <field name="related_file_subject" class="align-middle"/>
+                <field name="related_file_id"/>
             </tree>
         </field>
     </record>

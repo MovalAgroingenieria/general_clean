@@ -10,15 +10,9 @@
                 </header>
                 <sheet>
                     <div name="buttons" class="oe_button_box">
-                        <button name="action_get_containers"
-                                type="object" class="oe_stat_button"
-                                icon="fa-archive"
-                                attrs="{'invisible': [('number_of_containers','=', 0)]}">
-                            <div class="o_form_field o_stat_info">
-                                <field name="number_of_containers"/>
-                                <span attrs="{'invisible': [('number_of_containers','>', 1)]}"> container</span>
-                                <span attrs="{'invisible': [('number_of_containers','=', 1)]}"> containers</span>
-                            </div>
+                        <button name="action_get_containers" class="oe_stat_button"
+                            type="object" icon="fa-archive">
+                            <field name="number_of_containers" string="Containers" widget="statinfo"/>
                         </button>
                     </div>
                     <group name="master_data" col="9">
