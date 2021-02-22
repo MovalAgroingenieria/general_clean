@@ -534,7 +534,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "In progress"
-msgstr "En progreso"
+msgstr "En trámite"
 
 #. module: crm_filemgmt
 #: model:res.file.category,alphanum_code:crm_filemgmt.resfilecategory_internal_file
