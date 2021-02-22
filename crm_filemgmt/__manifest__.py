@@ -29,6 +29,7 @@
         'views/res_file_container_views.xml',
         'views/res_file_containertype_views.xml',
     ],
+    "post_init_hook": "post_init_hook",
     'application': True,
     'installable': True,
 }

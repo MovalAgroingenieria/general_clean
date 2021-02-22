@@ -7,10 +7,21 @@
 
     <menuitem id="menu_filemgmt" name="File Management"
               parent="menu_main"
-              sequence="1"/>
+              sequence="10"/>
 
     <menuitem id="menu_configuration" name="Configuration"
               parent="menu_main"
               sequence="999"/>
+
+    <menuitem id="menu_config_general_data"
+              name="General Data"
+              parent="menu_configuration"
+              sequence="20"/>
+
+    <menuitem id="menu_config_labels"
+              name="Tags"
+              parent="menu_configuration"
+              sequence="30"/>
+
 
 </odoo>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-14 19:10+0000\n"
-"PO-Revision-Date: 2021-02-14 19:10+0000\n"
+"POT-Creation-Date: 2021-02-22 11:26+0000\n"
+"PO-Revision-Date: 2021-02-22 11:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -242,11 +242,6 @@ msgstr "Índice de Colores"
 #: model:ir.ui.menu,name:crm_filemgmt.menu_configuration
 msgid "Configuration"
 msgstr "Configuración"
-
-#. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_config_settings
-msgid "Configuration of File Management"
-msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.action_res_config_settings_files
@@ -486,6 +481,11 @@ msgstr ""
 "                                  Ejemplo: FILE --&gt; FILE-2021/0001"
 
 #. module: crm_filemgmt
+#: model:ir.ui.menu,name:crm_filemgmt.menu_config_general_data
+msgid "General Data"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_search
 #: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Group By"
@@ -697,7 +697,7 @@ msgstr "Solo se permite un socio principal."
 #. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.menu_parameters
 msgid "Parameters"
-msgstr "Parámetros"
+msgstr "Ajustes"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category__parent_id
@@ -781,6 +781,11 @@ msgid "State:"
 msgstr "Estado:"
 
 #. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_config_settings
+msgid "Street type settings"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__subject
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__related_file_subject
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink__subject
@@ -793,9 +798,19 @@ msgid "Subject:"
 msgstr "Asunto:"
 
 #. module: crm_filemgmt
+#: model:ir.ui.menu,name:crm_filemgmt.menu_config_labels
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_filetag
 msgid "Tags for files"
 msgstr "Etiquetas para expedientes"
+
+#. module: crm_filemgmt
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Tags..."
+msgstr "Etiquetas..."
 
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file.py:0

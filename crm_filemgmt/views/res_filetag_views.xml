@@ -8,7 +8,6 @@
             <form duplicate="0">
                 <group name="master_data">
                     <field name="alphanum_code" style="width:200px;"/>
-                    <field name="color" style="width:40px"/>
                 </group>
                 <group name="slave_data">
                     <notebook name="slave_data_notebook">
@@ -27,7 +26,6 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="alphanum_code"/>
-                <field name="color"/>
             </tree>
         </field>
     </record>
@@ -61,8 +59,8 @@
     </record>
 
     <menuitem id="menu_res_filetag" name="File Tags"
-              parent="menu_configuration"
+              parent="menu_config_labels"
               action="res_filetag_action"
-              sequence="60"/>
+              sequence="10"/>
 
 </odoo>

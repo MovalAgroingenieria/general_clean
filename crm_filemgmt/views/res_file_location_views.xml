@@ -82,8 +82,8 @@
     </record>
 
     <menuitem id="menu_files_location" name="Locations"
-              parent="menu_configuration"
-              sequence="30"
+              parent="menu_config_general_data"
+              sequence="20"
               action="res_file_location_action"/>
 
 </odoo>

@@ -66,8 +66,8 @@
     </record>
 
     <menuitem id="menu_files_containertype" name="Containers Type"
-              parent="menu_configuration"
-              sequence="50"
+              parent="menu_config_general_data"
+              sequence="30"
               action="res_file_containertype_action"/>
 
 </odoo>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-14 19:09+0000\n"
-"PO-Revision-Date: 2021-02-14 19:09+0000\n"
+"POT-Creation-Date: 2021-02-22 11:24+0000\n"
+"PO-Revision-Date: 2021-02-22 11:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -235,11 +235,6 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.menu_configuration
 msgid "Configuration"
-msgstr ""
-
-#. module: crm_filemgmt
-#: model:ir.model,name:crm_filemgmt.model_res_config_settings
-msgid "Configuration of File Management"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -473,6 +468,11 @@ msgid ""
 "                                  Prefix maximum size: 10 characters.<br/>\n"
 "                                  A hyphen (-) separator is added after the prefix.<br/>\n"
 "                                  Example: FILE --&gt; FILE-2021/0001"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.menu,name:crm_filemgmt.menu_config_general_data
+msgid "General Data"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -771,6 +771,11 @@ msgid "State:"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_config_settings
+msgid "Street type settings"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file__subject
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink__related_file_subject
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink__subject
@@ -783,8 +788,18 @@ msgid "Subject:"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.ui.menu,name:crm_filemgmt.menu_config_labels
+msgid "Tags"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_filetag
 msgid "Tags for files"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model_terms:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Tags..."
 msgstr ""
 
 #. module: crm_filemgmt

@@ -78,8 +78,8 @@
 
     <menuitem id="menu_file_category"
               name="Categories"
-              parent="menu_configuration"
-              sequence="20"
+              parent="menu_config_general_data"
+              sequence="10"
               action="res_file_category_action"/>
 
 </odoo>

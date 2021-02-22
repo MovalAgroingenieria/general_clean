@@ -107,8 +107,10 @@
                             <field name="container_id" colspan="6"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"
                                    context="{'show_container_data': True}"/>
-                            <field name="tag_ids" colspan="4" widget="many2many_tags" options="{'color_field': 'color'}"
-                                   attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
+                            <field name="tag_ids" colspan="4" widget="many2many_tags"
+                                   options="{'color_field': 'color', 'no_quick_create': True, 'no_create_edit': True}"
+                                   attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"
+                                   placeholder="Tags..."/>
                             <field name="closing_date" colspan="4" attrs="{'invisible':[('state','!=','03_closed')]}"/>
                         </group>
                     </group>

@@ -103,7 +103,7 @@
     </record>
 
     <menuitem id="menu_files_container" name="Containers"
-              parent="menu_configuration"
+              parent="menu_config_general_data"
               sequence="40"
               action="res_file_container_action"/>
 
