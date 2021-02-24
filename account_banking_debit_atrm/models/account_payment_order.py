@@ -846,6 +846,24 @@ class AccountPaymentOrder(models.Model):
                 else:
                     debtor_street_number = str(" " * 5)
 
+                # Zip
+                if line.partner_id.zip:
+                    debtor_county_zip = line.partner_id.zip
+                else:
+                    if self.error_mode == 'permissive':
+                        error_num += 1
+                        errors += '[' + str(error_num).zfill(4) + '] ' + \
+                            _("The entry number %s has failed, debtor zip "
+                              "not found for partner %s" %
+                              (entry_num_padded, line.partner_id.name))\
+                            + '\n'
+                        debtor_county_zip = str(" " * 5)
+                    else:
+                        raise ValidationError(
+                            _("The entry number %s has failed, debtor zip not "
+                              "found for partner %s" % (entry_num_padded,
+                                                        line.partner_id.name)))
+
                 # INE codes
                 if line.partner_id.city:
                     city_name = ""
@@ -894,6 +912,17 @@ class AccountPaymentOrder(models.Model):
                              ('city_name_reordered_simplified', '=',
                               city_name_simplified2)])
 
+                    if len(ine_codes) > 1:
+                        if (debtor_county_zip and
+                            debtor_county_zip != str(" " * 5)):
+                            # Filter by province code from zip
+                            province_code = int(debtor_county_zip[:2])
+                            for ine_code in ine_codes:
+                                if ine_code.ine_code_province == province_code:
+                                    ine_codes = ine_code
+                        else:
+                            ine_codes = ""
+
                     if ine_codes:
                         debtor_province_ine_code = \
                             str(ine_codes.ine_code_province).zfill(2)
@@ -938,24 +967,6 @@ class AccountPaymentOrder(models.Model):
                             _("The entry number %s has failed, debtor city "
                               "not found for partner %s" %
                               (entry_num_padded, line.partner_id.name)))
-
-                # Zip
-                if line.partner_id.zip:
-                    debtor_county_zip = line.partner_id.zip
-                else:
-                    if self.error_mode == 'permissive':
-                        error_num += 1
-                        errors += '[' + str(error_num).zfill(4) + '] ' + \
-                            _("The entry number %s has failed, debtor zip "
-                              "not found for partner %s" %
-                              (entry_num_padded, line.partner_id.name))\
-                            + '\n'
-                        debtor_county_zip = str(" " * 5)
-                    else:
-                        raise ValidationError(
-                            _("The entry number %s has failed, debtor zip not "
-                              "found for partner %s" % (entry_num_padded,
-                                                        line.partner_id.name)))
 
             # If debt_period is E or B these fields are not necessary
             else:
