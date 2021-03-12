@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-28 08:58+0000\n"
-"PO-Revision-Date: 2021-01-28 08:58+0000\n"
+"POT-Creation-Date: 2021-03-12 11:35+0000\n"
+"PO-Revision-Date: 2021-03-12 11:35+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -156,7 +156,7 @@ msgstr "Última actualización por"
 #. module: partner_address_street_type
 #: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__write_date
 msgid "Last Updated on"
-msgstr "Ultima actualización en"
+msgstr "Última actualización el"
 
 #. module: partner_address_street_type
 #: model:ir.model.fields.selection,name:partner_address_street_type.selection__res_config_settings__street_type_shown__long
@@ -203,7 +203,7 @@ msgstr "Calle"
 #: model:ir.model.fields,field_description:partner_address_street_type.field_res_street_type__name
 #: model_terms:ir.ui.view,arch_db:partner_address_street_type.res_config_settings_view_form_general_settings
 msgid "Street Type"
-msgstr "Tipos de vía"
+msgstr "Tipo de vía"
 
 #. module: partner_address_street_type
 #: model:ir.actions.act_window,name:partner_address_street_type.action_res_street_type_tree
@@ -230,7 +230,7 @@ msgstr "Gestión tipos de vía"
 #. module: partner_address_street_type
 #: model:ir.actions.act_window,name:partner_address_street_type.action_res_config_settings_view_form
 msgid "Street type configuration"
-msgstr "Configuración tipo de vía"
+msgstr "Configuración tipos de vía"
 
 #. module: partner_address_street_type
 #: model:ir.model,name:partner_address_street_type.model_res_config_settings
