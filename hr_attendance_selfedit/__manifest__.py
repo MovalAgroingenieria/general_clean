@@ -13,7 +13,8 @@
         "hr_attendance",
     ],
     "data": [
-        'views/hr_attendance_view.xml',
+        "security/security.xml",
+        "views/hr_attendance_view.xml",
     ],
     "installable": True,
     "application": False,
