@@ -11,10 +11,12 @@
     "category": "Human Resources/Attendances",
     "depends": [
         "hr_attendance",
+        "hr_employee_firstname",
     ],
     "data": [
         "security/security.xml",
         "views/hr_attendance_view.xml",
+        "views/custom_views.xml",
     ],
     "installable": True,
     "application": False,

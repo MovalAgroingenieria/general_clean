@@ -4,7 +4,7 @@
 
 |badge1|
 
-|
+
 =====================
 Attendances Self Edit
 =====================
@@ -20,7 +20,7 @@ Description
 This module modifies the behavior of the parent HR Attendance module, allowing
 employees to create, edit and delete their own attendances.
 
-|
+
 Credits
 =======
 
@@ -39,7 +39,6 @@ Contributors
 * Juanu Sandoval <jsandoval@moval.es>
 * Jorge Vera <jvera@moval.es>
 
-|
 Maintainers
 ~~~~~~~~~~~
 
