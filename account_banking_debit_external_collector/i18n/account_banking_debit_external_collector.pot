@@ -1,0 +1,95 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_debit_external_collector
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-27 11:36+0000\n"
+"PO-Revision-Date: 2021-04-27 11:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model,name:account_banking_debit_external_collector.model_bank_payment_line
+msgid "Bank Payment Lines"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.ui.view,arch_db:account_banking_debit_external_collector.payment_line_search
+#: model:ir.ui.view,arch_db:account_banking_debit_external_collector.view_account_invoice_filter
+msgid "External Collector"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,field_description:account_banking_debit_external_collector.field_account_invoice_external_collector_ref
+msgid "External Collector Ref."
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,field_description:account_banking_debit_external_collector.field_bank_payment_line_external_collector_ref
+msgid "External Collector Ref. (bank line)"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,field_description:account_banking_debit_external_collector.field_account_move_line_external_collector_ref
+msgid "External Collector Ref. (move line)"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:account.payment.method,name:account_banking_debit_external_collector.payment_method_ext_collector
+msgid "External Colletor"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.ui.view,arch_db:account_banking_debit_external_collector.view_account_invoice_filter
+msgid "External_collector"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,field_description:account_banking_debit_external_collector.field_account_invoice_in_external_collector
+#: model:ir.model.fields,field_description:account_banking_debit_external_collector.field_bank_payment_line_ext_collector_sent
+msgid "In collection"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,help:account_banking_debit_external_collector.field_account_invoice_in_external_collector
+msgid "Indicates whether this payment has already been done and uploaded successfully to external collector."
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,help:account_banking_debit_external_collector.field_bank_payment_line_ext_collector_sent
+msgid "Indicates whether this payment has already been sent to an external collector."
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model,name:account_banking_debit_external_collector.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model,name:account_banking_debit_external_collector.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model,name:account_banking_debit_external_collector.model_account_payment_order
+msgid "Payment Order"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: code:addons/account_banking_debit_external_collector/models/account_payment_order.py:48
+#, python-format
+msgid "The bank line %s has already been sent to external collector"
+msgstr ""
+
+#. module: account_banking_debit_external_collector
+#: model:ir.model.fields,help:account_banking_debit_external_collector.field_account_invoice_external_collector_ref
+msgid "This number indicates the payment reference when has been sent to External Collector"
+msgstr ""
+

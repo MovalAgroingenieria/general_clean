@@ -1,0 +1,15 @@
+/* Invoice tree */
+.o_account_banking_debit_ext_collector_invoice_tree_view [data-id="in_external_collector"] {
+    text-align: center;
+}
+.o_account_banking_debit_ext_collector_invoice_tree_view [data-field="in_external_collector"] {
+    text-align: center;
+}
+
+/* Bank payment line_tree */
+.o_account_banking_debit_ext_collector_bank_payment_line_tree_view [data-id="ext_collector_sent"] {
+    text-align: center;
+}
+.o_account_banking_debit_ext_collector_bank_payment_line_tree_view [data-field="ext_collector_sent"] {
+    text-align: center;
+}

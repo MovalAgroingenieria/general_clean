@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="bank_payment_line_form" model="ir.ui.view">
+        <field name="name">bank.payment.line.form</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+               <field name="ext_collector_sent"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="bank_payment_line_tree" model="ir.ui.view">
+        <field name="name">bank.payment.line.tree</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">o_account_banking_debit_ext_collector_bank_payment_line_tree_view</attribute>
+            </xpath>
+            <field name="name" position="after">
+               <field name="ext_collector_sent"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="payment_line_search" model="ir.ui.view">
+        <field name="name">payment.line.search</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+               <field name="ext_collector_sent"/>
+               <filter name="ext_collector_filter" string="External Collector"
+                    domain="[('ext_collector_sent','=', True)]"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

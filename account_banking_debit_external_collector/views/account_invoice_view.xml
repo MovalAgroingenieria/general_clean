@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">Invoices (form view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group" position="after">
+                <group>
+                    <field name="in_external_collector"/>
+                    <field name="external_collector_ref"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">Invoices (tree view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">o_account_banking_debit_ext_collector_invoice_tree_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="in_external_collector"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">Invoices (search view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='unpaid']" position="before">
+                <field name="external_collector_ref"/>
+                <filter name="external_collector_true" string="External_collector"
+                    domain="[('in_external_collector', '=', True)]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='status']" position="before">
+                <filter name="group_by_external_collector" string="External Collector"
+                    context="{'group_by':'in_external_collector'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
