@@ -50,16 +50,20 @@ class SimpleattachmentModel(models.AbstractModel):
     def get_ids_of_model_with_attachments(self,
                                           model_name, with_attachments=True):
         resp = []
-        sql_with_attachments = 'select distinct res_id from ir_attachment ' + \
-            'where res_model = \'account.invoice\''
-        sql_without_attachments = 'select id from account_invoice ' + \
-            'where id not in (' + sql_with_attachments + ')'
-        sql = sql_with_attachments
-        if (not with_attachments):
-            sql = sql_without_attachments
-        self.env.cr.execute(sql)
-        sql_resp = self.env.cr.fetchall()
-        if sql_resp:
-            for item in sql_resp:
-                resp.append(item[0])
+        if model_name:
+            table_name = model_name.replace('.', '_')
+            sql_with_attachments = \
+                'select distinct res_id from ir_attachment ' + \
+                'where res_model = \'' + model_name + '\''
+            sql_without_attachments = \
+                'select id from ' + table_name + ' ' + \
+                'where id not in (' + sql_with_attachments + ')'
+            sql = sql_with_attachments
+            if (not with_attachments):
+                sql = sql_without_attachments
+            self.env.cr.execute(sql)
+            sql_resp = self.env.cr.fetchall()
+            if sql_resp:
+                for item in sql_resp:
+                    resp.append(item[0])
         return resp
