@@ -1,0 +1,49 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_extra_attachment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-01 10:36+0000\n"
+"PO-Revision-Date: 2021-05-01 10:36+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_extra_attachment
+#: model:ir.model.fields,field_description:base_extra_attachment.field_simpleattachment_model_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
+
+#. module: base_extra_attachment
+#: model:ir.model.fields,field_description:base_extra_attachment.field_account_invoice_has_attachments
+#: model:ir.model.fields,field_description:base_extra_attachment.field_simpleattachment_model_has_attachments
+msgid "Has attachments"
+msgstr "Té adjunts"
+
+#. module: base_extra_attachment
+#: model:ir.model.fields,field_description:base_extra_attachment.field_simpleattachment_model_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_extra_attachment
+#: model:ir.model.fields,field_description:base_extra_attachment.field_simpleattachment_model___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: base_extra_attachment
+#: model:ir.model.fields,field_description:base_extra_attachment.field_account_invoice_number_of_attachments
+#: model:ir.model.fields,field_description:base_extra_attachment.field_simpleattachment_model_number_of_attachments
+msgid "Number of attachments"
+msgstr "N. adjunts"
+
+#. module: base_extra_attachment
+#: model:ir.model,name:base_extra_attachment.model_simpleattachment_model
+msgid "Simple-Attachment Model"
+msgstr "Model abstracte per adjunts"
+
