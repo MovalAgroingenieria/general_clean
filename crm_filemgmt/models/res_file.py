@@ -392,11 +392,16 @@ class ResFile(models.Model):
             if len(unique_ids_of_file) != len(file.filelink_ids):
                 raise exceptions.UserError(_('There are repeated files.'))
 
-    @api.model_cr
     def init(self):
         enable_read_permission = self.env['ir.values'].get_default(
             'res.file.config.settings',
             'enable_access_file_filemgmt_portal_user')
+        if (enable_read_permission is None):
+            enable_read_permission = self.env['ir.values'].set_default(
+                'res.file.config.settings',
+                'enable_access_file_filemgmt_portal_user',
+                True)
+            enable_read_permission = True
         config_model = self.env['res.file.config.settings']
         config_model.sudo().assign_permissions_on_resfile_to_portaluser(
             enable_read_permission)
