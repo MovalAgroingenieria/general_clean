@@ -14,6 +14,7 @@
                 </header>
                 <group string="File Management">
                     <field name="default_annual_seq_prefix"/>
+                    <field name="enable_access_file_filemgmt_portal_user"/>
                 </group>
             </form>
         </field>

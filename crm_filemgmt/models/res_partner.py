@@ -27,6 +27,10 @@ class ResPartner(models.Model):
         string='Num. file registers',
         compute='_compute_number_of_file_registers')
 
+    access_file_filemgmt = fields.Boolean(
+        string='Access to file management',
+        compute='_compute_access_file_filemgmt')
+
     @api.multi
     def _compute_number_of_files(self):
         for record in self:
@@ -97,7 +101,19 @@ class ResPartner(models.Model):
                 for partner_file_id in record.file_ids:
                     partner_file_ids.append(partner_file_id.file_id.id)
             if len(partner_file_ids) > 0:
-                registers_of_partner = self.env['res.letter'].search(
+                registers_of_partner = self.sudo().env['res.letter'].search(
                     [('file_id.id', 'in', partner_file_ids)])
             if registers_of_partner:
                 record.file_res_letter_ids = registers_of_partner
+
+    @api.multi
+    def _compute_access_file_filemgmt(self):
+        values = self.env['ir.values'].sudo()
+        is_portal_user_allowed = values.get_default(
+            'res.file.config.settings',
+            'enable_access_file_filemgmt_portal_user')
+        for record in self:
+            access_file_filemgmt = False
+            is_portal_user = self.env.user.has_group('base.group_portal')
+            access_file_filemgmt = is_portal_user_allowed or not is_portal_user
+            record.access_file_filemgmt = access_file_filemgmt
