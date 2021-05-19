@@ -17,7 +17,6 @@
         'security/security.xml',
         'security/ir.model.access.csv',
         'data/res_file_category_data.xml',
-        "data/res_file_config_settings_data.xml",
         'views/crm_filemgmt_menus.xml',
         'views/res_file_config_settings_view.xml',
         'views/res_file_view.xml',
