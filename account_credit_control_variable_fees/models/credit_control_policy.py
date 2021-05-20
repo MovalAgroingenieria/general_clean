@@ -45,20 +45,21 @@ class CreditControlLine(models.Model):
             record.variable_fees_percentage = \
                 record.policy_level_id.variable_fees_percentage
 
-    @api.depends('variable_fees_percentage', 'balance_due')
+    # @INFO: balance_due_total is introduce by dunning_fees module 
+    @api.depends('variable_fees_percentage', 'balance_due_total')
     def _compute_variable_fees(self):
         for record in self:
             variable_fees = 0
-            if record.variable_fees_percentage > 0 and record.balance_due > 0:
+            if record.variable_fees_percentage > 0 and record.balance_due_total > 0:
                 factor = float(record.variable_fees_percentage) / 100
-                variable_fees = factor * record.balance_due
+                variable_fees = factor * record.balance_due_total
             record.variable_fees = variable_fees
 
-    @api.depends('variable_fees', 'balance_due')
+    @api.depends('variable_fees', 'balance_due_total')
     def _compute_total_amount_with_fees(self):
         for record in self:
             record.total_amount_with_fees = \
-                record.variable_fees + record.balance_due
+                record.variable_fees + record.balance_due_total
 
 
 class CreditCommunication(models.TransientModel):
@@ -70,6 +71,5 @@ class CreditCommunication(models.TransientModel):
     @api.multi
     def _compute_variable_fees_percentage(self):
         for record in self:
-            if len(record.credit_control_line_ids) == 1:
-                record.variable_fees_percentage = \
-                    record.current_policy_level.variable_fees_percentage
+            record.variable_fees_percentage = \
+                record.current_policy_level.variable_fees_percentage
