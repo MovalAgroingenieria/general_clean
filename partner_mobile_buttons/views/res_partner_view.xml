@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='mobile']" position="inside">
-                <div class="mobile_buttons"></div>
+                <div class="mobile_buttons"/>
             </xpath>
         </field>
     </record>
@@ -18,7 +18,7 @@
         <field name="inherit_id" ref="base.res_partner_kanban_view"/>
         <field name="arch" type="xml">
            <xpath expr="//strong[@class='oe_partner_heading']" position="before">
-                <div name="mobile_buttons" class="mobile_buttons_kanban"></div>
+                <div class="mobile_buttons_kanban"/>
             </xpath>
         </field>
     </record>
