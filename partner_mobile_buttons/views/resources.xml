@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend" name="static_resources_partner_button_bar_and_kanban_flags.css" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/partner_mobile_buttons/static/src/css/partner_mobile_buttons.css"/>
+            <link rel="stylesheet" href="/partner_mobile_buttons/static/src/less/form_view.less"/>
+            <link rel="stylesheet" href="/partner_mobile_buttons/static/src/less/kanban_view.less"/>
+        </xpath>
+    </template>
+</odoo>
