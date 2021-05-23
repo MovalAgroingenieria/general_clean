@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="view_partner_form" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mobile']" position="replace">
+                <label for="mobile"/>
+                    <div class="o_row">
+                        <field name="mobile"/>
+                        <div class="mobile_buttons"/>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_kanban_view">
+        <field name="name">res.partner.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+           <xpath expr="//div[@class='o_kanban_tags_section oe_kanban_partner_categories']" position="before">
+                <div class="mobile_buttons_kanban"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
