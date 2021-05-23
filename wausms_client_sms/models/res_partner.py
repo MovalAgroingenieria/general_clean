@@ -18,6 +18,13 @@ class ResPartner(models.Model):
         string="Number of SMS",
         compute="_compute_num_sms")
 
+    show_icon_next_mobile = fields.Boolean(
+        compute="_compute_show_icon_next_mobile")
+
+    show_icon_on_partner_view_kanban = fields.Boolean(
+        compute="_compute_show_icon_on_partner_view_kanban")
+
+
     @api.multi
     def _compute_num_sms(self):
         for record in self:
@@ -38,3 +45,18 @@ class ResPartner(models.Model):
             'context': self.env.context,
             'domain': [('id', 'in', self.wausms_ids.ids)],
         }
+
+    @api.multi
+    def _compute_show_icon_next_mobile(self):
+        show_icon_next_mobile = self.env['ir.values'].get_default(
+                'wausms.configuration', 'show_icon_next_mobile')
+        for record in self:
+            record.show_icon_next_mobile = show_icon_next_mobile
+
+    @api.multi
+    def _compute_show_icon_on_partner_view_kanban(self):
+        show_icon_on_partner_view_kanban = self.env['ir.values'].get_default(
+                'wausms.configuration', 'show_icon_on_partner_view_kanban')
+        for record in self:
+            record.show_icon_on_partner_view_kanban = \
+                show_icon_on_partner_view_kanban

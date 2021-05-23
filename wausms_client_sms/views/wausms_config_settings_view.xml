@@ -18,32 +18,40 @@
         <field name="model">wausms.configuration</field>
         <field name="arch" type="xml">
             <form duplicate="0">
-                <header>
+               <header style="padding: 4px 0px;">
                     <button string="Save" type="object" name="execute" class="oe_highlight"/>
                     <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                 </header>
-                <group name="wausms_data" string="WuaSMS config settings" style="width: 50%">
-                    <field name="service_url"/>
-                    <field name="service_user"/>
-                    <field name="service_passwd" password="True"/>
-                    <field name="default_sender"/>
-                </group>
-                <group name="default_data" string="Defaults templates" style="width: 50%">
-                    <field name="default_partner_template_id" domain="[('type','=','partner')]"/>
-                    <field name="default_invoice_template_id" domain="[('type','=','invoice')]"/>
-                </group>
-               <group>
-                    <group style="width: 40%;">
-                        <field name="test_phone_number" placeholder="Has to be saved before use"/>
+                <group>
+                    <group name="wausms_data" string="WuaSMS config settings">
+                        <field name="service_url"/>
+                        <field name="service_user"/>
+                        <field name="service_passwd" password="True"/>
+                        <field name="default_sender"/>
                     </group>
-                    <group>
-                        <button name="%(action_wausms_test_wizard)d" type="action" class="oe_highlight"
-                            help="Send message to test mobile number. No template is used.">
-                            <div class="o_form_field">
-                                <span class="fa fa-envelope"/>
-                                <span style="margin-left:8px;">Test</span>
-                            </div>
-                        </button>
+                    <group name="default_data" string="Defaults templates">
+                        <field name="default_partner_template_id" domain="[('type','=','partner')]"/>
+                        <field name="default_invoice_template_id" domain="[('type','=','invoice')]"/>
+                    </group>
+                </group>
+                <group >
+                    <group name="test_config" string="Test">
+                        <label for="test_phone_number"/>
+                        <div class="o_row">
+                            <field name="test_phone_number"/>
+                            <button name="%(action_wausms_test_wizard)d" type="action" class="oe_highlight"
+                                help="Send message to test mobile number. No template is used.">
+                                <div class="o_form_field">
+                                    <span class="fa fa-wausms-sms-registre"/>
+                                    <span style="margin-left:8px;">Test</span>
+                                </div>
+                            </button>
+                        </div>
+                    </group>
+                    <group string="Display settings">
+                        <field name="show_icon_next_mobile"/>
+                        <field name="show_icon_on_partner_view_kanban"/>
+                        <br/><br/>
                     </group>
                 </group>
             </form>

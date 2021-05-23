@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-01 21:13+0000\n"
-"PO-Revision-Date: 2020-12-01 21:13+0000\n"
+"POT-Creation-Date: 2021-05-24 10:56+0000\n"
+"PO-Revision-Date: 2021-05-24 10:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,49 +16,49 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_test_wizard_form
-msgid "<span class=\"fa fa-envelope\"/>\n"
-"                                <span style=\"margin-left:8px;\">Send</span>"
-msgstr ""
-
-#. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "<span class=\"fa fa-envelope\"/>\n"
-"                                <span style=\"margin-left:8px;\">Test</span>"
-msgstr ""
-
-#. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_template_view_form
 msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
 "                                        <span style=\"margin-left:8px;\">Resolve </span>"
 msgstr ""
 
 #. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_account_invoice_form
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
-msgid "<span> SMS </span>"
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "<span class=\"fa fa-wausms-sms-send\"/>\n"
+"                                    <span style=\"margin-left:8px;\">Test</span>"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:154
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_test_wizard_form
+msgid "<span class=\"fa fa-wausms-sms-send\"/>\n"
+"                                <span style=\"margin-left:8px;\">Send</span>"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_account_invoice_form
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
+msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
+msgstr ""
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:159
 #, python-format
 msgid "Accepted"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:156
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:161
 #, python-format
 msgid "Accepted - The message has been accepted for further processing."
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:164
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:169
 #, python-format
 msgid "Bad request"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:166
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:171
 #, python-format
 msgid "Bad request - The request contains errors, the message has not been accepted."
 msgstr ""
@@ -159,21 +159,26 @@ msgid "Display Name"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:130
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Display settings"
+msgstr ""
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:135
 #, python-format
 msgid "Error in phone number, or is not a mobile, or is not Spanish or does not have the correct format."
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:122
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:127
 #, python-format
 msgid "Error in phone number, there are characters that are not digits."
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/models/wausms_template.py:85
-#: code:addons/wausms_client_sms/models/wausms_template.py:94
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:280
+#: code:addons/wausms_client_sms/models/wausms_template.py:89
+#: code:addons/wausms_client_sms/models/wausms_template.py:98
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:285
 #, python-format
 msgid "Error resolving template: {}"
 msgstr ""
@@ -181,6 +186,13 @@ msgstr ""
 #. module: wausms_client_sms
 #: sql_constraint:wausms.template:0
 msgid "Existing template."
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,help:wausms_client_sms.field_wausms_configuration_test_phone_number
+msgid "For test configuration\n"
+"Have to be saved before to be used.\n"
+"Only Spanish mobile numbers"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -195,11 +207,6 @@ msgid "Group By"
 msgstr ""
 
 #. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
-msgid "Has to be saved before use"
-msgstr ""
-
-#. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_id
@@ -209,13 +216,23 @@ msgid "ID"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:178
+#: model:ir.model.fields,help:wausms_client_sms.field_wausms_configuration_show_icon_on_partner_view_kanban
+msgid "If checked, it shows an icon in the upper right corner of the kanban card to send SMS."
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,help:wausms_client_sms.field_wausms_configuration_show_icon_next_mobile
+msgid "If it is checked, it shows an icon next to the mobile to send SMS."
+msgstr ""
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:183
 #, python-format
 msgid "Internal server error"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:180
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:185
 #, python-format
 msgid "Internal server error - The server had an internal error."
 msgstr ""
@@ -293,18 +310,13 @@ msgid "Message"
 msgstr ""
 
 #. module: wausms_client_sms
-#: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_sms_message
-msgid "Message sent"
-msgstr ""
-
-#. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:159
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:164
 #, python-format
 msgid "Multi-status"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:161
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:166
 #, python-format
 msgid "Multi-status - The message has been accepted for further processing, but some of the recipients are incorrect."
 msgstr ""
@@ -315,19 +327,19 @@ msgid "Name"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/models/wausms_template.py:59
+#: code:addons/wausms_client_sms/models/wausms_template.py:63
 #, python-format
 msgid "No invoice found"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/models/wausms_template.py:69
+#: code:addons/wausms_client_sms/models/wausms_template.py:73
 #, python-format
 msgid "No partner found"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:100
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:105
 #, python-format
 msgid "No sender has been set."
 msgstr ""
@@ -340,7 +352,7 @@ msgid "Number of SMS"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:291
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:296
 #, python-format
 msgid "Number of characters must not exceed 160"
 msgstr ""
@@ -358,7 +370,7 @@ msgid "Partner"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:268
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:273
 #, python-format
 msgid "Partner %s does not have a mobile number"
 msgstr ""
@@ -404,13 +416,13 @@ msgid "Password"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:173
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:178
 #, python-format
 msgid "Payment required"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:175
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:180
 #, python-format
 msgid "Payment required - The client does not have sufficient balance."
 msgstr ""
@@ -419,11 +431,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_phone_number
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_wizard_phone_number
 msgid "Phone number"
-msgstr ""
-
-#. module: wausms_client_sms
-#: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_phone_number
-msgid "Phone number used"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -446,7 +453,7 @@ msgstr ""
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/models/account_invoice.py:30
-#: code:addons/wausms_client_sms/models/res_partner.py:31
+#: code:addons/wausms_client_sms/models/res_partner.py:38
 #: model:ir.ui.menu,name:wausms_client_sms.wausms_root_menu
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
@@ -466,7 +473,7 @@ msgid "SMS Templates"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:366
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:373
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
@@ -504,15 +511,15 @@ msgid "SMS template"
 msgstr ""
 
 #. module: wausms_client_sms
-#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
-msgid "SMS that have been sent"
-msgstr ""
-
-#. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_account_invoice_wausms_ids
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_wausms_ids
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_wausms_ids
 msgid "SMS's sent"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
+msgid "SMS's that have been sent."
 msgstr ""
 
 #. module: wausms_client_sms
@@ -523,6 +530,8 @@ msgstr ""
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_wizard
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_wizard_invoice
+#: model:ir.ui.view,arch_db:wausms_client_sms.res_partner_kanban_view
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
 msgid "Send SMS"
 msgstr ""
 
@@ -538,7 +547,7 @@ msgid "Sender"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/models/wausms_config_settings.py:76
+#: code:addons/wausms_client_sms/models/wausms_config_settings.py:94
 #, python-format
 msgid "Sender size is limited to 15 numbers (ex. 34XXXXXXXXX) or 11 alphanumeric characters (ex. company xxx)"
 msgstr ""
@@ -556,6 +565,28 @@ msgstr ""
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_form
 msgid "Shipping info"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_show_icon_on_partner_view_kanban
+msgid "Show icon in kanban card"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_next_mobile
+#: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_show_icon_next_mobile
+msgid "Show icon next mobile"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_show_icon_next_mobile
+msgid "Show icon next to mobile"
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_on_partner_view_kanban
+#: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_show_icon_on_partner_view_kanban
+msgid "Show icon on partner view kanban"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -588,6 +619,11 @@ msgid "Template"
 msgstr ""
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_template_from_wizard
+msgid "Template from wizard"
+msgstr ""
+
+#. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_template_resolved
 msgid "Template resolved"
 msgstr ""
@@ -614,6 +650,11 @@ msgid "Templates use jinja2 variables: {{ object.attribute }}. The available obj
 msgstr ""
 
 #. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_config_settings_view_form
+msgid "Test"
+msgstr ""
+
+#. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_test_phone_number
 msgid "Test phone number"
 msgstr ""
@@ -624,8 +665,13 @@ msgid "Test wizard"
 msgstr ""
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_sms_message
+msgid "Text of the SMS sent"
+msgstr ""
+
+#. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_wausms_url
-msgid "The URL used to contect WauSMS service"
+msgid "The URL used to connect WauSMS service"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -644,9 +690,14 @@ msgid "The maximum size is 160 characters after resolving variables. Some specia
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:263
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:268
 #, python-format
 msgid "The phone number for testing has not been set."
+msgstr ""
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_phone_number
+msgid "The phone number to which the SMS was sent"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -655,7 +706,7 @@ msgid "The sender that will appear in all messages. Limit to 15 numbers (only nu
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/models/wausms_template.py:99
+#: code:addons/wausms_client_sms/models/wausms_template.py:103
 #, python-format
 msgid "The size of the SMS after solving the variables exceeds 160 characters. Try setting a fixed length for variables {{ object.attribute[:10] }}"
 msgstr ""
@@ -667,11 +718,11 @@ msgstr ""
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_tracking_user_id
-msgid "The user who sent the sms"
+msgid "The user who sent the SMS"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:241
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:246
 #, python-format
 msgid "There are no items selected."
 msgstr ""
@@ -708,27 +759,21 @@ msgid "Type of template"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:169
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:174
 #, python-format
 msgid "Unauthorized"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:171
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:176
 #, python-format
 msgid "Unauthorized - Client authentication failed."
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:182
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:187
 #, python-format
 msgid "Unknown error"
-msgstr ""
-
-#. module: wausms_client_sms
-#: model:ir.model.fields,help:wausms_client_sms.field_wausms_configuration_test_phone_number
-msgid "Used to test configuration.\n"
-"Only Spanish mobile numbers"
 msgstr ""
 
 #. module: wausms_client_sms
@@ -739,7 +784,7 @@ msgid "User"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:112
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:117
 #, python-format
 msgid "User or password not set."
 msgstr ""
@@ -775,14 +820,9 @@ msgid "WuaSMS config settings"
 msgstr ""
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:282
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:287
 #, python-format
 msgid "empty message"
-msgstr ""
-
-#. module: wausms_client_sms
-#: model:ir.model,name:wausms_client_sms.model_wau_sms_configuration
-msgid "wau.sms.configuration"
 msgstr ""
 
 #. module: wausms_client_sms

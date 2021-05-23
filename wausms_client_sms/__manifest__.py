@@ -12,14 +12,15 @@
     "depends": [
         "base",
         "account",
+        "partner_mobile_buttons",
     ],
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
+        "views/wausms_view.xml",
         "views/res_partner_view.xml",
         "views/wausms_config_settings_view.xml",
         "data/wausms_config_settings_data.xml",
-        "views/wausms_view.xml",
         "views/wausms_tracking_view.xml",
         "views/account_invoice_view.xml",
         "wizards/wausms_wizard_view.xml",

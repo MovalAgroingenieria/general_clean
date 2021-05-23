@@ -45,6 +45,18 @@ class WauSMSConfiguration(models.TransientModel):
         string='Invoice',
         ondelete="set null")
 
+    show_icon_next_mobile = fields.Boolean(
+        string="Show icon next to mobile",
+        default=True,
+        help="If it is checked, it shows an icon next to the mobile to send "
+             "SMS.")
+
+    show_icon_on_partner_view_kanban = fields.Boolean(
+        string="Show icon in kanban card",
+        default=True,
+        help="If checked, it shows an icon in the upper right corner of the "
+             "kanban card to send SMS.")
+
     @api.multi
     def set_default_values(self):
         values = self.env['ir.values'].sudo()
@@ -69,6 +81,12 @@ class WauSMSConfiguration(models.TransientModel):
         values.set_default('wausms.configuration',
                            'default_invoice_template_id',
                            self.default_invoice_template_id.id)
+        values.set_default('wausms.configuration',
+                           'show_icon_next_mobile',
+                           self.show_icon_next_mobile)
+        values.set_default('wausms.configuration',
+                           'show_icon_on_partner_view_kanban',
+                           self.show_icon_on_partner_view_kanban)
 
     @api.constrains('default_sender')
     def _check_default_sender_size(self):

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
     <template id="assets_backend" name="static_resources_wausms_client_sms" inherit_id="web.assets_backend">
         <xpath expr="." position="inside">
             <link rel="stylesheet" href="/wausms_client_sms/static/src/css/wausms_client_sms.css"/>
+            <link rel="stylesheet" href="/wausms_client_sms/static/src/iconset/css/wausms_iconset.css"/>
         </xpath>
     </template>
+
+    <template id="minimal_layout_wausms" inherit_id="report.minimal_layout" name="Add WauSMS iconset to reports">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" type="text/css" href="/wausms_client_sms/static/src/iconset/css/wausms_iconset.css"/>
+        </xpath>
+    </template>
+
 </odoo>
+
