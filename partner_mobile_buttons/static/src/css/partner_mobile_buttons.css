@@ -1,0 +1,10 @@
+/* Common classes used in module */
+.mobile_buttons {
+    display: inline;
+    width: 100%;
+}
+
+.mobile_buttons_kanban {
+    display: float;
+    float: right;
+}
