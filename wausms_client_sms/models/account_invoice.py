@@ -24,7 +24,8 @@ class AccountInvoice(models.Model):
 
     @api.multi
     def action_see_wausms_invoice(self):
-        tree_view = self.env.ref('wausms_client_sms.wausms_tracking_view_tree')
+        tree_view = \
+            self.env.ref('wausms_client_sms.wausms_tracking_view_tree_invoice')
         form_view = self.env.ref('wausms_client_sms.wausms_tracking_view_form')
         return {
             'name': _('SMS'),

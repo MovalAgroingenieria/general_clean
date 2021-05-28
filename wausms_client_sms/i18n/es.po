@@ -40,7 +40,7 @@ msgstr "<span class=\"fa fa-wausms-sms-registre\"/>\n"
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_account_invoice_form
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
 msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
-msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
+msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS</span>"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:159
@@ -483,7 +483,7 @@ msgstr "Plantillas SMS"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
 msgid "SMS confirmation"
-msgstr "Confirmation del SMS"
+msgstr "Confirmation"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_name
@@ -581,12 +581,12 @@ msgstr "Mostrar icono en tarjeta kanban"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_next_mobile
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_show_icon_next_mobile
 msgid "Show icon next mobile"
-msgstr "Mostrar icono junto al móvil"
+msgstr "Muestra icono junto al móvil"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_show_icon_next_mobile
 msgid "Show icon next to mobile"
-msgstr "Muestra el icono junto al móvil"
+msgstr "Mostrar el icono junto al móvil"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_on_partner_view_kanban

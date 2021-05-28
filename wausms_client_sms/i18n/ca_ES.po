@@ -40,7 +40,7 @@ msgstr "<span class=\"fa fa-envelope\"/>\n"
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_account_invoice_form
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_view_partner_form
 msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
-msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
+msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS</span>"
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:159
@@ -470,7 +470,7 @@ msgstr "SMS"
 #. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_confirmation_form
 msgid "SMS Confirmation"
-msgstr "Confirmació WauSMS"
+msgstr "Confirmació"
 
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_template_tree
@@ -483,7 +483,7 @@ msgstr "Plantillas SMS"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
 msgid "SMS confirmation"
-msgstr "Confirmació de l'SMS"
+msgstr "Confirmació"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_name
@@ -575,7 +575,7 @@ msgstr "Informació d'enviament"
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_show_icon_on_partner_view_kanban
 msgid "Show icon in kanban card"
-msgstr "Mostra icona en targeta kanban"
+msgstr "Mostrar icona en targeta kanban"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_next_mobile
@@ -586,7 +586,7 @@ msgstr "Mostra icona al costat de el mòbil"
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_show_icon_next_mobile
 msgid "Show icon next to mobile"
-msgstr "Mostra la icona al costat de el mòbil"
+msgstr "Mostrar la icona al costat de el mòbil"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_partner_show_icon_on_partner_view_kanban

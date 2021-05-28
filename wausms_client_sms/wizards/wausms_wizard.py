@@ -65,12 +65,6 @@ class WauSMSWizard(models.Model):
         help="Subject description (It is not sent, but it will be searchable "
              "in the tracking system.)")
 
-    phone_number = fields.Char(
-        string="Phone number",
-        size=15,
-        compute="_compute_phone_number",
-        help="Only for Spanish mobile numbers")
-
     sender = fields.Char(
         string="From",
         default=_get_default_sender,

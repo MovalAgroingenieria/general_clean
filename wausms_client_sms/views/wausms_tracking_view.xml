@@ -6,19 +6,59 @@
         <field name="name">WauSMS Tracking Tree</field>
         <field name="model">wausms.tracking</field>
         <field name="arch" type="xml">
-            <tree string="SMS" default_order='sms_time_data desc' create="false" duplicate="false"
-                colors="green:response_code=='202';
-                        orange:response_code=='207';
-                        red:response_code=='400';
-                        red:response_code=='401';
-                        red:response_code=='402';
-                        red:response_code=='500';">
+            <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_wausms_tracking_view_tree"
+                colors="green:response_code=='202'; orange:response_code=='207';
+                    red:response_code=='400'; red:response_code=='401';
+                    red:response_code=='402'; red:response_code=='500';">
                 <field name="response_code" invisible="1"/>
                 <field name="sms_time_data"/>
                 <field name="user_id"/>
                 <field name="sender"/>
                 <field name="partner_id" string="To"/>
                 <field name="invoice_id"/>
+                <field name="subject"/>
+                <field name="sms_confirmation"/>
+                <field name="sms_message"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Tree view partner -->
+    <record id="wausms_tracking_view_tree_partner" model="ir.ui.view">
+        <field name="name">WauSMS Tracking Tree</field>
+        <field name="model">wausms.tracking</field>
+        <field name="arch" type="xml">
+           <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_wausms_tracking_view_tree"
+                colors="green:response_code=='202'; orange:response_code=='207';
+                    red:response_code=='400'; red:response_code=='401';
+                    red:response_code=='402'; red:response_code=='500';">
+                <field name="response_code" invisible="1"/>
+                <field name="sms_time_data"/>
+                <field name="sender"/>
+                <field name="invoice_id"/>
+                <field name="subject"/>
+                <field name="sms_confirmation"/>
+                <field name="sms_message"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Tree view invoice -->
+    <record id="wausms_tracking_view_tree_invoice" model="ir.ui.view">
+        <field name="name">WauSMS Tracking Tree</field>
+        <field name="model">wausms.tracking</field>
+        <field name="arch" type="xml">
+           <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_wausms_tracking_view_tree"
+                colors="green:response_code=='202'; orange:response_code=='207';
+                    red:response_code=='400'; red:response_code=='401';
+                    red:response_code=='402'; red:response_code=='500';">
+                <field name="response_code" invisible="1"/>
+                <field name="sms_time_data"/>
+                <field name="sender"/>
+                <field name="partner_id" string="To"/>
                 <field name="subject"/>
                 <field name="sms_confirmation"/>
                 <field name="sms_message"/>

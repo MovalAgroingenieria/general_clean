@@ -32,7 +32,8 @@ class ResPartner(models.Model):
 
     @api.multi
     def action_see_wausms(self):
-        tree_view = self.env.ref('wausms_client_sms.wausms_tracking_view_tree')
+        tree_view = \
+            self.env.ref('wausms_client_sms.wausms_tracking_view_tree_partner')
         form_view = self.env.ref('wausms_client_sms.wausms_tracking_view_form')
         return {
             'name': _('SMS'),

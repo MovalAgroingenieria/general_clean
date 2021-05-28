@@ -1,4 +1,41 @@
 /* wausms_template_view_tree */
+.o_wausms_template_view_tree [data-id="type"] {
+    width: 6%;
+}
+
 .o_wausms_template_view_tree [data-id="template"] {
-    width: 70%;
+    width: 44%;
+}
+
+
+/* o_wausms_tracking_view_tree */
+.o_wausms_tracking_view_tree [data-id="sms_time_data"] {
+    text-align: center;
+    width: 14%;
+}
+.o_wausms_tracking_view_tree [data-field="sms_time_data"] {
+    text-align: center;
+}
+
+.o_wausms_tracking_view_tree [data-id="user_id"] {
+    width: 10%;
+}
+
+.o_wausms_tracking_view_tree [data-field="sender"] {
+    width: 8%;
+}
+.o_wausms_tracking_view_tree [data-id="partner_id"] {
+    width: 15%;
+}
+
+.o_wausms_tracking_view_tree [data-id="subject"] {
+    width: 12%;
+}
+
+.o_wausms_tracking_view_tree [data-id="sms_confirmation"] {
+    text-align: center;
+    width: 8%;
+}
+.o_wausms_tracking_view_tree [data-field="sms_confirmation"] {
+    text-align: center;
 }

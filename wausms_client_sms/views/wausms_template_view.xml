@@ -45,62 +45,57 @@
                                 <br/>
                                 Commonly used expressions and variables:<br/>
                                 <table style="border-style: hidden; margin-left:8px;padding: 4px 0px;">
-                                    <tr>
+                                    <tr name="partner_full_name">
                                         <td>Partner full name</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ partner.display_name }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr name="partner_lastname">
                                         <td>Partner lastname</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ partner.lastname }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr name="partner_fixed_lenght">
                                         <td>Partner name fixed length (40 chars)</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ partner.display_name[:40] }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr name="partner_initial_letter">
                                         <td>Partner firstname initial letter</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ partner.firstname[:1]. }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr name="partner_if_exists">
                                         <td>Partner data if exists</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td> {{ partner.phone or "" }} {{ partner.mobile or "" }} {{ partner.email or "" }}</td>
                                     </tr>
-                                    <tr>
+                                    <tr name="partner_vat">
                                         <td>Partner VAT</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ partner.vat }}</td>
                                     </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                    <tr name="invoice_number" attrs="{'invisible': [('type','!=','invoice')]}">
                                         <td>Invoice number</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ invoice.number }}</td>
                                     </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                    <tr name="invoice_amount" attrs="{'invisible': [('type','!=','invoice')]}">
                                         <td>Invoice amount</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ invoice.amount_total }}</td>
                                     </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                    <tr name="invoice_surcharge" attrs="{'invisible': [('type','!=','invoice')]}">
                                         <td>Invoice amount plus surcharge (20%)</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ invoice.amount_total + (0.20 * invoice.amount_total) }}</td>
                                     </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
-                                        <td>Invoice set description</td>
-                                        <td style="padding: 0px 4px"> -> </td>
-                                        <td>{{ invoice.invoiceset_id.description }}</td>
-                                    </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                    <tr name="invoice_date" attrs="{'invisible': [('type','!=','invoice')]}">
                                         <td>Invoice date (dd-mm-yyyy)</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ datetime.strptime(<i>invoice.date_invoice</i>, '%Y-%m-%d').strftime(<i>'%d-%m-%Y'</i>) }}</td>
                                     </tr>
-                                    <tr attrs="{'invisible': [('type','=','partner')]}">
+                                    <tr name="invoice_date_due" attrs="{'invisible': [('type','!=','invoice')]}">
                                         <td>Invoice due date (dd/mm/yyyy)</td>
                                         <td style="padding: 0px 4px"> -> </td>
                                         <td>{{ datetime.strptime(<i>invoice.date_due</i>, '%Y-%m-%d').strftime(<i>'%d/%m/%Y'</i>) }}</td>
