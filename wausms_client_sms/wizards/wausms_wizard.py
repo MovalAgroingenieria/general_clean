@@ -133,13 +133,6 @@ class WauSMSWizard(models.Model):
             reformated_phone_number = reformated_phone_number.strip('+')
         return reformated_phone_number
 
-    def _compute_sms_template(self, context):
-        if context.get("mode") == 'invoice':
-            invoice_template = self.env['ir.values'].get_default(
-                'wausms.configuration', 'default_invoice_template')
-            for record in self:
-                record.sms_message = invoice_template
-
     def _escape_json_special_chars(self, string):
         escaped_string = string.replace('\n', '\\n').replace(
             '"', '\\"').replace('\b', '\\b').replace(
