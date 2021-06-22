@@ -47,19 +47,23 @@ class SimplecadastreModel(models.AbstractModel):
         for record in self:
             cadastral_area = 0
             if record.cadastral_reference:
-                resp_http_get = requests.get(
-                    self._url_cadastral_data + record.cadastral_reference)
-                if resp_http_get.status_code == 200:
-                    cadastral_data = ET.fromstring(resp_http_get.content)
-                    prefix = ''
-                    pos_closing = cadastral_data.tag.find('}')
-                    if pos_closing != -1:
-                        prefix = cadastral_data.tag[:pos_closing + 1]
-                    number_of_items = int(cadastral_data[0][0].text)
-                    if number_of_items == 1:
-                        for item in cadastral_data.iter(prefix + 'ssp'):
-                            area = int(item.text)
-                            cadastral_area = cadastral_area + area
+                # Add try for exceptions on Cadastre services
+                try:
+                    resp_http_get = requests.get(
+                        self._url_cadastral_data + record.cadastral_reference)
+                    if resp_http_get.status_code == 200:
+                        cadastral_data = ET.fromstring(resp_http_get.content)
+                        prefix = ''
+                        pos_closing = cadastral_data.tag.find('}')
+                        if pos_closing != -1:
+                            prefix = cadastral_data.tag[:pos_closing + 1]
+                        number_of_items = int(cadastral_data[0][0].text)
+                        if number_of_items == 1:
+                            for item in cadastral_data.iter(prefix + 'ssp'):
+                                area = int(item.text)
+                                cadastral_area = cadastral_area + area
+                except Exception:
+                    cadastral_area = 0
             record.cadastral_area = cadastral_area
 
     def _compute_cadastral_link(self):
