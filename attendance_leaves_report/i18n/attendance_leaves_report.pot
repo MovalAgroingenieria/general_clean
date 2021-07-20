@@ -1,0 +1,289 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* attendance_leaves_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-20 16:25+0000\n"
+"PO-Revision-Date: 2021-07-20 16:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "&amp;nbsp;"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Attendances</b>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Conformity</b>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Leaves</b>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Public holidays</b>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<br/>\n"
+"                            <span>From: </span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<br/>\n"
+"                            <span>To: </span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.form_employee_attendance
+msgid "<span class=\"fa fa-print\"/>\n"
+"                            <span style=\"margin-left:8px;\">Print</span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>Employee: </span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>No attendance was found during this period for the employee.</span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>No leave was found during this period for the employee.</span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>There are no public holidays for the selected period.</span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<strong>Total working hours</strong>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Attendances / Leaves Report"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.form_employee_attendance
+msgid "Cancel"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Check-in"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Check-out"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Company signature"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_create_uid
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_create_date
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Date"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_display_name
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.actions.report.xml,name:attendance_leaves_report.menu_employee_attendance_print
+msgid "Attendances and Leaves report"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.actions.act_window,name:attendance_leaves_report.action_employee_attendance
+msgid "Employee Attendance/Leaves Report"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Employee signature"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_employee_ids
+msgid "Employees"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_end_date
+msgid "End date"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:44
+#, python-format
+msgid "Friday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "From"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_id
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_id
+msgid "ID"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard___last_update
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_write_uid
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_write_date
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:36
+#, python-format
+msgid "Monday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Name"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Num. Days"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_number_of_selected_employees
+msgid "Num. selected employees"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Reason"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_report_date
+msgid "Report date"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:46
+#, python-format
+msgid "Saturday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_start_date
+msgid "Start date"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:48
+#, python-format
+msgid "Sunday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:42
+#, python-format
+msgid "Thursday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "To"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:38
+#, python-format
+msgid "Tuesday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Type"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:40
+#, python-format
+msgid "Wednesday"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Working hours"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_employee_attendance
+msgid "employee.attendance"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_employee_attendance_wizard
+msgid "employee.attendance.wizard"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_report_attendance_leaves_report_template_employee_attendance
+msgid "report.attendance_leaves_report.template_employee_attendance"
+msgstr ""
+

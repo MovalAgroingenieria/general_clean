@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+# 2021 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
+from odoo import models, fields, api
+
+
+class EmployeeAttendance(models.Model):
+    _name = 'employee.attendance'
+
+    def _default_employee_ids(self):
+        context = self._context
+        active_ids = context.get('active_ids')
+        return active_ids
+
+    def _default_number_of_selected_employees(self):
+        context = self._context
+        active_ids = context.get('active_ids')
+        return len(active_ids)
+
+    start_date = fields.Datetime(
+        string='Start Date',
+        required=True)
+
+    end_date = fields.Datetime(
+        string='End Date',
+        required=True)
+
+    employee_ids = fields.Many2many(
+        comodel_name='hr.employee',
+        string='Employees',
+        store=True,
+        default=_default_employee_ids,
+        compute="_compute_employee_ids")
+
+    start_date = fields.Datetime(
+        string='Start Date',
+        required=True)
+
+    end_date = fields.Datetime(
+        string='End Date',
+        required=True)
+
+    number_of_selected_employees = fields.Integer(
+        string="Num. selected employees",
+        readonly=True,
+        store=True,
+        default=_default_number_of_selected_employees)
+
+    @api.multi
+    def _compute_employee_ids(self):
+        context = self._context
+        active_ids = context.get('active_ids')
+        if active_ids:
+            for record in self:
+                record.employee_ids = active_ids
+                record.number_of_selected_employees = len(active_ids)
+
+    @api.multi
+    def compute_employee_ids_report(self):
+        context = self._context
+        active_ids = context.get('active_ids')
+        return active_ids
+
+    @api.multi
+    def print_employee_attendance_report(self):
+        context = self._context
+        employee_ids = context.get('active_ids')
+        if employee_ids:
+            for employee_id in employee_ids:
+                return self.env['report'].get_action(
+                    employee_id,
+                    'attendance_leaves_report.template_employee_attendance')

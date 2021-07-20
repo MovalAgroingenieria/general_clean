@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="main_employee_attendance">
+        <t t-call="report.external_layout">
+            <div class="page">
+                <t t-if="o.employee_ids">
+                    <t t-foreach="o.employee_ids" t-as="employee">
+
+                        <div name="report_title">
+                            <h3><center>Attendances / Leaves Report</center></h3>
+                        </div>
+                        <div name="report_employee_data">
+                            <span>Employee: </span><b><span t-field="employee.name"/></b><br/>
+                            <span>From: </span><span t-field="o.start_date"/><br/>
+                            <span>To: </span><span t-field="o.end_date"/><br/>
+                        </div>
+
+                        <div name="attendances_div">
+                            <t t-set="attendance_data" t-value="get_attendance_data(o, employee)"/>
+                            <div name="attendance_title" class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                                <center><b>Attendances</b></center>
+                            </div>
+                            <t t-if="attendance_data">
+                                <table name="attendances_table" class="table table-striped" style="margin-top: 2px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Check-in</th>
+                                            <th>Check-out</th>
+                                            <th class="text-right">Working hours</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="attendance_data" t-as="attendance">
+                                            <td><span t-esc="attendance['check_in']"/></td>
+                                            <td><span t-esc="attendance['check_out']"/></td>
+                                            <td class="text-right"><span t-esc="attendance['difference']"/></td>
+                                        </tr>
+                                        <tr class="border-black">
+                                            <td><strong>Total working hours</strong></td>
+                                            <td></td>
+                                            <td class="text-right">
+                                                <t t-set="total_time" t-value="attendance_data[-1]"/>
+                                                <b><span t-esc="total_time['total_working_time_show']"/></b>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </t>
+                            <t t-else="">
+                                <span>No attendance was found during this period for the employee.</span>
+                            </t>
+                        </div>
+
+                        <div name="leaves_div" style="page-break-inside: avoid">
+                            <t t-set="leave_data" t-value="get_leaves_details(o, employee)"/>
+                            <div name="leave_title" class="row h4 mt28 mb4" style="padding-bottom: 4px; margin-top:20px;">
+                                <center><b>Leaves</b></center>
+                            </div>
+                            <t t-if="leave_data">
+                                <table name="leaves_table" class="table table-striped" style="margin-top: 2px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th class="text-right">Num. Days</th>
+                                            <th>Reason</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="leave_data" t-as="leave">
+                                            <td><span t-esc="leave['type']"/></td>
+                                            <td><span t-esc="leave['from']"/></td>
+                                            <td><span t-esc="leave['to']"/></td>
+                                            <td class="text-right"><span t-esc="leave['number_of_days']"/></td>
+                                            <td><span t-esc="leave['reason']"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </t>
+                            <t t-else="">
+                                <span>No leave was found during this period for the employee.</span>
+                            </t>
+                        </div>
+
+                        <div name="public_holidays_div" style="page-break-inside: avoid">
+                            <t t-set="public_holidays_data" t-value="get_public_holidays(o)"/>
+                            <div name="public_holidays_title" class="row h4 mt28 mb4" style="padding-bottom: 4px; margin-top:20px;">
+                                <center><b>Public holidays</b></center>
+                            </div>
+                            <t t-if="public_holidays_data">
+                                <table name="public_holidays_table" class="table table-striped" style="margin-top: 2px;">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach="public_holidays_data" t-as="public_holiday">
+                                            <td><span t-esc="public_holiday['holiday_date']"/></td>
+                                            <td><span t-esc="public_holiday['holiday_name']"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </t>
+                            <t t-else="">
+                                <span>There are no public holidays for the selected period.</span>
+                            </t>
+                        </div>
+
+                        <div name="conformity_div" style="page-break-inside: avoid">
+                            <div name="conformity_title" class="row h4 mt28 mb4" style="padding-bottom: 4px; margin-top: 20px;">
+                                <center><b>Conformity</b></center>
+                            </div>
+                            <div name="date_report">
+                                <t t-if="request.env.user.company_id.city">
+                                    <span t-esc="request.env.user.company_id.city"/>,
+                                </t>
+                                <t t-else=""><span t-esc="str('_' * 20)"/>,</t>
+                                <span t-field="o.report_date" t-field-options='{"format": "dd MMMM yyyy (HH:MM)"}'/><br/>
+                            </div>
+                            <div name="signatures" class="row" style="border: 1px solid lightgrey; margin: 2px 1px; page-break-inside: avoid;">
+                                <div class="col-xs-12" style="display: table;">
+                                    <div style="border-right: 1px solid lightgrey; width: 50%; display: table-cell;">
+                                        <p style="margin-left: -8px; margin-top: 2px; margin-bottom: 0px;">
+                                            <t t-if="request.env.user.company_id.city">
+                                                <span t-esc="request.env.user.company_id.name"/>
+                                            </t>
+                                        </p>
+                                        <p>&amp;nbsp;</p>
+                                        <p>&amp;nbsp;</p>
+                                        <div class="text-right" style="color:lightgrey; padding-right: 16px;">Company signature</div>
+                                    </div>
+                                    <div style="width: 50%; display: table-cell; padding: 0px 8px;">
+                                        <p style="margin-top: 2px; margin-bottom: 0px">
+                                            <span t-field="employee.name"/>
+                                            <t t-if="employee.user_id.vat">
+                                                <span>(<span t-field="employee.user_id.vat"/>)</span>
+                                            </t>
+                                        </p>
+                                        <p>&amp;nbsp;</p>
+                                        <p>&amp;nbsp;</p>
+                                        <div class="text-right" style="color:lightgrey">Employee signature</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Force new page -->
+                        <p style="page-break-after:always;"/>
+                    </t>
+                </t>
+            </div>
+        </t>
+    </template>
+
+    <template id="template_employee_attendance">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="attendance_leaves_report.main_employee_attendance"/>
+            </t>
+        </t>
+    </template>
+
+    <report id="menu_employee_attendance_print" model="employee.attendance.wizard"
+        string="Attendances and Leaves report" report_type="qweb-pdf"
+        name="attendance_leaves_report.template_employee_attendance"
+        file="attendance_leaves_report.template_employee_attendance">
+    </report>
+
+</odoo>

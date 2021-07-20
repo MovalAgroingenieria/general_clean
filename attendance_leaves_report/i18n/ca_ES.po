@@ -1,0 +1,292 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* attendance_leaves_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-20 16:26+0000\n"
+"PO-Revision-Date: 2021-07-20 16:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "&amp;nbsp;"
+msgstr "&amp;nbsp;"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Attendances</b>"
+msgstr "<b>Assistències</b>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Conformity</b>"
+msgstr "<b>Conformitat</b>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Leaves</b>"
+msgstr "<b>Absències</b>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<b>Public holidays</b>"
+msgstr "<b>Vacances públiques</b>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<br/>\n"
+"                            <span>From: </span>"
+msgstr "<br/>\n"
+"                            <span>Des: </span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<br/>\n"
+"                            <span>To: </span>"
+msgstr "<br/>\n"
+"                            <span>Fins: </span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.form_employee_attendance
+msgid "<span class=\"fa fa-print\"/>\n"
+"                            <span style=\"margin-left:8px;\">Print</span>"
+msgstr "<span class=\"fa fa-print\"/>\n"
+"                            <span style=\"margin-left:8px;\">Imprimir</span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>Employee: </span>"
+msgstr "<span>Empleat: </span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>No attendance was found during this period for the employee.</span>"
+msgstr "<span>No s'ha trobat cap assistència durant aquest període per a l'empleat.</span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>No leave was found during this period for the employee.</span>"
+msgstr "<span>No s'ha trobat cap absència durant aquest període per a l'empleat.</span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>There are no public holidays for the selected period.</span>"
+msgstr "<span>No hi ha vacances públiques en el període seleccionat.</span>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<strong>Total working hours</strong>"
+msgstr "<strong>Total hores treballades</strong>"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Attendances / Leaves Report"
+msgstr "Informe d'Assistències / Absències"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.form_employee_attendance
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Check-in"
+msgstr "Entrada"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Check-out"
+msgstr "Sortida"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Company signature"
+msgstr "Signatura companyia"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_create_uid
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_create_date
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Date"
+msgstr "Data"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_display_name
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
+
+#. module: attendance_leaves_report
+#: model:ir.actions.report.xml,name:attendance_leaves_report.menu_employee_attendance_print
+msgid "Attendances and Leaves report"
+msgstr "Informe Assistències i Absències"
+
+#. module: attendance_leaves_report
+#: model:ir.actions.act_window,name:attendance_leaves_report.action_employee_attendance
+msgid "Employee Attendance/Leaves Report"
+msgstr "Informe d'Assistències/Absències"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Employee signature"
+msgstr "Signatura empleat"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_employee_ids
+msgid "Employees"
+msgstr "Empleats"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_end_date
+msgid "End date"
+msgstr "Data final"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:44
+#, python-format
+msgid "Friday"
+msgstr "Divendres"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "From"
+msgstr "Des"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_id
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_id
+msgid "ID"
+msgstr "ID"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard___last_update
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_write_uid
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_write_uid
+msgid "Last Updated by"
+msgstr "Última actualització per"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_write_date
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_report_attendance_leaves_report_template_employee_attendance_write_date
+msgid "Last Updated on"
+msgstr "Última actualització el"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:36
+#, python-format
+msgid "Monday"
+msgstr "Dilluns"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Name"
+msgstr "Nom"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Num. Days"
+msgstr "Nº dies"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_number_of_selected_employees
+msgid "Num. selected employees"
+msgstr "Nº empleats"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Reason"
+msgstr "Raó"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_report_date
+msgid "Report date"
+msgstr "Data de l'informe"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:46
+#, python-format
+msgid "Saturday"
+msgstr "Dissabte"
+
+#. module: attendance_leaves_report
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_start_date
+msgid "Start date"
+msgstr "Data inicial"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:48
+#, python-format
+msgid "Sunday"
+msgstr "Diumenge"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:42
+#, python-format
+msgid "Thursday"
+msgstr "Dijous"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "To"
+msgstr "Fins"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:38
+#, python-format
+msgid "Tuesday"
+msgstr "Dimarts"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Type"
+msgstr "Tipus"
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:40
+#, python-format
+msgid "Wednesday"
+msgstr "Dimecres"
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Working hours"
+msgstr "Hores treballades"
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_employee_attendance
+msgid "employee.attendance"
+msgstr "employee.attendance"
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_employee_attendance_wizard
+msgid "employee.attendance.wizard"
+msgstr "employee.attendance.wizard"
+
+#. module: attendance_leaves_report
+#: model:ir.model,name:attendance_leaves_report.model_report_attendance_leaves_report_template_employee_attendance
+msgid "report.attendance_leaves_report.template_employee_attendance"
+msgstr "report.attendance_leaves_report.template_employee_attendance"
+
