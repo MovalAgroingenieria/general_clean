@@ -43,6 +43,7 @@
         res_model="employee.attendance.wizard"
         src_model="hr.employee"
         key2="client_action_multi"
-        view_mode="form" target="new" view_type="form" />
+        view_mode="form" target="new" view_type="form"
+        groups="hr.group_hr_manager"/>
 
 </odoo>
