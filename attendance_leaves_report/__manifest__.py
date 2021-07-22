@@ -14,6 +14,7 @@
         "hr_holidays",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "report/template_employee_attendance_views.xml",
         "wizard/employee_attendance_views.xml",
     ],
