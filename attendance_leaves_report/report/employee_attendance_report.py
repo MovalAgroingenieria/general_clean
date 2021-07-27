@@ -55,7 +55,7 @@ class EmployeeAttendanceReport(models.Model):
         end = self.get_formatted_date(o.end_date)
         attendance_ids = self.env['hr.attendance'].search(
             [('check_in', '>=', str(start)), ('check_out', '<=', str(end)),
-            ('employee_id', '=', employee_id.id)], order='check_in')
+             ('employee_id', '=', employee_id.id)], order='check_in')
         if attendance_ids:
             difference_time = ''
             total_working_time = relativedelta(
@@ -118,7 +118,7 @@ class EmployeeAttendanceReport(models.Model):
                 leave_id = self.env['hr.holidays'].browse(int(record['id']))
                 from_date = \
                     datetime.strptime(
-                        leave_id.date_from,"%Y-%m-%d %H:%M:%S").strftime(
+                        leave_id.date_from, "%Y-%m-%d %H:%M:%S").strftime(
                             "%d/%m/%Y %H:%M")
                 from_date_weekday = self.get_translated_weekday(
                     datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
@@ -126,7 +126,7 @@ class EmployeeAttendanceReport(models.Model):
                 from_date = from_date + ' - ' + from_date_weekday
                 to_date = \
                     datetime.strptime(
-                        leave_id.date_to,"%Y-%m-%d %H:%M:%S").strftime(
+                        leave_id.date_to, "%Y-%m-%d %H:%M:%S").strftime(
                             "%d/%m/%Y %H:%M")
                 to_date_weekday = self.get_translated_weekday(
                     datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
@@ -170,7 +170,6 @@ class EmployeeAttendanceReport(models.Model):
                    'docs': docs,
                    'get_attendance_data': self.get_attendance_data,
                    'get_leaves_details': self.get_leaves_details,
-                   'get_public_holidays': self.get_public_holidays,
-                   }
+                   'get_public_holidays': self.get_public_holidays}
         return self.env['report'].render(
             'attendance_leaves_report.template_employee_attendance', docargs)

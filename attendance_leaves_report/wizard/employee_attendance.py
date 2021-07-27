@@ -69,8 +69,6 @@ class EmployeeAttendance(models.Model):
             'model': 'hr.attendance',
             'start_date': self.start_date,
             'end_date': self.end_date,
-            'employee_ids': self.employee_ids.ids,
-        }
+            'employee_ids': self.employee_ids.ids}
         return self.env['report'].get_action(
             self, 'attendance_leaves_report.template_employee_attendance')
-

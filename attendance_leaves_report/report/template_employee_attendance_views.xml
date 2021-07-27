@@ -2,10 +2,10 @@
 <odoo>
 
     <template id="main_employee_attendance">
-        <t t-call="report.external_layout">
-            <div class="page">
-                <t t-if="o.employee_ids">
-                    <t t-foreach="o.employee_ids" t-as="employee">
+        <t t-if="o.employee_ids">
+            <t t-foreach="o.employee_ids" t-as="employee">
+                <t t-call="report.external_layout">
+                    <div class="page">
 
                         <div name="report_title">
                             <h3><center>Attendances / Leaves Report</center></h3>
@@ -149,9 +149,9 @@
                         </div>
                         <!-- Force new page -->
                         <p style="page-break-after:always;"/>
-                    </t>
+                    </div>
                 </t>
-            </div>
+            </t>
         </t>
     </template>
 
