@@ -1,0 +1,10 @@
+.report_main_title {
+    color: darken($o-brand-odoo, 10%);
+    margin-bottom: 32px;
+}
+
+.report_section_title {
+    color: $o-brand-primary;
+    border-bottom: 1px solid;
+    padding: 1px 4px;
+}
