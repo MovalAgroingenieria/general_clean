@@ -10,10 +10,29 @@
                         <div name="report_title">
                             <h3><center>Attendances / Leaves Report</center></h3>
                         </div>
-                        <div name="report_employee_data">
-                            <span>Employee: </span><b><span t-field="employee.name"/></b><br/>
-                            <span>From: </span><span t-field="o.start_date"/><br/>
-                            <span>To: </span><span t-field="o.end_date"/><br/>
+
+                        <div name="report_employee_data" class="row" style="margin-top: 4px;">
+                            <div class="col-xs-12" style="display: table;">
+                                <div style="width: 50%; display: table-cell;">
+                                    <t t-if="employee.name">
+                                        <span>Employee: </span><b><span t-field="employee.name"/></b>
+                                    </t>
+                                </div>
+                                <div style="display: table-cell; padding-left: 32px;">
+                                    <table style="width: 70%;">
+                                        <tbody>
+                                            <tr>
+                                                <td><span>From:</span></td>
+                                                <td class="text-right"><span t-field="o.start_date"/></td>
+                                            </tr>
+                                            <tr name="tr_number_of_votes">
+                                                <td><span>To:</span></td>
+                                                <td class="text-right"><span t-field="o.end_date"/></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
 
                         <div name="attendances_div">
@@ -64,7 +83,7 @@
                                             <th>Type</th>
                                             <th>From</th>
                                             <th>To</th>
-                                            <th class="text-right">Num. Days</th>
+                                            <th class="text-right">Period/Total days</th>
                                             <th>Reason</th>
                                         </tr>
                                     </thead>
@@ -73,7 +92,11 @@
                                             <td><span t-esc="leave['type']"/></td>
                                             <td><span t-esc="leave['from']"/></td>
                                             <td><span t-esc="leave['to']"/></td>
-                                            <td class="text-right"><span t-esc="leave['number_of_days']"/></td>
+                                            <td class="text-right">
+                                                <span t-esc="leave['period_num_of_days']"/>
+                                                <span>/</span>
+                                                <span t-esc="leave['total_num_of_days']"/>
+                                            </td>
                                             <td><span t-esc="leave['reason']"/></td>
                                         </tr>
                                     </tbody>

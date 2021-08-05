@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-20 16:25+0000\n"
-"PO-Revision-Date: 2021-07-20 16:25+0000\n"
+"POT-Creation-Date: 2021-08-05 10:16+0000\n"
+"PO-Revision-Date: 2021-08-05 10:16+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,18 +41,6 @@ msgid "<b>Public holidays</b>"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
-msgid "<br/>\n"
-"                            <span>From: </span>"
-msgstr ""
-
-#. module: attendance_leaves_report
-#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
-msgid "<br/>\n"
-"                            <span>To: </span>"
-msgstr ""
-
-#. module: attendance_leaves_report
 #: model:ir.ui.view,arch_db:attendance_leaves_report.form_employee_attendance
 msgid "<span class=\"fa fa-print\"/>\n"
 "                            <span style=\"margin-left:8px;\">Print</span>"
@@ -61,6 +49,11 @@ msgstr ""
 #. module: attendance_leaves_report
 #: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
 msgid "<span>Employee: </span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>From:</span>"
 msgstr ""
 
 #. module: attendance_leaves_report
@@ -80,12 +73,22 @@ msgstr ""
 
 #. module: attendance_leaves_report
 #: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "<span>To:</span>"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
 msgid "<strong>Total working hours</strong>"
 msgstr ""
 
 #. module: attendance_leaves_report
 #: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
 msgid "Attendances / Leaves Report"
+msgstr ""
+
+#. module: attendance_leaves_report
+#: model:ir.actions.report.xml,name:attendance_leaves_report.menu_employee_attendance_print
+msgid "Attendances and Leaves report"
 msgstr ""
 
 #. module: attendance_leaves_report
@@ -132,11 +135,6 @@ msgid "Display Name"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: model:ir.actions.report.xml,name:attendance_leaves_report.menu_employee_attendance_print
-msgid "Attendances and Leaves report"
-msgstr ""
-
-#. module: attendance_leaves_report
 #: model:ir.actions.act_window,name:attendance_leaves_report.action_employee_attendance
 msgid "Employee Attendance/Leaves Report"
 msgstr ""
@@ -157,7 +155,7 @@ msgid "End date"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:44
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:45
 #, python-format
 msgid "Friday"
 msgstr ""
@@ -192,7 +190,7 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:36
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:37
 #, python-format
 msgid "Monday"
 msgstr ""
@@ -203,13 +201,13 @@ msgid "Name"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
-msgid "Num. Days"
+#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_number_of_selected_employees
+msgid "Num. selected employees"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: model:ir.model.fields,field_description:attendance_leaves_report.field_employee_attendance_wizard_number_of_selected_employees
-msgid "Num. selected employees"
+#: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
+msgid "Period/Total days"
 msgstr ""
 
 #. module: attendance_leaves_report
@@ -223,7 +221,7 @@ msgid "Report date"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:46
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:47
 #, python-format
 msgid "Saturday"
 msgstr ""
@@ -234,13 +232,18 @@ msgid "Start date"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:48
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:49
 #, python-format
 msgid "Sunday"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:42
+#: sql_constraint:employee.attendance.wizard:0
+msgid "The start date must be less than the end date."
+msgstr ""
+
+#. module: attendance_leaves_report
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:43
 #, python-format
 msgid "Thursday"
 msgstr ""
@@ -251,7 +254,7 @@ msgid "To"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:38
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:39
 #, python-format
 msgid "Tuesday"
 msgstr ""
@@ -262,7 +265,7 @@ msgid "Type"
 msgstr ""
 
 #. module: attendance_leaves_report
-#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:40
+#: code:addons/attendance_leaves_report/report/employee_attendance_report.py:41
 #, python-format
 msgid "Wednesday"
 msgstr ""
@@ -270,11 +273,6 @@ msgstr ""
 #. module: attendance_leaves_report
 #: model:ir.ui.view,arch_db:attendance_leaves_report.main_employee_attendance
 msgid "Working hours"
-msgstr ""
-
-#. module: attendance_leaves_report
-#: model:ir.model,name:attendance_leaves_report.model_employee_attendance
-msgid "employee.attendance"
 msgstr ""
 
 #. module: attendance_leaves_report

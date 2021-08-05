@@ -46,6 +46,12 @@ class EmployeeAttendance(models.Model):
         readonly=True,
         default=_default_number_of_selected_employees)
 
+    _sql_constraints = [
+        ('valid_date_range',
+         'CHECK (start_date < end_date)',
+         'The start date must be less than the end date.'),
+        ]
+
     @api.multi
     def _compute_report_date(self):
         for record in self:

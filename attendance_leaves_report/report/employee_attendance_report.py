@@ -2,10 +2,11 @@
 # 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, models, _
+import locale
 from datetime import datetime
-from odoo.tools import pytz
 from dateutil.relativedelta import relativedelta
+from odoo import api, models, _
+from odoo.tools import pytz
 
 
 class EmployeeAttendanceReport(models.Model):
@@ -105,17 +106,20 @@ class EmployeeAttendanceReport(models.Model):
         data = []
         start = self.get_formatted_date(o.start_date)
         end = self.get_formatted_date(o.end_date)
-        sql_query = \
-            """SELECT id FROM hr_holidays WHERE type = 'remove'
-            AND state = 'validate' AND holiday_type = 'employee'
-            AND employee_id = %s AND DATE(date_from) >= %s
-            AND DATE(date_from) <= %s"""
-        params = (employee_id.id, start, end)
-        self.env.cr.execute(sql_query, params)
-        results = self.env.cr.dictfetchall()
+        results = []
+        employee_leaves = self.env['hr.holidays'].search(
+            [('employee_id', '=', employee_id.id), ('type', '=', 'remove'),
+             ('holiday_type', '=', 'employee'), ('state', '=', 'validate')],
+            order='date_from')
+        for employee_leave in employee_leaves:
+            from_date = self.get_formatted_date(employee_leave.date_from)
+            to_date = self.get_formatted_date(employee_leave.date_to)
+            if from_date >= start and from_date <= end:
+                results.append(employee_leave)
+            elif to_date >= start and to_date <= end:
+                results.append(employee_leave)
         if results:
-            for record in results:
-                leave_id = self.env['hr.holidays'].browse(int(record['id']))
+            for leave_id in results:
                 from_date = \
                     datetime.strptime(
                         leave_id.date_from, "%Y-%m-%d %H:%M:%S").strftime(
@@ -132,12 +136,36 @@ class EmployeeAttendanceReport(models.Model):
                     datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
                                       ).weekday())
                 to_date = to_date + ' - ' + to_date_weekday
+                total_num_of_days = self.transform_float_to_locale(
+                    abs(leave_id.number_of_days), 2)
+                from_date_2 = self.get_formatted_date(
+                    datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"))
+                to_date_2 = self.get_formatted_date(
+                    datetime.strptime(leave_id.date_to, "%Y-%m-%d %H:%M:%S"))
+                if start < from_date_2 and end > to_date_2:
+                    period_num_of_days = total_num_of_days
+                elif start < from_date_2:
+                    difference = relativedelta(from_date_2, end)
+                    total_seconds = abs((difference.days * 24 * 3600) +
+                        (difference.hours * 3600) + (difference.minutes * 60)
+                        + difference.seconds)
+                    diff_days = total_seconds / 86400.0
+                    period_num_of_days = self.transform_float_to_locale(
+                        diff_days, 2)
+                elif end > to_date_2:
+                    difference = relativedelta(start, to_date_2)
+                    total_seconds = abs((difference.days * 24 * 3600) +
+                        (difference.hours * 3600) + (difference.minutes * 60)
+                        + difference.seconds)
+                    diff_days = total_seconds / 86400.0
+                    period_num_of_days = self.transform_float_to_locale(
+                        diff_days, 2)
                 data.append({'type': leave_id.holiday_status_id.name,
                              'from': from_date,
                              'to': to_date,
                              'reason': leave_id.name,
-                             'number_of_days': abs(leave_id.number_of_days),
-                             })
+                             'total_num_of_days': total_num_of_days,
+                             'period_num_of_days': period_num_of_days})
         return data
 
     @api.multi
@@ -161,6 +189,15 @@ class EmployeeAttendanceReport(models.Model):
                     {'holiday_date': holiday_date,
                      'holiday_name': public_holiday.name})
         return data
+
+    @api.model
+    def transform_float_to_locale(self, float_number, precision):
+        precision = '%.' + str(precision) + 'f'
+        locale.setlocale(locale.LC_NUMERIC,
+                         str(self.env.context['lang'] + '.utf8'))
+        formated_float_number = locale.format(precision, float_number, True)
+        locale.resetlocale(locale.LC_NUMERIC)
+        return formated_float_number
 
     @api.model
     def render_html(self, docids, data=None):
