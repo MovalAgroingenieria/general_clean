@@ -6,10 +6,10 @@
     "name": "Account Banking Communitacion Wizard",
     "summary": "Wizard for communication field",
     "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
+    "category": "Accounting",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
-    "license": "AGPL-3",
+    "license": "OPL-1",
     "depends": [
         "account_banking_pain_base",
     ],
@@ -19,4 +19,6 @@
     ],
     "installable": True,
     "application": False,
+    "price": 10.0,
+    "currency": "EUR",
 }
