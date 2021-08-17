@@ -22,6 +22,18 @@ class EmployeeAttendanceReport(models.Model):
         return date_without_tz
 
     @api.multi
+    def get_formatted_date_show(self, date):
+        input_date = datetime.strptime(str(date), "%Y-%m-%d %H:%M:%S")
+        user = self.env.user
+        tz = pytz.timezone(user.tz) or pytz.utc
+        user_tz_date = pytz.utc.localize(input_date).astimezone(tz)
+        date_without_tz = user_tz_date.replace(tzinfo=None)
+        formatted_user_tz_date = datetime.strptime(
+            str(date_without_tz), "%Y-%m-%d %H:%M:%S").strftime(
+                "%d/%m/%Y %H:%M")
+        return formatted_user_tz_date
+
+    @api.multi
     def get_difference(self, check_in, check_out):
         check_in = self.get_formatted_date(check_in)
         check_out = self.get_formatted_date(check_out)
@@ -65,9 +77,8 @@ class EmployeeAttendanceReport(models.Model):
             for attendance in attendance_ids:
                 check_in = self.get_formatted_date(attendance.check_in)
                 check_out = ''
-                check_in_show = datetime.strptime(
-                    attendance.check_in, "%Y-%m-%d %H:%M:%S").strftime(
-                        "%d/%m/%Y %H:%M")
+                check_in_show = self.get_formatted_date_show(
+                    attendance.check_in)
                 check_in_weekday = self.get_translated_weekday(
                     datetime.strptime(attendance.check_in, "%Y-%m-%d %H:%M:%S"
                                       ).weekday())
@@ -87,9 +98,8 @@ class EmployeeAttendanceReport(models.Model):
                         total_hours = str(total_hours)
                     total_working_time_show = total_hours + ':' + \
                         str(total_working_time.minutes).zfill(2)
-                    check_out_show = datetime.strptime(
-                        attendance.check_out, "%Y-%m-%d %H:%M:%S").strftime(
-                        "%d/%m/%Y %H:%M")
+                    check_out_show = self.get_formatted_date_show(
+                        attendance.check_out)
                     check_out_weekday = self.get_translated_weekday(
                         datetime.strptime(attendance.check_out,
                                           "%Y-%m-%d %H:%M:%S").weekday())
@@ -120,18 +130,12 @@ class EmployeeAttendanceReport(models.Model):
                 results.append(employee_leave)
         if results:
             for leave_id in results:
-                from_date = \
-                    datetime.strptime(
-                        leave_id.date_from, "%Y-%m-%d %H:%M:%S").strftime(
-                            "%d/%m/%Y %H:%M")
+                from_date = self.get_formatted_date_show(leave_id.date_from)
                 from_date_weekday = self.get_translated_weekday(
                     datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
                                       ).weekday())
                 from_date = from_date + ' - ' + from_date_weekday
-                to_date = \
-                    datetime.strptime(
-                        leave_id.date_to, "%Y-%m-%d %H:%M:%S").strftime(
-                            "%d/%m/%Y %H:%M")
+                to_date = self.get_formatted_date_show(leave_id.date_to)
                 to_date_weekday = self.get_translated_weekday(
                     datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
                                       ).weekday())
@@ -146,17 +150,19 @@ class EmployeeAttendanceReport(models.Model):
                     period_num_of_days = total_num_of_days
                 elif start < from_date_2:
                     difference = relativedelta(from_date_2, end)
-                    total_seconds = abs((difference.days * 24 * 3600) +
-                        (difference.hours * 3600) + (difference.minutes * 60)
-                        + difference.seconds)
+                    total_seconds = \
+                        abs((difference.days * 24 * 3600) + (
+                            difference.hours * 3600) + (
+                                difference.minutes * 60) + difference.seconds)
                     diff_days = total_seconds / 86400.0
                     period_num_of_days = self.transform_float_to_locale(
                         diff_days, 2)
                 elif end > to_date_2:
                     difference = relativedelta(start, to_date_2)
-                    total_seconds = abs((difference.days * 24 * 3600) +
-                        (difference.hours * 3600) + (difference.minutes * 60)
-                        + difference.seconds)
+                    total_seconds = \
+                        abs((difference.days * 24 * 3600) + (
+                            difference.hours * 3600) + (
+                                difference.minutes * 60) + difference.seconds)
                     diff_days = total_seconds / 86400.0
                     period_num_of_days = self.transform_float_to_locale(
                         diff_days, 2)
