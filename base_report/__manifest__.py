@@ -4,6 +4,8 @@
 
 {
     "name": "Base Report",
+    "summary": "Functionality to modify report generated ensuring and odd or"
+               "even number of pages.",
     "version": "10.0.1.0.0",
     "category": "Tools",
     "website": "http://www.moval.es",
@@ -15,6 +17,7 @@
     "depends": [
         "report",
     ],
+    'images': ['images/moval.png'],
     "application": False,
     "installable": True,
     "price": 5.0,
