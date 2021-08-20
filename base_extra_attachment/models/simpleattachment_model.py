@@ -53,11 +53,11 @@ class SimpleattachmentModel(models.AbstractModel):
         if model_name:
             table_name = model_name.replace('.', '_')
             sql_with_attachments = \
-                'select distinct res_id from ir_attachment ' + \
-                'where res_model = \'' + model_name + '\''
+                'SELECT DISTINCT res_id FROM ir_attachment ' + \
+                'WHERE res_model = \'' + model_name + '\''
             sql_without_attachments = \
-                'select id from ' + table_name + ' ' + \
-                'where id not in (' + sql_with_attachments + ')'
+                'SELECT id FROM ' + table_name + ' ' + \
+                'WHERE id NOT IN (' + sql_with_attachments + ')'
             sql = sql_with_attachments
             if (not with_attachments):
                 sql = sql_without_attachments

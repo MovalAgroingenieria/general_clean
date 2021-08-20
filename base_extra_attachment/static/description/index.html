@@ -1,0 +1,25 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Attachment extra info</h2>
+        <h3 class="oe_slogan">Module for enabling extra information about attachments on all desired models</h3>
+    </div>
+    <p>
+        This module creates an abstract model ("simpleattachment.model") which can be inherited by any model.
+        <br>
+        For this functionality to work it is necesary to inhertis the "simpleattachment.model":
+        <pre><code>
+# Example for adding attachment info to 'account.invoice' model
+class AccountInvoice(models.Model):
+    _name = 'account.invoice'
+    _inherit = ['account.invoice', 'simpleattachment.model']
+        </code></pre>
+    </p>
+    The new available fields will be:
+    <ul>
+        <li>"has_attachments": Boolean field to indicate if a record has attachments related</li>
+        <li>"number_of_attachments": Integer field to indicate the number of attachments related with the record</li>
+    </ul>
+    <div class="text-center">
+        <img src="Screenshot_00.png">
+    </div>
+</section>
