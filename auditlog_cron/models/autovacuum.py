@@ -31,6 +31,6 @@ class AuditlogAutovacuum(models.TransientModel):
                 self.env.cr.execute(query)
                 _logger.info("AUTOVACUUM ADMIN: records of table %s deleted."
                              % table_model)
-            except:
+            except Exception:
                 _logger.info("AUTOVACUUM ADMIN: Error deleting records of "
                              "table %s." % table_model)
