@@ -15,5 +15,6 @@
     'data': [
         "data/tax_code_map_mod347_data.xml",
     ],
+    'images':  ['static/description/banner.png'],
     'installable': True,
 }

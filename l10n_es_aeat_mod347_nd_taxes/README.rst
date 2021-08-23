@@ -9,6 +9,8 @@ AEAT modelo 347 (impuestos no deducibles)
 Description
 ===========
 
+Add non-deductible taxes for spanish AEAT model 347
+
 Credits
 =======
 
