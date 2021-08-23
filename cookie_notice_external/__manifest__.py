@@ -6,7 +6,7 @@
     'name': 'Cookie Notice External',
     'summary': """Insert a cookie URL service""",
     "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
+    "category": "Tools",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
@@ -17,9 +17,9 @@
         "views/res_config_views.xml",
         "templates/website.xml",
     ],
+    'images': ['static/description/banner.png'],
     "installable": True,
     "application": False,
     "price": 5.0,
     "currency": "EUR",
 }
-
