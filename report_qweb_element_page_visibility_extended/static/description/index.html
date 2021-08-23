@@ -1,0 +1,27 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Report Qweb Element Page Visibility Extended</h2>
+        <h3 class="oe_slogan">This module allows you to use more classes in QWEB Report.</h3>
+    </div>
+    <p>
+        To use this module, you need to:
+
+        In the QWEB ``ir.ui.views`` used by your report,
+        you can add an element with css class with any of the classes described above.
+        For example if you need to improve invoice report header with
+        invoice's number in every page but first, and sale order report header
+        with order's name in every page but last, add this code to external_layout_header:
+    <pre><code>
+    &lt;t t-if="o._table=='account_invoice'"&gt;
+         &lt;div class="not-first-page"&gt;
+             &lt;span t-esc="o.number"/&gt;
+         &lt;/div&gt;
+     &lt;/t&gt;
+     &lt;t t-if="o._table=='sale_order'"&gt;
+         &lt;div class="not-last-page"&gt;
+             &lt;span t-esc="o.name"/&gt;
+         &lt;/div&gt;
+     &lt;/t&gt;
+    </code></pre>
+    </p>
+</section>
