@@ -17,6 +17,7 @@
     "data": [
         "data/res_street_type_data.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
 }
