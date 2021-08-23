@@ -17,7 +17,9 @@
     "data": [
         'data/ir_cron.xml',
     ],
-    'images': ['images/moval.png'],
+    'images': ["static/description/banner.png",
+               "images/moval.png"
+    ],
     "installable": True,
     "application": False,
 }

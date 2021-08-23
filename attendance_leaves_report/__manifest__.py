@@ -22,5 +22,6 @@
     "application": False,
     "price": 15.0,
     "currency": "EUR",
+    "images": ["static/description/banner.png"],
 }
 

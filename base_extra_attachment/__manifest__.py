@@ -12,9 +12,13 @@
         "base",
     ],
     "data": [],
-    'images': ['images/moval.png'],
+    'images': [
+        "static/description/banner.png"
+        'images/moval.png'
+    ],
     "installable": True,
     "application": False,
     "price": 5.0,
     "currency": "EUR",
+    "images": ["static/description/banner.png"],
 }
