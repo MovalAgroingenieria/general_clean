@@ -6,7 +6,7 @@
     "name": "INE codes",
     "summary": "National Statistics Institute codes for Spanish cities",
     "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
+    "category": "Localization",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
@@ -17,6 +17,7 @@
         "security/ir.model.access.csv",
         "views/ine_code_views.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
 }
