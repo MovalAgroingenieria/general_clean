@@ -2,6 +2,7 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+
 def post_init_hook(cr, registry):
     # Add street type to address format
     query = """
@@ -14,8 +15,9 @@ def post_init_hook(cr, registry):
     """
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass
+
 
 def uninstall_hook(cr, registry):
     # Remove street type from address format
@@ -29,6 +31,5 @@ def uninstall_hook(cr, registry):
     """
     try:
         cr.execute(query)
-    except:
+    except Exception:
         pass
-

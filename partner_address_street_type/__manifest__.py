@@ -19,6 +19,7 @@
         "views/res_street_type_views.xml",
         "views/res_partner_views.xml",
     ],
+    "images": ["static/description/banner.png"],
     "post_init_hook": "post_init_hook",
     "uninstall_hook": "uninstall_hook",
     "installable": True,

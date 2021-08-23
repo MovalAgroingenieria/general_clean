@@ -29,7 +29,7 @@ class ResStreetTypeConfiguration(models.TransientModel):
         help="This field shows the current address format for user country.\n\
             You can change it with the python-style string pattern with all \
             address fields:\n%(street_type_show)s: the street type\n\
-            %(state_name)s: the name of the state\n\%(state_code)s: the code\
+            %(state_name)s: the name of the state\n%(state_code)s: the code\
             of the state\n%(country_name)s: the name of the country\n\
             %(country_code)s: the code of the country.\nThis format will be \
             apply to all countries but later it can be individualized by \
