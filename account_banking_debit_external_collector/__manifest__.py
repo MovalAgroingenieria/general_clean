@@ -8,7 +8,7 @@
     "category": "Accounting",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
-    "license": "OPL-1",
+    "license": "AGPL-3",
     "depends": [
         "account_banking_pain_base",
         "account_banking_communication_wizard",
