@@ -12,6 +12,7 @@
     "depends": [
         "hr_attendance",
         "hr_holidays",
+        "hr_public_holidays",
     ],
     "data": [
         "security/ir.model.access.csv",
