@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 19:42+0000\n"
-"PO-Revision-Date: 2021-05-20 19:42+0000\n"
+"POT-Creation-Date: 2021-09-01 07:50+0000\n"
+"PO-Revision-Date: 2021-09-01 07:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,11 @@ msgid "A credit control policy level"
 msgstr "Un nivel de política de control de crédito"
 
 #. module: account_credit_control_variable_fees
+#: model:ir.model.fields,field_description:account_credit_control_variable_fees.field_account_journal_apply_variable_fees
+msgid "Apply variable fees (Credit control)"
+msgstr "Aplicar recargos variables (Control crédito)"
+
+#. module: account_credit_control_variable_fees
 #: model:ir.model.fields,field_description:account_credit_control_variable_fees.field_credit_control_policy_level_custom_text_after_variable_fees
 msgid "Custom Message after variable fees"
 msgstr "Mensaje personalizado después del porcentaje de recargo"
@@ -56,14 +61,19 @@ msgid "Invoice number"
 msgstr "Nº Factura"
 
 #. module: account_credit_control_variable_fees
+#: model:ir.model,name:account_credit_control_variable_fees.model_account_journal
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_credit_control_variable_fees
 #: model:ir.model.fields,help:account_credit_control_variable_fees.field_credit_control_policy_level_custom_text_after_variable_fees
 msgid "The message to explain the reason for the increase in debt."
 msgstr "Mensaje para explicar la razón del aumento de deuda."
 
 #. module: account_credit_control_variable_fees
 #: model:ir.model.fields,help:account_credit_control_variable_fees.field_credit_control_policy_level_variable_fees_percentage
-msgid "The percentage of increase in debt at this level."
-msgstr "El porcentaje de incremento de deuda a este nivel."
+msgid "The percentage of increase in debt at this level. It only applies if the option 'Apply variable charges' is marked in the bank journal to which the credit control line belongs."
+msgstr "El porcentaje de incremento de deuda a este nivel. Solo aplica si la opción 'Aplicar recargos variables' está marcada en el diario bancario al que pertenece la línea de control de crédito."
 
 #. module: account_credit_control_variable_fees
 #: sql_constraint:credit.control.policy.level:0
@@ -75,6 +85,11 @@ msgstr "El porcentaje de recargo debe ser cero o un valor positivo."
 #: model:ir.ui.view,arch_db:account_credit_control_variable_fees.report_credit_control_summary_document_variable_fees
 msgid "Total amount"
 msgstr "Importe total"
+
+#. module: account_credit_control_variable_fees
+#: model:ir.model.fields,help:account_credit_control_variable_fees.field_account_journal_apply_variable_fees
+msgid "Uncheck this box if you do not want to apply the variable fees to the lines of this journal in Credit control."
+msgstr "Desmarque esta casilla si no desea aplicar los recargos variables a las líneas de este diario en Control de crédito."
 
 #. module: account_credit_control_variable_fees
 #: model:ir.model.fields,field_description:account_credit_control_variable_fees.field_credit_control_line_variable_fees
@@ -95,5 +110,5 @@ msgstr "Porcentaje recargo"
 #. module: account_credit_control_variable_fees
 #: model:ir.model,name:account_credit_control_variable_fees.model_credit_control_communication
 msgid "credit control communication"
-msgstr "credit control communication"
+msgstr "comunicación de control de crédito"
 

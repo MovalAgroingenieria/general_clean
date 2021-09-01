@@ -11,7 +11,9 @@ class CreditControlPolicyLevel(models.Model):
 
     variable_fees_percentage = fields.Integer(
         string="Variable fees (%)",
-        help="The percentage of increase in debt at this level.")
+        help="The percentage of increase in debt at this level. It only "
+            "applies if the option 'Apply variable charges' is marked in the "
+            "bank journal to which the credit control line belongs.")
 
     custom_text_after_variable_fees = fields.Html(
         string='Custom Message after variable fees',
@@ -45,12 +47,14 @@ class CreditControlLine(models.Model):
             record.variable_fees_percentage = \
                 record.policy_level_id.variable_fees_percentage
 
-    # @INFO: balance_due_total is introduce by dunning_fees module 
+    # @INFO: balance_due_total is introduce by dunning_fees module
     @api.depends('variable_fees_percentage', 'balance_due_total')
     def _compute_variable_fees(self):
         for record in self:
             variable_fees = 0
-            if record.variable_fees_percentage > 0 and record.balance_due_total > 0:
+            if record.variable_fees_percentage > 0 and \
+                    record.balance_due_total > 0 and \
+                    record.move_line_id.journal_id.apply_variable_fees == True:
                 factor = float(record.variable_fees_percentage) / 100
                 variable_fees = factor * record.balance_due_total
             record.variable_fees = variable_fees
@@ -58,8 +62,11 @@ class CreditControlLine(models.Model):
     @api.depends('variable_fees', 'balance_due_total')
     def _compute_total_amount_with_fees(self):
         for record in self:
-            record.total_amount_with_fees = \
-                record.variable_fees + record.balance_due_total
+            if record.move_line_id.journal_id.apply_variable_fees == True:
+                record.total_amount_with_fees = \
+                    record.variable_fees + record.balance_due_total
+            else:
+                record.total_amount_with_fees = record.balance_due_total
 
 
 class CreditCommunication(models.TransientModel):

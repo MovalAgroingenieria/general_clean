@@ -16,6 +16,7 @@
     ],
     "data": [
         "views/control_credit_policy_view.xml",
+        "views/account_view.xml",
         "reports/report_credit_control_summary.xml",
     ],
     "installable": True,

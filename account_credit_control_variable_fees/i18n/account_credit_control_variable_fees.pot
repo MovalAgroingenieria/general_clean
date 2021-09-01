@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 19:41+0000\n"
-"PO-Revision-Date: 2021-05-20 19:41+0000\n"
+"POT-Creation-Date: 2021-09-01 07:49+0000\n"
+"PO-Revision-Date: 2021-09-01 07:49+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #. module: account_credit_control_variable_fees
 #: model:ir.ui.view,arch_db:account_credit_control_variable_fees.report_credit_control_summary_document_variable_fees
-msgid "<strong>Total amount</strong>"
+msgid "<strong>Total due</strong>"
 msgstr ""
 
 #. module: account_credit_control_variable_fees
@@ -33,6 +33,11 @@ msgstr ""
 #. module: account_credit_control_variable_fees
 #: model:ir.model,name:account_credit_control_variable_fees.model_credit_control_policy_level
 msgid "A credit control policy level"
+msgstr ""
+
+#. module: account_credit_control_variable_fees
+#: model:ir.model.fields,field_description:account_credit_control_variable_fees.field_account_journal_apply_variable_fees
+msgid "Apply variable fees (Credit control)"
 msgstr ""
 
 #. module: account_credit_control_variable_fees
@@ -56,13 +61,18 @@ msgid "Invoice number"
 msgstr ""
 
 #. module: account_credit_control_variable_fees
+#: model:ir.model,name:account_credit_control_variable_fees.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: account_credit_control_variable_fees
 #: model:ir.model.fields,help:account_credit_control_variable_fees.field_credit_control_policy_level_custom_text_after_variable_fees
 msgid "The message to explain the reason for the increase in debt."
 msgstr ""
 
 #. module: account_credit_control_variable_fees
 #: model:ir.model.fields,help:account_credit_control_variable_fees.field_credit_control_policy_level_variable_fees_percentage
-msgid "The percentage of increase in debt at this level."
+msgid "The percentage of increase in debt at this level. It only applies if the option 'Apply variable charges' is marked in the bank journal to which the credit control line belongs."
 msgstr ""
 
 #. module: account_credit_control_variable_fees
@@ -74,6 +84,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_credit_control_variable_fees.field_credit_control_line_total_amount_with_fees
 #: model:ir.ui.view,arch_db:account_credit_control_variable_fees.report_credit_control_summary_document_variable_fees
 msgid "Total amount"
+msgstr ""
+
+#. module: account_credit_control_variable_fees
+#: model:ir.model.fields,help:account_credit_control_variable_fees.field_account_journal_apply_variable_fees
+msgid "Uncheck this box if you do not want to apply the variable fees to the lines of this journal in Credit control."
 msgstr ""
 
 #. module: account_credit_control_variable_fees
