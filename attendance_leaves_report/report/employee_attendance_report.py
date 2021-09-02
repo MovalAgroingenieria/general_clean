@@ -16,7 +16,10 @@ class EmployeeAttendanceReport(models.Model):
     def get_formatted_date(self, date):
         input_date = datetime.strptime(str(date), "%Y-%m-%d %H:%M:%S")
         user = self.env.user
-        tz = pytz.timezone(user.tz) or pytz.utc
+        if user.tz:
+            tz = pytz.timezone(user.tz)
+        else:
+            tz = pytz.utc
         user_tz_date = pytz.utc.localize(input_date).astimezone(tz)
         date_without_tz = user_tz_date.replace(tzinfo=None)
         return date_without_tz
@@ -25,7 +28,10 @@ class EmployeeAttendanceReport(models.Model):
     def get_formatted_date_show(self, date):
         input_date = datetime.strptime(str(date), "%Y-%m-%d %H:%M:%S")
         user = self.env.user
-        tz = pytz.timezone(user.tz) or pytz.utc
+        if user.tz:
+            tz = pytz.timezone(user.tz)
+        else:
+            tz = pytz.utc
         user_tz_date = pytz.utc.localize(input_date).astimezone(tz)
         date_without_tz = user_tz_date.replace(tzinfo=None)
         formatted_user_tz_date = datetime.strptime(
@@ -132,13 +138,11 @@ class EmployeeAttendanceReport(models.Model):
             for leave_id in results:
                 from_date = self.get_formatted_date_show(leave_id.date_from)
                 from_date_weekday = self.get_translated_weekday(
-                    datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
-                                      ).weekday())
+                    datetime.strptime(from_date, "%d/%m/%Y %H:%M").weekday())
                 from_date = from_date + ' - ' + from_date_weekday
                 to_date = self.get_formatted_date_show(leave_id.date_to)
                 to_date_weekday = self.get_translated_weekday(
-                    datetime.strptime(leave_id.date_from, "%Y-%m-%d %H:%M:%S"
-                                      ).weekday())
+                    datetime.strptime(to_date, "%d/%m/%Y %H:%M").weekday())
                 to_date = to_date + ' - ' + to_date_weekday
                 total_num_of_days = self.transform_float_to_locale(
                     abs(leave_id.number_of_days), 2)
