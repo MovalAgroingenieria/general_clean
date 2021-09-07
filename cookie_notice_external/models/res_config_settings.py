@@ -8,6 +8,6 @@ from odoo import fields, models
 class ResConfigSettings(models.TransientModel):
     _inherit = 'res.config.settings'
 
-    cookie_service_script = fields.Text(
+    cookie_service_script = fields.Char(
         string="Cookie script",
         config_parameter='cookie_notice_external.cookie_service_script',)
