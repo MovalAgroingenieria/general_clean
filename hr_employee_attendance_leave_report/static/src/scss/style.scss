@@ -1,10 +1,11 @@
 .report_main_title {
-    color: darken($o-brand-odoo, 10%);
+    color: darken(theme-color('primary'), 5%);
+    margin-top: 0px;
     margin-bottom: 32px;
 }
 
 .report_section_title {
-    color: $o-brand-primary;
+    color: theme-color('primary');
     border-bottom: 1px solid;
     padding: 1px 4px;
 }

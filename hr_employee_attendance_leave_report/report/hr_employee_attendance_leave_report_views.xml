@@ -31,13 +31,13 @@
                     <div class="page">
 
                         <div name="report_title" class="report_main_title text-center">
-                            <h3><b>Attendances / Leaves Report</b></h3>
+                            <h4><b>Attendances / Leaves Report</b></h4>
                         </div>
 
-                        <div name="employee_data" style="margin-top: 4px;">
-                            <div name="employe_data_title" class="row h4 mt24 mb4" style="padding-bottom: 4px;">
+                        <div name="employee_data">
+                            <div name="employe_data_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
-                                    <div style="float: left; width: 32px;"><span class="fa fa-user"/></div>
+                                    <div style="float: left; width: 24px;"><span class="fa fa-user"/></div>
                                     <div style="float: left; display: inline;"><b>Employe</b></div>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                                                     <span t-esc="wizard_data[0]['data'][0]['start_date_show']"/>
                                                 </td>
                                             </tr>
-                                            <tr name="tr_number_of_votes">
+                                            <tr style="background-color: #ffffff;">
                                                 <td><span>To:</span></td>
                                                 <td class="text-right">
                                                     <span t-esc="wizard_data[0]['data'][0]['end_date_show']"/>
@@ -66,10 +66,10 @@
                             </div>
                         </div>
 
-                        <div name="attendance_data" style="margin-top: 4px;">
-                            <div name="attendance_data_title" class="row h4 mt24 mb4" style="padding-bottom: 4px;">
+                        <div name="attendance_data">
+                            <div name="attendance_data_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
-                                    <div style="float: left; width: 32px;"><span class="fa fa-clock"/></div>
+                                    <div style="float: left; width: 24px;"><span class="fa fa-clock"/></div>
                                     <div style="float: left; display: inline;"><b>Attendances</b></div>
                                 </div>
                             </div>
@@ -101,14 +101,14 @@
                             </t>
                             <t t-else="">
                                 <span>No attendance was found during this period for the employee.</span>
-                                <div style="margin-bottom: 20px;"/>
+                                <div style="margin-bottom: 14px;"/>
                             </t>
                         </div>
 
-                        <div name="leave_data" style="margin-top: 4px; page-break-inside: avoid">
-                            <div name="leave_data_title" class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                        <div name="leave_data" style="page-break-inside: avoid">
+                            <div name="leave_data_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
-                                    <div style="float: left; width: 32px;"><span class="fas fa-sun"/></div>
+                                    <div style="float: left; width: 24px;"><span class="fas fa-sun"/></div>
                                     <div style="float: left; display: inline;"><b>Leaves</b></div>
                                 </div>
                             </div>
@@ -146,19 +146,19 @@
                                 </table>
                                 <t t-if="unvalidated_leaves">
                                     <span>(*) There are non-validated leaves in the selected period.</span>
-                                    <div style="margin-bottom: 20px;"/>
+                                    <div style="margin-bottom: 14px;"/>
                                 </t>
                             </t>
                             <t t-else="">
                                 <span>No leave was found during this period for the employee.</span>
-                                <div style="margin-bottom: 20px;"/>
+                                <div style="margin-bottom: 14px;"/>
                             </t>
                         </div>
 
-                        <div name="public_holidays_data" style="margin-top: 4px; page-break-inside: avoid">
-                            <div name="public_holidays_title" class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                        <div name="public_holidays_data" style="page-break-inside: avoid">
+                            <div name="public_holidays_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
-                                    <div style="float: left; width: 32px;"><span class="fa fa-calendar"/></div>
+                                    <div style="float: left; width: 24px;"><span class="fa fa-calendar"/></div>
                                     <div style="float: left; display: inline;"><b>Holidays</b></div>
                                 </div>
                             </div>
@@ -180,14 +180,14 @@
                             </t>
                             <t t-else="">
                                 <span>There are no public holidays for the selected period.</span>
-                                <div style="margin-bottom: 20px;"/>
+                                <div style="margin-bottom: 14px;"/>
                             </t>
                         </div>
 
-                        <div name="conformity" style="margin-top: 4px; page-break-inside: avoid">
-                            <div name="conformity_title" class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                        <div name="conformity" style="page-break-inside: avoid">
+                            <div name="conformity_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
-                                    <div style="float: left; width: 32px;"><span class="fa fa-check-square-o"/></div>
+                                    <div style="float: left; width: 24px;"><span class="fa fa-check-square-o"/></div>
                                     <div style="float: left; display: inline;"><b>Conformity</b></div>
                                 </div>
                             </div>
