@@ -22,4 +22,5 @@
     "installable": True,
     "price": 5.0,
     "currency": "EUR",
+    "images": ["static/description/banner.png"],
 }
