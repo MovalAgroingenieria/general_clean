@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'nrs_iconset';
+  src: url('../font/nrs_iconset.eot?92124318');
+  src: url('../font/nrs_iconset.eot?92124318#iefix') format('embedded-opentype'),
+       url('../font/nrs_iconset.woff2?92124318') format('woff2'),
+       url('../font/nrs_iconset.woff?92124318') format('woff'),
+       url('../font/nrs_iconset.ttf?92124318') format('truetype'),
+       url('../font/nrs_iconset.svg?92124318#nrs_iconset') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="fa-nrs-"]:before, [class*=" fa-nrs-"]:before {
+   display: inline-block;
+   font:normal normal normal 14px/1 nrs_iconset;
+   font-size:inherit;
+   text-rendering:auto;
+   -webkit-font-smoothing:antialiased;
+   -moz-osx-font-smoothing:grayscale;
+}
+
+.fa-nrs-sms-registre:before { content: '\e800'; } /* '' */
+.fa-nrs-sms-write:before { content: '\e801'; } /* '' */

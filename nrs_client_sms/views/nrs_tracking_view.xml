@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Tree view -->
+    <record id="nrs_tracking_view_tree" model="ir.ui.view">
+        <field name="name">NRS Tracking Tree</field>
+        <field name="model">nrs.tracking</field>
+        <field name="arch" type="xml">
+            <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_nrs_tracking_view_tree"
+                colors="green:certified==True; red:response_code=='400';
+                    red:response_code=='401'; red:response_code=='402';
+                    red:response_code=='500';">
+                <field name="response_code" invisible="1"/>
+                <field name="sms_time_data"/>
+                <field name="user_id"/>
+                <field name="certified"/>
+                <field name="sender"/>
+                <field name="partner_id" string="To"/>
+                <field name="invoice_id"/>
+                <field name="subject"/>
+                <field name="sms_confirmation"/>
+                <field name="sms_message"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Tree view partner -->
+    <record id="nrs_tracking_view_tree_partner" model="ir.ui.view">
+        <field name="name">NRS Tracking Tree</field>
+        <field name="model">nrs.tracking</field>
+        <field name="arch" type="xml">
+           <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_nrs_tracking_view_tree"
+                colors="green:certified==True; red:response_code=='400';
+                    red:response_code=='401'; red:response_code=='402';
+                    red:response_code=='500';">
+                <field name="response_code" invisible="1"/>
+                <field name="sms_time_data"/>
+                <field name="certified"/>
+                <field name="sender"/>
+                <field name="invoice_id"/>
+                <field name="subject"/>
+                <field name="sms_confirmation"/>
+                <field name="sms_message"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Tree view invoice -->
+    <record id="nrs_tracking_view_tree_invoice" model="ir.ui.view">
+        <field name="name">NRS Tracking Tree</field>
+        <field name="model">nrs.tracking</field>
+        <field name="arch" type="xml">
+           <tree string="SMS" default_order='sms_time_data desc'
+                create="false" duplicate="false" class="o_nrs_tracking_view_tree"
+                colors="green:certified==True; red:response_code=='400';
+                    red:response_code=='401'; red:response_code=='402';
+                    red:response_code=='500';">
+                <field name="response_code" invisible="1"/>
+                <field name="sms_time_data"/>
+                <field name="certified"/>
+                <field name="sender"/>
+                <field name="partner_id" string="To"/>
+                <field name="subject"/>
+                <field name="sms_confirmation"/>
+                <field name="sms_message"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="nrs_tracking_view_form" model="ir.ui.view">
+        <field name="name">NRS Tracking Form</field>
+        <field name="model">nrs.tracking</field>
+        <field name="arch" type="xml">
+            <form string="SMS" create="false" duplicate="false">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <div class="o_row">
+                            <field name="sms_confirmation"/>
+                        </div>
+                    </div>
+                    <group>
+                        <group name="shipping_info" string="Shipping info">
+                            <field name="nrs_url"/>
+                            <field name="nrs_user"/>
+                            <field name="user_id"/>
+                            <field name="sms_time_data"/>
+                            <field name="phone_number"/>
+                            <field name="certified"/>
+                        </group>
+                        <group name="sms_info" string="SMS info">
+                            <field name="sender"/>
+                            <field name="partner_id"/>
+                            <field name="invoice_id"/>
+                            <field name="subject"/>
+                            <field name="response_code"/>
+                            <field name="sms_confirmation_info"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page name="sms_message_tab" string="SMS message">
+                            <field name="sms_message"/>
+                        </page>
+                        <page name="response_message_tab" string="Response message">
+                            <field name="response_message"/>
+                        </page>
+                        <page name="pdf_certficate_tab" string="PDF certificate"
+                            attrs="{'invisible':[('certified', '=', False)]}">
+                            <group>
+                                <group>
+                                    <field name="pdf_certificate_name" invisible="1"/>
+                                    <field name="pdf_certificate" filename="pdf_certificate_name"/>
+                                </group>
+                                <group>
+                                    <button name="get_pdf_certificate" type="object" class="oe_highlight"
+                                        help="Obtain the PDF certificate">
+                                        <div class="o_form_field">
+                                            <span class="fa fa-download"/>
+                                            <span style="margin-left:8px;">Get certificate</span>
+                                        </div>
+                                    </button>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="nrs_tracking_view_search" model="ir.ui.view">
+        <field name="name">NRS Tracking Search</field>
+        <field name="model">nrs.tracking</field>
+        <field name="arch" type="xml">
+            <search string="SMS">
+                <field name="name"/>
+                <field name="sms_confirmation"/>
+                <field name="nrs_url"/>
+                <field name="nrs_user"/>
+                <field name="credentials"/>
+                <field name="user_id"/>
+                <field name="sms_time_data"/>
+                <field name="phone_number"/>
+                <field name="sender"/>
+                <field name="partner_id"/>
+                <field name="invoice_id"/>
+                <field name="subject"/>
+                <field name="pdf_certificate_name"/>
+                <field name="response_code"/>
+                <field name="sms_confirmation_info"/>
+                <field name="sms_message"/>
+                <field name="response_message"/>
+                <filter string="Confirmation: Accepted" name="confirmation_accepted"
+                    domain="[('response_code','=','202')]"/>
+                <filter string="Confirmation: Not accepted" name="confirmation_no_accepted"
+                    domain="[('response_code','!=','202')]"/>
+                <separator/>
+                <filter string="Certified: yes" name="certified_yes"
+                    domain="[('certified','=', True)]"/>
+                <filter string="Certified: no" name="certified_no"
+                    domain="[('certified','=', False)]"/>
+                <separator/>
+                <filter string="PDF certificate: yes" name="pdf_certificate_yes"
+                    domain="[('pdf_certificate','!=', False)]"/>
+                <filter string="PDF certificate: no" name="pdf_certificate_no"
+                    domain="[('pdf_certificate','=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="User" name="user_filter"
+                        context="{'group_by':'user_id'}"/>
+                    <filter string="Confirmation" name="sms_confirm_filter"
+                        context="{'group_by':'sms_confirmation'}"/>
+                    <filter string="To" name="to_partner"
+                        context="{'group_by':'partner_id'}"/>
+                    <filter string="Certified" name="certified_filter"
+                        context="{'group_by':'certified'}"/>
+                    <filter string="Subject" name="subject_filter"
+                        context="{'group_by':'subject'}"/>
+                    <filter string="Invoice" name="invoice_filter"
+                        context="{'group_by':'invoice_id'}"/>
+                    <filter string="Sender" name="sender_filter"
+                        context="{'group_by':'sender'}"/>
+                    <filter string="Date" name="sms_time_data_filter"
+                        context="{'group_by':'sms_time_data'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Window action -->
+    <record id="action_nrs_tracking_tree" model="ir.actions.act_window">
+        <field name="name">NRS Tracking</field>
+        <field name="res_model">nrs.tracking</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="nrs_tracking_view_tree" name="view_id"/>
+        <field name="search_view_id" ref="nrs_tracking_view_search"/>
+    </record>
+
+    <record model="ir.actions.server" id="action_get_pdf_certificates">
+        <field name="name">Get PDF certificates</field>
+        <field name="model_id" ref="nrs_client_sms.model_nrs_tracking"/>
+        <field name="state">code</field>
+        <field name="code">
+            if context.get('active_ids'):
+                action = env['nrs.tracking'].get_pdf_certificates(context['active_ids'])
+        </field>
+    </record>
+
+    <record model="ir.values" id="ir_value_get_pdf_certificate">
+        <field name="name">Get PDF certificates value</field>
+        <field name="model">nrs.tracking</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' +str(ref('action_get_pdf_certificates'))"/>
+    </record>
+
+    <!-- Menuentry -->
+    <menuitem name="Tracking SMS" id="nrs_sms_tracking_menu" parent="nrs_root_menu"
+        action="action_nrs_tracking_tree" sequence="3"/>
+
+</odoo>

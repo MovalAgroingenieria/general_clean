@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Action test -->
+    <record id="action_nrs_test_wizard" model="ir.actions.act_window">
+        <field name="name">Compose Test SMS</field>
+        <field name="res_model">nrs.wizard</field>
+        <field name="src_model">nrs.wizard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="context">{'mode': 'test'}</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="nrs_config_settings_view_form" model="ir.ui.view">
+        <field name="name">NRS parameters</field>
+        <field name="model">nrs.configuration</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+               <header style="padding: 4px 0px;">
+                    <button string="Save" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                </header>
+                <group>
+                    <group name="nrs_data" string="NRS config settings">
+                        <field name="service_url"/>
+                        <field name="service_user"/>
+                        <field name="service_passwd" password="True"/>
+                        <field name="default_sender"/>
+                    </group>
+                    <group name="default_data" string="Defaults templates">
+                        <field name="default_partner_template_id" domain="[('type','=','partner')]"/>
+                        <field name="default_invoice_template_id" domain="[('type','=','invoice')]"/>
+                    </group>
+                </group>
+                <group >
+                    <group name="test_config" string="Test">
+                        <label for="test_phone_number"/>
+                        <div class="o_row">
+                            <field name="test_phone_number"/>
+                            <button name="%(action_nrs_test_wizard)d" type="action" class="oe_highlight"
+                                help="Send message to test mobile number. No template is used.">
+                                <div class="o_form_field">
+                                    <span class="fa fa-nrs-sms-registre"/>
+                                    <span style="margin-left:8px;">Test</span>
+                                </div>
+                            </button>
+                        </div>
+                    </group>
+                    <group string="Config parameters">
+                        <field name="allow_certify_sms"/>
+                        <field name="allow_flash_sms"/>
+                        <field name="show_icon_next_mobile"/>
+                        <field name="show_icon_on_partner_view_kanban"/>
+                        <br/><br/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action config -->
+    <record id="action_nrs_config_settings_form" model="ir.actions.act_window">
+        <field name="name">NRS configuration</field>
+        <field name="res_model">nrs.configuration</field>
+        <field name="view_id" ref="nrs_config_settings_view_form"/>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <!-- Entries menu (root and config) -->
+    <menuitem id="nrs_root_menu" name="NRS SMS" parent="base.menu_administration" sequence="6"/>
+    <menuitem name="Configuration" id="nrs_config_menu" parent="nrs_root_menu"
+        action="action_nrs_config_settings_form" sequence="1"/>
+
+</odoo>
