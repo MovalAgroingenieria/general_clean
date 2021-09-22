@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "Base Report",
+    "name": "Base Report Odd Even Pages",
     "summary": "Functionality to modify report generated ensuring and odd or"
                "even number of pages.",
     "version": "10.0.1.0.0",

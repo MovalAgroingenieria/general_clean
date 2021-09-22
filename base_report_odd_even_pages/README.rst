@@ -2,9 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===========
-Base Report
-===========
+==========================
+Base Report Odd Even Pages
+==========================
 
 This module allows you to modify default behavior of report generation.
 
