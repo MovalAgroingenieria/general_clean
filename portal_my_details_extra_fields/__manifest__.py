@@ -13,7 +13,8 @@
         "portal",
     ],
     "data": [
-        "views/portal_templates.xml"
+        "views/portal_templates.xml",
+        "views/assets.xml",
     ],
     "installable": True,
     "application": False,

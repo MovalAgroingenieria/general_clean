@@ -19,6 +19,17 @@
                     </t>
                 </select>
             </div>
+            <div t-attf-class="form-group #{error.get('category_id') and 'o_has_error' or ''} col-xl-6">
+                <label class="col-form-label" for="category_id">Interests</label>
+                <select id="category_id" name="category_id" multiple="" t-attf-class="form-control js_select2 #{error.get('category_id') and 'is-invalid' or ''}">
+                    <t t-foreach="categories or []" t-as="category">
+                        <option t-att-value="category.id" t-att-selected="category.id == int(category_id) if category_id else category.id in [x.id for x in partner.category_id]">
+                            <t t-esc="category.name" />
+                        </option>
+                    </t>
+                </select>
+                <input type="hidden" t-attf-class="form-control #{error.get('categories_value_text') and 'is-invalid' or ''}" id="categories_value_text" name="categories_value_text" t-att-value="categories_value_text or categories_text"/>
+            </div>
         </xpath>
     </template>
 
