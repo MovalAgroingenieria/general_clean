@@ -48,7 +48,7 @@ msgstr ""
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_view_partner_form
 #: model:ir.ui.view,arch_db:nrs_client_sms.wausms_view_account_invoice_form
-msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's</span>"
+msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> Certified SMS's</span>"
 msgstr ""
 
 #. module: nrs_client_sms
@@ -486,7 +486,7 @@ msgstr ""
 
 #. module: nrs_client_sms
 #: model:ir.ui.menu,name:nrs_client_sms.nrs_root_menu
-msgid "NRS SMS"
+msgid "Certified SMS"
 msgstr ""
 
 #. module: nrs_client_sms
@@ -771,7 +771,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:nrs_client_sms.action_nrs_wizard_invoice
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_view_partner_form
 #: model:ir.ui.view,arch_db:nrs_client_sms.res_partner_kanban_view
-msgid "Send SMS"
+msgid "Send certified SMS"
 msgstr ""
 
 #. module: nrs_client_sms
