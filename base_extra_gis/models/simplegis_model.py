@@ -30,7 +30,7 @@ class SimplegisModel(models.AbstractModel):
             geom_ewkt = ''
             if geom_ok:
                 self.env.cr.execute("""
-                    SELECT st_asewkt(""" + self._geom_field + """)
+                    SELECT postgis.st_asewkt(""" + self._geom_field + """)
                     FROM """ + self._gis_table + """
                     WHERE """ + self._link_field + """='""" + record.name + """'""")
                 query_results = self.env.cr.dictfetchall()
