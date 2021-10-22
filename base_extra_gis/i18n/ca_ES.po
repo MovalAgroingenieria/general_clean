@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_extra_gis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-21 16:00+0000\n"
+"PO-Revision-Date: 2021-10-21 16:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model_geom_ewkt
+#: model:ir.model.fields,field_description:base_extra_gis.field_wua_parcel_geom_ewkt
+msgid "EWKT Geometry"
+msgstr "Geometria EWKT"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: base_extra_gis
+#: model:ir.model,name:base_extra_gis.model_simplegis_model
+msgid "Simple-GIS Model"
+msgstr "Simple-GIS Model"
+

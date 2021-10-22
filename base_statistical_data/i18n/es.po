@@ -1,0 +1,134 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_statistical_data
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-21 16:05+0000\n"
+"PO-Revision-Date: 2021-10-21 16:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_data_date
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_data_date_12496
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_data_date
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_data_date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_geom_ewkt
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_geom_ewkt_12493
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_geom_ewkt
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_geom_ewkt
+msgid "EWKT Geometry"
+msgstr "Geometría EWKT"
+
+#. module: base_statistical_data
+#: sql_constraint:statistical.series:0
+msgid "Existing record."
+msgstr "El registro ya existe."
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_id
+msgid "ID"
+msgstr "ID"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_name
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_name
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_name_12486
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_name
+msgid "Identifier"
+msgstr "Identificador"
+
+#. module: base_statistical_data
+#: code:addons/base_statistical_data/models/statistical_series.py:110
+#, python-format
+msgid "Incorrect index value: maximum value too large."
+msgstr "Valores incorrectos: el valor máximo es demasiado alto."
+
+#. module: base_statistical_data
+#: code:addons/base_statistical_data/models/statistical_series.py:114
+#, python-format
+msgid "Incorrect index value: mean value out of limits."
+msgstr "Valores incorrectos: la media no queda situada entre el mínimo y el máximo."
+
+#. module: base_statistical_data
+#: code:addons/base_statistical_data/models/statistical_series.py:107
+#, python-format
+msgid "Incorrect index value: minimum value too low."
+msgstr "Valores incorrectos: el valor mínimo es demasiado bajo."
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_max_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_max_value_12488
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_max_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_max_value
+msgid "Maximum"
+msgstr "Máximo"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_mean_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_mean_value_12490
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_mean_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_mean_value
+msgid "Mean"
+msgstr "Media"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_min_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_min_value_12483
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_min_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_min_value
+msgid "Minimum"
+msgstr "Minimo"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_masterrecord_name
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_masterrecord_name
+msgid "Related Entity"
+msgstr "Entidad relacionada"
+
+#. module: base_statistical_data
+#: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_stdev_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_stdev_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_stdev_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_stdev_value_12494
+msgid "SD"
+msgstr "Desv. Est."
+
+#. module: base_statistical_data
+#: model:ir.model,name:base_statistical_data.model_statistical_series
+msgid "Statistical-Series Model"
+msgstr "Statistical-Series Model"
+
+#. module: base_statistical_data
+#: code:addons/base_statistical_data/models/statistical_series.py:98
+#, python-format
+msgid "The related entity is required."
+msgstr "La entidad relacionada es un dato obligatorio."
+
+#. module: base_statistical_data
+#: code:addons/base_statistical_data/models/statistical_series.py:121
+#, python-format
+msgid "The standard deviation can not be a negative value."
+msgstr "La desviación estándar no puede ser un valor negativo."
+
