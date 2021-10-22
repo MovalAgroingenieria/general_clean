@@ -27,8 +27,8 @@ msgstr "Industrias"
 
 #. module: portal_my_details_extra_fields
 #: model_terms:ir.ui.view,arch_db:portal_my_details_extra_fields.portal_my_details
-msgid "Interests"
-msgstr "Intereses"
+msgid "Products and services"
+msgstr "Productos y servicios"
 
 #. module: portal_my_details_extra_fields
 #: model_terms:ir.ui.view,arch_db:portal_my_details_extra_fields.portal_my_details
