@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'moval_iconset';
-  src: url('../font/moval_iconset.eot?19781008');
-  src: url('../font/moval_iconset.eot?19781008#iefix') format('embedded-opentype'),
-       url('../font/moval_iconset.woff2?19781008') format('woff2'),
-       url('../font/moval_iconset.woff?19781008') format('woff'),
-       url('../font/moval_iconset.ttf?19781008') format('truetype'),
-       url('../font/moval_iconset.svg?19781008#moval_iconset') format('svg');
+  src: url('../font/moval_iconset.eot?5029136');
+  src: url('../font/moval_iconset.eot?5029136#iefix') format('embedded-opentype'),
+       url('../font/moval_iconset.woff2?5029136') format('woff2'),
+       url('../font/moval_iconset.woff?5029136') format('woff'),
+       url('../font/moval_iconset.ttf?5029136') format('truetype'),
+       url('../font/moval_iconset.svg?5029136#moval_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -72,6 +72,10 @@
 .fa-moval-efficiency-water-grav:before { content: '\e870'; } /* '' */
 .fa-moval-efficiency-energy:before { content: '\e871'; } /* '' */
 .fa-moval-efficiency-lightbulb:before { content: '\e872'; } /* '' */
+.fa-moval-pixeled-view:before { content: '\e875'; } /* '' */
+.fa-moval-remote-sensing:before { content: '\e876'; } /* '' */
+.fa-moval-remote-sensing-ndmi:before { content: '\e877'; } /* '' */
+.fa-moval-remote-sensing-ndvi:before { content: '\e878'; } /* '' */
 .fa-moval-pumpunit:before { content: '\e87a'; } /* '' */
 .fa-moval-lock-open:before { content: '\e890'; } /* '' */
 .fa-moval-user-check:before { content: '\e89f'; } /* '' */
