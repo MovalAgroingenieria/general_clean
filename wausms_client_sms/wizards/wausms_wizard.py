@@ -229,6 +229,7 @@ class WauSMSWizard(models.Model):
                                              invoice_id])
             # Set active_ids as list of list [[partner_id, invoice_id],)
             active_ids = partner_invoice_list
+
         if not active_ids:
             raise ValidationError(_("There are no items selected."))
 
@@ -246,6 +247,7 @@ class WauSMSWizard(models.Model):
                 partner_id = partner.id
                 invoice = self.env['account.invoice'].browse(active_id[1])
                 invoice_id = invoice.id
+
             # Set and check mobile number
             if context.get("mode") == 'test':
                 phone_number = self.env['ir.values'].get_default(
@@ -291,15 +293,27 @@ class WauSMSWizard(models.Model):
             data = json.dumps(data_raw)
 
             # Send and catch response
-            response = requests.post(service_url, headers=headers, data=data)
+            response = ""
+            connection_error = ""
+            try:
+                response = requests.post(service_url, headers=headers,
+                                         data=data)
+            except requests.exceptions.RequestException as requests_error:
+                connection_error = requests_error.message.message + '\n'
 
             # Get confirmations messages based in response status code
-            sms_confirmation, sms_confirmation_info = \
-                self._get_confirmation_messages(response.status_code)
+            if response:
+                sms_confirmation, sms_confirmation_info = \
+                    self._get_confirmation_messages(response.status_code)
+                status_code = response.status_code
+            else:
+                sms_confirmation, sms_confirmation_info = \
+                    _('ERROR: no response'), _('ERROR: no response')
+                status_code = "error"
 
             # Add sms_confirmation message to sms_confirmations
             if not subject:
-                subject = ""
+                subject = _('No subject')
             if context.get("mode") == 'test':
                 sms_confirmations += \
                     sms_confirmation + " -- [" + subject + "]" + '\n'
@@ -313,12 +327,18 @@ class WauSMSWizard(models.Model):
                     str(invoice.number) + " - " + partner.name + "]" + '\n'
 
             # Response message (only shown in debug mode)
-            response_message = json.dumps(response.json(), indent=4)
-            if 'error' in response.text:
-                response_message_data = json.loads(response.text)
-                response_message_data['id'] = "no-id"
+            if response:
+                response_message = json.dumps(response.json(), indent=4)
+                if 'error' in response.text:
+                    response_message_data = json.loads(response.text)
+                    response_message_data['id'] = "no-id"
+                else:
+                    response_message_data = json.loads(response.text)[0]
             else:
-                response_message_data = json.loads(response.text)[0]
+                response_message = _('ERROR: no response')
+                if connection_error:
+                    response_message += '\n' + connection_error
+                response_message_data = {"id": "no-id",}
 
             # Add sms_confirmation message to sms_confirmations
             if active_id == 0:
@@ -350,7 +370,7 @@ class WauSMSWizard(models.Model):
                 "phone_number": reformated_phone_number,
                 "sender": sender,
                 "sms_message": sms_message,
-                "response_code": response.status_code,
+                "response_code": status_code,
                 "sms_confirmation": sms_confirmation,
                 "sms_confirmation_info": sms_confirmation_info,
                 "response_message": response_message, }
