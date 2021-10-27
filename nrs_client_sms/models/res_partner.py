@@ -14,21 +14,21 @@ class ResPartner(models.Model):
         comodel_name='nrs.tracking',
         inverse_name='partner_id')
 
-    num_sms = fields.Integer(
+    num_sms_certified = fields.Integer(
         string="Number of SMS",
-        compute="_compute_num_sms")
+        compute="_compute_num_sms_certified")
 
-    show_icon_next_mobile = fields.Boolean(
-        compute="_compute_show_icon_next_mobile")
+    show_icon_next_mobile_certified = fields.Boolean(
+        compute="_compute_show_icon_next_mobile_certified")
 
-    show_icon_on_partner_view_kanban = fields.Boolean(
-        compute="_compute_show_icon_on_partner_view_kanban")
+    show_icon_on_partner_view_kanban_certified = fields.Boolean(
+        compute="_compute_show_icon_on_partner_view_kanban_certified")
 
 
     @api.multi
-    def _compute_num_sms(self):
+    def _compute_num_sms_certified(self):
         for record in self:
-            record.num_sms = len(record.nrs_ids)
+            record.num_sms_certified = len(record.nrs_ids)
 
     @api.multi
     def action_see_nrs(self):
@@ -48,16 +48,16 @@ class ResPartner(models.Model):
         }
 
     @api.multi
-    def _compute_show_icon_next_mobile(self):
+    def _compute_show_icon_next_mobile_certified(self):
         show_icon_next_mobile = self.env['ir.values'].get_default(
                 'nrs.configuration', 'show_icon_next_mobile')
         for record in self:
-            record.show_icon_next_mobile = show_icon_next_mobile
+            record.show_icon_next_mobile_certified = show_icon_next_mobile
 
     @api.multi
-    def _compute_show_icon_on_partner_view_kanban(self):
+    def _compute_show_icon_on_partner_view_kanban_certified(self):
         show_icon_on_partner_view_kanban = self.env['ir.values'].get_default(
                 'nrs.configuration', 'show_icon_on_partner_view_kanban')
         for record in self:
-            record.show_icon_on_partner_view_kanban = \
+            record.show_icon_on_partner_view_kanban_certified = \
                 show_icon_on_partner_view_kanban

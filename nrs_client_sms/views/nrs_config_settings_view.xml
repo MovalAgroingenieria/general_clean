@@ -51,8 +51,8 @@
                     <group string="Config parameters">
                         <field name="allow_certify_sms"/>
                         <field name="allow_flash_sms"/>
-                        <field name="show_icon_next_mobile"/>
-                        <field name="show_icon_on_partner_view_kanban"/>
+                        <field name="show_icon_next_mobile_certified"/>
+                        <field name="show_icon_on_partner_view_kanban_certified"/>
                         <br/><br/>
                     </group>
                 </group>

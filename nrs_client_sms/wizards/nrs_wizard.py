@@ -375,18 +375,32 @@ class NRSWizard(models.Model):
             data = json.dumps(data_raw)
 
             # Send and catch response
-            response = requests.post(service_url, headers=headers, data=data)
+            response = ""
+            connection_error = ""
+            connection_ok = False
+            try:
+                response = requests.post(service_url, headers=headers,
+                                         data=data)
+                connection_ok = True
+            except requests.exceptions.RequestException as requests_error:
+                connection_error = requests_error.message.message + '\n'
 
             # Increase counter
             num_of_sms += 1
 
             # Get confirmations messages based in response status code
-            sms_confirmation, sms_confirmation_info = \
-                self._get_confirmation_messages(response)
+            if connection_ok:
+                sms_confirmation, sms_confirmation_info = \
+                    self._get_confirmation_messages(response)
+                status_code = response.status_code
+            else:
+                sms_confirmation, sms_confirmation_info = \
+                    _('ERROR: no response'), _('ERROR: no response')
+                status_code = "error"
 
             # Add sms_confirmation message to sms_confirmations
             if not subject:
-                subject = ""
+                subject = _('No subject')
             if context.get("mode") == 'test':
                 sms_confirmations += str(num_of_sms).zfill(4) + ' -- ' + \
                     sms_confirmation + " -- [" + subject + "]"
@@ -400,17 +414,25 @@ class NRSWizard(models.Model):
                     str(invoice.number) + " - " + partner.name + "]"
 
             # Response message (only shown in debug mode)
-            response_message = json.dumps(response.json(), indent=4)
-            if 'error' in response.text:
-                response_message_data = json.loads(response.text)
-                response_message_data = \
-                    json.loads(json.dumps(response_message_data['result']))
-                response_message_data['id'] = "no-id"
-                certify = False
+            if connection_ok:
+                response_message = json.dumps(response.json(), indent=4)
+                if 'error' in response.text:
+                    response_message_data = json.loads(response.text)
+                    response_message_data = \
+                        json.loads(json.dumps(response_message_data['error']))
+                    name_id = "no-id"
+                    certify = False
+                else:
+                    response_message_data = json.loads(response.text)
+                    response_message_data = \
+                        json.loads(json.dumps(response_message_data['result']))
+                    name_id = response_message_data[0]["id"]
             else:
-                response_message_data = json.loads(response.text)
-                response_message_data = \
-                    json.loads(json.dumps(response_message_data['result']))
+                response_message = _('ERROR: no response')
+                certify = False
+                if connection_error:
+                    response_message += '\n' + connection_error
+                name_id = "no-id"
 
             # Show if it has been certified
             is_certifed = _("No")
@@ -444,7 +466,7 @@ class NRSWizard(models.Model):
 
             # Insert tracking data
             tracking_data = {
-                "name": response_message_data[0]["id"],
+                "name": name_id,
                 "nrs_url": service_url,
                 "nrs_user": nrs_user,
                 "user_id": self._uid,
@@ -457,7 +479,7 @@ class NRSWizard(models.Model):
                 "phone_number": reformated_phone_number,
                 "sender": sender,
                 "sms_message": sms_message,
-                "response_code": response.status_code,
+                "response_code": status_code,
                 "sms_confirmation": sms_confirmation,
                 "sms_confirmation_info": sms_confirmation_info,
                 "response_message": response_message}

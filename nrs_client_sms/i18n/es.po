@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-07 11:14+0000\n"
-"PO-Revision-Date: 2021-10-07 11:14+0000\n"
+"POT-Creation-Date: 2021-10-27 15:47+0000\n"
+"PO-Revision-Date: 2021-10-27 15:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,10 +16,10 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:418
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:440
 #, python-format
 msgid " [Certified] "
-msgstr " [Certified] "
+msgstr " [Certificado] "
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_tracking_view_form
@@ -47,13 +47,13 @@ msgstr "<span class=\"fa fa-nrs-sms-registre\"/>\n"
 msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
 "                                        <span style=\"margin-left:8px;\">Resolve </span>"
 msgstr "<span class=\"fa fa-retweet fa-lg\"/>\n"
-"                                        <span style=\"margin-left:8px;\">Resolver </span>"
+"                                        <span style=\"margin-left:8px;\">Resolver</span>"
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_view_partner_form
 #: model:ir.ui.view,arch_db:nrs_client_sms.wausms_view_account_invoice_form
 msgid "<span class=\"o_stat_text\" style=\"display:inline;\"> Certified SMS's</span>"
-msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS's certificados</span>"
+msgstr "<span class=\"o_stat_text\" style=\"display:inline;\"> SMS cert.</span>"
 
 #. module: nrs_client_sms
 #: code:addons/nrs_client_sms/wizards/nrs_wizard.py:173
@@ -183,8 +183,13 @@ msgid "Certified"
 msgstr "Certificado"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:431
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:442
+#: model:ir.ui.menu,name:nrs_client_sms.nrs_root_menu
+msgid "Certified SMS"
+msgstr "SMS certificados"
+
+#. module: nrs_client_sms
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:453
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:464
 #, python-format
 msgid "Certified: "
 msgstr "Certificado: "
@@ -217,7 +222,7 @@ msgstr "Redactar SMS"
 #. module: nrs_client_sms
 #: model:ir.actions.act_window,name:nrs_client_sms.action_nrs_test_wizard
 msgid "Compose Test SMS"
-msgstr "Redactar SMS Test"
+msgstr "Redactar SMS test"
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_config_settings_view_form
@@ -235,7 +240,7 @@ msgid "Confirmation"
 msgstr "Confirmación"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:441
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:463
 #, python-format
 msgid "Confirmation: "
 msgstr "Confirmación: "
@@ -277,7 +282,7 @@ msgstr "Credenciales"
 #. module: nrs_client_sms
 #: model:ir.model.fields,help:nrs_client_sms.field_nrs_tracking_credentials
 msgid "Credentials used (b64 encoded)"
-msgstr "Credenciales usadas (codificadas en base64)"
+msgstr "Credenciales usadas (cofificadas en base64)"
 
 #. module: nrs_client_sms
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_tracking_sms_time_data
@@ -303,6 +308,13 @@ msgstr "Plantillas por defecto"
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_wizard_display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
+
+#. module: nrs_client_sms
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:398
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:431
+#, python-format
+msgid "ERROR: no response"
+msgstr "ERROR: sin respuesta"
 
 #. module: nrs_client_sms
 #: code:addons/nrs_client_sms/models/nrs_tracking.py:131
@@ -347,7 +359,7 @@ msgid "For test configuration\n"
 "Only Spanish mobile numbers"
 msgstr "Para comprobar la configuración.\n"
 "Se tiene que guardar antes de usar.\n"
-"Solo para móviles con prefijo +34"
+"Solo para móviles con prefijo +34."
 
 #. module: nrs_client_sms
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_tracking_sender
@@ -385,12 +397,12 @@ msgid "If checked, it is allowed to send flash SMS. These SMS appear directly on
 msgstr "Si está marcado permite enviar SMS Flash. Estos SMS aparecen directamente en la plantalla del dispositivo. Cuidado, en algunos dispositivos no pueden ser guardados. "
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,help:nrs_client_sms.field_nrs_configuration_show_icon_on_partner_view_kanban
+#: model:ir.model.fields,help:nrs_client_sms.field_nrs_configuration_show_icon_on_partner_view_kanban_certified
 msgid "If checked, it shows an icon in the upper right corner of the kanban card to send SMS."
 msgstr "Si está marcado (y el campo móvil no está vacío), muestra un icono en la esquina superior derecha de la tarjeta kanban para enviar SMS."
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,help:nrs_client_sms.field_nrs_configuration_show_icon_next_mobile
+#: model:ir.model.fields,help:nrs_client_sms.field_nrs_configuration_show_icon_next_mobile_certified
 msgid "If it is checked, it shows an icon next to the mobile to send SMS."
 msgstr "Si está marcado (y el campo móvil no está vacío), muestra un icono junto al móvil para enviar SMS."
 
@@ -450,7 +462,7 @@ msgstr "Fecha vencimiento (dd/mm/yyyy)"
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_template_view_form
 msgid "Invoice number"
-msgstr "Nº Factura"
+msgstr "Nº. factura"
 
 #. module: nrs_client_sms
 #: model:ir.model.fields,help:nrs_client_sms.field_nrs_tracking_certified
@@ -491,11 +503,6 @@ msgid "Message"
 msgstr "Mensaje"
 
 #. module: nrs_client_sms
-#: model:ir.ui.menu,name:nrs_client_sms.nrs_root_menu
-msgid "Certified SMS"
-msgstr "SMS certificados"
-
-#. module: nrs_client_sms
 #: model:ir.actions.act_window,name:nrs_client_sms.action_nrs_tracking_tree
 msgid "NRS Tracking"
 msgstr "Registro"
@@ -526,7 +533,7 @@ msgid "Name"
 msgstr "Nombre"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:416
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:438
 #, python-format
 msgid "No"
 msgstr "No"
@@ -550,9 +557,15 @@ msgid "No sender has been set."
 msgstr "No se ha establecido ningún remitente."
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_account_invoice_num_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_num_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_num_sms
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:403
+#, python-format
+msgid "No subject"
+msgstr "Sin asunto"
+
+#. module: nrs_client_sms
+#: model:ir.model.fields,field_description:nrs_client_sms.field_account_invoice_num_sms_certified
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_num_sms_certified
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_num_sms_certified
 msgid "Number of SMS"
 msgstr "Nº de SMS"
 
@@ -589,6 +602,11 @@ msgid "PDF certificate: yes"
 msgstr "Certificado PDF: Sí"
 
 #. module: nrs_client_sms
+#: selection:nrs.template,type:0
+msgid "Parcel"
+msgstr "Parcela"
+
+#. module: nrs_client_sms
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_default_partner_template_id
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_tracking_partner_id
 #: selection:nrs.template,type:0
@@ -612,11 +630,6 @@ msgid "Partner data if exists"
 msgstr "Datos del socio si existen"
 
 #. module: nrs_client_sms
-#: model:ir.model,name:nrs_client_sms.model_res_partner
-msgid "Partner extension for NRS"
-msgstr "Extensión socio para NRS"
-
-#. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_template_view_form
 msgid "Partner firstname initial letter"
 msgstr "Letra inicial del nombre"
@@ -634,10 +647,15 @@ msgstr "Apellido"
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_template_view_form
 msgid "Partner name fixed length (40 chars)"
-msgstr "Nombre completo acotado a 40 caracteres"
+msgstr "Nombre completo acotado (40 cs)"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:440
+#: model:ir.model,name:nrs_client_sms.model_res_partner
+msgid "Partner of a WUA"
+msgstr "Socio"
+
+#. module: nrs_client_sms
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:462
 #, python-format
 msgid "Partner: "
 msgstr "Socio: "
@@ -689,8 +707,8 @@ msgid "Response to SMS sent"
 msgstr "Respueta al SMS enviado"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:432
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:443
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:454
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:465
 #, python-format
 msgid "Response: "
 msgstr "Respuesta: "
@@ -718,7 +736,7 @@ msgid "SMS Templates"
 msgstr "Plantillas SMS"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:467
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:489
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_tracking_sms_confirmation
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_tracking_sms_confirmation_info
 #, python-format
@@ -760,12 +778,12 @@ msgstr "Plantilla SMS"
 #: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_nrs_ids
 #: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_nrs_ids
 msgid "SMS's sent"
-msgstr "SMS's enviados"
+msgstr "SMS enviados"
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_view_partner_form
 msgid "SMS's that have been sent."
-msgstr "SMS's que han sido enviados."
+msgstr "SMS que han sido enviados"
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_config_settings_view_form
@@ -803,8 +821,8 @@ msgid "Sender used"
 msgstr "Remitente utilizado"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:429
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:438
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:451
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:460
 #, python-format
 msgid "Sender: "
 msgstr "Remitente: "
@@ -812,7 +830,7 @@ msgstr "Remitente: "
 #. module: nrs_client_sms
 #: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_service_url
 msgid "Service URL"
-msgstr "URL del servicio"
+msgstr "Servicio URL"
 
 #. module: nrs_client_sms
 #: model:ir.ui.view,arch_db:nrs_client_sms.nrs_tracking_view_form
@@ -820,25 +838,25 @@ msgid "Shipping info"
 msgstr "Información de envío"
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_show_icon_on_partner_view_kanban
+#: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_show_icon_on_partner_view_kanban_certified
 msgid "Show icon in kanban card"
 msgstr "Mostrar icono en tarjeta kanban"
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_show_icon_next_mobile
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_show_icon_next_mobile
-msgid "Show icon next mobile"
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_show_icon_next_mobile_certified
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_show_icon_next_mobile_certified
+msgid "Show icon next mobile certified"
 msgstr "Muestra icono junto al móvil"
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_show_icon_next_mobile
+#: model:ir.model.fields,field_description:nrs_client_sms.field_nrs_configuration_show_icon_next_mobile_certified
 msgid "Show icon next to mobile"
 msgstr "Mostrar el icono junto al móvil"
 
 #. module: nrs_client_sms
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_show_icon_on_partner_view_kanban
-#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_show_icon_on_partner_view_kanban
-msgid "Show icon on partner view kanban"
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_partner_show_icon_on_partner_view_kanban_certified
+#: model:ir.model.fields,field_description:nrs_client_sms.field_res_users_show_icon_on_partner_view_kanban_certified
+msgid "Show icon on partner view kanban certified"
 msgstr "Muestra el icono en la tarjeta kanban"
 
 #. module: nrs_client_sms
@@ -865,8 +883,8 @@ msgid "Subject used"
 msgstr "Asunto utilizado"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:428
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:437
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:450
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:459
 #, python-format
 msgid "Subject: "
 msgstr "Asunto: "
@@ -1010,8 +1028,8 @@ msgid "To"
 msgstr "Para"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:430
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:439
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:452
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:461
 #, python-format
 msgid "To: "
 msgstr "Para: "
@@ -1091,7 +1109,7 @@ msgid "Wizard to send SMS through NRS service"
 msgstr "Asistente para enviar mensajes a través del servicio NRS"
 
 #. module: nrs_client_sms
-#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:419
+#: code:addons/nrs_client_sms/wizards/nrs_wizard.py:441
 #, python-format
 msgid "Yes"
 msgstr "Sí"

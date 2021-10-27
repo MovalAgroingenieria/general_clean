@@ -45,13 +45,13 @@ class NRSConfiguration(models.TransientModel):
         string='Invoice',
         ondelete="set null")
 
-    show_icon_next_mobile = fields.Boolean(
+    show_icon_next_mobile_certified = fields.Boolean(
         string="Show icon next to mobile",
         default=True,
         help="If it is checked, it shows an icon next to the mobile to send "
              "SMS.")
 
-    show_icon_on_partner_view_kanban = fields.Boolean(
+    show_icon_on_partner_view_kanban_certified = fields.Boolean(
         string="Show icon in kanban card",
         default=True,
         help="If checked, it shows an icon in the upper right corner of the "
@@ -95,11 +95,11 @@ class NRSConfiguration(models.TransientModel):
                            'default_invoice_template_id',
                            self.default_invoice_template_id.id)
         values.set_default('nrs.configuration',
-                           'show_icon_next_mobile',
-                           self.show_icon_next_mobile)
+                           'show_icon_next_mobile_certified',
+                           self.show_icon_next_mobile_certified)
         values.set_default('nrs.configuration',
-                           'show_icon_on_partner_view_kanban',
-                           self.show_icon_on_partner_view_kanban)
+                           'show_icon_on_partner_view_kanban_certified',
+                           self.show_icon_on_partner_view_kanban_certified)
         values.set_default('nrs.configuration', 'allow_certify_sms',
                            self.allow_certify_sms)
         values.set_default('nrs.configuration', 'allow_flash_sms',
