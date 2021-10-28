@@ -49,15 +49,18 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_show_icon_next_mobile_certified(self):
-        show_icon_next_mobile = self.env['ir.values'].get_default(
-                'nrs.configuration', 'show_icon_next_mobile')
+        show_icon_next_mobile_certified = self.env['ir.values'].get_default(
+                'nrs.configuration', 'show_icon_next_mobile_certified')
         for record in self:
-            record.show_icon_next_mobile_certified = show_icon_next_mobile
+            record.show_icon_next_mobile_certified = \
+                show_icon_next_mobile_certified
 
     @api.multi
     def _compute_show_icon_on_partner_view_kanban_certified(self):
-        show_icon_on_partner_view_kanban = self.env['ir.values'].get_default(
-                'nrs.configuration', 'show_icon_on_partner_view_kanban')
+        show_icon_on_partner_view_kanban_certified = \
+            self.env['ir.values'].get_default(
+                'nrs.configuration',
+                'show_icon_on_partner_view_kanban_certified')
         for record in self:
             record.show_icon_on_partner_view_kanban_certified = \
-                show_icon_on_partner_view_kanban
+                show_icon_on_partner_view_kanban_certified
