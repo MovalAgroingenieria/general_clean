@@ -116,7 +116,7 @@ class NRSTracking(models.Model):
             'Authorization': 'Basic '+self.credentials, }
         cert_url = "https://dashboard.360nrs.com/api/rest/sms/certificates/"
         sms_id = self.name
-        if sms_id != "no-id":
+        if sms_id != "no-id" and self.certified:
             cert_url += sms_id
             pdf = pdf_name = pdf_ready = False
             attempts = 0
