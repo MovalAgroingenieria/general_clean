@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-21 16:04+0000\n"
-"PO-Revision-Date: 2021-10-21 16:04+0000\n"
+"POT-Creation-Date: 2021-10-31 15:56+0000\n"
+"PO-Revision-Date: 2021-10-31 15:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,8 +17,8 @@ msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_data_date
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_data_date_12496
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_data_date
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_data_date_12607
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_data_date_12640
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_data_date
 msgid "Date"
 msgstr ""
@@ -30,8 +30,8 @@ msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_geom_ewkt
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_geom_ewkt_12493
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_geom_ewkt
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_geom_ewkt_12602
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_geom_ewkt_12621
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_geom_ewkt
 msgid "EWKT Geometry"
 msgstr ""
@@ -48,8 +48,8 @@ msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_name
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_name
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_name_12486
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_name_12637
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_name_12595
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_name
 msgid "Identifier"
 msgstr ""
@@ -79,24 +79,24 @@ msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_max_value
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_max_value_12488
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_max_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_max_value_12597
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_max_value_12630
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_max_value
 msgid "Maximum"
 msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_mean_value
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_mean_value_12490
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_mean_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_mean_value_12599
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_mean_value_12619
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_mean_value
 msgid "Mean"
 msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_min_value
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_min_value_12483
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_min_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_min_value_12592
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_min_value_12631
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_min_value
 msgid "Minimum"
 msgstr ""
@@ -109,9 +109,9 @@ msgstr ""
 
 #. module: base_statistical_data
 #: model:ir.model.fields,field_description:base_statistical_data.field_statistical_series_stdev_value
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_stdev_value
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_moisture_stdev_value_12629
 #: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_ndvi_stdev_value
-#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_stdev_value_12494
+#: model:ir.model.fields,field_description:base_statistical_data.field_wua_parcel_vegetationindex_stdev_value_12604
 msgid "SD"
 msgstr ""
 
