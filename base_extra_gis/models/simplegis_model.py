@@ -23,6 +23,10 @@ class SimplegisModel(models.AbstractModel):
         string='EWKT Geometry',
         compute='_compute_geom_ewkt')
 
+    oriented_envelope_ewkt = fields.Char(
+        string='EWKT Geometry for oriented envelope',
+        compute='_compute_oriented_envelope_ewkt')
+
     @api.multi
     def _compute_geom_ewkt(self):
         geom_ok = self._geom_ok()
@@ -38,6 +42,22 @@ class SimplegisModel(models.AbstractModel):
                    query_results[0].get('st_asewkt') is not None):
                     geom_ewkt = query_results[0].get('st_asewkt')
             record.geom_ewkt = geom_ewkt
+
+    @api.multi
+    def _compute_oriented_envelope_ewkt(self):
+        geom_ok = self._geom_ok()
+        for record in self:
+            oriented_envelope_ewkt = ''
+            if geom_ok:
+                self.env.cr.execute("""
+                    SELECT postgis.st_asewkt(postgis.st_orientedenvelope(""" + self._geom_field + """))
+                    FROM """ + self._gis_table + """
+                    WHERE """ + self._link_field + """='""" + record.name + """'""")
+                query_results = self.env.cr.dictfetchall()
+                if (query_results and
+                   query_results[0].get('st_asewkt') is not None):
+                    oriented_envelope_ewkt = query_results[0].get('st_asewkt')
+            record.oriented_envelope_ewkt = oriented_envelope_ewkt
 
     def _geom_ok(self):
         resp = True
