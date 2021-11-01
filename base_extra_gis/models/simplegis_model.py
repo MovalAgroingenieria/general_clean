@@ -23,6 +23,10 @@ class SimplegisModel(models.AbstractModel):
         string='EWKT Geometry',
         compute='_compute_geom_ewkt')
 
+    simplified_geom_ewkt = fields.Char(
+        string='EWKT Geometry based on integer values',
+        compute='_compute_simplified_geom_ewkt')
+
     oriented_envelope_ewkt = fields.Char(
         string='EWKT Geometry for oriented envelope',
         compute='_compute_oriented_envelope_ewkt')
@@ -42,6 +46,17 @@ class SimplegisModel(models.AbstractModel):
                    query_results[0].get('st_asewkt') is not None):
                     geom_ewkt = query_results[0].get('st_asewkt')
             record.geom_ewkt = geom_ewkt
+
+    @api.multi
+    def _compute_simplified_geom_ewkt(self):
+        for record in self:
+            simplified_geom_ewkt = ''
+            geom_ewkt = record.geom_ewkt
+            if geom_ewkt:
+                simplified_geom_ewkt = \
+                    re.sub(r'\d+\.\d{1,}', lambda m: str(
+                        int(round(float(m.group(0))))), geom_ewkt)
+            record.simplified_geom_ewkt = simplified_geom_ewkt
 
     @api.multi
     def _compute_oriented_envelope_ewkt(self):
