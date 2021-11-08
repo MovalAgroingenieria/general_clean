@@ -330,17 +330,21 @@ class WauSMSWizard(models.Model):
 
             # Response message (only shown in debug mode)
             if connection_ok:
-                response_message = json.dumps(response.json(), indent=4)
-                if 'error' in response.text:
-                    response_message_data = json.loads(response.text)
-                    response_message_data['id'] = "no-id"
+                if 'json' in response.headers.get('Content-Type'):
+                    response_message = json.dumps(response.json(), indent=4)
+                    if 'error' in response.text:
+                        response_message_data = json.loads(response.text)
+                        response_message_data['id'] = "no-id"
+                    else:
+                        response_message_data = json.loads(response.text)[0]
                 else:
-                    response_message_data = json.loads(response.text)[0]
+                    response_message = _('Error getting response')
+                    response_message_data = {"id": "no-id", }
             else:
                 response_message = _('ERROR: no response')
                 if connection_error:
                     response_message += '\n' + connection_error
-                response_message_data = {"id": "no-id",}
+                response_message_data = {"id": "no-id", }
 
             # Add sms_confirmation message to sms_confirmations
             if active_id == 0:
