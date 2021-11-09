@@ -11,6 +11,7 @@
                     <field name="is_test_wizard" invisible="1"/>
                     <field name="allow_certify_sms" invisible="1"/>
                     <field name="allow_flash_sms" invisible="1"/>
+                    <field name="wizard_mode" invisible="1"/>
                     <group>
                         <field name="template_id" style="width: 70%;" context="{'from_wizard': True}"
                             attrs="{'invisible':[('is_test_wizard','=',True)]}"
@@ -23,6 +24,7 @@
                         <group style="width: 10%;">
                             <field name="certify" attrs="{'invisible':[('allow_certify_sms', '=', False)]}"/>
                             <field name="sms_flash" attrs="{'invisible':[('allow_flash_sms', '=', False)]}"/>
+                            <field name="send_invoice_link" attrs="{'invisible':[('wizard_mode', '!=', 'invoice')]}"/>
                         </group>
                     </group>
                     <group>
@@ -36,7 +38,7 @@
                                 <span style="margin-left:8px;">Send</span>
                             </div>
                         </button>
-                        <button string="Cancel" class="btn-default" special="cancel" />
+                        <button string="Cancel" class="btn-default" special="cancel"/>
                     </footer>
                 </form>
             </field>

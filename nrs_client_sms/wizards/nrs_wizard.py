@@ -13,7 +13,7 @@ from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
 from jinja2 import Template, TemplateError
 from lxml import etree
-import time
+
 
 class NRSConfirmation(models.Model):
     _name = "nrs.confirmation"
@@ -65,6 +65,11 @@ class NRSWizard(models.Model):
             'nrs.configuration', 'allow_flash_sms')
         return allow_flash_sms
 
+    def _default_wizard_mode(self):
+        context = self._context
+        mode = context.get("mode")
+        return mode
+
     credentials = fields.Char(
         string="Credentials",
         compute="_compute_credentials")
@@ -98,12 +103,12 @@ class NRSWizard(models.Model):
     certify = fields.Boolean(
         string="Certify",
         help="Certify the SMS. It will apply to all selected items. "
-            "It has an additional cost.")
+             "It has an additional cost.")
 
     sms_flash = fields.Boolean(
         string="Flash",
         help="The SMS appears directly on the device screen but it is not "
-            "saved.")
+             "saved.")
 
     allow_certify_sms = fields.Boolean(
         default=_default_allow_certify_sms)
@@ -111,12 +116,25 @@ class NRSWizard(models.Model):
     allow_flash_sms = fields.Boolean(
         default=_default_allow_flash_sms)
 
+    send_invoice_link = fields.Boolean(
+        string="Send invoice link",
+        help="It will generate a pdf and a link for each invoice. It slows "
+             "down the process.")
+
+    wizard_mode = fields.Char(
+        default=_default_wizard_mode)
+
     @api.onchange('template_id')
     def _compute_template_id_fields(self):
         template = self.env['nrs.template'].browse(self.template_id.id)
         for record in self:
             record.subject = template.subject
             record.sms_message = template.template
+
+    @api.onchange('send_invoice_link')
+    def _compute_link_tracker_module(self):
+        if not self.env.registry.get('link.tracker'):
+            raise ValidationError(_("Link tracker is not installed."))
 
     @api.multi
     def _compute_sender(self):
@@ -139,6 +157,18 @@ class NRSWizard(models.Model):
             self.credentials = \
                 base64.b64encode(service_user + ':' + service_passwd)
 
+    @api.multi
+    def _compute_wizard_mode(self):
+        context = self._context
+        if context.get("mode") == 'test':
+            mode = 'test'
+        if context.get("mode") == 'partner':
+            mode = 'partner'
+        if context.get("mode") == 'invoice':
+            mode = 'invoice'
+        for record in self:
+            record.wizard_mode = mode
+
     def _check_phone_number(self, phone_number):
         phone_number = phone_number.replace(" ", "").strip()
         if phone_number.startswith('+'):
@@ -158,6 +188,25 @@ class NRSWizard(models.Model):
         if reformated_phone_number.startswith('+'):
             reformated_phone_number = reformated_phone_number.strip('+')
         return reformated_phone_number
+
+    def _generate_invoice_link(self, invoice_id):
+        data = {'res_model': 'account.invoice', 'res_id': invoice_id,
+                'mimetype': 'application/pdf', 'public': True}
+        self.env['report'].get_pdf([invoice_id], 'account.report_invoice',
+                                   data=data)
+        attachment = self.env['ir.attachment'].search(
+            [('res_model', '=', 'account.invoice'),
+             ('res_id', '=', invoice_id)], order='write_date desc', limit=1)
+        base_url = self.env['ir.config_parameter'].get_param('web.base.url')
+        url_raw = base_url + '/web/login?redirect='
+        url_download = \
+            '/web/binary/download_sms_attachment/' + str(attachment.id)
+        link_raw = self.env['link.tracker'].sudo().create(
+            {"url": base_url + url_download})
+        url_redirect_pdf = url_raw + '/r/' + link_raw.code
+        url = (self.env['link.tracker'].sudo().create(
+            {"url": url_redirect_pdf}).short_url)
+        return url
 
     def _escape_json_special_chars(self, string):
         escaped_string = string.replace('\n', '\\n').replace(
@@ -296,12 +345,12 @@ class NRSWizard(models.Model):
         num_of_sms = 0
 
         # Set active_ids
-        if context.get("mode") == 'test':
+        if self.wizard_mode == 'test':
             active_ids = (0,)
-        if context.get("mode") == 'partner':
+        if self.wizard_mode == 'partner':
             invoice_id = False
             active_ids = context.get('active_ids')
-        if context.get("mode") == 'invoice':
+        if self.wizard_mode == 'invoice':
             partner_active_ids = []
             partner_invoice_list = []
             invoice_ids = context.get('active_ids')
@@ -317,20 +366,24 @@ class NRSWizard(models.Model):
 
         for active_id in active_ids:
             # Set active partner and invoice (x_id is for tracking)
-            if context.get("mode") == 'test':
+            if self.wizard_mode == 'test':
                 partner = partner_id = ""
                 invoice = invoice_id = ""
-            if context.get("mode") == 'partner':
+            if self.wizard_mode == 'partner':
                 partner = self.env['res.partner'].browse(active_id)
                 partner_id = partner.id
                 invoice = invoice_id = ""
-            if context.get("mode") == 'invoice':
+            if self.wizard_mode == 'invoice':
                 partner = self.env['res.partner'].browse(active_id[0])
                 partner_id = partner.id
                 invoice = self.env['account.invoice'].browse(active_id[1])
                 invoice_id = invoice.id
+                invoice_link = ""
+                if self.send_invoice_link:
+                    invoice_link = self._generate_invoice_link(invoice_id)
+
             # Set and check mobile number
-            if context.get("mode") == 'test':
+            if self.wizard_mode == 'test':
                 phone_number = self.env['ir.values'].get_default(
                     'nrs.configuration', 'test_phone_number')
                 if not phone_number:
@@ -355,6 +408,10 @@ class NRSWizard(models.Model):
                         _("Error resolving template: {}".format(err.message)))
             else:
                 sms_message = _('empty message')
+
+            # Add invoice link
+            if self.wizard_mode == 'invoice' and invoice_link:
+                raw_sms_message += ' ' + invoice_link
 
             # Eliminate json special characters
             if raw_sms_message:
