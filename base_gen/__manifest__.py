@@ -5,7 +5,7 @@
 {
     "name": "Base-General Module",
     "summary": "General porpuse tools for any module",
-    "version": "13.0.1.0.0",
+    "version": "14.0.1.0.0",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Hidden",
