@@ -8,6 +8,3 @@ __pycache__
 .project
 .pydevproject
 
-# Backends
-#backend_mod.css
-#variables_mod.less
