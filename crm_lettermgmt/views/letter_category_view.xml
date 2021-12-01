@@ -54,6 +54,7 @@
     <menuitem id="letter_category_menu"
               name="Letter Category"
               parent="letter_log_config_menu"
+              sequence="3"
               action="action_letter_category_tree_view"/>
 
   </data>

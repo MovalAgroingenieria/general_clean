@@ -54,6 +54,7 @@
     <menuitem id="letter_channel_menu"
               name="Letter Channel"
               parent="letter_log_config_menu"
+              sequence="5"
               action="action_letter_channel_tree_view"/>
 
   </data>

@@ -8,4 +8,5 @@ from . import letter_type
 from . import letter_folder
 from . import letter_reassignment
 from . import res_partner
+from . import res_letter_config_settings
 

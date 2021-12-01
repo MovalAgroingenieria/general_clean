@@ -58,6 +58,7 @@
     <menuitem id="letter_type_menu"
               name="Letter Type"
               parent="letter_log_config_menu"
+              sequence="4"
               action="action_letter_type_tree_view"/>
 
   </data>

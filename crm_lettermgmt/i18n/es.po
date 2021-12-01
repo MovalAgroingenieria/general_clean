@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-27 16:10+0000\n"
-"PO-Revision-Date: 2020-10-27 16:10+0000\n"
+"POT-Creation-Date: 2021-12-01 13:37+0000\n"
+"PO-Revision-Date: 2021-12-01 13:37+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,11 +54,23 @@ msgstr "<span class=\"o_stat_text\">\n"
 "                        </span>"
 
 #. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_access_letter_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_access_letter_lettermgmt
+msgid "Access to register management"
+msgstr "Acceso a la gestión del registro"
+
+#. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Additional Information"
 msgstr "Información adicional"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_res_letter_attachment_ids
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Attachments"
 msgstr "Adjuntos"
@@ -74,6 +86,7 @@ msgid "Back to Draft"
 msgstr "Devolver a borrador"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Cancel"
 msgstr "Cancelar"
@@ -143,11 +156,22 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_res_letter_config_settings
+msgid "Configuration of Register Management"
+msgstr "Configuración del Registro Entrada/Salida"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.lettermgmt_configuration_action
+msgid "Configure Register Management"
+msgstr "Configurar el Registro de Entrada/Salida"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_uid
 msgid "Created by"
 msgstr "Creado por"
@@ -158,6 +182,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_create_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_create_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_create_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_date
 msgid "Created on"
 msgstr "Creado el"
@@ -174,6 +199,7 @@ msgstr "Notas de entrega"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_display_name
 msgid "Display Name"
 msgstr "Nombre a mostrar"
@@ -182,6 +208,11 @@ msgstr "Nombre a mostrar"
 #: selection:res.letter,state:0
 msgid "Draft"
 msgstr "Borrador"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_enable_access_res_letter_portal_user
+msgid "Enable access of portal user to register management"
+msgstr "Habilitar el acceso a los usuarios de portal"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_expeditor_ref
@@ -199,11 +230,17 @@ msgid "Folder which contains letter."
 msgstr "Carpeta que contiene registros."
 
 #. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_config_settings_enable_access_res_letter_portal_user
+msgid "Grant or revoke access of portal users to register management"
+msgstr "Habilita/deshabilita el acceso de los usuarios de portal a sus Registros de Entrada/Salida."
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_id
 msgid "ID"
 msgstr "ID"
@@ -236,8 +273,9 @@ msgstr "Indicaciones para el oficial de entrega."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última actualización por"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_uid
@@ -245,6 +283,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_uid
 msgid "Last Updated by"
 msgstr "Última actualización por"
@@ -255,6 +294,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
@@ -367,7 +407,7 @@ msgstr "Los miembros de este grupo pueden ver y editar reasignaciones de registr
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_move
 msgid "Move"
-msgstr "Asiento"
+msgstr "Movimiento"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_name
@@ -423,6 +463,11 @@ msgid "Outbound Source"
 msgstr "Medio de salida"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.menu,name:crm_lettermgmt.register_parameters_menu
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_parent_id
 msgid "Parent"
 msgstr "Padre"
@@ -435,7 +480,7 @@ msgstr "Padre..."
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Partner of a WUA"
+msgstr "Socio"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
@@ -512,7 +557,17 @@ msgid "Reference Number used for Tracking."
 msgstr "Número de referencia utilizado para el seguimiento."
 
 #. module: crm_lettermgmt
-#: code:addons/crm_lettermgmt/models/res_partner.py:66
+#: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
+msgid "Register Management"
+msgstr "Gestión del Registro de Entrada/Salida"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
+msgid "Register Management Settings"
+msgstr "Parámetros del Registro de Entrada/Salida"
+
+#. module: crm_lettermgmt
+#: code:addons/crm_lettermgmt/models/res_partner.py:70
 #, python-format
 msgid "Registers"
 msgstr "Registros"
