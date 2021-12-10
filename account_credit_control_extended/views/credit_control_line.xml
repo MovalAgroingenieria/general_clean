@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="credit_control_line_form" model="ir.ui.view">
+        <field name="name">credit.control.line.form</field>
+        <field name="model">credit.control.line</field>
+        <field name="inherit_id" ref="account_credit_control.credit_control_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_id']" position="after">
+                <field name="invoice_number"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="credit_control_line_search" model="ir.ui.view">
+        <field name="name">Credit Control Lines</field>
+        <field name="model">credit.control.line</field>
+        <field name="inherit_id" ref="account_credit_control.credit_control_line_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_id']" position="after">
+                <field name="invoice_number"/>
+            </xpath>
+            <xpath expr="//group[@name='group_by']" position="inside">
+                <filter domain='[]' context="{'group_by': 'invoice_number'}"
+                    icon="terp-document-new" string="Invoice number"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="credit_control_line_tree" model="ir.ui.view">
+        <field name="name">credit.control.line.tree</field>
+        <field name="model">credit.control.line</field>
+        <field name="inherit_id" ref="account_credit_control.credit_control_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_id']" position="after">
+                <field name="invoice_number"/>
+            </xpath>
+            <xpath expr="//field[@name='manually_overridden']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='manual_followup']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='currency_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="credit_control_line_pivot" model="ir.ui.view">
+        <field name="name">credit.control.line.pivot</field>
+        <field name="model">credit.control.line</field>
+        <field name="arch" type="xml">
+            <pivot string="Credit control lines">
+                <field name="account_id" type="row"/>
+                <field name="state" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_credit_control.credit_control_line_action">
+        <field name="view_mode">tree,form,pivot</field>
+    </record>
+
+</odoo>
