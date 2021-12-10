@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="account_credit_control.credit_control_line_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_id']" position="after">
-                <field name="invoice_number"/>
+                <field name="invoice_date"/>
             </xpath>
         </field>
     </record>
@@ -18,11 +18,11 @@
         <field name="inherit_id" ref="account_credit_control.credit_control_line_search"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_id']" position="after">
-                <field name="invoice_number"/>
+                <field name="invoice_date"/>
             </xpath>
             <xpath expr="//group[@name='group_by']" position="inside">
-                <filter domain='[]' context="{'group_by': 'invoice_number'}"
-                    icon="terp-document-new" string="Invoice number"/>
+                <filter domain='[]' context="{'group_by': 'invoice_date'}"
+                    icon="terp-document-new" string="Invoice date"/>
             </xpath>
         </field>
     </record>
@@ -33,7 +33,7 @@
         <field name="inherit_id" ref="account_credit_control.credit_control_line_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_id']" position="after">
-                <field name="invoice_number"/>
+                <field name="invoice_date"/>
             </xpath>
             <xpath expr="//field[@name='manually_overridden']" position="attributes">
                 <attribute name="invisible">1</attribute>

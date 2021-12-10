@@ -8,15 +8,12 @@ from odoo import api, fields, models
 class CreditControlLine(models.Model):
     _inherit = "credit.control.line"
 
-    invoice_id = fields.Many2one('account.invoice',
-                                 string='Invoice',
-                                 readonly=True)
-    invoice_number = fields.Char(
-        string="Invoice number",
-        compute="_compute_invoice_number")
+    invoice_date = fields.Date(
+        string="Invoice date",
+        compute="_compute_invoice_date")
 
     @api.multi
-    def _compute_invoice_number(self):
+    def _compute_invoice_date(self):
         for record in self:
             if record.invoice_id:
-                record.invoice_number = record.invoice_id.number
+                record.invoice_date = record.invoice_id.date
