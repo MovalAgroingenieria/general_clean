@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">File Management Company Settings</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sequence']" position="after">
+                <field name="is_multi_company" invisible="1"/>
+                <field name="current_user_id" invisible="1"/>
+            </xpath>
+            <xpath expr="//notebook/page[last()]" position="after">
+                <page name="filemgmt_page" string="Files"
+                    attrs="{'invisible':[('is_multi_company','=', False),
+                        ('current_user_id','!=', 1)]}">
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="company_filemgmt_annual_seq_prefix"/>
+                        </group>
+                        <group name="master_data_right"></group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

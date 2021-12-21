@@ -16,13 +16,19 @@ class ResFile(models.Model):
 
     def _default_file_code(self):
         current_year = datetime.datetime.now().year
+        multi_company = \
+            self.env['res.users'].has_group('base.group_multi_company')
         prefix = ''
-        default_annual_seq_prefix = self.env['ir.values'].get_default(
-            'res.file.config.settings', 'default_annual_seq_prefix')
-        if default_annual_seq_prefix:
-            default_annual_seq_prefix = default_annual_seq_prefix.strip()
-            if default_annual_seq_prefix != '':
-                prefix = default_annual_seq_prefix
+        if multi_company:
+            annual_seq_prefix = \
+                self.env.user.company_id.company_filemgmt_annual_seq_prefix
+        else:
+            annual_seq_prefix = self.env['ir.values'].get_default(
+                'res.file.config.settings', 'default_annual_seq_prefix')
+        if annual_seq_prefix:
+            annual_seq_prefix = annual_seq_prefix.strip()
+            if annual_seq_prefix != '':
+                prefix = annual_seq_prefix
         if prefix != '':
             prefix = prefix + '-'
         full_prefix = prefix + str(current_year).zfill(4) + '/'

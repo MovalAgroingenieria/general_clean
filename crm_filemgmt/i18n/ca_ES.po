@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 11:31+0000\n"
-"PO-Revision-Date: 2021-05-04 11:31+0000\n"
+"POT-Creation-Date: 2021-12-23 14:02+0000\n"
+"PO-Revision-Date: 2021-12-23 14:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -247,6 +247,16 @@ msgid "Color Index"
 msgstr "Índex de color"
 
 #. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_company
+msgid "Companies"
+msgstr "Companyies"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,help:crm_filemgmt.field_res_company_company_filemgmt_annual_seq_prefix
+msgid "Company code prefix for Files: <prefix>/<year>/num"
+msgstr "Prefix de la companyia per a Expedients: <prefix>-<any>/num"
+
+#. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.configuration_menu
 msgid "Configuration"
 msgstr "Configuració"
@@ -318,8 +328,8 @@ msgstr "Data:"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
-msgid "Default Code for Files: <prefix>/<year>/num"
-msgstr "Codi per defecte Expedients: <prefix>-<any>/num"
+msgid "Default code for Files: <prefix>/<year>/num. It is not used if you are in a multi-company environment."
+msgstr "Prefix per defecte Expedients: <prefix>-<any>/num. No es fa servir en ambient multi-companyia."
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -418,7 +428,7 @@ msgstr "Expedients Externs"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
 msgid "File"
-msgstr "Expedient"
+msgstr "Fitxer"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -481,7 +491,7 @@ msgid "File attachments"
 msgstr "Adjunts"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:240
+#: code:addons/crm_filemgmt/models/res_file.py:246
 #: code:addons/crm_filemgmt/models/res_partner.py:83
 #, python-format
 msgid "File registers"
@@ -511,6 +521,7 @@ msgstr "Expedient"
 #: model:ir.ui.menu,name:crm_filemgmt.files_menu
 #: model:ir.ui.menu,name:crm_filemgmt.main_menu
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_calendar
+#: model:ir.ui.view,arch_db:crm_filemgmt.view_company_form
 #, python-format
 msgid "Files"
 msgstr "Expedients"
@@ -572,7 +583,12 @@ msgid "Internal Files"
 msgstr "Expedients Interns"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:366
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_is_multi_company
+msgid "Is multicompany"
+msgstr "És multicompanyia"
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:372
 #, python-format
 msgid "It is mandatory to check the primary partner."
 msgstr "És obligatori marcar un soci principal."
@@ -588,7 +604,7 @@ msgstr "És obligatori marcar un soci principal."
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
-msgstr "Última modificació el"
+msgstr "Última modificació el "
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_uid
@@ -684,7 +700,7 @@ msgid "Num. of files"
 msgstr "Nº d'expedients"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:369
+#: code:addons/crm_filemgmt/models/res_file.py:375
 #, python-format
 msgid "Only one primary partner is allowed."
 msgstr "Només es permet un soci principal."
@@ -704,7 +720,7 @@ msgstr "Categoria pare"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Soci"
+msgstr "Empresa"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -719,7 +735,7 @@ msgstr "Soci"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
 msgid "Partners"
-msgstr "Socis"
+msgstr "Empreses"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_image
@@ -729,6 +745,7 @@ msgid "Photo / Image"
 msgstr "Foto / Imatge"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_company_filemgmt_annual_seq_prefix
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
 msgid "Prefix (annual seq.)"
 msgstr "Prefix (annual seq.)"
@@ -798,19 +815,19 @@ msgid "The container code has to be positive."
 msgstr "El codi de l'contenidor ha de ser positiu."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:386
+#: code:addons/crm_filemgmt/models/res_file.py:392
 #, python-format
 msgid "The file cannot be self-referenced."
 msgstr "Un expedient no pot ser auto-referenciat."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:338
+#: code:addons/crm_filemgmt/models/res_file.py:344
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
 msgstr "El nom de l'expedient no pot començar o acabar amb una barra (/)."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:352
+#: code:addons/crm_filemgmt/models/res_file.py:358
 #, python-format
 msgid "The file number must be an integer."
 msgstr "El nombre de l'expedient ha de ser un nombre enter."
@@ -821,7 +838,7 @@ msgid "The location code has to be positive."
 msgstr "El codi de la ubicació ha de ser positiu."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:332
+#: code:addons/crm_filemgmt/models/res_file.py:338
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr "El prefix ha de ser separat de la resta de el nom del fitxer per un guió (-)."
@@ -833,19 +850,19 @@ msgid "The read only categories cannot be removed."
 msgstr "Les categories de sol lectura no poden ser eliminades."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:393
+#: code:addons/crm_filemgmt/models/res_file.py:399
 #, python-format
 msgid "There are repeated files."
 msgstr "Hi ha expedients repetits."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:375
+#: code:addons/crm_filemgmt/models/res_file.py:381
 #, python-format
 msgid "There are repeated partners."
 msgstr "Hi ha socis repetits."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:346
+#: code:addons/crm_filemgmt/models/res_file.py:352
 #, python-format
 msgid "There cannot be more than one slash in the name of the file."
 msgstr "No hi pot haver més d'una barra en el nom de l'expedient."
@@ -872,12 +889,17 @@ msgid "User"
 msgstr "Usuari"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_current_user_id
+msgid "User id"
+msgstr "ID d'Usuari"
+
+#. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Validate"
 msgstr "Validar"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:259
+#: code:addons/crm_filemgmt/models/res_file.py:265
 #, python-format
 msgid "[no subject]"
 msgstr "[sense assumpte]"
@@ -891,3 +913,4 @@ msgstr "res.file.filelink"
 #: model:ir.model,name:crm_filemgmt.model_res_file_partnerlink
 msgid "res.file.partnerlink"
 msgstr "res.file.partnerlink"
+

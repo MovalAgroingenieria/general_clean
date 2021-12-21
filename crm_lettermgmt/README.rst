@@ -10,6 +10,16 @@ Using this module you can track Incoming / Outgoing letters, parcels,
 registered documents or any other paper documents that are important for your
 company to keep track of.
 
+Multi-company
+-------------
+
+By default, two sequences are created for the registers, one for input (IN) and
+one for output (OUT). These sequences are not associated with any company. To
+use a different sequence in each company, these sequences must be duplicated
+and assigned to each company. In /Configuration/Technical/ Sequences and look
+for "in.letter" and "out.letter". Duplicate a sequence and assign a company.
+
+
 Credits
 =======
 

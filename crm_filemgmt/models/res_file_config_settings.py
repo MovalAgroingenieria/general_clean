@@ -13,14 +13,13 @@ class FileConfiguration(models.TransientModel):
     default_annual_seq_prefix = fields.Char(
         string='Prefix (annual seq.)',
         size=10,
-        help='Default Code for Files: <prefix>/<year>/num',
-    )
+        help='Default code for Files: <prefix>/<year>/num. It is not used if '
+             'you are in a multi-company environment.')
 
     enable_access_file_filemgmt_portal_user = fields.Boolean(
         string='Enable access of portal user to file management',
         default=True,
-        help='Grant or revoke access of portal users to file management',
-    )
+        help='Grant or revoke access of portal users to file management')
 
     @api.multi
     def set_default_values(self):

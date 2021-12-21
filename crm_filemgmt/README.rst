@@ -15,6 +15,16 @@ Although they are not strictly necessary, it is advisable to install these modul
 * web_tree_image: module to show images in tree views
 
 
+Multi-company
+-------------
+
+The file name consists of a prefix plus a 4-digit sequence. If there is only one
+company, this prefix is set in /Files/Configuration/Parameters. If there are
+several companies, a different prefix is used for each one, and it is configured
+in /Configuration/Users and Companies/Companies and select a company. In the
+'Files' tab, you can set the company prefix.
+
+
 Credits
 =======
 

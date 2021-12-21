@@ -27,6 +27,7 @@
         'views/res_letter_view.xml',
         'views/res_file_location_view.xml',
         'views/res_file_container_view.xml',
+        'views/res_company_view.xml',
     ],
     'application': False,
     'installable': True,
