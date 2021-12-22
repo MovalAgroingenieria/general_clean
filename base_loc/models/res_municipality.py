@@ -72,6 +72,9 @@ class ResMunicipality(models.Model):
         compute='_compute_number_of_places',)
 
     _sql_constraints = [
+        ('name_unique',
+         'CHECK(TRUE)',
+         'Existing Code (NOT).'),
         ('cadastral_code_unique',
          'UNIQUE (cadastral_code)',
          'Existing Code.'),
@@ -79,6 +82,19 @@ class ResMunicipality(models.Model):
          'CHECK (suffix_cadastral_code > 0)',
          'A valid code is required.'),
         ]
+
+    @api.constrains('alphanum_code', 'province_id')
+    def _check_alphanum_province_code(self):
+        for record in self:
+            if (record.alphanum_code and record.province_id):
+                other_municipality = self.env['res.municipality'].search(
+                        [('id', '!=', record.id),
+                         ('province_id', '=', record.province_id.id),
+                         ('alphanum_code', '=', record.alphanum_code)])
+                if other_municipality:
+                    raise exceptions.ValidationError(_(
+                        'There is already another municipality on this '
+                        'province with the same name.'))
 
     @api.depends('province_id', 'province_id.region_id')
     def _compute_region_id(self):
