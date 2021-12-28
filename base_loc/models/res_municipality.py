@@ -88,9 +88,9 @@ class ResMunicipality(models.Model):
         for record in self:
             if (record.alphanum_code and record.province_id):
                 other_municipality = self.env['res.municipality'].search(
-                        [('id', '!=', record.id),
-                         ('province_id', '=', record.province_id.id),
-                         ('alphanum_code', '=', record.alphanum_code)])
+                    [('id', '!=', record.id),
+                     ('province_id', '=', record.province_id.id),
+                     ('alphanum_code', '=', record.alphanum_code)])
                 if other_municipality:
                     raise exceptions.ValidationError(_(
                         'There is already another municipality on this '
