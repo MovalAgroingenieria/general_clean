@@ -10,7 +10,7 @@
     "category": "Tools",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
-    "license": "AGPL-3",
+    "license": "Other proprietary",
     "data": [
     ],
     "depends": [
