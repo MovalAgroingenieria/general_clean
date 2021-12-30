@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Inherit and replace -->
+<templates t-name="app_dynamic_list.selectcolumns">
+    <t t-extend="ListView.buttons">
+
+        <t t-jquery="div.o_list_buttons" t-operation="append">
+            <div class="btn-group o_dropdown">
+                <button name="select_columns" id="select_columns"
+                        class="oe_select_columns btn btn-default btn-sm dropdown-toggle"
+                        data-toggle="dropdown">
+                    Set Columns
+                    <span class="caret"></span>
+                </button>
+
+                <ul id="showcb" class="dropdown-menu" style="padding:10px">
+                    <li>
+                        <button name="apply" id="apply" class="oe_dropdown_btn btn btn-primary btn-block">
+                            Apply
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </t>
+    </t>
+</templates>
