@@ -11,7 +11,7 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "depends": [
-        "base"
+        "base",
     ],
     "data": [
         "security/ir.model.access.csv",
