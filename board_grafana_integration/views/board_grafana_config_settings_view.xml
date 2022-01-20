@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="board_grafana_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Parameters</field>
+        <field name="model">board.grafana.configuration</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Apply" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancel" type="object" name="cancel" class="oe_link"/>
+                </header>
+                <group string="Grafana configuration" name="grafana_configuration_group">
+                    <field name="grafana_url_raw" style="width:300px"/>
+                    <field name="grafana_user" style="width:300px"/>
+                    <field name="grafana_pw" style="width:300px" password="True"/>
+                    <field name="grafana_org_id" style="width:300px"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="grafana_configuration_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">board.grafana.configuration</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+    </record>
+
+    <menuitem id="menu_board_grafana_settings"
+        parent="board_grafana_integration.menu_board_grafana_root"
+        action="grafana_configuration_action"
+        sequence="3"/>
+
+</odoo>

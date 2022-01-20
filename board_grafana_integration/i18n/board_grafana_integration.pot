@@ -1,0 +1,151 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* board_grafana_integration
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-02 12:48+0000\n"
+"PO-Revision-Date: 2022-02-02 12:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_config_settings_view_form
+msgid "Apply"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model,name:board_grafana_integration.model_board_grafana
+msgid "Board Grafana"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_config_settings_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_display_name
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.actions.act_window,name:board_grafana_integration.login_into_grafana_action
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_home
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_root
+msgid "Grafana"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
+msgid "Grafana URL"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_config_settings_view_form
+msgid "Grafana configuration"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_grafana_frame
+msgid "Grafana frame"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_pw
+msgid "Grafana password"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.actions.server,name:board_grafana_integration.go_to_grafana_server_action
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_server
+msgid "Grafana server"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_url
+msgid "Grafana url"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_user
+msgid "Grafana user"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_id
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_id
+msgid "ID"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana___last_update
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
+msgid "Organization id"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.actions.act_window,name:board_grafana_integration.grafana_configuration_action
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_settings
+msgid "Settings"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
+msgid "The URL of grafana host."
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana.py:24
+#: code:addons/board_grafana_integration/models/board_grafana.py:62
+#: code:addons/board_grafana_integration/models/board_grafana.py:82
+#, python-format
+msgid "The grafana configuration parameters have not been set."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
+msgid "The id of the organization."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model,name:board_grafana_integration.model_board_grafana_configuration
+msgid "board.grafana.configuration"
+msgstr ""
+
