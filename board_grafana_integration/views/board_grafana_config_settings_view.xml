@@ -28,9 +28,4 @@
         <field name="target">inline</field>
     </record>
 
-    <menuitem id="menu_board_grafana_settings"
-        parent="board_grafana_integration.menu_board_grafana_root"
-        action="grafana_configuration_action"
-        sequence="3"/>
-
 </odoo>
