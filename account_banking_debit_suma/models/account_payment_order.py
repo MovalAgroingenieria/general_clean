@@ -760,6 +760,8 @@ class AccountPaymentOrder(models.Model):
                 # @INFO: The last 3 zip numbers
                 if line.partner_id.zip:
                     county_code = str(line.partner_id.zip[2:]).zfill(3)
+                    if not county_code.isdigit():
+                        county_code = str(" " * 3)
                 else:
                     if self.error_mode == 'permissive':
                         error_num += 1
