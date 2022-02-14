@@ -68,7 +68,7 @@ class BoardGrafana(models.Model):
             'target': 'new',
         }
 
-    def create_grafana_frame(self, frame_src, frame_params):
+    def create_grafana_frame(self, frame_src, frame_id, frame_params):
         grafana_url = self.env['ir.values'].get_default(
             'board.grafana.configuration', 'grafana_url')
         grafana_user = self.env['ir.values'].get_default(
@@ -82,12 +82,13 @@ class BoardGrafana(models.Model):
         frame_with_credentials = \
             'https://' + credentials + grafana_url + frame_src
         frame_url = 'https://' + grafana_url + frame_src
-        frame_layout = '<iframe id="grafana_frame" marginwidth="0" ' + \
+        frame_id = frame_id
+        frame_layout = '<iframe id="' + frame_id + '" marginwidth="0" ' + \
             'marginheight="0" frameborder="no" style="display:none;" ' + \
             frame_params + ' src="' + frame_with_credentials + '"></iframe>'
         script_js = '<script> setTimeout( () => {document.getElementById(' + \
-            '"grafana_frame").src ="' + frame_url + '"}, 500); ' + \
+            '"' + frame_id + '").src ="' + frame_url + '"}, 500); ' + \
             'setTimeout( () => {document.getElementById(' + \
-            '"grafana_frame").style = "unset"}, 1000);</script>'
+            '"' + frame_id + '").style = "unset"}, 1000);</script>'
         grafana_frame = frame_layout + script_js
         return grafana_frame
