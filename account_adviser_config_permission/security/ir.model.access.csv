@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_config_settings_manager,access.account.config.settings.manager,account.model_account_config_settings,group_account_manager_extended,1,1,1,1
+access_res_company_account_manager,access.res.company.account.manager,base.model_res_company,group_account_manager_extended,1,1,0,0
