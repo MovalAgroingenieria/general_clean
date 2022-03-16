@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2021 Moval Agroingeniería
+# 2022 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import api, models, fields, exceptions, _
@@ -9,32 +9,30 @@ class BoardGrafana(models.Model):
     _name = 'board.grafana'
     _description = "Board Grafana"
 
+    DEFAULT_DASHBOARD_HEIGHT = 800
+
     def _default_grafana_frame(self):
         grafana_url = self.env['ir.values'].get_default(
             'board.grafana.configuration', 'grafana_url')
-        grafana_user = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_user')
-        grafana_pw = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_pw')
-        grafana_org_id = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_org_id')
-        if (not grafana_url or not grafana_user or not grafana_pw or not
-                grafana_org_id):
+        grafana_dashboard_height = self.env['ir.values'].get_default(
+            'board.grafana.configuration', 'grafana_dashboard_height')
+        grafana_dashboard_id = self.env['ir.values'].get_default(
+            'board.grafana.configuration', 'grafana_dashboard_id')
+        if (not grafana_url):
             raise exceptions.ValidationError(
                 _('The grafana configuration parameters have not been set.'))
-        credentials = grafana_user + ':' + grafana_pw + '@'
-        org_id = '?orgId=' + str(grafana_org_id)
-        url_with_credentials = 'https://' + credentials + grafana_url + org_id
-        frame_url = 'https://' + grafana_url + org_id
-        frame_params = 'width="100%" height="800"'
+        url = grafana_url
+        if grafana_dashboard_id:
+            url = url + '/d/' + grafana_dashboard_id
+        url = url + '?kiosk'
+        height = self.DEFAULT_DASHBOARD_HEIGHT
+        if grafana_dashboard_height:
+            height = grafana_dashboard_height
+        frame_params = 'width="100%" height="' + str(height) + '"'
         frame_layout = '<iframe id="grafana_frame" marginwidth="0" ' + \
-            'marginheight="0" frameborder="no" style="display:none;" ' + \
-            frame_params + ' src="' + url_with_credentials + '"></iframe>'
-        script_js = '<script> setTimeout( () => {document.getElementById(' + \
-            '"grafana_frame").src ="' + frame_url + '"}, 500); ' + \
-            'setTimeout( () => {document.getElementById(' + \
-            '"grafana_frame").style = "unset"}, 1000);</script>'
-        grafana_frame = frame_layout + script_js
+            'marginheight="0" frameborder="no" ' + \
+            frame_params + ' src="' + url + '"></iframe>'
+        grafana_frame = frame_layout
         return grafana_frame
 
     grafana_frame = fields.Text(
@@ -50,18 +48,10 @@ class BoardGrafana(models.Model):
     def action_go_to_grafana_server(self):
         grafana_url = self.env['ir.values'].get_default(
             'board.grafana.configuration', 'grafana_url')
-        grafana_user = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_user')
-        grafana_pw = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_pw')
-        grafana_org_id = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_org_id')
-        if (not grafana_url or not grafana_user or not grafana_pw or not
-                grafana_org_id):
+        if (not grafana_url):
             raise exceptions.ValidationError(
                 _('The grafana configuration parameters have not been set.'))
-        org_id = '?orgId=' + str(grafana_org_id)
-        server_url = 'https://' + grafana_url + org_id
+        server_url = grafana_url + '/login'
         return {
             'type': 'ir.actions.act_url',
             'url': server_url,
@@ -71,24 +61,13 @@ class BoardGrafana(models.Model):
     def create_grafana_frame(self, frame_src, frame_id, frame_params):
         grafana_url = self.env['ir.values'].get_default(
             'board.grafana.configuration', 'grafana_url')
-        grafana_user = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_user')
-        grafana_pw = self.env['ir.values'].get_default(
-            'board.grafana.configuration', 'grafana_pw')
-        if (not grafana_url or not grafana_user or not grafana_pw):
+        if (not grafana_url):
             raise exceptions.ValidationError(
                 _('The grafana configuration parameters have not been set.'))
-        credentials = grafana_user + ':' + grafana_pw + '@'
-        frame_with_credentials = \
-            'https://' + credentials + grafana_url + frame_src
-        frame_url = 'https://' + grafana_url + frame_src
+        frame_url = grafana_url + frame_src
         frame_id = frame_id
         frame_layout = '<iframe id="' + frame_id + '" marginwidth="0" ' + \
-            'marginheight="0" frameborder="no" style="display:none;" ' + \
-            frame_params + ' src="' + frame_with_credentials + '"></iframe>'
-        script_js = '<script> setTimeout( () => {document.getElementById(' + \
-            '"' + frame_id + '").src ="' + frame_url + '"}, 500); ' + \
-            'setTimeout( () => {document.getElementById(' + \
-            '"' + frame_id + '").style = "unset"}, 1000);</script>'
-        grafana_frame = frame_layout + script_js
+            'marginheight="0" frameborder="no"' + \
+            frame_params + ' src="' + frame_url + '"></iframe>'
+        grafana_frame = frame_layout
         return grafana_frame

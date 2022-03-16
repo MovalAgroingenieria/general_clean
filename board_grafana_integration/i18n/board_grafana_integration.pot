@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 12:48+0000\n"
-"PO-Revision-Date: 2022-02-02 12:48+0000\n"
+"POT-Creation-Date: 2022-03-16 09:35+0000\n"
+"PO-Revision-Date: 2022-03-16 09:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,16 @@ msgid "Created on"
 msgstr ""
 
 #. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
+msgid "Dashboard height"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
+msgid "Dashboard id"
+msgstr ""
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_display_name
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_display_name
 msgid "Display Name"
@@ -71,11 +81,6 @@ msgid "Grafana frame"
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_pw
-msgid "Grafana password"
-msgstr ""
-
-#. module: board_grafana_integration
 #: model:ir.actions.server,name:board_grafana_integration.go_to_grafana_server_action
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_server
 msgid "Grafana server"
@@ -87,8 +92,8 @@ msgid "Grafana url"
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_user
-msgid "Grafana user"
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
+msgid "Height of dashboard, in pixels (optional)."
 msgstr ""
 
 #. module: board_grafana_integration
@@ -116,11 +121,6 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
-msgid "Organization id"
-msgstr ""
-
-#. module: board_grafana_integration
 #: model:ir.actions.act_window,name:board_grafana_integration.grafana_configuration_action
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_settings
 msgid "Settings"
@@ -132,16 +132,16 @@ msgid "The URL of grafana host."
 msgstr ""
 
 #. module: board_grafana_integration
-#: code:addons/board_grafana_integration/models/board_grafana.py:24
-#: code:addons/board_grafana_integration/models/board_grafana.py:62
-#: code:addons/board_grafana_integration/models/board_grafana.py:82
+#: code:addons/board_grafana_integration/models/board_grafana.py:23
+#: code:addons/board_grafana_integration/models/board_grafana.py:53
+#: code:addons/board_grafana_integration/models/board_grafana.py:66
 #, python-format
 msgid "The grafana configuration parameters have not been set."
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
-msgid "The id of the organization."
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
+msgid "The id of the embebbed dashboard (optional, else the default dashboard)."
 msgstr ""
 
 #. module: board_grafana_integration

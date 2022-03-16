@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2021 Moval Agroingeniería
+# 2022 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -17,26 +17,19 @@ class BoardGrafanaConfigSettings(models.TransientModel):
     grafana_url = fields.Char(
         compute="_compute_grafana_url")
 
-    grafana_user = fields.Char(
-        string='Grafana user',
-        required=True)
+    grafana_dashboard_height = fields.Integer(
+        string='Dashboard height',
+        help='Height of dashboard, in pixels (optional).')
 
-    grafana_pw = fields.Char(
-        string='Grafana password',
-        required=True,)
-
-    grafana_org_id = fields.Integer(
-        string='Organization id',
-        required=True,
-        help='The id of the organization.')
+    grafana_dashboard_id = fields.Char(
+        string='Dashboard id',
+        help='The id of the embebbed dashboard '
+             '(optional, else the default dashboard).')
 
     @api.depends('grafana_url_raw')
     def _compute_grafana_url(self):
         for record in self:
             url = record.grafana_url_raw
-            if url.startswith('http'):
-                url_raw = url.split(':')[1]
-                url = url_raw.replace('/', '')
             if url.endswith('/'):
                 url = url.rstrip('/')
             record.grafana_url = url
@@ -49,8 +42,7 @@ class BoardGrafanaConfigSettings(models.TransientModel):
         values.set_default('board.grafana.configuration',
                            'grafana_url', self.grafana_url)
         values.set_default('board.grafana.configuration',
-                           'grafana_user', self.grafana_user)
+                           'grafana_dashboard_height',
+                           self.grafana_dashboard_height)
         values.set_default('board.grafana.configuration',
-                           'grafana_pw', self.grafana_pw)
-        values.set_default('board.grafana.configuration',
-                           'grafana_org_id', self.grafana_org_id)
+                           'grafana_dashboard_id', self.grafana_dashboard_id)

@@ -12,9 +12,8 @@
                 </header>
                 <group string="Grafana configuration" name="grafana_configuration_group">
                     <field name="grafana_url_raw" style="width:300px"/>
-                    <field name="grafana_user" style="width:300px"/>
-                    <field name="grafana_pw" style="width:300px" password="True"/>
-                    <field name="grafana_org_id" style="width:300px"/>
+                    <field name="grafana_dashboard_height" style="width:300px"/>
+                    <field name="grafana_dashboard_id" style="width:300px"/>
                 </group>
             </form>
         </field>

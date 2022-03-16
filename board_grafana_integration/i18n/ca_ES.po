@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-02 12:57+0000\n"
-"PO-Revision-Date: 2022-02-02 12:57+0000\n"
+"POT-Creation-Date: 2022-03-16 09:35+0000\n"
+"PO-Revision-Date: 2022-03-16 09:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: board_grafana_integration
 #: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_config_settings_view_form
 msgid "Apply"
-msgstr "Aplica"
+msgstr "Aplicar"
 
 #. module: board_grafana_integration
 #: model:ir.model,name:board_grafana_integration.model_board_grafana
@@ -34,19 +34,29 @@ msgstr "Cancel·la"
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_uid
 msgid "Created by"
-msgstr "Created by"
+msgstr "Creat per"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_date
 msgid "Created on"
-msgstr "Created on"
+msgstr "Creat el"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
+msgid "Dashboard height"
+msgstr "Alçada tauler"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
+msgid "Dashboard id"
+msgstr "ID tauler"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_display_name
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_display_name
 msgid "Display Name"
-msgstr "Mostrar Nom"
+msgstr "Veure el nom"
 
 #. module: board_grafana_integration
 #: model:ir.actions.act_window,name:board_grafana_integration.login_into_grafana_action
@@ -71,11 +81,6 @@ msgid "Grafana frame"
 msgstr "Grafana frame"
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_pw
-msgid "Grafana password"
-msgstr "Contrasenya"
-
-#. module: board_grafana_integration
 #: model:ir.actions.server,name:board_grafana_integration.go_to_grafana_server_action
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_server
 msgid "Grafana server"
@@ -87,9 +92,9 @@ msgid "Grafana url"
 msgstr "Grafana url"
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_user
-msgid "Grafana user"
-msgstr "Grafana user"
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
+msgid "Height of dashboard, in pixels (optional)."
+msgstr "Alçada del tauler en píxels (optional)."
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_id
@@ -101,24 +106,19 @@ msgstr "ID"
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana___last_update
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration___last_update
 msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Darrera modificació el"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_uid
 msgid "Last Updated by"
-msgstr "Last Updated by"
+msgstr "Darrera Actualització per"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_date
 msgid "Last Updated on"
-msgstr "Last Updated on"
-
-#. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
-msgid "Organization id"
-msgstr "Organization id"
+msgstr "Darrera Actualització el"
 
 #. module: board_grafana_integration
 #: model:ir.actions.act_window,name:board_grafana_integration.grafana_configuration_action
@@ -129,20 +129,20 @@ msgstr "Configuració"
 #. module: board_grafana_integration
 #: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
 msgid "The URL of grafana host."
-msgstr "The URL of grafana host."
+msgstr "La URL de Grafana."
 
 #. module: board_grafana_integration
-#: code:addons/board_grafana_integration/models/board_grafana.py:24
-#: code:addons/board_grafana_integration/models/board_grafana.py:62
-#: code:addons/board_grafana_integration/models/board_grafana.py:82
+#: code:addons/board_grafana_integration/models/board_grafana.py:23
+#: code:addons/board_grafana_integration/models/board_grafana.py:53
+#: code:addons/board_grafana_integration/models/board_grafana.py:66
 #, python-format
 msgid "The grafana configuration parameters have not been set."
 msgstr "Els paràmetres de configuració de Grafana no s'han establert."
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_org_id
-msgid "The id of the organization."
-msgstr "La ID de lorganització."
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
+msgid "The id of the embebbed dashboard (optional, else the default dashboard)."
+msgstr "La ID del tauler embegut (optional, sinó es fa servir el tauler per defecte)."
 
 #. module: board_grafana_integration
 #: model:ir.model,name:board_grafana_integration.model_board_grafana_configuration
