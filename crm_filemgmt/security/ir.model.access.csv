@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_file_user,res.file.user,model_res_file,base.group_user,1,0,0,0
+access_res_file_manager,res.file.manager,model_res_file,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_filetag_user,res.filetag.user,model_res_filetag,crm_filemgmt.group_file_user,1,0,0,0
+access_res_filetag_manager,res.filetag.manager,model_res_filetag,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_category_user,res.file.category.filemgmt.user,model_res_file_category,crm_filemgmt.group_file_user,1,0,0,0
+access_res_file_category_manager,res.file.category.filemgmt.manager,model_res_file_category,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_partnerlink_user,res.file.partnerlink.user,model_res_file_partnerlink,base.group_user,1,0,0,0
+access_res_file_partnerlink_manager,res.file.partnerlink.manager,model_res_file_partnerlink,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_filelink_user,res.file.filelink.user,model_res_file_filelink,base.group_user,1,0,0,0
+access_res_file_filelink_manager,res.file.filelink.manager,model_res_file_filelink,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_location_user,res.file.location.user,model_res_file_location,crm_filemgmt.group_file_user,1,0,0,0
+access_res_file_location_manager,res.file.location.manager,model_res_file_location,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_container_user,res.file.container.user,model_res_file_container,crm_filemgmt.group_file_user,1,0,0,0
+access_res_file_container_manager,res.file.container.manager,model_res_file_container,crm_filemgmt.group_file_manager,1,1,1,1
+access_res_file_containertype_user,res.file.containertype.user,model_res_file_containertype,crm_filemgmt.group_file_user,1,0,0,0
+access_res_file_containertype_manager,res.file.containertype.manager,model_res_file_containertype,crm_filemgmt.group_file_manager,1,1,1,1
