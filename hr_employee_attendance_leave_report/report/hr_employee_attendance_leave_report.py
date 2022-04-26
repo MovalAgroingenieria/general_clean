@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import locale
+import pytz
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from odoo import fields, api, models, _
@@ -56,9 +57,11 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
 
     def get_formatted_date_show(self, date):
         date_without_tz = date.replace(tzinfo=None)
+        user_tz = self.env.user.tz or pytz.utc
+        local = pytz.timezone(user_tz)
         formatted_user_tz_date = datetime.strptime(
-            str(date_without_tz), "%Y-%m-%d %H:%M:%S").strftime(
-                "%d/%m/%Y  [%H:%M]")
+            str(date_without_tz.astimezone(local)),
+            "%Y-%m-%d %H:%M:%S%z").strftime("%d/%m/%Y  [%H:%M]")
         return formatted_user_tz_date
 
     def get_difference(self, check_in, check_out):
