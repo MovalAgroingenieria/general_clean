@@ -4,6 +4,7 @@
 
 import locale
 import pytz
+import re
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from odoo import fields, api, models, _
@@ -59,8 +60,10 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
         date_without_tz = date.replace(tzinfo=None)
         user_tz = self.env.user.tz or pytz.utc
         local = pytz.timezone(user_tz)
-        formatted_user_tz_date = datetime.strptime(
-            str(date_without_tz.astimezone(local)),
+        user_tz_date = date_without_tz.astimezone(local)
+        user_tz_date = re.sub(r"([+-])([0-9]{2}):([0-9]{2})", "\\1\\2\\3",
+                              str(date_without_tz.astimezone(local)), 0)
+        formatted_user_tz_date = datetime.strptime(str(user_tz_date),
             "%Y-%m-%d %H:%M:%S%z").strftime("%d/%m/%Y  [%H:%M]")
         return formatted_user_tz_date
 
