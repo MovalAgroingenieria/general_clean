@@ -22,10 +22,8 @@
                 wizard_data[0]['data'][0]['start_date'], wizard_data[0]['data'][0]['end_date'])"/>
             <t t-set="leave_data" t-value="get_leaves_data(employee_id,
                 wizard_data[0]['data'][0]['start_date'], wizard_data[0]['data'][0]['end_date'])"/>
-            <!-- 
             <t t-set="public_holidays_data" t-value="get_public_holidays_data(
                 wizard_data[0]['data'][0]['start_date'], wizard_data[0]['data'][0]['end_date'])"/>
-             -->
             <t t-call="web.html_container">
                 <t t-call="web.external_layout">
                     <div class="page">
@@ -161,7 +159,6 @@
                             </t>
                         </div>
 
-                        <!-- 
                         <div name="public_holidays_data" style="page-break-inside: avoid">
                             <div name="public_holidays_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">
                                 <div class="col-sm-12 report_section_title">
@@ -192,7 +189,6 @@
                                 <div style="margin-bottom: 14px;"/>
                             </t>
                         </div>
-                         -->
 
                         <div name="conformity" style="page-break-inside: avoid">
                             <div name="conformity_title" class="row h5 mt24 mb4" style="padding-bottom: 2px;">

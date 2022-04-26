@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-07 14:55+0000\n"
-"PO-Revision-Date: 2022-04-07 14:55+0000\n"
+"POT-Creation-Date: 2022-04-26 10:16+0000\n"
+"PO-Revision-Date: 2022-04-26 10:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -56,12 +56,20 @@ msgstr "<span><strong>Fins:</strong></span>"
 msgid ""
 "<span>No attendance was found during this period for the employee.</span>"
 msgstr ""
-"<span>No s'ha trobat cap assistència per a l'empleat en el període seleccionat.</span>"
+"<span>No s'ha trobat cap assistència per a l'empleat en el període "
+"seleccionat.</span>"
 
 #. module: hr_employee_attendance_leave_report
 #: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
 msgid "<span>No leave was found during this period for the employee.</span>"
-msgstr "<span>No s'ha trobat cap absència per a l'empleat en el període seleccionat.</span>"
+msgstr ""
+"<span>No s'ha trobat cap absència per a l'empleat en el període "
+"seleccionat.</span>"
+
+#. module: hr_employee_attendance_leave_report
+#: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
+msgid "<span>There are no public holidays for the selected period.</span>"
+msgstr "<span>No hi ha vacances públiques en el període seleccionat.</span>"
 
 #. module: hr_employee_attendance_leave_report
 #: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
@@ -114,6 +122,11 @@ msgid "Created on"
 msgstr "Creat el"
 
 #. module: hr_employee_attendance_leave_report
+#: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
+msgid "Date"
+msgstr "Data"
+
+#. module: hr_employee_attendance_leave_report
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_attendance_leave_wizard__display_name
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_report_hr_employee_attendance_leave_report_att_lea_template__display_name
 msgid "Display Name"
@@ -155,7 +168,7 @@ msgstr "Data final"
 #: code:addons/hr_employee_attendance_leave_report/report/hr_employee_attendance_leave_report.py:0
 #, python-format
 msgid "Form content is missing, this report cannot be printed."
-msgstr "El contingut del formulari no és present, aquest informe no es pot imprimir."
+msgstr "No s'ha trobat el contingut del formulari, l'informe no es pot imprimir."
 
 #. module: hr_employee_attendance_leave_report
 #: code:addons/hr_employee_attendance_leave_report/report/hr_employee_attendance_leave_report.py:0
@@ -169,10 +182,15 @@ msgid "From / To"
 msgstr "Des / Fins"
 
 #. module: hr_employee_attendance_leave_report
+#: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
+msgid "Holidays"
+msgstr "Vacances"
+
+#. module: hr_employee_attendance_leave_report
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_attendance_leave_wizard__id
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_report_hr_employee_attendance_leave_report_att_lea_template__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: hr_employee_attendance_leave_report
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_attendance_leave_wizard____last_update
@@ -200,6 +218,11 @@ msgstr "Absències"
 #, python-format
 msgid "Monday"
 msgstr "Dilluns"
+
+#. module: hr_employee_attendance_leave_report
+#: model_terms:ir.ui.view,arch_db:hr_employee_attendance_leave_report.att_lea_template
+msgid "Name"
+msgstr "Nom"
 
 #. module: hr_employee_attendance_leave_report
 #: model:ir.model.fields,field_description:hr_employee_attendance_leave_report.field_attendance_leave_wizard__number_of_selected_employees

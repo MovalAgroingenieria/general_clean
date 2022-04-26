@@ -195,23 +195,23 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
                              'period_num_of_days': period_num_of_days})
         return data
 
-    # def _get_public_holidays_data(self, start_date, end_date):
-    #     data = []
-    #     start = self.get_formatted_date(start_date)
-    #     end = self.get_formatted_date(end_date)
-    #     public_holidays = self.env['hr.holidays.public.line'].search(
-    #         [('date', '>=', str(start)), ('date', '<=', str(end))],
-    #         order='date')
-    #     if public_holidays:
-    #         for public_holiday in public_holidays:
-    #             holiday_date = public_holiday.date.strftime("%d/%m/%Y")
-    #             holiday_date_weekday = self.get_translated_weekday(
-    #                 public_holiday.date.weekday())
-    #             holiday_date = holiday_date + ' - ' + holiday_date_weekday
-    #             data.append(
-    #                 {'holiday_date': holiday_date,
-    #                  'holiday_name': public_holiday.name})
-    #     return data
+    def _get_public_holidays_data(self, start_date, end_date):
+        data = []
+        start = self.get_formatted_date(start_date)
+        end = self.get_formatted_date(end_date)
+        public_holidays = self.env['hr.holidays.public.line'].search(
+            [('date', '>=', str(start)), ('date', '<=', str(end))],
+            order='date')
+        if public_holidays:
+            for public_holiday in public_holidays:
+                holiday_date = public_holiday.date.strftime("%d/%m/%Y")
+                holiday_date_weekday = self.get_translated_weekday(
+                    public_holiday.date.weekday())
+                holiday_date = holiday_date + ' - ' + holiday_date_weekday
+                data.append(
+                    {'holiday_date': holiday_date,
+                     'holiday_name': public_holiday.name})
+        return data
 
     @api.model
     def _get_report_values(self, docids, data=None):
@@ -231,7 +231,7 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
             'get_employee_data': self._get_employee_data,
             'get_attendance_data': self._get_attendance_data,
             'get_leaves_data': self._get_leaves_data,
-            #'get_public_holidays_data': self._get_public_holidays_data,
+            'get_public_holidays_data': self._get_public_holidays_data,
         }
 
     @api.model
