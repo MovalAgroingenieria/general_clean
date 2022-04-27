@@ -12,8 +12,8 @@ class CreditControlPolicyLevel(models.Model):
     variable_fees_percentage = fields.Integer(
         string="Variable fees (%)",
         help="The percentage of increase in debt at this level. It only "
-            "applies if the option 'Apply variable charges' is marked in the "
-            "bank journal to which the credit control line belongs.")
+             "applies if the option 'Apply variable charges' is marked in the "
+             "bank journal to which the credit control line belongs.")
 
     custom_text_after_variable_fees = fields.Html(
         string='Custom Message after variable fees',
