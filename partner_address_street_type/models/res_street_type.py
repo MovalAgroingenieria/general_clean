@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2021 Moval Agroingeniería
+# 2022 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields
@@ -39,6 +39,6 @@ class ResStreetType(models.Model):
         return result
 
     _sql_constraints = [
-        ("unique_street type", "UNIQUE (name)",
+        ("unique_street_type", "UNIQUE (name)",
          "Existing type of street."),
         ]
