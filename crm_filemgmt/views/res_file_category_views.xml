@@ -16,7 +16,8 @@
                         </button>
                     </div>
                     <div class="oe_title">
-                        <label class="oe_edit_only" for="name" string="Category Name"/>
+                        <label for="name" class="oe_edit_only" string="Category Name"/>
+                        <field name="name"/>
                         <h1>
                             <field name="alphanum_code" placeholder="Category Name"
                                    attrs="{'readonly': [('is_readonly','=',True)]}"/>

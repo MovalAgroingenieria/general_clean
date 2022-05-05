@@ -265,13 +265,13 @@
                                 <div style="diplay:float;">
                                     <strong class="o_kanban_record_title" style="float:left;"><field name="alphanum_code"/></strong>
                                     <t t-if="record.is_blocked.raw_value">
-                                        <span style="color:red; float:right; margin-right:3%;" class="fa fa-lock fa-lg"/>
+                                        <span style="color:red; float:right; margin-right:3%;" title="lock" class="fa fa-lock fa-lg"/>
                                     </t>
                                     <t t-if="record.has_attachments.raw_value">
-                                        <span style="float:right; margin-right:3%;" class="fa fa-paperclip o_button_icon"/>
+                                        <span style="float:right; margin-right:3%;" title="attachment" class="fa fa-paperclip o_button_icon"/>
                                     </t>
                                     <t t-if="record.has_filelinks.raw_value">
-                                        <span style="float:right; margin-right:3%;" class="fa fa-filemgmt-files o_button_icon"/>
+                                        <span style="float:right; margin-right:3%;" title="file" class="fa fa-filemgmt-files o_button_icon"/>
                                     </t>
                                 </div>
                                 <div style="clear:both;"></div>
