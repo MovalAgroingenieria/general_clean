@@ -183,6 +183,17 @@ class ResFile(models.Model):
         default=False,
         compute="_compute_has_registres")
 
+    technician_id = fields.Many2one(
+        string='Technician',
+        comodel_name='res.partner',
+        index=True)
+
+    with_technician = fields.Boolean(
+        string='With technician',
+        default=False,
+        store=True,
+        compute="_compute_with_technician")
+
     _sql_constraints = [
         ('unique_name',
          'UNIQUE (name)',
@@ -323,6 +334,14 @@ class ResFile(models.Model):
             if record.file_res_letter_ids:
                 has_registres = True
             record.has_registres = has_registres
+
+    @api.depends('technician_id')
+    def _compute_with_technician(self):
+        for record in self:
+            with_technician = False
+            if record.technician_id:
+                with_technician = True
+            record.with_technician = with_technician
 
     @api.model
     def create(self, vals):

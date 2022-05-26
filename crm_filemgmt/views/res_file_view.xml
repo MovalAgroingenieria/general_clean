@@ -113,6 +113,9 @@
                             <field name="container_id" colspan="4"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"
                                    context="{'show_container_data': True}"/>
+                            <field name="technician_id" colspan="4"
+                                   attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"
+                                   context="{'show_container_data': True}"/>
                             <field name="tag_ids" colspan="2" widget="many2many_tags"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             <field name="closing_date" colspan="2" attrs="{'invisible':[('state','!=','03_closed')]}"/>
@@ -165,6 +168,7 @@
                 <field name="partner_id"/>
                 <field name="date_file"/>
                 <field name="subject"/>
+                <field name="technician_id"/>
                 <field name="is_blocked"/>
                 <field name="is_cancelled"/>
                 <field name="state"/>
@@ -184,6 +188,7 @@
                 <field name="partner_id"/>
                 <field name="date_file"/>
                 <field name="subject"/>
+                <field name="technician_id"/>
                 <field name="is_blocked"/>
                 <field name="is_cancelled"/>
                 <field name="state"/>
@@ -201,6 +206,7 @@
                 <field name="date_file"/>
                 <field name="subject"/>
                 <field name="category_id"/>
+                <field name="technician_id"/>
                 <filter string="Draft" name="state_draft" domain="[('state','=','01_draft')]"/>
                 <filter string="In progress" name="state_inprogress" domain="[('state','=','02_inprogress')]"/>
                 <filter string="Closed" name="state_closed" domain="[('state','=','03_closed')]"/>
@@ -210,8 +216,12 @@
                 <separator/>
                 <filter string="Cancelled: Yes" name="cancelled_yes" domain="[('is_cancelled','=',True)]"/>
                 <filter string="Cancelled: No" name="cancelled_no" domain="[('is_cancelled','=',False)]"/>
+                <separator/>
+                <filter string="With technician: Yes" name="technician_yes" domain="[('with_technician','=',True)]"/>
+                <filter string="With technician: No" name="technician_no" domain="[('with_technician','=',False)]"/>
                 <group expand="0" string="Group By">
                     <filter string="Partner" name="groupby_partner" context="{'group_by':'partner_id'}"/>
+                    <filter string="Technician" name="groupby_technician" context="{'group_by':'technician_id'}"/>
                     <filter string="State" name="groupby_state" context="{'group_by':'state'}"/>
                     <filter string="Category" name="groupby_category" context="{'group_by':'category_id'}"/>
                     <filter string="Container" name="groupby_container" context="{'group_by':'container_id'}"/>

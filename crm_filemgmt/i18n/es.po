@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-23 14:03+0000\n"
-"PO-Revision-Date: 2021-12-23 14:03+0000\n"
+"POT-Creation-Date: 2022-05-26 15:00+0000\n"
+"PO-Revision-Date: 2022-05-26 15:00+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -329,7 +329,7 @@ msgstr "Fecha:"
 #. module: crm_filemgmt
 #: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
 msgid "Default code for Files: <prefix>/<year>/num. It is not used if you are in a multi-company environment."
-msgstr "Prefijo por defecto Expedientes: <prefijo>-<año>/num. No se usa en ambiente multi-compañía."
+msgstr "Default code for Files: <prefix>/<year>/num. It is not used if you are in a multi-company environment."
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -366,7 +366,7 @@ msgstr "Nombre a mostrar"
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 #: selection:res.file,state:0
 msgid "Draft"
-msgstr "No suscrito"
+msgstr "Borrador"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -401,7 +401,7 @@ msgstr "El nombre del contenedor ya existe."
 #. module: crm_filemgmt
 #: sql_constraint:res.file.containertype:0
 msgid "Existing container type."
-msgstr "El tipo de contenedor ya existe."
+msgstr "Existing container type."
 
 #. module: crm_filemgmt
 #: sql_constraint:res.file:0
@@ -428,7 +428,7 @@ msgstr "Expedientes Externos"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
 msgid "File"
-msgstr "Expediente"
+msgstr "Archivo"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -491,7 +491,7 @@ msgid "File attachments"
 msgstr "Adjuntos"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:246
+#: code:addons/crm_filemgmt/models/res_file.py:257
 #: code:addons/crm_filemgmt/models/res_partner.py:83
 #, python-format
 msgid "File registers"
@@ -554,9 +554,9 @@ msgid "Has registres"
 msgstr "Tiene registros"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_11326
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_10208
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_11352
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_10236
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -588,7 +588,7 @@ msgid "Is multicompany"
 msgstr "Es multicompañía"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:372
+#: code:addons/crm_filemgmt/models/res_file.py:391
 #, python-format
 msgid "It is mandatory to check the primary partner."
 msgstr "Es obligatorio marcar un socio principal"
@@ -604,7 +604,7 @@ msgstr "Es obligatorio marcar un socio principal"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_uid
@@ -630,7 +630,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualización en"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_location_id
@@ -700,7 +700,7 @@ msgid "Num. of files"
 msgstr "Nº expedientes"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:375
+#: code:addons/crm_filemgmt/models/res_file.py:394
 #, python-format
 msgid "Only one primary partner is allowed."
 msgstr "Solo se permite un socio principal."
@@ -720,17 +720,17 @@ msgstr "Categoría padre"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Socio"
+msgstr "Empresa"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
-msgstr "Socios"
+msgstr "Enlaces a socios"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Partner of a WUA"
+msgstr "Socio"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
@@ -810,24 +810,30 @@ msgid "Tags for files"
 msgstr "Etiquetas para expedientes"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_technician_id
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+msgid "Technician"
+msgstr "Técnico"
+
+#. module: crm_filemgmt
 #: sql_constraint:res.file.container:0
 msgid "The container code has to be positive."
 msgstr "El código del contenedor debe ser positivo."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:392
+#: code:addons/crm_filemgmt/models/res_file.py:411
 #, python-format
 msgid "The file cannot be self-referenced."
 msgstr "Un expediente no puede ser auto-referenciado."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:344
+#: code:addons/crm_filemgmt/models/res_file.py:363
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
 msgstr "El nombre del expediente no puede empezar o terminar con una barra (/)."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:358
+#: code:addons/crm_filemgmt/models/res_file.py:377
 #, python-format
 msgid "The file number must be an integer."
 msgstr "El número del expediente debe ser un número entero."
@@ -838,7 +844,7 @@ msgid "The location code has to be positive."
 msgstr "El código de la ubicación debe ser positivo."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:338
+#: code:addons/crm_filemgmt/models/res_file.py:357
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr "El prefijo debe ser separado del resto del nombre de archivo por un guión (-)."
@@ -850,19 +856,19 @@ msgid "The read only categories cannot be removed."
 msgstr "Las categorías de solo lectura no pueden ser eliminadas"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:399
+#: code:addons/crm_filemgmt/models/res_file.py:418
 #, python-format
 msgid "There are repeated files."
 msgstr "Hay Expedientes repetidos"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:381
+#: code:addons/crm_filemgmt/models/res_file.py:400
 #, python-format
 msgid "There are repeated partners."
 msgstr "Hay socios repetidos."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:352
+#: code:addons/crm_filemgmt/models/res_file.py:371
 #, python-format
 msgid "There cannot be more than one slash in the name of the file."
 msgstr "No puede haber más de una barra en el nombre del expediente."
@@ -899,7 +905,22 @@ msgid "Validate"
 msgstr "Validar"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:265
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_with_technician
+msgid "With technician"
+msgstr "Con técnico"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+msgid "With technician: No"
+msgstr "Con técnico: No"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+msgid "With technician: Yes"
+msgstr "Con técnico: Sí"
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:276
 #, python-format
 msgid "[no subject]"
 msgstr "[sin asunto]"
