@@ -11,10 +11,8 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "depends": [
-        #"hr_attendance_with_lastnames",
         "hr_holidays",
-        #"hr_holidays_public",
-        #"web_fontawesome",
+        "hr_holidays_public",
     ],
     "data": [
         "security/ir.model.access.csv",

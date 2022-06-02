@@ -11,7 +11,6 @@
     "category": "Human Resources/Attendances",
     "depends": [
         "hr_attendance",
-        #"hr_attendance_with_lastnames",
     ],
     "data": [
         "security/security.xml",
