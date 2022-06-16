@@ -21,16 +21,20 @@
                         var operations =
                         {
                             'not-first-page': function (elt) {
-                                elt.style.visibility = (vars.page === vars.frompage) ? "hidden" : "visible";
+                                //elt.style.visibility = (vars.page === vars.frompage) ? "hidden" : "visible";
+                                elt.style.display = (vars.page === vars.frompage) ? "none" : "unset";
                             },
                             'not-last-page': function (elt) {
-                                elt.style.visibility = (vars.page === vars.topage) ? "hidden" : "visible";
+                                //elt.style.visibility = (vars.page === vars.topage) ? "hidden" : "visible";
+                                elt.style.visibility = (vars.page === vars.topage) ? "none" : "unset";
                             },
                             'first-page': function (elt) {
-                                elt.style.visibility = (vars.page === vars.frompage) ? "visible" : "hidden";
+                                //elt.style.visibility = (vars.page === vars.frompage) ? "visible" : "hidden";
+                                elt.style.display = (vars.page === vars.frompage) ? "unset" : "none";
                             },
                             'last-page': function (elt) {
-                                elt.style.visibility = (vars.page === vars.topage) ? "visible" : "hidden";
+                                //elt.style.visibility = (vars.page === vars.topage) ? "visible" : "hidden";
+                                elt.style.visibility = (vars.page === vars.topage) ? "unset" : "none";
                             },
                             'odd-page': function (elt) {
                                 elt.style.display = (vars.page % 2 != 0) ? elt.style.display : "none";
