@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-26 14:44+0000\n"
-"PO-Revision-Date: 2021-10-26 14:44+0000\n"
+"POT-Creation-Date: 2022-06-21 11:02+0000\n"
+"PO-Revision-Date: 2022-06-21 11:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -78,6 +78,17 @@ msgid "Cancel"
 msgstr "Cancel·la"
 
 #. module: wausms_client_sms
+#: model:ir.actions.server,name:wausms_client_sms.wausms_check_action
+msgid "Check mobile (WauSMS)"
+msgstr "Comprovar mòbil (WauSMS)"
+
+#. module: wausms_client_sms
+#: model:ir.model,name:wausms_client_sms.model_wausms_check
+#: model:ir.ui.menu,name:wausms_client_sms.wausms_check_menu
+msgid "Check mobile numbers"
+msgstr "Comprovar mòbils"
+
+#. module: wausms_client_sms
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_test_wizard_form
 msgid "Compose SMS"
 msgstr "Redactar SMS"
@@ -108,6 +119,7 @@ msgid "Confirmation: Not accepted"
 msgstr "Confirmació: No acceptat"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_create_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_create_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_create_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_create_uid
@@ -117,6 +129,7 @@ msgid "Created by"
 msgstr "Creat per"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_create_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_create_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_create_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_create_date
@@ -153,6 +166,7 @@ msgid "Defaults templates"
 msgstr "Plantilles per defecte"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_display_name
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_display_name
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_display_name
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_display_name
@@ -167,11 +181,23 @@ msgid "Display settings"
 msgstr "Configuració entorn gràfic"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:311
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:338
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:313
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:344
 #, python-format
 msgid "ERROR: no response"
 msgstr "ERROR: Sense resposta"
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/models/wausms_check.py:71
+#, python-format
+msgid "Error does not have the correct format."
+msgstr "Error no té el format correcte."
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:341
+#, python-format
+msgid "Error getting response"
+msgstr "Error obtenint la resposta."
 
 #. module: wausms_client_sms
 #: code:addons/wausms_client_sms/wizards/wausms_wizard.py:129
@@ -194,9 +220,20 @@ msgid "Error resolving template: {}"
 msgstr "Error resolent la plantilla: {}"
 
 #. module: wausms_client_sms
+#: code:addons/wausms_client_sms/models/wausms_check.py:53
+#, python-format
+msgid "Error there are characters that are not digits."
+msgstr "Hi ha caràcters que no són dígits."
+
+#. module: wausms_client_sms
 #: sql_constraint:wausms.template:0
 msgid "Existing template."
 msgstr "La plantilla ja existeix."
+
+#. module: wausms_client_sms
+#: selection:wausms.check,phone_number_state:0
+msgid "FAIL"
+msgstr "FAIL"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,help:wausms_client_sms.field_wausms_configuration_test_phone_number
@@ -214,11 +251,13 @@ msgid "From"
 msgstr "De"
 
 #. module: wausms_client_sms
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_check_view_search
 #: model:ir.ui.view,arch_db:wausms_client_sms.wausms_tracking_view_search
 msgid "Group By"
 msgstr "Agrupar per"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_id
@@ -284,6 +323,7 @@ msgid "Invoice number"
 msgstr "Nº Factura"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check___last_update
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration___last_update
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation___last_update
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template___last_update
@@ -293,6 +333,7 @@ msgid "Last Modified on"
 msgstr "Última modificació el "
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_write_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_write_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_write_uid
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_write_uid
@@ -302,6 +343,7 @@ msgid "Last Updated by"
 msgstr "Última actualització per"
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_write_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_write_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_confirmation_write_date
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_write_date
@@ -329,6 +371,11 @@ msgid "Multi-status - The message has been accepted for further processing, but 
 msgstr "Multi-estat - El missatge s'ha acceptat per a la seva posterior procés, però alguns dels destinataris són incorrectes."
 
 #. module: wausms_client_sms
+#: selection:wausms.check,phone_number_state:0
+msgid "NOT SET"
+msgstr "NOT SET"
+
+#. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_name
 msgid "Name"
 msgstr "Nom"
@@ -352,7 +399,7 @@ msgid "No sender has been set."
 msgstr "No s'ha establert cap remitent."
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:316
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:318
 #, python-format
 msgid "No subject"
 msgstr "Sense assumpte"
@@ -371,6 +418,17 @@ msgid "Number of characters must not exceed 160"
 msgstr "160 caràcters màxim"
 
 #. module: wausms_client_sms
+#: selection:wausms.check,phone_number_state:0
+msgid "OK"
+msgstr "OK"
+
+#. module: wausms_client_sms
+#: selection:wausms.template,type:0
+msgid "Parcel"
+msgstr "Parcel"
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_partner_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_default_partner_template_id
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_partner_id
 #: selection:wausms.template,type:0
@@ -416,7 +474,7 @@ msgstr "Nom complet acotat (40 cs)"
 #. module: wausms_client_sms
 #: model:ir.model,name:wausms_client_sms.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Soci"
+msgstr "Partner of a WUA"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_configuration_service_passwd
@@ -436,6 +494,7 @@ msgid "Payment required - The client does not have sufficient balance."
 msgstr "Pagament requerit - El client no disposa de saldo suficient."
 
 #. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_phone_number
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_phone_number
 msgid "Phone number"
 msgstr "Nº mòbil"
@@ -482,7 +541,7 @@ msgid "SMS Templates"
 msgstr "Plantillas SMS"
 
 #. module: wausms_client_sms
-#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:380
+#: code:addons/wausms_client_sms/wizards/wausms_wizard.py:387
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_tracking_sms_confirmation_info
 #, python-format
@@ -597,6 +656,17 @@ msgstr "Mostrar la icona al costat de el mòbil"
 #: model:ir.model.fields,field_description:wausms_client_sms.field_res_users_show_icon_on_partner_view_kanban
 msgid "Show icon on partner view kanban"
 msgstr "Mostra la icona a la targeta kanban"
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_phone_number_state
+#: model:ir.ui.view,arch_db:wausms_client_sms.wausms_check_view_search
+msgid "State"
+msgstr "Estat"
+
+#. module: wausms_client_sms
+#: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_check_phone_number_state_description
+msgid "State description"
+msgstr "Descriptió"
 
 #. module: wausms_client_sms
 #: model:ir.model.fields,field_description:wausms_client_sms.field_wausms_template_subject
@@ -803,6 +873,12 @@ msgstr "Usuari"
 #, python-format
 msgid "User or password not set."
 msgstr "L'usuari o la contrasenya no han estat establerts."
+
+#. module: wausms_client_sms
+#: code:addons/wausms_client_sms/models/wausms_check.py:95
+#, python-format
+msgid "WauSMS Mobile Check"
+msgstr "WauSMS Mobile Check"
 
 #. module: wausms_client_sms
 #: model:ir.actions.act_window,name:wausms_client_sms.action_wausms_tracking_tree

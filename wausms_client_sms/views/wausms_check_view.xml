@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="wausms_check_action" model="ir.actions.server">
+        <field name="name">Check mobile (WauSMS)</field>
+        <field name="model_id" ref="model_wausms_check"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['wausms.check'].run_check_mobile()
+        </field>
+    </record>
+
+    <menuitem id="wausms_check_menu" name="Check mobile numbers"
+        parent="wausms_root_menu" action="wausms_check_action"
+        sequence="4"/>
+
+    <record id="wausms_check_view_tree" model="ir.ui.view">
+        <field name="name">WauSMS Check Tree</field>
+        <field name="model">wausms.check</field>
+        <field name="arch" type="xml">
+            <tree colors="green:phone_number_state=='ok';orange:phone_number_state=='not_set'; red:phone_number_state=='fail';">
+                <field name="partner_id"/>
+                <field name="phone_number"/>
+                <field name="phone_number_state"/>
+                <field name="phone_number_state_description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="wausms_check_view_search" model="ir.ui.view">
+        <field name="name">WauSMS Check Search</field>
+        <field name="model">wausms.check</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter name="phone_number_state"/>
+                <group expand="0" string="Group By">
+                    <filter string="State" name="phone_number_state"
+                     context="{'group_by':'phone_number_state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+</odoo>

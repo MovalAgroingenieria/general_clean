@@ -26,6 +26,7 @@
         "wizards/wausms_wizard_view.xml",
         "views/wausms_template_view.xml",
         "views/resources.xml",
+        "views/wausms_check_view.xml",
     ],
     'external_dependencies': {
         'python': [

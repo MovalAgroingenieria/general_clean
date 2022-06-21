@@ -7,4 +7,4 @@ from . import wausms_tracking
 from . import res_partner
 from . import account_invoice
 from . import wausms_template
-
+from . import wausms_check
