@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-01 13:37+0000\n"
-"PO-Revision-Date: 2021-12-01 13:37+0000\n"
+"POT-Creation-Date: 2022-07-11 13:45+0000\n"
+"PO-Revision-Date: 2022-07-11 13:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -83,7 +83,7 @@ msgstr "Número de registro autogenerado."
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Back to Draft"
-msgstr "Devolver a borrador"
+msgstr "Volver a borrador"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
@@ -98,6 +98,7 @@ msgstr "Cancelado"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_channel_id
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Channel"
 msgstr "Canal"
 
@@ -275,7 +276,7 @@ msgstr "Indicaciones para el oficial de entrega."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings___last_update
 msgid "Last Modified on"
-msgstr "Última actualización por"
+msgstr "Última modificación en"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_uid
@@ -456,11 +457,6 @@ msgstr "Referencia original"
 #: model:ir.ui.menu,name:crm_lettermgmt.res_letter_out_menu
 msgid "Outbound Letters"
 msgstr "Registros de salida"
-
-#. module: crm_lettermgmt
-#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
-msgid "Outbound Source"
-msgstr "Medio de salida"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.menu,name:crm_lettermgmt.register_parameters_menu
