@@ -9,6 +9,24 @@
             <xpath expr="//field[@name='invoice_id']" position="after">
                 <field name="invoice_date"/>
             </xpath>
+            <xpath expr="//sheet/group[2]" position="after">
+                <group>
+                    <group>
+                        <field name="tracking_ref"/>
+                        <field name="delivered_letter"/>
+                        <field name="delivery_date"/>
+                    </group>
+                    <group>
+                        <field name="returned_letter"/>
+                        <field name="return_reason"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="notes" string="Notes">
+                        <field name="notes"/>
+                    </page>
+                </notebook>
+            </xpath>
         </field>
     </record>
 
@@ -19,10 +37,29 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='invoice_id']" position="after">
                 <field name="invoice_date"/>
+                <field name="tracking_ref"/>
+                <field name="delivery_date"/>
+            </xpath>
+            <xpath expr="//group[@name='filters']" position="inside">
+                <separator />
+                <filter name="delivered_letter_yes" string="Delivered letter: Yes"
+                    domain="[('delivered_letter', '=', True)]"/>
+                <filter name="delivered_letter_no" string="Delivered letter: No"
+                    domain="[('delivered_letter', '=', False)]"/>
+                <separator />
+                <filter name="returned_letter_yes" string="Returned letter: Yes"
+                    domain="[('returned_letter', '=', True)]"/>
+                <filter name="returned_letter_no" string="Returned letter: No"
+                    domain="[('returned_letter', '=', No)]"/>
+                <separator />
+                <filter name="has_notes_yes" string="Has notes"
+                    domain="[('has_notes', '=', True)]"/>
             </xpath>
             <xpath expr="//group[@name='group_by']" position="inside">
-                <filter domain='[]' context="{'group_by': 'invoice_date'}"
-                    icon="terp-document-new" string="Invoice date"/>
+                <filter string="Invoice date" name="invoice_date"
+                    context="{'group_by': 'invoice_date'}"/>
+                <filter string="Return reason" name="return_reason"
+                     context="{'group_by':'return_reason'}"/>
             </xpath>
         </field>
     </record>
@@ -32,6 +69,9 @@
         <field name="model">credit.control.line</field>
         <field name="inherit_id" ref="account_credit_control.credit_control_line_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable"></attribute>
+            </xpath>
             <xpath expr="//field[@name='invoice_id']" position="after">
                 <field name="invoice_date"/>
             </xpath>
@@ -43,6 +83,13 @@
             </xpath>
             <xpath expr="//field[@name='currency_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mail_message_id']" position="after">
+                <field name="tracking_ref" invisible="1"/>
+                <field name="delivered_letter" invisible="1"/>
+                <field name="delivery_date" invisible="1"/>
+                <field name="returned_letter" invisible="1"/>
+                <field name="return_reason" invisible="1"/>
             </xpath>
         </field>
     </record>

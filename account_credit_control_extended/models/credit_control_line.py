@@ -12,8 +12,43 @@ class CreditControlLine(models.Model):
         string="Invoice date",
         compute="_compute_invoice_date")
 
+    tracking_ref = fields.Char(
+        string="Tracking Reference")
+
+    delivered_letter = fields.Boolean(
+        string="Delivered letter")
+
+    delivery_date = fields.Date(
+        string="Delivery date")
+
+    returned_letter = fields.Boolean(
+        string="Returned letter")
+
+    return_reason = fields.Selection([
+        ('unknown', 'Unknown'),
+        ('absent', 'Absent'),
+        ('insufficient_address', 'Insufficient address'),
+        ('refused', 'Refused'),
+        ('deceased', 'Deceased'),
+        ('not_retired', 'Not retired')],
+        string="Return reason")
+
+    notes = fields.Html(
+        string="Notes")
+
+    has_notes = fields.Boolean(
+        string="Has notes",
+        store=True,
+        compute="_compute_has_notes")
+
     @api.multi
     def _compute_invoice_date(self):
         for record in self:
             if record.invoice_id:
                 record.invoice_date = record.invoice_id.date
+
+    @api.multi
+    def _compute_has_notes(self):
+        for record in self:
+            if record.notes:
+                record.has_notes = True

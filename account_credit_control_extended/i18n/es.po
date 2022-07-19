@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-10 17:39+0000\n"
-"PO-Revision-Date: 2021-12-10 17:39+0000\n"
+"POT-Creation-Date: 2022-07-19 11:35+0000\n"
+"PO-Revision-Date: 2022-07-19 11:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,6 +21,11 @@ msgid "A credit control line"
 msgstr "Línea de control de deuda"
 
 #. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Absent"
+msgstr "Ausente"
+
+#. module: account_credit_control_extended
 #: model:ir.model,name:account_credit_control_extended.model_credit_control_run
 msgid "Credit control line generator"
 msgstr "Generador de líneas de deuda"
@@ -31,13 +36,96 @@ msgid "Credit control lines"
 msgstr "Líneas de control de crédito"
 
 #. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Deceased"
+msgstr "Fallecido"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_delivered_letter
+msgid "Delivered letter"
+msgstr "Carta entregada"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Delivered letter: No"
+msgstr "Carta entregada: No"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Delivered letter: Yes"
+msgstr "Carta entregada: Sí"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_delivery_date
+msgid "Delivery date"
+msgstr "Fecha de entrega"
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_run_description
 msgid "Description"
 msgstr "Descripción"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_has_notes
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Has notes"
+msgstr "Tiene notas"
+
+#. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Insufficient address"
+msgstr "Dirección insuficiente"
 
 #. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_invoice_date
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
 msgid "Invoice date"
 msgstr "Fecha factura"
+
+#. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Not retired"
+msgstr "No retirada"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_notes
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Refused"
+msgstr "Rehusado"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_return_reason
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Return reason"
+msgstr "Motivo de la devolución"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_returned_letter
+msgid "Returned letter"
+msgstr "Carta devuelta"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Returned letter: No"
+msgstr "Carta devuelta: No"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "Returned letter: Yes"
+msgstr "Carta devuelta: Sí"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_tracking_ref
+msgid "Tracking Reference"
+msgstr "Referencia de seguimiento"
+
+#. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "Unknown"
+msgstr "Desconocido"
 
