@@ -30,7 +30,7 @@ class AccountBankingMandate(models.Model):
             if (posible_expire_mandate.payment_line_ids and
                     len(posible_expire_mandate.payment_line_ids) > 0):
                 if (posible_expire_mandate.last_debit_date !=
-                        posible_expire_mandate.payment_line_ids[-1]):
+                        posible_expire_mandate.payment_line_ids[-1].date):
                     posible_expire_mandate.last_debit_date = \
                         posible_expire_mandate.payment_line_ids[-1].date
         return super(
