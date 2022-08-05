@@ -24,7 +24,8 @@ class BoardGrafana(models.Model):
         url = grafana_url
         if grafana_dashboard_id:
             url = url + '/d/' + grafana_dashboard_id
-        url = url + '?kiosk'
+        # Does not allow to browse dashboards
+        # url = url + '?kiosk'
         height = self.DEFAULT_DASHBOARD_HEIGHT
         if grafana_dashboard_height:
             height = grafana_dashboard_height
