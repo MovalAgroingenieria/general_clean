@@ -26,7 +26,7 @@
                             },
                             'not-last-page': function (elt) {
                                 //elt.style.visibility = (vars.page === vars.topage) ? "hidden" : "visible";
-                                elt.style.visibility = (vars.page === vars.topage) ? "none" : "unset";
+                                elt.style.display = (vars.page === vars.topage) ? "none" : "unset";
                             },
                             'first-page': function (elt) {
                                 //elt.style.visibility = (vars.page === vars.frompage) ? "visible" : "hidden";
@@ -34,7 +34,7 @@
                             },
                             'last-page': function (elt) {
                                 //elt.style.visibility = (vars.page === vars.topage) ? "visible" : "hidden";
-                                elt.style.visibility = (vars.page === vars.topage) ? "unset" : "none";
+                                elt.style.display = (vars.page === vars.topage) ? "unset" : "none";
                             },
                             'odd-page': function (elt) {
                                 elt.style.display = (vars.page % 2 != 0) ? elt.style.display : "none";
@@ -43,13 +43,16 @@
                                 elt.style.display = (vars.page % 2 != 0) ? elt.style.display : "none";
                             },
                             'hidden-if-one-page': function (elt) {
-                                elt.style.visibility = (vars.topage > 1) ? "visible" : "hidden";
+                                //elt.style.visibility = (vars.topage > 1) ? "visible" : "hidden";
+                                elt.style.display = (vars.topage > 1) ? "unset" : "none";
                             },
                             'hidden-even-page': function (elt) {
-                                elt.style.visibility = (vars.page % 2 == 1) ? "visible" : "hidden";
+                                //elt.style.visibility = (vars.page % 2 == 1) ? "visible" : "hidden";
+                                elt.style.display = (vars.page % 2 == 1) ? "unset" : "none";
                             },
                             'hidden-odd-page': function (elt) {
-                                elt.style.visibility = (vars.page % 2 == 0) ? "visible" : "hidden";
+                                //elt.style.visibility = (vars.page % 2 == 0) ? "visible" : "hidden";
+                                elt.style.display = (vars.page % 2 == 0) ? "unset" : "none";
                             },
                         };
                         for (var klass in operations) {
