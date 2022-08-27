@@ -26,6 +26,8 @@
                             <div name="flag_image" colspan="2"
                                  style="text-align:right;">
                                 <field name="flag_image_256"
+                                       style="width:130px;text-align:center;"
+                                       class="border"
                                        widget="image"
                                        nolabel="1"
                                        options='{"preview_image":

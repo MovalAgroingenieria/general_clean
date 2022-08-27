@@ -31,6 +31,13 @@ class ResRegion(models.Model):
         store=True,
         related='flag_image_256',)
 
+    flag_image_64 = fields.Image(
+        string='Flag (64 x 43)',
+        max_width=64,
+        max_height=43,
+        store=True,
+        related='flag_image_256',)
+
     province_ids = fields.One2many(
         string='Provinces',
         comodel_name='res.province',
