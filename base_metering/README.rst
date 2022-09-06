@@ -2,14 +2,17 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=====================
-Moval Corporate Image
-=====================
+===================
+Base-Metering Module
+===================
 
 Description
 ===========
 
-Instance decoration with Moval corporate iconography.
+General porpuse water readgins and consumptions tools for any module:
+
+* Management of readings and consumptions.
+* Etc.
 
 Credits
 =======
@@ -30,7 +33,7 @@ Maintainer
 ----------
 
 .. image:: https://services.moval.es/static/images/logo_moval_small.png
-   :target: http://moval.es
+   :target: https://moval.es
    :alt: Moval Agroingeniería
 
 This module is maintained by Moval Agroingeniería.

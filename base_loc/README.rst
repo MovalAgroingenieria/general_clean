@@ -41,7 +41,7 @@ Contributors
 * Eduardo Iniesta <einiesta@moval.es>
 * Miguel Mora <mmora@moval.es>
 * Juanu Sandoval <jsandoval@moval.es>
-* Salvador sánchez <ssanchez@moval.es>
+* Salvador Sánchez <ssanchez@moval.es>
 * Jorge Vera <jvera@moval.es>
 
 Maintainer
