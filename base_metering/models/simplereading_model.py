@@ -92,7 +92,7 @@ class SimplereadingModel(models.AbstractModel):
         for record in self:
             name = ''
             if record.meter_id and record.reading_time:
-                name = record.meter_id.name + '-' + record.reading_time
+                name = record.meter_id.name + '-' + str(record.reading_time)
             record.name = name
 
     def _compute_is_last_reading(self):
@@ -101,7 +101,8 @@ class SimplereadingModel(models.AbstractModel):
             if record.meter_id:
                 sql = 'SELECT count(*) FROM ' + self._reading_table + \
                       ' WHERE meter_id = ' + str(record.meter_id.id) + \
-                      ' AND reading_time > ' + str(record.reading_time)
+                      ' AND reading_time > \'' + str(record.reading_time) + \
+                      '\''
                 self.env.cr.execute(sql)
                 query_results = self.env.cr.dictfetchall()
                 number_later_readings = query_results[0].get('count')
@@ -131,7 +132,7 @@ class SimplereadingModel(models.AbstractModel):
                 # reading.
                 sql = 'SELECT count(*) FROM ' + self._reading_table + \
                       ' WHERE meter_id = ' + str(meter_id) + \
-                      ' AND reading_time > ' + str(reading_time)
+                      ' AND reading_time > \'' + str(reading_time) + '\''
                 self.env.cr.execute(sql)
                 query_results = self.env.cr.dictfetchall()
                 number_later_readings = query_results[0].get('count')
@@ -156,7 +157,7 @@ class SimplereadingModel(models.AbstractModel):
                     vals['consumption_id'] = new_consumption.id
                 else:
                     vals['initialization_reading'] = True
-        vals_list = filter(None, vals_list)
+        vals_list = list(filter(None, vals_list))
         new_readings = self._create_readings(vals_list)
         return new_readings
 
@@ -218,15 +219,15 @@ class SimplereadingModel(models.AbstractModel):
 
     # Hook
     def _create_readings(self, vals):
-        return None
+        return super(SimplereadingModel, self).create(vals)
 
     # Hook
     def _write_readings(self, vals):
-        return None
+        return super(SimplereadingModel, self).write(vals)
 
     # Hook
     def _unlink_readings(self):
-        return None
+        return super(SimplereadingModel, self).unlink()
 
     # Hook
     def _create_consumption(self, initial_time, initial_volume):

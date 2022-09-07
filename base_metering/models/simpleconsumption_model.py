@@ -1,7 +1,6 @@
 # 2022 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-import datetime
 from odoo import models, fields, api, exceptions, _
 
 
@@ -133,10 +132,8 @@ class SimpleconsumptionModel(models.AbstractModel):
         for record in self:
             duration = 0
             if record.initial_time and record.final_time:
-                initial_time = datetime.datetime.strptime(
-                    record.initial_time, '%Y-%m-%d %H:%M:%S')
-                final_time = datetime.datetime.strptime(
-                    record.final_time, '%Y-%m-%d %H:%M:%S')
+                initial_time = record.initial_time
+                final_time = record.final_time
                 duration = (final_time - initial_time).total_seconds()
             record.duration = duration
 
@@ -146,7 +143,7 @@ class SimpleconsumptionModel(models.AbstractModel):
             final_volume = 0
             if record.reading_id:
                 final_volume = record.reading_id.volume
-            record.final_time = final_volume
+            record.final_volume = final_volume
 
     @api.depends('initial_volume', 'final_volume')
     def _compute_raw_volume(self):
