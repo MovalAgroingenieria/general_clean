@@ -71,9 +71,9 @@ class SimplecadastreModel(models.AbstractModel):
         for record in self:
             cadastral_link = ''
             if (record.cadastral_reference and
-               len(record.cadastral_reference) == length_cadastral_reference):
+               len(record.cadastral_reference) >= length_cadastral_reference):
                 rc1 = record.cadastral_reference[:self.SIZE_RC1]
-                rc2 = record.cadastral_reference[self.SIZE_RC2:]
+                rc2 = record.cadastral_reference[self.SIZE_RC2:self.SIZE_RC2+7]
                 cadastral_link = \
                     self._url_cadastral_form.replace(
                         'rc1val', rc1).replace('rc2val', rc2)

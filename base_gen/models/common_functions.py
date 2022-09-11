@@ -20,3 +20,13 @@ class CommonFunctions(models.AbstractModel):
         formated_float_number = locale.format(precision, float_number, True)
         locale.resetlocale(locale.LC_NUMERIC)
         return formated_float_number
+
+    def get_value_from_translation(self, module, src, lang=None):
+        resp = src
+        if not lang:
+            lang = self.env.context.get('lang')
+        filtered_translations = self.sudo().env['ir.translation'].search(
+            [('lang', '=', lang), ('module', '=', module), ('src', '=', src)])
+        if filtered_translations:
+            resp = filtered_translations[0].value
+        return resp
