@@ -38,7 +38,8 @@
         <field name="name">res.place.view.tree</field>
         <field name="model">res.place</field>
             <field name="arch" type="xml">
-            <tree class="o_place">
+            <tree class="o_place"
+                  default_order="province_id, municipality_id, alphanum_code">
                 <field name="province_id"/>
                 <field name="municipality_id"/>
                 <field name="alphanum_code"/>

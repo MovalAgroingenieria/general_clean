@@ -51,7 +51,7 @@
         <field name="name">res.region.view.tree</field>
         <field name="model">res.region</field>
             <field name="arch" type="xml">
-            <tree>
+            <tree default_order="alphanum_code">
                 <field name="alphanum_code"/>
             </tree>
         </field>

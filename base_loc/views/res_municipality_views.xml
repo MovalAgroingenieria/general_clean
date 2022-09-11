@@ -50,7 +50,8 @@
         <field name="name">res.municipality.view.tree</field>
         <field name="model">res.municipality</field>
             <field name="arch" type="xml">
-            <tree class="o_municipality">
+            <tree class="o_municipality"
+                  default_order="cadastral_code">
                 <field name="cadastral_code"
                        class="o_municipality_cadastral_code"/>
                 <field name="province_id"/>
