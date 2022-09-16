@@ -10,4 +10,17 @@
             </xpath>
         </field>
     </record>
+
+    <record id="action_tax_template_form" model="ir.actions.act_window">
+        <field name="name">Taxes templates</field>
+        <field name="res_model">account.tax.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain" eval="False"/>
+        <field name="view_id" ref="account.view_account_tax_template_tree"/>
+    </record>
+    <menuitem action="action_tax_template_form"
+        id="menu_action_tax_template_form"
+        parent="account.account_account_menu"/>
+
 </odoo>
