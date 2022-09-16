@@ -12,11 +12,13 @@
         "account",
         "l10n_es",
         "l10n_es_aeat_mod303",
+        "l10n_es_aeat_mod347",
     ],
     "data": [
         "data/account_tax_group_data.xml",
         "data/taxes_common.xml",
         "data/tax_code_map_mod303_data.xml",
+        "data/tax_code_map_mod347_data.xml",
         "views/account_view.xml",
     ],
     'installable': True,
