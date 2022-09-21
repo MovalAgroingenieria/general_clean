@@ -10,15 +10,16 @@ class CommonFunctions(models.AbstractModel):
     _name = 'common.functions'
     _description = 'Common functions to be used by other models'
 
-    @api.model
-    def transform_float_to_locale(self, float_number, precision, lang=False):
-        final_lang = str(self.env.context['lang'] + '.utf8')
-        if lang:
-            final_lang = str(lang + '.utf8')
-        locale.setlocale(locale.LC_NUMERIC, final_lang)
+    def transform_float_to_locale(self, float_number, precision):
         precision = '%.' + str(precision) + 'f'
-        formated_float_number = locale.format(precision, float_number, True)
-        locale.resetlocale(locale.LC_NUMERIC)
+        lang = 'es_ES'
+        if ('lang' in self.env.context and self.env.context['lang']):
+            lang = self.env.context['lang']
+        lang_model = self.env['res.lang'].search([('code', '=', lang)])
+        formated_float_number = str(float_number)
+        if (lang_model):
+            formated_float_number = \
+                lang_model.format(precision, float_number, True)
         return formated_float_number
 
     def get_value_from_translation(self, module, src, lang=None):
