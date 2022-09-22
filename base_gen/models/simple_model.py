@@ -2,7 +2,7 @@
 # 2021 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions, _
 
 
 class SimpleModel(models.AbstractModel):
@@ -34,6 +34,10 @@ class SimpleModel(models.AbstractModel):
     # Name of a possible sequence to generate alphanumeric codes (parameter,
     # registered in "ir.config.parameter").
     _sequence_for_codes = ''
+
+    # Possible condition for alphanumeric codes: is it possible to enter
+    # blank spaces in the code?
+    _allowed_blanks_in_code = True
 
     def _default_alphanum_code(self):
         resp = ''
@@ -104,6 +108,14 @@ class SimpleModel(models.AbstractModel):
                 if record.num_code:
                     name = str(record.num_code).zfill(self._size_name)
             record.name = name
+
+    @api.constrains('alphanum_code')
+    def _check_alphanum_code(self):
+        for record in self:
+            if ((not self._allowed_blanks_in_code) and
+               record.alphanum_code.find(' ') != -1):
+                raise exceptions.ValidationError(_(
+                    'It is not possible insert blank spaces in the code.'))
 
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):
