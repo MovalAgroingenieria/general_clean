@@ -15,7 +15,6 @@
         "web_listview_range_select",
         "web_sheet_full_width",
         "web_tree_dynamic_colored_field",
-        "web_tree_many2one_clickable",
     ],
     "data": [],
     "installable": True,
