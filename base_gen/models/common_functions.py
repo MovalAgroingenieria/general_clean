@@ -49,7 +49,7 @@ class CommonFunctions(models.AbstractModel):
     # Encrypt data in format param1-param2-param3 With cipher_key supplied
     def encrypt_data(self, params, cipher_key):
         credentials = '-'.join(params)
-        credentials = credentials.ljust(32)
+        credentials = credentials.encode('utf-8').ljust(32)
         current_datetime = pytz.utc.localize(datetime.datetime.now())
         current_datetime = current_datetime.astimezone(
             pytz.timezone('Europe/Madrid'))
