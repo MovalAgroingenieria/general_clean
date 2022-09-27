@@ -60,7 +60,8 @@ class CommonFunctions(models.AbstractModel):
         else:
             minimum = '30'
         iv = current_datetime[:14] + minimum
-        aes_encryptor = AES.new(cipher_key, AES.MODE_CBC, iv)
+        aes_encryptor = AES.new(
+            cipher_key.encode('utf-8'), AES.MODE_CBC, iv.encode('utf-8'))
         cipher_text = aes_encryptor.encrypt(credentials)
         cipher_text = base64.b64encode(cipher_text).decode('utf-8')
         return cipher_text
