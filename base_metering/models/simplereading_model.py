@@ -54,7 +54,7 @@ class SimplereadingModel(models.AbstractModel):
         default=False,)
 
     volume = fields.Float(
-        string='Value (m³)',
+        string='Volume (m³)',
         digits=(32, 2),
         required=True,
         default=0,)
