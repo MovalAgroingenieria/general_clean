@@ -34,6 +34,18 @@ class SimplegisModel(models.AbstractModel):
         string='EWKT Geometry for oriented envelope',
         compute='_compute_oriented_envelope_ewkt')
 
+    area_gis = fields.Integer(
+        string='GIS Area',
+        compute='_compute_area_gis')
+
+    centroid_ewkt = fields.Char(
+        string='EWKT Centroid',
+        compute='_compute_centroid_ewkt')
+
+    simplified_centroid_ewkt = fields.Char(
+        string='EWKT Centroid based on integer values',
+        compute='_compute_simplified_centroid_ewkt')
+
     def _compute_geom_ewkt(self):
         geom_ok = self._geom_ok()
         for record in self:
@@ -73,6 +85,49 @@ class SimplegisModel(models.AbstractModel):
                    query_results[0].get('st_asewkt') is not None):
                     oriented_envelope_ewkt = query_results[0].get('st_asewkt')
             record.oriented_envelope_ewkt = oriented_envelope_ewkt
+
+    def _compute_area_gis(self):
+        for record in self:
+            area_gis = 0
+            self.env.cr.execute("""
+                SELECT postgis.geometrytype(""" + self._geom_field + """),
+                postgis.st_area(""" + self._geom_field + """)
+                FROM """ + self._gis_table + """
+                WHERE """ + self._link_field + """='""" + record.name + """'""")
+            query_results = self.env.cr.dictfetchall()
+            if (query_results and
+               query_results[0].get('geometrytype') is not None):
+                geometry_type = query_results[0].get('geometrytype').lower()
+                if (geometry_type == 'polygon' or
+                   geometry_type == 'multipolygon'):
+                    area_gis = round(float(query_results[0].get('st_area')))
+            record.area_gis = area_gis
+
+    def _compute_centroid_ewkt(self):
+        geom_ok = self._geom_ok()
+        for record in self:
+            centroid_ewkt = ''
+            if geom_ok:
+                self.env.cr.execute("""
+                    SELECT postgis.st_asewkt
+                    (st_centroid(""" + self._geom_field + """))
+                    FROM """ + self._gis_table + """
+                    WHERE """ + self._link_field + """='""" + record.name + """'""")
+                query_results = self.env.cr.dictfetchall()
+                if (query_results and
+                   query_results[0].get('st_asewkt') is not None):
+                    centroid_ewkt = query_results[0].get('st_asewkt')
+            record.centroid_ewkt = centroid_ewkt
+
+    def _compute_simplified_centroid_ewkt(self):
+        for record in self:
+            simplified_centroid_ewkt = ''
+            centroid_ewkt = record.centroid_ewkt
+            if centroid_ewkt:
+                simplified_centroid_ewkt = \
+                    re.sub(r'\d+\.\d{1,}', lambda m: str(
+                        int(round(float(m.group(0))))), centroid_ewkt)
+            record.simplified_centroid_ewkt = simplified_centroid_ewkt
 
     def _geom_ok(self):
         resp = True
@@ -199,14 +254,6 @@ class SimplegisModel(models.AbstractModel):
                          image_format='jpeg',
                          image_zoom=1.2):
         aerial_images = []
-        # Provisional
-        # print(image_wms)
-        # print(image_layers)
-        # print(image_styles)
-        # print(image_width)
-        # print(image_height)
-        # print(image_format)
-        # print(image_zoom)
         for record in self:
             image = None
             srid, bounding_box = record.extract_bounding_box(
