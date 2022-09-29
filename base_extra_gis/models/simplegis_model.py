@@ -5,7 +5,8 @@ import re
 import requests
 import io
 import base64
-from odoo import models, fields, api
+import subprocess
+from odoo import models, fields, api, _
 
 
 class SimplegisModel(models.AbstractModel):
@@ -277,3 +278,46 @@ class SimplegisModel(models.AbstractModel):
             if len(aerial_images) == 1:
                 aerial_images = aerial_images[0]
         return aerial_images
+
+    def action_regenerate_shp(self, path_frompgtoshp=''):
+        notification_response = ''
+        if (not path_frompgtoshp):
+            notification_response = {
+                'type': 'ir.actions.client',
+                'tag': 'display_notification',
+                'params': {
+                    'title': _('Error'),
+                    'message': _('The "Path of frompgtoshp" parameter '
+                                 'is not populated.'),
+                    'sticky': False,
+                    'type': 'danger', }
+            }
+        else:
+            regenerate_ok = self._regenerate_shp(path_frompgtoshp)
+            if (regenerate_ok):
+                notification_response = {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'title': _('Success'),
+                        'message': _('GIS data updated.'),
+                        'sticky': False,
+                        'type': 'success', }
+                }
+            else:
+                notification_response = {
+                    'type': 'ir.actions.client',
+                    'tag': 'display_notification',
+                    'params': {
+                        'title': _('Error'),
+                        'message': _('GIS data not updated.'),
+                        'sticky': False,
+                        'type': 'danger', }
+                }
+        return notification_response
+
+    def _regenerate_shp(self, path_frompgtoshp):
+        args = path_frompgtoshp.split()
+        args.append(self.env.cr.dbname)
+        returncode = subprocess.call(args)
+        return (returncode == 0)
