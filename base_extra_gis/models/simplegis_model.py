@@ -6,6 +6,7 @@ import requests
 import io
 import base64
 import subprocess
+from PIL import Image
 from odoo import models, fields, api, _
 
 
@@ -252,8 +253,11 @@ class SimplegisModel(models.AbstractModel):
                          image_width=0,
                          image_height=824,
                          image_format='jpeg',
-                         image_zoom=1.2):
+                         image_zoom=1.2,
+                         image_with_filter=False):
         aerial_images = []
+        # Number of layers passed
+        number_of_layers = len(image_layers.split(',')) - 1
         for record in self:
             image = None
             srid, bounding_box = record.extract_bounding_box(
@@ -301,6 +305,14 @@ class SimplegisModel(models.AbstractModel):
                         image_height_pixels = int(round((
                             image_height_meters * image_width_pixels) /
                             image_width_meters))
+                cql_filter = ''
+                if (image_with_filter):
+                    cql_filter = '&FILTER=' + '()' * number_of_layers + \
+                        '(<Filter><PropertyIsLike wildCard="*" ' + \
+                        'singleChar="." escape="!">' + \
+                        '<PropertyName>' + self._link_field + \
+                        '</PropertyName><Literal>' + record.name + \
+                        '</Literal></PropertyIsLike></Filter>)'
                 url = image_wms + '?service=wms' + \
                     '&version=1.3.0&request=getmap&crs=epsg:' + str(srid) + \
                     '&bbox=' + str(minx) + ',' + str(miny) + ',' + \
@@ -309,6 +321,7 @@ class SimplegisModel(models.AbstractModel):
                     '&height=' + str(image_height_pixels) + \
                     '&layers=' + image_layers + \
                     '&styles=' + image_styles + \
+                    cql_filter + \
                     '&format=image/' + image_format
                 request_ok = True
                 try:
@@ -317,7 +330,13 @@ class SimplegisModel(models.AbstractModel):
                     request_ok = False
                 if request_ok and resp.status_code == 200:
                     image_raw = io.BytesIO(resp.raw.read())
-                    image = base64.b64encode(image_raw.getvalue())
+                    # When XML error returns a 200, but not image on raw
+                    # Check before returning
+                    try:
+                        Image.open(image_raw)
+                        image = base64.b64encode(image_raw.getvalue())
+                    except Exception:
+                        image = None
             aerial_images.append(image)
         if (all(i is None for i in aerial_images)):
             return None
