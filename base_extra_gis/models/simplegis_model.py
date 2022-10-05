@@ -47,6 +47,11 @@ class SimplegisModel(models.AbstractModel):
         string='EWKT Centroid based on integer values',
         compute='_compute_simplified_centroid_ewkt')
 
+    with_gis_link = fields.Boolean(
+        string='With GIS link',
+        compute='_compute_with_gis_link',
+        search='_search_with_gis_link',)
+
     def _compute_geom_ewkt(self):
         geom_ok = self._geom_ok()
         for record in self:
@@ -129,6 +134,47 @@ class SimplegisModel(models.AbstractModel):
                     re.sub(r'\d+\.\d{1,}', lambda m: str(
                         int(round(float(m.group(0))))), centroid_ewkt)
             record.simplified_centroid_ewkt = simplified_centroid_ewkt
+
+    def _compute_with_gis_link(self):
+        geom_ok = self._geom_ok()
+        for record in self:
+            with_gis_link = False
+            if geom_ok:
+                self.env.cr.execute("""
+                    SELECT """ + self._link_field + """
+                    FROM """ + self._gis_table + """
+                    WHERE """ + self._link_field + """='""" + record.name + """'
+                    """)
+                query_results = self.env.cr.dictfetchall()
+                if (query_results and
+                   query_results[0].get(self._link_field) is not None):
+                    with_gis_link = True
+            record.with_gis_link = with_gis_link
+
+    def _search_with_gis_link(self, operator, value):
+        record_ids = []
+        operator_of_filter = 'in'
+        with_gis_link = ((operator == '=' and value) or
+                         (operator == '!=' and not value))
+        geom_ok = self._geom_ok()
+        if geom_ok:
+            table = self._name.replace('.', '_')
+            sql_statement = \
+                'SELECT t.id FROM ' + table + ' t ' + \
+                'INNER JOIN ' + self._gis_table + ' gt ' + \
+                'ON t.name = gt.' + self._link_field
+            if not with_gis_link:
+                sql_statement = \
+                    'SELECT t.id FROM ' + table + ' t ' + \
+                    'LEFT JOIN ' + self._gis_table + ' gt ' + \
+                    'ON t.name = gt.' + self._link_field + ' ' + \
+                    'WHERE gt.gid IS NULL'
+            self.env.cr.execute(sql_statement)
+            sql_resp = self.env.cr.fetchall()
+            if sql_resp:
+                for item in sql_resp:
+                    record_ids.append(item[0])
+        return ([('id', operator_of_filter, record_ids)])
 
     def _geom_ok(self):
         resp = True
