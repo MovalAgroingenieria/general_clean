@@ -11,6 +11,7 @@
     'license': "AGPL-3",
     'depends': [
         "l10n_es_aeat_mod347",
+        "l10n_es_extradata",
     ],
     'data': [
         "data/tax_code_map_mod347_data.xml",
