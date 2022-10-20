@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+      <!-- Overwrite original sequence -->
+      <menuitem id="base.menu_board_root"
+        sequence="-4"/>
+
+</odoo>

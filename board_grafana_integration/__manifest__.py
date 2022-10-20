@@ -16,6 +16,7 @@
         "security/ir.model.access.csv",
         "views/board_grafana_config_settings_view.xml",
         "views/board_grafana_view.xml",
+        "views/base_menu.xml",
         "views/resources.xml",
     ],
     "installable": True,
