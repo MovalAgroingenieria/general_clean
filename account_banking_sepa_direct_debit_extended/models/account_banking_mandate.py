@@ -20,18 +20,21 @@ class AccountBankingMandate(models.Model):
         expire_limit_date = datetime.today() + \
             relativedelta(months=-NUMBER_OF_UNUSED_MONTHS_BEFORE_EXPIRY)
         expire_limit_date_str = expire_limit_date.strftime('%Y-%m-%d')
-        expired_mandates = self.search(
+        expired_mandates = self.env['account.banking.mandate'].search(
             ['|',
-             ('last_debit_date', '=', False),
-             ('last_debit_date', '<=', expire_limit_date_str),
-             ('state', '=', 'valid'),
-             ('signature_date', '<=', expire_limit_date_str)])
+                ('last_debit_date', '=', False),
+                ('last_debit_date', '<=', expire_limit_date_str),
+                ('state', '=', 'valid'),
+                ('signature_date', '<=', expire_limit_date_str)])
         for posible_expire_mandate in expired_mandates:
             if (posible_expire_mandate.payment_line_ids and
                     len(posible_expire_mandate.payment_line_ids) > 0):
+                ordered_payment_lines = \
+                    posible_expire_mandate.payment_line_ids.sorted(
+                        lambda x: x.date, reverse=True)
                 if (posible_expire_mandate.last_debit_date !=
-                        posible_expire_mandate.payment_line_ids[-1].date):
+                        ordered_payment_lines[0].date):
                     posible_expire_mandate.last_debit_date = \
-                        posible_expire_mandate.payment_line_ids[-1].date
+                        ordered_payment_lines[0].date
         return super(
             AccountBankingMandate, self)._sdd_mandate_set_state_to_expired()
