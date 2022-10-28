@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-      <!-- Overwrite original sequence -->
-      <menuitem id="base.menu_board_root"
+    <menuitem id="menu_board_grafana_sidebar"
+        name="Grafana"
+        action="login_into_grafana_action"
+        web_icon="board_grafana_integration,static/description/icon.png"
         sequence="-4"/>
+
+    <!-- Overwrite original icon -->
+    <menuitem id="base.menu_board_root"
+        web_icon="board_grafana_integration,static/description/board-grafana.png"/>
 
 </odoo>
