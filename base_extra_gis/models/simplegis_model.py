@@ -108,20 +108,25 @@ class SimplegisModel(models.AbstractModel):
             record.oriented_envelope_ewkt = oriented_envelope_ewkt
 
     def _compute_area_gis(self):
+        geom_ok = self._geom_ok()
         for record in self:
             area_gis = 0
-            self.env.cr.execute("""
-                SELECT postgis.geometrytype(""" + self._geom_field + """),
-                postgis.st_area(""" + self._geom_field + """)
-                FROM """ + self._gis_table + """
-                WHERE """ + self._link_field + """='""" + record.name + """'""")
-            query_results = self.env.cr.dictfetchall()
-            if (query_results and
-               query_results[0].get('geometrytype') is not None):
-                geometry_type = query_results[0].get('geometrytype').lower()
-                if (geometry_type == 'polygon' or
-                   geometry_type == 'multipolygon'):
-                    area_gis = round(float(query_results[0].get('st_area')))
+            if geom_ok:
+                self.env.cr.execute("""
+                    SELECT postgis.geometrytype(""" + self._geom_field + """),
+                    postgis.st_area(""" + self._geom_field + """)
+                    FROM """ + self._gis_table + """
+                    WHERE """ + self._link_field + """
+                    ='""" + record.name + """'""")
+                query_results = self.env.cr.dictfetchall()
+                if (query_results and
+                   query_results[0].get('geometrytype') is not None):
+                    geometry_type = \
+                        query_results[0].get('geometrytype').lower()
+                    if (geometry_type == 'polygon' or
+                       geometry_type == 'multipolygon'):
+                        area_gis = \
+                            round(float(query_results[0].get('st_area')))
             record.area_gis = area_gis
 
     def _compute_area_gis_ha(self):
@@ -232,6 +237,7 @@ class SimplegisModel(models.AbstractModel):
                 'SELECT ' + self._link_field + ', ' + self._geom_field + ' ' +
                 'FROM ' + self._gis_table + ' LIMIT 1')
         except Exception:
+            self.env.cr.rollback()
             resp = False
         return resp
 
