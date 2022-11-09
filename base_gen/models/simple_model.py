@@ -30,6 +30,12 @@ class SimpleModel(models.AbstractModel):
     # If the code is an alphanumeric value, convert it to uppercase?
     _set_alphanum_code_to_uppercase = False
 
+    # Minimum length allowed for alphanumeric codes (ignore if 0).
+    _minlength = 0
+
+    # Maximum length allowed for alphanumeric codes (ignore if 0).
+    _maxlength = 0
+
     # Name of a possible sequence to generate alphanumeric codes (parameter,
     # registered in "ir.config.parameter").
     _sequence_for_codes = ''
@@ -115,6 +121,16 @@ class SimpleModel(models.AbstractModel):
                record.alphanum_code.find(' ') != -1):
                 raise exceptions.ValidationError(_(
                     'It is not possible insert blank spaces in the code.'))
+            if (self._minlength and record.alphanum_code and
+               len(record.alphanum_code) < self._minlength):
+                raise exceptions.ValidationError(_(
+                    'Minimum number of characters allowed for te code: ') +
+                    str(self._minlength) + '.')
+            if (self._maxlength and record.alphanum_code and
+               len(record.alphanum_code) > self._maxlength):
+                raise exceptions.ValidationError(_(
+                    'Maximum number of characters allowed for te code: ') +
+                    str(self._maxlength) + '.')
 
     @api.model
     def name_search(self, name='', args=None, operator='ilike', limit=100):

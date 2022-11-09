@@ -7,6 +7,7 @@ import io
 import base64
 import subprocess
 from PIL import Image
+from pyproj import Proj, transform
 from odoo import models, fields, api, _
 
 
@@ -23,6 +24,10 @@ class SimplegisModel(models.AbstractModel):
     # Field for link.
     _link_field = 'name'
 
+    # Template for the URL of Google Maps based on coordinates.
+    _url_googlemaps = 'https://maps.google.com/maps?' + \
+        't=h&q=loc:ycval+xcval'
+
     geom_ewkt = fields.Char(
         string='EWKT Geometry',
         compute='_compute_geom_ewkt')
@@ -36,8 +41,13 @@ class SimplegisModel(models.AbstractModel):
         compute='_compute_oriented_envelope_ewkt')
 
     area_gis = fields.Integer(
-        string='GIS Area',
+        string='GIS Area (m²)',
         compute='_compute_area_gis')
+
+    area_gis_ha = fields.Float(
+        string='GIS Area (ha)',
+        digits=(32, 2),
+        compute='_compute_area_gis_ha')
 
     centroid_ewkt = fields.Char(
         string='EWKT Centroid',
@@ -51,6 +61,11 @@ class SimplegisModel(models.AbstractModel):
         string='With GIS link',
         compute='_compute_with_gis_link',
         search='_search_with_gis_link',)
+
+    googlemaps_link = fields.Char(
+        string='Google Maps Link',
+        default='',
+        compute='_compute_googlemaps_link',)
 
     def _compute_geom_ewkt(self):
         geom_ok = self._geom_ok()
@@ -108,6 +123,10 @@ class SimplegisModel(models.AbstractModel):
                    geometry_type == 'multipolygon'):
                     area_gis = round(float(query_results[0].get('st_area')))
             record.area_gis = area_gis
+
+    def _compute_area_gis_ha(self):
+        for record in self:
+            record.area_gis_ha = record.area_gis / 10000
 
     def _compute_centroid_ewkt(self):
         geom_ok = self._geom_ok()
@@ -175,6 +194,36 @@ class SimplegisModel(models.AbstractModel):
                 for item in sql_resp:
                     record_ids.append(item[0])
         return ([('id', operator_of_filter, record_ids)])
+
+    def _compute_googlemaps_link(self):
+        for record in self:
+            googlemaps_link = ''
+            srid, coordinates = record.extract_coordinates(
+                record.simplified_centroid_ewkt)
+            if srid and coordinates:
+                srid = 'epsg:' + srid
+                pos_bracketleft = coordinates.find('(')
+                pos_bracketright = coordinates.find(')')
+                pos_space = coordinates.find(' ')
+                if (pos_bracketleft != -1 and pos_bracketright != -1 and
+                   pos_space != -1 and pos_bracketleft < pos_space and
+                   pos_space < pos_bracketright):
+                    x_in = 0
+                    y_in = 0
+                    try:
+                        x_in = int(coordinates[pos_bracketleft + 1:pos_space])
+                        y_in = int(coordinates[pos_space + 1:pos_bracketright])
+                    except Exception:
+                        x_in = -1
+                        y_in = -1
+                    if x_in >= 0 and y_in >= 0:
+                        in_proj = Proj(init=srid)
+                        out_proj = Proj(init='epsg:4326')
+                        x_out, y_out = transform(
+                            in_proj, out_proj, x_in, y_in)
+                        googlemaps_link = self._url_googlemaps.replace(
+                            'ycval', str(y_out)).replace('xcval', str(x_out))
+            record.googlemaps_link = googlemaps_link
 
     def _geom_ok(self):
         resp = True

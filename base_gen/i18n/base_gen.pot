@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-22 06:35+0000\n"
-"PO-Revision-Date: 2022-09-22 06:35+0000\n"
+"POT-Creation-Date: 2022-10-19 18:22+0000\n"
+"PO-Revision-Date: 2022-10-19 18:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,21 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_gen
+#: model:ir.model.constraint,message:base_gen.constraint_agf_agriculturalfarm_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_concession_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_crop_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_electricitypoint_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_flowmeter_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_generator_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_intake_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_pumpgroup_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_pvplant_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_watermeter_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_watersource_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_municipality_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_place_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_province_name_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_region_name_not_null
 #: model:ir.model.constraint,message:base_gen.constraint_simple_model_name_not_null
 msgid "A valid code is required."
 msgstr ""
@@ -52,6 +67,15 @@ msgid "Display Name"
 msgstr ""
 
 #. module: base_gen
+#: model:ir.model.constraint,message:base_gen.constraint_agf_agriculturalfarm_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_agf_concession_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_agf_crop_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_agf_flowmeter_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_agf_intake_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_agf_watersource_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_res_place_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_res_province_name_unique
+#: model:ir.model.constraint,message:base_gen.constraint_res_region_name_unique
 #: model:ir.model.constraint,message:base_gen.constraint_simple_model_name_unique
 msgid "Existing Code."
 msgstr ""
@@ -75,6 +99,18 @@ msgid "Last Modified on"
 msgstr ""
 
 #. module: base_gen
+#: code:addons/base_gen/models/simple_model.py:0
+#, python-format
+msgid "Maximum number of characters allowed for te code: "
+msgstr ""
+
+#. module: base_gen
+#: code:addons/base_gen/models/simple_model.py:0
+#, python-format
+msgid "Minimum number of characters allowed for te code: "
+msgstr ""
+
+#. module: base_gen
 #: model:ir.model.fields,field_description:base_gen.field_simple_model__notes
 msgid "Notes"
 msgstr ""
@@ -85,6 +121,34 @@ msgid "Simple Model"
 msgstr ""
 
 #. module: base_gen
+#: model:ir.model.constraint,message:base_gen.constraint_agf_agriculturalfarm_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_concession_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_crop_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_electricitypoint_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_flowmeter_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_generator_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_intake_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_pumpgroup_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_pvplant_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_watermeter_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_agf_watersource_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_municipality_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_place_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_province_description_not_null
+#: model:ir.model.constraint,message:base_gen.constraint_res_region_description_not_null
 #: model:ir.model.constraint,message:base_gen.constraint_simple_model_description_not_null
 msgid "The description is required."
+msgstr ""
+
+#. module: base_gen
+#: code:addons/base_gen/models/common_functions.py:0
+#: code:addons/base_gen/models/common_functions.py:0
+#, python-format
+msgid "of"
+msgstr ""
+
+#. module: base_gen
+#: code:addons/base_gen/models/common_functions.py:0
+#, python-format
+msgid "th"
 msgstr ""

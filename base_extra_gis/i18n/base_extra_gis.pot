@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-29 08:38+0000\n"
-"PO-Revision-Date: 2022-09-29 08:38+0000\n"
+"POT-Creation-Date: 2022-10-28 18:57+0000\n"
+"PO-Revision-Date: 2022-10-28 18:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,16 @@ msgid "Display Name"
 msgstr ""
 
 #. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__centroid_ewkt
+msgid "EWKT Centroid"
+msgstr ""
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__simplified_centroid_ewkt
+msgid "EWKT Centroid based on integer values"
+msgstr ""
+
+#. module: base_extra_gis
 #: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__geom_ewkt
 msgid "EWKT Geometry"
 msgstr ""
@@ -59,6 +69,16 @@ msgid "Error"
 msgstr ""
 
 #. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__area_gis_ha
+msgid "GIS Area (ha)"
+msgstr ""
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__area_gis
+msgid "GIS Area (m²)"
+msgstr ""
+
+#. module: base_extra_gis
 #: code:addons/base_extra_gis/models/simplegis_model.py:0
 #, python-format
 msgid "GIS data not updated."
@@ -68,6 +88,11 @@ msgstr ""
 #: code:addons/base_extra_gis/models/simplegis_model.py:0
 #, python-format
 msgid "GIS data updated."
+msgstr ""
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__googlemaps_link
+msgid "Google Maps Link"
 msgstr ""
 
 #. module: base_extra_gis
@@ -102,4 +127,9 @@ msgstr ""
 #: code:addons/base_extra_gis/models/simplegis_model.py:0
 #, python-format
 msgid "The \"Path of frompgtoshp\" parameter is not populated."
+msgstr ""
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__with_gis_link
+msgid "With GIS link"
 msgstr ""

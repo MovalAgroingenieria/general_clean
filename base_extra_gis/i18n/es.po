@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-29 08:38+0000\n"
-"PO-Revision-Date: 2022-09-29 08:38+0000\n"
+"POT-Creation-Date: 2022-10-28 18:58+0000\n"
+"PO-Revision-Date: 2022-10-28 18:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,6 +37,16 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__centroid_ewkt
+msgid "EWKT Centroid"
+msgstr "Centroide en formato EWKT"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__simplified_centroid_ewkt
+msgid "EWKT Centroid based on integer values"
+msgstr "Centroide en formato EWKT (valores enteros)"
+
+#. module: base_extra_gis
 #: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__geom_ewkt
 msgid "EWKT Geometry"
 msgstr "Geometría en formato EWKT"
@@ -56,7 +66,17 @@ msgstr "Geometría en formato EWKT"
 #: code:addons/base_extra_gis/models/simplegis_model.py:0
 #, python-format
 msgid "Error"
-msgstr ""
+msgstr "Error"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__area_gis_ha
+msgid "GIS Area (ha)"
+msgstr "Área GIS (ha)"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__area_gis
+msgid "GIS Area (m²)"
+msgstr "Área GIS (m²)"
 
 #. module: base_extra_gis
 #: code:addons/base_extra_gis/models/simplegis_model.py:0
@@ -69,6 +89,11 @@ msgstr "No se ha podido actualizar la información GIS"
 #, python-format
 msgid "GIS data updated."
 msgstr "Información GIS actualizada satisfactoriamente"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__googlemaps_link
+msgid "Google Maps Link"
+msgstr "Enlace a Google Maps"
 
 #. module: base_extra_gis
 #: model:ir.model.fields,field_description:base_extra_gis.field_simplecadastre_model__id
@@ -103,3 +128,8 @@ msgstr "Éxito"
 #, python-format
 msgid "The \"Path of frompgtoshp\" parameter is not populated."
 msgstr "El parámetro \"Ruta de frompgtoshp\" no está establecido"
+
+#. module: base_extra_gis
+#: model:ir.model.fields,field_description:base_extra_gis.field_simplegis_model__with_gis_link
+msgid "With GIS link"
+msgstr "Con vínculo GIS"

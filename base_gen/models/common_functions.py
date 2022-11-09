@@ -4,8 +4,9 @@
 import base64
 import datetime
 import pytz
+import babel
 from Crypto.Cipher import AES
-from odoo import models
+from odoo import models, _
 
 
 class CommonFunctions(models.AbstractModel):
@@ -65,3 +66,23 @@ class CommonFunctions(models.AbstractModel):
         cipher_text = aes_encryptor.encrypt(credentials)
         cipher_text = base64.b64encode(cipher_text).decode('utf-8')
         return cipher_text
+
+    def get_date_as_text(self, date, with_year=True, lang=False):
+        if not lang:
+            lang = self.env.context.get('lang')
+            resp = ''
+            if date:
+                day = babel.dates.format_date(date, 'd', locale=lang)
+                month = babel.dates.format_date(date, 'LLLL', locale=lang)
+                year = ''
+                if with_year:
+                    year = babel.dates.format_date(date, 'y', locale=lang)
+                if lang[-3:] == '_ES':
+                    resp = day + ' ' + _('of') + ' ' + month
+                    if year:
+                        resp = resp + ' ' + _('of') + ' ' + year
+                else:
+                    resp = month + ' ' + day + _('th')
+                    if year:
+                        resp = resp + ', ' + year
+            return resp
