@@ -720,12 +720,12 @@ msgstr "Categoría padre"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Socio"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
-msgstr "Enlaces a socios"
+msgstr "Socios"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
@@ -735,7 +735,7 @@ msgstr "Socio"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
 msgid "Partners"
-msgstr "Empresas"
+msgstr "Socios"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_image

@@ -107,7 +107,7 @@ msgstr "Esteu segur de realitzar aquesta operació? La data de tancament de l'ex
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_file_ids
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_file_ids
 msgid "Associated Files"
-msgstr "Expedients associats"
+msgstr "Expedients"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -720,12 +720,12 @@ msgstr "Categoria pare"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Empresa"
+msgstr "Soci"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
-msgstr "Enllaços a socis"
+msgstr "Socis"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
