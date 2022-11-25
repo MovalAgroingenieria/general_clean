@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-26 15:00+0000\n"
-"PO-Revision-Date: 2022-05-26 15:00+0000\n"
+"POT-Creation-Date: 2022-11-25 12:45+0000\n"
+"PO-Revision-Date: 2022-11-25 12:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -148,7 +148,7 @@ msgstr "Cancel·la"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_is_cancelled
 msgid "Cancelled"
-msgstr "Cancel·lada"
+msgstr "Cancel·lat"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
@@ -172,6 +172,8 @@ msgstr "Categories d'expedients"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_category_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_category_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Category"
 msgstr "Categoria"
@@ -424,11 +426,9 @@ msgid "External Files"
 msgstr "Expedients Externs"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_file_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
-msgid "File"
-msgstr "Fitxer"
+msgid "File_"
+msgstr "Expedient"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -505,6 +505,8 @@ msgid "File registry"
 msgstr "Registre expedient"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_file_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_letter_file_id
 msgid "File_"
 msgstr "Expedient"
@@ -554,9 +556,9 @@ msgid "Has registres"
 msgstr "Té registres"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_10208
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_5376
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_10236
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_5408
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -720,12 +722,12 @@ msgstr "Categoria pare"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Soci"
+msgstr "Empresa"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
-msgstr "Socis"
+msgstr "Enllaços a socis"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
@@ -735,7 +737,7 @@ msgstr "Soci"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
 msgid "Partners"
-msgstr "Socis"
+msgstr "Empreses"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_image

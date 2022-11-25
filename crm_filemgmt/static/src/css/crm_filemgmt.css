@@ -8,7 +8,7 @@
 }
 
 .o_res_file_view_tree [data-id="name"] {
-    width: 10%;
+    width: 8%;
     text-align: center;
 }
 .o_res_file_view_tree [data-field="name"] {
@@ -16,11 +16,11 @@
 }
 
 .o_res_file_view_tree [data-id="partner_id"] {
-    width: 18%;
+    width: 16%;
 }
 
 .o_res_file_view_tree [data-id="date_file"] {
-    width: 10%;
+    width: 8%;
     text-align: center;
 }
 .o_res_file_view_tree [data-field="date_file"] {
@@ -28,7 +28,7 @@
 }
 
 .o_res_file_view_tree [data-id="is_blocked"] {
-    width: 10%;
+    width: 6%;
     text-align: center;
 }
 .o_res_file_view_tree [data-field="is_blocked"] {
@@ -36,7 +36,7 @@
 }
 
 .o_res_file_view_tree [data-id="is_cancelled"] {
-    width: 10%;
+    width: 6%;
     text-align: center;
 }
 .o_res_file_view_tree [data-field="is_cancelled"] {
@@ -51,7 +51,7 @@
 }
 
 .o_res_file_view_tree [data-id="state"] {
-    width: 10%;
+    width: 8%;
     text-align: center;
 }
 .o_res_file_view_tree [data-field="state"] {
@@ -69,7 +69,23 @@
 
 /* file_partnerlink_view_tree */
 .o_res_file_partnerlink_view_tree [data-id="partner_id"] {
-    width: 90%;
+    width: 50%;
+}
+
+.o_res_file_partnerlink_view_tree [data-id="category_id"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_view_tree [data-field="category_id"] {
+    text-align: center;
+}
+
+.o_res_file_partnerlink_view_tree [data-id="state"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_view_tree [data-field="state"] {
+    text-align: center;
 }
 
 .o_res_file_partnerlink_view_tree [data-id="is_main"] {
@@ -89,8 +105,12 @@
     text-align: center;
 }
 
-.o_res_file_partnerlink_of_partner_view_tree [data-id="file_id"] {
-    width: 70%;
+.o_res_file_partnerlink_of_partner_view_tree [data-id="category_id"] {
+    width: 10%;
+    text-align: center;
+}
+.o_res_file_partnerlink_of_partner_view_tree [data-field="category_id"] {
+    text-align: center;
 }
 
 .o_res_file_partnerlink_of_partner_view_tree [data-id="state"] {
@@ -111,12 +131,12 @@
 
 
 /* file_filelink_view_tree */
-.o_res_file_filelink_view_tree [data-id="related_file_id"] {
-    width: 20%;
+.o_res_file_filelink_view_tree [data-id="related_file_category_id"] {
+    text-align: center;
+    width: 10%;
 }
-
-.o_res_file_filelink_view_tree [data-id="related_file_subject"] {
-    width: 80%;
+.o_res_file_filelink_view_tree [data-field="related_file_category_id"] {
+    text-align: center;
 }
 
 

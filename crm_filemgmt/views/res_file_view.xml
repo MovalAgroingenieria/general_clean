@@ -167,6 +167,7 @@
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="date_file"/>
+                <field name="category_id"/>
                 <field name="subject"/>
                 <field name="technician_id"/>
                 <field name="is_blocked"/>
@@ -187,6 +188,7 @@
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="date_file"/>
+                <field name="category_id"/>
                 <field name="subject"/>
                 <field name="technician_id"/>
                 <field name="is_blocked"/>
@@ -362,6 +364,7 @@
                 <sheet>
                     <group name="master_data">
                         <field name="file_id"/>
+                        <field name="category_id"/>
                         <field name="partner_id"/>
                         <field name="is_main"/>
                     </group>
@@ -376,6 +379,7 @@
         <field name="arch" type="xml">
             <tree class="o_res_file_partnerlink_view_tree" editable="bottom">
                 <field name="partner_id"/>
+                <field name="category_id"/>
                 <field name="is_main"/>
             </tree>
         </field>
@@ -388,6 +392,7 @@
             <tree create="false" edit="false" delete="false" 
                   class="o_res_file_partnerlink_of_partner_view_tree">
                 <field name="date_file"/>
+                <field name="category_id"/>
                 <field name="file_id"/>
                 <field name="state"/>
                 <field name="is_main"/>
@@ -414,6 +419,7 @@
                     <group name="master_data">
                         <field name="file_id"/>
                         <field name="related_file_id"/>
+                        <field name="related_file_category_id"/>
                         <field name="related_file_subject"/>
                     </group>
                 </sheet>
@@ -426,6 +432,7 @@
         <field name="model">res.file.filelink</field>
         <field name="arch" type="xml">
             <tree class="o_res_file_filelink_view_tree" editable="bottom">
+                <field name="related_file_category_id"/>
                 <field name="related_file_id"/>
                 <field name="related_file_subject"/>
             </tree>

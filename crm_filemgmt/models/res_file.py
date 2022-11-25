@@ -440,7 +440,7 @@ class ResFilePartnerlink(models.Model):
     _name = 'res.file.partnerlink'
 
     file_id = fields.Many2one(
-        string='File',
+        string='File_',
         comodel_name='res.file',
         required=True,
         index=True,
@@ -470,12 +470,16 @@ class ResFilePartnerlink(models.Model):
         string='State',
         related='file_id.state')
 
+    category_id = fields.Many2one(
+        string='Category',
+        related='file_id.category_id')
+
 
 class ResFileFilelink(models.Model):
     _name = 'res.file.filelink'
 
     file_id = fields.Many2one(
-        string='File',
+        string='File_',
         comodel_name='res.file',
         required=True,
         index=True,
@@ -490,3 +494,7 @@ class ResFileFilelink(models.Model):
     related_file_subject = fields.Char(
         string='Subject',
         related='related_file_id.subject')
+
+    related_file_category_id = fields.Many2one(
+        string='Category',
+        related='related_file_id.category_id')

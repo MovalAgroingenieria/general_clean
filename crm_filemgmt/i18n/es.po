@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-26 15:00+0000\n"
-"PO-Revision-Date: 2022-05-26 15:00+0000\n"
+"POT-Creation-Date: 2022-11-25 12:45+0000\n"
+"PO-Revision-Date: 2022-11-25 12:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -148,7 +148,7 @@ msgstr "Cancelar"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_is_cancelled
 msgid "Cancelled"
-msgstr "Cancelado"
+msgstr "Cancelada"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
@@ -172,6 +172,8 @@ msgstr "Categorías de expedientes"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_category_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_category_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Category"
 msgstr "Categoría"
@@ -424,11 +426,9 @@ msgid "External Files"
 msgstr "Expedientes Externos"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_file_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
-msgid "File"
-msgstr "Archivo"
+msgid "File_"
+msgstr "Expediente"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -505,6 +505,8 @@ msgid "File registry"
 msgstr "Registro expediente"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_file_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_letter_file_id
 msgid "File_"
 msgstr "Expediente"
@@ -554,9 +556,9 @@ msgid "Has registres"
 msgstr "Tiene registros"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_10208
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_5376
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_10236
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_5408
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -575,7 +577,7 @@ msgstr "Si es marcado este socio será el principal"
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 #: selection:res.file,state:0
 msgid "In progress"
-msgstr "En progreso"
+msgstr "En curso"
 
 #. module: crm_filemgmt
 #: model:res.file.category,name:crm_filemgmt.resfilecategory_internal_file
@@ -604,7 +606,7 @@ msgstr "Es obligatorio marcar un socio principal"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Última modificación en"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_uid
@@ -630,7 +632,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_date
 msgid "Last Updated on"
-msgstr "Última actualización en"
+msgstr "Última actualización el"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_location_id
@@ -720,12 +722,12 @@ msgstr "Categoría padre"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Socio"
+msgstr "Empresa"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Partner Links"
-msgstr "Socios"
+msgstr "Enlaces a socios"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
@@ -847,7 +849,7 @@ msgstr "El código de la ubicación debe ser positivo."
 #: code:addons/crm_filemgmt/models/res_file.py:357
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
-msgstr "El prefijo debe ser separado del resto del nombre de archivo por un guión (-)."
+msgstr "El prefijo debe ser separado del resto del nombre de expediente por un guión (-)."
 
 #. module: crm_filemgmt
 #: code:addons/crm_filemgmt/models/res_file_category.py:51

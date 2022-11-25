@@ -56,7 +56,7 @@
                  </xpath>
                  <xpath expr="//filter[@name='pending']" position="after">
                       <group expand="0" string="Group By">
-                          <filter string="File" name="groupby_file" context="{'group_by':'file_id'}"/>
+                          <filter string="File_" name="groupby_file" context="{'group_by':'file_id'}"/>
                       </group>
                  </xpath>
              </field>
