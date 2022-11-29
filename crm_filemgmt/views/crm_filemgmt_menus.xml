@@ -3,6 +3,7 @@
 
     <menuitem id="main_menu"
               name="Files"
+              sequence="-14"
               web_icon="crm_filemgmt,static/description/icon.png"
               groups="crm_filemgmt.group_file_user"/>
 

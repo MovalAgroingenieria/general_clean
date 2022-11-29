@@ -223,6 +223,7 @@
 
     <menuitem id="letter_log_menu"
               name="Letter Management"
+              sequence="-16"
               web_icon="crm_lettermgmt,static/description/icon.png"
               groups="base.group_user"/>
 
