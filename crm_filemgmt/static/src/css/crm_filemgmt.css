@@ -68,12 +68,8 @@
 }
 
 /* file_partnerlink_view_tree */
-.o_res_file_partnerlink_view_tree [data-id="partner_id"] {
-    width: 50%;
-}
-
 .o_res_file_partnerlink_view_tree [data-id="category_id"] {
-    width: 10%;
+    width: 16%;
     text-align: center;
 }
 .o_res_file_partnerlink_view_tree [data-field="category_id"] {
@@ -106,7 +102,7 @@
 }
 
 .o_res_file_partnerlink_of_partner_view_tree [data-id="category_id"] {
-    width: 10%;
+    width: 12%;
     text-align: center;
 }
 .o_res_file_partnerlink_of_partner_view_tree [data-field="category_id"] {
@@ -133,7 +129,7 @@
 /* file_filelink_view_tree */
 .o_res_file_filelink_view_tree [data-id="related_file_category_id"] {
     text-align: center;
-    width: 10%;
+    width: 15%;
 }
 .o_res_file_filelink_view_tree [data-field="related_file_category_id"] {
     text-align: center;

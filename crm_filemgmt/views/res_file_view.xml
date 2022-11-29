@@ -378,8 +378,8 @@
         <field name="model">res.file.partnerlink</field>
         <field name="arch" type="xml">
             <tree class="o_res_file_partnerlink_view_tree" editable="bottom">
+                <field name="category_id" readonly="1"/>
                 <field name="partner_id"/>
-                <field name="category_id"/>
                 <field name="is_main"/>
             </tree>
         </field>
@@ -432,7 +432,7 @@
         <field name="model">res.file.filelink</field>
         <field name="arch" type="xml">
             <tree class="o_res_file_filelink_view_tree" editable="bottom">
-                <field name="related_file_category_id"/>
+                <field name="related_file_category_id" readonly="1"/>
                 <field name="related_file_id"/>
                 <field name="related_file_subject"/>
             </tree>
