@@ -15,6 +15,7 @@
         "web_listview_range_select",
         "web_sheet_full_width",
         "web_tree_dynamic_colored_field",
+        "entrivis_kanban_many2many_tags",
     ],
     "data": [],
     "installable": True,
