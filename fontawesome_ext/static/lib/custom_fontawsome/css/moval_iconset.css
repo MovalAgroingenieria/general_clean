@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'moval_iconset';
-  src: url('../font/moval_iconset.eot?91594114');
-  src: url('../font/moval_iconset.eot?91594114#iefix') format('embedded-opentype'),
-       url('../font/moval_iconset.woff2?91594114') format('woff2'),
-       url('../font/moval_iconset.woff?91594114') format('woff'),
-       url('../font/moval_iconset.ttf?91594114') format('truetype'),
-       url('../font/moval_iconset.svg?91594114#moval_iconset') format('svg');
+  src: url('../font/moval_iconset.eot?1434870');
+  src: url('../font/moval_iconset.eot?1434870#iefix') format('embedded-opentype'),
+       url('../font/moval_iconset.woff2?1434870') format('woff2'),
+       url('../font/moval_iconset.woff?1434870') format('woff'),
+       url('../font/moval_iconset.ttf?1434870') format('truetype'),
+       url('../font/moval_iconset.svg?1434870#moval_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -39,14 +39,12 @@
 .fa-moval-intake-wall-drop:before { content: '\e811'; } /* '' */
 .fa-moval-water-valve:before { content: '\e812'; } /* '' */
 .fa-moval-water-counter:before { content: '\e813'; } /* '' */
-.fa-moval-logo:before { content: '\e814'; } /* '' */
 .fa-moval-flowmeter:before { content: '\e815'; } /* '' */
 .fa-moval-flow-divider:before { content: '\e816'; } /* '' */
 .fa-moval-valve-shed:before { content: '\e817'; } /* '' */
 .fa-moval-counter-shed:before { content: '\e818'; } /* '' */
 .fa-moval-pipe-shed:before { content: '\e819'; } /* '' */
 .fa-moval-flowdivider-shed:before { content: '\e81a'; } /* '' */
-.fa-moval-file-logo:before { content: '\e81b'; } /* '' */
 .fa-moval-file-parcel:before { content: '\e81c'; } /* '' */
 .fa-moval-file-subparcel:before { content: '\e81d'; } /* '' */
 .fa-moval-file-infra:before { content: '\e81e'; } /* '' */
@@ -98,5 +96,7 @@
 .fa-moval-waterpipe-reading:before { content: '\e897'; } /* '' */
 .fa-moval-waterpipe:before { content: '\e898'; } /* '' */
 .fa-moval-user-check:before { content: '\e89f'; } /* '' */
-.fa-moval-logo-xmas:before { content: '\e8a3'; } /* '' */
+.fa-moval-file-logo:before { content: '\e8a4'; } /* '' */
+.fa-moval-logo:before { content: '\e8a5'; } /* '' */
+.fa-moval-logo-xmas:before { content: '\e8a6'; } /* '' */
 .fa-moval-sun:before { content: '\f185'; } /* '' */
