@@ -28,6 +28,9 @@ class SimplegisModel(models.AbstractModel):
     _url_googlemaps = 'https://maps.google.com/maps?' + \
         't=h&q=loc:ycval+xcval'
 
+    # Default size for WMS images.
+    NORMAL_SIZE = 384
+
     geom_ewkt = fields.Char(
         string='EWKT Geometry',
         compute='_compute_geom_ewkt')
@@ -364,39 +367,90 @@ class SimplegisModel(models.AbstractModel):
             srid, bounding_box = record.extract_bounding_box(
                 record.geom_ewkt)
             if srid and bounding_box:
-                minx = bounding_box[0]
-                miny = bounding_box[1]
-                maxx = bounding_box[2]
-                maxy = bounding_box[3]
+                bounding_box_final, image_width_pixels, image_height_pixels = \
+                    self.get_bbox_final(image_zoom, bounding_box,
+                                        image_width, image_height)
+                if image_width_pixels > 0 and image_height_pixels > 0:
+                    minx = bounding_box_final[0]
+                    miny = bounding_box_final[1]
+                    maxx = bounding_box_final[2]
+                    maxy = bounding_box_final[3]
+                    cql_filter = ''
+                    if (image_with_filter):
+                        cql_filter = '&FILTER=' + '()' * number_of_layers + \
+                            '(<Filter><PropertyIsLike wildCard="*" ' + \
+                            'singleChar="." escape="!">' + \
+                            '<PropertyName>' + self._link_field + \
+                            '</PropertyName><Literal>' + record.name + \
+                            '</Literal></PropertyIsLike></Filter>)'
+                    url = image_wms + '?service=wms' + \
+                        '&version=1.3.0&request=getmap&crs=epsg:' + str(srid) + \
+                        '&bbox=' + str(minx) + ',' + str(miny) + ',' + \
+                        str(maxx) + ',' + str(maxy) + \
+                        '&width=' + str(image_width_pixels) + \
+                        '&height=' + str(image_height_pixels) + \
+                        '&layers=' + image_layers + \
+                        '&styles=' + image_styles + \
+                        cql_filter + \
+                        '&format=image/' + image_format
+                    request_ok = True
+                    try:
+                        resp = requests.get(url, stream=True)
+                    except Exception:
+                        request_ok = False
+                    if request_ok and resp.status_code == 200:
+                        image_raw = io.BytesIO(resp.raw.read())
+                        # When XML error returns a 200, but not image on raw
+                        # Check before returning
+                        try:
+                            Image.open(image_raw)
+                            image = base64.b64encode(image_raw.getvalue())
+                        except Exception:
+                            image = None
+            aerial_images.append(image)
+        if (all(i is None for i in aerial_images)):
+            return None
+        else:
+            if len(aerial_images) == 1:
+                aerial_images = aerial_images[0]
+        return aerial_images
+
+    @api.model
+    def get_bbox_final(self, zoom, bbox_initial,
+                       image_width_initial, image_height_initial):
+        bbox_final = [0, 0, 0, 0]
+        image_width_final = 0
+        image_height_final = 0
+        if (bbox_initial and len(bbox_initial) == 4
+           and image_width_initial >= 0 and image_height_initial >= 0):
+            minx = bbox_initial[0]
+            miny = bbox_initial[1]
+            maxx = bbox_initial[2]
+            maxy = bbox_initial[3]
+            image_width_meters = maxx - minx
+            image_height_meters = maxy - miny
+            if (image_width_meters > 0 and image_height_meters > 0 and
+               zoom >= 1):
+                new_image_width_meters = \
+                    image_width_meters * zoom
+                new_image_height_meters = \
+                    image_height_meters * zoom
+                dif_width_meters = \
+                    new_image_width_meters - image_width_meters
+                dif_height_meters = \
+                    new_image_height_meters - image_height_meters
+                offset_width_meters = dif_width_meters / 2
+                offset_height_meters = dif_height_meters / 2
+                minx = int(round(minx - offset_width_meters))
+                miny = int(round(miny - offset_height_meters))
+                maxx = int(round(maxx + offset_width_meters))
+                maxy = int(round(maxy + offset_height_meters))
+                if image_width_initial == 0 and image_height_initial == 0:
+                    image_height_initial = self.NORMAL_SIZE
                 image_width_meters = maxx - minx
                 image_height_meters = maxy - miny
-                if (image_width_meters > 0 and image_height_meters > 0 and
-                   image_zoom > 0 and image_zoom != 1):
-                    new_image_width_meters = \
-                        image_width_meters * image_zoom
-                    new_image_height_meters = \
-                        image_height_meters * image_zoom
-                    dif_width_meters = \
-                        new_image_width_meters - image_width_meters
-                    dif_height_meters = \
-                        new_image_height_meters - image_height_meters
-                    offset_width_meters = dif_width_meters / 2
-                    offset_height_meters = dif_height_meters / 2
-                    minx = minx - offset_width_meters
-                    miny = miny - offset_height_meters
-                    maxx = maxx + offset_width_meters
-                    maxy = maxy + offset_height_meters
-                minx = int(round(minx))
-                miny = int(round(miny))
-                maxx = int(round(maxx))
-                maxy = int(round(maxy))
-                image_width_meters = maxx - minx
-                image_height_meters = maxy - miny
-                image_height_pixels = image_height
-                image_width_pixels = image_width
-                if image_width_pixels == 0 and image_height_pixels == 0:
-                    image_width_pixels = 100
-                    image_height_pixels = 100
+                image_height_pixels = image_height_initial
+                image_width_pixels = image_width_initial
                 if image_width_pixels == 0 or image_height_pixels == 0:
                     if image_width_pixels == 0:
                         image_width_pixels = int(round((
@@ -406,45 +460,24 @@ class SimplegisModel(models.AbstractModel):
                         image_height_pixels = int(round((
                             image_height_meters * image_width_pixels) /
                             image_width_meters))
-                cql_filter = ''
-                if (image_with_filter):
-                    cql_filter = '&FILTER=' + '()' * number_of_layers + \
-                        '(<Filter><PropertyIsLike wildCard="*" ' + \
-                        'singleChar="." escape="!">' + \
-                        '<PropertyName>' + self._link_field + \
-                        '</PropertyName><Literal>' + record.name + \
-                        '</Literal></PropertyIsLike></Filter>)'
-                url = image_wms + '?service=wms' + \
-                    '&version=1.3.0&request=getmap&crs=epsg:' + str(srid) + \
-                    '&bbox=' + str(minx) + ',' + str(miny) + ',' + \
-                    str(maxx) + ',' + str(maxy) + \
-                    '&width=' + str(image_width_pixels) + \
-                    '&height=' + str(image_height_pixels) + \
-                    '&layers=' + image_layers + \
-                    '&styles=' + image_styles + \
-                    cql_filter + \
-                    '&format=image/' + image_format
-                request_ok = True
-                try:
-                    resp = requests.get(url, stream=True)
-                except Exception:
-                    request_ok = False
-                if request_ok and resp.status_code == 200:
-                    image_raw = io.BytesIO(resp.raw.read())
-                    # When XML error returns a 200, but not image on raw
-                    # Check before returning
-                    try:
-                        Image.open(image_raw)
-                        image = base64.b64encode(image_raw.getvalue())
-                    except Exception:
-                        image = None
-            aerial_images.append(image)
-        if (all(i is None for i in aerial_images)):
-            return None
-        else:
-            if len(aerial_images) == 1:
-                aerial_images = aerial_images[0]
-        return aerial_images
+                bbox_final = [minx, miny, maxx, maxy]
+                image_width_final = image_width_pixels
+                image_height_final = image_height_pixels
+        return bbox_final, image_width_final, image_height_final
+
+    def contains_point(self, x, y):
+        self.ensure_one()
+        resp = False
+        self.env.cr.execute("""
+            SELECT gid FROM """ + self._gis_table + """
+            WHERE postgis.st_contains(""" + self._geom_field + """
+            , postgis.st_setsrid(postgis.st_point(""" + str(x) + """
+            , """ + str(y) + """), postgis.st_srid(""" + self._geom_field + """
+            ))) and name = '""" + self.name + """'""")
+        query_results = self.env.cr.dictfetchall()
+        if (query_results and query_results[0].get('gid') > 0):
+            resp = True
+        return resp
 
     def action_regenerate_shp(self, path_frompgtoshp=''):
         notification_response = ''
