@@ -3,11 +3,11 @@
 
     <template id="moval_navbar_logo" name="moval_navbar_logo" inherit_id="web.webclient_bootstrap">
         <xpath expr="//i[@class='fa fa-th fa-lg app-drawer-icon-open']" position="attributes">
-            <attribute name="class">fa fa-moval-logo-xmas app-drawer-icon-open</attribute>
+            <attribute name="class">fa fa-moval-logo app-drawer-icon-open</attribute>
             <attribute name="style">font-size:240%;padding-top:10%;padding-bottom:14%;</attribute>
         </xpath>
         <xpath expr="//div[@class='fa fa-th fa-lg app-drawer-icon-open']" position="attributes">
-            <attribute name="class">fa fa-moval-logo-xmas app-drawer-icon-open</attribute>
+            <attribute name="class">fa fa-moval-logo app-drawer-icon-open</attribute>
             <attribute name="style">font-size:240%;padding-top:10%;padding-bottom:14%;</attribute>
         </xpath>
     </template>
