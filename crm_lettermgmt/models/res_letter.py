@@ -6,6 +6,7 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+import datetime
 from odoo import models, fields, api
 
 
@@ -110,8 +111,8 @@ class ResLetter(models.Model):
         string="Type",
         help="Type of Letter, Depending upon size.")
 
-    #weight = fields.Float(help='Weight (in KG)')
-    #size = fields.Char(help='Size of the package.')
+    # weight = fields.Float(help='Weight (in KG)')
+    # size = fields.Char(help='Size of the package.')
 
     track_ref = fields.Char(
         string='Tracking Reference',
@@ -154,14 +155,56 @@ class ResLetter(models.Model):
             self.env['ir.attachment'].search(
                 [('res_model', '=', self._name), ('res_id', '=', self.id)])
 
+    @api.multi
+    def write(self, vals):
+        if 'date' in vals and str(vals['date']) != fields.Date.today():
+            move_type = self.move
+            date_obj = datetime.datetime.strptime(
+                str(vals['date']), '%Y-%m-%d')
+            sequence_obj = self.env['ir.sequence'].search(
+                [('code', '=', ('%s.letter' % move_type))])
+            seq_len = sequence_obj.padding
+            prefix_raw = str(sequence_obj.prefix)
+            prefix = self._recompute_prefix(prefix_raw, date_obj)
+            current_number = self.number[-seq_len:]
+            number = prefix + current_number
+            vals.update({'number': number})
+        return super(ResLetter, self).write(vals)
+
     @api.model
     def create(self, vals):
         if ('number' not in vals) or (vals.get('number') in ('/', False)):
             sequence = self.env['ir.sequence']
             move_type = vals.get('move', self.env.context.get(
                 'default_move', self.env.context.get('move', 'in')))
-            vals['number'] = sequence.get('%s.letter' % move_type)
+        # Use register's date for sequence number instead of today
+        if ('date' in vals) and str(vals.get('date')) != fields.Date.today():
+            date_obj = datetime.datetime.strptime(
+                str(vals.get('date')), '%Y-%m-%d')
+            sequence_obj = self.env['ir.sequence'].search(
+                [('code', '=', ('%s.letter' % move_type))])
+            next_num = str(sequence_obj.number_next_actual).zfill(
+                sequence_obj.padding)
+            prefix_raw = str(sequence_obj.prefix)
+            prefix = self._recompute_prefix(prefix_raw, date_obj)
+            number = prefix + next_num
+            vals['number'] = number
+        else:
+            vals['number'] = sequence.next_by_code('%s.letter' % move_type)
         return super(ResLetter, self).create(vals)
+
+    def _recompute_prefix(self, prefix_raw, date_obj):
+        prefix = prefix_raw.replace(
+            '%(year)s', str(date_obj.year)).replace(
+            '%(y)s', '{:02d}'.format(int(date_obj.strftime("%y")))).replace(
+            '%(month)s', '{:02d}'.format(date_obj.month)).replace(
+            '%(day)s', '{:02d}'.format(date_obj.day)).replace(
+            '%(weekday)s', '{:02d}'.format(date_obj.weekday())).replace(
+            '%(woy)s', '{:02d}'.format(int(date_obj.strftime("%W")))).replace(
+            '%(doy)s', '{:02d}'.format(int(date_obj.strftime("%j")))).replace(
+            '%(h24)s', '00').replace('%(h12)s', '00').replace(
+            '%(min)s', '00').replace('%(sec)s', '00')
+        return prefix
 
     @api.one
     def action_cancel(self):
