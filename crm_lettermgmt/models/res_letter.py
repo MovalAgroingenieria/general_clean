@@ -163,6 +163,8 @@ class ResLetter(models.Model):
                 str(vals['date']), '%Y-%m-%d')
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
+            if sequence_obj.use_date_range:
+                print "asdf"
             seq_len = sequence_obj.padding
             prefix_raw = str(sequence_obj.prefix)
             prefix = self._recompute_prefix(prefix_raw, date_obj)
@@ -184,7 +186,20 @@ class ResLetter(models.Model):
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
             next_num = str(sequence_obj.number_next_actual).zfill(
-                sequence_obj.padding)
+                    sequence_obj.padding)
+            if sequence_obj.use_date_range:
+                for date_range in sequence_obj.date_range_ids:
+                    date_from = datetime.datetime.strptime(
+                        date_range.date_from, '%Y-%m-%d')
+                    date_to = datetime.datetime.strptime(
+                        date_range.date_to, '%Y-%m-%d')
+                    if date_from <= date_obj <= date_to:
+                        next_num = str(date_range.number_next_actual).zfill(
+                            sequence_obj.padding)
+                        increased_seq_num = date_range.number_next_actual + 1
+                        date_range.write(
+                            {'number_next_actual': increased_seq_num})
+                        break
             prefix_raw = str(sequence_obj.prefix)
             prefix = self._recompute_prefix(prefix_raw, date_obj)
             number = prefix + next_num
