@@ -163,8 +163,6 @@ class ResLetter(models.Model):
                 str(vals['date']), '%Y-%m-%d')
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
-            if sequence_obj.use_date_range:
-                print "asdf"
             seq_len = sequence_obj.padding
             prefix_raw = str(sequence_obj.prefix)
             prefix = self._recompute_prefix(prefix_raw, date_obj)
@@ -197,7 +195,7 @@ class ResLetter(models.Model):
                         next_num = str(date_range.number_next_actual).zfill(
                             sequence_obj.padding)
                         increased_seq_num = date_range.number_next_actual + 1
-                        date_range.write(
+                        date_range.sudo().write(
                             {'number_next_actual': increased_seq_num})
                         break
             prefix_raw = str(sequence_obj.prefix)
