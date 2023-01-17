@@ -65,6 +65,10 @@ class ResLetter(models.Model):
         string='Received Date',
         help='The date the letter was received.')
 
+    document_date = fields.Date(
+        string='Document Date',
+        help='The date of the document itself.')
+
     def default_recipient(self):
         move_type = self.env.context.get('move', False)
         if move_type == 'in':

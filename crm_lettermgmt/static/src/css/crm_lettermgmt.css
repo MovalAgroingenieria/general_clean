@@ -1,0 +1,6 @@
+/* Common classes used in module */
+.o_data_box {
+    background-color: #f2f2f2;
+    padding: 6px;
+    width: 100%;
+}

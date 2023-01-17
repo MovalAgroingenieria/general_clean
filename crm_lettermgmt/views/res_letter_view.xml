@@ -120,6 +120,7 @@
                     <field name="folder_id" attrs="{'readonly': [('state', 'not in', ['draft'])]}"/>
                   </group>
                   <group>
+                    <field name="document_date" class="o_data_box"/>
                     <field name="snd_date" attrs="{'readonly': [('state', 'not in', ['draft', 'sent'])]}"/>
                     <field name="rec_date"/>
                   </group>
@@ -145,6 +146,7 @@
                   <field name="res_letter_attachment_ids" >
                       <tree editable="top">
                           <field name="name"/>
+                          <field name="create_date"/>
                           <field name="mimetype"/>
                           <field name="datas"/>
                           <field name="create_uid"/>
