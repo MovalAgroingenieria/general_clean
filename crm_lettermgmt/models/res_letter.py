@@ -182,13 +182,16 @@ class ResLetter(models.Model):
             move_type = vals.get('move', self.env.context.get(
                 'default_move', self.env.context.get('move', 'in')))
         # Use register's date for sequence number instead of today
-        if ('date' in vals) and str(vals.get('date')) != fields.Date.today():
+        if vals.get('date') and str(vals.get('date')) != fields.Date.today():
             date_obj = datetime.datetime.strptime(
                 str(vals.get('date')), '%Y-%m-%d')
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
             next_num = str(sequence_obj.sudo().number_next_actual).zfill(
                     sequence_obj.padding)
+            increased_seq_num = sequence_obj.sudo().number_next_actual + 1
+            sequence_obj.sudo().write(
+                {'number_next_actual': increased_seq_num})
             if sequence_obj.use_date_range:
                 for date_range in sequence_obj.date_range_ids:
                     date_from = datetime.datetime.strptime(
