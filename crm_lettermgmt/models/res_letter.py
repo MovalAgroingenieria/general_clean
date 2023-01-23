@@ -187,7 +187,7 @@ class ResLetter(models.Model):
                 str(vals.get('date')), '%Y-%m-%d')
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
-            next_num = str(sequence_obj.number_next_actual).zfill(
+            next_num = str(sequence_obj.sudo().number_next_actual).zfill(
                     sequence_obj.padding)
             if sequence_obj.use_date_range:
                 for date_range in sequence_obj.date_range_ids:
@@ -207,7 +207,8 @@ class ResLetter(models.Model):
             number = prefix + next_num
             vals['number'] = number
         else:
-            vals['number'] = sequence.next_by_code('%s.letter' % move_type)
+            vals['number'] = sequence.sudo().next_by_code(
+                '%s.letter' % move_type)
         return super(ResLetter, self).create(vals)
 
     def _recompute_prefix(self, prefix_raw, date_obj):
