@@ -19,6 +19,9 @@ class SimplegisModel(models.AbstractModel):
     # Field for link.
     _link_field = 'name'
 
+    # Is the link an integer field?
+    _link_field_integer = False
+
     geom_ewkt = fields.Char(
         string='EWKT Geometry',
         compute='_compute_geom_ewkt')
@@ -37,10 +40,18 @@ class SimplegisModel(models.AbstractModel):
         for record in self:
             geom_ewkt = ''
             if geom_ok:
-                self.env.cr.execute("""
-                    SELECT postgis.st_asewkt(""" + self._geom_field + """)
-                    FROM """ + self._gis_table + """
-                    WHERE """ + self._link_field + """='""" + record.name + """'""")
+                if self._link_field_integer:
+                    self.env.cr.execute("""
+                        SELECT postgis.st_asewkt(""" + self._geom_field + """)
+                        FROM """ + self._gis_table + """
+                        WHERE """ + self._link_field + """
+                        =""" + record.name)
+                else:
+                    self.env.cr.execute("""
+                        SELECT postgis.st_asewkt(""" + self._geom_field + """)
+                        FROM """ + self._gis_table + """
+                        WHERE """ + self._link_field + """
+                        ='""" + record.name + """'""")
                 query_results = self.env.cr.dictfetchall()
                 if (query_results and
                    query_results[0].get('st_asewkt') is not None):
@@ -64,10 +75,18 @@ class SimplegisModel(models.AbstractModel):
         for record in self:
             oriented_envelope_ewkt = ''
             if geom_ok:
-                self.env.cr.execute("""
-                    SELECT postgis.st_asewkt(postgis.st_orientedenvelope(""" + self._geom_field + """))
-                    FROM """ + self._gis_table + """
-                    WHERE """ + self._link_field + """='""" + record.name + """'""")
+                if self._link_field_integer:
+                    self.env.cr.execute("""
+                        SELECT postgis.st_asewkt(postgis.st_orientedenvelope(""" + self._geom_field + """))
+                        FROM """ + self._gis_table + """
+                        WHERE """ + self._link_field + """
+                        =""" + record.name)
+                else:
+                    self.env.cr.execute("""
+                        SELECT postgis.st_asewkt(postgis.st_orientedenvelope(""" + self._geom_field + """))
+                        FROM """ + self._gis_table + """
+                        WHERE """ + self._link_field + """
+                        ='""" + record.name + """'""")
                 query_results = self.env.cr.dictfetchall()
                 if (query_results and
                    query_results[0].get('st_asewkt') is not None):
