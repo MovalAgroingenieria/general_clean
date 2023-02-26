@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="board_grafana_home">
+        <field name="name">Grafana (from view)</field>
+        <field name="model">board.grafana</field>
+        <field name="arch" type="xml">
+            <form create="false">
+                <div class="text-center">
+                    <field name="grafana_frame" widget="html"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="login_into_grafana_action" model="ir.actions.act_window">
+        <field name="name">Grafana</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">board.grafana</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="board_grafana_home"/>
+        <field name="target">inline</field>
+    </record>
+
+    <record id="grafana_server_action" model="ir.actions.server">
+        <field name="name">Grafana server</field>
+        <field name="model_id" ref="model_board_grafana"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['board.grafana'].action_grafana_server()
+        </field>
+    </record>
+
+    <menuitem id="menu_board_grafana_root"
+        name="Grafana"
+        parent="base.menu_board_root"
+        sequence="10"/>
+
+    <menuitem id="menu_board_grafana_home"
+        parent="board_grafana_integration.menu_board_grafana_root"
+        action="login_into_grafana_action"
+        sequence="1"/>
+
+    <menuitem id="menu_board_grafana_server"
+        parent="board_grafana_integration.menu_board_grafana_root"
+        action="grafana_server_action"
+        sequence="2"/>
+
+     <!--
+    <menuitem id="menu_board_grafana_settings"
+        parent="board_grafana_integration.menu_board_grafana_root"
+        action="grafana_configuration_action"
+        sequence="3"/>  -->
+
+</odoo>
