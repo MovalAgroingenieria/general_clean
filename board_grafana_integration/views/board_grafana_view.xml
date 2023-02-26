@@ -5,7 +5,7 @@
         <field name="name">Grafana (from view)</field>
         <field name="model">board.grafana</field>
         <field name="arch" type="xml">
-            <form create="false">
+            <form create="false" class="grafana_no_padding">
                 <div class="text-center">
                     <field name="grafana_frame" widget="html"/>
                 </div>
@@ -45,11 +45,5 @@
         parent="board_grafana_integration.menu_board_grafana_root"
         action="grafana_server_action"
         sequence="2"/>
-
-     <!--
-    <menuitem id="menu_board_grafana_settings"
-        parent="board_grafana_integration.menu_board_grafana_root"
-        action="grafana_configuration_action"
-        sequence="3"/>  -->
 
 </odoo>
