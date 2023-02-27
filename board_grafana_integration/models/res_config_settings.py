@@ -2,7 +2,7 @@
 # 2023 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions, _
 
 class BoardGrafanaConfiguration(models.TransientModel):
     _inherit = 'res.config.settings'
@@ -21,6 +21,7 @@ class BoardGrafanaConfiguration(models.TransientModel):
 
     grafana_force_theme = fields.Selection(
         string="Theme",
+        config_parameter='board_grafana_integration.grafana_force_theme',
         selection=[
             ('light', 'Light'),
             ('dark', 'Dark'),],
@@ -33,7 +34,7 @@ class BoardGrafanaConfiguration(models.TransientModel):
 
     grafana_dashboard_id = fields.Char(
         string='Id',
-        config_parameter='board_grafana_integration.grafana_dashboard_idt',
+        config_parameter='board_grafana_integration.grafana_dashboard_id',
         help='The id of the embebbed dashboard (if not set the default '
              'dashboard configured in Grafana will be used).')
 
@@ -41,26 +42,20 @@ class BoardGrafanaConfiguration(models.TransientModel):
     def _compute_grafana_url(self):
         for record in self:
             url = record.grafana_url_raw
-            if url.endswith('/'):
+            if url:
+                if not url.startswith('http'):
+                    raise exceptions.ValidationError(
+                        _('The URL has to start with http'))
+            if url and url.endswith('/'):
                 url = url.rstrip('/')
-            if record.grafana_force_theme:
-                if record.grafana_force_theme == 'light':
-                    url = url + '?theme=light'
-                elif record.grafana_force_theme == 'dark':
-                    url = url + '?theme=dark'
             record.grafana_url = url
 
-    @api.depends('grafana_url', 'grafana_force_theme')
     def action_go_to_grafana_server(self):
+        self.ensure_one()
         grafana_url = self.grafana_url
-        if self.grafana_dashboard_id:
-            grafana_url = grafana_url + '/d/' + self.grafana_dashboard_id
-        if record.grafana_force_theme:
-            if record.grafana_force_theme == 'light':
-                url = url + '/?theme=light'
-            elif record.grafana_force_theme == 'dark':
-                url = url + '/?theme=dark'
+        server_url = grafana_url + '/login'
         return {
             'type': 'ir.actions.act_url',
-            'url': grafana_url,
+            'url': server_url,
+            'target': 'new',
         }

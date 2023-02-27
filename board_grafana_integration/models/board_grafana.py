@@ -14,6 +14,8 @@ class BoardGrafana(models.Model):
     def _default_grafana_frame(self):
         grafana_url = self.env['ir.config_parameter'].sudo().get_param(
             'board_grafana_integration.grafana_url')
+        force_theme = self.env['ir.config_parameter'].sudo().get_param(
+            'board_grafana_integration.grafana_force_theme')
         dashboard_height = self.env['ir.config_parameter'].sudo().get_param(
             'board_grafana_integration.grafana_dashboard_height')
         dashboard_id = self.env['ir.config_parameter'].sudo().get_param(
@@ -23,6 +25,10 @@ class BoardGrafana(models.Model):
                 _('The grafana configuration parameters have not been set.'))
         if dashboard_id:
             grafana_url = grafana_url + '/d/' + dashboard_id
+        if force_theme and force_theme == 'light':
+            grafana_url = grafana_url + '?theme=light'
+        elif force_theme and force_theme == 'dark':
+            grafana_url = grafana_url + '?theme=dark'
         height = self.DEFAULT_DASHBOARD_HEIGHT
         if dashboard_height:
             height = dashboard_height
