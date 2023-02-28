@@ -48,7 +48,7 @@ class BoardGrafana(models.Model):
         self.grafana_frame = False
 
     def action_grafana_server(self):
-        grafana_url = self.env['ir.config_parameter'].get_param(
+        grafana_url = self.env['ir.config_parameter'].sudo().get_param(
             'board_grafana_integration.grafana_url')
         if (not grafana_url):
             raise exceptions.ValidationError(
