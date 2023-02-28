@@ -5,7 +5,7 @@
         <field name="name">Grafana (from view)</field>
         <field name="model">board.grafana</field>
         <field name="arch" type="xml">
-            <form create="false">
+            <form create="false" class="o_board_grafana_form_view">
                 <div class="text-center">
                     <field name="grafana_frame" widget="html"/>
                 </div>
