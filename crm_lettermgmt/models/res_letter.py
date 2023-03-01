@@ -7,6 +7,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import datetime
+import json
+from lxml import etree
 from odoo import models, fields, api
 
 
@@ -213,6 +215,24 @@ class ResLetter(models.Model):
             vals['number'] = sequence.sudo().next_by_code(
                 '%s.letter' % move_type)
         return super(ResLetter, self).create(vals)
+
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        res = super(ResLetter, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar,
+            submenu=submenu)
+        allow_number_edition = self.env['ir.values'].sudo().get_default(
+            'res.letter.config.settings', 'allow_number_edition')
+        if allow_number_edition:
+            doc = etree.XML(res['arch'])
+            for node in doc.xpath("//field[@name='number']"):
+                node.set("readonly", "0")
+                modifiers = json.loads(node.get("modifiers"))
+                modifiers['readonly'] = False
+                node.set("modifiers", json.dumps(modifiers))
+            res['arch'] = etree.tostring(doc)
+        return res
 
     def _recompute_prefix(self, prefix_raw, date_obj):
         prefix = prefix_raw.replace(

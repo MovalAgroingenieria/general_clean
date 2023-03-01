@@ -14,6 +14,7 @@
                 </header>
                 <group string="Register Management">
                     <field name="enable_access_res_letter_portal_user"/>
+                    <field name="allow_number_edition"/>
                 </group>
             </form>
         </field>

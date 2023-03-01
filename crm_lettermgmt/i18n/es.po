@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-17 10:29+0000\n"
-"PO-Revision-Date: 2023-01-17 10:29+0000\n"
+"POT-Creation-Date: 2023-03-01 10:48+0000\n"
+"PO-Revision-Date: 2023-03-01 10:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -65,6 +65,16 @@ msgid "Additional Information"
 msgstr "Información adicional"
 
 #. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_allow_number_edition
+msgid "Allow number edition"
+msgstr "Permitir edición número registro"
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_config_settings_allow_number_edition
+msgid "Allow to edit the registre number during creation."
+msgstr "Permite editar el número de registro."
+
+#. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
 msgid "Apply"
 msgstr "Aplicar"
@@ -83,7 +93,7 @@ msgstr "Número de registro autogenerado."
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Back to Draft"
-msgstr "Volver a borrador"
+msgstr "Devolver a borrador"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
@@ -223,7 +233,7 @@ msgstr "Habilitar el acceso a los usuarios de portal"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_expeditor_ref
 msgid "Expeditor Reference"
-msgstr "Ref. expedidor"
+msgstr "Referencia del expedidor"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_folder_id
@@ -237,8 +247,8 @@ msgstr "Carpeta que contiene registros."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_config_settings_enable_access_res_letter_portal_user
-msgid "Grant or revoke access of portal users to register management"
-msgstr "Habilita/deshabilita el acceso de los usuarios de portal a sus Registros de Entrada/Salida."
+msgid "Grant or revoke access of portal users to register management."
+msgstr "Grant or revoke access of portal users to register management."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_id
@@ -331,7 +341,7 @@ msgstr "Canal"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_date
 msgid "Letter Date"
-msgstr "Fecha registro"
+msgstr "Fecha del registro"
 
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_letter_folder
@@ -455,7 +465,7 @@ msgstr "OUT"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_orig_ref
 msgid "Original Reference"
-msgstr "Ref. original"
+msgstr "Referencia original"
 
 #. module: crm_lettermgmt
 #: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_out_tree_view
@@ -481,7 +491,7 @@ msgstr "Padre..."
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Socio"
+msgstr "Partner of a WUA"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
@@ -530,7 +540,7 @@ msgstr "Recibido dañado"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_rec_date
 msgid "Received Date"
-msgstr "Fecha recepción"
+msgstr "Fecha de recepción"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -624,7 +634,7 @@ msgstr "Fuente de envío/recepción"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_snd_date
 msgid "Sent Date"
-msgstr "Fecha envío"
+msgstr "Fecha de envío"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_state
@@ -679,7 +689,7 @@ msgstr "Hilo"
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_track_ref
 msgid "Tracking Reference"
-msgstr "Ref. seguimiento"
+msgstr "Referencia de seguimiento"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_type_id
