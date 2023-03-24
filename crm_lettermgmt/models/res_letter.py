@@ -171,9 +171,15 @@ class ResLetter(models.Model):
                 [('code', '=', ('%s.letter' % move_type))])
             seq_len = sequence_obj.padding
             prefix_raw = str(sequence_obj.prefix)
-            prefix = self._recompute_prefix(prefix_raw, date_obj)
-            current_number = self.number[-seq_len:]
-            number = prefix + current_number
+            normal_prefix = prefix_raw.split('/')[0]
+            current_prefix = self.number.split('/')[0]
+            # Verify that number has the prefix
+            if normal_prefix == current_prefix:
+                prefix = self._recompute_prefix(prefix_raw, date_obj)
+                current_seq_number = self.number[-seq_len:]
+                number = prefix + current_seq_number
+            else:
+                number = self.number
             vals.update({'number': number})
         return super(ResLetter, self).write(vals)
 
@@ -183,14 +189,20 @@ class ResLetter(models.Model):
             sequence = self.env['ir.sequence']
             move_type = vals.get('move', self.env.context.get(
                 'default_move', self.env.context.get('move', 'in')))
+            vals['number'] = sequence.sudo().next_by_code(
+                '%s.letter' % move_type)
+        elif ('number' in vals):
+            pass
         # Use register's date for sequence number instead of today
-        if vals.get('date') and str(vals.get('date')) != fields.Date.today():
+        elif vals.get('date') and str(vals.get('date')) != fields.Date.today():
+            move_type = vals.get('move', self.env.context.get(
+                'default_move', self.env.context.get('move', 'in')))
             date_obj = datetime.datetime.strptime(
                 str(vals.get('date')), '%Y-%m-%d')
             sequence_obj = self.env['ir.sequence'].search(
                 [('code', '=', ('%s.letter' % move_type))])
             next_num = str(sequence_obj.sudo().number_next_actual).zfill(
-                    sequence_obj.padding)
+                sequence_obj.padding)
             increased_seq_num = sequence_obj.sudo().number_next_actual + 1
             sequence_obj.sudo().write(
                 {'number_next_actual': increased_seq_num})
@@ -211,9 +223,6 @@ class ResLetter(models.Model):
             prefix = self._recompute_prefix(prefix_raw, date_obj)
             number = prefix + next_num
             vals['number'] = number
-        else:
-            vals['number'] = sequence.sudo().next_by_code(
-                '%s.letter' % move_type)
         return super(ResLetter, self).create(vals)
 
     @api.model
