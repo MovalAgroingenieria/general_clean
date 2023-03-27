@@ -17,6 +17,7 @@ class ResLetter(models.Model):
     _name = 'res.letter'
     _description = "Log of Letter Movements"
     _inherit = 'mail.thread'
+    _order = 'number desc'
 
     number = fields.Char(
         help="Auto Generated Number of letter.",
