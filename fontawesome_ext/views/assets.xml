@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="assets_common_fontawesome_ext" inherit_id="web.assets_common">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
+        </xpath>
+    </template>
+
+    <template id="minimal_layout_fontawesome_ext" inherit_id="report.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
+        </xpath>
+        <!--
+        <xpath expr="//head" position="inside">
+            <script type="text/javascript" src="/fontawesome_ext/static/src/js/set_theme_color_print.js"></script>
+        </xpath>
+        -->
+    </template>
+
+</odoo>

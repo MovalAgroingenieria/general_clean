@@ -9,9 +9,9 @@ FontAwesome Extended
 Description
 ===========
 
-This module add custom fontawesome fonts.
+This module add moval iconset. Solid and duotone icons are available.
 
-The font has been generated using `Fontello <http://fontello.com/>`_ web service.
+The font has been generated using `IcoMoon <https://icomoon.io/>`_ web service.
 
 Credits
 =======
@@ -25,7 +25,7 @@ Contributors
 * Eduardo Iniesta <einiesta@moval.es>
 * Miguel Mora <mmora@moval.es>
 * Juanu Sandoval <jsandoval@moval.es>
-* Salvador sánchez <ssanchez@moval.es>
+* Salvador Sánchez <ssanchez@moval.es>
 * Jorge Vera <jvera@moval.es>
 
 Maintainer
