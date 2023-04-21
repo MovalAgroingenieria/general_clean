@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Entries menu (root and config) -->
+    <menuitem id="gisviewer_root_menu"
+              name="GIS Viewer"
+              parent="base.menu_administration"
+              sequence="6"/>
+
+</odoo>

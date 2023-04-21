@@ -1,0 +1,217 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gisviewer_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-04-21 09:16+0000\n"
+"PO-Revision-Date: 2023-04-21 09:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_active_private
+msgid "Active Private?"
+msgstr "Activa Privado"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_active_public
+msgid "Active Public?"
+msgstr "Activa Público"
+
+#. module: gisviewer_management
+#: model:res.groups,name:gisviewer_management.group_gisviewer_management
+msgid "Can View and Manage Gisviewer Data"
+msgstr "Puede administrar información del Visor GIS"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_create_uid
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_create_uid
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_create_date
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_create_date
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: gisviewer_management
+#: model:gisviewer.profile,name:gisviewer_management.gisviewer_profile_001
+msgid "Default"
+msgstr "Por defecto"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_display_name
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_display_name
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: gisviewer_management
+#: sql_constraint:gisviewer.layer.profile:0
+msgid "Existing Layer Profile Relation."
+msgstr "Relación perfil - parcela ya existente."
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_gisviewer_layer_id
+msgid "GIS Layer"
+msgstr "Capa GIS"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_name
+msgid "GIS Layer Profile Relation"
+msgstr "Relación perfil - capa GIS"
+
+#. module: gisviewer_management
+#: model:ir.actions.act_window,name:gisviewer_management.action_gisviewer_layer
+#: model:ir.ui.menu,name:gisviewer_management.gisviewer_layer_menu
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_layer_view_tree
+msgid "GIS Layers"
+msgstr "Capas GIS"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_gisviewer_profile_id
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_name
+msgid "GIS Profile"
+msgstr "Perfil GIS"
+
+#. module: gisviewer_management
+#: model:ir.actions.act_window,name:gisviewer_management.action_gisviewer_profile
+#: model:ir.ui.menu,name:gisviewer_management.gisviewer_profile_menu
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_profile_view_tree
+msgid "GIS Profiles"
+msgstr "Perfiles GIS"
+
+#. module: gisviewer_management
+#: model:ir.ui.menu,name:gisviewer_management.gisviewer_root_menu
+msgid "GIS Viewer"
+msgstr "Visor GIS"
+
+#. module: gisviewer_management
+#: model:ir.model,name:gisviewer_management.model_gisviewer_layer
+msgid "GIS Viewer Layer"
+msgstr "Capa del visor GIS"
+
+#. module: gisviewer_management
+#: model:ir.model,name:gisviewer_management.model_gisviewer_profile
+msgid "GIS Viewer Profile"
+msgstr "Perfil del visor GIS"
+
+#. module: gisviewer_management
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_profile_view_form
+msgid "Get Layers"
+msgstr "Traer Capas"
+
+#. module: gisviewer_management
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_layer_view_form
+msgid "Get Profiles"
+msgstr "Traer perfiles"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_id
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_id
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_id
+msgid "ID"
+msgstr "ID"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_notes
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_notes
+msgid "Internal Notes"
+msgstr "Notas internas"
+
+#. module: gisviewer_management
+#: code:addons/gisviewer_management/models/gisviewer_profile.py:44
+#, python-format
+msgid "It is not possible to remove system profiles."
+msgstr "No se pueden eliminar perfiles de sistema."
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer___last_update
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile___last_update
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_write_uid
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_write_uid
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_write_date
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_write_date
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_name
+msgid "Layer"
+msgstr "Capa"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_layerprofile_ids
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_layerprofile_ids
+msgid "Layer Profiles"
+msgstr "Perfiles de capa"
+
+#. module: gisviewer_management
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_profile_view_form
+msgid "Layers Info"
+msgstr "Información de capas"
+
+#. module: gisviewer_management
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_layer_view_form
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_profile_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: gisviewer_management
+#: model:ir.ui.view,arch_db:gisviewer_management.gisviewer_layer_view_form
+msgid "Profiles"
+msgstr "Perfiles"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_is_readonly
+msgid "Readonly"
+msgstr "Sólo lectura"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_code
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_code
+msgid "Technical Code"
+msgstr "Código"
+
+#. module: gisviewer_management
+#: sql_constraint:gisviewer.layer:0
+#: sql_constraint:gisviewer.profile:0
+msgid "Technical Code must be unique."
+msgstr "El código debe ser un valor único."
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_visible_private
+msgid "Visible Private?"
+msgstr "Visible Privado"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_visible_public
+msgid "Visible Public?"
+msgstr "Visible Público"
+
+#. module: gisviewer_management
+#: model:ir.model,name:gisviewer_management.model_gisviewer_layer_profile
+msgid "gisviewer.layer.profile"
+msgstr "gisviewer.layer.profile"
+

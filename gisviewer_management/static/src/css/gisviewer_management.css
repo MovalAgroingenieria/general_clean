@@ -1,0 +1,54 @@
+/* o_gisviewer_layer_view_tree */
+.o_gisviewer_layer_view_tree [data-id="name"] {
+    width: 25%;
+}
+
+.o_gisviewer_layer_view_tree [data-id="code"] {
+    width: 75%;
+}
+
+/*o_gisviewer_layer_infogroup_view_tree_notebook*/
+
+.o_gisviewer_layer_profile_view_tree_notebook[data-id="gisviewer_layer_id"] {
+    width: 25%;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook[data-id="gisviewer_group_id"] {
+    width: 25%;
+}
+
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-id="visible_public"] {
+    width: 17%;
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-field="visible_public"] {
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-id="active_public"] {
+    width: 16%;
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-field="active_public"] {
+    text-align: center;
+}
+.o_gisviewer_layer_profile_view_tree_notebook [data-id="visible_private"] {
+    width: 17%;
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-field="visible_private"] {
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-id="active_private"] {
+    width: 16%;
+    text-align: center;
+}
+
+.o_gisviewer_layer_profile_view_tree_notebook [data-field="active_private"] {
+    text-align: center;
+}

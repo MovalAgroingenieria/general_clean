@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="gisviewer_profile_001" model="gisviewer.profile">
+            <field name="name">Default</field>
+            <field name="code">default</field>
+            <field name="is_readonly">True</field>
+        </record>
+
+    </data>
+</odoo>

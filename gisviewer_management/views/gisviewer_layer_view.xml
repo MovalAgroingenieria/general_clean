@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Form view -->
+    <record id="gisviewer_layer_view_form" model="ir.ui.view">
+        <field name="name">GisViewer Layer Form</field>
+        <field name="model">gisviewer.layer</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="name"/>
+                        </group>
+                        <group name="master_data_right">
+                            <field name="code"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook>
+                            <page name="gisviewer_layer_profile" string="Profiles">
+                                <header>
+                                    <button name="action_get_available_profiles" type="object" class="btn btn-link"
+                                        string="Get Profiles" icon="fa-arrow-down" style="margin-top:2px; margin-bottom:2px;"
+                                        groups="gisviewer_management.group_gisviewer_management"/>
+                                </header>
+                                <field name="layerprofile_ids">
+                                    <tree editable="bottom"
+                                     class="o_gisviewer_layer_profile_view_tree_notebook">
+                                        <field name="gisviewer_profile_id"/>
+                                        <field name="visible_public"/>
+                                        <field name="active_public" attrs="{'readonly':
+                                            [('visible_public','=',False)]}"/>
+                                        <field name="visible_private"/>
+                                        <field name="active_private" attrs="{'readonly':
+                                            [('visible_private','=',False)]}"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="notes" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view -->
+    <record id="gisviewer_layer_view_tree" model="ir.ui.view">
+        <field name="name">GisViewer Layer Tree</field>
+        <field name="model">gisviewer.layer</field>
+        <field name="arch" type="xml">
+            <tree string="GIS Layers" class="o_gisviewer_layer_view_tree">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search view -->
+    <record id="gisviewer_layer_view_search" model="ir.ui.view">
+        <field name="name">GisViewer Layer Search</field>
+        <field name="model">gisviewer.layer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Window action -->
+    <record id="action_gisviewer_layer" model="ir.actions.act_window">
+        <field name="name">GIS Layers</field>
+        <field name="res_model">gisviewer.layer</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field ref="gisviewer_layer_view_tree" name="view_id"/>
+        <field name="search_view_id" ref="gisviewer_layer_view_search"/>
+    </record>
+
+    <!-- Menuentry -->
+    <menuitem name="GIS Layers" id="gisviewer_layer_menu" parent="gisviewer_root_menu"
+        action="action_gisviewer_layer" sequence="3"/>
+
+</odoo>

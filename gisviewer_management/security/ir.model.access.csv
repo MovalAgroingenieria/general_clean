@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gisviewer_layer_user,Model GIS Viewer Layer user access,gisviewer_management.model_gisviewer_layer,gisviewer_management.group_gisviewer_management,1,1,1,1
+access_gisviewer_layer_portal,Model GIS Viewer Layer portal user access,gisviewer_management.model_gisviewer_layer,base.group_portal,1,0,0,0
+access_gisviewer_layer_profile_user,Model GIS Viewer Layer Profile user access,gisviewer_management.model_gisviewer_layer_profile,gisviewer_management.group_gisviewer_management,1,1,1,1
+access_gisviewer_layer_profile_portal,Model GIS Viewer Layer Profile portal user access,gisviewer_management.model_gisviewer_layer_profile,base.group_portal,1,0,0,0
+access_gisviewer_profile_user,Model GIS Viewer Profile user access,gisviewer_management.model_gisviewer_profile,gisviewer_management.group_gisviewer_management,1,1,1,1
+access_gisviewer_profile_portal,Model GIS Viewer Profile portal user access,gisviewer_management.model_gisviewer_profile,base.group_portal,1,0,0,0
