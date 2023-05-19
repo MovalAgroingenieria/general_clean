@@ -178,6 +178,7 @@ class AccountPaymentOrder(models.Model):
             ref_payment = ' ' * 12
             communication = ' ' * 26
         text6 += ref_payment  # Repeat
+        self.date_generated = datetime.today()  # Set generated_date
         date_create = \
             converter.convert(self.date_generated.strftime('%d%m%Y'), 8)
         text6 += date_create

@@ -4,7 +4,7 @@
         <field name="name">CSB Pagos domiciliados</field>
         <field name="code">csb_direct_debit_payments</field>
         <field name="payment_type">outbound</field>
-        <field name="bank_account_required" eval="True"/>
+        <field name="bank_account_required" eval="False"/>
         <field name="mandate_required" eval="False"/>
         <field name="payment_order_only" eval="True"/>
     </record>
