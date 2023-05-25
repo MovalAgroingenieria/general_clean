@@ -265,7 +265,7 @@
                             <field name="creation_date"
                                    string="Date"/>
                             <field name="sent"
-                                   string="Sent"
+                                   string="N. Sent"
                                    style="margin-bottom:20px"/>
                             <field name="customer"
                                    string="Customer"/>
@@ -282,7 +282,7 @@
                                         type="object" string="Send"
                                         style="width: 130px;"
                                         class="oe_highlight"
-                                        confirm="CONFIRM: Do you want to send this notification?"/>
+                                        confirm="Do you want to send this notification?"/>
                             </div>
                             <div name="section_notes" colspan="2"
                                  style="margin-top:35px;margin-left:55px;margin-right:70px">

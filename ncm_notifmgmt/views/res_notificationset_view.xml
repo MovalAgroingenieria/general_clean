@@ -114,7 +114,7 @@
                                         type="object" string="Send to all"
                                         style="width: 130px;"
                                         class="oe_highlight"
-                                        confirm="CONFIRM: Do you want to send the notification to all contacts?"/>
+                                        confirm="Do you want to send the notification to ALL contacts?"/>
                             </div>
                             <div name="section_info" colspan="2"
                                  style="text-align:center;margin-top:60px"

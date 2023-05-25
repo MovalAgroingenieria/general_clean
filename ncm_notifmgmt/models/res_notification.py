@@ -102,7 +102,7 @@ class ResNotification(models.Model):
         selection=[
             ('01_draft', 'Draft'),
             ('02_generated', 'Generated'),
-            ('03_sent', 'Sent'),
+            ('03_sent', 'N. Sent'),
             ('04_executed', 'Executed'),
         ],
         string='State',

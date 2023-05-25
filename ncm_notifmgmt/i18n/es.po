@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-25 11:55+0000\n"
-"PO-Revision-Date: 2023-05-25 11:55+0000\n"
+"POT-Creation-Date: 2023-05-25 16:22+0000\n"
+"PO-Revision-Date: 2023-05-25 16:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -258,16 +258,6 @@ msgid "Apply"
 msgstr "Aplicar"
 
 #. module: ncm_notifmgmt
-#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
-msgid "CONFIRM: Do you want to send the notification to all contacts?"
-msgstr "CONFIRMACIÓN: ¿Confirma que quiere enviar las notificaciones a TODOS los contactos?"
-
-#. module: ncm_notifmgmt
-#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
-msgid "CONFIRM: Do you want to send this notification?"
-msgstr "CONFIRMACIÓN: ¿Confirma que quiere enviar esta notificación?"
-
-#. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 msgid "Cancel"
@@ -433,6 +423,16 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Do you want to send the notification to ALL contacts?"
+msgstr "¿Confirma que quiere enviar esta notificación a TODOS los contactos seleccionados?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+msgid "Do you want to send this notification?"
+msgstr "¿Confirma que quiere enviar esta notificación?"
+
+#. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_document_name
 msgid "Document Name"
 msgstr "Nombre del documento"
@@ -444,7 +444,7 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:210
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:209
 #, python-format
 msgid "ERROR IN TEMPLATE"
 msgstr "ERROR EN LA PLANTILLA"
@@ -452,12 +452,12 @@ msgstr "ERROR EN LA PLANTILLA"
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 msgid "Edit the following two templates to build the notification model that will then be applied to the recipients"
-msgstr "Editar las dos plantillas de abajo para diseñar el formato y contenido de las notificaciones del lote"
+msgstr "Edite las dos plantillas de abajo para diseñar el formato y contenido de las notificaciones del lote"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
 msgid "Edit the following two templates to build the notification model that will then be proposed, as default content, to new notification sets"
-msgstr "Editar las dos plantillas de abajo para configurar el modelo de notificación que será propuesto inicialmente a la hora de crear un nuevo lote"
+msgstr "Edite las dos plantillas de abajo para configurar el modelo de notificación que será propuesto inicialmente al crear un lote"
 
 #. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_email
@@ -557,13 +557,13 @@ msgid "Included"
 msgstr "Incluido"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:240
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:239
 #, python-format
 msgid "Inclusion options: It is mandatory to choose at least one option."
 msgstr "Opciones de inclusión de contactos: Es obligatorio indicar, al menos, una opción."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:244
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:243
 #, python-format
 msgid "Inclusion options: It is not possible to choose all contacts and other options."
 msgstr "Opciones de inclusión de contactos: Si se elige incluir cualquier contacto, ya no se pueden indicar más opciones."
@@ -604,13 +604,13 @@ msgid "Issue:"
 msgstr "Asunto:"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:229
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:225
 #, python-format
 msgid "It is mandatory to enter a code for the new notification set."
 msgstr "Es obligatorio introducir un código para el nuevo lote."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:277
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:276
 #, python-format
 msgid "It is not possible to remove a 'STANDARD' type of notification set."
 msgstr "No es posible eliminar un tipo de lote 'ESTÁNDAR'."
@@ -652,6 +652,12 @@ msgstr "Mail for notification"
 #: model:res.groups,name:ncm_notifmgmt.group_ncm_manager
 msgid "Manager"
 msgstr "Manager"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: selection:res.notification,state:0
+msgid "N. Sent"
+msgstr "Enviada"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
@@ -711,8 +717,8 @@ msgid "Notification Management Settings"
 msgstr "Configuración de la gestión de notificaciones"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:326
-#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:294
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:322
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:293
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_notification_preview
 #, python-format
 msgid "Notification Preview"
@@ -785,8 +791,8 @@ msgid "Notification Template: rendered main page"
 msgstr "Plantilla de notificación: sección principal representada"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:420
-#: code:addons/ncm_notifmgmt/models/res_partner.py:156
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:416
+#: code:addons/ncm_notifmgmt/models/res_partner.py:154
 #: model:ir.actions.act_window,name:ncm_notifmgmt.res_notification_action
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notification_ids
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notification_ids
@@ -915,7 +921,7 @@ msgid "Selected (y/n)"
 msgstr "Seleccionado (s/n)"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:397
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:393
 #, python-format
 msgid "Selection of partners for notifications"
 msgstr "Selection of partners for notifications"
@@ -929,13 +935,7 @@ msgstr "Enviar"
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 msgid "Send to all"
-msgstr "Send to all"
-
-#. module: ncm_notifmgmt
-#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
-#: selection:res.notification,state:0
-msgid "Sent"
-msgstr "Enviado"
+msgstr "Enviar a todos"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
