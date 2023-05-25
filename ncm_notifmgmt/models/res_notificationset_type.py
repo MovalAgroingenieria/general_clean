@@ -146,7 +146,6 @@ class ResNotificationsetType(models.Model):
 
     number_of_notificationsets = fields.Integer(
         string='Number of notification sets',
-        compute_sudo=True,
         compute='_compute_number_of_notificationsets',)
 
     rendered_main_page = fields.Html(

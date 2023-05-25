@@ -39,12 +39,10 @@ class ResPartner(models.Model):
 
     number_of_notifications = fields.Integer(
         string='Number of notifications',
-        compute_sudo=True,
         compute='_compute_number_of_notifications',)
 
     number_of_selected_notifications = fields.Integer(
         string='Number of selected notifications',
-        compute_sudo=True,
         compute='_compute_number_of_selected_notifications',)
 
     @api.multi
@@ -132,8 +130,8 @@ class ResPartner(models.Model):
     def _compute_number_of_selected_notifications(self):
         for record in self:
             number_of_selected_notifications = 0
-            if record.notification_ids:
-                for notification in record.notification_ids:
+            if record.sudo().notification_ids:
+                for notification in record.sudo().notification_ids:
                     if (notification.selected and
                        notification.state != '01_draft'):
                         number_of_selected_notifications = \

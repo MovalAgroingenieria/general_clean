@@ -10,7 +10,8 @@
                 <button name="action_get_selected_notifications"
                         type="object" class="oe_stat_button"
                         icon="fa-envelope-o"
-                        attrs="{'invisible': ['|',('number_of_selected_notifications','=',0)]}">
+                        attrs="{'invisible': ['|',('number_of_selected_notifications','=',0)]}"
+                        groups="ncm_notifmgmt.group_ncm_user">
                     <div class="o_form_field o_stat_info">
                         <span class="o_stat_value">
                             <field name="number_of_selected_notifications"/>

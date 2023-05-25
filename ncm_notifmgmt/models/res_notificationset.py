@@ -92,12 +92,10 @@ class ResNotificationset(models.Model):
 
     number_of_notifications = fields.Integer(
         string='Number of notifications',
-        compute_sudo=True,
         compute='_compute_number_of_notifications',)
 
     number_of_selected_notifications = fields.Integer(
         string='Number of selected notifications',
-        compute_sudo=True,
         compute='_compute_number_of_selected_notifications',)
 
     rendered_main_page = fields.Html(
@@ -110,12 +108,10 @@ class ResNotificationset(models.Model):
 
     number_of_notifications_sent = fields.Integer(
         string='Number of notifications sent',
-        compute_sudo=True,
         compute='_compute_number_of_notifications_sent',)
 
     number_of_notifications_not_sent = fields.Integer(
         string='Number of notifications not sent',
-        compute_sudo=True,
         compute='_compute_number_of_notifications_not_sent',)
 
     _sql_constraints = [
