@@ -1,0 +1,1272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* ncm_notifmgmt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-25 11:55+0000\n"
+"PO-Revision-Date: 2023-05-25 11:55+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ncm_notifmgmt
+#: model:mail.template,subject:ncm_notifmgmt.notificationset_type_standard_mail_template
+msgid "${object.issue} (${object.name})"
+msgstr "${object.issue} (${object.name})"
+
+#. module: ncm_notifmgmt
+#: model:mail.template,report_name:ncm_notifmgmt.notificationset_type_standard_mail_template
+msgid "${object.name}"
+msgstr "${object.name}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "(delete the excess data and write the text of the notification here)"
+msgstr "(sustituir la tabla anterior por el texto de la notificación)"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company Address 1/2:</b>"
+msgstr "<b>Dir. org. 1/2:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company Address 2/2:</b>"
+msgstr "<b>Dir. org. 2/2:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company Email:</b>"
+msgstr "<b>Email org.:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company Name:</b>"
+msgstr "<b>Organización:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company Phone:</b>"
+msgstr "<b>Tel. org.:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Company VAT:</b>"
+msgstr "<b>NIF org.:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Contact Address 1/2:</b>"
+msgstr "<b>Dir. contacto 1/2:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Contact Address 2/2:</b>"
+msgstr "<b>Dir. contacto 2/2:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Contact Email:</b>"
+msgstr "<b>Email contacto:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Contact Name:</b>"
+msgstr "<b>Contacto:</b>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<b>Contact Phone:</b>"
+msgstr "<b>Tel. contacto:</b>"
+
+#. module: ncm_notifmgmt
+#: model:mail.template,body_html:ncm_notifmgmt.notificationset_type_standard_mail_template
+msgid "<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear Sir/Madam,\n"
+"                        <br><br>\n"
+"                        Please, read the document attached to this email. Thank you.\n"
+"                        <br><br>\n"
+"                        Best regards.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr "<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Estimado/a Sr./Sra.:\n"
+"                        <br><br>\n"
+"                        Nos ponemos en contacto con Ud. para hacerle llegar el documento que figura como adjunto a este correo. Rogamos que, en cuanto le sea posible, abra el archivo PDF y lea su contenido.\n"
+"                        <br><br>\n"
+"                        Muchas gracias, y un cordial saludo.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data (template for clients):</font>"
+msgstr "<font style=\"font-size: 14px;\">Datos básicos de remitente y destinatario (plantilla para clientes):</font>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data </font><font style=\"font-size: 14px;\">(template for all)</font><font style=\"font-size: 14px;\">:</font>"
+msgstr "<font style=\"font-size: 14px;\">Datos básicos de remitente y destinatario </font><font style=\"font-size: 14px;\">(plantilla para todos los contactos)</font><font style=\"font-size: 14px;\">:</font>"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data </font><font style=\"font-size: 14px;\">(template for suppliers)</font><font style=\"font-size: 14px;\">:</font>"
+msgstr "<font style=\"font-size: 14px;\">Datos básicos de remitente y destinatario </font><font style=\"font-size: 14px;\">(plantilla para proveedores)</font><font style=\"font-size: 14px;\">:</font>"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:49
+#, python-format
+msgid "<p><font style=\"font-size: 14px;\">Basic sender and recipient data:</p><table class=\"table table-bordered\"><tbody><tr><td><b>Company Name:</b></td><td>{{ company.notif_name }}</td><td><b>Contact Name:</b></td><td>{{ partner.notif_name }}</td></tr><tr><td><b>Company Address 1/2:</b></td><td>{{ company.notif_address_1 }}</td><td><b>Contact Address 1/2:</b></td><td>{{ partner.notif_address_1 }}</td></tr><tr><td><b>Company Address 2/2:</b></td><td>{{ company.notif_address_2 }}</td><td><b>Contact Address 2/2:</b></td><td>{{ partner.notif_address_2 }}</td></tr><tr><td><b>Company Phone:</b></td><td>{{ company.notif_phone }}</td><td><b>Contact Phone:</b></td><td>{{ partner.notif_phone }}</td></tr><tr><td><b>Company Email:</b></td><td>{{ company.notif_email }}</td><td><b>Contact Email:</b></td><td>{{ partner.notif_email }}</td></tr><tr><td><b>Company VAT:</b></td><td>{{ company.notif_vat }}</td><td></td><td></td></tr></tbody></table><p>(delete the excess data and write the text of the notification here)</p><p>{{ company.city }}, {{ current_day }} {{ current_month }} {{ current_year }}</font></p>"
+msgstr "<p><font style=\"font-size: 14px;\">Datos básicos de remitente y destinatario:</p><table class=\"table table-bordered\"><tbody><tr><td><b>Organización:</b></td><td>{{ company.notif_name }}</td><td><b>Contacto:</b></td><td>{{ partner.notif_name }}</td></tr><tr><td><b>Dir. org. 1/2:</b></td><td>{{ company.notif_address_1 }}</td><td><b>Dir. contacto 1/2:</b></td><td>{{ partner.notif_address_1 }}</td></tr><tr><td><b>Dir. org. 2/2:</b></td><td>{{ company.notif_address_2 }}</td><td><b>Dir. contacto 2/2:</b></td><td>{{ partner.notif_address_2 }}</td></tr><tr><td><b>Tel. org.:</b></td><td>{{ company.notif_phone }}</td><td><b>Tel. contacto:</b></td><td>{{ partner.notif_phone }}</td></tr><tr><td><b>Email org.:</b></td><td>{{ company.notif_email }}</td><td><b>Email contacto:</b></td><td>{{ partner.notif_email }}</td></tr><tr><td><b>NIF org.:</b></td><td>{{ company.notif_vat }}</td><td></td><td></td></tr></tbody></table><p>(sustituir la tabla anterior por el texto de la notificación)</p><p>{{ company.city }}, {{ current_day }} {{ current_month }} {{ current_year }}</font></p>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.view_partner_form
+msgid "<span class=\"o_stat_text\">Notifications</span>"
+msgstr "<span class=\"o_stat_text\">Notificaciones</span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "<span class=\"o_stat_text\">Possible N.</span>"
+msgstr "<span class=\"o_stat_text\">N. posibles</span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "<span class=\"o_stat_text\">Preview</span>"
+msgstr "<span class=\"o_stat_text\">Vista previa</span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+msgid "<span style=\"font-weight:bold\">\n"
+"                                    N O T E S\n"
+"                                    </span>"
+msgstr "<span style=\"font-weight:bold\">\n"
+"                                    N O T A S\n"
+"                                    </span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "<span style=\"font-weight:bold;\">\n"
+"                                N O T E S\n"
+"                                </span>"
+msgstr "<span style=\"font-weight:bold;\">\n"
+"                                N O T A S\n"
+"                                </span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "<span style=\"font-weight:bold;\">\n"
+"                                When creating the notification set, include a contact if...\n"
+"                                </span><br/>"
+msgstr "<span style=\"font-weight:bold;\">\n"
+"                                Al generar un lote, incluir un contacto si...\n"
+"                                </span><br/>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "<span style=\"font-weight:bold;\">\n"
+"                            TEMPLATE: MAIN PAGE\n"
+"                            </span>"
+msgstr "<span style=\"font-weight:bold;\">\n"
+"                            PLANTILLA: SECCIÓN PRINCIPAL\n"
+"                            </span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "<span style=\"font-weight:bold;\">\n"
+"                            TEMPLATE: PARAGRAPH FINAL\n"
+"                            </span>"
+msgstr "<span style=\"font-weight:bold;\">\n"
+"                            PLANTILLA: PÁRRAFO FINAL\n"
+"                            </span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "<span>Include any contact (customers, suppliers and others)</span>"
+msgstr "<span>Incluir cualquier contacto (también usuarios)</span>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "<span>The contact is a customer</span><br/>"
+msgstr "<span>El contacto es un cliente</span><br/>"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "<span>The contact is a supplier</span><br/>"
+msgstr "<span>El contacto es un proveedor</span><br/>"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:303
+#, python-format
+msgid "A notification that is not in a draft state must be selected."
+msgstr "Una notificación que ya no se encuentre en estado borrador necesariamente debe aparecer como notificación seleccionada."
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:414
+#, python-format
+msgid "ATTENTION: The mail could not be sent."
+msgstr "ATENCIÓN: El email no puede ser enviado."
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+msgid "All Contacts"
+msgstr "Todos"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "CONFIRM: Do you want to send the notification to all contacts?"
+msgstr "CONFIRMACIÓN: ¿Confirma que quiere enviar las notificaciones a TODOS los contactos?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+msgid "CONFIRM: Do you want to send this notification?"
+msgstr "CONFIRMACIÓN: ¿Confirma que quiere enviar esta notificación?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_check_mark
+msgid "Check-Mark for selected records"
+msgstr "Icono representativo para los registros seleccionados"
+
+#. module: ncm_notifmgmt
+#. openerp-web
+#: code:addons/ncm_notifmgmt/static/src/xml/ncm_notifmgmt.xml:9
+#, python-format
+msgid "Clear"
+msgstr "Limpiar"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.wizard_preview_notification_view_form
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: ncm_notifmgmt
+#: selection:res.notificationset,state:0
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_notificationsettype_code
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "Code"
+msgstr "Código"
+
+#. module: ncm_notifmgmt
+#: selection:res.notification,company_type:0
+msgid "Company"
+msgstr "Empresa"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_company_type
+msgid "Company Type"
+msgstr "Tipo de Compañía"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Company Type: Company"
+msgstr "Tipo de Compañía: Empresa"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Company Type: Individual"
+msgstr "Tipo de Compañía: Persona"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.menu,name:ncm_notifmgmt.configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: ncm_notifmgmt
+#: model:ir.model,name:ncm_notifmgmt.model_res_notif_config_settings
+msgid "Configuration of ncm_notifmgmt module"
+msgstr "Configuración del módulo ncm_notifmgmt"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.act_window,name:ncm_notifmgmt.res_notif_config_settings_action
+msgid "Configure notification management"
+msgstr "Configurar la gestión de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_partner_id
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_create_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_create_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_create_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_create_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_create_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_create_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_create_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_create_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_creation_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_creation_date
+msgid "Creation Date"
+msgstr "Fecha de creación"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "Date"
+msgstr "Fecha"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_default_notificationset_type_id
+msgid "Default type for the notification sets"
+msgstr "Tipo de lote por defecto para los lotes de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Default type for the sets"
+msgstr "Tipo de lote por defecto"
+
+#. module: ncm_notifmgmt
+#: model:ir.model,name:ncm_notifmgmt.model_wizard_preview_notification
+msgid "Dialog box to show the preview of a notification"
+msgstr "Cuadro de diálogo para mostrar la vista previa de una notificación"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_display_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_display_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_display_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_display_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_document_name
+msgid "Document Name"
+msgstr "Nombre del documento"
+
+#. module: ncm_notifmgmt
+#: selection:res.notification,state:0
+#: selection:res.notificationset,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:210
+#, python-format
+msgid "ERROR IN TEMPLATE"
+msgstr "ERROR EN LA PLANTILLA"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Edit the following two templates to build the notification model that will then be applied to the recipients"
+msgstr "Editar las dos plantillas de abajo para diseñar el formato y contenido de las notificaciones del lote"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "Edit the following two templates to build the notification model that will then be proposed, as default content, to new notification sets"
+msgstr "Editar las dos plantillas de abajo para configurar el modelo de notificación que será propuesto inicialmente a la hora de crear un nuevo lote"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_email
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "Email Template"
+msgstr "Plantilla de correo"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_mailtemplate_id
+msgid "Email Template for notifications"
+msgstr "Plantilla de correo para notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_envelope_mark
+msgid "Envelope-Mark for notification sent"
+msgstr "Icono representativo de una noficiación enviada"
+
+#. module: ncm_notifmgmt
+#: selection:res.notification,state:0
+msgid "Executed"
+msgstr "Ejecutada"
+
+#. module: ncm_notifmgmt
+#: sql_constraint:res.notificationset:0
+msgid "Existing Notification Set."
+msgstr "Ya existe un lote con este mismo código."
+
+#. module: ncm_notifmgmt
+#: sql_constraint:res.notification:0
+msgid "Existing Notification."
+msgstr "Código de notificación repetido."
+
+#. module: ncm_notifmgmt
+#: sql_constraint:res.notificationset.type:0
+msgid "Existing notification set type."
+msgstr "Ya existe un tipo de lote con este mismo código."
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_no_parent_id
+msgid "Fixed message for no related company"
+msgstr "Texto constante para indicar que no hay empresa relacionada"
+
+#. module: ncm_notifmgmt
+#: selection:res.notification,state:0
+msgid "Generated"
+msgstr "Generada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_with_parent_id
+msgid "Has a parent (y/n)"
+msgstr "Vinculado a un contacto padre (s/n)"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_id
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_id
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_id
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_id
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_id
+msgid "ID"
+msgstr "ID"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_include_partner_all
+msgid "Include all partners"
+msgstr "Incluir todos los contactos"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_include_partner_if_customer
+msgid "Include customers"
+msgstr "Incluir clientes"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_include_partner_if_supplier
+msgid "Include suppliers"
+msgstr "Incluir proveedores"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+msgid "Included"
+msgstr "Incluido"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:240
+#, python-format
+msgid "Inclusion options: It is mandatory to choose at least one option."
+msgstr "Opciones de inclusión de contactos: Es obligatorio indicar, al menos, una opción."
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:244
+#, python-format
+msgid "Inclusion options: It is not possible to choose all contacts and other options."
+msgstr "Opciones de inclusión de contactos: Si se elige incluir cualquier contacto, ya no se pueden indicar más opciones."
+
+#. module: ncm_notifmgmt
+#: selection:res.notification,company_type:0
+msgid "Individual"
+msgstr "Persona"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_customer
+msgid "Is a customer"
+msgstr "Es un cliente"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_internal_user
+msgid "Is a internal user"
+msgstr "Es un usuario interno"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_supplier
+msgid "Is a supplier"
+msgstr "Es un proveedor"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_issue
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_issue
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "Issue"
+msgstr "Asunto"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Issue:"
+msgstr "Asunto:"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:229
+#, python-format
+msgid "It is mandatory to enter a code for the new notification set."
+msgstr "Es obligatorio introducir un código para el nuevo lote."
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:277
+#, python-format
+msgid "It is not possible to remove a 'STANDARD' type of notification set."
+msgstr "No es posible eliminar un tipo de lote 'ESTÁNDAR'."
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings___last_update
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification___last_update
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset___last_update
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type___last_update
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_write_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_write_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_write_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_write_uid
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_write_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_write_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_write_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_write_date
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:437
+#, python-format
+msgid "Mail for notification"
+msgstr "Mail for notification"
+
+#. module: ncm_notifmgmt
+#: model:res.groups,name:ncm_notifmgmt.group_ncm_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "N. of notif."
+msgstr "Nº notif."
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+msgid "N. of sets"
+msgstr "Nº lotes"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_name
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+msgid "Name"
+msgstr "Nombre"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_notes
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notes
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_notes
+msgid "Notes"
+msgstr "Notas"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Notif. not sent"
+msgstr "N. no enviadas"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Notif. sent"
+msgstr "N. enviadas"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.report.xml,name:ncm_notifmgmt.action_res_notification_report
+#: model:ir.model,name:ncm_notifmgmt.model_res_notification
+msgid "Notification"
+msgstr "Notificación"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_document
+msgid "Notification (PDF)"
+msgstr "Notificación (PDF)"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.menu,name:ncm_notifmgmt.notifmgmt_menu
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Notification Management"
+msgstr "Gestión de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Notification Management Settings"
+msgstr "Configuración de la gestión de notificaciones"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:326
+#: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:294
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_notification_preview
+#, python-format
+msgid "Notification Preview"
+msgstr "Vista previa"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_sent
+msgid "Notification Sent"
+msgstr "Notificación enviada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Notification Sent: No"
+msgstr "Notificación enviada: No"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Notification Sent: Yes"
+msgstr "Notificación enviada: Sí"
+
+#. module: ncm_notifmgmt
+#: model:ir.model,name:ncm_notifmgmt.model_res_notificationset
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_notificationset_id
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Notification Set"
+msgstr "Lote de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "Notification Set Type:"
+msgstr "Tipo de lote:"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.act_window,name:ncm_notifmgmt.res_notificationset_action
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_notificationset_ids
+#: model:ir.ui.menu,name:ncm_notifmgmt.notificationset_menu
+msgid "Notification Sets"
+msgstr "Lotes de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_final_paragraph
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_final_paragraph
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_final_paragraph
+msgid "Notification Template: final paragraph"
+msgstr "Plantilla de notificación: párrafo final"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_main_page
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_main_page
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_main_page
+msgid "Notification Template: main page"
+msgstr "Plantilla de notificación: sección principal"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_rendered_final_paragraph
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_rendered_final_paragraph
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_rendered_final_paragraph
+msgid "Notification Template: rendered final paragraph"
+msgstr "Plantilla de notificación: párrafo final representado"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_rendered_main_page
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_rendered_main_page
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_rendered_main_page
+msgid "Notification Template: rendered main page"
+msgstr "Plantilla de notificación: sección principal representada"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:420
+#: code:addons/ncm_notifmgmt/models/res_partner.py:156
+#: model:ir.actions.act_window,name:ncm_notifmgmt.res_notification_action
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notification_ids
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notification_ids
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notification_ids
+#: model:ir.ui.menu,name:ncm_notifmgmt.main_menu
+#: model:ir.ui.menu,name:ncm_notifmgmt.notification_menu
+#, python-format
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_email
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_email
+msgid "Notifications: Email"
+msgstr "Notificaciones: Email"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_address_1
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_address_1
+msgid "Notifications: Partner Address (street and number)"
+msgstr "Notificaciones: Dirección del contacto (calle y número)"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_address_2
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_address_2
+msgid "Notifications: Partner Address (zip, city, state and country)"
+msgstr "Notificaciones: Dirección del contacto (código postal, ciudad, provincia y país)"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_name
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_name
+msgid "Notifications: Partner Name"
+msgstr "Notificaciones: Nombre del contacto"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_phone
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_phone
+msgid "Notifications: Phone"
+msgstr "Notificaciones: Teléfono"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_notif_vat
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_notif_vat
+msgid "Notifications: VAT"
+msgstr "Notificaciones: NIF"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_number_of_notificationsets
+msgid "Number of notification sets"
+msgstr "Número de lotes de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_number_of_notifications
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_number_of_notifications
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_number_of_notifications
+msgid "Number of notifications"
+msgstr "Número de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_number_of_notifications_not_sent
+msgid "Number of notifications not sent"
+msgstr "Número de notificaciones no enviadas"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_number_of_notifications_sent
+msgid "Number of notifications sent"
+msgstr "Número de notificaciones enviadas"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_number_of_selected_notifications
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_partner_number_of_selected_notifications
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_users_number_of_selected_notifications
+msgid "Number of selected notifications"
+msgstr "Número de notificaciones seleccionadas"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
+msgid "PDF Template"
+msgstr "Plantilla PDF"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_iractreportxml_id
+msgid "PDF Template for notifications"
+msgstr "Plantilla PDF para notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.menu,name:ncm_notifmgmt.parameters_menu
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: ncm_notifmgmt
+#: model:ir.model,name:ncm_notifmgmt.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.wizard_preview_notification_view_form
+msgid "Preview of the notifications"
+msgstr "Vista previa de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_parent_id
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "Related Company"
+msgstr "Empresa relacionada"
+
+#. module: ncm_notifmgmt
+#. openerp-web
+#: code:addons/ncm_notifmgmt/static/src/xml/ncm_notifmgmt.xml:7
+#: code:addons/ncm_notifmgmt/static/src/xml/ncm_notifmgmt.xml:8
+#, python-format
+msgid "Select"
+msgstr "Seleccionar"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.server,name:ncm_notifmgmt.set_selected_true
+msgid "Select for notification"
+msgstr "Añadir notificación"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_selected
+msgid "Selected (y/n)"
+msgstr "Seleccionado (s/n)"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:397
+#, python-format
+msgid "Selection of partners for notifications"
+msgstr "Selection of partners for notifications"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.server,name:ncm_notifmgmt.multiple_mailing
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+msgid "Send"
+msgstr "Enviar"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Send to all"
+msgstr "Send to all"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: selection:res.notification,state:0
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Sequence for the codes"
+msgstr "Secuencia para códigos"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_sequence_notificationset_code_id
+msgid "Sequence for the codes of notification sets"
+msgstr "Secuencia para los códigos de los lotes de notificaciones"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+msgid "Set"
+msgstr "Lote"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_setted_sequence
+msgid "Setted Sequence (y/n)"
+msgstr "Secuencia configurada (s/n)"
+
+#. module: ncm_notifmgmt
+#: model:res.groups,name:ncm_notifmgmt.group_ncm_settings
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_search
+msgid "Standard"
+msgstr "Estándar"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_is_standard
+msgid "Standard Type (y/n)"
+msgstr "Tipo estándar (s/n)"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_state
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_state
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "State"
+msgstr "Estado"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+msgid "State: Closed"
+msgstr "Estado: Cerrado"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+msgid "State: Draft"
+msgstr "Estado: Borrador"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "State: Executed"
+msgstr "Estado: Ejecutada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "State: Generated"
+msgstr "Estado: Generada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+msgid "State: Sent"
+msgstr "Estado: Enviada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+msgid "State: Validated"
+msgstr "Estado: Validado"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_tree
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_vat
+msgid "TIN"
+msgstr "NIF"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.report_res_notification_external_layout_header
+msgid "TIN:"
+msgstr "NIF:"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,name:ncm_notifmgmt.notificationset_type_all
+msgid "Template for all contacts"
+msgstr "Plantilla para todos los contactos"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,name:ncm_notifmgmt.notificationset_type_customers
+msgid "Template for clients"
+msgstr "Plantilla para clientes"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,name:ncm_notifmgmt.notificationset_type_suppliers
+msgid "Template for suppliers"
+msgstr "Plantilla para proveedores"
+
+#. module: ncm_notifmgmt
+#: sql_constraint:res.notificationset.type:0
+msgid "The notification set type code must be a positive value."
+msgstr "The notification set type code must be a positive value."
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:247
+#, python-format
+msgid "The same"
+msgstr "La misma"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will change to the 'Closed' state. Proceed?"
+msgstr "Si confirma esta acción, el lote pasará al estado 'Cerrado' y ya no se podrá modificar nada ni enviar ninguna notificación. ¿Desea continuar?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will change to the 'Validated' state. Proceed?"
+msgstr "Si confirma esta acción, el lote pasará a estar validado y sus dos plantillas quedarán confirmadas (no se podrán cambiar). ¿Desea continuar?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will return to the 'Draft' state. ALL NOTIFICATIONS WILL BE REGENERATED. Proceed?"
+msgstr "Si confirma esta acción, el lote volverá al estado borrador. Importante: TODAS LAS NOTIFICACIONES DEL LOTE SERÁN ELIMINADAS y regeneradas de nuevo. ¿Desea continuar?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will return to the 'Validated' state. Proceed?"
+msgstr "Si confirma esta acción, el lote volverá al estado 'Validado'. ¿Desea continuar?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
+msgid "Type"
+msgstr "Tipo"
+
+#. module: ncm_notifmgmt
+#: model:ir.model,name:ncm_notifmgmt.model_res_notificationset_type
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notificationset_type_id
+msgid "Type of notification set"
+msgstr "Type of notification set"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.act_window,name:ncm_notifmgmt.res_notificationset_type_action
+#: model:ir.ui.menu,name:ncm_notifmgmt.notificationset_type_menu
+msgid "Types of notification set"
+msgstr "Tipos de lote"
+
+#. module: ncm_notifmgmt
+#: model:ir.actions.server,name:ncm_notifmgmt.set_selected_false
+msgid "Unselect for notification"
+msgstr "Quitar notificación"
+
+#. module: ncm_notifmgmt
+#. openerp-web
+#: code:addons/ncm_notifmgmt/static/src/xml/ncm_notifmgmt.xml:7
+#, python-format
+msgid "Upload your file"
+msgstr "Subir archivo"
+
+#. module: ncm_notifmgmt
+#. openerp-web
+#: code:addons/ncm_notifmgmt/static/src/xml/ncm_notifmgmt.xml:6
+#, python-format
+msgid "Uploading..."
+msgstr "Cargando..."
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_tree
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_form
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
+#: model:res.groups,name:ncm_notifmgmt.group_ncm_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: ncm_notifmgmt
+#: selection:res.notificationset,state:0
+msgid "Validated"
+msgstr "Validado"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:439
+#, python-format
+msgid "for the partner"
+msgstr "for the partner"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:453
+#, python-format
+msgid "send error"
+msgstr "send error"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:441
+#, python-format
+msgid "sent successfully"
+msgstr "sent successfully"
+
+#. module: ncm_notifmgmt
+#: model:res.groups,comment:ncm_notifmgmt.group_ncm_user
+msgid "the user will have access in read-only mode to the notifications and the notification sets."
+msgstr "el usuario tendrá acceso de sólo lectura a las notificaciones y a sus lotes."
+
+#. module: ncm_notifmgmt
+#: model:res.groups,comment:ncm_notifmgmt.group_ncm_manager
+msgid "the user will have access in read-write mode to the notifications and the notification sets."
+msgstr "el usuario tendrá acceso de lectura/escritura a las notificaciones y a sus lotes."
+
+#. module: ncm_notifmgmt
+#: model:res.groups,comment:ncm_notifmgmt.group_ncm_settings
+msgid "the user will have full access to all models and parameters."
+msgstr "el usuario tendrá acceso completo (lectura/escritura) a todos los datos y a los parámetros."
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.city }}, {{ current_day }} {{ current_month }} {{ current_year }}"
+msgstr "{{ company.city }}, {{ current_day }} {{ current_month }} {{ current_year }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_address_1 }}"
+msgstr "{{ company.notif_address_1 }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_address_2 }}"
+msgstr "{{ company.notif_address_2 }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_email }}"
+msgstr "{{ company.notif_email }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_name }}"
+msgstr "{{ company.notif_name }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_phone }}"
+msgstr "{{ company.notif_phone }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ company.notif_vat }}"
+msgstr "{{ company.notif_vat }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ partner.notif_address_1 }}"
+msgstr "{{ partner.notif_address_1 }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ partner.notif_address_2 }}"
+msgstr "{{ partner.notif_address_2 }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ partner.notif_email }}"
+msgstr "{{ partner.notif_email }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ partner.notif_name }}"
+msgstr "{{ partner.notif_name }}"
+
+#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
+msgid "{{ partner.notif_phone }}"
+msgstr "{{ partner.notif_phone }}"
+

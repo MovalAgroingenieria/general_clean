@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_notificationset_view_form" model="ir.ui.view">
+        <field name="name">res.notificationset.view.form</field>
+        <field name="model">res.notificationset</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="id" invisible="1"/>
+                <field name="setted_sequence" invisible="1"/>
+                <field name='number_of_notifications' invisible="1"/>
+                <field name='number_of_selected_notifications' invisible="1"/>
+                <field name='state' invisible="1"/>
+                <header>
+                    <button name="action_go_to_state_02_validated"
+                            type="object" string="Validate"
+                            style="width: 105px;"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','01_draft')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will change to the 'Validated' state. Proceed?"/>
+                    <button name="action_return_to_state_01_draft"
+                            type="object" string="Cancel"
+                            style="width: 105px;"
+                            attrs="{'invisible': [('state','!=','02_validated')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will return to the 'Draft' state. ALL NOTIFICATIONS WILL BE REGENERATED. Proceed?"/>
+                    <button name="action_go_to_state_03_closed"
+                            type="object" string="Close"
+                            style="width: 105px;"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','02_validated')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will change to the 'Closed' state. Proceed?"/>
+                    <button name="action_return_to_state_02_validated"
+                            type="object" string="Cancel"
+                            style="width: 105px;"
+                            attrs="{'invisible': [('state','!=','03_closed')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will return to the 'Validated' state. Proceed?"/>
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="01_draft,02_validated,03_closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_get_notifications"
+                                type="object" class="oe_stat_button"
+                                icon="fa-envelope"
+                                groups="ncm_notifmgmt.group_ncm_manager"
+                                attrs="{'invisible': ['|',('number_of_notifications','=',0),('state','!=','01_draft')]}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="number_of_notifications"/>
+                                </span>
+                                <span class="o_stat_text">Possible N.</span>
+                            </div>
+                        </button>
+                        <button name="action_get_selected_notifications"
+                                type="object" class="oe_stat_button"
+                                icon="fa-envelope-o"
+                                attrs="{'invisible': ['|',('number_of_selected_notifications','=',0),('state','=','01_draft')]}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value">
+                                    <field name="number_of_selected_notifications"/>
+                                </span>
+                                <span class="o_stat_text">Notifications</span>
+                            </div>
+                        </button>
+                        <button name="action_preview_rendered_notification"
+                                type="object" class="oe_stat_button"
+                                icon="fa-search-plus"
+                                groups="ncm_notifmgmt.group_ncm_manager">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Preview</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="issue" string="Issue:"/>
+                        <h1>
+                             <field name="issue"
+                                    style="margin-top:5px"
+                                    attrs="{'readonly': [('state','!=','01_draft')]}"/>
+                        </h1>
+                        <div>
+                            <field name="name"
+                                   style="width:120px"
+                                   placeholder="Code"
+                                   attrs="{'readonly': ['|',('id','>',0),('setted_sequence','=',True)]}"/>
+                        </div>
+                    </div>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="notificationset_type_id" string="Type"
+                                   options="{'no_quick_create':True,
+                                             'no_create_edit':True}"
+                                   attrs="{'readonly': [('id','>',0)]}"
+                                   groups="ncm_notifmgmt.group_ncm_manager"/>
+                            <field name="creation_date" string="Date"
+                                   attrs="{'readonly': [('id','>',0)]}"/>
+                            <field name="number_of_notifications_sent"
+                                   string="Notif. sent"
+                                   attrs="{'invisible': [('state','=','01_draft')]}"/>
+                            <field name="number_of_notifications_not_sent"
+                                   string="Notif. not sent"
+                                   attrs="{'invisible': [('state','=','01_draft')]}"/>
+                            <div name="section_send_all_notifications" colspan="2"
+                                 style="text-align:center;margin-top:20px"
+                                 class="oe_read_only"
+                                 attrs="{'invisible': ['|',('state','=','01_draft'),('state','=','03_closed')]}"
+                                 groups="ncm_notifmgmt.group_ncm_manager">
+                                <button name="action_send_all_notifications"
+                                        type="object" string="Send to all"
+                                        style="width: 130px;"
+                                        class="oe_highlight"
+                                        confirm="CONFIRM: Do you want to send the notification to all contacts?"/>
+                            </div>
+                            <div name="section_info" colspan="2"
+                                 style="text-align:center;margin-top:60px"
+                                 class="oe_edit_only">
+                                <img src="/ncm_notifmgmt/static/img/img_write.png"
+                                     attrs="{'invisible': [('state','!=','01_draft')]}"/>
+                                <div name="section_info_text"
+                                     style="margin-top:20px;margin-left:20px;margin-right:20px"
+                                     attrs="{'invisible': [('state','!=','01_draft')]}">
+                                    <p>Edit the following two templates to build the notification model that will then be applied to the recipients</p>
+                                </div>
+                            </div>
+                        </group>
+                        <group name="master_data_left">
+                            <div name="section_notes" colspan="2"
+                                style="text-align:center;">
+                                <span style="font-weight:bold;">
+                                N O T E S
+                                </span>
+                            </div>
+                            <hr colspan="2"/>
+                            <field name="notes"
+                                   nolabel="1" colspan="2"/>
+                        </group>
+                    </group>
+                    <div name="template_data"
+                         groups="ncm_notifmgmt.group_ncm_manager">
+                        <hr/>
+                        <div name="section_main_page"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: MAIN PAGE
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="main_page" nolabel="1"
+                               attrs="{'readonly': [('state','!=','01_draft')]}"/>
+                        <hr/>
+                        <div name="section_final_paragraph"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: PARAGRAPH FINAL
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="final_paragraph" nolabel="1"
+                              attrs="{'readonly': [('state','!=','01_draft')]}"/>
+                    </div>
+                </sheet>
+                <div name="section_footer"
+                     groups="ncm_notifmgmt.group_ncm_manager">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               groups="ncm_notifmgmt.group_ncm_manager"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_notificationset_view_tree" model="ir.ui.view">
+        <field name="name">res.notificationset.view.tree</field>
+        <field name="model">res.notificationset</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notificationset_view_tree">
+                <field name="name"
+                       string="Code"/>
+                <field name="creation_date"
+                       string="Date"/>
+                <field name="issue"
+                       string="Issue"/>
+                <field name="notificationset_type_id"
+                       string="Type"/>
+                <field name="number_of_selected_notifications"
+                       string="N. of notif."/>
+                <field name="state"
+                       string="State"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notificationset_view_search" model="ir.ui.view">
+        <field name="name">res.notificationset.view.search</field>
+        <field name="model">res.notificationset</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="issue" string="Issue"/>
+                <field name="name" string="Code"/>
+                <filter string="State: Draft"
+                        name="state_draft"
+                        domain="[('state', '=', '01_draft')]"/>
+                <filter string="State: Validated"
+                        name="state_validated"
+                        domain="[('state', '=', '02_validated')]"/>
+                <filter string="State: Closed"
+                        name="state_closed"
+                        domain="[('state', '=', '03_closed')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type"
+                            name="grouped_notificationset_type_id"
+                     context="{'group_by':'notificationset_type_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_notificationset_action"
+            model="ir.actions.act_window">
+        <field name="name">Notification Sets</field>
+        <field name="res_model">res.notificationset</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_notificationset_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_notificationset_view_form')})]"/>
+        <field name="search_view_id" ref="res_notificationset_view_search"/>
+    </record>
+
+    <menuitem id="notificationset_menu"
+              name="Notification Sets"
+              parent="notifmgmt_menu"
+              sequence="1"
+              action="res_notificationset_action"/>
+
+</odoo>

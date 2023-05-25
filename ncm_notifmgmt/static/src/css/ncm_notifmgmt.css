@@ -1,0 +1,226 @@
+/**/
+/* res.notificationset.type */
+/**/
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="notificationsettype_code"] {
+    min-width: 80px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-field="notificationsettype_code"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="name"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="include_partner_if_customer"] {
+    min-width: 120px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-field="include_partner_if_customer"] {
+    text-align: center;
+}
+
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="include_partner_if_supplier"] {
+    min-width: 120px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-field="include_partner_if_supplier"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="include_partner_all"] {
+    min-width: 120px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-field="include_partner_all"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-id="number_of_notificationsets"] {
+    min-width: 80px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_type_view_tree [data-field="number_of_notificationsets"] {
+    text-align: center;
+}
+
+/**/
+/* res.notificationset */
+/**/
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="name"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-field="name"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="creation_date"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-field="creation_date"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="issue"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="notificationset_type_id"] {
+    min-width: 220px;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="number_of_selected_notifications"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-field="number_of_selected_notifications"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-id="state"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notificationset_view_tree [data-field="state"] {
+    text-align: center;
+}
+
+/**/
+/* res.notification (draft state) */
+/**/
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="check_mark"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-field="check_mark"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="partner_id"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="email"] {
+    min-width: 220px;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="customer"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-field="customer"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="supplier"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-field="supplier"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-id="internal_user"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_draft_view_tree [data-field="internal_user"] {
+    text-align: center;
+}
+
+/**/
+/* res.notification (generated) */
+/**/
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="partner_id"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="email"] {
+    min-width: 220px;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="customer"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-field="customer"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="supplier"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-field="supplier"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="internal_user"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-field="internal_user"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-id="state"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_view_tree [data-field="state"] {
+    text-align: center;
+}
+
+/**/
+/* res.notification (generated and all) */
+/**/
+.o_ncm_notifmgmt_notification_view_tree [data-id="creation_date"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="creation_date"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="notificationset_id"] {
+    min-width: 300px;
+    text-align: left;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="notificationset_id"] {
+    text-align: left;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="partner_id"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="customer"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="customer"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="supplier"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="supplier"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="internal_user"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="internal_user"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-id="state"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_view_tree [data-field="state"] {
+    text-align: center;
+}
+
+/**/
+/* res.notification (for a particular partner) */
+/**/
+.o_ncm_notifmgmt_notification_generated_particular_view_tree [data-id="creation_date"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_particular_view_tree [data-field="creation_date"] {
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_particular_view_tree [data-id="notificationset_id"] {
+    width: 100%;
+}
+.o_ncm_notifmgmt_notification_generated_particular_view_tree [data-id="state"] {
+    min-width: 90px;
+    text-align: center;
+}
+.o_ncm_notifmgmt_notification_generated_particular_view_tree [data-field="state"] {
+    text-align: center;
+}

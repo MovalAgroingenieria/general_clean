@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend"
+              name="static_resources_ncm_notifmgmt"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+             href="/ncm_notifmgmt/static/src/css/ncm_notifmgmt.css"/>
+            <script type="text/javascript"
+             src="/ncm_notifmgmt/static/src/js/ncm_notifmgmt.js"></script>
+            <link rel="stylesheet" type="text/less"
+             href="/ncm_notifmgmt/static/src/less/ncm_notifmgmt.less"/>
+        </xpath>
+    </template>
+</odoo>

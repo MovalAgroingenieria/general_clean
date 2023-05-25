@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data noupdate="1">
+    
+        <record id="notificationset_type_standard_mail_template"
+                model="mail.template">
+            <field name="name">Standard Notification</field>
+            <field name="model_id" ref="ncm_notifmgmt.model_res_notification"/>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="subject">${object.issue} (${object.name})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear Sir/Madam,
+                        <br/><br/>
+                        Please, read the document attached to this email. Thank you.
+                        <br/><br/>
+                        Best regards.
+                    </p>
+                </div>
+            </field>
+            <field eval="False" name="auto_delete"/>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="report_template" ref="action_res_notification_report"/>
+            <field name="report_name">${object.name}</field>
+        </record>
+
+    </data>
+
+</odoo>

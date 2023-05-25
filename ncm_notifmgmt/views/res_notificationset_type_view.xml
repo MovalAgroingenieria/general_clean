@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_notificationset_type_view_form" model="ir.ui.view">
+        <field name="name">res.notificationset.type.view.form</field>
+        <field name="model">res.notificationset.type</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <field name="id" invisible="1"/>
+                <field name='number_of_notificationsets' invisible="1"/>
+                <field name='is_standard' invisible="1"/>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_preview_rendered_notification"
+                                type="object" class="oe_stat_button"
+                                icon="fa-search-plus">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Preview</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Notification Set Type:"/>
+                        <h1>
+                             <field name="name"
+                                    style="margin-top:5px"/>
+                        </h1>
+                        <div>
+                            <label for="notificationsettype_code"/>
+                            <field name="notificationsettype_code"
+                                   style="width:100px"
+                                   attrs="{'readonly': [('id','>',0)]}"/>
+                        </div>
+                    </div>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="mailtemplate_id"
+                                   string="Email Template"
+                                   options="{'no_quick_create':True,
+                                             'no_create_edit':True,
+                                             'no_open':True}"/>
+                            <field name="iractreportxml_id"
+                                   string="PDF Template"
+                                   options="{'no_quick_create':True,
+                                             'no_create_edit':True,
+                                             'no_open':True}"/>
+                            <div name="include_partner"
+                                 style="margin-top:16px" colspan="2">
+                                <span style="font-weight:bold;">
+                                When creating the notification set, include a contact if...
+                                </span><br/>
+                                <field name="include_partner_if_customer"
+                                       nolabel="1" style="margin-top:10px"
+                                       attrs="{'readonly': [('is_standard','=',True)]}"/>
+                                <span>The contact is a customer</span><br/>
+                                <field name="include_partner_if_supplier"
+                                       nolabel="1"
+                                       attrs="{'readonly': [('is_standard','=',True)]}"/>
+                                <span>The contact is a supplier</span><br/>
+                                <field name="include_partner_all"
+                                       nolabel="1"
+                                       attrs="{'readonly': [('is_standard','=',True)]}"/>
+                                <span>Include any contact (customers, suppliers and others)</span>
+                            </div>
+                            <div name="section_info" colspan="2"
+                                 style="text-align:center;margin-top:17px"
+                                 class="oe_edit_only">
+                                <img src="/ncm_notifmgmt/static/img/img_write.png"/>
+                                <div name="section_info_text"
+                                     style="margin-top:8px;margin-left:10px;margin-right:10px">
+                                    <p>Edit the following two templates to build the notification model that will then be proposed, as default content, to new notification sets</p>
+                                </div>
+                            </div>
+                        </group>
+                        <group name="master_data_right">
+                            <div name="section_notes" colspan="2"
+                                style="text-align:center;">
+                                <span style="font-weight:bold;">
+                                N O T E S
+                                </span>
+                            </div>
+                            <hr colspan="2"/>
+                            <field name="notes"
+                                   nolabel="1" colspan="2"/>
+                        </group>
+                    </group>
+                    <div name="template_data">
+                        <hr/>
+                        <div name="section_main_page"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: MAIN PAGE
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="main_page" nolabel="1"/>
+                        <hr/>
+                        <div name="section_final_paragraph"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: PARAGRAPH FINAL
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="final_paragraph" nolabel="1"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_notificationset_type_view_tree" model="ir.ui.view">
+        <field name="name">res.notificationset.type.view.tree</field>
+        <field name="model">res.notificationset.type</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notificationset_type_view_tree">
+                <field name="notificationsettype_code"
+                       string="Code"/>
+                <field name="name"
+                       string="Name"/>
+                <field name="include_partner_if_customer"
+                       string="Customers"/>
+                <field name="include_partner_if_supplier"
+                       string="Suppliers"/>
+                <field name="include_partner_all"
+                       string="All Contacts"/>
+                <field name="number_of_notificationsets"
+                       string="N. of sets"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notificationset_type_view_search" model="ir.ui.view">
+        <field name="name">res.notificationset.type.view.search</field>
+        <field name="model">res.notificationset.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name"/>
+                <field name="notificationsettype_code" string="Code"/>
+                <filter string="Customers"
+                        name="include_partner_if_customer"
+                        domain="[('include_partner_if_customer', '=', True)]"/>
+                <filter string="Suppliers"
+                        name="include_partner_if_supplier"
+                        domain="[('include_partner_if_supplier', '=', True)]"/>
+                <separator/>
+                <filter string="Standard"
+                        name="is_standard"
+                        domain="[('is_standard', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_notificationset_type_action"
+            model="ir.actions.act_window">
+        <field name="name">Types of notification set</field>
+        <field name="res_model">res.notificationset.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_notificationset_type_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_notificationset_type_view_form')})]"/>
+        <field name="search_view_id" ref="res_notificationset_type_view_search"/>
+    </record>
+
+    <menuitem id="notificationset_type_menu"
+              name="Types of notification set"
+              parent="configuration_menu"
+              sequence="2"
+              action="res_notificationset_type_action"/>
+
+</odoo>

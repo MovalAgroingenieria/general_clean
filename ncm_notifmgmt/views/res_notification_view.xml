@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_notification_draft_view_tree" model="ir.ui.view">
+        <field name="name">res.notification.draft.view.tree</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notification_draft_view_tree"
+                  create="false" delete="false">
+                <field name="check_mark"
+                       string="Included"/>
+                <field name="partner_id"
+                       string="Contact"/>
+                <field name="email"
+                       string="Email"/>
+                <field name="customer"
+                       string="Customer"/>
+                <field name="supplier"
+                       string="Supplier"/>
+                <field name="internal_user"
+                       string="User"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notification_draft_view_search" model="ir.ui.view">
+        <field name="name">res.notification.draft.view.search</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"
+                       string="Contact"/>
+                <field name="email"
+                       string="Email"/>
+                <filter string="Customer"
+                        name="customer"
+                        domain="[('customer', '=', True)]"/>
+                <filter string="Supplier"
+                        name="supplier"
+                        domain="[('supplier', '=', True)]"/>
+                <filter string="User"
+                        name="internal_user"
+                        domain="[('internal_user', '=', True)]"/>
+                <separator/>
+                <filter string="Company Type: Individual"
+                        name="company_type_person"
+                        domain="[('company_type', '=', 'person')]"/>
+                <filter string="Company Type: Company"
+                        name="company_type_company"
+                        domain="[('company_type', '=', 'company')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Related Company"
+                            name="grouped_parent_id"
+                     context="{'group_by':'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="set_selected_true" model="ir.actions.server">
+        <field name="name">Select for notification</field>
+        <field name="model_id" ref="model_res_notification"/>
+        <field name="state">code</field>
+        <field name="code">
+            if context.get('active_ids'):
+                action = env['res.notification'].browse(context['active_ids']).set_selected(ref_value=True)
+        </field>
+    </record>
+
+    <record id="action_set_selected_true" model="ir.values">
+        <field name="name">Select for notification</field>
+        <field name="model">res.notification</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('set_selected_true'))"/>
+    </record>
+
+    <record id="set_selected_false" model="ir.actions.server">
+        <field name="name">Unselect for notification</field>
+        <field name="model_id" ref="model_res_notification"/>
+        <field name="state">code</field>
+        <field name="code">
+            if context.get('active_ids'):
+                action = env['res.notification'].browse(context['active_ids']).set_selected(ref_value=False)
+        </field>
+    </record>
+
+    <record id="action_set_selected_false" model="ir.values">
+        <field name="name">Unselect for notification</field>
+        <field name="model">res.notification</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('set_selected_false'))"/>
+    </record>
+
+    <record id="res_notification_generated_view_tree" model="ir.ui.view">
+        <field name="name">res.notification.generated.view.tree</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notification_generated_view_tree"
+                  create="false" delete="false">
+                <field name="partner_id"
+                       string="Contact"/>
+                <field name="email"
+                       string="Email"/>
+                <field name="envelope_mark"
+                       string=""/>
+                <field name="customer"
+                       string="Customer"/>
+                <field name="supplier"
+                       string="Supplier"/>
+                <field name="internal_user"
+                       string="User"/>
+                <field name="state"
+                       string="State"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notification_generated_view_search" model="ir.ui.view">
+        <field name="name">res.notification.generated.view.search</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="partner_id"
+                       string="Contact"/>
+                <field name="email"
+                       string="Email"/>
+                <filter string="State: Generated"
+                        name="state_generated"
+                        domain="[('state', '=', '02_generated')]"/>
+                <filter string="State: Sent"
+                        name="state_sent"
+                        domain="[('state', '=', '03_sent')]"/>
+                <filter string="State: Executed"
+                        name="state_executed"
+                        domain="[('state', '=', '04_executed')]"/>
+                <separator/>
+                <filter string="Notification Sent: Yes"
+                        name="sent_yes"
+                        domain="[('sent', '=', True)]"/>
+                <filter string="Notification Sent: No"
+                        name="sent_no"
+                        domain="[('sent', '=', False)]"/>
+                <separator/>
+                <filter string="Customer"
+                        name="customer"
+                        domain="[('customer', '=', True)]"/>
+                <filter string="Supplier"
+                        name="supplier"
+                        domain="[('supplier', '=', True)]"/>
+                <filter string="User"
+                        name="internal_user"
+                        domain="[('internal_user', '=', True)]"/>
+                <separator/>
+                <filter string="Company Type: Individual"
+                        name="company_type_person"
+                        domain="[('company_type', '=', 'person')]"/>
+                <filter string="Company Type: Company"
+                        name="company_type_company"
+                        domain="[('company_type', '=', 'company')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Related Company"
+                            name="grouped_parent_id"
+                     context="{'group_by':'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="multiple_mailing" model="ir.actions.server">
+        <field name="name">Send</field>
+        <field name="model_id" ref="model_res_notification"/>
+        <field name="state">code</field>
+        <field name="code">
+            if context.get('active_ids'):
+                action = env['res.notification'].browse(context['active_ids']).action_send_notifications()
+        </field>
+    </record>
+
+    <record id="action_multiple_mailing" model="ir.values">
+        <field name="name">Send</field>
+        <field name="model">res.notification</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('multiple_mailing'))"/>
+    </record>
+
+    <record id="res_notification_generated_particular_view_tree" model="ir.ui.view">
+        <field name="name">res.notification.particular.view.tree</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notification_generated_particular_view_tree"
+                  create="false" delete="false"
+                  default_order="creation_date desc, notificationset_id desc">
+                <field name="creation_date"
+                       string="Date"/>
+                <field name="notificationset_id"
+                       string="Set"/>
+                <field name="envelope_mark"
+                       string=""/>
+                <field name="state"
+                       string="State"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notification_generated_particular_view_search" model="ir.ui.view">
+        <field name="name">res.notification.particular.view.search</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="issue"
+                       string="Issue"/>
+                <filter string="State: Generated"
+                        name="state_generated"
+                        domain="[('state', '=', '02_generated')]"/>
+                <filter string="State: Sent"
+                        name="state_sent"
+                        domain="[('state', '=', '03_sent')]"/>
+                <filter string="State: Executed"
+                        name="state_executed"
+                        domain="[('state', '=', '04_executed')]"/>
+                <separator/>
+                <filter string="Notification Sent: Yes"
+                        name="sent_yes"
+                        domain="[('sent', '=', True)]"/>
+                <filter string="Notification Sent: No"
+                        name="sent_no"
+                        domain="[('sent', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_notification_view_form" model="ir.ui.view">
+        <field name="name">res.notification.view.form</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <form create="false" delete="false" duplicate="false">
+                <header>
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="01_draft,02_generated,03_sent,04_executed"/>
+                </header>
+                <sheet>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="partner_id"
+                                   string="Contact"
+                                   readonly="1"/>
+                            <field name="email"
+                                   string="Email"
+                                   widget="email"/>
+                            <field name="parent_id"
+                                   string="Related Company"
+                                   attrs="{'invisible': [('parent_id','=',False)]}"
+                                   style="margin-bottom:20px"/>
+                            <field name="no_parent_id"
+                                   string="Related Company"
+                                   attrs="{'invisible': [('parent_id','!=',False)]}"
+                                   style="margin-bottom:20px"/>
+                            <field name="notificationset_id"
+                                   string="Set"
+                                   readonly="1"/>
+                            <field name="creation_date"
+                                   string="Date"/>
+                            <field name="sent"
+                                   string="Sent"
+                                   style="margin-bottom:20px"/>
+                            <field name="customer"
+                                   string="Customer"/>
+                            <field name="supplier"
+                                   string="Supplier"/>
+                            <field name="internal_user"
+                                   string="User"/>
+                            <div name="section_send_notification" colspan="2"
+                                 style="text-align:center;margin-top:20px;margin-left:55px;margin-right:70px"
+                                 class="oe_read_only"
+                                 attrs="{'invisible': ['|',('email', '=', False),'|',('state','=','01_draft'),('state','=','04_executed')]}"
+                                 groups="ncm_notifmgmt.group_ncm_manager">
+                                <button name="action_send_notification"
+                                        type="object" string="Send"
+                                        style="width: 130px;"
+                                        class="oe_highlight"
+                                        confirm="CONFIRM: Do you want to send this notification?"/>
+                            </div>
+                            <div name="section_notes" colspan="2"
+                                 style="margin-top:35px;margin-left:55px;margin-right:70px">
+                                <div name="section_notes_title"
+                                     style="text-align:center;margin-bottom:8px">
+                                    <span style="font-weight:bold">
+                                    N O T E S
+                                    </span>
+                                </div>
+                                <div name="section_notes_content"
+                                     class="panel-body"
+                                     style="min-height:68px;background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto">
+                                    <field name="notes" nolabel="1"
+                                           style="margin-top:5px"/>
+                                </div>
+                            </div>
+                        </group>
+                        <group name="master_data_left">
+                            <field name="document" widget="pdf_viewer"
+                                   nolabel="1" colspan="2"
+                                   readonly="1"/>
+                        </group>
+                    </group>
+                    <div name="template_data"
+                         groups="ncm_notifmgmt.group_ncm_manager"
+                         attrs="{'invisible': [('state','=','04_executed')]}">
+                        <hr/>
+                        <div name="section_main_page"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: MAIN PAGE
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="main_page" nolabel="1"
+                               attrs="{'readonly': [('state','=','04_executed')]}"/>
+                        <hr/>
+                        <div name="section_final_paragraph"
+                            style="text-align:center;">
+                            <span style="font-weight:bold;">
+                            TEMPLATE: PARAGRAPH FINAL
+                            </span>
+                        </div>
+                        <hr/>
+                        <field name="final_paragraph" nolabel="1"
+                              attrs="{'readonly': [('state','=','04_executed')]}"/>
+                    </div>
+                </sheet>
+                <div name="section_footer"
+                     groups="ncm_notifmgmt.group_ncm_manager">
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"
+                               groups="ncm_notifmgmt.group_ncm_manager"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_notification_view_tree" model="ir.ui.view">
+        <field name="name">res.notification.view.tree</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <tree class="o_ncm_notifmgmt_notification_view_tree"
+                  create="false" delete="false"
+                  default_order="creation_date desc, notificationset_id desc, name">
+                <field name="creation_date"
+                       string="Date"/>
+                <field name="notificationset_id"
+                       string="Set"/>
+                <field name="partner_id"
+                       string="Contact"/>
+                <field name="envelope_mark"
+                       string=""/>
+                <field name="customer"
+                       string="Customer"/>
+                <field name="supplier"
+                       string="Supplier"/>
+                <field name="internal_user"
+                       string="User"/>
+                <field name="state"
+                       string="State"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_notification_view_search" model="ir.ui.view">
+        <field name="name">res.notification.view.search</field>
+        <field name="model">res.notification</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="issue"
+                       string="Issue"/>
+                <field name="partner_id"
+                       string="Contact"/>
+                <filter string="State: Generated"
+                        name="state_generated"
+                        domain="[('state', '=', '02_generated')]"/>
+                <filter string="State: Sent"
+                        name="state_sent"
+                        domain="[('state', '=', '03_sent')]"/>
+                <filter string="State: Executed"
+                        name="state_executed"
+                        domain="[('state', '=', '04_executed')]"/>
+                <separator/>
+                <filter string="Notification Sent: Yes"
+                        name="sent_yes"
+                        domain="[('sent', '=', True)]"/>
+                <filter string="Notification Sent: No"
+                        name="sent_no"
+                        domain="[('sent', '=', False)]"/>
+                <separator/>
+                <filter string="Customer"
+                        name="customer"
+                        domain="[('customer', '=', True)]"/>
+                <filter string="Supplier"
+                        name="supplier"
+                        domain="[('supplier', '=', True)]"/>
+                <filter string="User"
+                        name="internal_user"
+                        domain="[('internal_user', '=', True)]"/>
+                <separator/>
+                <filter string="Company Type: Individual"
+                        name="company_type_person"
+                        domain="[('company_type', '=', 'person')]"/>
+                <filter string="Company Type: Company"
+                        name="company_type_company"
+                        domain="[('company_type', '=', 'company')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Notification Set"
+                            name="grouped_notificationset_id"
+                     context="{'group_by':'notificationset_id'}"/>
+                    <filter string="Related Company"
+                            name="grouped_parent_id"
+                     context="{'group_by':'parent_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_notification_action"
+            model="ir.actions.act_window">
+        <field name="name">Notifications</field>
+        <field name="res_model">res.notification</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('res_notification_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('res_notification_view_form')})]"/>
+        <field name="search_view_id" ref="res_notification_view_search"/>
+        <field name="domain">[('state','!=','01_draft')]</field>
+    </record>
+
+    <menuitem id="notification_menu"
+              name="Notifications"
+              parent="notifmgmt_menu"
+              sequence="2"
+              action="res_notification_action"/>
+
+</odoo>

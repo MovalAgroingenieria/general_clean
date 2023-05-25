@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_notificationset_type_settings,access.res.notificationset.type.settings,model_res_notificationset_type,ncm_notifmgmt.group_ncm_settings,1,1,1,1
+access_res_notificationset_type_manager,access.res.notificationset.type.manager,model_res_notificationset_type,ncm_notifmgmt.group_ncm_manager,1,0,0,0
+access_res_notificationset_manager,access.res.notificationset.manager,model_res_notificationset,ncm_notifmgmt.group_ncm_manager,1,1,1,1
+access_res_notificationset_user,access.res.notificationset.user,model_res_notificationset,ncm_notifmgmt.group_ncm_user,1,0,0,0
+access_res_notification_manager,access.res.notification.manager,model_res_notification,ncm_notifmgmt.group_ncm_manager,1,1,1,1
+access_res_notification_user,access.res.notification.user,model_res_notification,ncm_notifmgmt.group_ncm_user,1,0,0,0
