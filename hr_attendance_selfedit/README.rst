@@ -17,8 +17,20 @@ Attendances Self Edit
 
 Description
 ===========
+
 This module modifies the behavior of the parent HR Attendance module, allowing
 employees to create, edit and delete their own attendances.
+
+All attendance that is changed, by a user (Manual Attendance security group) or
+by the administrator (Officer or Administrator security groups), is marked as
+Edited.
+
+Any attendance that is changed by the user (Manual Attendance security group)
+outside the allowed range (30 minutes before or after the current moment)
+requires filling in the Observations field with a comment of more than 6
+characters and is marked as Modified.
+
+Both Edited and Modified attendances can be searched and grouped using filters.
 
 
 Credits
