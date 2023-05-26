@@ -13,7 +13,6 @@
         "hr_attendance",
     ],
     "data": [
-        "security/security.xml",
         "views/assets.xml",
         "views/hr_attendance_view.xml",
         "views/custom_views.xml",

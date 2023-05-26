@@ -19,7 +19,7 @@ Description
 ===========
 
 This module modifies the behavior of the parent HR Attendance module, allowing
-employees to create, edit and delete their own attendances.
+employees to create and edit their own attendances.
 
 All attendance that is changed, by a user (Manual Attendance security group) or
 by the administrator (Officer or Administrator security groups), is marked as

@@ -105,11 +105,12 @@ class HrAttendance(models.Model):
         resp = super(HrAttendance, self).write(vals)
         return resp
 
+    # Only useful when normal users have unlink permission
     def unlink(self):
         for record in self:
             att_admin = record.env.user.has_group(
                 'hr_attendance.group_hr_attendance_manager')
-            if record.attendance_modificated and not att_admin:
+            if record.attendance_edited and not att_admin:
                 raise exceptions.ValidationError(
-                    _('An attendance with observations cannot be deleted.'))
+                    _('An edited attendance cannot be deleted.'))
         return super(HrAttendance, self).unlink()
