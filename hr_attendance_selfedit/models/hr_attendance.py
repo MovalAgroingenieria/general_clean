@@ -37,7 +37,11 @@ class HrAttendance(models.Model):
             att_admin = record.env.user.has_group(
                 'hr_attendance.group_hr_attendance_manager')
             current_att = record.env['hr.attendance'].browse(record._origin.id)
-            # Detect if attendance is modified and edited
+            current_time = datetime.now()
+            time_limit_down = current_time - timedelta(minutes=30)
+            time_limit_up = current_time + timedelta(minutes=30)
+            # Detect if attendance is modified and edited or is
+            # created outside the current time range
             attendance_modificated = False
             if current_att.id and record.check_in:
                 if current_att.check_in != record.check_in:
@@ -45,23 +49,19 @@ class HrAttendance(models.Model):
                 if current_att.check_in != record.check_in and not att_admin:
                     attendance_modificated = True
                     record.attendance_modificated = attendance_modificated
+                    if (record.check_in < time_limit_down or
+                            record.check_in > time_limit_up) and not att_admin:
+                        record.attendance_modificated = True
+                    else:
+                        record.attendance_modificated = False
             if current_att.id and record.check_out and current_att.check_out:
                 if current_att.check_out != record.check_out:
                     current_att.write({'attendance_edited': True})
                 if current_att.check_out != record.check_out and not att_admin:
                     attendance_modificated = True
                     record.attendance_modificated = attendance_modificated
-            # Detect if attendance is created outside the current time range
-            current_time = datetime.now()
-            time_limit_down = current_time - timedelta(minutes=30)
-            time_limit_up = current_time + timedelta(minutes=30)
-            if record.check_in and not attendance_modificated:
-                if (record.check_in < time_limit_down or
-                        record.check_in > time_limit_up) and not att_admin:
-                    record.attendance_modificated = True
-                else:
-                    record.attendance_modificated = False
-            if record.check_out and not attendance_modificated:
+            if (current_att.id and record.check_out and
+                    current_att.check_out != record.check_out):
                 if (record.check_out < time_limit_down or
                         record.check_out > time_limit_up) and not att_admin:
                     record.attendance_modificated = True
@@ -106,11 +106,11 @@ class HrAttendance(models.Model):
         return resp
 
     # Only useful when normal users have unlink permission
-    def unlink(self):
-        for record in self:
-            att_admin = record.env.user.has_group(
-                'hr_attendance.group_hr_attendance_manager')
-            if record.attendance_edited and not att_admin:
-                raise exceptions.ValidationError(
-                    _('An edited attendance cannot be deleted.'))
-        return super(HrAttendance, self).unlink()
+    # def unlink(self):
+    #     for record in self:
+    #         att_admin = record.env.user.has_group(
+    #             'hr_attendance.group_hr_attendance_manager')
+    #         if record.attendance_edited and not att_admin:
+    #             raise exceptions.ValidationError(
+    #                 _('An edited attendance cannot be deleted.'))
+    #     return super(HrAttendance, self).unlink()
