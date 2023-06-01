@@ -14,6 +14,7 @@
     ],
     "data": [
         "data/account_payment_method.xml",
+        "security/ir.model.access.csv",
     ],
     "post_init_hook": "update_bank_journals",
     "installable": True,

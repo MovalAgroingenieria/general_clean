@@ -8,7 +8,6 @@ from odoo.exceptions import UserError
 class PaymentConverterSpain(models.Model):
     _name = 'payment.converter.spain'
     _description = "Payment converter for Spain"
-    _auto = False
 
     @api.model
     def digits_only(self, cc_in):
