@@ -25,7 +25,7 @@
                 </button>
                 <button name="action_get_file_registers"
                        type="object" class="oe_stat_button"
-                       icon="fa-filemgmt-file-register"
+                       icon="fa-filemgmt-files-register"
                        attrs="{'invisible': ['|', ('number_of_file_registers','=', 0),
                                               ('access_file_filemgmt','!=', True)]}">
                    <div class="o_form_field o_stat_info">

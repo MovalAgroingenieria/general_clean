@@ -6,13 +6,13 @@
             <link rel="stylesheet" href="/crm_filemgmt/static/src/css/crm_filemgmt.css"/>
         </xpath>
         <xpath expr="." position="inside">
-            <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css"/>
+            <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/lib/filemgmt_iconset/filemgmt_iconset.css"/>
         </xpath>
     </template>
 
     <template id="minimal_layout_filemgmt" inherit_id="report.minimal_layout" name="Add filemgmt iconset to reports">
         <xpath expr="//head" position="inside">
-            <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css"/>
+            <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/lib/filemgmt_iconset/filemgmt_iconset.css"/>
         </xpath>
     </template>
 

@@ -84,7 +84,7 @@
                     <div name="buttons" class="oe_button_box">
                         <button name="action_get_file_registers"
                                type="object" class="oe_stat_button"
-                               icon="fa-filemgmt-file-register"
+                               icon="fa-filemgmt-files-register"
                                attrs="{'invisible': [('number_of_file_registers','=', 0)]}">
                            <div class="o_form_field o_stat_info">
                                <span class="o_stat_value">
@@ -104,7 +104,7 @@
                         <group name="master_data_fields" colspan="6" col="4">
                             <field name="name"
                                    attrs="{'readonly': [('id', '>', 0)]}"/>
-                            <field name="date_file" 
+                            <field name="date_file"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
                             <field name="subject" colspan="4"
                                    attrs="{'readonly':['|',('state','=','03_closed'),('is_blocked','=',True)]}"/>
@@ -268,7 +268,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            
+
                             <div class="o_kanban_card_content">
                                 <div name="cancelled">
                                      <t t-if="record.is_cancelled.raw_value">
@@ -296,7 +296,7 @@
                                             <span style="float:right; margin-right:3%;" class="fa fa-filemgmt-files o_button_icon"/>
                                         </t>
                                         <t t-if="record.has_registres.raw_value">
-                                            <span style="float:right; margin-right:3%;" class="fa fa-filemgmt-file-register o_button_icon"/>
+                                            <span style="float:right; margin-right:3%;" class="fa fa-filemgmt-files-register o_button_icon"/>
                                         </t>
                                     </div>
                                     <ul>
@@ -389,7 +389,7 @@
         <field name="name">File Partnerlink of partner (tree view)</field>
         <field name="model">res.file.partnerlink</field>
         <field name="arch" type="xml">
-            <tree create="false" edit="false" delete="false" 
+            <tree create="false" edit="false" delete="false"
                   class="o_res_file_partnerlink_of_partner_view_tree">
                 <field name="date_file"/>
                 <field name="category_id"/>
