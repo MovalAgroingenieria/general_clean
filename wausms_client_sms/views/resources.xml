@@ -8,11 +8,13 @@
         </xpath>
     </template>
 
-    <template id="minimal_layout_wausms" inherit_id="report.minimal_layout" name="Add WauSMS iconset to reports">
+    <!--
+    <template id="minimal_layout_wausms" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css" href="/wausms_client_sms/static/lib/wausms_iconset/wausms_iconset.css"/>
         </xpath>
     </template>
+    -->
 
 </odoo>
 

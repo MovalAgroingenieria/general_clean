@@ -8,10 +8,12 @@
         </xpath>
     </template>
 
+    <!--
     <template id="minimal_layout_lettermgmt" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css" href="/crm_lettermgmt/static/lib/lettermgmt_iconset/lettermgmt_iconset.css"/>
         </xpath>
     </template>
+    -->
 
 </odoo>

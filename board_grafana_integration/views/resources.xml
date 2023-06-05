@@ -10,11 +10,13 @@
         </xpath>
     </template>
 
-    <template id="minimal_layout_board_grafana_integration" inherit_id="report.minimal_layout" name="board_grafana_iconset_reports">
+    <!--
+    <template id="minimal_layout_board_grafana_integration" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css" href="/board_grafana_integration/static/lib/grafana_iconset/grafana_iconset.css"/>
         </xpath>
     </template>
+    -->
 
 </odoo>
 

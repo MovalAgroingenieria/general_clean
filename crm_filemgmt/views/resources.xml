@@ -10,10 +10,12 @@
         </xpath>
     </template>
 
-    <template id="minimal_layout_filemgmt" inherit_id="report.minimal_layout" name="Add filemgmt iconset to reports">
+    <!--
+    <template id="minimal_layout_filemgmt" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css" href="/crm_filemgmt/static/lib/filemgmt_iconset/filemgmt_iconset.css"/>
         </xpath>
     </template>
+    -->
 
 </odoo>
