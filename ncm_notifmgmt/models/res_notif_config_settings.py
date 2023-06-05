@@ -18,6 +18,10 @@ class ResNotifConfigSettings(models.TransientModel):
         string='Default type for the notification sets',
         comodel_name='res.notificationset.type',)
 
+    background_process = fields.Boolean(
+        string='Create background notifications',
+        default=False,)
+
     @api.multi
     def set_default_values(self):
         values = self.env['ir.values'].sudo()
@@ -27,3 +31,5 @@ class ResNotifConfigSettings(models.TransientModel):
         values.set_default('res.notif.config.settings',
                            'default_notificationset_type_id',
                            self.default_notificationset_type_id.id)
+        values.set_default('res.notif.config.settings',
+                           'background_process', self.background_process)

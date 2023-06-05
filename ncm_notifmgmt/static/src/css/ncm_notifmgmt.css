@@ -224,3 +224,33 @@
 .o_ncm_notifmgmt_notification_generated_particular_view_tree [data-field="state"] {
     text-align: center;
 }
+
+/**/
+/* Custom classes */
+/**/
+
+.blink_text_black {
+    animation:2s blinker linear infinite;
+    -webkit-animation:2s blinker linear infinite;
+    -moz-animation:2s blinker linear infinite;
+    animation-iteration-count: infinite;
+    color: black;
+}
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
