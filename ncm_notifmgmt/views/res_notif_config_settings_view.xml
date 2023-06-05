@@ -23,6 +23,8 @@
                            string="Default type for the sets"
                            options="{'no_quick_create':True,'no_create_edit':True}"
                            style="width:300px"/>
+                    <field name="background_process"
+                           string="Background Process"/>
                 </group>
             </form>
         </field>

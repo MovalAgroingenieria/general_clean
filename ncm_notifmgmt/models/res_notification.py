@@ -16,6 +16,7 @@ class ResNotification(models.Model):
     _order = 'name'
 
     SIZE_NAME = 60
+    PARTITION_LENGTH = 80
 
     notificationset_id = fields.Many2one(
         string='Notification Set',
@@ -88,11 +89,6 @@ class ResNotification(models.Model):
         store=True,
         index=True,
         compute='_compute_parent_id',)
-
-    with_parent_id = fields.Boolean(
-        string='Has a parent (y/n)',
-        store=True,
-        compute='_compute_with_parent_id',)
 
     no_parent_id = fields.Char(
         string='Fixed message for no related company',
@@ -217,7 +213,7 @@ class ResNotification(models.Model):
                 vat = record.partner_id.vat
             record.vat = vat
 
-    @api.depends('partner_id', 'partner_id.company_type')
+    @api.depends('partner_id')
     def _compute_company_type(self):
         for record in self:
             company_type = ''
@@ -232,14 +228,6 @@ class ResNotification(models.Model):
             if record.partner_id and record.partner_id.parent_id:
                 parent_id = record.partner_id.parent_id
             record.parent_id = parent_id
-
-    @api.depends('parent_id')
-    def _compute_with_parent_id(self):
-        for record in self:
-            with_parent_id = False
-            if record.parent_id:
-                with_parent_id = True
-            record.with_parent_id = with_parent_id
 
     @api.multi
     def _compute_no_parent_id(self):
@@ -379,9 +367,42 @@ class ResNotification(models.Model):
 
     @api.multi
     def set_selected(self, ref_value=True):
-        for record in self:
-            if record.state == '01_draft':
-                record.write({'selected': ref_value})
+        value = 'true'
+        if not ref_value:
+            value = 'false'
+        change_detected = False
+        # Have the first 80 records been selected?
+        change_global = False
+        if len(self) == self.PARTITION_LENGTH:
+            initial_name = self[0].name
+            final_name = self[self.PARTITION_LENGTH - 1].name
+            initial_number = \
+                initial_name[-self[0].notificationset_id.__class__.SIZE_SUFFIX:]
+            final_number = \
+                final_name[-self[0].notificationset_id.__class__.SIZE_SUFFIX:]
+            if (int(initial_number) == 1 and
+               int(final_number) == self.PARTITION_LENGTH):
+                change_global = True
+        # Set the selected field
+        if change_global:
+            change_detected = True
+            self.env.cr.execute(
+                'UPDATE res_notification ' +
+                'SET selected = ' + value + ' ' +
+                'WHERE notificationset_id = ' +
+                str(self[0].notificationset_id.id))
+        else:
+            for record in self:
+                if record.state == '01_draft':
+                    if not change_detected:
+                        change_detected = True
+                    self.env.cr.execute(
+                        'UPDATE res_notification ' +
+                        'SET selected = ' + value + ' ' +
+                        'WHERE id = ' + str(record.id))
+        if change_detected:
+            self.env.cr.commit()
+            self.env.invalidate_all()
 
     @api.multi
     def delete_attachment(self):

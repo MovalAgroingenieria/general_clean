@@ -32,6 +32,20 @@
                        string="Contact"/>
                 <field name="email"
                        string="Email"/>
+                <filter string="Included: Yes"
+                        name="selected_yes"
+                        domain="[('selected', '=', True)]"/>
+                <filter string="Included: No"
+                        name="selected_no"
+                        domain="[('selected', '=', False)]"/>
+                <separator/>
+                <filter string="With email: Yes"
+                        name="email_set"
+                        domain="[('email', '!=', False)]"/>
+                <filter string="With email: No"
+                        name="email_unset"
+                        domain="[('email', '=', False)]"/>
+                <separator/>
                 <filter string="Customer"
                         name="customer"
                         domain="[('customer', '=', True)]"/>

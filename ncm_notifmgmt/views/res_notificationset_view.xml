@@ -11,36 +11,51 @@
                 <field name='number_of_notifications' invisible="1"/>
                 <field name='number_of_selected_notifications' invisible="1"/>
                 <field name='state' invisible="1"/>
+                <field name='inprogress_substate' invisible="1"/>
                 <header>
-                    <button name="action_go_to_state_02_validated"
+                    <button name="action_go_to_state_03_validated"
                             type="object" string="Validate"
                             style="width: 105px;"
                             class="oe_highlight"
-                            attrs="{'invisible': [('state','!=','01_draft')]}"
+                            attrs="{'invisible': ['|',('state','!=','01_draft'),('number_of_selected_notifications','=',0)]}"
                             groups="ncm_notifmgmt.group_ncm_manager"
                             confirm="This action will change to the 'Validated' state. Proceed?"/>
                     <button name="action_return_to_state_01_draft"
                             type="object" string="Cancel"
                             style="width: 105px;"
-                            attrs="{'invisible': [('state','!=','02_validated')]}"
+                            attrs="{'invisible': [('state','!=','03_validated'),('inprogress_substate','!=','03_paused')]}"
                             groups="ncm_notifmgmt.group_ncm_manager"
                             confirm="This action will return to the 'Draft' state. ALL NOTIFICATIONS WILL BE REGENERATED. Proceed?"/>
-                    <button name="action_go_to_state_03_closed"
+                    <button name="action_go_to_state_04_closed"
                             type="object" string="Close"
                             style="width: 105px;"
                             class="oe_highlight"
-                            attrs="{'invisible': [('state','!=','02_validated')]}"
+                            attrs="{'invisible': [('state','!=','03_validated')]}"
                             groups="ncm_notifmgmt.group_ncm_manager"
                             confirm="This action will change to the 'Closed' state. Proceed?"/>
-                    <button name="action_return_to_state_02_validated"
+                    <button name="action_return_to_state_03_validated"
                             type="object" string="Cancel"
                             style="width: 105px;"
-                            attrs="{'invisible': [('state','!=','03_closed')]}"
+                            attrs="{'invisible': [('state','!=','04_closed')]}"
                             groups="ncm_notifmgmt.group_ncm_manager"
                             confirm="This action will return to the 'Validated' state. Proceed?"/>
+                    <button name="action_go_to_substate_03_paused"
+                            type="object" string="Pause"
+                            style="width: 105px;"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('state','!=','02_inprogress'),('inprogress_substate','=','03_paused')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will stop to the creation of the PDF files (later you can continue). Proceed?"/>
+                    <button name="action_resume_pdf_generation"
+                            type="object" string="Resume"
+                            style="width: 105px;"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('state','!=','02_inprogress'),('inprogress_substate','!=','03_paused')]}"
+                            groups="ncm_notifmgmt.group_ncm_manager"
+                            confirm="This action will resume the PDF files creation process. Proceed?"/>
                     <field name="state"
                            widget="statusbar"
-                           statusbar_visible="01_draft,02_validated,03_closed"/>
+                           statusbar_visible="01_draft,02_inprogress,03_validated,04_closed"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -51,7 +66,7 @@
                                 attrs="{'invisible': ['|',('number_of_notifications','=',0),('state','!=','01_draft')]}">
                             <div class="o_form_field o_stat_info">
                                 <span class="o_stat_value">
-                                    <field name="number_of_notifications"/>
+                                    <field name="number_of_selected_notifications_for_draft_state"/>
                                 </span>
                                 <span class="o_stat_text">Possible N.</span>
                             </div>
@@ -59,7 +74,7 @@
                         <button name="action_get_selected_notifications"
                                 type="object" class="oe_stat_button"
                                 icon="fa-envelope-o"
-                                attrs="{'invisible': ['|',('number_of_selected_notifications','=',0),('state','=','01_draft')]}">
+                                attrs="{'invisible': ['|',('number_of_selected_notifications','=',0),'|',('state','=','01_draft'),('state','=','02_inprogress')]}">
                             <div class="o_form_field o_stat_info">
                                 <span class="o_stat_value">
                                     <field name="number_of_selected_notifications"/>
@@ -99,16 +114,24 @@
                                    groups="ncm_notifmgmt.group_ncm_manager"/>
                             <field name="creation_date" string="Date"
                                    attrs="{'readonly': [('id','>',0)]}"/>
+                            <field name="background_process"
+                                   string="In background"
+                                   attrs="{'invisible': [('state','!=','01_draft'),('state','!=','02_inprogress')],
+                                           'readonly': [('state','!=','01_draft')]}"/>
+                            <field name="progress_percentage"
+                                   string="PROGRESS"
+                                   widget="progressbar"
+                                   attrs="{'invisible': [('state','!=','02_inprogress')]}"/>
                             <field name="number_of_notifications_sent"
                                    string="Notif. sent"
-                                   attrs="{'invisible': [('state','=','01_draft')]}"/>
+                                   attrs="{'invisible': ['|',('state','=','01_draft'),('state','=','02_inprogress')]}"/>
                             <field name="number_of_notifications_not_sent"
                                    string="Notif. not sent"
-                                   attrs="{'invisible': [('state','=','01_draft')]}"/>
+                                   attrs="{'invisible': ['|',('state','=','01_draft'),('state','=','02_inprogress')]}"/>
                             <div name="section_send_all_notifications" colspan="2"
                                  style="text-align:center;margin-top:20px"
                                  class="oe_read_only"
-                                 attrs="{'invisible': ['|',('state','=','01_draft'),('state','=','03_closed')]}"
+                                 attrs="{'invisible': [('state','!=','03_validated')]}"
                                  groups="ncm_notifmgmt.group_ncm_manager">
                                 <button name="action_send_all_notifications"
                                         type="object" string="Send to all"
@@ -117,7 +140,7 @@
                                         confirm="Do you want to send the notification to ALL contacts?"/>
                             </div>
                             <div name="section_info" colspan="2"
-                                 style="text-align:center;margin-top:60px"
+                                 style="text-align:center;margin-top:50px"
                                  class="oe_edit_only">
                                 <img src="/ncm_notifmgmt/static/img/img_write.png"
                                      attrs="{'invisible': [('state','!=','01_draft')]}"/>
@@ -127,8 +150,16 @@
                                     <p>Edit the following two templates to build the notification model that will then be applied to the recipients</p>
                                 </div>
                             </div>
+                            <div name="section_progress_info" colspan="2"
+                                 style="text-align:center;margin-top:20px"
+                                 attrs="{'invisible': [('state','!=','02_inprogress')]}">
+                                <div name="section_progress_info_running"
+                                     style="margin-left:20px;margin-right:20px">
+                                    <p class="blink_text_black">See above the progress percentage (to update, press F5)</p>
+                                </div>
+                            </div>
                         </group>
-                        <group name="master_data_left">
+                        <group name="master_data_right">
                             <div name="section_notes" colspan="2"
                                 style="text-align:center;">
                                 <span style="font-weight:bold;">
@@ -207,12 +238,15 @@
                 <filter string="State: Draft"
                         name="state_draft"
                         domain="[('state', '=', '01_draft')]"/>
+                <filter string="State: In progress"
+                        name="state_inprogress"
+                        domain="[('state', '=', '02_inprogress')]"/>
                 <filter string="State: Validated"
                         name="state_validated"
-                        domain="[('state', '=', '02_validated')]"/>
+                        domain="[('state', '=', '03_validated')]"/>
                 <filter string="State: Closed"
                         name="state_closed"
-                        domain="[('state', '=', '03_closed')]"/>
+                        domain="[('state', '=', '04_closed')]"/>
                 <group expand="0" string="Group By">
                     <filter string="Type"
                             name="grouped_notificationset_type_id"

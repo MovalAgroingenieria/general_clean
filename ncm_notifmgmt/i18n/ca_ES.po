@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-25 16:22+0000\n"
-"PO-Revision-Date: 2023-05-25 16:22+0000\n"
+"POT-Creation-Date: 2023-06-05 12:31+0000\n"
+"PO-Revision-Date: 2023-06-05 12:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgstr "<div style=\"margin: 0px; padding: 0px;\">\n"
 "                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
 "                        Estimat Sr./Sra.:\n"
 "                        <br><br>\n"
-"                        Ens posem en contacte amb vosaltres per fer-vos arribar el document que figura com a adjunt a aquest correu. Preguem que, quan us sigui possible, obriu el fitxer PDF i llegiu-ne el contingut.\n"
+"                        Ens posem en contacte amb vosaltres per fer-vos arribar el document que figura com a adjunt a aquest correu.\n"
 "                        <br><br>\n"
 "                        Best regards.\n"
 "                    </p>\n"
@@ -133,19 +133,11 @@ msgstr "<div style=\"margin: 0px; padding: 0px;\">\n"
 "            "
 
 #. module: ncm_notifmgmt
-#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
-msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data (template for clients):</font>"
-msgstr "<font style=\"font-size: 14px;\">Dades bàsiques de remitent i destinatari (plantilla per a clients):</font>"
-
-#. module: ncm_notifmgmt
 #: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_all
-msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data </font><font style=\"font-size: 14px;\">(template for all)</font><font style=\"font-size: 14px;\">:</font>"
-msgstr "<font style=\"font-size: 14px;\">Dades bàsiques de remitent i destinatari </font><font style=\"font-size: 14px;\">(plantilla per a tots els contactes)</font><font style=\"font-size: 14px;\">:</font>"
-
-#. module: ncm_notifmgmt
+#: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_customers
 #: model:res.notificationset.type,main_page:ncm_notifmgmt.notificationset_type_suppliers
-msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data </font><font style=\"font-size: 14px;\">(template for suppliers)</font><font style=\"font-size: 14px;\">:</font>"
-msgstr "<font style=\"font-size: 14px;\">Dades bàsiques de remitent i destinatari </font><font style=\"font-size: 14px;\">(plantilla per a proveïdors)</font><font style=\"font-size: 14px;\">:</font>"
+msgid "<font style=\"font-size: 14px;\">Basic sender and recipient data:</font>"
+msgstr "<font style=\"font-size: 14px;\">Dades bàsiques de remitent i destinatari:</font>"
 
 #. module: ncm_notifmgmt
 #: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:49
@@ -236,13 +228,13 @@ msgid "<span>The contact is a supplier</span><br/>"
 msgstr "<span>El contacte és un proveïdor</span><br/>"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:303
+#: code:addons/ncm_notifmgmt/models/res_notification.py:291
 #, python-format
 msgid "A notification that is not in a draft state must be selected."
 msgstr "Una notificació que ja no estigui en estat esborrany necessàriament ha d'aparèixer com a notificació seleccionada."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:414
+#: code:addons/ncm_notifmgmt/models/res_notification.py:435
 #, python-format
 msgid "ATTENTION: The mail could not be sent."
 msgstr "ATENCIÓ: El correu electrònic no pot ser enviat."
@@ -256,6 +248,11 @@ msgstr "Tots"
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
 msgid "Apply"
 msgstr "Aplicar"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
+msgid "Background Process"
+msgstr "Executar en segon pla"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notif_config_settings_view_form
@@ -347,6 +344,12 @@ msgstr "Configurar la gestió de notificacions"
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_tree
 msgid "Contact"
 msgstr "Contacte"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_background_process
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_background_process
+msgid "Create background notifications"
+msgstr "Generar notificacions en segon pla"
 
 #. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_create_uid
@@ -505,6 +508,13 @@ msgid "Existing notification set type."
 msgstr "Ja hi ha un tipus de lot amb aquest mateix codi."
 
 #. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:556
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:614
+#, python-format
+msgid "FAIL"
+msgstr "FAIL"
+
+#. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_no_parent_id
 msgid "Fixed message for no related company"
 msgstr "Text constant per indicar que no hi ha empresa relacionada"
@@ -523,9 +533,9 @@ msgid "Group By"
 msgstr "Agrupar per"
 
 #. module: ncm_notifmgmt
-#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_with_parent_id
-msgid "Has a parent (y/n)"
-msgstr "Vinculat a un contacte pare (s/n)"
+#: selection:res.notificationset,inprogress_substate:0
+msgid "Halted"
+msgstr "Apagat"
 
 #. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notif_config_settings_id
@@ -535,6 +545,16 @@ msgstr "Vinculat a un contacte pare (s/n)"
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_id
 msgid "ID"
 msgstr "ID"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "In background"
+msgstr "Segon pla"
+
+#. module: ncm_notifmgmt
+#: selection:res.notificationset,state:0
+msgid "In progress"
+msgstr "En execució"
 
 #. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_include_partner_all
@@ -555,6 +575,16 @@ msgstr "Incloure proveïdors"
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_tree
 msgid "Included"
 msgstr "Inclòs"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+msgid "Included: No"
+msgstr "Inclòs: No"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+msgid "Included: Yes"
+msgstr "Inclòs: Sí"
 
 #. module: ncm_notifmgmt
 #: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:239
@@ -604,7 +634,7 @@ msgid "Issue:"
 msgstr "Assumpte:"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:225
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:296
 #, python-format
 msgid "It is mandatory to enter a code for the new notification set."
 msgstr "És obligatori introduir un codi per al nou lot."
@@ -643,7 +673,7 @@ msgid "Last Updated on"
 msgstr "Última actualització el"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:437
+#: code:addons/ncm_notifmgmt/models/res_notification.py:458
 #, python-format
 msgid "Mail for notification"
 msgstr "Mail for notification"
@@ -717,7 +747,7 @@ msgid "Notification Management Settings"
 msgstr "Configuració de la gestió de notificacions"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:322
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:477
 #: code:addons/ncm_notifmgmt/models/res_notificationset_type.py:293
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_wizard_preview_notification_notification_preview
 #, python-format
@@ -791,7 +821,7 @@ msgid "Notification Template: rendered main page"
 msgstr "Plantilla de notificació: secció principal representada"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:416
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:720
 #: code:addons/ncm_notifmgmt/models/res_partner.py:154
 #: model:ir.actions.act_window,name:ncm_notifmgmt.res_notification_action
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notification_ids
@@ -869,6 +899,11 @@ msgid "Number of selected notifications"
 msgstr "Nombre de notificacions seleccionades"
 
 #. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_number_of_selected_notifications_for_draft_state
+msgid "Number of selected notifications (draft state)"
+msgstr "Number of selected notifications (draft state)"
+
+#. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_type_view_form
 msgid "PDF Template"
 msgstr "Plantilla PDF"
@@ -877,6 +912,18 @@ msgstr "Plantilla PDF"
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_type_iractreportxml_id
 msgid "PDF Template for notifications"
 msgstr "Plantilla PDF per a notificacions"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:537
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:595
+#, python-format
+msgid "PDF of notification"
+msgstr "PDF of notification"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "PROGRESS"
+msgstr "PROGRÉS"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.menu,name:ncm_notifmgmt.parameters_menu
@@ -889,9 +936,24 @@ msgid "Partner"
 msgstr "Empresa"
 
 #. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Pause"
+msgstr "Pausar"
+
+#. module: ncm_notifmgmt
+#: selection:res.notificationset,inprogress_substate:0
+msgid "Paused"
+msgstr "En pausa"
+
+#. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.wizard_preview_notification_view_form
 msgid "Preview of the notifications"
 msgstr "Vista prèvia de notificacions"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_progress_percentage
+msgid "Progress Percentage"
+msgstr "Progress Percentage"
 
 #. module: ncm_notifmgmt
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notification_parent_id
@@ -901,6 +963,21 @@ msgstr "Vista prèvia de notificacions"
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
 msgid "Related Company"
 msgstr "Empresa relacionada"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "Resume"
+msgstr "Reprendre"
+
+#. module: ncm_notifmgmt
+#: selection:res.notificationset,inprogress_substate:0
+msgid "Running"
+msgstr "En execució"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "See above the progress percentage (to update, press F5)"
+msgstr "Veure a dalt el % de progrés (per actualitzar, prémer F5)"
 
 #. module: ncm_notifmgmt
 #. openerp-web
@@ -921,10 +998,10 @@ msgid "Selected (y/n)"
 msgstr "Seleccionat (s/n)"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:393
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:697
 #, python-format
 msgid "Selection of partners for notifications"
-msgstr "Selection of partners for notifications"
+msgstr "Selecció de destinataris"
 
 #. module: ncm_notifmgmt
 #: model:ir.actions.server,name:ncm_notifmgmt.multiple_mailing
@@ -1009,6 +1086,11 @@ msgid "State: Generated"
 msgstr "Estat: Generada"
 
 #. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
+msgid "State: In progress"
+msgstr "Estat: En execució"
+
+#. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_particular_view_search
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_generated_view_search
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_view_search
@@ -1019,6 +1101,11 @@ msgstr "Estat: Enviada"
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
 msgid "State: Validated"
 msgstr "Estat: Validat"
+
+#. module: ncm_notifmgmt
+#: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_inprogress_substate
+msgid "Substate for in-progress"
+msgstr "Subestat per a la fase d'execució"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
@@ -1063,12 +1150,24 @@ msgid "Template for suppliers"
 msgstr "Plantilla per a proveïdors"
 
 #. module: ncm_notifmgmt
-#: sql_constraint:res.notificationset.type:0
-msgid "The notification set type code must be a positive value."
-msgstr "The notification set type code must be a positive value."
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:668
+#, python-format
+msgid "The PDF generation process is no longer running."
+msgstr "El procés de generació de fitxers PDF ja no s'està executant."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:247
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:682
+#, python-format
+msgid "The PDF generation process is running again, has finished, or has been cancelled."
+msgstr "El procés de generació de fitxers PDF s'està produint ara mateix o ja s'ha acabat d'executar (o bé s'ha cancel·lat)."
+
+#. module: ncm_notifmgmt
+#: sql_constraint:res.notificationset.type:0
+msgid "The notification set type code must be a positive value."
+msgstr "El codi del tipus de lot ha de ser un valor positiu."
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:235
 #, python-format
 msgid "The same"
 msgstr "La mateixa"
@@ -1081,7 +1180,12 @@ msgstr "Si confirmeu aquesta acció, el lot passarà a l'estat 'Tancat' i ja no 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 msgid "This action will change to the 'Validated' state. Proceed?"
-msgstr "Si confirma aquesta acció, el lot passarà a estar validat i les dues plantilles quedaran confirmades (no es podran canviar). Voleu continuar?"
+msgstr "Si confirma aquesta acció, el lot passarà a estar validat i les dues plantilles quedaran confirmades (ja no es podran canviar). Voleu continuar?"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will resume the PDF files creation process. Proceed?"
+msgstr "Si confirmeu aquesta acció, es reprendrà el procés de validació (generació de fitxers PDF). Voleu continuar?"
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
@@ -1095,6 +1199,17 @@ msgstr "Si confirmeu aquesta acció, el lot tornarà a l'estat Validat. Voleu co
 
 #. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
+msgid "This action will stop to the creation of the PDF files (later you can continue). Proceed?"
+msgstr "Si confirmeu aquesta acció, el procés de validació quedarà en pausa (després serà possible reprendre'l). Voleu continuar?"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:492
+#, python-format
+msgid "This set is already validated, or it is in progress (maybe another user just validated it now)."
+msgstr "Aquest lot ja està validat o s'ha començat a validar (possiblement un altre usuari ha engegat el procés de validació)."
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_search
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_tree
 msgid "Type"
@@ -1104,7 +1219,7 @@ msgstr "Tipus"
 #: model:ir.model,name:ncm_notifmgmt.model_res_notificationset_type
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notificationset_type_id
 msgid "Type of notification set"
-msgstr "Type of notification set"
+msgstr "Tipus de lot de notificacions"
 
 #. module: ncm_notifmgmt
 #: model:ir.actions.act_window,name:ncm_notifmgmt.res_notificationset_type_action
@@ -1154,19 +1269,36 @@ msgid "Validated"
 msgstr "Validat"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:439
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+msgid "With email: No"
+msgstr "Amb email: No"
+
+#. module: ncm_notifmgmt
+#: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notification_draft_view_search
+msgid "With email: Yes"
+msgstr "Amb email: Sí"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:460
 #, python-format
 msgid "for the partner"
 msgstr "for the partner"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:453
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:539
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:597
+#, python-format
+msgid "generated"
+msgstr "generated"
+
+#. module: ncm_notifmgmt
+#: code:addons/ncm_notifmgmt/models/res_notification.py:474
 #, python-format
 msgid "send error"
 msgstr "send error"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notification.py:441
+#: code:addons/ncm_notifmgmt/models/res_notification.py:462
 #, python-format
 msgid "sent successfully"
 msgstr "sent successfully"

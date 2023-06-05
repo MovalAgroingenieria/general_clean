@@ -21,6 +21,7 @@
         "data/mail_template_data.xml",
         "data/res_notificationset_type_data.xml",
         "data/ir_sequence_data.xml",
+        "data/res_notificationset_pdfs_cron.xml",
         "views/resources.xml",
         "views/ncm_notifmgmt_menus.xml",
         "views/res_notif_config_settings_view.xml",
