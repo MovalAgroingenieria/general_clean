@@ -11,7 +11,7 @@
     <template id="minimal_layout_fontawesome_ext" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css"
-                href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
+                href="/fontawesome_ext/static/lib/moval_iconset/moval_report_iconset.css"/>
         </xpath>
         <!--
         <xpath expr="//head" position="inside">
