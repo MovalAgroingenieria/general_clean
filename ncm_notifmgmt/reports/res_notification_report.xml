@@ -40,7 +40,7 @@
     </template>
 
     <template id="report_res_notification_document">
-        <div style="font-size:15;text-align: justify;">
+        <div name="section_rendered_fields">
             <div class="row" name="section_main_page"
                  style="margin-left:10px;margin-right:10px;">
                 <span t-field="o.rendered_main_page"></span>

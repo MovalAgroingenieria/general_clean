@@ -445,20 +445,33 @@ class ResNotificationset(models.Model):
 
     @api.multi
     def write(self, vals):
+        super(ResNotificationset, self).write(vals)
         if len(self) == 1:
             if (self.notification_ids and
                ('main_page' in vals or 'final_paragraph' in vals)):
-                vals_for_notifications = {}
+                sql_statement = 'UPDATE res_notification SET '
                 if 'main_page' in vals:
-                    vals_for_notifications.update(
-                        {'main_page': vals['main_page']})
+                    sql_statement = \
+                        sql_statement + 'main_page = \'' + \
+                        vals['main_page'] + '\', '
                 if 'final_paragraph' in vals:
-                    vals_for_notifications.update(
-                        {'final_paragraph': vals['final_paragraph']})
-                for notification in self.notification_ids:
-                    notification.write(vals_for_notifications)
-        super(ResNotificationset, self).write(vals)
+                    sql_statement = \
+                        sql_statement + 'final_paragraph = \'' + \
+                        vals['final_paragraph'] + '\', '
+                sql_statement = sql_statement[:-2] + \
+                    ' WHERE notificationset_id = ' + str(self.id)
+                self.env.cr.execute(sql_statement)
+                self.env.cr.commit()
+                self.env.invalidate_all()
         return True
+
+    @api.multi
+    def update_notifications(self, main_page, final_paragraph):
+        for current_notification in self:
+            if ((main_page or final_paragraph) and
+               current_notification.notification_ids):
+                # Provisional
+                pass
 
     @api.multi
     def unlink(self):
