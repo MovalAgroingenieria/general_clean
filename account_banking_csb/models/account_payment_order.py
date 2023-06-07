@@ -9,6 +9,16 @@ from odoo.exceptions import UserError
 class AccountPaymentOrder(models.Model):
     _inherit = "account.payment.order"
 
+    # Num of payment: num_of_payment + control digit
+    def _calculate_num_of_payment(self, line, num_of_payment):
+        converter = self.env['payment.converter.spain']
+        id_code = converter.digits_only(line['partner_id'].vat)
+        num_of_payment = str(num_of_payment).zfill(7)
+        base_number = int(id_code + num_of_payment)
+        control_digit = base_number % 7
+        num_of_payment = num_of_payment + str(control_digit)  # No space
+        return num_of_payment
+
     def _search_in_payment_lines(self, line):
         found_payment_line = False
         for payment_line in self.payment_line_ids:
@@ -41,6 +51,10 @@ class AccountPaymentOrder(models.Model):
         text += '001'
         text += today
         text += ' ' * 9
+        if not self.company_partner_bank_id.acc_number:
+            raise UserError(
+                _('Configuration error:\n\n No account bank number found '
+                  'for ordering party: Cabecera ordenante 68'))
         bank_acc_number = self.company_partner_bank_id.acc_number
         bank_acc_number = \
             converter.convert(bank_acc_number.replace(' ', ''), 24)
@@ -60,9 +74,9 @@ class AccountPaymentOrder(models.Model):
         text += converter.convert(line['partner_id'].vat, 12)
         return text
 
-    def _registro_beneficiario_68(self, line):
+    def _registro_beneficiario_68(self, line, num_of_payment):
         converter = self.env['payment.converter.spain']
-        num_of_payment = ' ' * 8  # num_of_payment is not used
+        num_of_payment = self._calculate_num_of_payment(line, num_of_payment)
         text = ''
 
         # Get address
@@ -222,6 +236,7 @@ class AccountPaymentOrder(models.Model):
 
         # Vars
         txt_file = ''
+        num_of_payment = 0
         total_payments = 0
         total_amount = 0.0
 
@@ -230,7 +245,8 @@ class AccountPaymentOrder(models.Model):
 
         # Beneficiary records
         for line in self.payment_ids:
-            txt_file += self._registro_beneficiario_68(line)
+            num_of_payment += 1
+            txt_file += self._registro_beneficiario_68(line, num_of_payment)
             total_payments += 1
             total_amount += abs(line['amount'])
         txt_file += self._total_general_68(total_payments, total_amount)
