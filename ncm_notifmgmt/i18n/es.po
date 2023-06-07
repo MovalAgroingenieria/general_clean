@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-05 12:31+0000\n"
-"PO-Revision-Date: 2023-06-05 12:31+0000\n"
+"POT-Creation-Date: 2023-06-07 10:40+0000\n"
+"PO-Revision-Date: 2023-06-07 10:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -125,7 +125,7 @@ msgstr "<div style=\"margin: 0px; padding: 0px;\">\n"
 "                    <p style=\"font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;margin: 0px; padding: 0px; font-size: 13px;\">\n"
 "                        Estimado/a Sr./Sra.:\n"
 "                        <br><br>\n"
-"                        Nos ponemos en contacto con Ud. para hacerle llegar el documento que figura como adjunto a este correo.\n"
+"                        Nos ponemos en contacto con Ud. para hacerle llegar el documento que figura como adjunto a este correo. Rogamos que, en cuanto le sea posible, abra el archivo PDF y lea su contenido.\n"
 "                        <br><br>\n"
 "                        Muchas gracias, y un cordial saludo.\n"
 "                    </p>\n"
@@ -508,8 +508,8 @@ msgid "Existing notification set type."
 msgstr "Ya existe un tipo de lote con este mismo código."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:556
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:614
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:560
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:618
 #, python-format
 msgid "FAIL"
 msgstr "FAIL"
@@ -715,6 +715,11 @@ msgid "Notes"
 msgstr "Notas"
 
 #. module: ncm_notifmgmt
+#: model:ir.module.category,name:ncm_notifmgmt.module_category
+msgid "Notices and Correspondence"
+msgstr "Notificaciones y correspondencia"
+
+#. module: ncm_notifmgmt
 #: model:ir.ui.view,arch_db:ncm_notifmgmt.res_notificationset_view_form
 msgid "Notif. not sent"
 msgstr "N. no enviadas"
@@ -821,7 +826,7 @@ msgid "Notification Template: rendered main page"
 msgstr "Plantilla de notificación: sección principal representada"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:720
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:724
 #: code:addons/ncm_notifmgmt/models/res_partner.py:154
 #: model:ir.actions.act_window,name:ncm_notifmgmt.res_notification_action
 #: model:ir.model.fields,field_description:ncm_notifmgmt.field_res_notificationset_notification_ids
@@ -914,8 +919,8 @@ msgid "PDF Template for notifications"
 msgstr "Plantilla PDF para notificaciones"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:537
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:595
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:541
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:599
 #, python-format
 msgid "PDF of notification"
 msgstr "PDF of notification"
@@ -998,7 +1003,7 @@ msgid "Selected (y/n)"
 msgstr "Seleccionado (s/n)"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:697
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:701
 #, python-format
 msgid "Selection of partners for notifications"
 msgstr "Selección de destinatarios"
@@ -1150,13 +1155,13 @@ msgid "Template for suppliers"
 msgstr "Plantilla para proveedores"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:668
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:672
 #, python-format
 msgid "The PDF generation process is no longer running."
 msgstr "El proceso de generación de archivos PDF ya no se está ejecutando."
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:682
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:686
 #, python-format
 msgid "The PDF generation process is running again, has finished, or has been cancelled."
 msgstr "El proceso de generación de archivos PDF se está ejecutando ahora mismo o ya se ha terminado de ejecutar (o bien ha sido cancelado)."
@@ -1285,8 +1290,8 @@ msgid "for the partner"
 msgstr "for the partner"
 
 #. module: ncm_notifmgmt
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:539
-#: code:addons/ncm_notifmgmt/models/res_notificationset.py:597
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:543
+#: code:addons/ncm_notifmgmt/models/res_notificationset.py:601
 #, python-format
 msgid "generated"
 msgstr "generated"

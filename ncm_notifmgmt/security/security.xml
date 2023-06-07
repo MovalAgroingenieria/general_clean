@@ -3,26 +3,30 @@
 
     <data noupdate="0">
 
-         <record id="group_ncm_user" model="res.groups">
-             <field name="name">User</field>
-             <field name="category_id" ref="base.module_category_notices_and_correspondence"/>
-             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-             <field name="comment">the user will have access in read-only mode to the notifications and the notification sets.</field>
+         <record id="ncm_notifmgmt.module_category" model="ir.module.category">
+            <field name="name">Notices and Correspondence</field>
          </record>
+
+        <record id="group_ncm_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="ncm_notifmgmt.module_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">the user will have access in read-only mode to the notifications and the notification sets.</field>
+        </record>
                 
-         <record id="group_ncm_manager" model="res.groups">
-             <field name="name">Manager</field>
-             <field name="category_id" ref="base.module_category_notices_and_correspondence"/>
-             <field name="implied_ids" eval="[(4, ref('group_ncm_user'))]"/>
-             <field name="comment">the user will have access in read-write mode to the notifications and the notification sets.</field>
-         </record>
+        <record id="group_ncm_manager" model="res.groups">
+            <field name="name">Manager</field>
+            <field name="category_id" ref="ncm_notifmgmt.module_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_ncm_user'))]"/>
+            <field name="comment">the user will have access in read-write mode to the notifications and the notification sets.</field>
+        </record>
                 
-         <record id="group_ncm_settings" model="res.groups">
-             <field name="name">Settings</field>
-             <field name="category_id" ref="base.module_category_notices_and_correspondence"/>
-             <field name="implied_ids" eval="[(4, ref('group_ncm_manager'))]"/>
-             <field name="comment">the user will have full access to all models and parameters.</field>
-         </record>
+        <record id="group_ncm_settings" model="res.groups">
+            <field name="name">Settings</field>
+            <field name="category_id" ref="ncm_notifmgmt.module_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_ncm_manager'))]"/>
+            <field name="comment">the user will have full access to all models and parameters.</field>
+        </record>
 
         <record model="res.groups" id="base.group_system">
             <field name="implied_ids" eval="[(4, ref('group_ncm_settings'))]"/>
