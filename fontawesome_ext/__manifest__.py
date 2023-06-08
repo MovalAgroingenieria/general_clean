@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2021 Moval Agroingeniería
+# 2023 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -14,8 +14,11 @@
         'web',
     ],
     "data": [
-        'templates/assets.xml',
+        'views/resources.xml',
     ],
+    #'qweb': [
+    #    "static/src/xml/base.xml",
+    #],
     "installable": True,
     "application": False,
 }
