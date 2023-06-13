@@ -14,7 +14,7 @@
         'web',
     ],
     "data": [
-        'templates/assets.xml',
+        'views/resources.xml',
     ],
     "installable": True,
     "application": False,
