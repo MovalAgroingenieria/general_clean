@@ -3,7 +3,7 @@
 
     <menuitem id="main_menu"
               name="Notifications"
-              sequence="5"
+              sequence="-17"
               web_icon="ncm_notifmgmt,static/description/icon.png"
               groups="base.group_user"/>
 
