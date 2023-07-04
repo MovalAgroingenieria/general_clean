@@ -28,13 +28,13 @@
 
     <template id="report_res_notification">
         <t t-call="report.html_container">
-            <t t-call="ncm_notifmgmt.report_res_notification_external_layout">
-                <div class="page">
-                    <t t-foreach="docs" t-as="o">
+            <t t-foreach="docs" t-as="o">
+                <t name="t_call_notification_external_lyout" t-call="ncm_notifmgmt.report_res_notification_external_layout">
+                    <div class="page">
                         <t t-call="ncm_notifmgmt.report_res_notification_document"/>
-                        <p style="page-break-after:always;"></p>
-                    </t>
-                </div>
+                        <p name="page_break_after_document" style="page-break-after:always;"></p>
+                    </div>
+                </t>
             </t>
         </t>
     </template>
