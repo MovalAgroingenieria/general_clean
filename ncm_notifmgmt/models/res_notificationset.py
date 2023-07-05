@@ -380,9 +380,9 @@ class ResNotificationset(models.Model):
         main_page = ''
         final_paragraph = ''
         if self.main_page:
-            main_page = self.main_page
+            main_page = self.main_page.replace("'", "''")
         if self.final_paragraph:
-            final_paragraph = self.final_paragraph
+            final_paragraph = self.final_paragraph.replace("'", "''")
         resp = 'INSERT INTO res_notification (id, create_uid, write_uid, ' + \
             'create_date, write_date, notificationset_id, partner_id, ' + \
             'name, creation_date, issue, customer, supplier, ' + \
@@ -447,17 +447,18 @@ class ResNotificationset(models.Model):
     def write(self, vals):
         super(ResNotificationset, self).write(vals)
         if len(self) == 1:
+            return True
             if (self.notification_ids and
                ('main_page' in vals or 'final_paragraph' in vals)):
                 sql_statement = 'UPDATE res_notification SET '
                 if 'main_page' in vals:
                     sql_statement = \
                         sql_statement + 'main_page = \'' + \
-                        vals['main_page'] + '\', '
+                        vals['main_page'].replace("'", "''") + '\', '
                 if 'final_paragraph' in vals:
                     sql_statement = \
                         sql_statement + 'final_paragraph = \'' + \
-                        vals['final_paragraph'] + '\', '
+                        vals['final_paragraph'].replace("'", "''") + '\', '
                 sql_statement = sql_statement[:-2] + \
                     ' WHERE notificationset_id = ' + str(self.id)
                 self.env.cr.execute(sql_statement)
@@ -570,7 +571,7 @@ class ResNotificationset(models.Model):
                                             'document_name': n.name + '.pdf'
                                             })
                                 except Exception:
-                                    suffix_message = _('FAIL')
+                                    suffix_message = _('FAIL!')
                                 _logger.info(preffix_message + suffix_message)
                         # Remove unselected notifications from set
                         if remove_unselected and (not stop_process):
