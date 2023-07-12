@@ -183,12 +183,19 @@ class AccountInvoice(models.Model):
             if len(self.mandate_id.partner_bank_id.acc_number) < 5:
                 raise ValidationError(_('Mandate account is too small'))
         else:
-            if not self.partner_bank_id:
+            if self.partner_bank_id:
+                partner_bank_id = self.partner_bank_id
+            elif (not self.partner_bank_id and
+                    self.partner_id.bank_account_count > 0):
+                # Get first bank_id from partner and set (TODO: to be checked)
+                partner_bank_id = self.partner_id.bank_ids[0]
+                self.partner_bank_id = self.partner_id.bank_ids[0]
+            else:
                 raise ValidationError(_('Partner bank is missing'))
-            if self.partner_bank_id.bank_id.bic and len(
-                    self.partner_bank_id.bank_id.bic) != 11:
+            if partner_bank_id.bank_id.bic and len(
+                    partner_bank_id.bank_id.bic) != 11:
                 raise ValidationError(_('Selected account BIC must be 11'))
-            if len(self.partner_bank_id.acc_number) < 5:
+            if len(partner_bank_id.acc_number) < 5:
                 raise ValidationError(_('Selected account is too small'))
         if self.state not in self._get_valid_invoice_statuses():
             raise ValidationError(_('You can only create Factura-E files for '
@@ -406,7 +413,7 @@ class AccountInvoice(models.Model):
         self.validate_facturae_fields()
 
         report = self.env.ref('l10n_es_facturae.report_facturae')
-        xml_facturae = report.render_qweb_xml(self.ids, {})[0]
+        xml_facturae = report.render_report(self.ids, report.report_name, {})[0]
         # Quitamos espacios en blanco, para asegurar que el XML final quede
         # totalmente libre de ellos.
         tree = etree.fromstring(
