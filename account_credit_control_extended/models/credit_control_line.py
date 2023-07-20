@@ -33,6 +33,10 @@ class CreditControlLine(models.Model):
         ('not_retired', 'Not retired')],
         string="Return reason")
 
+    description_html = fields.Html(
+        string="Description",
+        translate=True,)
+
     notes = fields.Html(
         string="Notes")
 
