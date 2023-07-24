@@ -1106,7 +1106,30 @@ class AccountPaymentOrder(models.Model):
                             "date (%s) is after expiration date (%s).") % \
                             (entry_num_padded, sett_date, vol_exp_date))
 
-            # 03.- Check that year is previous or equal to current year and
+            # 03.- Check that voluntary_notification_date is previous to
+            #      voluntary expiration date if E or B
+            if self.debt_period != "V":
+                vol_exp_date = datetime.strptime(voluntary_expiration_date,
+                                                 "%d%m%Y").strftime('%Y-%m-%d')
+                vol_not_date = datetime.strptime(voluntary_notification_date,
+                                                 "%d%m%Y").strftime('%Y-%m-%d')
+                if vol_not_date >= vol_exp_date:
+                    if self.error_mode == 'permissive':
+                        error_num += 1
+                        errors += '[' + str(error_num).zfill(4) + '] ' + \
+                            _("The entry number %s has failed, the voluntary "
+                              "notification date (%s) is after or equal to volu"
+                              "ntary expiration date (%s).") % \
+                            (entry_num_padded, vol_not_date,
+                             vol_exp_date) + '\n'
+                    else:
+                        raise ValidationError(_(
+                            "The entry number %s has failed, the voluntary "
+                            "notification date (%s) is after or equal to volu"
+                            "ntary expiration date (%s).") %
+                            (entry_num_padded, vol_not_date, vol_exp_date))
+
+            # 04.- Check that year is previous or equal to current year and
             #      not previous to 1986
             current_year = datetime.today().strftime('%Y')
             if year > current_year:
