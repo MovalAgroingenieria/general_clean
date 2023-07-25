@@ -10,7 +10,7 @@ import pytz
 import random
 import base64
 import hashlib
-import urllib
+import urllib2
 import logging
 
 try:
@@ -327,11 +327,20 @@ class AccountInvoice(models.Model):
                 signing_certificate_cert,
                 etree.QName(etsi, 'IssuerSerial')
             )
+            # cert_issuer_data = []
+            # cert_issuer_data_raw = \
+            #     certificate.get_certificate().to_cryptography().issuer.rdns
+            # for data in cert_issuer_data_raw:
+            #     for attribute in data._attributes:
+            #         value = attribute.value
+            #         cert_issuer_data.append(value)
             etree.SubElement(
                 issuer_serial,
                 etree.QName(xmlsig.constants.DSigNs, 'X509IssuerName')
-            ).text = xmlsig.utils.get_rdns_name(
-                certificate.get_certificate().to_cryptography().issuer.rdns)
+            ).text = ''
+            # u'CN=AC Representación, OU=CERES, O=FNMT-RCM, C=ES'
+            # xmlsig.utils.get_rdns_name(
+            #     certificate.get_certificate().to_cryptography().issuer.rdns)
             etree.SubElement(
                 issuer_serial,
                 etree.QName(xmlsig.constants.DSigNs, 'X509SerialNumber')
@@ -355,7 +364,7 @@ class AccountInvoice(models.Model):
             etree.SubElement(
                 sig_policy_id,
                 etree.QName(etsi, 'Description')
-            ).text = "Política de Firma FacturaE v3.1"
+            ).text = u"Política de Firma FacturaE v3.1"
             sig_policy_hash = etree.SubElement(
                 signature_policy_id,
                 etree.QName(etsi, 'SigPolicyHash')
@@ -368,10 +377,10 @@ class AccountInvoice(models.Model):
                 }
             )
             try:
-                remote = urllib.request.urlopen(sig_policy_identifier)
+                remote = urllib2.urlopen(sig_policy_identifier)
                 hash_value = base64.b64encode(
                     hashlib.sha1(remote.read()).digest())
-            except urllib.request.HTTPError:
+            except urllib2.HTTPError:
                 hash_value = sig_policy_hash_value
             etree.SubElement(
                 sig_policy_hash,
@@ -426,7 +435,7 @@ class AccountInvoice(models.Model):
         # Quitamos espacios en blanco, para asegurar que el XML final quede
         # totalmente libre de ellos.
         tree = etree.fromstring(
-            xml_facturae, etree.XMLParser(remove_blank_text=True))
+            xml_facturae, etree.XMLParser(remove_blank_text=True, encoding='UTF-8'))
         xml_facturae = etree.tostring(tree, xml_declaration=True,
                                       encoding='UTF-8')
         self._validate_facturae(xml_facturae)
