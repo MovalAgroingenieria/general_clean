@@ -185,11 +185,20 @@ class AccountInvoice(models.Model):
         else:
             if self.partner_bank_id:
                 partner_bank_id = self.partner_bank_id
-            elif (not self.partner_bank_id and
-                    self.partner_id.bank_account_count > 0):
-                # Get first bank_id from partner and set (TODO: to be checked)
-                partner_bank_id = self.partner_id.bank_ids[0]
-                self.partner_bank_id = self.partner_id.bank_ids[0]
+            # Get first bank_id from partner and set
+            # elif (not self.partner_bank_id and
+            #         self.partner_id.bank_account_count > 0):
+            #     self.partner_bank_id = partner_bank_id = \
+            #         self.partner_id.bank_ids[0]
+            # Get first bank_id from payment mode journal and set
+            elif self.payment_mode_id.show_bank_account_from_journal:
+                if self.payment_mode_id.bank_account_link == "fixed":
+                    self.partner_bank_id = partner_bank_id = \
+                        self.payment_mode_id.fixed_journal_id.bank_account_id
+                else:
+                    self.partner_bank_id = partner_bank_id = \
+                        self.payment_mode_id.variable_journal_ids.mapped(
+                            "bank_account_id")[0]
             else:
                 raise ValidationError(_('Partner bank is missing'))
             if partner_bank_id.bank_id.bic and len(
