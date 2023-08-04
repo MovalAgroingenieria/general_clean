@@ -327,20 +327,18 @@ class AccountInvoice(models.Model):
                 signing_certificate_cert,
                 etree.QName(etsi, 'IssuerSerial')
             )
-            # cert_issuer_data = []
-            # cert_issuer_data_raw = \
-            #     certificate.get_certificate().to_cryptography().issuer.rdns
-            # for data in cert_issuer_data_raw:
-            #     for attribute in data._attributes:
-            #         value = attribute.value
-            #         cert_issuer_data.append(value)
+            cert_issuer_data = []
+            cert_issuer_data_raw = \
+                certificate.get_certificate().to_cryptography().issuer.rdns
+            for data in cert_issuer_data_raw:
+                for attribute in data._attributes:
+                    value = attribute.value
+                    cert_issuer_data.insert(0, value)
+            cert_issuer = ", ".join(cert_issuer_data)
             etree.SubElement(
                 issuer_serial,
                 etree.QName(xmlsig.constants.DSigNs, 'X509IssuerName')
-            ).text = ''
-            # u'CN=AC Representación, OU=CERES, O=FNMT-RCM, C=ES'
-            # xmlsig.utils.get_rdns_name(
-            #     certificate.get_certificate().to_cryptography().issuer.rdns)
+            ).text = cert_issuer
             etree.SubElement(
                 issuer_serial,
                 etree.QName(xmlsig.constants.DSigNs, 'X509SerialNumber')
