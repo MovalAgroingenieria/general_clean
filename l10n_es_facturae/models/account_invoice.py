@@ -5,6 +5,7 @@
 
 from datetime import datetime
 from lxml import etree
+from cryptography.x509.name import _NAMEOID_TO_NAME
 
 import pytz
 import random
@@ -327,14 +328,18 @@ class AccountInvoice(models.Model):
                 signing_certificate_cert,
                 etree.QName(etsi, 'IssuerSerial')
             )
+            XMLSIG_NAMEOID_TO_NAME = _NAMEOID_TO_NAME.copy()
             cert_issuer_data = []
             cert_issuer_data_raw = \
                 certificate.get_certificate().to_cryptography().issuer.rdns
             for data in cert_issuer_data_raw:
+                dn_data = []
                 for attribute in data._attributes:
-                    value = attribute.value
-                    cert_issuer_data.insert(0, value)
-            cert_issuer = ", ".join(cert_issuer_data)
+                    key = XMLSIG_NAMEOID_TO_NAME.get(
+                        attribute.oid, "OID.%s" % attribute.oid.dotted_string)
+                    dn_data.insert(0, u"{}={}".format(key, attribute.value))
+                cert_issuer_data.insert(0, "+".join(dn_data))
+            cert_issuer = ",".join(cert_issuer_data)
             etree.SubElement(
                 issuer_serial,
                 etree.QName(xmlsig.constants.DSigNs, 'X509IssuerName')
