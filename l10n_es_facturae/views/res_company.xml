@@ -8,12 +8,35 @@
         <field name="arch" type="xml">
             <notebook position="inside" >
                 <page string='Factura-E' name="page_facturae" groups="base.group_erp_manager">
-                    <group>
-                        <field name="facturae_cert" />
-                        <field name="facturae_cert_password"
-                               password="True"
-                               placeholder="Ponga aquí la contraseña del certificado"/>
-                    </group>
+                    <header style="padding-bottom: 4px;">
+                        <button name="facturae_cert_load_password_wizard" type="object" class="oe_highlight"
+                            string="Obtain Keys" style="margin-top: 8px; margin-bottom: 2px;"/>
+                        <button name="facturae_cert_action_active" type="object" class="oe_highlight"
+                            string="To Active" style="margin-top: 8px; margin-bottom: 2px; margin-left:4px;"
+                            attrs="{'invisible': [('facturae_cert_state','!=', 'draft')]}"/>
+                        <button name="facturae_cert_action_draft" type="object" class="oe_link"
+                            string="To Draft" style="margin-top: 8px; margin-bottom: 2px; margin-left:4px;"
+                            attrs="{'invisible': [('facturae_cert_state','!=', 'active')]}"/>
+                        <field name="facturae_cert_state" widget="statusbar" statusbar_visible="draft,active"
+                            style="float: right;"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="facturae_cert_company_id"/>
+                                <field name="facturae_cert_file"/>
+                                <field name="facturae_cert_folder"/>
+                            </group>
+                            <group>
+                                <field name="facturae_cert_date_start"/>
+                                <field name="facturae_cert_date_end"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="facturae_cert_private_key"/>
+                            <field name="facturae_cert_public_key"/>
+                        </group>
+                    </sheet>
                 </page>
             </notebook>
         </field>

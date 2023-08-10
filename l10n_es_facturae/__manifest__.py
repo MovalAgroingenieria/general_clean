@@ -45,7 +45,8 @@
         "wizard/account_invoice_refund_view.xml",
         "wizard/account_invoice_integration_cancel_view.xml",
         "views/account_invoice_integration_view.xml",
-        "views/account_invoice_view.xml"
+        "views/account_invoice_view.xml",
+        "wizard/certificate_password_view.xml",
     ],
     "external_dependencies": {
         "python": [
