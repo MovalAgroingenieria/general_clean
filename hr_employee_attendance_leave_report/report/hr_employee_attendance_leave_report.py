@@ -64,7 +64,8 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
         user_tz_date = re.sub(r"([+-])([0-9]{2}):([0-9]{2})", "\\1\\2\\3",
                               str(date_without_tz.astimezone(local)), 0)
         formatted_user_tz_date = datetime.strptime(str(user_tz_date),
-            "%Y-%m-%d %H:%M:%S%z").strftime("%d/%m/%Y  [%H:%M]")
+                                                   "%Y-%m-%d %H:%M:%S%z")\
+            .strftime("%d/%m/%Y  [%H:%M]")
         return formatted_user_tz_date
 
     def get_difference(self, check_in, check_out):
@@ -112,7 +113,7 @@ class HrEmployeeAttendanceLeaveReport(models.AbstractModel):
                 check_in_show = self.get_formatted_date_show(
                     attendance.check_in)
                 check_in_weekday = self.get_translated_weekday(
-                   attendance.check_in.weekday())
+                    attendance.check_in.weekday())
                 check_in_show = check_in_show + ' - ' + check_in_weekday
                 check_out_show = ''
                 if attendance.check_out:

@@ -81,14 +81,14 @@
                                         <tr>
                                             <th>Check-in</th>
                                             <th>Check-out</th>
-                                            <th class="text-right">Working hours</th>
+                                            <th name="th_working_hours" class="text-right">Working hours</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr t-foreach="attendance_data" t-as="attendance">
                                             <td><span t-esc="attendance['check_in']"/></td>
                                             <td><span t-esc="attendance['check_out']"/></td>
-                                            <td class="text-right"><span t-esc="attendance['difference']"/></td>
+                                            <td name="td_attendance_difference" class="text-right"><span t-esc="attendance['difference']"/></td>
                                         </tr>
                                         <tr class="border-black">
                                             <td><strong>Total working hours</strong></td>
