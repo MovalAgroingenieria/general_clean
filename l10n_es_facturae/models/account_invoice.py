@@ -246,6 +246,12 @@ class AccountInvoice(models.Model):
                 certificate = x509.load_pem_x509_certificate(
                     f.read(), backend=default_backend())
             xmlsig.template.add_reference(
+                sign,
+                xmlsig.constants.TransformSha1,
+                uri="#" + signed_properties_id,
+                uri_type="http://uri.etsi.org/01903#SignedProperties",
+            )
+            xmlsig.template.add_reference(
                 sign, xmlsig.constants.TransformSha1, uri="#" + key_info_id)
             ref = xmlsig.template.add_reference(
                 sign, xmlsig.constants.TransformSha1, name=reference_id, uri=""
