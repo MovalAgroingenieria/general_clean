@@ -58,4 +58,5 @@
         "demo/integration_method.xml"
     ],
     "installable": True,
+    "images": ["static/description/banner.png"],
 }

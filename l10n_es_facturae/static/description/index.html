@@ -1,0 +1,121 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Factura-E</h2>
+        <h3 class="oe_slogan">
+            Creation of invoices to send to <a href="www.face.gob.es" style="color:#875A7B;">FACe</a>
+        </h3>
+    </div>
+    <h4 style="color:#875A7B;">Installation</h4>
+    <b>Python</b>
+    <p>
+        The following Python packages in the indicated version (or higher) must be installed on your
+        system (or Python virtual environment):
+        <table class="table table-bordered table-striped">
+            <th>Library</th>
+            <th>Observations</th>
+            <tr>
+                <td>pycountry==18.5.20</td>
+                <td>It is needed by the module base_iso3166 (dependency on facturae and in the oca_addon community-data-files)
+                    to generate the 3-letter country codes (in any case the version must be >= 16.11.8).</td>
+            </tr>
+            <tr>
+                <td>xmlsig==1.0.1</td>
+                <td>The E-Invoice module itself needs it for the signature.</td>
+            </tr>
+            <tr>
+                <td>cryptography==3.0</td>
+                <td>This version is needed to be able to generate the public certificate and the private key.</td>
+            </tr>
+        </table>
+    </p>
+    <b>Addons</b>
+    <p>
+        Make sure that the following addons are in the addons_path of the odoorc of the instance:
+        <table class="table table-bordered table-striped">
+            <th>Addon</th>
+            <th>Observations</th>
+            <tr>
+                <td>community-data-files</td>
+                <td>The base_iso3166 module is used.</td>
+            </tr>
+            <tr>
+                <td>bank-payment</td>
+                <td>The modules account_payment_partner and account_banking_mandate are used.</td>
+            </tr>
+            <tr>
+                <td>reporting-engine</td>
+                <td>The account_payment_partner and report_xml modules are used to generate the XML.</td>
+            </tr>
+        </table>
+    </p>
+    <b>Electronic signature</b>
+    <p>If you wish to digitally sign invoices, you must have a valid certificate in pfx or p12 format.</p>
+    <br/>
+    <h4 style="color:#875A7B;">Configuration</h4>
+    <b>Pay mode</b>
+    <p>
+        In the payment mode, you must indicate the type (code) of E-Invoice (by default it sets all to 4-Transfer).
+        You must also mark the check Bank account of the journals within the section Show bank account in invoice report.
+    </p>
+    <div class="text-center">
+        <img src="config_paymode.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <b>Partner</b>
+    <p>You have to mark Electronic invoice in the Commercial data/Banks tab of the Member file, this will make the FACe tab appear:</p>
+    <div class="text-center">
+        <img src="config_partner.png" style="max-width:70%;">
+    </div>
+    <p>You have to fill in the FACe data:</p>
+    <div class="text-center">
+        <img src="config_partner2.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <b>Electronic signature</b>
+    <p>
+        In the E-Invoice tab in the company configuration there is a form to upload your certificate (pfx or p12) to Odoo.
+        It is also mandatory to indicate the folder where the files will be generated (the public certificate and the private key):
+    </p>
+    <div class="text-center">
+        <img src="digital_sign1.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <p>
+        After filling in the data, you must obtain the keys (public and private) with the OBTAIN KEYS button.
+        Clicking on this button opens a pop-up window that will ask for the password of the certificate:
+    </p>
+    <div class="text-center">
+        <img src="digital_sign2.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <p>
+        After correctly filling in the password, the certificate/public key and the private key are generated. It is also necessary
+        to activate the certificate to be able to sign the invoices:
+    </p>
+    <div class="text-center">
+        <img src="digital_sign3.png" style="max-width:70%;">
+    </div>
+    <br/>
+
+    <h4 style="color:#875A7B;">Use</h4>
+    <p>
+        Simply select an invoice whose partner has the Electronic invoice check marked and that invoice has a payment
+        method associated with E-Invoice. Click on Action/Create E-Invoice file:
+    </p>
+    <div class="text-center">
+        <img src="facturae_create1.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <p>
+        This will open a wizard where we can sign (default option) or not the invoice:
+    </p>
+    <div class="text-center">
+        <img src="facturae_create2.png" style="max-width:70%;">
+    </div>
+    <br/>
+    <p>
+        We have created a <a href="https://wiki.moval.es/es/Odoo_funcional/Contabilidad/Facturae_2">tutorial</a>
+        for its configuration and use (in Spanish).
+    </p>
+    <br>
+</section>
