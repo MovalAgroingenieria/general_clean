@@ -6,14 +6,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 10:46+0000\n"
-"PO-Revision-Date: 2023-08-23 10:46+0000\n"
+"POT-Creation-Date: 2023-09-04 14:58+0000\n"
+"PO-Revision-Date: 2023-09-04 14:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: album_gallery
+#: model_terms:ir.ui.view,arch_db:album_gallery.album_gallery_form
+msgid ""
+"<span class=\"close-icon\">✕</span>\n"
+"                        <span class=\"btn-text\">Close All Galleries</span>"
+msgstr ""
 
 #. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery__message_needaction
@@ -51,6 +58,11 @@ msgid "Album Name"
 msgstr ""
 
 #. module: album_gallery
+#: model:ir.model,name:album_gallery.model_ir_attachment
+msgid "Attachment"
+msgstr ""
+
+#. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
@@ -67,6 +79,7 @@ msgstr ""
 
 #. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery__display_name
+#: model:ir.model.fields,field_description:album_gallery.field_ir_attachment__display_name
 msgid "Display Name"
 msgstr ""
 
@@ -86,7 +99,13 @@ msgid "Followers (Partners)"
 msgstr ""
 
 #. module: album_gallery
+#: model_terms:ir.ui.view,arch_db:album_gallery.album_gallery_search_view
+msgid "Hidden"
+msgstr ""
+
+#. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery__id
+#: model:ir.model.fields,field_description:album_gallery.field_ir_attachment__id
 msgid "ID"
 msgstr ""
 
@@ -113,6 +132,7 @@ msgstr ""
 
 #. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery____last_update
+#: model:ir.model.fields,field_description:album_gallery.field_ir_attachment____last_update
 msgid "Last Modified on"
 msgstr ""
 
@@ -167,8 +187,18 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: album_gallery
+#: model:ir.model.fields,field_description:album_gallery.field_ir_attachment__video_attachment_id
+msgid "Related Video Attachment"
+msgstr ""
+
+#. module: album_gallery
 #: model:ir.model.fields,field_description:album_gallery.field_album_gallery__sequence
 msgid "Sequence"
+msgstr ""
+
+#. module: album_gallery
+#: model_terms:ir.ui.view,arch_db:album_gallery.album_gallery_search_view
+msgid "Shown"
 msgstr ""
 
 #. module: album_gallery
