@@ -20,6 +20,9 @@
                     <group>
                         <field name="returned_letter"/>
                         <field name="return_reason"/>
+                        <field name="newsletter_publication"/>
+                        <field name="newsletter_publication_date"/>
+                        <field name="notification_tracking_notes"/>
                     </group>
                 </group>
                 <notebook>
@@ -52,6 +55,11 @@
                     domain="[('returned_letter', '=', True)]"/>
                 <filter name="returned_letter_no" string="Returned letter: No"
                     domain="[('returned_letter', '=', No)]"/>
+                <separator />
+                <filter name="newsletter_publication_yes" string="For newsletter publication: Yes"
+                    domain="[('newsletter_publication', '=', True)]"/>
+                <filter name="newsletter_publication_no" string="For newsletter publication: No"
+                    domain="[('newsletter_publication', '=', False)]"/>
                 <separator />
                 <filter name="has_notes_yes" string="Has notes"
                     domain="[('has_notes', '=', True)]"/>
@@ -92,6 +100,9 @@
                 <field name="returned_letter" invisible="1"/>
                 <field name="return_reason" invisible="1"/>
                 <field name="description_html" invisible="1"/>
+                <field name="newsletter_publication" invisible="1"/>
+                <field name="newsletter_publication_date" invisible="1"/>
+                <field name="notification_tracking_notes" invisible="1"/>
             </xpath>
         </field>
     </record>

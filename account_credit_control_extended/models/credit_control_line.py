@@ -45,6 +45,21 @@ class CreditControlLine(models.Model):
         store=True,
         compute="_compute_has_notes")
 
+    newsletter_publication = fields.Boolean(
+        string='Newsletter Publication',
+        index=True,
+        default=False,
+    )
+
+    newsletter_publication_date = fields.Date(
+        string='Newsletter Publication Date',
+        index=True,
+    )
+
+    notification_tracking_notes = fields.Html(
+        string='Notification Tracking Notes',
+    )
+
     @api.multi
     def _compute_invoice_date(self):
         for record in self:

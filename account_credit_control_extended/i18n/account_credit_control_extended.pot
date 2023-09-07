@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-20 09:05+0000\n"
-"PO-Revision-Date: 2023-07-20 09:05+0000\n"
+"POT-Creation-Date: 2023-09-07 09:31+0000\n"
+"PO-Revision-Date: 2023-09-07 09:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,6 +67,16 @@ msgid "Description"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "For newsletter publication: No"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
+msgid "For newsletter publication: Yes"
+msgstr ""
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_has_notes
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
 msgid "Has notes"
@@ -84,6 +94,16 @@ msgid "Invoice date"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication
+msgid "Newsletter Publication"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication_date
+msgid "Newsletter Publication Date"
+msgstr ""
+
+#. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Not retired"
 msgstr ""
@@ -92,6 +112,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_notes
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_form
 msgid "Notes"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_notification_tracking_notes
+msgid "Notification Tracking Notes"
 msgstr ""
 
 #. module: account_credit_control_extended
