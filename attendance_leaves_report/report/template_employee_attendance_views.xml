@@ -50,7 +50,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr t-foreach="attendance_data" t-as="attendance">
+                                        <tr t-foreach="attendance_data" t-as="attendance"
+                                            style="page-break-before: always; page-break-after: auto; page-break-inside: avoid;">
                                             <td><span t-esc="attendance['check_in']"/></td>
                                             <td><span t-esc="attendance['check_out']"/></td>
                                             <td class="text-right"><span t-esc="attendance['difference']"/></td>
@@ -88,7 +89,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr t-foreach="leave_data" t-as="leave">
+                                        <tr t-foreach="leave_data" t-as="leave"
+                                            style="page-break-before: always; page-break-after: auto; page-break-inside: avoid;">
                                             <td><span t-esc="leave['type']"/></td>
                                             <td><span t-esc="leave['from']"/></td>
                                             <td><span t-esc="leave['to']"/></td>
@@ -121,7 +123,8 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr t-foreach="public_holidays_data" t-as="public_holiday">
+                                        <tr t-foreach="public_holidays_data" t-as="public_holiday"
+                                            style="page-break-before: always; page-break-after: auto; page-break-inside: avoid;">
                                             <td><span t-esc="public_holiday['holiday_date']"/></td>
                                             <td><span t-esc="public_holiday['holiday_name']"/></td>
                                         </tr>
