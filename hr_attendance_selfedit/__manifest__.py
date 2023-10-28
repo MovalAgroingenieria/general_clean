@@ -9,14 +9,25 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Human Resources/Attendances",
+    "installable": True,
+    "application": False,
     "depends": [
         "hr_attendance",
     ],
     "data": [
-        "views/assets.xml",
         "views/hr_attendance_view.xml",
         "views/custom_views.xml",
     ],
-    "installable": True,
-    "application": False,
+    "assets": {
+        "web.assets_backend": [
+            "/hr_attendance_selfedit/static/src/css/hr_attendance_selfedit.css",
+        ],
+        "web.assets_frontend": [
+        ],
+        "web.assets_qweb": [
+        ],
+        "web.report_assets_common": [
+        ],
+    },
+
 }

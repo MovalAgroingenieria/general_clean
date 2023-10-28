@@ -9,6 +9,8 @@
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
+    "installable": True,
+    "application": False,
     "depends": [
         "board",
     ],
@@ -17,8 +19,19 @@
         "views/res_config_settings_view.xml",
         "views/board_grafana_view.xml",
         "views/base_menu.xml",
-        "views/resources.xml",
     ],
-    "installable": True,
-    "application": False,
+    "assets": {
+        "web.assets_backend": [
+            "/board_grafana_integration/static/src/css/board_grafana_integration.css",
+            "/board_grafana_integration/static/src/iconset/css/board_grafana_integration_iconset.css",
+        ],
+        "web.assets_frontend": [
+        ],
+        "web.assets_qweb": [
+        ],
+        "web.report_assets_common": [
+            "/board_grafana_integration/static/src/iconset/css/board_grafana_integration_iconset.css"
+        ],
+    },
+
 }
