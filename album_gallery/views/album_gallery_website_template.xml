@@ -35,7 +35,7 @@
                             <div style="background-color: rgba(0, 0, 0, 0.8); padding: 10px; text-align: center; position: relative; cursor: pointer;" t-att-data-target="'toggle-gallery-' + str(i.id)">
                                 <h2 style="font-size: 36px; font-weight: normal; color: white; display: inline-block;">
                                     <b>
-                                        <t t-esc="i.name" />
+                                        <t t-out="i.name" />
                                     </b>
                                 </h2>
                                 <label class="toggle-gallery-label" t-att-for="'toggle-gallery-' + str(i.id)"></label>
