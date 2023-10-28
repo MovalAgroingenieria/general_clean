@@ -36,10 +36,6 @@
             "/crm_filemgmt/static/src/css/crm_filemgmt.css",
             "/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css",
         ],
-        "web.assets_frontend": [
-        ],
-        "web.assets_qweb": [
-        ],
         "web.report_assets_common": [
             "/crm_filemgmt/static/src/iconset/css/filemgmt_iconset.css",
         ],

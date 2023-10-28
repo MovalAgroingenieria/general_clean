@@ -25,10 +25,6 @@
             "/board_grafana_integration/static/src/css/board_grafana_integration.css",
             "/board_grafana_integration/static/src/iconset/css/board_grafana_integration_iconset.css",
         ],
-        "web.assets_frontend": [
-        ],
-        "web.assets_qweb": [
-        ],
         "web.report_assets_common": [
             "/board_grafana_integration/static/src/iconset/css/board_grafana_integration_iconset.css"
         ],

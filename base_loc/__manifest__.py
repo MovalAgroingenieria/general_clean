@@ -23,12 +23,6 @@
         "web.assets_backend": [
             "/base_loc/static/src/css/base_loc.css",
         ],
-        "web.assets_frontend": [
-        ],
-        "web.assets_qweb": [
-        ],
-        "web.report_assets_common": [
-        ],
     },
 
 }

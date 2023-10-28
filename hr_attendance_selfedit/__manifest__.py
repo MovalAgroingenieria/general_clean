@@ -22,12 +22,6 @@
         "web.assets_backend": [
             "/hr_attendance_selfedit/static/src/css/hr_attendance_selfedit.css",
         ],
-        "web.assets_frontend": [
-        ],
-        "web.assets_qweb": [
-        ],
-        "web.report_assets_common": [
-        ],
     },
 
 }
