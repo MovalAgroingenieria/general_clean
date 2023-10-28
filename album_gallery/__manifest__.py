@@ -6,7 +6,7 @@
     'summary': """This module introduces a gallery for your webpage so that
                   you can keep your photos and videos organized within albums, and display
                   them on your website in whatever order you want.""",
-    "version": '14.0.1.1.0',
+    "version": "15.0.1.1.0",
     "category": "Moval General Addons",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",

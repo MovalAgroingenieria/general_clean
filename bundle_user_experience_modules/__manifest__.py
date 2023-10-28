@@ -5,7 +5,7 @@
 {
     "name": "Bundle user experience modules",
     "summary": "Installation of common modules related to the user experience",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Hidden",

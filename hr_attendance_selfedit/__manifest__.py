@@ -5,7 +5,7 @@
 {
     "name": "Attendances Self Edit",
     "summary": "Track and edit employee attendance",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Human Resources/Attendances",

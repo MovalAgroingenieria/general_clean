@@ -5,7 +5,7 @@
 {
     'name': 'Moval Corporate Image',
     'summary': """Decorate instances with moval iconography""",
-    "version": '14.0.1.1.0',
+    "version": "15.0.1.1.0",
     "category": "Moval General Addons",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",

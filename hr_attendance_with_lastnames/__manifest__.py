@@ -5,7 +5,7 @@
 {
     "name": "Attendances Fix for lastnames",
     "summary": "Add fields of lastnames to Employee to avoid errors",
-    "version": "14.0.1.0.0",
+    "version": "15.0.1.0.0",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Human Resources/Attendances",

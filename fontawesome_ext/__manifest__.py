@@ -5,7 +5,7 @@
 {
     'name': 'Fontawesome Extended',
     'summary': """Add custom fontawesome fonts.""",
-    "version": '14.0.1.1.0',
+    "version": "15.0.1.0.0",
     "category": "Moval General Addons",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
@@ -16,9 +16,6 @@
     "data": [
         'views/resources.xml',
     ],
-    #'qweb': [
-    #    "static/src/xml/base.xml",
-    #],
     "installable": True,
     "application": False,
 }

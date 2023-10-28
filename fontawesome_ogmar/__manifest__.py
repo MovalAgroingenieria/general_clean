@@ -5,7 +5,7 @@
 {
     'name': 'Fontawesome OGMAR',
     'summary': """Add custom fontawesome fonts for OGMAR.""",
-    "version": '14.0.1.1.0',
+    "version": "15.0.1.0.0",
     "category": "Moval General Addons",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
