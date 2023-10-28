@@ -9,13 +9,19 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "website": "https://moval.es",
+    "installable": True,
+    "application": False,
     "depends": [
         "website_blog",
     ],
     "data": [
-        "views/website_blog_templates.xml",
         "views/website_blog_posts_loop.xml",
     ],
-    "installable": True,
-    "application": False,
+    "assets": {
+        "web.assets_frontend": [
+            "/website_blog_sharing_links/static/src/scss/website_blog.scss",
+            "/website_blog_sharing_links/static/src/js/website_blog.js",
+        ],
+    },
+
 }

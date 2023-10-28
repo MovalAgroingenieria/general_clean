@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
-    <template id="album_gallery_assets_frontend" name="Gallery Assets" inherit_id="website.assets_frontend">
-        <xpath expr="//link[last()]" position="after">
-            <link type="text/css" rel="stylesheet" href="/album_gallery/static/src/css/lib/lightgallery-bundle.css" />
-            <link type="text/css" rel="stylesheet" href="/album_gallery/static/src/css/custom.css" />
-        </xpath>
-        <xpath expr="." position="inside">
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/lightgallery.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/thumbnail/lg-thumbnail.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/video/lg-video.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/share/lg-share.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/fullscreen/lg-fullscreen.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/zoom/lg-zoom.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/lib/autoplay/lg-autoplay.umd.js"></script>
-            <script type="text/javascript" src="/album_gallery/static/src/js/album_gallery.js"></script>
-        </xpath>
-    </template>
-
     <template id="album_gallery_form" name="Album Gallery Form">
         <t t-call="website.layout">
             <section id="album_gallery_product_style1">
@@ -70,6 +52,5 @@
             </section>
         </t>
     </template>
-
 
 </odoo>

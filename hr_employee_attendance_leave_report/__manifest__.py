@@ -10,6 +10,8 @@
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
+    "installable": True,
+    "application": False,
     "depends": [
         "hr_holidays",
         "hr_holidays_public",
@@ -18,8 +20,11 @@
         "security/ir.model.access.csv",
         "wizard/hr_employee_attendance_leave_wizard_views.xml",
         "report/hr_employee_attendance_leave_report_views.xml",
-        "views/resources.xml",
     ],
-    "installable": True,
-    "application": False,
+    "assets": {
+        "web.assets_common": [
+            "/hr_employee_attendance_leave_report/static/src/scss/style.scss",
+        ],
+    },
+
 }

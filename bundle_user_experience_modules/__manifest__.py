@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2022 Moval Agroingeniería
+# 2023 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 {
@@ -9,6 +9,8 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Hidden",
+    "installable": False,
+    "application": False,
     "depends": [
         "base",
         "disable_odoo_online",
@@ -18,6 +20,5 @@
         "entrivis_kanban_many2many_tags",
     ],
     "data": [],
-    "installable": True,
-    "application": False,
+
 }

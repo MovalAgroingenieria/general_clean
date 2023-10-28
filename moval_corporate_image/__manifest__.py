@@ -10,7 +10,7 @@
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
-    "installable": True,
+    "installable": False,
     "application": False,
     "depends": [
         "web",
@@ -21,7 +21,7 @@
     ],
     "assets": {
         "web.assets_qweb": [
-            "static/src/xml/menu.xml",
+            "/moval_corporate_image/static/src/xml/menu.xml",
         ],
     },
 }
