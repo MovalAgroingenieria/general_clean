@@ -5,83 +5,86 @@
         inherit_id="account_credit_control.report_credit_control_summary_document">
 
         <xpath expr="//t[@t-if='doc.current_policy_level.custom_text_after_details']" position="after">
-            <table class="table table-condensed" id="summary_table_with_variable_fees" style="margin-top:20px;">
-                <thead>
-                    <tr>
-                        <th name="invoice_number">Invoice number</th>
-                        <th name="debt_amount" class="text-right">Debt amount</th>
-                        <th name="variable_fees_amount" class="text-right">
-                            <span>Fees amount (<span t-field="doc.variable_fees_percentage"/> %)</span>
-                        </th>
-                        <th name="total_amount" class="text-right">Total amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <t t-set="total_variable_fees" t-value="0.0"/>
-                    <t t-set="total_of_total_amount_with_fees" t-value="0.0"/>
-                    <t t-set="lines" t-value="doc._get_ordered_lines_variable_fees(doc.credit_control_line_ids.ids)"/>
-                    <tr t-foreach="lines" t-as="l">
-                        <t name="invoice_number" t-if="l.invoice_id">
-                            <td>
-                                <span t-field="l.invoice_id.number"/>
-                                <t t-if="l.invoice_id.name">
-                                    <span t-field="l.invoice_id.name"/>
-                                </t>
-                            </td>
-                        </t>
-                        <t name="invoice_number_2" t-if="not l.invoice_id">
-                            <td>
-                                <span t-field="l.move_line_id.name"/>
-                            </td>
-                        </t>
-                        <td name="debt_amount" class="text-right">
-                            <span t-field="l.balance_due_total"
-                                t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
-                        </td>
-                        <td name="variable_fees_amount" class="text-right">
-                            <span t-field="l.variable_fees"
-                                t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
-                            <t t-set="total_variable_fees" t-value="total_variable_fees + l.variable_fees"/>
-                        </td>
-                        <td name="line_total_amount" class="text-right">
-                            <span t-field="l.total_amount_with_fees"
-                                t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
-                            <t t-set="total_of_total_amount_with_fees"
-                                t-value="total_of_total_amount_with_fees + l.total_amount_with_fees"/>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="row" name="totals_table">
-                <div class="col-xs-4 pull-right">
-                    <table class="table table-condensed" style="margin-bottom:0px;">
+            <t set="print_table" t-value="doc.current_policy_level.print_summary_table"/>
+            <t t-if="print_table">
+                <table class="table table-condensed" id="summary_table_with_variable_fees" style="margin-top:20px;">
+                    <thead>
                         <tr>
-                            <td>
-                                <strong>Total Variable fees</strong>
+                            <th name="invoice_number">Invoice number</th>
+                            <th name="debt_amount" class="text-right">Debt amount</th>
+                            <th name="variable_fees_amount" class="text-right">
+                                <span>Fees amount (<span t-field="doc.variable_fees_percentage"/> %)</span>
+                            </th>
+                            <th name="total_amount" class="text-right">Total amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="total_variable_fees" t-value="0.0"/>
+                        <t t-set="total_of_total_amount_with_fees" t-value="0.0"/>
+                        <t t-set="lines" t-value="doc._get_ordered_lines_variable_fees(doc.credit_control_line_ids.ids)"/>
+                        <tr t-foreach="lines" t-as="l">
+                            <t name="invoice_number" t-if="l.invoice_id">
+                                <td>
+                                    <span t-field="l.invoice_id.number"/>
+                                    <t t-if="l.invoice_id.name">
+                                        <span t-field="l.invoice_id.name"/>
+                                    </t>
+                                </td>
+                            </t>
+                            <t name="invoice_number_2" t-if="not l.invoice_id">
+                                <td>
+                                    <span t-field="l.move_line_id.name"/>
+                                </td>
+                            </t>
+                            <td name="debt_amount" class="text-right">
+                                <span t-field="l.balance_due_total"
+                                    t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
                             </td>
-                            <td class="text-right">
-                                <span t-esc="total_variable_fees"
-                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                            <td name="variable_fees_amount" class="text-right">
+                                <span t-field="l.variable_fees"
+                                    t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
+                                <t t-set="total_variable_fees" t-value="total_variable_fees + l.variable_fees"/>
+                            </td>
+                            <td name="line_total_amount" class="text-right">
+                                <span t-field="l.total_amount_with_fees"
+                                    t-options='{"widget": "monetary", "display_currency": l.currency_id or l.company_id.currency_id}'/>
+                                <t t-set="total_of_total_amount_with_fees"
+                                    t-value="total_of_total_amount_with_fees + l.total_amount_with_fees"/>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <strong>Total due</strong>
-                            </td>
-                            <td class="text-right">
-                                <span t-esc="total_of_total_amount_with_fees"
-                                    t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <t t-if="doc.current_policy_level.custom_text_after_variable_fees">
-                <div class="row mt32 mb32">
-                    <div class="col-xs-12" style="page-break-inside: avoid;">
-                        <p t-field="doc.current_policy_level.custom_text_after_variable_fees"/>
+                    </tbody>
+                </table>
+                <div class="row" name="totals_table">
+                    <div class="col-xs-4 pull-right">
+                        <table class="table table-condensed" style="margin-bottom:0px;">
+                            <tr>
+                                <td>
+                                    <strong>Total Variable fees</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="total_variable_fees"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Total due</strong>
+                                </td>
+                                <td class="text-right">
+                                    <span t-esc="total_of_total_amount_with_fees"
+                                        t-options='{"widget": "monetary", "display_currency": doc.currency_id}'/>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
+                <t t-if="doc.current_policy_level.custom_text_after_variable_fees">
+                    <div class="row mt32 mb32">
+                        <div class="col-xs-12" style="page-break-inside: avoid;">
+                            <p t-field="doc.current_policy_level.custom_text_after_variable_fees"/>
+                        </div>
+                    </div>
+                </t>
             </t>
         </xpath>
 

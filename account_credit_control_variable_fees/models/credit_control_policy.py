@@ -20,6 +20,9 @@ class CreditControlPolicyLevel(models.Model):
         translate=True,
         help="The message to explain the reason for the increase in debt.")
 
+    print_summary_table = fields.Boolean(
+        string="Print summary table")
+
     _sql_constraints = [
         ('valid_variable_fees_percentage',
          'CHECK (variable_fees_percentage >= 0)',
@@ -75,8 +78,17 @@ class CreditCommunication(models.TransientModel):
     variable_fees_percentage = fields.Integer(
         compute="_compute_variable_fees_percentage")
 
+    print_summary_table = fields.Boolean(
+        compute="_compute_print_summary_table")
+
     @api.multi
     def _compute_variable_fees_percentage(self):
         for record in self:
             record.variable_fees_percentage = \
                 record.current_policy_level.variable_fees_percentage
+
+    @api.multi
+    def _compute_print_summary_table(self):
+        for record in self:
+            record.print_summary_table = \
+                record.current_policy_level.print_summary_table

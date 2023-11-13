@@ -8,6 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='dunning_fixed_amount']" position="after">
                 <field name="variable_fees_percentage"/>
+                <field name="print_summary_table"/>
             </xpath>
         </field>
     </record>
