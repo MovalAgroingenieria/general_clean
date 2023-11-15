@@ -35,10 +35,6 @@ class ResPartner(models.Model):
         string='Num. registers',
         compute='_compute_number_of_total_registers')
 
-    access_letter_lettermgmt = fields.Boolean(
-        string='Access to register management',
-        compute='_compute_access_letter_lettermgmt')
-
     @api.multi
     def _compute_number_of_registers_as_recipent(self):
         for record in self:
@@ -90,16 +86,3 @@ class ResPartner(models.Model):
                 for sender_res_letter_id in record.sender_res_letter_ids:
                     total_res_letter_ids.append(sender_res_letter_id.id)
             record.total_res_letter_ids = total_res_letter_ids
-
-    @api.multi
-    def _compute_access_letter_lettermgmt(self):
-        values = self.env['ir.values'].sudo()
-        is_portal_user_allowed = values.get_default(
-            'res.letter.config.settings',
-            'enable_access_res_letter_portal_user')
-        for record in self:
-            access_letter_lettermgmt = False
-            is_portal_user = self.env.user.has_group('base.group_portal')
-            access_letter_lettermgmt = \
-                is_portal_user_allowed or not is_portal_user
-            record.access_letter_lettermgmt = access_letter_lettermgmt

@@ -5,7 +5,7 @@
      © 2009 Parthiv Patel, Tech Receptives
      2020 Moval Agroingeniería
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-     
+
 <odoo>
   <data>
 
@@ -136,10 +136,10 @@
                   </group>
                 </group>
               </page>
-              <page string="Thread" groups="crm_lettermgmt.group_letter_thread">
+              <page string="Thread" groups="crm_lettermgmt.group_crm_lettermgmt_manager">
                 <field name="child_line" colspan="4" nolabel="1" readonly="True"/>
               </page>
-              <page string="Reassignment" groups="crm_lettermgmt.group_letter_reasignment">
+              <page string="Reassignment" groups="crm_lettermgmt.group_crm_lettermgmt_manager">
                 <field name="reassignment_ids" nolabel="1"/>
               </page>
               <page name="attachments" string="Attachments">
@@ -227,7 +227,7 @@
               name="Letter Management"
               sequence="-16"
               web_icon="crm_lettermgmt,static/description/icon.png"
-              groups="base.group_user"/>
+              groups="crm_lettermgmt.group_crm_lettermgmt_user"/>
 
     <menuitem id="res_letter_menu"
               name="Letters"

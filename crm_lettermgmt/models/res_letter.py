@@ -136,20 +136,20 @@ class ResLetter(models.Model):
     parent_id = fields.Many2one(
         'res.letter',
         string='Parent',
-        groups='crm_lettermgmt.group_letter_thread')
+        groups='crm_lettermgmt.group_crm_lettermgmt_manager')
 
     child_line = fields.One2many(
         'res.letter',
         'parent_id',
         string='Letter Lines',
-        groups='crm_lettermgmt.group_letter_thread')
+        groups='crm_lettermgmt.group_crm_lettermgmt_manager')
 
     reassignment_ids = fields.One2many(
         'letter.reassignment',
         'letter_id',
         string='Reassignment lines',
         help='Reassignment users and comments',
-        groups='crm_lettermgmt.group_letter_reasignment')
+        groups='crm_lettermgmt.group_crm_lettermgmt_manager')
 
     res_letter_attachment_ids = fields.One2many(
         string="Attachments",

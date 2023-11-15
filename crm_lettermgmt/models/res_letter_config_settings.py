@@ -10,10 +10,10 @@ class LetterConfiguration(models.TransientModel):
     _name = 'res.letter.config.settings'
     _description = 'Configuration of Register Management'
 
-    enable_access_res_letter_portal_user = fields.Boolean(
-        string='Enable access of portal user to register management',
-        default=True,
-        help='Grant or revoke access of portal users to register management.')
+    # enable_access_res_letter_portal_user = fields.Boolean(
+    #     string='Enable access of portal user to register management',
+    #     default=True,
+    #     help='Grant or revoke access of portal users to register management.')
 
     allow_number_edition = fields.Boolean(
         string='Allow number edition',
@@ -23,8 +23,8 @@ class LetterConfiguration(models.TransientModel):
     @api.multi
     def set_default_values(self):
         values = self.env['ir.values'].sudo()
-        values.set_default('res.letter.config.settings',
-                           'enable_access_res_letter_portal_user',
-                           self.enable_access_res_letter_portal_user)
+        # values.set_default('res.letter.config.settings',
+        #                    'enable_access_res_letter_portal_user',
+        #                    self.enable_access_res_letter_portal_user)
         values.set_default('res.letter.config.settings',
                            'allow_number_edition', self.allow_number_edition)

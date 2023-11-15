@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <odoo>
   <data noupdate="0">
 
@@ -8,19 +7,25 @@
       <field name="sequence">2</field>
     </record>
 
-    <record id="crm_lettermgmt.group_letter_reasignment" model="res.groups">
-      <field name="name">Use Letter Reasignments</field>
+    <record id="crm_lettermgmt.group_crm_lettermgmt_portal" model="res.groups">
+      <field name="name">Portal</field>
       <field name="category_id" ref="crm_lettermgmt.module_category"/>
-      <field name="users" eval="[(4, ref('base.user_root'))]"/>
-      <field name="comment">Members of this group can view and edit Letter Reasignments.</field>
+      <field name="implied_ids" eval="[(4, ref('base.group_portal'))]"/>
     </record>
 
-    <record id="crm_lettermgmt.group_letter_thread" model="res.groups">
-      <field name="name">Use Letter Parent and Thread</field>
+    <record id="crm_lettermgmt.group_crm_lettermgmt_user" model="res.groups">
+      <field name="name">User</field>
       <field name="category_id" ref="crm_lettermgmt.module_category"/>
+      <field name="implied_ids" eval="[(4, ref('crm_lettermgmt.group_crm_lettermgmt_portal'))]"/>
+    </record>
+
+    <record id="crm_lettermgmt.group_crm_lettermgmt_manager" model="res.groups">
+      <field name="name">Manager</field>
+      <field name="category_id" ref="crm_lettermgmt.module_category"/>
+      <field name="implied_ids" eval="[(4, ref('crm_lettermgmt.group_crm_lettermgmt_user'))]"/>
       <field name="users" eval="[(4, ref('base.user_root'))]"/>
-      <field name="comment">Members of this group can set letters' parent and/or childs.</field>
     </record>
 
   </data>
+
 </odoo>
