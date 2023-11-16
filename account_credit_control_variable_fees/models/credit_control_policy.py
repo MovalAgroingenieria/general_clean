@@ -21,7 +21,8 @@ class CreditControlPolicyLevel(models.Model):
         help="The message to explain the reason for the increase in debt.")
 
     print_summary_table = fields.Boolean(
-        string="Print summary table")
+        string="Print summary table",
+        default=True,)
 
     _sql_constraints = [
         ('valid_variable_fees_percentage',
@@ -79,7 +80,8 @@ class CreditCommunication(models.TransientModel):
         compute="_compute_variable_fees_percentage")
 
     print_summary_table = fields.Boolean(
-        compute="_compute_print_summary_table")
+        compute="_compute_print_summary_table",
+        default=True,)
 
     @api.multi
     def _compute_variable_fees_percentage(self):
