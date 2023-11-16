@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, _
+from odoo import fields, models
 
 
 class AccountJournal(models.Model):
@@ -10,4 +10,4 @@ class AccountJournal(models.Model):
         string='Apply variable fees (Credit control)',
         default=True,
         help="Uncheck this box if you do not want to apply the variable fees "
-            "to the lines of this journal in Credit control.")
+             "to the lines of this journal in Credit control.")

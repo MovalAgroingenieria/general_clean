@@ -57,7 +57,7 @@ class CreditControlLine(models.Model):
             variable_fees = 0
             if record.variable_fees_percentage > 0 and \
                     record.balance_due_total > 0 and \
-                    record.move_line_id.journal_id.apply_variable_fees == True:
+                    record.move_line_id.journal_id.apply_variable_fees is True:
                 factor = float(record.variable_fees_percentage) / 100
                 variable_fees = factor * record.balance_due_total
             record.variable_fees = variable_fees
@@ -65,7 +65,7 @@ class CreditControlLine(models.Model):
     @api.depends('variable_fees', 'balance_due_total')
     def _compute_total_amount_with_fees(self):
         for record in self:
-            if record.move_line_id.journal_id.apply_variable_fees == True:
+            if record.move_line_id.journal_id.apply_variable_fees is True:
                 record.total_amount_with_fees = \
                     record.variable_fees + record.balance_due_total
             else:

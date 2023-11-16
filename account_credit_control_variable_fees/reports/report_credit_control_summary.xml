@@ -6,6 +6,7 @@
 
         <xpath expr="//t[@t-if='doc.current_policy_level.custom_text_after_details']" position="after">
             <t set="print_table" t-value="doc.current_policy_level.print_summary_table"/>
+            <t t-esc="print_table"/>
             <t t-if="print_table">
                 <table class="table table-condensed" id="summary_table_with_variable_fees" style="margin-top:20px;">
                     <thead>
