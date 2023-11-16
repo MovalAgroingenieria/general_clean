@@ -16,7 +16,6 @@
     <record id="crm_lettermgmt.group_crm_lettermgmt_user" model="res.groups">
       <field name="name">User</field>
       <field name="category_id" ref="crm_lettermgmt.module_category"/>
-      <field name="implied_ids" eval="[(4, ref('crm_lettermgmt.group_crm_lettermgmt_portal'))]"/>
     </record>
 
     <record id="crm_lettermgmt.group_crm_lettermgmt_manager" model="res.groups">
