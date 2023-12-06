@@ -13,13 +13,13 @@ Usage
 
 Install the module and you're ready to go!
 
- Credits
- =======
+Credits
+=======
 
  * Moval Agroingeniería S.L.
 
- Contributors
- ------------
+Contributors
+------------
 
  * Alberto Hernández <ahernandez@moval.es>
  * Eduardo Iniesta <einiesta@moval.es>
@@ -29,8 +29,8 @@ Install the module and you're ready to go!
  * Salvador sánchez <ssanchez@moval.es>
  * Jorge Vera <jvera@moval.es>
 
- Maintainer
- ----------
+Maintainer
+----------
 
 .. image:: https://services.moval.es/static/images/logo_moval_small.png
    :target: http://moval.es
