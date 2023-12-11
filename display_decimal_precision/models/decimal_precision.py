@@ -12,6 +12,12 @@ class DecimalPrecision(models.Model):
         required=True,)
 
     @api.model
+    def create(self, vals):
+        if 'digits' in vals and 'display_digits' not in vals:
+            vals['display_digits'] = vals['digits']
+        return super(DecimalPrecision, self).create(vals)
+
+    @api.model
     @tools.ormcache('application')
     def display_precision_get(self, application):
         self.flush(['name', 'digits'])
