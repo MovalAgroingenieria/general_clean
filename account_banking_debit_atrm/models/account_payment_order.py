@@ -153,12 +153,14 @@ class AccountConfigSettings(models.TransientModel):
             'account.config.settings', 'agency_min_amount',
             self.agency_min_amount)
 
+
 class AccountMoveLine(models.Model):
     _inherit = "account.move.line"
 
     atrm_ref = fields.Char(
         readonly=True,
         string="ATRM Ref")
+
 
 class BankPaymentLine(models.Model):
     _inherit = 'bank.payment.line'
@@ -710,12 +712,12 @@ class AccountPaymentOrder(models.Model):
                         _("The entry number %s has failed, "
                           "the bank line %s seems that it has already"
                           " been sent \n") % \
-                          (entry_num_padded, line.name) + '\n'
+                        (entry_num_padded, line.name) + '\n'
                 else:
                     raise ValidationError(_("The entry number %s has failed,"
                                             "the bank line %s seems that it "
                                             "has already been sent") %
-                                            (entry_num_padded, line.name))
+                                           (entry_num_padded, line.name))
 
             # Year of the debt
             # @ INFO: taken from invoice date
@@ -738,15 +740,15 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, the vat %s "
                               "for partner %s is not valid.") % \
-                              (entry_num_padded, debtor_vat,
-                               line.partner_id.name) + '\n'
+                            (entry_num_padded, debtor_vat,
+                             line.partner_id.name) + '\n'
                         debtor_vat = str(" " * 9)
                     else:
                         raise ValidationError(_("The entry number %s has "
                                                 "failed, the vat %s for "
-                                                "partner %s is not valid.") % \
-                                                (entry_num_padded, debtor_vat,
-                                                 line.partner_id.name))
+                                                "partner %s is not valid.") %
+                                               (entry_num_padded, debtor_vat,
+                                                line.partner_id.name))
             else:
                 if self.error_mode == 'permissive':
                     error_num += 1
@@ -758,8 +760,8 @@ class AccountPaymentOrder(models.Model):
                 else:
                     raise ValidationError(
                         _("The entry number %s has failed, vat not "
-                          "found for partner %s.") % \
-                          (entry_num_padded, line.partner_id.name))
+                          "found for partner %s.") %
+                        (entry_num_padded, line.partner_id.name))
 
             # Get debtor name
             if line.partner_id.company_type == 'company':
@@ -779,13 +781,13 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, the lastname "
                               "for partner %s not found.") % \
-                              (entry_num_padded, line.partner_id.name) + '\n'
+                            (entry_num_padded, line.partner_id.name) + '\n'
                         debtor_name = ""
                     else:
                         raise ValidationError(
                             _("The entry number %s has failed, the lastname "
-                              "for partner %s not found.") % \
-                              (entry_num_padded, line.partner_id.name))
+                              "for partner %s not found.") %
+                            (entry_num_padded, line.partner_id.name))
                 if line.partner_id.firstname:
                     debtor_name += ' ' + line.partner_id.firstname
                 else:
@@ -794,13 +796,13 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, the firstname "
                               "for partner %s not found.") % \
-                              (entry_num_padded, line.partner_id.name) + '\n'
+                             (entry_num_padded, line.partner_id.name) + '\n'
                         debtor_name = ""
                     else:
                         raise ValidationError(
                             _("The entry number %s has failed, the firstname "
-                              "for partner %s not found.") % \
-                              (entry_num_padded, line.partner_id.name))
+                              "for partner %s not found.") %
+                            (entry_num_padded, line.partner_id.name))
                 debtor_name_padded = debtor_name.ljust(125)
             else:
                 if self.error_mode == 'permissive':
@@ -811,11 +813,19 @@ class AccountPaymentOrder(models.Model):
                     debtor_name_padded = str(" " * 125)
                 else:
                     raise ValidationError(_("The entry number %s has failed,"
-                                            " debtor name not found.") % \
-                                            (entry_num_padded))
+                                            " debtor name not found.") %
+                                           (entry_num_padded))
 
-            # Get others debtor params if debt_period is V
-            if debt_period == "V":
+            # Get others debtor params if debt_period is V or E
+            # If debt_period is B these fields are not necessary
+            if debt_period == "B":
+                debtor_public_road_acronym = str(" " * 2)
+                debtor_street_padded = str(" " * 100)
+                debtor_street_number = str(" " * 5)
+                debtor_province_ine_code = str("0").zfill(2)
+                debtor_county_ine_code = str("0").zfill(3)
+                debtor_county_zip = str("0").zfill(5)
+            elif debt_period == "V" or debt_period == "E":
                 # @INFO: Try to get road acronym from street_type or give
                 # default CL (the tax agency will process the errors).
                 if line.partner_id.street_type_id:
@@ -833,15 +843,14 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, debtor street "
                               "not found for partner %s") % \
-                              (entry_num_padded, line.partner_id.name) \
-                            + '\n'
+                            (entry_num_padded, line.partner_id.name) + '\n'
                         debtor_street_padded = str(" " * 100)
                     else:
                         raise ValidationError(_("The entry number %s has "
                                                 "failed, debtor street not "
-                                                "found for partner %s") % \
-                                                (entry_num_padded,
-                                                 line.partner_id.name))
+                                                "found for partner %s") %
+                                               (entry_num_padded,
+                                                line.partner_id.name))
 
                 # Get street number
                 if line.partner_id.street_num:
@@ -863,12 +872,12 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, debtor zip "
                               "not found for partner %s") % \
-                              (entry_num_padded, line.partner_id.name) + '\n'
+                            (entry_num_padded, line.partner_id.name) + '\n'
                         debtor_county_zip = str("0").zfill(5)
                     else:
                         raise ValidationError(
                             _("The entry number %s has failed, debtor zip not "
-                              "found for partner %s") % \
+                              "found for partner %s") %
                             (entry_num_padded, line.partner_id.name))
 
                 # INE codes
@@ -919,7 +928,7 @@ class AccountPaymentOrder(models.Model):
 
                     if len(ine_codes) > 1:
                         if (debtor_county_zip and
-                            debtor_county_zip != str("0").zfill(5)):
+                                debtor_county_zip != str("0").zfill(5)):
                             # Filter by province code from zip
                             province_code = int(debtor_county_zip[:2])
                             for ine_code in ine_codes:
@@ -944,42 +953,33 @@ class AccountPaymentOrder(models.Model):
                                   "capital letter, accents, hyphens, etc.)"
                                   " or is the name of a district instead "
                                   "of a city.") % \
-                                  (entry_num_padded, city_name) + '\n'
+                                (entry_num_padded, city_name) + '\n'
                             debtor_province_ine_code = str("0").zfill(2)
                             debtor_county_ine_code = str("0").zfill(3)
                         else:
                             raise ValidationError(
-                                    _("The entry number %s has failed, debtor"
-                                      "ine city code not found for city %s.\n"
-                                      "Sometimes this is because the name of "
-                                      "the city is not well written (first "
-                                      "capital letter, accents, hyphens, etc.)"
-                                      " or is the name of a district instead "
-                                      "of a city.") % (entry_num_padded,
-                                                       city_name))
+                                _("The entry number %s has failed, debtor"
+                                    "ine city code not found for city %s.\n"
+                                    "Sometimes this is because the name of "
+                                    "the city is not well written (first "
+                                    "capital letter, accents, hyphens, etc.)"
+                                    " or is the name of a district instead "
+                                    "of a city.") % (entry_num_padded,
+                                                     city_name))
                 else:
                     if self.error_mode == 'permissive':
                         error_num += 1
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, debtor city not"
                               " found for partner %s") % \
-                              (entry_num_padded, line.partner_id.name) + '\n'
+                            (entry_num_padded, line.partner_id.name) + '\n'
                         debtor_province_ine_code = str("0").zfill(2)
                         debtor_county_ine_code = str("0").zfill(3)
                     else:
                         raise ValidationError(
                             _("The entry number %s has failed, debtor city "
-                              "not found for partner %s") % \
-                              (entry_num_padded, line.partner_id.name))
-
-            # If debt_period is E or B these fields are not necessary
-            else:
-                debtor_public_road_acronym = str(" " * 2)
-                debtor_street_padded = str(" " * 100)
-                debtor_street_number = str(" " * 5)
-                debtor_province_ine_code = str("0").zfill(2)
-                debtor_county_ine_code = str("0").zfill(3)
-                debtor_county_zip = str("0").zfill(5)
+                              "not found for partner %s") %
+                            (entry_num_padded, line.partner_id.name))
 
             # Get dates and year
             for l in line.payment_line_ids:
@@ -1013,7 +1013,7 @@ class AccountPaymentOrder(models.Model):
                         _("The entry number %s has failed, the amount "
                           "%s exceeds the limits allowed by the agency "
                           "agreement.") % \
-                          (entry_num_padded, line.amount_currency) + '\n'
+                        (entry_num_padded, line.amount_currency) + '\n'
                 else:
                     raise ValidationError(_("The entry number %s has failed,"
                                             "the amount %s exceeds the limits"
@@ -1063,14 +1063,14 @@ class AccountPaymentOrder(models.Model):
                     errors += '[' + str(error_num).zfill(4) + '] ' + \
                         _("The entry number %s has failed, the obligation "
                           "birthdate (%s) is after the settlement date (%s).")\
-                          % (entry_num_padded, obligation_birthdate,
-                             settlement_date) + '\n'
+                        % (entry_num_padded, obligation_birthdate,
+                           settlement_date) + '\n'
                 else:
                     raise ValidationError(
                         _("The entry number %s has failed, the obligation "
                           "birthdate (%s) is after the settlement date (%s).")
-                          % (entry_num_padded, obligation_birthdate,
-                             settlement_date))
+                        % (entry_num_padded, obligation_birthdate,
+                           settlement_date))
 
             # 02.- Check that settlement_date is previous to the current date
             #      and previous or equal to voluntary expiration date if E or B
@@ -1081,13 +1081,13 @@ class AccountPaymentOrder(models.Model):
                     errors += '[' + str(error_num).zfill(4) + '] ' + \
                         _("The entry number %s has failed, the settlement date"
                           " (%s) is after the current date (%s).") % \
-                          (entry_num_padded, sett_date, current_date) + '\n'
+                        (entry_num_padded, sett_date, current_date) + '\n'
                 else:
                     raise ValidationError(_("The entry number %s has failed, "
                                             "the settlement date (%s) is after"
-                                            " the current date (%s).") % \
-                                            (entry_num_padded, sett_date,
-                                             current_date))
+                                            " the current date (%s).") %
+                                           (entry_num_padded, sett_date,
+                                            current_date))
 
             if self.debt_period != "V":
                 vol_exp_date = datetime.strptime(voluntary_expiration_date,
@@ -1098,12 +1098,12 @@ class AccountPaymentOrder(models.Model):
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, the settlement"
                               " date (%s) is after expiration date (%s).") % \
-                              (entry_num_padded, sett_date,
-                               vol_exp_date) + '\n'
+                            (entry_num_padded, sett_date,
+                             vol_exp_date) + '\n'
                     else:
                         raise ValidationError(_(
                             "The entry number %s has failed, the settlement "
-                            "date (%s) is after expiration date (%s).") % \
+                            "date (%s) is after expiration date (%s).") %
                             (entry_num_padded, sett_date, vol_exp_date))
 
             # 03.- Check that voluntary_notification_date is previous to
@@ -1118,8 +1118,8 @@ class AccountPaymentOrder(models.Model):
                         error_num += 1
                         errors += '[' + str(error_num).zfill(4) + '] ' + \
                             _("The entry number %s has failed, the voluntary "
-                              "notification date (%s) is after or equal to volu"
-                              "ntary expiration date (%s).") % \
+                              "notification date (%s) is after or equal to vol"
+                              "untary expiration date (%s).") % \
                             (entry_num_padded, vol_not_date,
                              vol_exp_date) + '\n'
                     else:
@@ -1138,13 +1138,13 @@ class AccountPaymentOrder(models.Model):
                     errors += '[' + str(error_num).zfill(4) + '] ' + \
                         _("The entry number %s has failed, the year "
                           "(%s) is after of current year (%s).") % \
-                          (entry_num_padded, year, current_year) + '\n'
+                        (entry_num_padded, year, current_year) + '\n'
                 else:
                     raise ValidationError(_("The entry number %s has failed, "
                                             "the year (%s) is after of current"
-                                            "year (%s).") % \
-                                            (entry_num_padded, year,
-                                             current_year))
+                                            "year (%s).") %
+                                           (entry_num_padded, year,
+                                            current_year))
             if year < "1986":
                 if year > current_year:
                     if self.error_mode == 'permissive':
@@ -1156,8 +1156,8 @@ class AccountPaymentOrder(models.Model):
                     else:
                         raise ValidationError(_("The entry number %s has "
                                                 "failed, the year (%s) is"
-                                                " after 1986.") \
-                                                % (entry_num_padded, year))
+                                                " after 1986.") %
+                                               (entry_num_padded, year))
 
             # Position [407-414] Length 8 Format DDMMYYYY
             # certification_date = static
