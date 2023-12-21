@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="l10n_es_aeat_sii.aeat_sii_tax_agency_spain" model="aeat.sii.tax.agency">
+            <field name="name">Agencia Tributaria española (1.1 [URLs actualizadas 2023])</field>
+            <field name="wsdl_out">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroFactEmitidas.wsdl</field>
+            <field name="wsdl_in">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroFactRecibidas.wsdl</field>
+            <field name="wsdl_pi">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroBienesInversion.wsdl</field>
+            <field name="wsdl_ic">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroOpIntracomunitarias.wsdl</field>
+            <field name="wsdl_pr">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroCobrosEmitidas.wsdl</field>
+            <field name="wsdl_ott">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroOpTrascendTribu.wsdl</field>
+            <field name="wsdl_ps">https://www2.agenciatributaria.gob.es/static_files/common/internet/dep/aplicaciones/es/aeat/ssii_1_1_bis/fact/ws/SuministroPagosRecibidas.wsdl</field>
+        </record>
+    </data>
+</odoo>
