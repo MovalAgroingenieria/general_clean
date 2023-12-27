@@ -43,22 +43,23 @@
                     <group name="atrm-left">
                         <field name="payment_mode_name" invisible="1"/>
                         <field name="error_mode" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
+                        <field name="check_lock_date" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
                         <field name="registry_type" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
                         <field name="agency" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
                         <field name="shipment_num" attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
                     </group>
                     <group name="atrm-right">
-                        <field name="shipment_date" 
+                        <field name="shipment_date"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"/>
                         <field name="debt_period"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"
                                widget="selection"/>
-                        <field name="concept_code" 
+                        <field name="concept_code"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM')]}"
                                widget="selection"/>
-                        <field name="media_notice" 
+                        <field name="media_notice"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],
-                                      'invisible':[('debt_period','=','V')]}" 
+                                      'invisible':[('debt_period','=','V')]}"
                                widget="selection"/>
                         <field name="certification_date"
                                attrs="{'required':[('payment_mode_name','=', 'ATRM'), ('debt_period', '!=', 'V')],

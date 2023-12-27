@@ -482,6 +482,10 @@ class AccountPaymentOrder(models.Model):
         help="Date on which the debtor was notified.\n\
             It will be applied to all payment lines.")
 
+    check_lock_date = fields.Boolean(
+        string="Check lock date",
+        default=True)
+
     # ATRM resume related fields
     atrm_filename = fields.Char(string="atrm filename")
     currency_id = fields.Many2one('res.currency', string='Currency',
