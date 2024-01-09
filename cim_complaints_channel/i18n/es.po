@@ -1,0 +1,848 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* cim_complaints_channel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-11-15 21:04+0000\n"
+"PO-Revision-Date: 2023-11-15 21:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span class=\"o_stat_text\" style=\"display:inline;margin-bottom:2px;margin-left:2px\">\n"
+"                                    Commu-\n"
+"                                </span>\n"
+"                                <span class=\"o_stat_text\">nications</span>"
+msgstr "<span class=\"o_stat_text\" style=\"display:inline;margin-bottom:2px;margin-left:2px\">\n"
+"                                    Comu-\n"
+"                                </span>\n"
+"                                <span class=\"o_stat_text\">nicaciones</span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_form
+msgid "<span class=\"o_stat_text\">complaints</span>"
+msgstr "<span class=\"o_stat_text\">complaints</span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span style=\"font-weight:bold\">\n"
+"                                        FACTS DENOUNCED\n"
+"                                        </span>"
+msgstr "<span style=\"font-weight:bold\">\n"
+"                                        HECHOS DENUNCIADOS\n"
+"                                        </span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span style=\"font-weight:bold\">\n"
+"                                        MEASURES TAKEN\n"
+"                                        </span>"
+msgstr "<span style=\"font-weight:bold\">\n"
+"                                        MEDIDAS ADOPTADAS\n"
+"                                        </span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span style=\"font-weight:bold\">\n"
+"                                        WITNESSES\n"
+"                                        </span>"
+msgstr "<span style=\"font-weight:bold\">\n"
+"                                        TESTIGOS\n"
+"                                        </span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_form
+msgid "<span style=\"font-weight:bold;\">\n"
+"                            ( STANDARD TYPE )\n"
+"                            </span>"
+msgstr "<span style=\"font-weight:bold;\">\n"
+"                            ( STANDARD TYPE )\n"
+"                            </span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span style=\"margin-left:5px\">Anonymous Complaint</span><br/>"
+msgstr "<span style=\"margin-left:5px\">Denuncia anónima</span><br/>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span style=\"margin-left:5px\">Data entered by instructor</span>"
+msgstr "<span style=\"margin-left:5px\">Denuncia introducida por el instructor</span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "<span>COMPLAINANT DATA</span>"
+msgstr "<span>DATOS DEL DENUNCIANTE</span>"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,complaint_frequency:0
+msgid "A specific day"
+msgstr "Un día concreto"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_financial_irregularity
+msgid "Accounting or financial irregularity"
+msgstr "Irregularidad contable o financiera"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,state:0
+msgid "Admitted"
+msgstr "Admitida"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_is_anonymous
+msgid "Anonymous Complaint"
+msgstr "Denuncia anónima"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_environment_attack
+msgid "Attack on the environment or animal welfare"
+msgstr "Atentado contra el medio ambiente o el bienestar animal"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_name
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_tree
+msgid "Code"
+msgstr "Código"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_collaborator
+msgid "Collaborator"
+msgstr "Colaborador"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_email
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_decrypted_complainant_email
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_tree
+msgid "Complainant E-mail"
+msgstr "Complainant E-mail"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_name
+msgid "Complainant Name"
+msgstr "Complainant Name"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_phone
+msgid "Complainant Phone"
+msgstr "Complainant Phone"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_vat
+msgid "Complainant VAT"
+msgstr "Complainant VAT"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_is_complainant_involved
+msgid "Complainant involved"
+msgstr "Complainant involved"
+
+#. module: cim_complaints_channel
+#: model:ir.model,name:cim_complaints_channel.model_cim_complaint
+msgid "Complaint"
+msgstr "Complaint"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.menu,name:cim_complaints_channel.complaint_menu
+msgid "Complaint Management"
+msgstr "Gestión de denuncias"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complaint_time
+msgid "Complaint Time"
+msgstr "Complaint Time"
+
+#. module: cim_complaints_channel
+#: model:ir.model,name:cim_complaints_channel.model_cim_complaint_type
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complaint_type_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Complaint Type"
+msgstr "Complaint Type"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_form
+msgid "Complaint Type:"
+msgstr "Complaint Type:"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.menu,name:cim_complaints_channel.complaint_type_menu
+msgid "Complaint Types"
+msgstr "Complaint Types"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_deadline
+msgid "Complaint deadline (number of months)"
+msgstr "Complaint deadline (number of months)"
+
+#. module: cim_complaints_channel
+#: model:ir.actions.act_window,name:cim_complaints_channel.cim_complaint_action
+#: model:ir.ui.menu,name:cim_complaints_channel.complaint_normal_menu
+#: model:ir.ui.menu,name:cim_complaints_channel.main_menu
+msgid "Complaints"
+msgstr "Denuncias"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Complaints Channel Management"
+msgstr "Complaints Channel Management"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Complaints-Management Settings"
+msgstr "Complaints-Management Settings"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.menu,name:cim_complaints_channel.configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: cim_complaints_channel
+#: model:ir.model,name:cim_complaints_channel.model_res_cim_config_settings
+msgid "Configuration of the cim_complaints_channel module"
+msgstr "Configuration of the cim_complaints_channel module"
+
+#. module: cim_complaints_channel
+#: model:ir.actions.act_window,name:cim_complaints_channel.res_cim_config_settings_action
+msgid "Configure complaints-channel management"
+msgstr "Configure complaints-channel management"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_conflict_interests
+msgid "Conflict of interests"
+msgstr "Conflicto de intereses"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,complaint_frequency:0
+msgid "Continuously"
+msgstr "Continuamente"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_corrupt_action
+msgid "Corrupt action"
+msgstr "Corrupción"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_create_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_create_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_create_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_create_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_create_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_create_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_creation_date
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Creation Date"
+msgstr "Alta"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Date and Time"
+msgstr "Día / Hora"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Deadline"
+msgstr "Deadline"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_deadline
+msgid "Deadline (number of months)"
+msgstr "Deadline (number of months)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_deadline_date
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Deadline Date"
+msgstr "Vencimiento"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Deadline Extended"
+msgstr "Deadline Extended"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_deadline_state
+msgid "Deadline Status"
+msgstr "Deadline Status"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_sequence_complaint_code_id
+msgid "Default values of the complaint codes"
+msgstr "Default values of the complaint codes"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Defendant"
+msgstr "Denuncia contra"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_defendant_name
+msgid "Defendant Name"
+msgstr "Defendant Name"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_is_delegated
+msgid "Delegated Complaint"
+msgstr "Delegated Complaint"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_display_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_display_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_display_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Documents"
+msgstr "Documentos"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "E-mail"
+msgstr "E-mail"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_mailtemplate_communication_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "E-mail Template"
+msgstr "E-mail Template"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_mailtemplate_communication_id
+msgid "E-mail template for the communications to complainant"
+msgstr "E-mail template for the communications to complainant"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_automatic_email_state
+msgid "E-mail to complainant after change state of complaint (y/n)"
+msgstr "E-mail to complainant after change state of complaint (y/n)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_automatic_email_validate_com
+msgid "E-mail to complainant after validate communication (y/n)"
+msgstr "E-mail to complainant after validate communication (y/n)"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Email after change state"
+msgstr "Email after change state"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Email after validate communication"
+msgstr "Email after validate communication"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_exemployee
+msgid "Ex-employee"
+msgstr "Ex-empleado"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_executive
+msgid "Executive"
+msgstr "Ejecutivo"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_deadline_extended
+msgid "Extended Deadline (number of months)"
+msgstr "Extended Deadline (number of months)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_deadline_extended
+msgid "Extended complaint deadline (number of months)"
+msgstr "Extended complaint deadline (number of months)"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Extended instruction deadline soon to expire"
+msgstr "Extended instruction deadline soon to expire"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Extended instruction on time"
+msgstr "Extended instruction on time"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Extended instruction period expirated"
+msgstr "Extended instruction period expirated"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_description
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_tree
+msgid "Facts denounced"
+msgstr "Facts denounced"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_public_finances
+msgid "Fraud against public finances"
+msgstr "Fraude contra la Hacienda Pública"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_id
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_id
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_id
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_id
+msgid "ID"
+msgstr "ID"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,state:0
+msgid "In progress"
+msgstr "En instrucción"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_infringement_level
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Infringement Level"
+msgstr "Nivel de gravedad"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Instruction deadline soon to expire"
+msgstr "Instruction deadline soon to expire"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Instruction finished"
+msgstr "Instruction finished"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Instruction on time"
+msgstr "Instrucción en plazo"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,deadline_state:0
+msgid "Instruction period expirated"
+msgstr "Instruction period expirated"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_investigating_user_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Instructor"
+msgstr "Instructor"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Is involved?"
+msgstr "¿Está implicado?"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_issue
+msgid "Issie"
+msgstr "Issie"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Issue"
+msgstr "Issue"
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint_type.py:59
+#, python-format
+msgid "It is not possible to remove a 'STANDARD' complaint type."
+msgstr "It is not possible to remove a 'STANDARD' complaint type."
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_link_type.py:59
+#, python-format
+msgid "It is not possible to remove a 'STANDARD' link type."
+msgstr "It is not possible to remove a 'STANDARD' link type."
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_is_juditial_action
+msgid "Juditial Action"
+msgstr "Juditial Action"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint___last_update
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type___last_update
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type___last_update
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_write_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_write_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_write_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_write_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_write_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_write_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_length_tracking_code
+msgid "Length of the tracking code (number of characters)"
+msgstr "Length of the tracking code (number of characters)"
+
+#. module: cim_complaints_channel
+#: model:ir.model,name:cim_complaints_channel.model_cim_link_type
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_link_type_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Link Type"
+msgstr "Vinculación"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_form
+msgid "Link Type:"
+msgstr "Link Type:"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.menu,name:cim_complaints_channel.link_type_menu
+msgid "Link Types"
+msgstr "Link Types"
+
+#. module: cim_complaints_channel
+#: model:res.groups,name:cim_complaints_channel.group_cim_manager
+msgid "Manager"
+msgstr "Manager"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_measures_taken
+msgid "Measures taken"
+msgstr "Measures taken"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,infringement_level:0
+msgid "Mild"
+msgstr "Leve"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_tree
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_tree
+msgid "N. complaints"
+msgstr "N. complaints"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_name
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_search
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_tree
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_search
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_tree
+msgid "Name"
+msgstr "Nombre"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_occupational_risks
+msgid "Non-compliance with regulations on occupational risks"
+msgstr "Incumplimiento de la normativa sobre riesgos laborales"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,complaint_frequency:0
+msgid "Not remembered"
+msgstr "No se recuerda"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_notes
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_notes
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_tree
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_tree
+msgid "Notes"
+msgstr "Notas"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_notes_text
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_notes_text
+msgid "Notes (as text)"
+msgstr "Notes (as text)"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Notice Period"
+msgstr "Notice Period"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_notice_period
+msgid "Notice Period (number of days)"
+msgstr "Notice Period (number of days)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_notice_period
+msgid "Notice period before the complaint deadline (number of days)"
+msgstr "Notice period before the complaint deadline (number of days)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_number_of_communications
+msgid "Number of communications"
+msgstr "Number of communications"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_number_of_complaints
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_number_of_complaints
+msgid "Number of complaints"
+msgstr "Number of complaints"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_other
+msgid "Other"
+msgstr "Otro"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.menu,name:cim_complaints_channel.parameters_menu
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Propose"
+msgstr "Proponer"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,state:0
+msgid "Ready"
+msgstr "Lista"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,state:0
+msgid "Received"
+msgstr "Recibida"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Resolution"
+msgstr "Resolución"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_resolution_text
+msgid "Resolution Text"
+msgstr "Resolution Text"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,state:0
+msgid "Resolved"
+msgstr "Resuelta"
+
+#. module: cim_complaints_channel
+#: model:res.groups,name:cim_complaints_channel.group_cim_restricted
+msgid "Restricted User"
+msgstr "Restricted User"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_self_employed
+msgid "Self-Employed person"
+msgstr "Autónomo"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_automatic_email_state
+msgid "Send e-mail to complainant after change the state of the complaint"
+msgstr "Send e-mail to complainant after change the state of the complaint"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_automatic_email_validate_com
+msgid "Send e-mail to complainant after validate the communication"
+msgstr "Send e-mail to complainant after validate the communication"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Sequence for the codes"
+msgstr "Sequence for the codes"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_sequence_complaint_code_id
+msgid "Sequence for the codes of complaints"
+msgstr "Sequence for the codes of complaints"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,infringement_level:0
+msgid "Serious"
+msgstr "Grave"
+
+#. module: cim_complaints_channel
+#: model:res.groups,name:cim_complaints_channel.group_cim_settings
+msgid "Settings"
+msgstr "Configuración"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_tree
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_tree
+msgid "Standard"
+msgstr "Standard"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_is_standard
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_is_standard
+msgid "Standard Type (y/n)"
+msgstr "Standard Type (y/n)"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complaint_frequency
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_state
+msgid "State"
+msgstr "Estado"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_supplier
+msgid "Supplier"
+msgstr "Proveedor"
+
+#. module: cim_complaints_channel
+#: sql_constraint:res.cim.config.settings:0
+msgid "The deadline must be a positive value."
+msgstr "The deadline must be a positive value."
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/res_cim_config_settings.py:83
+#, python-format
+msgid "The extended deadline can not be less than the predetermined deadline."
+msgstr "The extended deadline can not be less than the predetermined deadline."
+
+#. module: cim_complaints_channel
+#: sql_constraint:res.cim.config.settings:0
+msgid "The extended deadline must be a positive value."
+msgstr "The extended deadline must be a positive value."
+
+#. module: cim_complaints_channel
+#: sql_constraint:res.cim.config.settings:0
+msgid "The length of tracking code must be a positive value."
+msgstr "The length of tracking code must be a positive value."
+
+#. module: cim_complaints_channel
+#: sql_constraint:res.cim.config.settings:0
+msgid "The notice period cannot have a negative value."
+msgstr "The notice period cannot have a negative value."
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "This action will change to the 'Ready' state. Proceed?"
+msgstr "This action will change to the 'Ready' state. Proceed?"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "This action will return to the previous state. Proceed?"
+msgstr "This action will return to the previous state. Proceed?"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_tracking_code
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Tracking Code"
+msgstr "Código de seguim."
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Tracking code length"
+msgstr "Tracking code length"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_length_tracking_code
+msgid "Tracking code length to identify complainants (number of characters)"
+msgstr "Tracking code length to identify complainants (number of characters)"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_trainee_staff
+msgid "Trainee staff"
+msgstr "Persona en prácticas"
+
+#. module: cim_complaints_channel
+#: model:ir.actions.act_window,name:cim_complaints_channel.cim_complaint_type_action
+msgid "Types of complaint"
+msgstr "Types of complaint"
+
+#. module: cim_complaints_channel
+#: model:ir.actions.act_window,name:cim_complaints_channel.cim_link_type_action
+msgid "Types of link"
+msgstr "Types of link"
+
+#. module: cim_complaints_channel
+#: model:res.groups,name:cim_complaints_channel.group_cim_user
+msgid "User"
+msgstr "User"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "VAT"
+msgstr "DNI"
+
+#. module: cim_complaints_channel
+#: selection:cim.complaint,infringement_level:0
+msgid "Very Serious"
+msgstr "Muy grave"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_data_protection
+msgid "Violation against data protection"
+msgstr "Violation against data protection"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "When did it happen?"
+msgstr "¿Cuándo ocurrió?"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "With juditial action"
+msgstr "Con acción judicial"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_witness_name
+msgid "Witnesses"
+msgstr "Witnesses"
+
+#. module: cim_complaints_channel
+#: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_harassment
+msgid "Workplace or sexual harassment"
+msgstr "Workplace or sexual harassment"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_kanban
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_kanban
+msgid "complaints"
+msgstr "complaints"
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_backend"
+              name="static_resources_cim_complaints_channel"
+              inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+             href="/cim_complaints_channel/static/src/css/cim_complaints_channel.css"/>
+            <link rel="stylesheet"
+             href="/cim_complaints_channel/static/src/less/cim_complaints_channel.less"/>             
+        </xpath>
+    </template>
+</odoo>

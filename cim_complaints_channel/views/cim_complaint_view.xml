@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="cim_complaint_view_form" model="ir.ui.view">
+        <field name="name">cim.complaint.view.form</field>
+        <field name="model">cim.complaint</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <field name="id" invisible="1"/>
+                <header>
+                    <button name="action_go_to_state_04_ready"
+                            type="object" string="Propose"
+                            style="width: 105px;"
+                            class="oe_highlight"
+                            attrs="{'invisible': [('state','!=','03_in_progress')]}"
+                            groups="cim_complaints_channel.group_cim_manager"
+                            confirm="This action will change to the 'Ready' state. Proceed?"/>
+                    <button name="action_go_to_state_previous"
+                            type="object" string="Cancel"
+                            style="width: 105px;"
+                            attrs="{'invisible': [('state','=','01_received')]}"
+                            groups="cim_complaints_channel.group_cim_manager"
+                            confirm="This action will return to the previous state. Proceed?"/>
+                    <field name="state"
+                           widget="statusbar"
+                           statusbar_visible="01_received,02_admitted,03_in_progress,04_ready,05_resolved"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_get_communications"
+                                type="object" class="oe_stat_button"
+                                icon="fa-envelope"
+                                groups="cim_complaints_channel.group_cim_restricted">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_value" style="display:inline">
+                                    <field name="number_of_communications"/>
+                                </span>
+                                <span class="o_stat_text"
+                                      style="display:inline;margin-bottom:2px;margin-left:2px">
+                                    Commu-
+                                </span>
+                                <span class="o_stat_text">nications</span>
+                            </div>
+                        </button>
+                    </div>
+                    <div name="div_code" class="oe_title">
+                        <h1>
+                            <field name="name"
+                                   style="width:320px"
+                                   placeholder="Code"
+                                   attrs="{'readonly': [('id','>',0)]}"/>
+                        </h1>
+                        <div>
+                            <field name="complaint_type_id"
+                                   style="width:320px"
+                                   placeholder="Complaint Type"/>
+                        </div>
+                    </div>
+                    <group name="group_01" style="margin-top:-10px">
+                        <group name="group_01_left" col="50">
+                            <div colspan="49">
+                                <group name="group_01_left_inner">
+                                    <field name="issue" nolabel="1" colspan="2"
+                                           placeholder="Issue"/>
+                                    <div name="group_01_left_check" colspan="2"
+                                         style="margin-top:14px">
+                                        <field name="is_anonymous"
+                                               nolabel="1"/>
+                                        <span style="margin-left:5px">Anonymous Complaint</span><br/>
+                                        <div style="margin-bottom:8px"/>
+                                        <field name="is_delegated"
+                                               nolabel="1"/>
+                                        <span style="margin-left:5px">Data entered by instructor</span>
+                                    </div>
+                                </group>
+                            </div>
+                            <div colspan="1"/>
+                        </group>
+                        <group name="group_01_right" col="50">
+                            <div colspan="1"/>
+                            <div colspan="49">
+                                <group name="group_01_right_inner">
+                                    <div name="group_01_right_title" colspan="2"
+                                         class="text-center text-uppercase"
+                                         style="font-weight:bold;margin-bottom:15px">
+                                        <field name="deadline_state"/>
+                                    </div>
+                                    <field name="investigating_user_id"
+                                           string="Instructor"/>
+                                    <field name="creation_date"
+                                           string="Creation Date"/>
+                                    <field name="deadline_date"
+                                           string="Deadline Date"/>
+                                </group>
+                            </div>
+                        </group>
+                    </group>
+                    <group name="group_02" style="margin-top:-10px">
+                        <group name="group_02_left" col="50">
+                            <div colspan="49">
+                                <group name="group_02_left_inner">
+                                    <div name="group_02_left_inner_title"
+                                         colspan="2"
+                                         style="text-align:center;margin-bottom:5px">
+                                        <span style="font-weight:bold">
+                                        FACTS DENOUNCED
+                                        </span>
+                                    </div>
+                                    <div name="section_description"
+                                         colspan="2"
+                                         class="panel-body"
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px">
+                                        <field name="description" nolabel="1"
+                                               style="margin-top:5px"/>
+                                    </div>
+                                    <field name="defendant_name"
+                                           string="Defendant"/>
+                                    <field name="complaint_frequency"
+                                           string="When did it happen?"/>
+                                    <field name="complaint_time"
+                                           string="Date and Time"/>
+                                    <field name="infringement_level"
+                                           string="Infringement Level"/>
+                                    <field name="is_juditial_action"
+                                           string="With juditial action"/>
+                                    <div name="group_02_left_inner_complainant_data" colspan="2"
+                                         class="text-center"
+                                         style="font-weight:bold;margin-top:16px;margin-bottom:16px">
+                                        <span>COMPLAINANT DATA</span>
+                                    </div>
+                                    <field name="complainant_name"
+                                           string="Name"/>
+                                    <field name="link_type_id"
+                                           string="Link Type"/>
+                                    <field name="is_complainant_involved"
+                                           string="Is involved?"/>
+                                    <field name="complainant_vat"
+                                           string="VAT"/>
+                                    <field name="complainant_phone"
+                                           string="Phone"/>
+                                    <field name="complainant_email"
+                                           string="E-mail"/>
+                                    <field name="tracking_code"
+                                           string="Tracking Code"/>
+                                </group>
+                            </div>
+                            <div colspan="1"/>
+                        </group>
+                        <group name="group_02_right" col="50">
+                            <div colspan="1"/>
+                            <div colspan="49">
+                                <group name="group_02_right_inner">
+                                    <div name="group_02_right_innter_title_1"
+                                         colspan="2"
+                                         style="text-align:center;margin-bottom:5px">
+                                        <span style="font-weight:bold">
+                                        MEASURES TAKEN
+                                        </span>
+                                    </div>
+                                    <div name="section_measures_taken"
+                                         colspan="2"
+                                         class="panel-body"
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px">
+                                        <field name="measures_taken" nolabel="1"
+                                               style="margin-top:5px"/>
+                                    </div>
+                                    <div name="group_02_right_inner_title_2"
+                                         colspan="2"
+                                         style="text-align:center;margin-bottom:5px">
+                                        <span style="font-weight:bold">
+                                        WITNESSES
+                                        </span>
+                                    </div>
+                                    <div name="section_witness_name"
+                                         colspan="2"
+                                         class="panel-body"
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto">
+                                        <field name="witness_name" nolabel="1"
+                                               style="margin-top:5px"/>
+                                    </div>
+                                </group>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="resolution" string="Resolution">
+                            <field name="resolution_text"/>
+                        </page>
+                        <page name="documents" string="Documents">
+                        </page>
+                        <page name="notes" string="Notes">
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="cim_complaint_view_tree" model="ir.ui.view">
+        <field name="name">cim.complaint.view.tree</field>
+        <field name="model">cim.complaint</field>
+        <field name="arch" type="xml">
+            <tree class="o_cim_complaints_channel_complaint_view_tree">
+                <field name="name"
+                       string="Code"/>
+                <field name="description"
+                       string="Facts denounced"/>
+                <field name="complainant_email"
+                       string="Complainant E-mail"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cim_complaint_view_search" model="ir.ui.view">
+        <field name="name">cim.complaint.view.search</field>
+        <field name="model">cim.complaint</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="cim_complaint_action"
+            model="ir.actions.act_window">
+        <field name="name">Complaints</field>
+        <field name="res_model">cim.complaint</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('cim_complaint_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('cim_complaint_view_form')})]"/>
+        <field name="search_view_id" ref="cim_complaint_view_search"/>
+    </record>
+
+    <menuitem id="complaint_normal_menu"
+              name="Complaints"
+              parent="complaint_menu"
+              sequence="1"
+              action="cim_complaint_action"/>
+
+</odoo>
