@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2023 Moval Agroingeniería
+# Copyright 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
@@ -12,6 +12,7 @@ class CimComplaint(models.Model):
 
     SIZE_SMALL = 25
     SIZE_MEDIUM = 50
+    SIZE_MEDIUM_EXTRA = 75
     SIZE_NORMAL = 100
 
     name = fields.Char(
@@ -21,8 +22,8 @@ class CimComplaint(models.Model):
         index=True,)
 
     issue = fields.Char(
-        string='Issie',
-        size=SIZE_MEDIUM + SIZE_SMALL,
+        string='Issue',
+        size=SIZE_MEDIUM_EXTRA,
         required=True,
         index=True,)
 
@@ -34,8 +35,12 @@ class CimComplaint(models.Model):
     tracking_code = fields.Char(
         string='Tracking Code',
         size=SIZE_SMALL,
-        required=True,
-        index=True,)
+        index=True,
+        readonly=True,)
+
+    decrypted_tracking_code = fields.Char(
+        string='Decrypted tracking code',
+        compute='_compute_decrypted_tracking_code',)
 
     complaint_type_id = fields.Many2one(
         string='Complaint Type',
@@ -68,19 +73,26 @@ class CimComplaint(models.Model):
     complaint_frequency = fields.Selection(
         string="State",
         selection=[
-            ('01_not_remembered',
-             'Not remembered'),
-            ('02_specific_day',
-             'A specific day'),
-            ('03_continuously',
-             'Continuously'),
+            ('01_not_remembered', 'Not remembered'),
+            ('02_specific_day', 'A specific day'),
+            ('03_continuously', 'Continuously'),
         ],
         default='01_not_remembered',
         required=True,
         index=True,)
 
+    complaint_time = fields.Datetime(
+        string='Complaint Time',)
+
+    complaint_date = fields.Date(
+        string='Complaint Date',
+        store=True,
+        index=True,
+        compute='_compute_complaint_date',)
+
     creation_date = fields.Date(
-        string='Creation Date',)
+        string='Creation Date',
+        default=lambda self: fields.datetime.now(),)
 
     deadline_date = fields.Date(
         string='Deadline Date',)
@@ -104,9 +116,6 @@ class CimComplaint(models.Model):
         string='Complainant Phone',
         size=SIZE_SMALL,
         index=True,)
-
-    complaint_time = fields.Datetime(
-        string='Complaint Time',)
 
     is_anonymous = fields.Boolean(
         string='Anonymous Complaint',
@@ -191,6 +200,24 @@ class CimComplaint(models.Model):
     is_juditial_action = fields.Boolean(
         string='Juditial Action',
         default=False,)
+
+    @api.depends('complaint_time')
+    def _compute_complaint_date(self):
+        for record in self:
+            complaint_date = None
+            if record.complaint_time:
+                complaint_date = record.complaint_time
+            record.complaint_date = complaint_date
+
+    @api.multi
+    def _compute_decrypted_tracking_code(self):
+        for record in self:
+            decrypted_tracking_code = ''
+            if record.tracking_code:
+                # Provisional
+                decrypted_tracking_code = record.tracking_code
+                # TODO
+            record.decrypted_tracking_code = decrypted_tracking_code
 
     @api.multi
     def _compute_decrypted_complainant_email(self):

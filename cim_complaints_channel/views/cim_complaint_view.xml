@@ -118,7 +118,9 @@
                                     <field name="complaint_frequency"
                                            string="When did it happen?"/>
                                     <field name="complaint_time"
-                                           string="Date and Time"/>
+                                           string="Date and Time"
+                                           attrs="{'invisible': [('complaint_frequency', '!=', '02_specific_day')],
+                                                   'required': [('complaint_frequency', '=', '02_specific_day')]}"/>
                                     <field name="infringement_level"
                                            string="Infringement Level"/>
                                     <field name="is_juditial_action"
@@ -150,7 +152,7 @@
                             <div colspan="1"/>
                             <div colspan="49">
                                 <group name="group_02_right_inner">
-                                    <div name="group_02_right_innter_title_1"
+                                    <div name="group_02_right_inner_title_1"
                                          colspan="2"
                                          style="text-align:center;margin-bottom:5px">
                                         <span style="font-weight:bold">

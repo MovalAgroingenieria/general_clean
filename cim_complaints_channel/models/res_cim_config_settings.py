@@ -22,6 +22,13 @@ class ResCimConfigSettings(models.TransientModel):
         help='Tracking code length to identify complainants '
              '(number of characters)',)
 
+    acknowledgement_period = fields.Integer(
+        string='Acknowledgement period for the complaint admission',
+        default=7,
+        required=True,
+        help='Acknowledgement period for the complaint admission '
+             '(number of days)',)
+
     automatic_email_state = fields.Boolean(
         string='E-mail to complainant after change state of complaint (y/n)',
         default=False,
@@ -93,6 +100,9 @@ class ResCimConfigSettings(models.TransientModel):
         values.set_default('res.cim.config.settings',
                            'length_tracking_code',
                            self.length_tracking_code)
+        values.set_default('res.cim.config.settings',
+                           'acknowledgement_period',
+                           self.acknowledgement_period)
         values.set_default('res.cim.config.settings',
                            'automatic_email_state',
                            self.automatic_email_state)

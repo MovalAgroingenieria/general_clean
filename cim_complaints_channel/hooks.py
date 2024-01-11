@@ -22,6 +22,8 @@ def post_init_hook(cr, registry):
     values.set_default('res.cim.config.settings',
                        'length_tracking_code', 8)
     values.set_default('res.cim.config.settings',
+                       'acknowledgement_period', 7)
+    values.set_default('res.cim.config.settings',
                        'automatic_email_state', False)
     values.set_default('res.cim.config.settings',
                        'automatic_email_validate_com', False)

@@ -23,6 +23,9 @@
                     <field name="length_tracking_code"
                            string="Tracking code length"
                            style="width:100px"/>
+                    <field name="acknowledgement_period"
+                           string="Acknowledgement period"
+                           style="width:100px"/>
                     <field name="automatic_email_state"
                            string="Email after change state"/>
                     <field name="automatic_email_validate_com"

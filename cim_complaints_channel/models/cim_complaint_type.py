@@ -23,6 +23,11 @@ class CimComplaintType(models.Model):
         string='Standard Type (y/n)',
         default=False)
 
+    complaint_ids = fields.One2many(
+        string='Complaints',
+        comodel_name='cim.complaint',
+        inverse_name='complaint_type_id',)
+
     number_of_complaints = fields.Integer(
         string='Number of complaints',
         compute='_compute_number_of_complaints',)
@@ -38,8 +43,8 @@ class CimComplaintType(models.Model):
     def _compute_number_of_complaints(self):
         for record in self:
             number_of_complaints = 0
-            # Provisional
-            # TODO...
+            if record.complaint_ids:
+                number_of_complaints = len(record.complaint_ids)
             record.number_of_complaints = number_of_complaints
 
     @api.multi
