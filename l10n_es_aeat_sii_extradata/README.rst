@@ -11,6 +11,9 @@ Description
 
 This module updates Agencia Tributaria Española WSDL URLs.
 
+Additionally the '_get_sii_in_taxes' method in the AccountInvoice Class is
+overwritten to evaluate non-deductible taxes.
+
 Credits
 =======
 
