@@ -38,10 +38,6 @@ class CimComplaint(models.Model):
         index=True,
         readonly=True,)
 
-    decrypted_tracking_code = fields.Char(
-        string='Decrypted tracking code',
-        compute='_compute_decrypted_tracking_code',)
-
     complaint_type_id = fields.Many2one(
         string='Complaint Type',
         comodel_name='cim.complaint.type',
@@ -119,22 +115,23 @@ class CimComplaint(models.Model):
 
     is_anonymous = fields.Boolean(
         string='Anonymous Complaint',
-        default=True,)
+        default=True,
+        compute='_compute_is_anonymous')
 
     measures_taken = fields.Text(
         string='Measures taken',
         index=True,)
 
-    resolution_text = fields.Char(
+    resolution_text = fields.Text(
         string='Resolution Text',)
 
     is_delegated = fields.Boolean(
         string='Delegated Complaint',
-        default=False,)
+        default=False,
+        readonly=True,)
 
-    decrypted_complainant_email = fields.Char(
-        string='Complainant E-mail',
-        compute='_compute_decrypted_complainant_email',)
+    notes = fields.Html(
+        string='Notes',)
 
     state = fields.Selection(
         string="State",
@@ -150,13 +147,15 @@ class CimComplaint(models.Model):
             ('05_resolved',
              'Resolved'),
         ],
-        default='03_in_progress',
+        default='01_received',
         required=True,
         index=True,)
 
     investigating_user_id = fields.Many2one(
         string='Instructor',
-        comodel_name='res.users',)
+        comodel_name='res.users',
+        store=True,
+        compute='_compute_investigating_user_id')
 
     number_of_communications = fields.Integer(
         string='Number of communications',
@@ -201,6 +200,26 @@ class CimComplaint(models.Model):
         string='Juditial Action',
         default=False,)
 
+    decrypted_tracking_code = fields.Char(
+        string='Decrypted tracking code',
+        compute='_compute_decrypted_tracking_code',)
+
+    decrypted_complainant_name = fields.Char(
+        string='Decrypted complainant name',
+        compute='_compute_decrypted_complainant_name',)
+
+    decrypted_complainant_email = fields.Char(
+        string='Decrypted complainant e-mail',
+        compute='_compute_decrypted_complainant_email',)
+
+    decrypted_complainant_phone = fields.Char(
+        string='Decrypted complainant phone',
+        compute='_compute_decrypted_complainant_phone',)
+
+    decrypted_witness_name = fields.Char(
+        string='Decrypted witness name',
+        compute='_compute_decrypted_witness_name',)
+
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
         for record in self:
@@ -210,26 +229,21 @@ class CimComplaint(models.Model):
             record.complaint_date = complaint_date
 
     @api.multi
-    def _compute_decrypted_tracking_code(self):
+    def _compute_is_anonymous(self):
         for record in self:
-            decrypted_tracking_code = ''
-            if record.tracking_code:
-                # Provisional
-                decrypted_tracking_code = record.tracking_code
-                # TODO
-            record.decrypted_tracking_code = decrypted_tracking_code
+            is_anonymous = True
+            if (record.complainant_name or record.complainant_vat or
+               record.complainant_phone):
+                is_anonymous = False
+            record.is_anonymous = is_anonymous
 
-    @api.multi
-    def _compute_decrypted_complainant_email(self):
+    @api.depends('state')
+    def _compute_investigating_user_id(self):
         for record in self:
-            decrypted_complainant_email = ''
-            if record.decrypted_complainant_email:
-                # Provisional
-                # TODO...
-                decrypted_complainant_email = \
-                    record.decrypted_complainant_email
-            record.decrypted_complainant_email = \
-                decrypted_complainant_email
+            investigating_user_id = None
+            if record.state and record.state == '03_in_progress':
+                investigating_user_id = self.env.user.id
+            record.investigating_user_id = investigating_user_id
 
     @api.multi
     def _compute_number_of_communications(self):
@@ -247,6 +261,76 @@ class CimComplaint(models.Model):
             # PROVISIONAL
             # TODO...
             record.deadline_state = deadline_state
+
+    @api.multi
+    def _compute_decrypted_tracking_code(self):
+        for record in self:
+            decrypted_tracking_code = ''
+            if record.tracking_code:
+                # Provisional
+                decrypted_tracking_code = record.tracking_code
+                # TODO
+            record.decrypted_tracking_code = decrypted_tracking_code
+
+    @api.multi
+    def _compute_decrypted_complainant_name(self):
+        for record in self:
+            decrypted_complainant_name = ''
+            if record.decrypted_complainant_name:
+                # Provisional
+                # TODO...
+                decrypted_complainant_name = \
+                    record.decrypted_complainant_name
+            record.decrypted_complainant_name = \
+                decrypted_complainant_name
+
+    @api.multi
+    def _compute_decrypted_complainant_email(self):
+        for record in self:
+            decrypted_complainant_email = ''
+            if record.decrypted_complainant_email:
+                # Provisional
+                # TODO...
+                decrypted_complainant_email = \
+                    record.decrypted_complainant_email
+            record.decrypted_complainant_email = \
+                decrypted_complainant_email
+
+    @api.multi
+    def _compute_decrypted_complainant_vat(self):
+        for record in self:
+            decrypted_complainant_vat = ''
+            if record.decrypted_complainant_vat:
+                # Provisional
+                # TODO...
+                decrypted_complainant_vat = \
+                    record.decrypted_complainant_vat
+            record.decrypted_complainant_vat = \
+                decrypted_complainant_vat
+
+    @api.multi
+    def _compute_decrypted_complainant_phone(self):
+        for record in self:
+            decrypted_complainant_phone = ''
+            if record.decrypted_complainant_phone:
+                # Provisional
+                # TODO...
+                decrypted_complainant_phone = \
+                    record.decrypted_complainant_phone
+            record.decrypted_complainant_phone = \
+                decrypted_complainant_phone
+
+    @api.multi
+    def _compute_decrypted_witness_name(self):
+        for record in self:
+            decrypted_witness_name = ''
+            if record.decrypted_witness_name:
+                # Provisional
+                # TODO...
+                decrypted_witness_name = \
+                    record.decrypted_witness_name
+            record.decrypted_witness_name = \
+                decrypted_witness_name
 
     @api.multi
     def action_get_communications(self):

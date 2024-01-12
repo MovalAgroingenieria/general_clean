@@ -186,11 +186,14 @@
                     </group>
                     <notebook>
                         <page name="resolution" string="Resolution">
-                            <field name="resolution_text"/>
+                            <group name="group_resolution">
+                                <field name="resolution_text" nolabel="1"/>
+                            </group>
                         </page>
                         <page name="documents" string="Documents">
                         </page>
                         <page name="notes" string="Notes">
+                            <field name="notes"/>
                         </page>
                     </notebook>
                 </sheet>
