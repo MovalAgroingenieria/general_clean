@@ -2,12 +2,16 @@
 # Copyright 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+from lxml import etree
+from odoo import models, fields, api, exceptions, _
 
 
 class CimComplaint(models.Model):
     _name = 'cim.complaint'
     _description = 'Complaint'
+    _inherit = 'mail.thread'
     _order = 'name'
 
     SIZE_SMALL = 25
@@ -15,10 +19,17 @@ class CimComplaint(models.Model):
     SIZE_MEDIUM_EXTRA = 75
     SIZE_NORMAL = 100
 
+    def _default_setted_sequence(self):
+        resp = False
+        sequence_complaint_code_id = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'sequence_complaint_code_id')
+        if sequence_complaint_code_id:
+            resp = True
+        return resp
+
     name = fields.Char(
         string='Code',
         size=SIZE_SMALL,
-        required=True,
         index=True,)
 
     issue = fields.Char(
@@ -67,7 +78,7 @@ class CimComplaint(models.Model):
         ondelete='restrict',)
 
     complaint_frequency = fields.Selection(
-        string="State",
+        string="Complaint Frequency",
         selection=[
             ('01_not_remembered', 'Not remembered'),
             ('02_specific_day', 'A specific day'),
@@ -90,13 +101,11 @@ class CimComplaint(models.Model):
         string='Creation Date',
         default=lambda self: fields.datetime.now(),)
 
-    deadline_date = fields.Date(
-        string='Deadline Date',)
-
     complainant_email = fields.Char(
         string='Complainant E-mail',
         size=SIZE_MEDIUM,
-        index=True,)
+        index=True,
+        track_visibility='onchange',)
 
     complainant_name = fields.Char(
         string='Complainant Name',
@@ -125,6 +134,10 @@ class CimComplaint(models.Model):
     resolution_text = fields.Text(
         string='Resolution Text',)
 
+    user_in_group_cim_settings = fields.Boolean(
+        string='Is a complaints administrator?',
+        compute='_compute_user_in_group_cim_settings',)
+
     is_delegated = fields.Boolean(
         string='Delegated Complaint',
         default=False,
@@ -149,17 +162,50 @@ class CimComplaint(models.Model):
         ],
         default='01_received',
         required=True,
-        index=True,)
+        index=True,
+        track_visibility='onchange',)
 
     investigating_user_id = fields.Many2one(
         string='Instructor',
         comodel_name='res.users',
         store=True,
-        compute='_compute_investigating_user_id')
+        compute='_compute_investigating_user_id',
+        track_visibility='onchange',)
 
     number_of_communications = fields.Integer(
         string='Number of communications',
         compute='_compute_number_of_communications',)
+
+    is_rejected = fields.Boolean(
+        string='Rejected complaint',
+        default=False,
+        readonly=True,
+        track_visibility='onchange',)
+
+    rejection_cause = fields.Text(
+        string='Cause of the rejection',)
+
+    is_extended = fields.Boolean(
+        string='Extended process',
+        default=False,
+        readonly=True,
+        track_visibility='onchange',)
+
+    param_notice_period = fields.Integer(
+        string='Notice Period (number of days)',
+        compute='_compute_param_notice_period',)
+
+    param_deadline = fields.Integer(
+        string='Deadline (number of months)',
+        compute='_compute_param_deadline',)
+
+    param_deadline_extended = fields.Integer(
+        string='Extended Deadline (number of months)',
+        compute='_compute_param_deadline_extended',)
+
+    deadline_date = fields.Date(
+        string='Deadline Date',
+        compute='_compute_deadline_date',)
 
     deadline_state = fields.Selection(
         string='Deadline Status',
@@ -200,6 +246,11 @@ class CimComplaint(models.Model):
         string='Juditial Action',
         default=False,)
 
+    setted_sequence = fields.Boolean(
+        string='Setted Sequence (y/n)',
+        default=_default_setted_sequence,
+        compute='_compute_setted_sequence',)
+
     decrypted_tracking_code = fields.Char(
         string='Decrypted tracking code',
         compute='_compute_decrypted_tracking_code',)
@@ -237,6 +288,14 @@ class CimComplaint(models.Model):
                 is_anonymous = False
             record.is_anonymous = is_anonymous
 
+    @api.multi
+    def _compute_user_in_group_cim_settings(self):
+        user_in_group_cim_settings = \
+            self.env.user.has_group(
+                'cim_complaints_channel.group_cim_settings')
+        for record in self:
+            record.user_in_group_cim_settings = user_in_group_cim_settings
+
     @api.depends('state')
     def _compute_investigating_user_id(self):
         for record in self:
@@ -255,12 +314,79 @@ class CimComplaint(models.Model):
             record.number_of_communications = number_of_communications
 
     @api.multi
+    def _compute_param_notice_period(self):
+        param_notice_period = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'notice_period')
+        if not param_notice_period:
+            param_notice_period = 10
+        for record in self:
+            record.param_notice_period = param_notice_period
+
+    @api.multi
+    def _compute_param_deadline(self):
+        param_deadline = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'deadline')
+        if not param_deadline:
+            param_deadline = 1
+        for record in self:
+            record.param_deadline = param_deadline
+
+    @api.multi
+    def _compute_param_deadline_extended(self):
+        param_deadline_extended = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'deadline_extended')
+        if not param_deadline_extended:
+            param_deadline_extended = 1
+        for record in self:
+            record.param_deadline_extended = param_deadline_extended
+
+    @api.multi
+    def _compute_deadline_date(self):
+        for record in self:
+            instruction_months = record.param_deadline
+            if record.is_extended:
+                instruction_months = record.param_deadline_extended
+            deadline_date = (datetime.strptime(record.creation_date, '%Y-%m-%d') +
+                             relativedelta(months=instruction_months) +
+                             relativedelta(days=-1)).strftime('%Y-%m-%d')
+            record.deadline_date = deadline_date
+
+    @api.multi
     def _compute_deadline_state(self):
         for record in self:
             deadline_state = '01_on_time'
-            # PROVISIONAL
-            # TODO...
+            current_date = datetime.today().strftime('%Y-%m-%d')
+            # Provisional (test: add days to current_date)
+            current_date = (datetime.strptime(
+                current_date, '%Y-%m-%d') + relativedelta(
+                days=73)).strftime('%Y-%m-%d')
+            # Provisional (end of test)
+            deadline_date_normal = \
+                ((datetime.strptime(record.creation_date, '%Y-%m-%d') +
+                  relativedelta(months=record.param_deadline) +
+                  relativedelta(days=-1)).strftime('%Y-%m-%d'))
+            if current_date <= deadline_date_normal:
+                deadline_notice_normal = (datetime.strptime(
+                    deadline_date_normal, '%Y-%m-%d') + relativedelta(
+                    days=-record.param_notice_period)).strftime('%Y-%m-%d')
+                if current_date >= deadline_notice_normal:
+                    deadline_state = '02_upcoming_expiration'
+            else:
+                if record.is_extended:
+                    # Provisional (TODO)
+                    print 'extended...'
+                else:
+                    deadline_state = '03_expirated'
             record.deadline_state = deadline_state
+
+    def _compute_setted_sequence(self):
+        sequence_complaint_code_id = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'sequence_complaint_code_id')
+        for record in self:
+            setted_sequence = False
+            if sequence_complaint_code_id:
+                setted_sequence = True
+            record.setted_sequence = setted_sequence
 
     @api.multi
     def _compute_decrypted_tracking_code(self):
@@ -333,6 +459,58 @@ class CimComplaint(models.Model):
                 decrypted_witness_name
 
     @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            display_name = record.name + \
+                ' (' + record.complaint_type_id.name + ')'
+            result.append((record.id, display_name))
+        return result
+
+    @api.model
+    def create(self, vals):
+        sequence_complaint_code_id = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'sequence_complaint_code_id')
+        if sequence_complaint_code_id:
+            model_ir_sequence = self.env['ir.sequence'].sudo()
+            sequence_complaint_code = \
+                model_ir_sequence.browse(sequence_complaint_code_id)
+            if sequence_complaint_code:
+                new_code = model_ir_sequence.next_by_code(
+                    sequence_complaint_code.code)
+                vals['name'] = new_code
+        else:
+            if 'name' in vals and vals['name']:
+                vals['name'] = vals['name'].strip()
+        if ('name' not in vals) or (not vals['name']):
+            raise exceptions.ValidationError(_('It is mandatory to enter a '
+                                               'code for the new complaint.'))
+        new_complaint = super(CimComplaint, self).create(vals)
+        return new_complaint
+
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        res = super(CimComplaint, self).fields_view_get(
+            view_id=view_id, view_type=view_type,
+            toolbar=toolbar, submenu=submenu)
+        if (not self.env.user.has_group(
+                'cim_complaints_channel.group_cim_settings')):
+            if view_type == 'tree':
+                doc = etree.XML(res['arch'])
+                nodes = doc.xpath('//tree')
+                for node in nodes:
+                    node.set('create', '0')
+                res['arch'] = etree.tostring(doc)
+            if view_type == 'form':
+                doc = etree.XML(res['arch'])
+                nodes = doc.xpath('//form')
+                for node in nodes:
+                    node.set('create', '0')
+                res['arch'] = etree.tostring(doc)
+        return res
+
+    @api.multi
     def action_get_communications(self):
         self.ensure_one()
         # Provisional
@@ -340,15 +518,21 @@ class CimComplaint(models.Model):
         # TODO...
 
     @api.multi
-    def action_go_to_state_04_ready(self):
+    def action_go_to_state_02_admitted(self):
         self.ensure_one()
         # Provisional
-        print 'action_go_to_state_04_ready...'
+        print 'action_go_to_state_02_admitted...'
         # TODO...
 
     @api.multi
-    def action_go_to_state_previous(self):
+    def action_reject(self):
         self.ensure_one()
-        # Provisional
-        print 'action_go_to_state_previous...'
-        # TODO...
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Complaint') + ' : ' + self.name,
+            'res_model': 'wizard.reject.complaint',
+            'src_model': 'cim.complaint',
+            'view_mode': 'form',
+            'target': 'new',
+            }
+        return act_window

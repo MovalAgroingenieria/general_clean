@@ -53,14 +53,14 @@ class ResCimConfigSettings(models.TransientModel):
         required=True,
         help='Notice period before the complaint deadline (number of days)',)
 
-    deadline = fields.Float(
+    deadline = fields.Integer(
         string='Deadline (number of months)',
         digits=(32, 2),
         default=1,
         required=True,
         help='Complaint deadline (number of months)',)
 
-    deadline_extended = fields.Float(
+    deadline_extended = fields.Integer(
         string='Extended Deadline (number of months)',
         digits=(32, 2),
         default=1,

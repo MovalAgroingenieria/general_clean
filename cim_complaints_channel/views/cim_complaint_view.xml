@@ -7,20 +7,23 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <field name="id" invisible="1"/>
+                <field name="setted_sequence" invisible="1"/>
+                <field name="deadline_state" invisible="1"/>
+                <field name="is_rejected" invisible="1"/>
                 <header>
-                    <button name="action_go_to_state_04_ready"
-                            type="object" string="Propose"
-                            style="width: 105px;"
-                            class="oe_highlight"
-                            attrs="{'invisible': [('state','!=','03_in_progress')]}"
+                    <button name="action_go_to_state_02_admitted" type="object"
+                            string="Admit"
+                            style="width: 125px;"
+                            icon="fa-sign-in"
+                            attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
-                            confirm="This action will change to the 'Ready' state. Proceed?"/>
-                    <button name="action_go_to_state_previous"
-                            type="object" string="Cancel"
-                            style="width: 105px;"
-                            attrs="{'invisible': [('state','=','01_received')]}"
-                            groups="cim_complaints_channel.group_cim_manager"
-                            confirm="This action will return to the previous state. Proceed?"/>
+                            confirm="This action will change to the 'Admitted' state. Proceed?"/>
+                    <button name="action_reject" type="object"
+                            string="Reject"
+                            style="width: 125px;"
+                            icon="fa-ban"
+                            attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
+                            groups="cim_complaints_channel.group_cim_manager"/>
                     <field name="state"
                            widget="statusbar"
                            statusbar_visible="01_received,02_admitted,03_in_progress,04_ready,05_resolved"/>
@@ -48,7 +51,7 @@
                             <field name="name"
                                    style="width:320px"
                                    placeholder="Code"
-                                   attrs="{'readonly': [('id','>',0)]}"/>
+                                   attrs="{'readonly': ['|', ('id','>',0), ('setted_sequence','=',True)]}"/>
                         </h1>
                         <div>
                             <field name="complaint_type_id"
@@ -81,9 +84,36 @@
                             <div colspan="49">
                                 <group name="group_01_right_inner">
                                     <div name="group_01_right_title" colspan="2"
-                                         class="text-center text-uppercase"
-                                         style="font-weight:bold;margin-bottom:15px">
-                                        <field name="deadline_state"/>
+                                         class="text-center"
+                                         style="margin-bottom:15px">
+                                        <span style="font-weight:bold"
+                                              attrs="{'invisible': [('deadline_state', '!=', '01_on_time')]}">
+                                            INSTRUCTION ON TIME
+                                        </span>
+                                        <span class="bg-warning" style="padding:5px"
+                                              attrs="{'invisible': [('deadline_state', '!=', '02_upcoming_expiration')]}">
+                                            INSTRUCTION DEADLINE SOON TO EXPIRE
+                                        </span>
+                                        <span class="bg-danger" style="padding:5px"
+                                              attrs="{'invisible': [('deadline_state', '!=', '03_expirated')]}">
+                                            INSTRUCTION PERIOD EXPIRATED
+                                        </span>
+                                        <span style="font-weight:bold"
+                                              attrs="{'invisible': [('deadline_state', '!=', '04_extended')]}">
+                                            EXTENDED INSTRUCTION ON TIME
+                                        </span>
+                                        <span class="bg-warning" style="padding:5px"
+                                              attrs="{'invisible': [('deadline_state', '!=', '05_extended_upcoming_expiration')]}">
+                                            EXTENDED INSTRUCTION DEADLINE SOON TO EXPIRE
+                                        </span>
+                                        <span class="bg-danger" style="padding:5px"
+                                              attrs="{'invisible': [('deadline_state', '!=', '06_extended_expirated')]}">
+                                            EXTENDED INSTRUCTION PERIOD EXPIRATED
+                                        </span>
+                                        <span class="bg-primary" style="padding:3px"
+                                              attrs="{'invisible': [('deadline_state', '!=', '07_finished')]}">
+                                            INSTRUCTION FINISHED
+                                        </span>
                                     </div>
                                     <field name="investigating_user_id"
                                            string="Instructor"/>
@@ -197,6 +227,12 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"
+                           groups="cim_complaints_channel.group_cim_user"/>
+                    <field name="message_ids" widget="mail_thread"
+                           groups="cim_complaints_channel.group_cim_user"/>
+                </div>
             </form>
         </field>
     </record>
@@ -239,6 +275,7 @@
                 (0, 0, {'view_mode': 'form',
                         'view_id': ref('cim_complaint_view_form')})]"/>
         <field name="search_view_id" ref="cim_complaint_view_search"/>
+        <field name="context">{'default_is_delegated': True}</field>
     </record>
 
     <menuitem id="complaint_normal_menu"

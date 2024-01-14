@@ -24,7 +24,7 @@
                            string="Tracking code length"
                            style="width:100px"/>
                     <field name="acknowledgement_period"
-                           string="Acknowledgement period"
+                           string="Acknowledgement period (days)"
                            style="width:100px"/>
                     <field name="automatic_email_state"
                            string="Email after change state"/>
@@ -35,13 +35,13 @@
                            options="{'no_quick_create':True,'no_create_edit':True}"
                            style="width:300px"/>
                     <field name="notice_period"
-                           string="Notice Period"
+                           string="Notice Period (days)"
                            style="width:100px"/>
                     <field name="deadline"
-                           string="Deadline"
+                           string="Deadline (months)"
                            style="width:100px"/>
                     <field name="deadline_extended"
-                           string="Deadline Extended"
+                           string="Deadline Extended (months)"
                            style="width:100px"/>
                 </group>
             </form>
