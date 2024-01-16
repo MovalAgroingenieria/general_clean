@@ -90,29 +90,33 @@
                                               attrs="{'invisible': [('deadline_state', '!=', '01_on_time')]}">
                                             INSTRUCTION ON TIME
                                         </span>
-                                        <span class="bg-warning" style="padding:5px"
+                                        <span style="padding:5px;font-weight:bold;background-color:#ff8c00;color:#ffffff"
                                               attrs="{'invisible': [('deadline_state', '!=', '02_upcoming_expiration')]}">
-                                            INSTRUCTION DEADLINE SOON TO EXPIRE
+                                            (instruction deadline soon to expire)
                                         </span>
-                                        <span class="bg-danger" style="padding:5px"
+                                        <span style="padding:5px;font-weight:bold;background-color:#dc143c;color:#ffffff"
                                               attrs="{'invisible': [('deadline_state', '!=', '03_expirated')]}">
-                                            INSTRUCTION PERIOD EXPIRATED
+                                            (instruction period expirated)
                                         </span>
                                         <span style="font-weight:bold"
                                               attrs="{'invisible': [('deadline_state', '!=', '04_extended')]}">
-                                            EXTENDED INSTRUCTION ON TIME
+                                            INSTRUCTION ON TIME (EXTENDED)
                                         </span>
-                                        <span class="bg-warning" style="padding:5px"
+                                        <span style="padding:5px;font-weight:bold;background-color:#ff8c00;color:#ffffff"
                                               attrs="{'invisible': [('deadline_state', '!=', '05_extended_upcoming_expiration')]}">
-                                            EXTENDED INSTRUCTION DEADLINE SOON TO EXPIRE
+                                            (extended instruction deadline soon to expire)
                                         </span>
-                                        <span class="bg-danger" style="padding:5px"
+                                        <span style="padding:5px;font-weight:bold;background-color:#dc143c;color:#ffffff"
                                               attrs="{'invisible': [('deadline_state', '!=', '06_extended_expirated')]}">
-                                            EXTENDED INSTRUCTION PERIOD EXPIRATED
+                                            (extended instruction period expirated)
                                         </span>
-                                        <span class="bg-primary" style="padding:3px"
+                                        <span style="font-weight:bold"
                                               attrs="{'invisible': [('deadline_state', '!=', '07_finished')]}">
                                             INSTRUCTION FINISHED
+                                        </span>
+                                        <span style="padding:5px;font-weight:bold;background-color:#2f4f4f;color:#ffffff"
+                                              attrs="{'invisible': [('deadline_state', '!=', '99_rejected')]}">
+                                            (instruction rejected)
                                         </span>
                                     </div>
                                     <field name="investigating_user_id"

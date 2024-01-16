@@ -224,6 +224,8 @@ class CimComplaint(models.Model):
              'Extended instruction period expirated'),
             ('07_finished',
              'Instruction finished'),
+            ('99_rejected',
+             'Instruction rejected'),
         ],
         default='01_on_time',
         compute='_compute_deadline_state',)
@@ -346,37 +348,40 @@ class CimComplaint(models.Model):
             instruction_months = record.param_deadline
             if record.is_extended:
                 instruction_months = record.param_deadline_extended
-            deadline_date = (datetime.strptime(record.creation_date, '%Y-%m-%d') +
-                             relativedelta(months=instruction_months) +
-                             relativedelta(days=-1)).strftime('%Y-%m-%d')
+            deadline_date = (datetime.strptime(
+                record.creation_date, '%Y-%m-%d') +
+                relativedelta(months=instruction_months) +
+                relativedelta(days=-1)).strftime('%Y-%m-%d')
             record.deadline_date = deadline_date
 
     @api.multi
     def _compute_deadline_state(self):
         for record in self:
-            deadline_state = '01_on_time'
-            current_date = datetime.today().strftime('%Y-%m-%d')
-            # Provisional (test: add days to current_date)
-            current_date = (datetime.strptime(
-                current_date, '%Y-%m-%d') + relativedelta(
-                days=73)).strftime('%Y-%m-%d')
-            # Provisional (end of test)
-            deadline_date_normal = \
-                ((datetime.strptime(record.creation_date, '%Y-%m-%d') +
-                  relativedelta(months=record.param_deadline) +
-                  relativedelta(days=-1)).strftime('%Y-%m-%d'))
-            if current_date <= deadline_date_normal:
-                deadline_notice_normal = (datetime.strptime(
-                    deadline_date_normal, '%Y-%m-%d') + relativedelta(
-                    days=-record.param_notice_period)).strftime('%Y-%m-%d')
-                if current_date >= deadline_notice_normal:
-                    deadline_state = '02_upcoming_expiration'
-            else:
-                if record.is_extended:
-                    # Provisional (TODO)
-                    print 'extended...'
+            deadline_state = '99_rejected'
+            if not record.is_rejected:
+                deadline_state = '01_on_time'
+                current_date = datetime.today().strftime('%Y-%m-%d')
+                # Provisional (test: add days to current_date)
+                current_date = (datetime.strptime(
+                    current_date, '%Y-%m-%d') + relativedelta(
+                    days=73)).strftime('%Y-%m-%d')
+                # Provisional (end of test)
+                deadline_date_normal = \
+                    ((datetime.strptime(record.creation_date, '%Y-%m-%d') +
+                      relativedelta(months=record.param_deadline) +
+                      relativedelta(days=-1)).strftime('%Y-%m-%d'))
+                if current_date <= deadline_date_normal:
+                    deadline_notice_normal = (datetime.strptime(
+                        deadline_date_normal, '%Y-%m-%d') + relativedelta(
+                        days=-record.param_notice_period)).strftime('%Y-%m-%d')
+                    if current_date >= deadline_notice_normal:
+                        deadline_state = '02_upcoming_expiration'
                 else:
-                    deadline_state = '03_expirated'
+                    if record.is_extended:
+                        # Provisional (TODO)
+                        print 'extended...'
+                    else:
+                        deadline_state = '03_expirated'
             record.deadline_state = deadline_state
 
     def _compute_setted_sequence(self):

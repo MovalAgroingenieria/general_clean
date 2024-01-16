@@ -29,9 +29,10 @@ class WizardRejectComplaint(models.TransientModel):
 
     def set_rejected(self):
         self.ensure_one()
-        record = self.env['cim.complaint'].browse(self.env.context['active_id'])
+        record = self.env['cim.complaint'].browse(
+            self.env.context['active_id'])
         if record:
             record.write({
                 'is_rejected': True,
-                'cancellation_cause': self.rejection_cause,
+                'rejection_cause': self.rejection_cause,
                 })
