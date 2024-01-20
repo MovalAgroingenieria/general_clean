@@ -191,6 +191,10 @@ class CimComplaint(models.Model):
         readonly=True,
         track_visibility='onchange',)
 
+    param_acknowledgement_period = fields.Integer(
+        string='Acknowledgement period (number of days)',
+        compute='_compute_param_acknowledgement_period',)
+
     param_notice_period = fields.Integer(
         string='Notice Period (number of days)',
         compute='_compute_param_notice_period',)
@@ -229,6 +233,11 @@ class CimComplaint(models.Model):
         ],
         default='01_on_time',
         compute='_compute_deadline_state',)
+
+    is_acknowledgement_expired = fields.Boolean(
+        string='Expired acknowledgement',
+        default=False,
+        compute='_compute_is_acknowledgement_expired',)
 
     infringement_level = fields.Selection(
         string="Infringement Level",
@@ -316,6 +325,15 @@ class CimComplaint(models.Model):
             record.number_of_communications = number_of_communications
 
     @api.multi
+    def _compute_param_acknowledgement_period(self):
+        param_acknowledgement_period = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'acknowledgement_period')
+        if not param_acknowledgement_period:
+            param_acknowledgement_period = 7
+        for record in self:
+            record.param_acknowledgement_period = param_acknowledgement_period
+
+    @api.multi
     def _compute_param_notice_period(self):
         param_notice_period = self.env['ir.values'].get_default(
             'res.cim.config.settings', 'notice_period')
@@ -357,32 +375,55 @@ class CimComplaint(models.Model):
     @api.multi
     def _compute_deadline_state(self):
         for record in self:
-            deadline_state = '99_rejected'
-            if not record.is_rejected:
-                deadline_state = '01_on_time'
+            deadline_state = '07_finished'
+            if record.is_rejected:
+                deadline_state = '99_rejected'
+            elif record.state != '05_resolved':
                 current_date = datetime.today().strftime('%Y-%m-%d')
                 # Provisional (test: add days to current_date)
-                current_date = (datetime.strptime(
-                    current_date, '%Y-%m-%d') + relativedelta(
-                    days=73)).strftime('%Y-%m-%d')
+                # current_date = (datetime.strptime(
+                #     current_date, '%Y-%m-%d') + relativedelta(
+                #     days=73)).strftime('%Y-%m-%d')
+                # print(current_date)
                 # Provisional (end of test)
-                deadline_date_normal = \
+                months_deadline = record.param_deadline
+                if record.is_extended:
+                    months_deadline = record.param_deadline_extended
+                deadline_date = \
                     ((datetime.strptime(record.creation_date, '%Y-%m-%d') +
-                      relativedelta(months=record.param_deadline) +
+                      relativedelta(months=months_deadline) +
                       relativedelta(days=-1)).strftime('%Y-%m-%d'))
-                if current_date <= deadline_date_normal:
-                    deadline_notice_normal = (datetime.strptime(
-                        deadline_date_normal, '%Y-%m-%d') + relativedelta(
-                        days=-record.param_notice_period)).strftime('%Y-%m-%d')
-                    if current_date >= deadline_notice_normal:
-                        deadline_state = '02_upcoming_expiration'
-                else:
+                if current_date <= deadline_date:
+                    deadline_state = '01_on_time'
                     if record.is_extended:
-                        # Provisional (TODO)
-                        print 'extended...'
-                    else:
-                        deadline_state = '03_expirated'
+                        deadline_state = '04_extended'
+                    deadline_notice = (datetime.strptime(
+                        deadline_date, '%Y-%m-%d') + relativedelta(
+                        days=-record.param_notice_period + 1)).strftime('%Y-%m-%d')
+                    if current_date >= deadline_notice:
+                        deadline_state = '02_upcoming_expiration'
+                        if record.is_extended:
+                            deadline_state = '05_extended_upcoming_expiration'
+                else:
+                    deadline_state = '03_expirated'
+                    if record.is_extended:
+                        deadline_state = '06_extended_expirated'
             record.deadline_state = deadline_state
+
+    @api.multi
+    def _compute_is_acknowledgement_expired(self):
+        for record in self:
+            is_acknowledgement_expired = False
+            if not record.is_rejected and record.state == '01_received':
+                deadline_acknowledgement = \
+                    ((datetime.strptime(
+                        record.creation_date, '%Y-%m-%d') +
+                        relativedelta(days=record.param_acknowledgement_period - 1)).
+                        strftime('%Y-%m-%d'))
+                current_date = datetime.today().strftime('%Y-%m-%d')
+                if current_date > deadline_acknowledgement:
+                    is_acknowledgement_expired = True
+            record.is_acknowledgement_expired = is_acknowledgement_expired
 
     def _compute_setted_sequence(self):
         sequence_complaint_code_id = self.env['ir.values'].get_default(

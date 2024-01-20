@@ -45,3 +45,33 @@
 .o_cim_complaints_channel_link_type_view_tree [data-id="notes_text"] {
     width: 100%;
 }
+
+/**/
+/* Custom classes */
+/**/
+
+.blink_text {
+    animation:1s blinker linear infinite;
+    -webkit-animation:1s blinker linear infinite;
+    -moz-animation:1s blinker linear infinite;
+    animation-iteration-count: 10;
+    color: red;
+}
+
+@-moz-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

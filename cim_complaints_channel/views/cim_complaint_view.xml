@@ -10,6 +10,7 @@
                 <field name="setted_sequence" invisible="1"/>
                 <field name="deadline_state" invisible="1"/>
                 <field name="is_rejected" invisible="1"/>
+                <field name="is_acknowledgement_expired" invisible="1"/>
                 <header>
                     <button name="action_go_to_state_02_admitted" type="object"
                             string="Admit"
@@ -87,36 +88,40 @@
                                          class="text-center"
                                          style="margin-bottom:15px">
                                         <span style="font-weight:bold"
-                                              attrs="{'invisible': [('deadline_state', '!=', '01_on_time')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '01_on_time')]}">
                                             INSTRUCTION ON TIME
                                         </span>
                                         <span style="padding:5px;font-weight:bold;background-color:#ff8c00;color:#ffffff"
-                                              attrs="{'invisible': [('deadline_state', '!=', '02_upcoming_expiration')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '02_upcoming_expiration')]}">
                                             (instruction deadline soon to expire)
                                         </span>
                                         <span style="padding:5px;font-weight:bold;background-color:#dc143c;color:#ffffff"
-                                              attrs="{'invisible': [('deadline_state', '!=', '03_expirated')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '03_expirated')]}">
                                             (instruction period expirated)
                                         </span>
                                         <span style="font-weight:bold"
-                                              attrs="{'invisible': [('deadline_state', '!=', '04_extended')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '04_extended')]}">
                                             INSTRUCTION ON TIME (EXTENDED)
                                         </span>
                                         <span style="padding:5px;font-weight:bold;background-color:#ff8c00;color:#ffffff"
-                                              attrs="{'invisible': [('deadline_state', '!=', '05_extended_upcoming_expiration')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '05_extended_upcoming_expiration')]}">
                                             (extended instruction deadline soon to expire)
                                         </span>
                                         <span style="padding:5px;font-weight:bold;background-color:#dc143c;color:#ffffff"
-                                              attrs="{'invisible': [('deadline_state', '!=', '06_extended_expirated')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '06_extended_expirated')]}">
                                             (extended instruction period expirated)
                                         </span>
                                         <span style="font-weight:bold"
-                                              attrs="{'invisible': [('deadline_state', '!=', '07_finished')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '07_finished')]}">
                                             INSTRUCTION FINISHED
                                         </span>
                                         <span style="padding:5px;font-weight:bold;background-color:#2f4f4f;color:#ffffff"
-                                              attrs="{'invisible': [('deadline_state', '!=', '99_rejected')]}">
+                                              attrs="{'invisible': ['|', ('is_acknowledgement_expired', '=', True), ('deadline_state', '!=', '99_rejected')]}">
                                             (instruction rejected)
+                                        </span>
+                                        <span style="font-weight:bold" class="blink_text"
+                                              attrs="{'invisible': [('is_acknowledgement_expired', '=', False)]}">
+                                            (acknowledgement expirated)
                                         </span>
                                     </div>
                                     <field name="investigating_user_id"
@@ -143,9 +148,9 @@
                                     <div name="section_description"
                                          colspan="2"
                                          class="panel-body"
-                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px">
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px;min-height:75px">
                                         <field name="description" nolabel="1"
-                                               style="margin-top:5px"/>
+                                               style="margin-top:5px;min-height:55px"/>
                                     </div>
                                     <field name="defendant_name"
                                            string="Defendant"/>
@@ -185,7 +190,8 @@
                         <group name="group_02_right" col="50">
                             <div colspan="1"/>
                             <div colspan="49">
-                                <group name="group_02_right_inner">
+                                <group name="group_02_right_inner"
+                                       attrs="{'invisible': [('is_rejected', '=', True)]}">
                                     <div name="group_02_right_inner_title_1"
                                          colspan="2"
                                          style="text-align:center;margin-bottom:5px">
@@ -196,9 +202,9 @@
                                     <div name="section_measures_taken"
                                          colspan="2"
                                          class="panel-body"
-                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px">
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px;min-height:150px">
                                         <field name="measures_taken" nolabel="1"
-                                               style="margin-top:5px"/>
+                                               style="margin-top:5px;min-height:170px"/>
                                     </div>
                                     <div name="group_02_right_inner_title_2"
                                          colspan="2"
@@ -210,9 +216,26 @@
                                     <div name="section_witness_name"
                                          colspan="2"
                                          class="panel-body"
-                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto">
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;min-height:75px">
                                         <field name="witness_name" nolabel="1"
-                                               style="margin-top:5px"/>
+                                               style="margin-top:5px;min-height:55px"/>
+                                    </div>
+                                </group>
+                                <group name="group_02_right_inner_rejected"
+                                       attrs="{'invisible': [('is_rejected', '=', False)]}">
+                                    <div name="group_02_right_inner_rejected_title_1"
+                                         colspan="2"
+                                         style="text-align:center;margin-bottom:5px">
+                                        <span style="font-weight:bold">
+                                        REJECTION CAUSE
+                                        </span>
+                                    </div>
+                                    <div name="section_rejection_cause"
+                                         colspan="2"
+                                         class="panel-body"
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px;min-height:75px">
+                                        <field name="rejection_cause" nolabel="1"
+                                               style="margin-top:5px;min-height:55px"/>
                                     </div>
                                 </group>
                             </div>
