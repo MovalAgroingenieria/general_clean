@@ -1,0 +1,106 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* client_connect
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-25 15:13+0000\n"
+"PO-Revision-Date: 2024-01-25 15:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: client_connect
+#: model:ir.model,name:client_connect.model_client_connect
+msgid "Client Connect Information"
+msgstr "Información de posible cliente"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: client_connect
+#: model:ir.ui.view,arch_db:client_connect.login_form_inherit
+msgid "Company Name <span style=\"color: #757575;\">\n"
+"        (Optional)</span>"
+msgstr "Nombre de empresa <span style=\"color: #757575;\">\n"
+"        (Opcional)</span>"
+
+#. module: client_connect
+#: model:ir.ui.view,arch_db:client_connect.login_form_inherit
+msgid "Contact Mail <span style=\"color: #757575;\">\n"
+"        (Mandatory)</span>"
+msgstr "Mail de contacto <span style=\"color: #757575;\">\n"
+"        (Obligatorio)</span>"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_country
+msgid "Country"
+msgstr "País"
+
+#. module: client_connect
+#: model:ir.ui.view,arch_db:client_connect.login_form_inherit
+msgid "Country <span style=\"color: #757575;\">(Optional)</span>"
+msgstr "País <span style=\"color: #757575;\">(Opcional)</span>"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_database
+msgid "Database"
+msgstr "Base de Datos"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_mail
+msgid "Email"
+msgstr "Correo electrónico"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_id
+msgid "ID"
+msgstr "ID"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: client_connect
+#: model:ir.model.fields,field_description:client_connect.field_client_connect_phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: client_connect
+#: model:ir.ui.view,arch_db:client_connect.login_form_inherit
+msgid "Phone Number <span style=\"color: #757575;\">(Optional)</span>"
+msgstr "Número de teléfono <span style=\"color: #757575;\">(Opcional)</span>"
+
