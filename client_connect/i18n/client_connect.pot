@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-25 15:12+0000\n"
-"PO-Revision-Date: 2024-01-25 15:12+0000\n"
+"POT-Creation-Date: 2024-01-30 18:43+0000\n"
+"PO-Revision-Date: 2024-01-30 18:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,12 +16,49 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: client_connect
-#: model:ir.model,name:client_connect.model_client_connect
+#: model:mail.template,body_html:client_connect.new_user_mail_template
+msgid "\n"
+"                <table style=\"border-collapse: collapse;\">\n"
+"                    <tr>\n"
+"                        <th style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">Database</th>\n"
+"                        <th style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">Email</th>\n"
+"                        <th style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">Phone</th>\n"
+"                        <th style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">Company</th>\n"
+"                        <th style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">Country</th>\n"
+"                    </tr>\n"
+"                    <tr>\n"
+"                        <td style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">ClientTest</td>\n"
+"                        <td style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\">jmartinez@gmail.es</td>\n"
+"                        <td style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\"></td>\n"
+"                        <td style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\"></td>\n"
+"                        <td style=\"border: 1px solid black; padding: 5px;\n"
+"                        text-align: center;\"></td>\n"
+"                    </tr>\n"
+"                </table>\n"
+"            "
+msgstr ""
+
+#. module: client_connect
+#: model:mail.template,subject:client_connect.new_user_mail_template
+msgid " New user in demo instance"
+msgstr ""
+
+#. module: client_connect
+#: model:ir.model,name:client_connect.model_client_data
 msgid "Client Connect Information"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_company
+#: model:ir.model.fields,field_description:client_connect.field_client_data_company
 msgid "Company"
 msgstr ""
 
@@ -38,7 +75,7 @@ msgid "Contact Mail <span style=\"color: #757575;\">\n"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_country
+#: model:ir.model.fields,field_description:client_connect.field_client_data_country
 msgid "Country"
 msgstr ""
 
@@ -48,52 +85,52 @@ msgid "Country <span style=\"color: #757575;\">(Optional)</span>"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_create_uid
+#: model:ir.model.fields,field_description:client_connect.field_client_data_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_create_date
+#: model:ir.model.fields,field_description:client_connect.field_client_data_create_date
 msgid "Created on"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_database
+#: model:ir.model.fields,field_description:client_connect.field_client_data_database
 msgid "Database"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_display_name
+#: model:ir.model.fields,field_description:client_connect.field_client_data_display_name
 msgid "Display Name"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_mail
+#: model:ir.model.fields,field_description:client_connect.field_client_data_mail
 msgid "Email"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_id
+#: model:ir.model.fields,field_description:client_connect.field_client_data_id
 msgid "ID"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect___last_update
+#: model:ir.model.fields,field_description:client_connect.field_client_data___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_write_uid
+#: model:ir.model.fields,field_description:client_connect.field_client_data_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_write_date
+#: model:ir.model.fields,field_description:client_connect.field_client_data_write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: client_connect
-#: model:ir.model.fields,field_description:client_connect.field_client_connect_phone
+#: model:ir.model.fields,field_description:client_connect.field_client_data_phone
 msgid "Phone"
 msgstr ""
 

@@ -14,6 +14,7 @@
         'web',
     ],
     'data': [
+        'data/new_user_mail_template.xml',
         'views/login_view_extended.xml',
     ],
     'installable': True,

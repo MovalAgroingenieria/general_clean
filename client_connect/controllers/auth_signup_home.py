@@ -26,6 +26,6 @@ class CustomSessionController(Home):
                 'company': kw.get('company'),
                 'country': kw.get('country'),
             }
-            request.env['client_connect'].sudo().create(login_info)
+            request.env['client.data'].sudo().create(login_info)
 
         return response
