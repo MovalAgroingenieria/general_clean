@@ -22,33 +22,32 @@ class IrAttachment(models.Model):
         result = super(IrAttachment, self).create(vals)
         if result.mimetype.startswith('video/'):
             result.public = True
-            if result.mimetype.startswith('video/'):
-                video_data = base64.b64decode(result.datas)
-                with tempfile.NamedTemporaryFile(
-                    suffix=f".{result.mimetype.split('/')[-1]}",
-                        delete=False) as video_temp:
-                    video_temp.write(video_data)
-                    video_path = str(video_temp.name)
-                with tempfile.NamedTemporaryFile(
-                        suffix='.png', delete=False) as thumbnail_temp:
-                    thumbnail_path = thumbnail_temp.name
-                subprocess.call(['ffmpeg', '-y', '-loglevel', 'quiet',
-                                 '-i', video_path, '-ss', '00:00:01',
-                                 '-vframes', '1', thumbnail_path])
-                with open(thumbnail_path, 'rb') as f:
-                    thumbnail_data = f.read()
-                thumbnail_base64 = base64.b64encode(thumbnail_data).decode()
-                self.env['ir.attachment'].create({
-                    'name': f'Thumbnail for {result.id}',
-                    'type': 'binary',
-                    'datas': thumbnail_base64,
-                    'res_model': 'album.gallery',
-                    'mimetype': 'image/png',
-                    'public': True,
-                    'video_attachment_id': result.id,
-                })
-                os.remove(video_path)
-                os.remove(thumbnail_path)
+            video_data = base64.b64decode(result.datas)
+            with tempfile.NamedTemporaryFile(
+                suffix=f".{result.mimetype.split('/')[-1]}",
+                    delete=False) as video_temp:
+                video_temp.write(video_data)
+                video_path = str(video_temp.name)
+            with tempfile.NamedTemporaryFile(
+                    suffix='.png', delete=False) as thumbnail_temp:
+                thumbnail_path = thumbnail_temp.name
+            subprocess.call(['ffmpeg', '-y', '-loglevel', 'quiet',
+                             '-i', video_path, '-ss', '00:00:01',
+                             '-vframes', '1', thumbnail_path])
+            with open(thumbnail_path, 'rb') as f:
+                thumbnail_data = f.read()
+            thumbnail_base64 = base64.b64encode(thumbnail_data).decode()
+            self.env['ir.attachment'].create({
+                'name': f'Thumbnail for {result.id}',
+                'type': 'binary',
+                'datas': thumbnail_base64,
+                'res_model': 'album.gallery',
+                'mimetype': 'image/png',
+                'public': True,
+                'video_attachment_id': result.id,
+            })
+            os.remove(video_path)
+            os.remove(thumbnail_path)
         return result
 
     def unlink(self):
