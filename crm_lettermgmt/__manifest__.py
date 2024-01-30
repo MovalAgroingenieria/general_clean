@@ -5,7 +5,7 @@
 {
     'name': 'Letter Management',
     'summary': 'Track letters, parcels, registered documents',
-    'version': '10.0.1.1.3',
+    'version': '10.0.1.1.4',
     'category': 'Customer Relationship Management',
     'website': 'https://odoo-community.org/',
     'author': 'Moval Agroingeniería',
