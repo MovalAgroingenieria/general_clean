@@ -20,7 +20,7 @@ class IrAttachment(models.Model):
 
     def create(self, vals):
         result = super(IrAttachment, self).create(vals)
-        if result.mimetype.startswith('video/'):
+        if result.mimetype and result.mimetype.startswith('video/'):
             result.public = True
             video_data = base64.b64decode(result.datas)
             with tempfile.NamedTemporaryFile(
