@@ -14,6 +14,7 @@
         "contacts",
         "mail",
         "html_text",
+        "web_tree_image",
     ],
     "data": [
         "security/security.xml",

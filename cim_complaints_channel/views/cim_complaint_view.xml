@@ -11,6 +11,12 @@
                 <field name="deadline_state" invisible="1"/>
                 <field name="is_rejected" invisible="1"/>
                 <field name="is_acknowledgement_expired" invisible="1"/>
+                <field name="document_01_name" invisible="1"/>
+                <field name="document_02_name" invisible="1"/>
+                <field name="document_03_name" invisible="1"/>
+                <field name="document_04_name" invisible="1"/>
+                <field name="document_05_name" invisible="1"/>
+                <field name="document_06_name" invisible="1"/>
                 <header>
                     <button name="action_go_to_state_02_admitted" type="object"
                             string="Admit"
@@ -25,6 +31,21 @@
                             icon="fa-ban"
                             attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
                             groups="cim_complaints_channel.group_cim_manager"/>
+                    <!-- Provisional -->
+                    <button name="action_go_to_state_05_resolved" type="object"
+                            string="Resolve"
+                            style="width: 125px;"
+                            icon="fa-gavel"
+                            attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
+                            groups="cim_complaints_channel.group_cim_manager"
+                            confirm="This action will change to the 'Resolved' state. Proceed?"/>
+                    <!-- Provisional -->
+                    <button name="action_return_to_state_01_received" type="object"
+                            string="BACK"
+                            style="width: 125px;"
+                            attrs="{'invisible': ['|',('state','!=','05_resolved'),('is_rejected','=',True)]}"
+                            groups="cim_complaints_channel.group_cim_manager"
+                            confirm="This action will change to the 'Received' state. Proceed?"/>
                     <field name="state"
                            widget="statusbar"
                            statusbar_visible="01_received,02_admitted,03_in_progress,04_ready,05_resolved"/>
@@ -129,7 +150,11 @@
                                     <field name="creation_date"
                                            string="Creation Date"/>
                                     <field name="deadline_date"
-                                           string="Deadline Date"/>
+                                           string="Deadline Date"
+                                           attrs="{'invisible': [('state', '=', '05_resolved')]}"/>
+                                    <field name="expected_resolution_date"
+                                           string="Resolution Date"
+                                           attrs="{'invisible': [('state', '!=', '05_resolved')]}"/>
                                 </group>
                             </div>
                         </group>
@@ -166,23 +191,31 @@
                                            string="With juditial action"/>
                                     <div name="group_02_left_inner_complainant_data" colspan="2"
                                          class="text-center"
-                                         style="font-weight:bold;margin-top:16px;margin-bottom:16px">
+                                         style="font-weight:bold;margin-top:16px;margin-bottom:16px"
+                                         groups="cim_complaints_channel.group_cim_user">
                                         <span>COMPLAINANT DATA</span>
                                     </div>
                                     <field name="complainant_name"
-                                           string="Name"/>
+                                           string="Name"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="link_type_id"
-                                           string="Link Type"/>
+                                           string="Link Type"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="is_complainant_involved"
-                                           string="Is involved?"/>
+                                           string="Is involved?"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="complainant_vat"
-                                           string="VAT"/>
+                                           string="VAT"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="complainant_phone"
-                                           string="Phone"/>
+                                           string="Phone"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="complainant_email"
-                                           string="E-mail"/>
+                                           string="E-mail"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="tracking_code"
-                                           string="Tracking Code"/>
+                                           string="Tracking Code"
+                                           groups="cim_complaints_channel.group_cim_user"/>
                                 </group>
                             </div>
                             <div colspan="1"/>
@@ -242,12 +275,37 @@
                         </group>
                     </group>
                     <notebook>
-                        <page name="resolution" string="Resolution">
+                        <page name="documents" string="Documents">
+                            <group name="documents">
+                                <group name="documents_left">
+                                    <field name="document_01"
+                                           filename="document_01_name"
+                                           string="Document #1"/>
+                                    <field name="document_02"
+                                           filename="document_02_name"
+                                           string="Document #2"/>
+                                    <field name="document_03"
+                                           filename="document_03_name"
+                                           string="Document #3"/>
+                                </group>
+                                <group name="documents_right">
+                                    <field name="document_04"
+                                           filename="document_04_name"
+                                           string="Document #4"/>
+                                    <field name="document_05"
+                                           filename="document_05_name"
+                                           string="Document #5"/>
+                                    <field name="document_06"
+                                           filename="document_06_name"
+                                           string="Document #6"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="resolution" string="Resolution"
+                              attrs="{'invisible': [('is_rejected', '=', True)]}">
                             <group name="group_resolution">
                                 <field name="resolution_text" nolabel="1"/>
                             </group>
-                        </page>
-                        <page name="documents" string="Documents">
                         </page>
                         <page name="notes" string="Notes">
                             <field name="notes"/>
@@ -268,13 +326,34 @@
         <field name="name">cim.complaint.view.tree</field>
         <field name="model">cim.complaint</field>
         <field name="arch" type="xml">
-            <tree class="o_cim_complaints_channel_complaint_view_tree">
+            <tree class="o_cim_complaints_channel_complaint_view_tree"
+                  default_order="name desc"
+                  colors="darkgray:is_rejected==True;
+                          orangered:is_acknowledgement_expired==True or deadline_state=='03_expirated' or deadline_state=='06_extended_expirated';
+                          chocolate:is_acknowledgement_expired==False and (deadline_state=='02_upcoming_expiration' or deadline_state=='05_extended_upcoming_expiration')">
+                <field name="is_rejected" invisible="1"/>
+                <field name="is_acknowledgement_expired" invisible="1"/>
+                <field name="deadline_state" invisible="1"/>
                 <field name="name"
                        string="Code"/>
-                <field name="description"
-                       string="Facts denounced"/>
-                <field name="complainant_email"
-                       string="Complainant E-mail"/>
+                <field name="complaint_type_id"
+                       string="Type"/>
+                <field name="issue"
+                       string="Issue"/>
+                <field name="resolution_date"
+                       string="Res. Date"/>
+                <field name="defendant_name"
+                       string="Defendant"/>
+                <field name="deadline_date"
+                       string="Dead. Date"/>
+                <field name="investigating_user_id"
+                       string="Instructor"/>
+                <field name="number_of_attachments"
+                       string="N. attach."/>
+                <field name="state"
+                       string="State"/>
+                <field name="icon_warning"
+                       widget="image" string=" "/>
             </tree>
         </field>
     </record>
@@ -284,8 +363,113 @@
         <field name="model">cim.complaint</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name" string="Name"/>
+                <field name="issue" string="Issue"/>
+                <field name="complaint_type_id" string="Type"/>
+                <field name="name" string="Code"/>
+                <field name="defendant_name" string="Defendant"/>
+                <field name="complainant_name" string="Complainant"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="state" string="State"/>
+                <field name="link_type_id" string="Link Type"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="complainant_email" string="Complainant Email"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="complainant_phone" string="Complainant Phone"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="complainant_vat" string="Complainant VAT"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="witness_name" string="Witnesses"
+                       groups="cim_complaints_channel.group_cim_user"/>
+                <field name="investigating_user_id" string="Instructor"/>
+                <field name="investigating_user_id" string="Instructor"/>
+                <filter string="Complaints pending attention and expired deadline"
+                        name="is_acknowledgement_expired_yes"
+                        domain="[('is_acknowledgement_expired', '=', True)]"/>
+                <separator/>
+                <filter string="Complaints received"
+                        name="state_01_received"
+                        domain="[('state', '=', '01_received')]"/>
+                <filter string="Complaints admitted"
+                        name="state_02_admitted"
+                        domain="[('state', '=', '02_admitted')]"/>
+                <filter string="Complaints in progress"
+                        name="state_03_in_progress"
+                        domain="[('state', '=', '03_in_progress')]"/>
+                <filter string="Complaints ready for resolution"
+                        name="state_04_ready"
+                        domain="[('state', '=', '04_ready')]"/>
+                <filter string="Complaints resolved"
+                        name="state_05_resolved"
+                        domain="[('state', '=', '05_resolved')]"/>
+                <separator/>
+                <filter string="Minor infringements"
+                        name="infringement_level_01_mild"
+                        domain="[('infringement_level', '=', '01_mild')]"/>
+                <filter string="Serious infringements"
+                        name="infringement_level_02_serious"
+                        domain="[('infringement_level', '=', '02_serious')]"/>
+                <filter string="Very serious infringements"
+                        name="infringement_level_03_very_serious"
+                        domain="[('infringement_level', '=', '03_very_serious')]"/>
+                <separator/>
+                <filter string="Anonymous complaints"
+                        name="is_anonymous_yes"
+                        domain="[('is_anonymous', '=', True)]"
+                        groups="cim_complaints_channel.group_cim_user"/>
+                <filter string="Non-Anonymous complaints"
+                        name="is_anonymous_no"
+                        domain="[('is_anonymous', '=', False)]"
+                        groups="cim_complaints_channel.group_cim_user"/>
+                <separator groups="cim_complaints_channel.group_cim_user"/>
+                <filter string="Accepted complaints"
+                        name="is_rejected_no"
+                        domain="[('is_rejected', '=', False)]"/>
+                <filter string="Rejected complaints"
+                        name="is_rejected_yes"
+                        domain="[('is_rejected', '=', True)]"/>
+                <separator/>
+                <group expand="0" string="Group By">
+                    <filter string="State"
+                            name="grouped_state"
+                     context="{'group_by':'state'}"/>
+                    <filter string="Resolution Date"
+                            name="grouped_resolution_date"
+                     context="{'group_by':'resolution_date'}"/>
+                    <filter string="Infringement Level"
+                            name="grouped_infringement_level"
+                     context="{'group_by':'infringement_level'}"/>
+
+                    <filter string="Instructor"
+                            name="grouped_investigating_user_id"
+                     context="{'group_by':'investigating_user_id'}"/>
+
+                    <filter string="Complaint Type"
+                            name="grouped_complaint_type_id"
+                     context="{'group_by':'complaint_type_id'}"/>
+
+                    <filter string="Link Type"
+                            name="grouped_link_type_id"
+                     context="{'group_by':'link_type_id'}"/>
+                    <filter string="Complaint Frequency"
+                            name="grouped_complaint_frequency"
+                     context="{'group_by':'complaint_frequency'}"/>
+                </group>
             </search>
+        </field>
+    </record>
+
+    <record id="cim_complaint_view_calendar" model="ir.ui.view">
+        <field name="name">Complaints (calendar view)</field>
+        <field name="model">cim.complaint</field>
+        <field name="arch" type="xml">
+            <calendar date_start="creation_date"
+                      date_stop="expected_resolution_date"
+                      color="complaint_type_id"
+                      mode="month"
+                      display="[summary_info]"
+                      quick_add="false">
+                <field name="summary_info"/>
+            </calendar>
         </field>
     </record>
 
@@ -294,15 +478,17 @@
         <field name="name">Complaints</field>
         <field name="res_model">cim.complaint</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
         <field name="view_ids"
          eval="[(5, 0),
                 (0, 0, {'view_mode': 'tree',
                         'view_id': ref('cim_complaint_view_tree')}),
                 (0, 0, {'view_mode': 'form',
-                        'view_id': ref('cim_complaint_view_form')})]"/>
+                        'view_id': ref('cim_complaint_view_form')}),
+                (0, 0, {'view_mode': 'calendar',
+                        'view_id': ref('cim_complaint_view_calendar')})]"/>
         <field name="search_view_id" ref="cim_complaint_view_search"/>
-        <field name="context">{'default_is_delegated': True}</field>
+        <field name="context">{'default_is_delegated': True, }</field>
     </record>
 
     <menuitem id="complaint_normal_menu"

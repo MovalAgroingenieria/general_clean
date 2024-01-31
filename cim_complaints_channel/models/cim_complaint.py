@@ -2,10 +2,11 @@
 # Copyright 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+import base64
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from lxml import etree
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api, modules, exceptions, _
 
 
 class CimComplaint(models.Model):
@@ -18,6 +19,7 @@ class CimComplaint(models.Model):
     SIZE_MEDIUM = 50
     SIZE_MEDIUM_EXTRA = 75
     SIZE_NORMAL = 100
+    MAX_DOCUMENTS = 6
 
     def _default_setted_sequence(self):
         resp = False
@@ -30,52 +32,52 @@ class CimComplaint(models.Model):
     name = fields.Char(
         string='Code',
         size=SIZE_SMALL,
-        index=True,)
+        index=True, )
 
     issue = fields.Char(
         string='Issue',
         size=SIZE_MEDIUM_EXTRA,
         required=True,
-        index=True,)
+        index=True, )
 
     description = fields.Text(
         string='Facts denounced',
         required=True,
-        index=True,)
+        index=True, )
 
     tracking_code = fields.Char(
         string='Tracking Code',
         size=SIZE_SMALL,
         index=True,
-        readonly=True,)
+        readonly=True, )
 
     complaint_type_id = fields.Many2one(
         string='Complaint Type',
         comodel_name='cim.complaint.type',
         required=True,
         index=True,
-        ondelete='restrict',)
+        ondelete='restrict', )
 
     defendant_name = fields.Char(
         string='Defendant Name',
         size=SIZE_NORMAL,
-        index=True,)
+        index=True, )
 
     witness_name = fields.Text(
         string='Witnesses',
-        index=True,)
+        index=True, )
 
     is_complainant_involved = fields.Boolean(
         string='Complainant involved',
         default=False,
-        required=True,)
+        required=True, )
 
     link_type_id = fields.Many2one(
         string='Link Type',
         comodel_name='cim.link.type',
         required=True,
         index=True,
-        ondelete='restrict',)
+        ondelete='restrict', )
 
     complaint_frequency = fields.Selection(
         string="Complaint Frequency",
@@ -86,41 +88,41 @@ class CimComplaint(models.Model):
         ],
         default='01_not_remembered',
         required=True,
-        index=True,)
+        index=True, )
 
     complaint_time = fields.Datetime(
-        string='Complaint Time',)
+        string='Complaint Time', )
 
     complaint_date = fields.Date(
         string='Complaint Date',
         store=True,
         index=True,
-        compute='_compute_complaint_date',)
+        compute='_compute_complaint_date', )
 
     creation_date = fields.Date(
         string='Creation Date',
-        default=lambda self: fields.datetime.now(),)
+        default=lambda self: fields.datetime.now(), )
 
     complainant_email = fields.Char(
         string='Complainant E-mail',
         size=SIZE_MEDIUM,
         index=True,
-        track_visibility='onchange',)
+        track_visibility='onchange', )
 
     complainant_name = fields.Char(
         string='Complainant Name',
         size=SIZE_NORMAL,
-        index=True,)
+        index=True, )
 
     complainant_vat = fields.Char(
         string='Complainant VAT',
         size=SIZE_SMALL,
-        index=True,)
+        index=True, )
 
     complainant_phone = fields.Char(
         string='Complainant Phone',
         size=SIZE_SMALL,
-        index=True,)
+        index=True, )
 
     is_anonymous = fields.Boolean(
         string='Anonymous Complaint',
@@ -129,22 +131,22 @@ class CimComplaint(models.Model):
 
     measures_taken = fields.Text(
         string='Measures taken',
-        index=True,)
+        index=True, )
 
     resolution_text = fields.Text(
-        string='Resolution Text',)
+        string='Resolution Text', )
 
     user_in_group_cim_settings = fields.Boolean(
         string='Is a complaints administrator?',
-        compute='_compute_user_in_group_cim_settings',)
+        compute='_compute_user_in_group_cim_settings', )
 
     is_delegated = fields.Boolean(
         string='Delegated Complaint',
         default=False,
-        readonly=True,)
+        readonly=True, )
 
     notes = fields.Html(
-        string='Notes',)
+        string='Notes', )
 
     state = fields.Selection(
         string="State",
@@ -163,53 +165,53 @@ class CimComplaint(models.Model):
         default='01_received',
         required=True,
         index=True,
-        track_visibility='onchange',)
+        track_visibility='onchange', )
 
     investigating_user_id = fields.Many2one(
         string='Instructor',
         comodel_name='res.users',
         store=True,
         compute='_compute_investigating_user_id',
-        track_visibility='onchange',)
+        track_visibility='onchange', )
 
     number_of_communications = fields.Integer(
         string='Number of communications',
-        compute='_compute_number_of_communications',)
+        compute='_compute_number_of_communications', )
 
     is_rejected = fields.Boolean(
         string='Rejected complaint',
         default=False,
         readonly=True,
-        track_visibility='onchange',)
+        track_visibility='onchange', )
 
     rejection_cause = fields.Text(
-        string='Cause of the rejection',)
+        string='Cause of the rejection', )
 
     is_extended = fields.Boolean(
         string='Extended process',
         default=False,
         readonly=True,
-        track_visibility='onchange',)
+        track_visibility='onchange', )
 
     param_acknowledgement_period = fields.Integer(
         string='Acknowledgement period (number of days)',
-        compute='_compute_param_acknowledgement_period',)
+        compute='_compute_param_acknowledgement_period', )
 
     param_notice_period = fields.Integer(
         string='Notice Period (number of days)',
-        compute='_compute_param_notice_period',)
+        compute='_compute_param_notice_period', )
 
     param_deadline = fields.Integer(
         string='Deadline (number of months)',
-        compute='_compute_param_deadline',)
+        compute='_compute_param_deadline', )
 
     param_deadline_extended = fields.Integer(
         string='Extended Deadline (number of months)',
-        compute='_compute_param_deadline_extended',)
+        compute='_compute_param_deadline_extended', )
 
     deadline_date = fields.Date(
         string='Deadline Date',
-        compute='_compute_deadline_date',)
+        compute='_compute_deadline_date', )
 
     deadline_state = fields.Selection(
         string='Deadline Status',
@@ -232,12 +234,13 @@ class CimComplaint(models.Model):
              'Instruction rejected'),
         ],
         default='01_on_time',
-        compute='_compute_deadline_state',)
+        compute='_compute_deadline_state', )
 
     is_acknowledgement_expired = fields.Boolean(
         string='Expired acknowledgement',
         default=False,
-        compute='_compute_is_acknowledgement_expired',)
+        compute='_compute_is_acknowledgement_expired',
+        search='_search_is_acknowledgement_expired', )
 
     infringement_level = fields.Selection(
         string="Infringement Level",
@@ -251,36 +254,100 @@ class CimComplaint(models.Model):
         ],
         default='01_mild',
         required=True,
-        index=True,)
+        index=True, )
+
+    resolution_date = fields.Date(
+        string='Resolution Date',
+        index=True, )
+
+    expected_resolution_date = fields.Date(
+        string='Expected Resolution Date',
+        store=True,
+        index=True,
+        compute='_compute_expected_resolution_date', )
 
     is_juditial_action = fields.Boolean(
         string='Juditial Action',
-        default=False,)
+        default=False, )
 
     setted_sequence = fields.Boolean(
         string='Setted Sequence (y/n)',
         default=_default_setted_sequence,
-        compute='_compute_setted_sequence',)
+        compute='_compute_setted_sequence', )
+
+    summary_info = fields.Char(
+        string='Summary',
+        compute='_compute_summary_info', )
+
+    document_01 = fields.Binary(
+        string='Attachment 1',
+        attachment=True, )
+
+    document_01_name = fields.Char(
+        string='Name of the attachment 1', )
+
+    document_02 = fields.Binary(
+        string='Attachment 2',
+        attachment=True, )
+
+    document_02_name = fields.Char(
+        string='Name of the attachment 2', )
+
+    document_03 = fields.Binary(
+        string='Attachment 3',
+        attachment=True, )
+
+    document_03_name = fields.Char(
+        string='Name of the attachment 3', )
+
+    document_04 = fields.Binary(
+        string='Attachment 4',
+        attachment=True, )
+
+    document_04_name = fields.Char(
+        string='Name of the attachment 4', )
+
+    document_05 = fields.Binary(
+        string='Attachment 5',
+        attachment=True, )
+
+    document_05_name = fields.Char(
+        string='Name of the attachment 5', )
+
+    document_06 = fields.Binary(
+        string='Attachment 6',
+        attachment=True, )
+
+    document_06_name = fields.Char(
+        string='Name of the attachment 6', )
+
+    number_of_attachments = fields.Integer(
+        string='Number of attachments',
+        compute='_compute_number_of_attachments',)
+
+    icon_warning = fields.Binary(
+        string='Icon for warnings',
+        compute='_compute_icon_warning')
 
     decrypted_tracking_code = fields.Char(
         string='Decrypted tracking code',
-        compute='_compute_decrypted_tracking_code',)
+        compute='_compute_decrypted_tracking_code', )
 
     decrypted_complainant_name = fields.Char(
         string='Decrypted complainant name',
-        compute='_compute_decrypted_complainant_name',)
+        compute='_compute_decrypted_complainant_name', )
 
     decrypted_complainant_email = fields.Char(
         string='Decrypted complainant e-mail',
-        compute='_compute_decrypted_complainant_email',)
+        compute='_compute_decrypted_complainant_email', )
 
     decrypted_complainant_phone = fields.Char(
         string='Decrypted complainant phone',
-        compute='_compute_decrypted_complainant_phone',)
+        compute='_compute_decrypted_complainant_phone', )
 
     decrypted_witness_name = fields.Char(
         string='Decrypted witness name',
-        compute='_compute_decrypted_witness_name',)
+        compute='_compute_decrypted_witness_name', )
 
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
@@ -295,7 +362,7 @@ class CimComplaint(models.Model):
         for record in self:
             is_anonymous = True
             if (record.complainant_name or record.complainant_vat or
-               record.complainant_phone):
+                    record.complainant_phone):
                 is_anonymous = False
             record.is_anonymous = is_anonymous
 
@@ -329,7 +396,7 @@ class CimComplaint(models.Model):
         param_acknowledgement_period = self.env['ir.values'].get_default(
             'res.cim.config.settings', 'acknowledgement_period')
         if not param_acknowledgement_period:
-            param_acknowledgement_period = 7
+            param_acknowledgement_period = 0
         for record in self:
             record.param_acknowledgement_period = param_acknowledgement_period
 
@@ -368,8 +435,8 @@ class CimComplaint(models.Model):
                 instruction_months = record.param_deadline_extended
             deadline_date = (datetime.strptime(
                 record.creation_date, '%Y-%m-%d') +
-                relativedelta(months=instruction_months) +
-                relativedelta(days=-1)).strftime('%Y-%m-%d')
+                             relativedelta(months=instruction_months) +
+                             relativedelta(days=-1)).strftime('%Y-%m-%d')
             record.deadline_date = deadline_date
 
     @api.multi
@@ -383,7 +450,7 @@ class CimComplaint(models.Model):
                 # Provisional (test: add days to current_date)
                 # current_date = (datetime.strptime(
                 #     current_date, '%Y-%m-%d') + relativedelta(
-                #     days=73)).strftime('%Y-%m-%d')
+                #     days=90)).strftime('%Y-%m-%d')
                 # print(current_date)
                 # Provisional (end of test)
                 months_deadline = record.param_deadline
@@ -418,13 +485,46 @@ class CimComplaint(models.Model):
                 deadline_acknowledgement = \
                     ((datetime.strptime(
                         record.creation_date, '%Y-%m-%d') +
-                        relativedelta(days=record.param_acknowledgement_period - 1)).
-                        strftime('%Y-%m-%d'))
+                      relativedelta(days=record.param_acknowledgement_period - 1)).
+                     strftime('%Y-%m-%d'))
                 current_date = datetime.today().strftime('%Y-%m-%d')
                 if current_date > deadline_acknowledgement:
                     is_acknowledgement_expired = True
             record.is_acknowledgement_expired = is_acknowledgement_expired
 
+    @api.model
+    def _search_is_acknowledgement_expired(self, operator, value):
+        complaint_ids = []
+        operator_of_filter = 'in'
+        if operator == '!=':
+            operator_of_filter = 'not in'
+        acknowledgement_period = 0
+        param_acknowledgement_period = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'acknowledgement_period')
+        if param_acknowledgement_period:
+            acknowledgement_period = param_acknowledgement_period
+        where_clause = 'is_rejected = false and state = \'01_received\''
+        if acknowledgement_period >= 0:
+            where_clause = where_clause + ' and current_date - ' + \
+                           str(acknowledgement_period) + \
+                           ' >= creation_date'
+        sql_statement = 'select id from cim_complaint where ' + where_clause
+        self.env.cr.execute(sql_statement)
+        sql_resp = self.env.cr.fetchall()
+        if sql_resp:
+            for item in sql_resp:
+                complaint_ids.append(item[0])
+        return [('id', operator_of_filter, complaint_ids)]
+
+    @api.depends('creation_date', 'resolution_date')
+    def _compute_expected_resolution_date(self):
+        for record in self:
+            expected_resolution_date = record.deadline_date
+            if record.resolution_date:
+                expected_resolution_date = record.resolution_date
+            record.expected_resolution_date = expected_resolution_date
+
+    @api.multi
     def _compute_setted_sequence(self):
         sequence_complaint_code_id = self.env['ir.values'].get_default(
             'res.cim.config.settings', 'sequence_complaint_code_id')
@@ -433,6 +533,85 @@ class CimComplaint(models.Model):
             if sequence_complaint_code_id:
                 setted_sequence = True
             record.setted_sequence = setted_sequence
+
+    @api.multi
+    def _compute_summary_info(self):
+        for record in self:
+            preffix_info = record.name + ' .' + record.complaint_type_id.name
+            suffix_info = _('COMPLAINT REJECTED') + '.'
+            if not record.is_rejected:
+                suffix_info = self._additional_summary_info(record)
+            record.summary_info = preffix_info + '. ' + suffix_info
+
+    @api.model
+    def _additional_summary_info(self, complaint):
+        infringement_level = _('Mild')
+        if complaint.infringement_level == '02_serious':
+            infringement_level = _('SERIOUS')
+        elif complaint.infringement_level == '03_very_serious':
+            infringement_level = _('VERY SERIOUS')
+        state = _('Received')
+        if complaint.state == '02_admitted':
+            state = _('Admitted')
+        elif complaint.state == '03_in_progress':
+            state = _('In progress')
+        elif complaint.state == '04_ready':
+            state = _('Ready')
+        elif complaint.state == '05_resolved':
+            state = _('Resolved')
+        issue = complaint.issue
+        if issue[-1] != '.':
+            issue = issue + '.'
+        resp = _('Severity:') + ' ' + infringement_level + '. ' + \
+               _('State:') + ' ' + state + '. ' + \
+               _('Issue:') + ' ' + issue
+        return resp
+
+    @api.multi
+    def _compute_number_of_attachments(self):
+        for record in self:
+            number_of_attachments = self.MAX_DOCUMENTS
+            if not record.document_06_name:
+                number_of_attachments = number_of_attachments - 1
+                if not record.document_05_name:
+                    number_of_attachments = number_of_attachments - 1
+                    if not record.document_04_name:
+                        number_of_attachments = number_of_attachments - 1
+                        if not record.document_03_name:
+                            number_of_attachments = number_of_attachments - 1
+                            if not record.document_02_name:
+                                number_of_attachments = \
+                                        number_of_attachments - 1
+                                if not record.document_01_name:
+                                    number_of_attachments = \
+                                            number_of_attachments - 1
+            record.number_of_attachments = number_of_attachments
+
+    @api.multi
+    def _compute_icon_warning(self):
+        image_path_is_acknowledgement_expired_no = \
+            modules.module.get_resource_path('cim_complaints_channel',
+                                             'static/img', 'icon_ontime.png')
+        image_path_is_acknowledgement_expired_yes = \
+            modules.module.get_resource_path('cim_complaints_channel',
+                                             'static/img', 'icon_expirated.png')
+        image_path_is_rejected = \
+            modules.module.get_resource_path('cim_complaints_channel',
+                                             'static/img', 'icon_rejected.png')
+        for record in self:
+            icon_warning = None
+            image_path = None
+            if record.is_rejected:
+                image_path = image_path_is_rejected
+            elif record.state == '01_received':
+                if record.is_acknowledgement_expired:
+                    image_path = image_path_is_acknowledgement_expired_yes
+                else:
+                    image_path = image_path_is_acknowledgement_expired_no
+            if image_path:
+                image_file = open(image_path, 'rb')
+                icon_warning = base64.b64encode(image_file.read())
+            record.icon_warning = icon_warning
 
     @api.multi
     def _compute_decrypted_tracking_code(self):
@@ -509,7 +688,7 @@ class CimComplaint(models.Model):
         result = []
         for record in self:
             display_name = record.name + \
-                ' (' + record.complaint_type_id.name + ')'
+                           ' (' + record.complaint_type_id.name + ')'
             result.append((record.id, display_name))
         return result
 
@@ -531,8 +710,147 @@ class CimComplaint(models.Model):
         if ('name' not in vals) or (not vals['name']):
             raise exceptions.ValidationError(_('It is mandatory to enter a '
                                                'code for the new complaint.'))
+        vals = self._process_vals(vals, is_create=True)
         new_complaint = super(CimComplaint, self).create(vals)
         return new_complaint
+
+    @api.multi
+    def write(self, vals):
+        vals = self._process_vals(vals)
+        super(CimComplaint, self).write(vals)
+        return True
+
+    @api.model
+    def _process_vals(self, vals, is_create=False):
+        if vals:
+            if 'state' in vals and vals['state']:
+                if vals['state'] == '05_resolved':
+                    vals['resolution_date'] = \
+                        datetime.now().strftime('%Y-%m-%d')
+                else:
+                    vals['resolution_date'] = None
+            if ((is_create or len(self) == 1) and
+                    ('document_01' in vals or 'document_02' in vals or
+                     'document_03' in vals or 'document_04' in vals or
+                     'document_05' in vals or 'document_06' in vals)):
+                vals = self._compact_document_fields(vals, is_create)
+        return vals
+
+    @api.model
+    def _compact_document_fields(self, vals, is_create=False):
+        if ('document_01' in vals or 'document_02' in vals or
+                'document_03' in vals or 'document_04' in vals or
+                'document_05' in vals or 'document_06' in vals):
+            value_document_01 = None
+            value_document_01_name = None
+            if 'document_01' in vals:
+                value_document_01 = vals['document_01']
+                value_document_01_name = vals['document_01_name']
+            elif not is_create:
+                value_document_01 = self.document_01
+                value_document_01_name = self.document_01_name
+            value_document_02 = None
+            value_document_02_name = None
+            if 'document_02' in vals:
+                value_document_02 = vals['document_02']
+                value_document_02_name = vals['document_02_name']
+            elif not is_create:
+                value_document_02 = self.document_02
+                value_document_02_name = self.document_02_name
+            value_document_03 = None
+            value_document_03_name = None
+            if 'document_03' in vals:
+                value_document_03 = vals['document_03']
+                value_document_03_name = vals['document_03_name']
+            elif not is_create:
+                value_document_03 = self.document_03
+                value_document_03_name = self.document_03_name
+            value_document_04 = None
+            value_document_04_name = None
+            if 'document_04' in vals:
+                value_document_04 = vals['document_04']
+                value_document_04_name = vals['document_04_name']
+            elif not is_create:
+                value_document_04 = self.document_04
+                value_document_04_name = self.document_04_name
+            value_document_05 = None
+            value_document_05_name = None
+            if 'document_05' in vals:
+                value_document_05 = vals['document_05']
+                value_document_05_name = vals['document_05_name']
+            elif not is_create:
+                value_document_05 = self.document_05
+                value_document_05_name = self.document_05_name
+            value_document_06 = None
+            value_document_06_name = None
+            if 'document_06' in vals:
+                value_document_06 = vals['document_06']
+                value_document_06_name = vals['document_06_name']
+            elif not is_create:
+                value_document_06 = self.document_06
+                value_document_06_name = self.document_06_name
+            values = []
+            if value_document_01:
+                values.append({'document': value_document_01,
+                               'document_name': value_document_01_name, })
+            if value_document_02:
+                values.append({'document': value_document_02,
+                               'document_name': value_document_02_name, })
+            if value_document_03:
+                values.append({'document': value_document_03,
+                               'document_name': value_document_03_name, })
+            if value_document_04:
+                values.append({'document': value_document_04,
+                               'document_name': value_document_04_name, })
+            if value_document_05:
+                values.append({'document': value_document_05,
+                               'document_name': value_document_05_name, })
+            if value_document_06:
+                values.append({'document': value_document_06,
+                               'document_name': value_document_06_name, })
+            number_of_values = len(values)
+            for i in range(number_of_values):
+                field_document = 'document_01'
+                field_document_name = 'document_01_name'
+                if i == 1:
+                    field_document = 'document_02'
+                    field_document_name = 'document_02_name'
+                elif i == 2:
+                    field_document = 'document_03'
+                    field_document_name = 'document_03_name'
+                elif i == 3:
+                    field_document = 'document_04'
+                    field_document_name = 'document_04_name'
+                elif i == 4:
+                    field_document = 'document_05'
+                    field_document_name = 'document_05_name'
+                elif i == 5:
+                    field_document = 'document_06'
+                    field_document_name = 'document_06_name'
+                vals[field_document] = values[i]['document']
+                vals[field_document_name] = values[i]['document_name']
+            if number_of_values < self.MAX_DOCUMENTS:
+                for i in reversed(range(number_of_values, self.MAX_DOCUMENTS)):
+                    field_document = 'document_06'
+                    field_document_name = 'document_06_name'
+                    if i == 4:
+                        field_document = 'document_05'
+                        field_document_name = 'document_05_name'
+                    elif i == 3:
+                        field_document = 'document_04'
+                        field_document_name = 'document_04_name'
+                    elif i == 2:
+                        field_document = 'document_03'
+                        field_document_name = 'document_03_name'
+                    elif i == 1:
+                        field_document = 'document_02'
+                        field_document_name = 'document_02_name'
+                    elif i == 0:
+                        field_document = 'document_01'
+                        field_document_name = 'document_01_name'
+                    vals[field_document] = None
+                    vals[field_document_name] = None
+        return vals
 
     @api.model
     def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
@@ -554,6 +872,23 @@ class CimComplaint(models.Model):
                 for node in nodes:
                     node.set('create', '0')
                 res['arch'] = etree.tostring(doc)
+        return res
+
+    @api.model
+    def fields_get(self, fields=None):
+        fields_to_hide = ['complainant_name', 'link_type_id',
+                          'complainant_email', 'complainant_phone',
+                          'complainant_vat', 'witness_name', 'tracking_code',
+                          'document_01', 'document_02', 'document_03',
+                          'document_04', 'document_05', 'document_06', ]
+        res = super(CimComplaint, self).fields_get(fields)
+        for field_to_hide in fields_to_hide:
+            if field_to_hide in res:
+                data_of_field = res[field_to_hide]
+                if ('searchable' in data_of_field and
+                   data_of_field['searchable']):
+                    data_of_field['selectable'] = False
+                    data_of_field['sortable'] = False
         return res
 
     @api.multi
@@ -580,5 +915,19 @@ class CimComplaint(models.Model):
             'src_model': 'cim.complaint',
             'view_mode': 'form',
             'target': 'new',
-            }
+        }
         return act_window
+
+    @api.multi
+    def action_go_to_state_05_resolved(self):
+        self.ensure_one()
+        # Provisional
+        # if self.state == '04_ready':
+        #     self.write({'state': '05_resolved', })
+        self.write({'state': '05_resolved', })
+
+    @api.multi
+    def action_return_to_state_01_received(self):
+        self.ensure_one()
+        # Provisional
+        self.state = '01_received'
