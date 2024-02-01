@@ -232,24 +232,28 @@
     <menuitem id="res_letter_menu"
               name="Letters"
               sequence="1"
-              parent="letter_log_menu"/>
+              parent="letter_log_menu"
+              groups="crm_lettermgmt.group_crm_lettermgmt_user"/>
 
     <menuitem id="letter_log_config_menu"
               name="Configuration"
               sequence="9"
-              parent="letter_log_menu"/>
+              parent="letter_log_menu"
+              groups="crm_lettermgmt.group_crm_lettermgmt_user"/>
 
     <menuitem id="res_letter_out_menu"
               name="Outbound Letters"
               parent="res_letter_menu"
               sequence="2"
-              action="action_res_letter_out_tree_view"/>
+              action="action_res_letter_out_tree_view"
+              groups="crm_lettermgmt.group_crm_lettermgmt_user"/>
 
     <menuitem id="res_letter_in_menu"
               name="Inbound Letters"
               parent="res_letter_menu"
               sequence="3"
-              action="action_res_letter_in_tree_view"/>
+              action="action_res_letter_in_tree_view"
+              groups="crm_lettermgmt.group_crm_lettermgmt_user"/>
 
   </data>
 </odoo>

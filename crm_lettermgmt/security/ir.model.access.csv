@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_res_letter_user,res_letter_user,model_res_letter,base.group_user,1,1,1,1
-access_res_letter_portal,res_letter_portal,model_res_letter,base.group_portal,1,1,1,1
+access_res_letter_portal,res_letter_portal,model_res_letter,base.group_portal,1,0,0,0
 access_letter_type_user,letter_type_user,model_letter_type,crm_lettermgmt.group_crm_lettermgmt_user,1,0,0,0
 access_letter_type_system,letter_type_system,model_letter_type,base.group_system,1,1,1,1
 access_letter_category_user,letter_category_user,model_letter_category,crm_lettermgmt.group_crm_lettermgmt_user,1,0,0,0
