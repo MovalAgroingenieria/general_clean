@@ -93,12 +93,12 @@ class ResPartner(models.Model):
 
     @api.multi
     def _compute_access_letter_lettermgmt(self):
+        access_letter_lettermgmt = False
+        is_lettermgmt_portal_group = self.env.user.has_group(
+            'crm_lettermgmt.group_crm_lettermgmt_portal')
+        is_lettermgmt_user_group = self.env.user.has_group(
+            'crm_lettermgmt.group_crm_lettermgmt_user')
+        if is_lettermgmt_portal_group or is_lettermgmt_user_group:
+            access_letter_lettermgmt = True
         for record in self:
-            access_letter_lettermgmt = False
-            is_lettermgmt_portal_group = self.env.user.has_group(
-                'crm_lettermgmt.group_crm_lettermgmt_portal')
-            is_lettermgmt_user_group = self.env.user.has_group(
-                'crm_lettermgmt.group_crm_lettermgmt_user')
-            if is_lettermgmt_portal_group or is_lettermgmt_user_group:
-                access_letter_lettermgmt = True
             record.access_letter_lettermgmt = access_letter_lettermgmt
