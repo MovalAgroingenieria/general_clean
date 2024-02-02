@@ -466,7 +466,8 @@ class CimComplaint(models.Model):
                         deadline_state = '04_extended'
                     deadline_notice = (datetime.strptime(
                         deadline_date, '%Y-%m-%d') + relativedelta(
-                        days=-record.param_notice_period + 1)).strftime('%Y-%m-%d')
+                        days=-record.param_notice_period + 1)).strftime(
+                            '%Y-%m-%d')
                     if current_date >= deadline_notice:
                         deadline_state = '02_upcoming_expiration'
                         if record.is_extended:
@@ -485,8 +486,9 @@ class CimComplaint(models.Model):
                 deadline_acknowledgement = \
                     ((datetime.strptime(
                         record.creation_date, '%Y-%m-%d') +
-                      relativedelta(days=record.param_acknowledgement_period - 1)).
-                     strftime('%Y-%m-%d'))
+                        relativedelta(
+                            days=record.param_acknowledgement_period - 1)).
+                        strftime('%Y-%m-%d'))
                 current_date = datetime.today().strftime('%Y-%m-%d')
                 if current_date > deadline_acknowledgement:
                     is_acknowledgement_expired = True
@@ -563,8 +565,8 @@ class CimComplaint(models.Model):
         if issue[-1] != '.':
             issue = issue + '.'
         resp = _('Severity:') + ' ' + infringement_level + '. ' + \
-               _('State:') + ' ' + state + '. ' + \
-               _('Issue:') + ' ' + issue
+            _('State:') + ' ' + state + '. ' + \
+            _('Issue:') + ' ' + issue
         return resp
 
     @api.multi
@@ -593,8 +595,9 @@ class CimComplaint(models.Model):
             modules.module.get_resource_path('cim_complaints_channel',
                                              'static/img', 'icon_ontime.png')
         image_path_is_acknowledgement_expired_yes = \
-            modules.module.get_resource_path('cim_complaints_channel',
-                                             'static/img', 'icon_expirated.png')
+            modules.module.get_resource_path(
+                'cim_complaints_channel',
+                'static/img', 'icon_expirated.png')
         image_path_is_rejected = \
             modules.module.get_resource_path('cim_complaints_channel',
                                              'static/img', 'icon_rejected.png')
@@ -683,6 +686,22 @@ class CimComplaint(models.Model):
             record.decrypted_witness_name = \
                 decrypted_witness_name
 
+    @api.constrains('resolution_text', 'state')
+    def _check_resolution_text(self):
+        for record in self:
+            if record.state == '05_resolved' and (not record.resolution_text):
+                raise exceptions.ValidationError(
+                    _('If the complaint is resolved, then it is mandatory '
+                      'to enter the resolution text.'))
+
+    @api.constrains('is_rejected', 'state')
+    def _check_is_rejected(self):
+        for record in self:
+            if record.state != '01_received' and record.is_rejected:
+                raise exceptions.ValidationError(
+                    _('It is only possible to reject a complaint if its '
+                      'state is \'Received\'.'))
+
     @api.multi
     def name_get(self):
         result = []
@@ -734,6 +753,14 @@ class CimComplaint(models.Model):
                      'document_03' in vals or 'document_04' in vals or
                      'document_05' in vals or 'document_06' in vals)):
                 vals = self._compact_document_fields(vals, is_create)
+            if 'complaint_frequency' in vals and vals['complaint_frequency']:
+                if vals['complaint_frequency'] != '02_specific_day':
+                    vals['complaint_time'] = None
+                else:
+                    if (('complaint_time' not in vals) or
+                       (not vals['complaint_time'])):
+                        vals['complaint_time'] = \
+                            datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         return vals
 
     @api.model
@@ -891,6 +918,14 @@ class CimComplaint(models.Model):
                     data_of_field['sortable'] = False
         return res
 
+    def unlink(self):
+        for record in self:
+            if ((not record.user_in_group_cim_settings) or
+               (not (record.is_delegated or record.is_rejected))):
+                raise exceptions.UserError(_(
+                    'It is not possile to delete a in force complaint.'))
+        return super(CimComplaint, self).unlink()
+
     @api.multi
     def action_get_communications(self):
         self.ensure_one()
@@ -921,10 +956,15 @@ class CimComplaint(models.Model):
     @api.multi
     def action_go_to_state_05_resolved(self):
         self.ensure_one()
-        # Provisional
-        # if self.state == '04_ready':
-        #     self.write({'state': '05_resolved', })
-        self.write({'state': '05_resolved', })
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Complaint') + ' : ' + self.name,
+            'res_model': 'wizard.resolve.complaint',
+            'src_model': 'cim.complaint',
+            'view_mode': 'form',
+            'target': 'new',
+        }
+        return act_window
 
     @api.multi
     def action_return_to_state_01_received(self):
