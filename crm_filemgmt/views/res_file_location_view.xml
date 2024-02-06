@@ -92,6 +92,7 @@
               name="Locations"
               parent="configuration_menu"
               sequence="3"
-              action="res_file_location_action"/>
+              action="res_file_location_action"
+              groups="crm_filemgmt.group_file_user"/>
 
 </odoo>

@@ -2,8 +2,9 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, exceptions, _
 import datetime
+from lxml import etree
+from odoo import models, fields, api, exceptions, _
 
 
 class ResFile(models.Model):
@@ -374,9 +375,28 @@ class ResFile(models.Model):
                     file_number = int(current_file_name.split('/')[1])
                 except Exception:
                     raise exceptions.UserError(
-                        _('The file number must be an integer.'))
+                        _('The file number must be an integer, found: %s')
+                        % file_number)
         new_file = super(ResFile, self).create(vals)
         return new_file
+
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        res = super(ResFile, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar,
+            submenu=submenu)
+        access_file_filemgmt = self._check_access_file_filemgmt()
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if view_type == 'form':
+            doc = etree.XML(res['arch'])
+            if not access_file_filemgmt or not access_letter_lettermgmt:
+                for node in doc.xpath(
+                        "//button[@name='action_get_file_registers']"):
+                    node.set('modifiers', '{"invisible": true}')
+            res['arch'] = etree.tostring(doc)
+        return res
 
     @api.constrains('partnerlink_ids')
     def _check_partnerlink_ids(self):
@@ -417,23 +437,15 @@ class ResFile(models.Model):
             if len(unique_ids_of_file) != len(file.filelink_ids):
                 raise exceptions.UserError(_('There are repeated files.'))
 
-    def init(self):
-        enable_read_permission = self.env['ir.values'].search(
-            [('name', '=', 'enable_access_file_filemgmt_portal_user')])
-        if (len(enable_read_permission) != 0):
-            enable_read_permission = self.env['ir.values'].get_default(
-                'res.file.config.settings',
-                'enable_access_file_filemgmt_portal_user',
-            )
-        else:
-            enable_read_permission = True
-            enable_read_permission = self.env['ir.values'].set_default(
-                'res.file.config.settings',
-                'enable_access_file_filemgmt_portal_user',
-                enable_read_permission)
-        config_model = self.env['res.file.config.settings']
-        config_model.sudo().assign_permissions_on_resfile_to_portaluser(
-            enable_read_permission)
+    def _check_access_file_filemgmt(self):
+        access_file_filemgmt = False
+        is_filemgmt_portal_group = self.env.user.has_group(
+            'crm_filemgmt.group_file_portal')
+        is_filemgmt_user_group = self.env.user.has_group(
+            'crm_filemgmt.group_file_user')
+        if is_filemgmt_portal_group or is_filemgmt_user_group:
+            access_file_filemgmt = True
+        return access_file_filemgmt
 
 
 class ResFilePartnerlink(models.Model):

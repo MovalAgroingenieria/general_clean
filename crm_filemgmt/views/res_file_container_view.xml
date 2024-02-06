@@ -178,12 +178,14 @@
               name="Containers"
               parent="configuration_menu"
               sequence="4"
-              action="res_file_container_action"/>
+              action="res_file_container_action"
+              groups="crm_filemgmt.group_file_user"/>
 
     <menuitem id="files_containertype_menu"
               name="Containers Type"
               parent="configuration_menu"
               sequence="5"
-              action="res_file_containertype_action"/>
+              action="res_file_containertype_action"
+              groups="crm_filemgmt.group_file_user"/>
 
 </odoo>

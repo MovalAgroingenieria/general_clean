@@ -14,7 +14,6 @@
                 </header>
                 <group string="File Management">
                     <field name="default_annual_seq_prefix"/>
-                    <field name="enable_access_file_filemgmt_portal_user"/>
                 </group>
             </form>
         </field>
@@ -33,6 +32,6 @@
               parent="configuration_menu"
               sequence="1"
               action="filemgmt_configuration_action"
-              groups="base.group_system"/>
+              groups="crm_filemgmt.group_file_user"/>
 
 </odoo>

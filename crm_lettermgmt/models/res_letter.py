@@ -34,14 +34,12 @@ class ResLetter(models.Model):
         default=lambda self: self.env.context.get('move', 'in'))
 
     state = fields.Selection(
-        [
-            ('draft', 'Draft'),
-            ('sent', 'Sent'),
-            ('rec', 'Received'),
-            ('rec_bad', 'Received Damage'),
-            ('rec_ret', 'Received But Returned'),
-            ('cancel', 'Cancelled'),
-        ],
+        [('draft', 'Draft'),
+         ('sent', 'Sent'),
+         ('rec', 'Received'),
+         ('rec_bad', 'Received Damage'),
+         ('rec_ret', 'Received But Returned'),
+         ('cancel', 'Cancelled')],
         default='draft',
         readonly=True,
         copy=False,
@@ -256,6 +254,16 @@ class ResLetter(models.Model):
             '%(h24)s', '00').replace('%(h12)s', '00').replace(
             '%(min)s', '00').replace('%(sec)s', '00')
         return prefix
+
+    def _check_access_letter_lettermgmt(self):
+        access_letter_lettermgmt = False
+        is_lettermgmt_portal_group = self.env.user.has_group(
+            'crm_lettermgmt.group_crm_lettermgmt_portal')
+        is_lettermgmt_user_group = self.env.user.has_group(
+            'crm_lettermgmt.group_crm_lettermgmt_user')
+        if is_lettermgmt_portal_group or is_lettermgmt_user_group:
+            access_letter_lettermgmt = True
+        return access_letter_lettermgmt
 
     @api.one
     def action_cancel(self):

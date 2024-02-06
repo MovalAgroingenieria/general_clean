@@ -6,16 +6,20 @@
             <field name="name">File Management</field>
         </record>
 
-        <record id="group_file_user" model="res.groups">
-            <field name="name">User</field>
+        <record id="crm_filemgmt.group_file_portal" model="res.groups">
+            <field name="name">Portal</field>
             <field name="category_id" ref="crm_filemgmt.module_category"/>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
-        <record id="group_file_manager" model="res.groups">
+        <record id="crm_filemgmt.group_file_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="crm_filemgmt.module_category"/>
+        </record>
+
+        <record id="crm_filemgmt.group_file_manager" model="res.groups">
             <field name="name">Manager</field>
             <field name="category_id" ref="crm_filemgmt.module_category"/>
-            <field name="implied_ids" eval="[(4, ref('group_file_user'))]"/>
+            <field name="implied_ids" eval="[(4, ref('crm_filemgmt.group_file_user'))]"/>
             <field name="users" eval="[(4, ref('base.user_root'))]"/>
         </record>
 

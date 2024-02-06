@@ -10,11 +10,13 @@
     <menuitem id="filemgmt_menu"
               name="File Management"
               parent="main_menu"
-              sequence="1"/>
+              sequence="1"
+              groups="crm_filemgmt.group_file_user"/>
 
     <menuitem id="configuration_menu"
               name="Configuration"
               parent="main_menu"
-              sequence="1001"/>
+              sequence="1001"
+              groups="crm_filemgmt.group_file_user"/>
 
 </odoo>

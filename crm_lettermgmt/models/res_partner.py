@@ -2,6 +2,7 @@
 # 2020 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from lxml import etree
 from odoo import models, fields, api, _
 
 
@@ -35,26 +36,32 @@ class ResPartner(models.Model):
         string='Num. registers',
         compute='_compute_number_of_total_registers')
 
-    access_letter_lettermgmt = fields.Boolean(
-        string='Access to register management',
-        compute='_compute_access_letter_lettermgmt')
-
     @api.multi
     def _compute_number_of_registers_as_recipent(self):
-        for record in self:
-            record.number_of_registers_as_recipent = \
-                len(record.recipient_res_letter_ids)
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if access_letter_lettermgmt:
+            for record in self:
+                record.number_of_registers_as_recipent = \
+                    len(record.recipient_res_letter_ids)
 
     @api.multi
     def _compute_number_of_registers_as_sender(self):
-        for record in self:
-            record.number_of_registers_as_sender = \
-                len(record.sender_res_letter_ids)
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if access_letter_lettermgmt:
+            for record in self:
+                record.number_of_registers_as_sender = \
+                    len(record.sender_res_letter_ids)
 
     @api.multi
     def _compute_number_of_total_registers(self):
-        for record in self:
-            record.number_of_total_registers = len(record.total_res_letter_ids)
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if access_letter_lettermgmt:
+            for record in self:
+                record.number_of_total_registers = \
+                    len(record.total_res_letter_ids)
 
     @api.multi
     def action_get_registers(self):
@@ -81,24 +88,33 @@ class ResPartner(models.Model):
 
     @api.depends('recipient_res_letter_ids', 'sender_res_letter_ids')
     def _compute_total_res_letter_ids(self):
-        for record in self:
-            total_res_letter_ids = []
-            if record.recipient_res_letter_ids:
-                for recipient_res_letter_id in record.recipient_res_letter_ids:
-                    total_res_letter_ids.append(recipient_res_letter_id.id)
-            if record.sender_res_letter_ids:
-                for sender_res_letter_id in record.sender_res_letter_ids:
-                    total_res_letter_ids.append(sender_res_letter_id.id)
-            record.total_res_letter_ids = total_res_letter_ids
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if access_letter_lettermgmt:
+            for record in self:
+                total_res_letter_ids = []
+                if record.recipient_res_letter_ids:
+                    for recipient_res_letter_id in \
+                            record.recipient_res_letter_ids:
+                        total_res_letter_ids.append(recipient_res_letter_id.id)
+                if record.sender_res_letter_ids:
+                    for sender_res_letter_id in record.sender_res_letter_ids:
+                        total_res_letter_ids.append(sender_res_letter_id.id)
+                record.total_res_letter_ids = total_res_letter_ids
 
-    @api.multi
-    def _compute_access_letter_lettermgmt(self):
-        access_letter_lettermgmt = False
-        is_lettermgmt_portal_group = self.env.user.has_group(
-            'crm_lettermgmt.group_crm_lettermgmt_portal')
-        is_lettermgmt_user_group = self.env.user.has_group(
-            'crm_lettermgmt.group_crm_lettermgmt_user')
-        if is_lettermgmt_portal_group or is_lettermgmt_user_group:
-            access_letter_lettermgmt = True
-        for record in self:
-            record.access_letter_lettermgmt = access_letter_lettermgmt
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        res = super(ResPartner, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar,
+            submenu=submenu)
+        access_letter_lettermgmt = \
+            self.env['res.letter']._check_access_letter_lettermgmt()
+        if view_type == 'form':
+            doc = etree.XML(res['arch'])
+            if not access_letter_lettermgmt:
+                for node in doc.xpath(
+                        "//button[@name='action_get_registers']"):
+                    node.set('modifiers', '{"invisible": true}')
+            res['arch'] = etree.tostring(doc)
+        return res

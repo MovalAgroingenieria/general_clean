@@ -453,6 +453,7 @@
               name="Files"
               parent="filemgmt_menu"
               sequence="1"
-              action="res_file_action"/>
+              action="res_file_action"
+              groups="crm_filemgmt.group_file_user"/>
 
 </odoo>
