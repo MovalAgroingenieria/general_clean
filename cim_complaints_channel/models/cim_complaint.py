@@ -101,6 +101,7 @@ class CimComplaint(models.Model):
 
     creation_date = fields.Date(
         string='Creation Date',
+        required=True,
         default=lambda self: fields.datetime.now(), )
 
     complainant_email = fields.Char(
@@ -170,8 +171,6 @@ class CimComplaint(models.Model):
     investigating_user_id = fields.Many2one(
         string='Instructor',
         comodel_name='res.users',
-        store=True,
-        compute='_compute_investigating_user_id',
         track_visibility='onchange', )
 
     number_of_communications = fields.Integer(
@@ -373,14 +372,6 @@ class CimComplaint(models.Model):
                 'cim_complaints_channel.group_cim_settings')
         for record in self:
             record.user_in_group_cim_settings = user_in_group_cim_settings
-
-    @api.depends('state')
-    def _compute_investigating_user_id(self):
-        for record in self:
-            investigating_user_id = None
-            if record.state and record.state == '03_in_progress':
-                investigating_user_id = self.env.user.id
-            record.investigating_user_id = investigating_user_id
 
     @api.multi
     def _compute_number_of_communications(self):
@@ -686,14 +677,6 @@ class CimComplaint(models.Model):
             record.decrypted_witness_name = \
                 decrypted_witness_name
 
-    @api.constrains('resolution_text', 'state')
-    def _check_resolution_text(self):
-        for record in self:
-            if record.state == '05_resolved' and (not record.resolution_text):
-                raise exceptions.ValidationError(
-                    _('If the complaint is resolved, then it is mandatory '
-                      'to enter the resolution text.'))
-
     @api.constrains('is_rejected', 'state')
     def _check_is_rejected(self):
         for record in self:
@@ -701,6 +684,32 @@ class CimComplaint(models.Model):
                 raise exceptions.ValidationError(
                     _('It is only possible to reject a complaint if its '
                       'state is \'Received\'.'))
+
+    @api.constrains('investigating_user_id', 'state')
+    def _check_investigating_user_id(self):
+        for record in self:
+            if ((not record.investigating_user_id) and
+               (record.state == '04_ready' or record.state == '05_resolved')):
+                raise exceptions.ValidationError(
+                    _('If the complaint is ready or resolved, then it is '
+                      'mandatory to enter the instructor.'))
+
+    @api.constrains('measures_taken', 'state')
+    def _check_measures_taken(self):
+        for record in self:
+            if (record.state == '05_resolved' and
+               ((not record.measures_taken) or record.measures_taken == '')):
+                raise exceptions.ValidationError(
+                    _('If the complaint is resolved, then it is mandatory '
+                      'to enter the measures taken.'))
+
+    @api.constrains('resolution_text', 'state')
+    def _check_resolution_text(self):
+        for record in self:
+            if record.state == '05_resolved' and (not record.resolution_text):
+                raise exceptions.ValidationError(
+                    _('If the complaint is resolved, then it is mandatory '
+                      'to enter the resolution text.'))
 
     @api.multi
     def name_get(self):
@@ -936,38 +945,66 @@ class CimComplaint(models.Model):
     @api.multi
     def action_go_to_state_02_admitted(self):
         self.ensure_one()
-        # Provisional
-        print 'action_go_to_state_02_admitted...'
-        # TODO...
+        if self.state == '01_received' and not self.is_rejected:
+            self.state = '02_admitted'
 
     @api.multi
     def action_reject(self):
         self.ensure_one()
-        act_window = {
-            'type': 'ir.actions.act_window',
-            'name': _('Complaint') + ' : ' + self.name,
-            'res_model': 'wizard.reject.complaint',
-            'src_model': 'cim.complaint',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return act_window
+        if self.state == '01_received':
+            act_window = {
+                'type': 'ir.actions.act_window',
+                'name': _('Complaint') + ' : ' + self.name,
+                'res_model': 'wizard.reject.complaint',
+                'src_model': 'cim.complaint',
+                'view_mode': 'form',
+                'target': 'new',
+            }
+            return act_window
+
+    @api.multi
+    def action_readmit(self):
+        self.ensure_one()
+        if self.is_rejected:
+            self.is_rejected = False
+
+    @api.multi
+    def action_go_to_state_03_in_progress(self):
+        self.ensure_one()
+        if self.state == '02_admitted' and not self.is_rejected:
+            vals = {'state': '03_in_progress', }
+            if not self.investigating_user_id:
+                vals['investigating_user_id'] = self.env.user.id
+            self.write(vals)
+
+    @api.multi
+    def action_go_to_state_04_ready(self):
+        self.ensure_one()
+        if self.state == '03_in_progress' and not self.is_rejected:
+            self.state = '04_ready'
 
     @api.multi
     def action_go_to_state_05_resolved(self):
         self.ensure_one()
-        act_window = {
-            'type': 'ir.actions.act_window',
-            'name': _('Complaint') + ' : ' + self.name,
-            'res_model': 'wizard.resolve.complaint',
-            'src_model': 'cim.complaint',
-            'view_mode': 'form',
-            'target': 'new',
-        }
-        return act_window
+        if self.state == '04_ready' and not self.is_rejected:
+            act_window = {
+                'type': 'ir.actions.act_window',
+                'name': _('Complaint') + ' : ' + self.name,
+                'res_model': 'wizard.resolve.complaint',
+                'src_model': 'cim.complaint',
+                'view_mode': 'form',
+                'target': 'new',
+            }
+            return act_window
 
     @api.multi
-    def action_return_to_state_01_received(self):
+    def action_undo(self):
         self.ensure_one()
-        # Provisional
-        self.state = '01_received'
+        if self.state == '02_admitted':
+            self.state = '01_received'
+        elif self.state == '03_in_progress':
+            self.state = '02_admitted'
+        elif self.state == '04_ready':
+            self.state = '03_in_progress'
+        elif self.state == '05_resolved':
+            self.state = '04_ready'
