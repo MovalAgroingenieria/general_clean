@@ -102,7 +102,7 @@
                                    style="width:320px"
                                    placeholder="Complaint Type"
                                    options="{'no_quick_create':True,'no_create_edit':True}"
-                                   attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                   attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                         </div>
                     </div>
                     <group name="group_01" style="margin-top:-10px">
@@ -111,7 +111,7 @@
                                 <group name="group_01_left_inner">
                                     <field name="issue" nolabel="1" colspan="2"
                                            placeholder="Issue"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <div name="group_01_left_check" colspan="2"
                                          style="margin-top:14px">
                                         <field name="is_anonymous"
@@ -176,7 +176,7 @@
                                            attrs="{'readonly': [('state', '=', '05_resolved')]}"/>
                                     <field name="creation_date"
                                            string="Creation Date"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="deadline_date"
                                            string="Deadline Date"
                                            attrs="{'invisible': [('state', '=', '05_resolved')]}"/>
@@ -204,19 +204,19 @@
                                          style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px;min-height:75px">
                                         <field name="description" nolabel="1"
                                                style="margin-top:5px;min-height:55px"
-                                               attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                               attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     </div>
                                     <field name="defendant_name"
                                            string="Defendant"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="complaint_frequency"
                                            string="When did it happen?"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="complaint_time"
                                            string="Date and Time"
                                            attrs="{'invisible': [('complaint_frequency', '!=', '02_specific_day')],
                                                    'required': [('complaint_frequency', '=', '02_specific_day')],
-                                                   'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                                   'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="infringement_level"
                                            string="Infringement Level"
                                            attrs="{'readonly': [('state', '=', '05_resolved')]}"/>
@@ -229,34 +229,44 @@
                                          groups="cim_complaints_channel.group_cim_user">
                                         <span>COMPLAINANT DATA</span>
                                     </div>
+                                    <div name="section_decrypted_complainant_data"
+                                         colspan="2"
+                                         class="panel-body"
+                                         style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px"
+                                         attrs="{'invisible': ['|', ('id', '=', 0), ('decrypted_complainant_data', '=', False)]}"
+                                         groups="cim_complaints_channel.group_cim_user">
+                                        <field name="decrypted_complainant_data" nolabel="1"
+                                               style="margin-top:5px"/>
+                                    </div>
                                     <field name="complainant_name"
                                            string="Name"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
+                                           attrs="{'invisible': [('id', '>', 0)]}"
+                                           groups="cim_complaints_channel.group_cim_user"/>
+                                    <field name="complainant_vat"
+                                           string="VAT"
+                                           attrs="{'invisible': [('id', '>', 0)]}"
+                                           groups="cim_complaints_channel.group_cim_user"/>
+                                    <field name="complainant_email"
+                                           string="E-mail"
+                                           attrs="{'invisible': [('id', '>', 0)]}"
+                                           groups="cim_complaints_channel.group_cim_user"/>
+                                    <field name="complainant_phone"
+                                           string="Phone"
+                                           attrs="{'invisible': [('id', '>', 0)]}"
                                            groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="link_type_id"
                                            string="Link Type"
                                            options="{'no_quick_create':True,'no_create_edit':True}"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
                                            groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="is_complainant_involved"
                                            string="Is involved?"
                                            groups="cim_complaints_channel.group_cim_user"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
-                                    <field name="complainant_vat"
-                                           string="VAT"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
-                                           groups="cim_complaints_channel.group_cim_user"/>
-                                    <field name="complainant_phone"
-                                           string="Phone"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
-                                           groups="cim_complaints_channel.group_cim_user"/>
-                                    <field name="complainant_email"
-                                           string="E-mail"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
-                                           groups="cim_complaints_channel.group_cim_user"/>
-                                    <field name="tracking_code"
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                    <field name="decrypted_tracking_code"
                                            string="Tracking Code"
-                                           groups="cim_complaints_channel.group_cim_user"/>
+                                           class="oe_read_only"
+                                           groups="cim_complaints_channel.group_cim_manager"/>
                                 </group>
                             </div>
                             <div colspan="1"/>
@@ -294,7 +304,12 @@
                                          style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;min-height:75px">
                                         <field name="witness_name" nolabel="1"
                                                style="margin-top:5px;min-height:55px"
-                                               attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                               attrs="{'invisible': [('id', '>', 0)]}"
+                                               groups="cim_complaints_channel.group_cim_user"/>
+                                        <field name="decrypted_witness_name" nolabel="1"
+                                               style="margin-top:5px;min-height:55px"
+                                               attrs="{'invisible': [('id', '=', 0)]}"
+                                               groups="cim_complaints_channel.group_cim_user"/>
                                     </div>
                                 </group>
                                 <group name="group_02_right_inner_rejected"
@@ -324,29 +339,29 @@
                                     <field name="document_01"
                                            filename="document_01_name"
                                            string="Document #1"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_02"
                                            filename="document_02_name"
                                            string="Document #2"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_03"
                                            filename="document_03_name"
                                            string="Document #3"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                 </group>
                                 <group name="documents_right">
                                     <field name="document_04"
                                            filename="document_04_name"
                                            string="Document #4"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_05"
                                            filename="document_05_name"
                                            string="Document #5"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_06"
                                            filename="document_06_name"
                                            string="Document #6"
-                                           attrs="{'readonly': ['|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                                 </group>
                             </group>
                         </page>

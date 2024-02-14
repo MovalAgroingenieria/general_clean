@@ -3,9 +3,13 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import base64
+import string
+import random
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from lxml import etree
+from Crypto import Random
+from Crypto.Cipher import AES
 from odoo import models, fields, api, modules, exceptions, _
 
 
@@ -19,7 +23,20 @@ class CimComplaint(models.Model):
     SIZE_MEDIUM = 50
     SIZE_MEDIUM_EXTRA = 75
     SIZE_NORMAL = 100
+    SIZE_BIG = 255
     MAX_DOCUMENTS = 6
+
+    _size_tracking_code = 8
+    _cipher_key = 'z%C*F-JaNdRgUkXp'
+
+    def _default_tracking_code(self):
+        characters = string.ascii_uppercase + string.digits
+        # String to cipher
+        tracking_code = ''.join(random.choice(characters)
+                                for _ in range(self._size_tracking_code))
+        # Encrypt
+        resp = self.encrypt_data(tracking_code, self._cipher_key)
+        return resp
 
     def _default_setted_sequence(self):
         resp = False
@@ -47,8 +64,8 @@ class CimComplaint(models.Model):
 
     tracking_code = fields.Char(
         string='Tracking Code',
-        size=SIZE_SMALL,
-        index=True,
+        size=SIZE_BIG,
+        default=_default_tracking_code,
         readonly=True, )
 
     complaint_type_id = fields.Many2one(
@@ -64,8 +81,7 @@ class CimComplaint(models.Model):
         index=True, )
 
     witness_name = fields.Text(
-        string='Witnesses',
-        index=True, )
+        string='Witnesses',)
 
     is_complainant_involved = fields.Boolean(
         string='Complainant involved',
@@ -105,25 +121,16 @@ class CimComplaint(models.Model):
         default=lambda self: fields.datetime.now(), )
 
     complainant_email = fields.Char(
-        string='Complainant E-mail',
-        size=SIZE_MEDIUM,
-        index=True,
-        track_visibility='onchange', )
+        string='Complainant E-mail',)
 
     complainant_name = fields.Char(
-        string='Complainant Name',
-        size=SIZE_NORMAL,
-        index=True, )
+        string='Complainant Name',)
 
     complainant_vat = fields.Char(
-        string='Complainant VAT',
-        size=SIZE_SMALL,
-        index=True, )
+        string='Complainant VAT',)
 
     complainant_phone = fields.Char(
-        string='Complainant Phone',
-        size=SIZE_SMALL,
-        index=True, )
+        string='Complainant Phone',)
 
     is_anonymous = fields.Boolean(
         string='Anonymous Complaint',
@@ -340,13 +347,21 @@ class CimComplaint(models.Model):
         string='Decrypted complainant e-mail',
         compute='_compute_decrypted_complainant_email', )
 
+    decrypted_complainant_vat = fields.Char(
+        string='Decrypted complainant VAT',
+        compute='_compute_decrypted_complainant_vat', )
+
     decrypted_complainant_phone = fields.Char(
         string='Decrypted complainant phone',
         compute='_compute_decrypted_complainant_phone', )
 
-    decrypted_witness_name = fields.Char(
+    decrypted_witness_name = fields.Text(
         string='Decrypted witness name',
         compute='_compute_decrypted_witness_name', )
+
+    decrypted_complainant_data = fields.Text(
+        string='Decrypted Complainant Data',
+        compute='_compute_decrypted_complainant_data', )
 
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
@@ -612,70 +627,77 @@ class CimComplaint(models.Model):
         for record in self:
             decrypted_tracking_code = ''
             if record.tracking_code:
-                # Provisional
-                decrypted_tracking_code = record.tracking_code
-                # TODO
+                decrypted_tracking_code = self.decrypt_data(
+                    record.tracking_code, self._cipher_key)
             record.decrypted_tracking_code = decrypted_tracking_code
 
     @api.multi
     def _compute_decrypted_complainant_name(self):
         for record in self:
             decrypted_complainant_name = ''
-            if record.decrypted_complainant_name:
-                # Provisional
-                # TODO...
-                decrypted_complainant_name = \
-                    record.decrypted_complainant_name
-            record.decrypted_complainant_name = \
-                decrypted_complainant_name
+            if record.complainant_name:
+                decrypted_complainant_name = self.decrypt_data(
+                    record.complainant_name, self._cipher_key)
+            record.decrypted_complainant_name = decrypted_complainant_name
 
     @api.multi
     def _compute_decrypted_complainant_email(self):
         for record in self:
             decrypted_complainant_email = ''
-            if record.decrypted_complainant_email:
-                # Provisional
-                # TODO...
-                decrypted_complainant_email = \
-                    record.decrypted_complainant_email
-            record.decrypted_complainant_email = \
-                decrypted_complainant_email
+            if record.complainant_email:
+                decrypted_complainant_email = self.decrypt_data(
+                    record.complainant_email, self._cipher_key)
+            record.decrypted_complainant_email = decrypted_complainant_email
 
     @api.multi
     def _compute_decrypted_complainant_vat(self):
         for record in self:
             decrypted_complainant_vat = ''
-            if record.decrypted_complainant_vat:
-                # Provisional
-                # TODO...
-                decrypted_complainant_vat = \
-                    record.decrypted_complainant_vat
-            record.decrypted_complainant_vat = \
-                decrypted_complainant_vat
+            if record.complainant_vat:
+                decrypted_complainant_vat = self.decrypt_data(
+                    record.complainant_vat, self._cipher_key)
+            record.decrypted_complainant_vat = decrypted_complainant_vat
 
     @api.multi
     def _compute_decrypted_complainant_phone(self):
         for record in self:
             decrypted_complainant_phone = ''
-            if record.decrypted_complainant_phone:
-                # Provisional
-                # TODO...
-                decrypted_complainant_phone = \
-                    record.decrypted_complainant_phone
-            record.decrypted_complainant_phone = \
-                decrypted_complainant_phone
+            if record.complainant_phone:
+                decrypted_complainant_phone = self.decrypt_data(
+                    record.complainant_phone, self._cipher_key)
+            record.decrypted_complainant_phone = decrypted_complainant_phone
 
     @api.multi
     def _compute_decrypted_witness_name(self):
         for record in self:
             decrypted_witness_name = ''
-            if record.decrypted_witness_name:
-                # Provisional
-                # TODO...
-                decrypted_witness_name = \
-                    record.decrypted_witness_name
-            record.decrypted_witness_name = \
-                decrypted_witness_name
+            if record.witness_name:
+                decrypted_witness_name = self.decrypt_data(
+                    record.witness_name, self._cipher_key)
+            record.decrypted_witness_name = decrypted_witness_name
+
+    @api.multi
+    def _compute_decrypted_complainant_data(self):
+        for record in self:
+            decrypted_complainant_data = ''
+            decrypted_complainant_name = record.decrypted_complainant_name
+            decrypted_complainant_email = record.decrypted_complainant_email
+            decrypted_complainant_vat = record.decrypted_complainant_vat
+            decrypted_complainant_phone = record.decrypted_complainant_phone
+            if decrypted_complainant_name:
+                decrypted_complainant_data = decrypted_complainant_name + '\n'
+            if decrypted_complainant_vat:
+                decrypted_complainant_data = decrypted_complainant_data + \
+                                             decrypted_complainant_vat + '\n'
+            if decrypted_complainant_email:
+                decrypted_complainant_data = decrypted_complainant_data + \
+                                             decrypted_complainant_email + '\n'
+            if decrypted_complainant_phone:
+                decrypted_complainant_data = decrypted_complainant_data + \
+                                             decrypted_complainant_phone + '\n'
+            if decrypted_complainant_data:
+                decrypted_complainant_data = decrypted_complainant_data[:-1]
+            record.decrypted_complainant_data = decrypted_complainant_data
 
     @api.constrains('is_rejected', 'state')
     def _check_is_rejected(self):
@@ -770,6 +792,26 @@ class CimComplaint(models.Model):
                        (not vals['complaint_time'])):
                         vals['complaint_time'] = \
                             datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            if 'complainant_name' in vals and vals['complainant_name']:
+                new_val = self.encrypt_data(vals['complainant_name'],
+                                            self._cipher_key)
+                vals['complainant_name'] = new_val
+            if 'complainant_email' in vals and vals['complainant_email']:
+                new_val = self.encrypt_data(vals['complainant_email'],
+                                            self._cipher_key)
+                vals['complainant_email'] = new_val
+            if 'complainant_vat' in vals and vals['complainant_vat']:
+                new_val = self.encrypt_data(vals['complainant_vat'],
+                                            self._cipher_key)
+                vals['complainant_vat'] = new_val
+            if 'complainant_phone' in vals and vals['complainant_phone']:
+                new_val = self.encrypt_data(vals['complainant_phone'],
+                                            self._cipher_key)
+                vals['complainant_phone'] = new_val
+            if 'witness_name' in vals and vals['witness_name']:
+                new_val = self.encrypt_data(vals['witness_name'],
+                                            self._cipher_key)
+                vals['witness_name'] = new_val
         return vals
 
     @api.model
@@ -1008,3 +1050,38 @@ class CimComplaint(models.Model):
             self.state = '03_in_progress'
         elif self.state == '05_resolved':
             self.state = '04_ready'
+
+    @api.model
+    def encrypt_data(self, data_to_encrypt, cipher_key):
+        resp = ''
+        if data_to_encrypt and cipher_key:
+            # Adaptation for 16-multiple
+            block_size = AES.block_size
+            data_to_encrypt = data_to_encrypt.encode('utf-8')
+            len_of_data_to_encrypt = len(data_to_encrypt)
+            rest = len_of_data_to_encrypt % block_size
+            if rest > 0:
+                data_to_encrypt = data_to_encrypt + ' ' * (block_size - rest)
+            # Encrypt
+            iv = Random.new().read(AES.block_size)
+            cipher = AES.new(cipher_key, AES.MODE_CBC, iv)
+            encrypted_data = cipher.encrypt(data_to_encrypt)
+            # Coding to base64
+            resp = base64.b64encode(iv + encrypted_data)
+        return resp
+
+    @api.model
+    def decrypt_data(self, encrypted_data, cipher_key):
+        resp = ''
+        if encrypted_data and cipher_key:
+            block_size = AES.block_size
+            # Decoding from base64
+            encrypted_content = base64.b64decode(encrypted_data)
+            # Extract iv and encrypted data without iv
+            iv = encrypted_content[:block_size]
+            encrypted_data = encrypted_content[block_size:]
+            # Decrypt
+            cipher = AES.new(cipher_key, AES.MODE_CBC, iv)
+            raw_decrypted_data = cipher.decrypt(encrypted_data)
+            resp = raw_decrypted_data.rstrip()
+        return resp
