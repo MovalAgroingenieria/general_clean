@@ -17,19 +17,15 @@ class DecimalPrecision(models.Model):
             vals['display_digits'] = vals['digits']
         return super(DecimalPrecision, self).create(vals)
 
-    @api.model
-    @tools.ormcache('application')
-    def display_precision_get(self, application):
-        self.flush(['name', 'digits'])
-        self.env.cr.execute(
-            'SELECT display_digits FROM decimal_precision WHERE name=%s',
-            (application,))
-        res = self.env.cr.fetchone()
-        return res[0] if res else 2
-
     @staticmethod
+    # @tools.ormcache('application') Add in case of performace issues 15/2/2024
     def get_display_precision(env, application):
         res = 2
         dp = env['decimal.precision']
-        res = dp.display_precision_get(application)
+        dp.flush(['name', 'digits'])
+        dp.env.cr.execute(
+            'SELECT display_digits FROM decimal_precision WHERE name=%s',
+            (application,))
+        res = dp.env.cr.fetchone()
+        res = res[0] if res else 2
         return 16, res

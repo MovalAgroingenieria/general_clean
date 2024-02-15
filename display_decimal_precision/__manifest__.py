@@ -12,6 +12,9 @@
     'depends': [
         'base',
         'product',
+        'sale',
+        'stock',
+        'mail',
     ],
     'data': [
         'views/decimal_precision_view.xml',
