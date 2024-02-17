@@ -16,6 +16,9 @@ class SimplecadastreModel(models.AbstractModel):
     # Size of the "rc2" part of a cadastral reference.
     SIZE_RC2 = 7
 
+    # Timeout for the cadastral-area request (sec).
+    REQUEST_TIMEOUT = 5
+
     # Cadastral URL to get the cadastral data of a parcel from its
     # cadastral reference.
     _url_cadastral_data = 'http://ovc.catastro.meh.es/ovcservweb/' + \
@@ -49,7 +52,8 @@ class SimplecadastreModel(models.AbstractModel):
                 # Add try for exceptions on Cadastre services
                 try:
                     resp_http_get = requests.get(
-                        self._url_cadastral_data + record.cadastral_reference)
+                        self._url_cadastral_data + record.cadastral_reference,
+                        timeout=self.REQUEST_TIMEOUT)
                     if resp_http_get.status_code == 200:
                         cadastral_data = ET.fromstring(resp_http_get.content)
                         prefix = ''
