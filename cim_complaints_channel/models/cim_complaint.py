@@ -719,11 +719,11 @@ class CimComplaint(models.Model):
     @api.constrains('measures_taken', 'state')
     def _check_measures_taken(self):
         for record in self:
-            if (record.state == '05_resolved' and
+            if ((record.state == '04_ready' or record.state == '05_resolved') and
                ((not record.measures_taken) or record.measures_taken == '')):
                 raise exceptions.ValidationError(
-                    _('If the complaint is resolved, then it is mandatory '
-                      'to enter the measures taken.'))
+                    _('If the complaint is ready or resolved, then it is '
+                      'mandatory to enter the measures taken.'))
 
     @api.constrains('resolution_text', 'state')
     def _check_resolution_text(self):
@@ -1085,3 +1085,18 @@ class CimComplaint(models.Model):
             raw_decrypted_data = cipher.decrypt(encrypted_data)
             resp = raw_decrypted_data.rstrip()
         return resp
+
+    @api.multi
+    def action_complainant_data(self):
+        self.ensure_one()
+        if (self.is_delegated and self.state != '05_resolved' and
+           (not self.is_rejected)):
+            act_window = {
+                'type': 'ir.actions.act_window',
+                'name': _('Complaint') + ' : ' + self.name,
+                'res_model': 'wizard.complainant.data',
+                'src_model': 'cim.complaint',
+                'view_mode': 'form',
+                'target': 'new',
+            }
+            return act_window

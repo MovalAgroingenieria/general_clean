@@ -24,6 +24,7 @@
         "data/cim_link_type_data.xml",
         "wizards/wizard_reject_complaint_view.xml",
         "wizards/wizard_resolve_complaint_view.xml",
+        "wizards/wizard_complainant_data_view.xml",
         "views/resources.xml",
         "views/cim_complaints_channel_menus.xml",
         "views/res_cim_config_settings_view.xml",
