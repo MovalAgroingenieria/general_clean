@@ -134,7 +134,7 @@
                                        context="{'tree_view_ref': 'crm_filemgmt.res_file_filelink_view_tree'}"/>
                             </page>
                             <page name="attachments" string="Attachments">
-                                <field name="file_attachment_ids" >
+                                <field name="file_attachment_ids">
                                     <tree editable="top">
                                         <field name="name"/>
                                         <field name="mimetype"/>
@@ -162,7 +162,7 @@
         <field name="name">Files (tree view)</field>
         <field name="model">res.file</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_view_tree" colors="red:is_cancelled == True;">
+            <tree class="o_res_file_view_tree" colors="red:is_cancelled == True;" default_order="name desc">
                 <field name="image" widget="image" invisible="1"/>
                 <field name="name"/>
                 <field name="partner_id"/>
@@ -184,7 +184,7 @@
         <field name="model">res.file</field>
         <field name="arch" type="xml">
             <tree class="o_res_file_view_tree" colors="red:is_cancelled == True;"
-                create="false" edit="false">
+                create="false" edit="false" default_order="name desc">
                 <field name="name"/>
                 <field name="partner_id"/>
                 <field name="date_file"/>
@@ -377,7 +377,7 @@
         <field name="name">File Partnerlink (tree view)</field>
         <field name="model">res.file.partnerlink</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_partnerlink_view_tree" editable="bottom">
+            <tree class="o_res_file_partnerlink_view_tree" editable="bottom" default_order="create_date desc">
                 <!--<field name="category_id" readonly="1"/>-->
                 <field name="partner_id"/>
                 <field name="is_main"/>
@@ -390,7 +390,8 @@
         <field name="model">res.file.partnerlink</field>
         <field name="arch" type="xml">
             <tree create="false" edit="false" delete="false"
-                  class="o_res_file_partnerlink_of_partner_view_tree">
+                  class="o_res_file_partnerlink_of_partner_view_tree"
+                  default_order="create_date desc">
                 <field name="date_file"/>
                 <field name="category_id"/>
                 <field name="file_id"/>
@@ -431,7 +432,8 @@
         <field name="name">File filelink (tree view)</field>
         <field name="model">res.file.filelink</field>
         <field name="arch" type="xml">
-            <tree class="o_res_file_filelink_view_tree" editable="bottom">
+            <tree class="o_res_file_filelink_view_tree" editable="bottom"
+                  default_order="related_file_id desc">
                 <field name="related_file_category_id" readonly="1"/>
                 <field name="related_file_id"/>
                 <field name="related_file_subject"/>
