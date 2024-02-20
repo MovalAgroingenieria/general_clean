@@ -23,14 +23,14 @@
                             string="Admit"
                             style="width: 125px;"
                             icon="fa-sign-in"
-                            attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
+                            attrs="{'invisible': ['|','|',('id','=',False),('state','!=','01_received'),('is_rejected','=',True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
                             confirm="This action will change to the 'Admitted' state. Proceed?"/>
                     <button name="action_reject" type="object"
                             string="Reject"
                             style="width: 125px;"
                             icon="fa-ban"
-                            attrs="{'invisible': ['|',('state','!=','01_received'),('is_rejected','=',True)]}"
+                            attrs="{'invisible': ['|','|',('id','=',False),('state','!=','01_received'),('is_rejected','=',True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
                             confirm="This action will mark the complaint as 'Rejected'. Proceed?"/>
                     <button name="action_readmit" type="object"
@@ -68,6 +68,12 @@
                             attrs="{'invisible': ['|',('state','=','01_received'),('is_rejected','=',True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
                             confirm="Do you confirm that you want to return to the previous state?"/>
+                    <button name="action_complainant_data" type="object"
+                            string="Complainant"
+                            style="width: 125px;"
+                            icon="fa-hand-o-right"
+                            attrs="{'invisible': ['|','|','|',('id','=',False),('is_delegated','=',False),('is_rejected','=',True),('state','=','05_resolved')]}"
+                            groups="cim_complaints_channel.group_cim_settings"/>
                     <field name="state"
                            widget="statusbar"
                            statusbar_visible="01_received,02_admitted,03_in_progress,04_ready,05_resolved"/>
