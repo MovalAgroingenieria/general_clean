@@ -45,6 +45,12 @@
             <field name="is_standard">True</field>
         </record>
 
+        <record id="cim_link_type_other"
+                model="cim.link.type" forcecreate="False">
+            <field name="name">Other type of link</field>
+            <field name="is_standard">True</field>
+        </record>
+
     </data>
 
 </odoo>

@@ -53,7 +53,7 @@
 
         <record id="cim_complaint_type_other"
                 model="cim.complaint.type" forcecreate="False">
-            <field name="name">Other</field>
+            <field name="name">Other type of complaint</field>
             <field name="is_standard">True</field>
         </record>
 

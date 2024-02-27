@@ -32,8 +32,14 @@ class CimComplaint(models.Model):
     def _default_tracking_code(self):
         characters = string.ascii_uppercase + string.digits
         # String to cipher
-        tracking_code = ''.join(random.choice(characters)
-                                for _ in range(self._size_tracking_code))
+        tracking_code_ok = False
+        while (not tracking_code_ok):
+            tracking_code = ''.join(random.choice(characters)
+                                    for _ in range(self._size_tracking_code))
+            repeated_complaints = self.search(
+                [('tracking_code', '=', tracking_code)])
+            if not repeated_complaints:
+                tracking_code_ok = True
         # Encrypt
         resp = self.encrypt_data(tracking_code, self._cipher_key)
         return resp
@@ -71,7 +77,6 @@ class CimComplaint(models.Model):
     complaint_type_id = fields.Many2one(
         string='Complaint Type',
         comodel_name='cim.complaint.type',
-        required=True,
         index=True,
         ondelete='restrict', )
 
@@ -91,7 +96,6 @@ class CimComplaint(models.Model):
     link_type_id = fields.Many2one(
         string='Link Type',
         comodel_name='cim.link.type',
-        required=True,
         index=True,
         ondelete='restrict', )
 
@@ -135,6 +139,7 @@ class CimComplaint(models.Model):
     is_anonymous = fields.Boolean(
         string='Anonymous Complaint',
         default=True,
+        store=True,
         compute='_compute_is_anonymous')
 
     measures_taken = fields.Text(
@@ -371,7 +376,7 @@ class CimComplaint(models.Model):
                 complaint_date = record.complaint_time
             record.complaint_date = complaint_date
 
-    @api.multi
+    @api.depends('complainant_name', 'complainant_vat', 'complainant_phone')
     def _compute_is_anonymous(self):
         for record in self:
             is_anonymous = True
@@ -393,7 +398,6 @@ class CimComplaint(models.Model):
         for record in self:
             number_of_communications = 0
             # Provisional
-            number_of_communications = 10
             # TODO...
             record.number_of_communications = number_of_communications
 
@@ -545,7 +549,7 @@ class CimComplaint(models.Model):
     @api.multi
     def _compute_summary_info(self):
         for record in self:
-            preffix_info = record.name + ' .' + record.complaint_type_id.name
+            preffix_info = record.name + '. ' + record.complaint_type_id.name
             suffix_info = _('COMPLAINT REJECTED') + '.'
             if not record.is_rejected:
                 suffix_info = self._additional_summary_info(record)
@@ -784,6 +788,14 @@ class CimComplaint(models.Model):
                      'document_03' in vals or 'document_04' in vals or
                      'document_05' in vals or 'document_06' in vals)):
                 vals = self._compact_document_fields(vals, is_create)
+            if (is_create and ('complaint_type_id' not in vals or
+                               (not vals['complaint_type_id']))):
+                vals['complaint_type_id'] = self.env.ref(
+                    'cim_complaints_channel.cim_complaint_type_other').id
+            if (is_create and ('link_type_id' not in vals or
+                               (not vals['link_type_id']))):
+                vals['link_type_id'] = self.env.ref(
+                    'cim_complaints_channel.cim_link_type_other').id
             if 'complaint_frequency' in vals and vals['complaint_frequency']:
                 if vals['complaint_frequency'] != '02_specific_day':
                     vals['complaint_time'] = None

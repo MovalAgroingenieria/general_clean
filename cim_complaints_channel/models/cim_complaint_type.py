@@ -39,6 +39,9 @@ class CimComplaintType(models.Model):
         string='Notes (as text)',
         compute='_compute_notes_text',)
 
+    active = fields.Boolean(
+        default=True,)
+
     @api.multi
     def _compute_number_of_complaints(self):
         for record in self:
@@ -65,3 +68,29 @@ class CimComplaintType(models.Model):
                                              'a \'STANDARD\' complaint type.'))
         res = super(CimComplaintType, self).unlink()
         return res
+
+    @api.multi
+    def action_show_complaints(self):
+        self.ensure_one()
+        current_complaint_type = self
+        id_tree_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_view_tree').id
+        id_form_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_view_form').id
+        search_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_view_search')
+        custom_context = \
+            {'default_complaint_type_id': current_complaint_type.id}
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Complaints'),
+            'res_model': 'cim.complaint',
+            'view_type': 'form',
+            'view_mode': 'form,tree',
+            'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
+            'search_view_id': [search_view.id],
+            'target': 'current',
+            'domain': [('complaint_type_id', '=', current_complaint_type.id)],
+            'context': custom_context,
+            }
+        return act_window

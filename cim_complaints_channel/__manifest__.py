@@ -15,6 +15,7 @@
         "mail",
         "html_text",
         "web_tree_image",
+        "website_form_builder",
     ],
     "data": [
         "security/security.xml",
@@ -31,6 +32,7 @@
         "views/cim_complaint_type_view.xml",
         "views/cim_link_type_view.xml",
         "views/cim_complaint_view.xml",
+        "reports/cim_complaint_tracking_code_report.xml",
     ],
     "installable": True,
     "post_init_hook": "post_init_hook",

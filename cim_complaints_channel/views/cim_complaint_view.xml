@@ -108,6 +108,7 @@
                                    style="width:320px"
                                    placeholder="Complaint Type"
                                    options="{'no_quick_create':True,'no_create_edit':True}"
+                                   required="1"
                                    attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"/>
                         </div>
                     </div>
@@ -263,6 +264,7 @@
                                     <field name="link_type_id"
                                            string="Link Type"
                                            options="{'no_quick_create':True,'no_create_edit':True}"
+                                           required="1"
                                            attrs="{'readonly': [('id', '>', 0), '|', '|', ('state', '=', '05_resolved'), ('is_delegated', '=', False), ('user_in_group_cim_settings', '=', False)]}"
                                            groups="cim_complaints_channel.group_cim_user"/>
                                     <field name="is_complainant_involved"

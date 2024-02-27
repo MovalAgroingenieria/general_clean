@@ -7,8 +7,19 @@
         <field name="arch" type="xml">
             <form duplicate="0">
                 <field name='is_standard' invisible="1"/>
+                <field name="active" invisible="1"/>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-archive"
+                                confirm="Are you sure you want to toggle visibility?"
+                                groups="cim_complaints_channel.group_cim_manager">
+                                <field name="active"
+                                       widget="boolean_button"
+                                       options='{"terminology": "archive"}'/>
+                        </button>
                         <button name="action_show_complaints"
                                 type="object" class="oe_stat_button"
                                 icon="fa-exclamation-triangle">
@@ -72,6 +83,9 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name" string="Name"/>
+                <filter name="inactive"
+                        string="Archived"
+                        domain="[('active', '=', False)]"/>
             </search>
         </field>
     </record>

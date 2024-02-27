@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-14 09:44+0000\n"
-"PO-Revision-Date: 2024-02-14 09:44+0000\n"
+"POT-Creation-Date: 2024-02-27 17:40+0000\n"
+"PO-Revision-Date: 2024-02-27 17:40+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -151,6 +151,16 @@ msgid "<span>COMPLAINANT DATA</span>"
 msgstr "<span>DATOS DEL DENUNCIANTE</span>"
 
 #. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_external_layout_header
+msgid "<span>TRACKING CODE</span>"
+msgstr "<span>CÓDIGO DE SEGUIMIENTO</span>"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_document
+msgid "<u>Tracking Code</u>"
+msgstr "<u>Código de seguimiento</u>"
+
+#. module: cim_complaints_channel
 #: selection:cim.complaint,complaint_frequency:0
 msgid "A specific day"
 msgstr "Un día concreto"
@@ -186,12 +196,18 @@ msgid "Acknowledgement period for the complaint admission (number of days)"
 msgstr "Plazo de adminisión de la denuncia (número de días)"
 
 #. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_active
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 msgid "Admit"
 msgstr "Admitir"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:563
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:566
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Admitted"
@@ -209,10 +225,23 @@ msgstr "Denuncias anónimas"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_reject_complaint_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_resolve_complaint_view_form
 msgid "Apply"
 msgstr "Aplicar"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_search
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_form
+msgid "Are you sure you want to toggle visibility?"
+msgstr "¿Está seguro de querer cambiar la visibilidad del registro?"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_document_01
@@ -255,13 +284,19 @@ msgid "CAUSE OF THE REJECTION"
 msgstr "CAUSA DEL RECHAZO"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:549
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
+msgid "COMPLAINANT DATA"
+msgstr "DATOS DEL DENUNCIANTE"
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:552
 #, python-format
 msgid "COMPLAINT REJECTED"
 msgstr "DENUNCIA RECHAZADA"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_reject_complaint_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_resolve_complaint_view_form
 msgid "Cancel"
@@ -280,6 +315,7 @@ msgstr "Causa del rechazo"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_name
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
@@ -294,12 +330,14 @@ msgid "Collaborator"
 msgstr "Colaborador"
 
 #. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
 msgid "Complainant"
 msgstr "Denunciante"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_email
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_complainant_email
 msgid "Complainant E-mail"
 msgstr "E-mail del denunciante"
 
@@ -310,17 +348,20 @@ msgstr "Email del denunciante"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_complainant_name
 msgid "Complainant Name"
 msgstr "Nombre del denunciante"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_phone
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_complainant_phone
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
 msgid "Complainant Phone"
 msgstr "Teléfono del denunciante"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_complainant_vat
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_complainant_vat
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
 msgid "Complainant VAT"
 msgstr "NIF del denunciante"
@@ -331,8 +372,9 @@ msgid "Complainant involved"
 msgstr "Denunciante implicado"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:999
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1034
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1010
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1045
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1107
 #: model:ir.model,name:cim_complaints_channel.model_cim_complaint
 #, python-format
 msgid "Complaint"
@@ -383,11 +425,14 @@ msgid "Complaint deadline (number of months)"
 msgstr "Plazo para resolver la denuncia (número de meses)"
 
 #. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint_type.py:86
+#: code:addons/cim_complaints_channel/models/cim_link_type.py:86
 #: model:ir.actions.act_window,name:cim_complaints_channel.cim_complaint_action
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_complaint_ids
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_complaint_ids
 #: model:ir.ui.menu,name:cim_complaints_channel.complaint_normal_menu
 #: model:ir.ui.menu,name:cim_complaints_channel.main_menu
+#, python-format
 msgid "Complaints"
 msgstr "Denuncias"
 
@@ -466,6 +511,7 @@ msgstr "Corrupción"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_create_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_create_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_create_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_create_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_create_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_create_uid
 msgid "Created by"
@@ -476,6 +522,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_create_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_create_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_create_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_create_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_create_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_create_date
 msgid "Created on"
@@ -488,6 +535,11 @@ msgid "Creation Date"
 msgstr "Alta"
 
 #. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_document
+msgid "D A T E :"
+msgstr "F E C H A :"
+
+#. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_reject_complaint_view_form
 msgid "Data of a complaint rejection"
 msgstr "Datos de un rechazo de denuncia"
@@ -496,6 +548,11 @@ msgstr "Datos de un rechazo de denuncia"
 #: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_resolve_complaint_view_form
 msgid "Data of a complaint resolution"
 msgstr "Datos de una resolución de denuncia"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
+msgid "Data of the complainant"
+msgstr "Datos del denunciante"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
@@ -592,6 +649,11 @@ msgid "Delegated Complaint"
 msgstr "Denuncia delegada"
 
 #. module: cim_complaints_channel
+#: model:ir.model,name:cim_complaints_channel.model_wizard_complainant_data
+msgid "Dialog box to enter the complainant data (encrypt/decrypt)"
+msgstr "Diálogo para introducir los datos del denunciante (cifrado posterior)"
+
+#. module: cim_complaints_channel
 #: model:ir.model,name:cim_complaints_channel.model_wizard_reject_complaint
 msgid "Dialog box to reject a complaint"
 msgstr "Diálogo para rechazar una denuncia"
@@ -606,6 +668,7 @@ msgstr "Diálogo para resolver una denuncia"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_display_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_display_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_display_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_display_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_display_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_display_name
 msgid "Display Name"
@@ -653,6 +716,7 @@ msgstr "Documentos"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 msgid "E-mail"
 msgstr "E-mail"
 
@@ -759,10 +823,16 @@ msgid "Group By"
 msgstr "Agrupar por"
 
 #. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_document
+msgid "I S S U E :"
+msgstr "A S U N T O :"
+
+#. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_id
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_id
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_id
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_id
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_id
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_id
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_id
 msgid "ID"
@@ -774,29 +844,42 @@ msgid "Icon for warnings"
 msgstr "Icono para avisos"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:716
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:719
 #, python-format
 msgid "If the complaint is ready or resolved, then it is mandatory to enter the instructor."
 msgstr "Si la denuncia está vista para ser resuelta, es obligatorio indicar el instructor."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:725
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:728
 #, python-format
-msgid "If the complaint is resolved, then it is mandatory to enter the measures taken."
-msgstr "Si la denuncia está resuelta, es obligatorio indicar las medidas adoptadas."
+msgid "If the complaint is ready or resolved, then it is mandatory to enter the measures taken."
+msgstr "Si la denuncia está resuelta o vista para ser resuelta, es obligatorio indicar las medidas adoptadas."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:733
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:736
 #, python-format
 msgid "If the complaint is resolved, then it is mandatory to enter the resolution text."
 msgstr "Si la denuncia está resuelta, es obligatorio indicar el texto de la resolución."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:565
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:568
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "In progress"
 msgstr "En instrucción"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_document
+msgid "In relation to the complaint whose data appears below,\n"
+"                        the tracking code shown is the data that you must enter\n"
+"                        on the website to know how the investigation of the\n"
+"                        complaint is evolving and, if you wish, to be able\n"
+"                        to later provide new data or documents."
+msgstr "En relación con la denuncia cuyos datos aparecen a continuación,\n"
+"                        el código de seguimiento mostrado más abajo es el dato que deberá introducir\n"
+"                        en el sitio web para conocer cómo evoluciona la instrucción\n"
+"                        de la denuncia y, si lo desea, poder aportar\n"
+"                        después nuevos datos o documentos."
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_infringement_level
@@ -857,37 +940,37 @@ msgid "Issue"
 msgstr "Asunto"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:575
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:578
 #, python-format
 msgid "Issue:"
 msgstr "Asunto:"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:761
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:764
 #, python-format
 msgid "It is mandatory to enter a code for the new complaint."
 msgstr "Es obligatorio indicar un código para la nueva denuncia."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint_type.py:64
+#: code:addons/cim_complaints_channel/models/cim_complaint_type.py:67
 #, python-format
 msgid "It is not possible to remove a 'STANDARD' complaint type."
 msgstr "No se permite suprimir un tipo de denuncia estándar."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_link_type.py:64
+#: code:addons/cim_complaints_channel/models/cim_link_type.py:67
 #, python-format
 msgid "It is not possible to remove a 'STANDARD' link type."
 msgstr "No se permite suprimir un tipo de vinculación estándar."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:976
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:987
 #, python-format
 msgid "It is not possile to delete a in force complaint."
 msgstr "No es posible eliminar una denuncia que está en vigor."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:707
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:710
 #, python-format
 msgid "It is only possible to reject a complaint if its state is 'Received'."
 msgstr "No se permite rechazar una denuncia cuyo estado sea 'Recibida'."
@@ -902,6 +985,7 @@ msgstr "Acción judicial"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type___last_update
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type___last_update
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings___last_update
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data___last_update
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint___last_update
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint___last_update
 msgid "Last Modified on"
@@ -912,6 +996,7 @@ msgstr "Última modificación en"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_write_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_write_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_write_uid
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_write_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_write_uid
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_write_uid
 msgid "Last Updated by"
@@ -922,6 +1007,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_write_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_link_type_write_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_write_date
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_write_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_write_date
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_resolve_complaint_write_date
 msgid "Last Updated on"
@@ -961,7 +1047,7 @@ msgid "Measures taken"
 msgstr "Medidas adoptadas"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:556
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:559
 #: selection:cim.complaint,infringement_level:0
 #, python-format
 msgid "Mild"
@@ -991,6 +1077,7 @@ msgstr "Nº denuncias"
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_search
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_link_type_view_tree
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 msgid "Name"
 msgstr "Nombre"
 
@@ -1091,8 +1178,13 @@ msgstr "Número de denuncias"
 
 #. module: cim_complaints_channel
 #: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_other
-msgid "Other"
-msgstr "Otro"
+msgid "Other type of complaint"
+msgstr "Otro tipo de denuncia"
+
+#. module: cim_complaints_channel
+#: model:cim.link.type,name:cim_complaints_channel.cim_link_type_other
+msgid "Other type of link"
+msgstr "Otro tipo de vinculación"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.menu,name:cim_complaints_channel.parameters_menu
@@ -1101,8 +1193,16 @@ msgstr "Parámetros"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 msgid "Phone"
 msgstr "Teléfono"
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.report_cim_complaint_tracking_code_document
+msgid "Please, do not reveal this tracking code to anyone,\n"
+"                        it is confidential information."
+msgstr "Por favor, no revele a nadie este código de seguimiento,\n"
+"                        se trata de un dato confidencial."
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
@@ -1120,14 +1220,14 @@ msgid "Reactivate"
 msgstr "Reactivar"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:567
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:570
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Ready"
 msgstr "Lista"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:561
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:564
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Received"
@@ -1178,7 +1278,7 @@ msgid "Resolve"
 msgstr "Resolver"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:569
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:572
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Resolved"
@@ -1190,7 +1290,7 @@ msgid "Restricted User"
 msgstr "Usuario restringido"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:558
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:561
 #, python-format
 msgid "SERIOUS"
 msgstr "GRAVE"
@@ -1241,7 +1341,7 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:573
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:576
 #, python-format
 msgid "Severity:"
 msgstr "Gravedad:"
@@ -1271,7 +1371,7 @@ msgid "State"
 msgstr "Estado"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:574
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:577
 #, python-format
 msgid "State:"
 msgstr "Estado:"
@@ -1343,10 +1443,11 @@ msgid "This action will mark the complaint as 'Rejected'. Proceed?"
 msgstr "¿Confirma que quiere marcar la denuncia como 'Rechazada'?"
 
 #. module: cim_complaints_channel
+#: model:ir.actions.report.xml,name:cim_complaints_channel.action_cim_complaint_tracking_code_report
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_tracking_code
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 msgid "Tracking Code"
-msgstr "Código Seguimiento"
+msgstr "Código de seguimiento"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
@@ -1391,11 +1492,12 @@ msgstr "Usuario"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 msgid "VAT"
 msgstr "DNI"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:560
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:563
 #, python-format
 msgid "VERY SERIOUS"
 msgstr "MUY GRAVE"
@@ -1416,6 +1518,11 @@ msgid "Violation against data protection"
 msgstr "Infracción contra la protección de datos"
 
 #. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
+msgid "WITNESSES"
+msgstr "TESTIGOS"
+
+#. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 msgid "When did it happen?"
 msgstr "¿Cuándo ocurrió?"
@@ -1427,14 +1534,16 @@ msgstr "Con acción judicial"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_witness_name
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_witness_name
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
+#: model:ir.ui.view,arch_db:cim_complaints_channel.wizard_complainant_data_view_form
 msgid "Witnesses"
 msgstr "Testigos"
 
 #. module: cim_complaints_channel
 #: model:cim.complaint.type,name:cim_complaints_channel.cim_complaint_type_harassment
 msgid "Workplace harassment"
-msgstr "Workplace harassment"
+msgstr "Acoso laboral"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_type_view_kanban

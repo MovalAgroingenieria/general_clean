@@ -33,6 +33,16 @@ def post_init_hook(cr, registry):
                        'deadline', 3)
     values.set_default('res.cim.config.settings',
                        'deadline_extended', 6)
+    # Set the fields "website_form_access" and "website_form_label" of the
+    # "ir.model" model: allow the use of a form on the website to submit
+    # complaints.
+    models = env['ir.model'].sudo()
+    model_complaint = models.search([('model', '=', 'cim.complaint')])
+    if model_complaint:
+        model_complaint = model_complaint[0]
+        model_complaint.write({
+            'website_form_access': True,
+            'website_form_label': 'Add complaint form', })
 
 
 def uninstall_hook(cr, registry):
