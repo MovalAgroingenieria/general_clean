@@ -1,0 +1,22 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* purchase_view_invoice_refund_on_supplier
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-29 07:17+0000\n"
+"PO-Revision-Date: 2024-02-29 07:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_view_invoice_refund_on_supplier
+#: model:ir.model,name:purchase_view_invoice_refund_on_supplier.model_res_partner
+msgid "Partner of a WUA"
+msgstr ""
+
