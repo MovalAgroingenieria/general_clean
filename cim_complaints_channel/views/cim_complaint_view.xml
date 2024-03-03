@@ -501,6 +501,13 @@
                         name="is_rejected_yes"
                         domain="[('is_rejected', '=', True)]"/>
                 <separator/>
+                <filter string="Complaints submitted from the website"
+                        name="is_delegated_no"
+                        domain="[('is_delegated', '=', False)]"/>
+                <filter string="Complaints entered by the instructor"
+                        name="is_delegated_yes"
+                        domain="[('is_delegated', '=', True)]"/>
+                <separator/>
                 <group expand="0" string="Group By">
                     <filter string="State"
                             name="grouped_state"
@@ -544,6 +551,24 @@
                 <field name="summary_info"/>
             </calendar>
         </field>
+    </record>
+
+    <record id="cim_complaint_reject_complaints" model="ir.actions.server">
+        <field name="name">Reject</field>
+        <field name="model_id" ref="model_cim_complaint"/>
+        <field name="state">code</field>
+        <field name="code">
+            if context.get('active_ids'):
+                action = env['cim.complaint'].action_reject_multiple(context['active_ids'])
+        </field>
+    </record>
+
+    <record id="cim_complaint_reject_complaints_value" model="ir.values">
+        <field name="name">Reject</field>
+        <field name="model">cim.complaint</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('cim_complaint_reject_complaints'))"/>
     </record>
 
     <record id="cim_complaint_action"

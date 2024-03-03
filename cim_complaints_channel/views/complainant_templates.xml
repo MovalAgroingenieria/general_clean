@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="trackingcode_page" name ="Template for tracking code">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:20px">
+                            <span>The following combination of letters and numbers is the tracking code of the new complaint. This code will be necessary to enter new data and to see the state of the complaint. Please remember this code and do not give it to anyone. Thank you.</span>
+                        </div>
+                        <div name="tracking_code" style="margin-top:40px" class="text-center">
+                            <h1><t t-esc="tracking_code"/></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

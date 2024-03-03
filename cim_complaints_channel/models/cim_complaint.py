@@ -52,6 +52,10 @@ class CimComplaint(models.Model):
             resp = True
         return resp
 
+    @api.model
+    def _lang_get(self):
+        return self.env['res.lang'].get_installed()
+
     name = fields.Char(
         string='Code',
         size=SIZE_SMALL,
@@ -367,6 +371,10 @@ class CimComplaint(models.Model):
     decrypted_complainant_data = fields.Text(
         string='Decrypted Complainant Data',
         compute='_compute_decrypted_complainant_data', )
+
+    complaint_lang = fields.Selection(
+        selection=_lang_get,
+        string="Language",)
 
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
@@ -766,6 +774,21 @@ class CimComplaint(models.Model):
                                                'code for the new complaint.'))
         vals = self._process_vals(vals, is_create=True)
         new_complaint = super(CimComplaint, self).create(vals)
+        if 'complainant_email' in vals and vals['complainant_email']:
+            mail_template_tracking_code = None
+            try:
+                mail_template_tracking_code = self.env.ref(
+                    'cim_complaints_channel.'
+                    'mail_template_tracking_code').sudo()
+            except Exception:
+                mail_template_tracking_code = None
+            if mail_template_tracking_code:
+                user_lang = 'en_US'
+                if new_complaint.complaint_lang:
+                    user_lang = new_complaint.complaint_lang
+                mail_template_tracking_code.with_context(
+                    lang=user_lang).send_mail(
+                        new_complaint.id, force_send=True)
         return new_complaint
 
     @api.multi
@@ -824,6 +847,9 @@ class CimComplaint(models.Model):
                 new_val = self.encrypt_data(vals['witness_name'],
                                             self._cipher_key)
                 vals['witness_name'] = new_val
+            if (('complaint_lang' not in vals) or
+               vals['complaint_lang'] == ''):
+                vals['complaint_lang'] = self.env.user.lang
         return vals
 
     @api.model
@@ -983,10 +1009,12 @@ class CimComplaint(models.Model):
 
     def unlink(self):
         for record in self:
-            if ((not record.user_in_group_cim_settings) or
-               (not (record.is_delegated or record.is_rejected))):
+            if not (record.is_delegated or record.is_rejected):
                 raise exceptions.UserError(_(
                     'It is not possile to delete a in force complaint.'))
+            if not record.user_in_group_cim_settings:
+                raise exceptions.UserError(_(
+                    'You do not have permission to execute this action.'))
         return super(CimComplaint, self).unlink()
 
     @api.multi
@@ -1021,6 +1049,26 @@ class CimComplaint(models.Model):
         self.ensure_one()
         if self.is_rejected:
             self.is_rejected = False
+
+    @api.model
+    def action_reject_multiple(self, complaints_to_reject_ids):
+        user_is_manager = self.env.user.has_group(
+            'cim_complaints_channel.group_cim_manager')
+        if not user_is_manager:
+            raise exceptions.UserError(_(
+                'You do not have permission to execute this action.'))
+        if complaints_to_reject_ids:
+            complaints_to_reject = self.browse(complaints_to_reject_ids)
+            for complaint in (complaints_to_reject or []):
+                if not complaint.is_rejected:
+                    if complaint.state != '01_received':
+                        raise exceptions.UserError(_(
+                            'It is only possible to reject complaints '
+                            'in the \'RECEIVED\' state.'))
+                    complaint.write({
+                        'is_rejected': True,
+                        'rejection_cause': _('Incomplete information.'),
+                        })
 
     @api.multi
     def action_go_to_state_03_in_progress(self):
