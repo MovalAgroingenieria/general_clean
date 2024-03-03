@@ -31,7 +31,7 @@
             <t t-call="cim_complaints_channel.report_cim_complaint_tracking_code_external_layout">
                 <div class="page">
                     <t t-foreach="docs" t-as="o">
-                        <t t-call="cim_complaints_channel.report_cim_complaint_tracking_code_document"/>
+                        <t t-call="cim_complaints_channel.report_cim_complaint_tracking_code_document" t-lang="o.complaint_lang"/>
                         <p style="page-break-after:always;"></p>
                     </t>
                 </div>
@@ -40,8 +40,9 @@
     </template>
 
     <template id="report_cim_complaint_tracking_code_document">
+        <t t-set="o" t-value="o.with_context(lang=o.complaint_lang)"/>
         <div name="global_content">
-            <div class="row" name="section_presentation">
+            <div class="row" name="section_presentation" style="margin-top:20px;">
                 <div class="col-xs-12">
                     <p>
                         In relation to the complaint whose data appears below,
@@ -90,18 +91,18 @@
             <div name="logo_title_header" class="row">
                 <t t-if="company.logo">
                     <div class="col-xs-1">
-                        <img t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height:75px;"/>
+                        <img t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height:75px;width: auto;"/>
                     </div>
-                    <div class="col-xs-7" style="margin-top:40px;">
-                        <span style="margin-left:10px;" t-field="company.name"/>
+                    <div class="col-xs-7" style="margin-top:35px;">
+                        <span style="margin-left:20px;" t-field="company.name"/>
                     </div>
                 </t>
                 <t t-else="">
-                    <div class="col-xs-8" style="margin-top:40px;">
+                    <div class="col-xs-8" style="margin-top:35px;">
                         <span t-field="company.name"/>
                     </div>
                 </t>
-                <div class="col-xs-4 text-right" style="margin-top:40px;">
+                <div class="col-xs-4 text-right" style="margin-top:35px;">
                     <span>TRACKING CODE</span>
                 </div>
             </div>
