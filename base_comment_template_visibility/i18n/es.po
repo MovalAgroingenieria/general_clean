@@ -1,0 +1,31 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* base_comment_template_visibility
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-04 11:25+0000\n"
+"PO-Revision-Date: 2024-03-04 11:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_comment_template_visibility
+#: model:ir.model.fields,field_description:base_comment_template_visibility.field_base_comment_template_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: base_comment_template_visibility
+#: model:ir.model,name:base_comment_template_visibility.model_base_comment_template
+msgid "Base comment template visibility"
+msgstr "Base comment template visibility"
+
+#. module: base_comment_template_visibility
+#: model:ir.model.fields,help:base_comment_template_visibility.field_base_comment_template_active
+msgid "If the active field is set to False, it will allow you to hide the register without removing it. For see archived register, go to \"Search-Filters\" in tree view"
+msgstr "Si el campo activo está como falso, ello le permitirá ocultar el registro sin borrarlo. Para ver los registros archivados, ir a \"Buscar-Filtros\" en la vista árbol"
