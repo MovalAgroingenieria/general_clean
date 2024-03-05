@@ -25,6 +25,8 @@
                            style="width:300px"/>
                     <field name="background_process"
                            string="Background Process"/>
+                    <field name="selected_by_default"
+                           string="Select notification users by default"/>
                 </group>
             </form>
         </field>

@@ -383,6 +383,13 @@ class ResNotificationset(models.Model):
             main_page = self.main_page.replace("'", "''")
         if self.final_paragraph:
             final_paragraph = self.final_paragraph.replace("'", "''")
+        selected_by_default = self.env['ir.values']. \
+            get_default('res.notif.config.settings',
+                        'selected_by_default')
+        if selected_by_default:
+            selected = 'true'
+        else:
+            selected = 'false'
         resp = 'INSERT INTO res_notification (id, create_uid, write_uid, ' + \
             'create_date, write_date, notificationset_id, partner_id, ' + \
             'name, creation_date, issue, customer, supplier, ' + \
@@ -397,7 +404,8 @@ class ResNotificationset(models.Model):
             self._gn_get_additional_values() + 'rp.vat, ' + \
             '(CASE WHEN rp.is_company ' + \
             'THEN \'company\' ELSE \'person\' END), ' + \
-            'rp.parent_id, \'01_draft\', \'%s\', \'%s\', true, false, ' + \
+            'rp.parent_id, \'01_draft\', \'%s\', \'%s\', ' + \
+            selected + ', false, ' + \
             'rp.email ' + \
             'FROM res_partner rp ' + \
             self._gn_get_where_clause(self.notificationset_type_id) + \

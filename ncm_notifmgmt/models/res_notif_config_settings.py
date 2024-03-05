@@ -22,6 +22,10 @@ class ResNotifConfigSettings(models.TransientModel):
         string='Create background notifications',
         default=False,)
 
+    selected_by_default = fields.Boolean(
+        string='Select notification users by default',
+        default=False,)
+
     @api.multi
     def set_default_values(self):
         values = self.env['ir.values'].sudo()
@@ -33,3 +37,5 @@ class ResNotifConfigSettings(models.TransientModel):
                            self.default_notificationset_type_id.id)
         values.set_default('res.notif.config.settings',
                            'background_process', self.background_process)
+        values.set_default('res.notif.config.settings',
+                           'selected_by_default', self.selected_by_default)
