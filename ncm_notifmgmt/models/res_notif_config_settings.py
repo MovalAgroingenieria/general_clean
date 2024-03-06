@@ -24,7 +24,8 @@ class ResNotifConfigSettings(models.TransientModel):
 
     selected_by_default = fields.Boolean(
         string='Select notification users by default',
-        default=False,)
+        default=False,
+    )
 
     @api.multi
     def set_default_values(self):
