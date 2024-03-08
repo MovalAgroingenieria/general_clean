@@ -59,35 +59,35 @@ class CimComplaint(models.Model):
     name = fields.Char(
         string='Code',
         size=SIZE_SMALL,
-        index=True, )
+        index=True,)
 
     issue = fields.Char(
         string='Issue',
         size=SIZE_MEDIUM_EXTRA,
         required=True,
-        index=True, )
+        index=True,)
 
     description = fields.Text(
         string='Facts denounced',
         required=True,
-        index=True, )
+        index=True,)
 
     tracking_code = fields.Char(
         string='Tracking Code',
         size=SIZE_BIG,
         default=_default_tracking_code,
-        readonly=True, )
+        readonly=True,)
 
     complaint_type_id = fields.Many2one(
         string='Complaint Type',
         comodel_name='cim.complaint.type',
         index=True,
-        ondelete='restrict', )
+        ondelete='restrict',)
 
     defendant_name = fields.Char(
         string='Defendant Name',
         size=SIZE_NORMAL,
-        index=True, )
+        index=True,)
 
     witness_name = fields.Text(
         string='Witnesses',)
@@ -95,13 +95,13 @@ class CimComplaint(models.Model):
     is_complainant_involved = fields.Boolean(
         string='Complainant involved',
         default=False,
-        required=True, )
+        required=True,)
 
     link_type_id = fields.Many2one(
         string='Link Type',
         comodel_name='cim.link.type',
         index=True,
-        ondelete='restrict', )
+        ondelete='restrict',)
 
     complaint_frequency = fields.Selection(
         string="Complaint Frequency",
@@ -112,21 +112,21 @@ class CimComplaint(models.Model):
         ],
         default='01_not_remembered',
         required=True,
-        index=True, )
+        index=True,)
 
     complaint_time = fields.Datetime(
-        string='Complaint Time', )
+        string='Complaint Time',)
 
     complaint_date = fields.Date(
         string='Complaint Date',
         store=True,
         index=True,
-        compute='_compute_complaint_date', )
+        compute='_compute_complaint_date',)
 
     creation_date = fields.Date(
         string='Creation Date',
         required=True,
-        default=lambda self: fields.datetime.now(), )
+        default=lambda self: fields.datetime.now(),)
 
     complainant_email = fields.Char(
         string='Complainant E-mail',)
@@ -148,22 +148,22 @@ class CimComplaint(models.Model):
 
     measures_taken = fields.Text(
         string='Measures taken',
-        index=True, )
+        index=True,)
 
     resolution_text = fields.Text(
-        string='Resolution Text', )
+        string='Resolution Text',)
 
     user_in_group_cim_settings = fields.Boolean(
         string='Is a complaints administrator?',
-        compute='_compute_user_in_group_cim_settings', )
+        compute='_compute_user_in_group_cim_settings',)
 
     is_delegated = fields.Boolean(
         string='Delegated Complaint',
         default=False,
-        readonly=True, )
+        readonly=True,)
 
     notes = fields.Html(
-        string='Notes', )
+        string='Notes',)
 
     state = fields.Selection(
         string="State",
@@ -182,51 +182,56 @@ class CimComplaint(models.Model):
         default='01_received',
         required=True,
         index=True,
-        track_visibility='onchange', )
+        track_visibility='onchange',)
 
     investigating_user_id = fields.Many2one(
         string='Instructor',
         comodel_name='res.users',
-        track_visibility='onchange', )
+        track_visibility='onchange',)
+
+    communication_ids = fields.One2many(
+        string='Communications',
+        comodel_name='cim.complaint.communication',
+        inverse_name='complaint_id',)
 
     number_of_communications = fields.Integer(
         string='Number of communications',
-        compute='_compute_number_of_communications', )
+        compute='_compute_number_of_communications',)
 
     is_rejected = fields.Boolean(
         string='Rejected complaint',
         default=False,
         readonly=True,
-        track_visibility='onchange', )
+        track_visibility='onchange',)
 
     rejection_cause = fields.Text(
-        string='Cause of the rejection', )
+        string='Cause of the rejection',)
 
     is_extended = fields.Boolean(
         string='Extended process',
         default=False,
         readonly=True,
-        track_visibility='onchange', )
+        track_visibility='onchange',)
 
     param_acknowledgement_period = fields.Integer(
         string='Acknowledgement period (number of days)',
-        compute='_compute_param_acknowledgement_period', )
+        compute='_compute_param_acknowledgement_period',)
 
     param_notice_period = fields.Integer(
         string='Notice Period (number of days)',
-        compute='_compute_param_notice_period', )
+        compute='_compute_param_notice_period',)
 
     param_deadline = fields.Integer(
         string='Deadline (number of months)',
-        compute='_compute_param_deadline', )
+        compute='_compute_param_deadline',)
 
     param_deadline_extended = fields.Integer(
         string='Extended Deadline (number of months)',
-        compute='_compute_param_deadline_extended', )
+        compute='_compute_param_deadline_extended',)
 
     deadline_date = fields.Date(
         string='Deadline Date',
-        compute='_compute_deadline_date', )
+        compute='_compute_deadline_date',)
 
     deadline_state = fields.Selection(
         string='Deadline Status',
@@ -249,13 +254,13 @@ class CimComplaint(models.Model):
              'Instruction rejected'),
         ],
         default='01_on_time',
-        compute='_compute_deadline_state', )
+        compute='_compute_deadline_state',)
 
     is_acknowledgement_expired = fields.Boolean(
         string='Expired acknowledgement',
         default=False,
         compute='_compute_is_acknowledgement_expired',
-        search='_search_is_acknowledgement_expired', )
+        search='_search_is_acknowledgement_expired',)
 
     infringement_level = fields.Selection(
         string="Infringement Level",
@@ -269,72 +274,72 @@ class CimComplaint(models.Model):
         ],
         default='01_mild',
         required=True,
-        index=True, )
+        index=True,)
 
     resolution_date = fields.Date(
         string='Resolution Date',
-        index=True, )
+        index=True,)
 
     expected_resolution_date = fields.Date(
         string='Expected Resolution Date',
         store=True,
         index=True,
-        compute='_compute_expected_resolution_date', )
+        compute='_compute_expected_resolution_date',)
 
     is_juditial_action = fields.Boolean(
         string='Juditial Action',
-        default=False, )
+        default=False,)
 
     setted_sequence = fields.Boolean(
         string='Setted Sequence (y/n)',
         default=_default_setted_sequence,
-        compute='_compute_setted_sequence', )
+        compute='_compute_setted_sequence',)
 
     summary_info = fields.Char(
         string='Summary',
-        compute='_compute_summary_info', )
+        compute='_compute_summary_info',)
 
     document_01 = fields.Binary(
         string='Attachment 1',
-        attachment=True, )
+        attachment=True,)
 
     document_01_name = fields.Char(
-        string='Name of the attachment 1', )
+        string='Name of the attachment 1',)
 
     document_02 = fields.Binary(
         string='Attachment 2',
-        attachment=True, )
+        attachment=True,)
 
     document_02_name = fields.Char(
-        string='Name of the attachment 2', )
+        string='Name of the attachment 2',)
 
     document_03 = fields.Binary(
         string='Attachment 3',
-        attachment=True, )
+        attachment=True,)
 
     document_03_name = fields.Char(
-        string='Name of the attachment 3', )
+        string='Name of the attachment 3',)
 
     document_04 = fields.Binary(
         string='Attachment 4',
-        attachment=True, )
+        attachment=True,)
 
     document_04_name = fields.Char(
-        string='Name of the attachment 4', )
+        string='Name of the attachment 4',)
 
     document_05 = fields.Binary(
         string='Attachment 5',
-        attachment=True, )
+        attachment=True,)
 
     document_05_name = fields.Char(
-        string='Name of the attachment 5', )
+        string='Name of the attachment 5',)
 
     document_06 = fields.Binary(
         string='Attachment 6',
-        attachment=True, )
+        attachment=True,)
 
     document_06_name = fields.Char(
-        string='Name of the attachment 6', )
+        string='Name of the attachment 6',)
 
     number_of_attachments = fields.Integer(
         string='Number of attachments',
@@ -346,31 +351,31 @@ class CimComplaint(models.Model):
 
     decrypted_tracking_code = fields.Char(
         string='Decrypted tracking code',
-        compute='_compute_decrypted_tracking_code', )
+        compute='_compute_decrypted_tracking_code',)
 
     decrypted_complainant_name = fields.Char(
         string='Decrypted complainant name',
-        compute='_compute_decrypted_complainant_name', )
+        compute='_compute_decrypted_complainant_name',)
 
     decrypted_complainant_email = fields.Char(
         string='Decrypted complainant e-mail',
-        compute='_compute_decrypted_complainant_email', )
+        compute='_compute_decrypted_complainant_email',)
 
     decrypted_complainant_vat = fields.Char(
         string='Decrypted complainant VAT',
-        compute='_compute_decrypted_complainant_vat', )
+        compute='_compute_decrypted_complainant_vat',)
 
     decrypted_complainant_phone = fields.Char(
         string='Decrypted complainant phone',
-        compute='_compute_decrypted_complainant_phone', )
+        compute='_compute_decrypted_complainant_phone',)
 
     decrypted_witness_name = fields.Text(
         string='Decrypted witness name',
-        compute='_compute_decrypted_witness_name', )
+        compute='_compute_decrypted_witness_name',)
 
     decrypted_complainant_data = fields.Text(
         string='Decrypted Complainant Data',
-        compute='_compute_decrypted_complainant_data', )
+        compute='_compute_decrypted_complainant_data',)
 
     complaint_lang = fields.Selection(
         selection=_lang_get,
@@ -405,8 +410,8 @@ class CimComplaint(models.Model):
     def _compute_number_of_communications(self):
         for record in self:
             number_of_communications = 0
-            # Provisional
-            # TODO...
+            if record.communication_ids:
+                number_of_communications = len(record.communication_ids)
             record.number_of_communications = number_of_communications
 
     @api.multi
@@ -1020,9 +1025,29 @@ class CimComplaint(models.Model):
     @api.multi
     def action_get_communications(self):
         self.ensure_one()
-        # Provisional
-        print 'action_get_communications...'
-        # TODO...
+        current_complaint = self
+        id_tree_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_communication_view_tree').id
+        id_form_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_communication_view_form').id
+        search_view = self.env.ref(
+            'cim_complaints_channel.cim_complaint_communication_view_search')
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Communications'),
+            'res_model': 'cim.complaint.communication',
+            'view_type': 'form',
+            'view_mode': 'form,tree',
+            'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
+            'search_view_id': [search_view.id],
+            'target': 'current',
+            'domain': [('complaint_id', '=', current_complaint.id)],
+            'context': {'default_complaint_id': current_complaint.id,
+                        'default_from_complainant': False,
+                        'default_state': '01_draft',
+                        'communication_show_complete_code': False, },
+            }
+        return act_window
 
     @api.multi
     def action_go_to_state_02_admitted(self):
@@ -1160,3 +1185,316 @@ class CimComplaint(models.Model):
                 'target': 'new',
             }
             return act_window
+
+
+class CimComplaintCommunication(models.Model):
+    _name = 'cim.complaint.communication'
+    _description = 'Communication of complaint'
+    _inherit = 'mail.thread'
+    _order = 'name'
+
+    SIZE_COMMUNICATION_NUMBER = 4
+
+    def _default_communication_number(self):
+        resp = 1
+        id_of_complaint = 0
+        try:
+            id_of_complaint = self.env.context['default_complaint_id']
+        except Exception:
+            id_of_complaint = 0
+        if id_of_complaint:
+            last_communication = \
+                self.env['cim.complaint.communication'].search(
+                    [('complaint_id', '=', id_of_complaint)],
+                    limit=1, order='communication_number desc')
+            if last_communication:
+                last_communication = last_communication[0]
+                resp = last_communication.communication_number + 1
+        return resp
+
+    def _default_processor_user_id(self):
+        resp = 0
+        default_from_complainant = False
+        try:
+            default_from_complainant = \
+                self.env.context['default_from_complainant']
+        except Exception:
+            default_from_complainant = False
+        if not default_from_complainant:
+            resp = self.env.user.id
+        return resp
+
+    complaint_id = fields.Many2one(
+        string='Complaint',
+        comodel_name='cim.complaint',
+        index=True,
+        ondelete='cascade',
+        required=True,)
+
+    communication_number = fields.Integer(
+        string='Communication Number',
+        default=_default_communication_number,
+        index=True,
+        required=True,)
+
+    name = fields.Char(
+        string='Identifier of communication',
+        size=CimComplaint.SIZE_MEDIUM,
+        store=True,
+        index=True,
+        compute='_compute_name',)
+
+    issue = fields.Char(
+        string='Issue',
+        size=CimComplaint.SIZE_MEDIUM_EXTRA,
+        required=True,
+        index=True,
+        track_visibility='onchange',)
+
+    description = fields.Text(
+        string='Communication Data',
+        required=True,
+        index=True,
+        track_visibility='onchange',)
+
+    from_complainant = fields.Boolean(
+        string='Communication from the complainant',
+        default=True,
+        readonly=True,)
+
+    from_complainant_as_text = fields.Text(
+        string='Communication from the complainant (as text)',
+        compute='_compute_from_complainant_as_text',)
+
+    user_in_group_cim_settings = fields.Boolean(
+        string='Is a complaints administrator?',
+        compute='_compute_user_in_group_cim_settings', )
+
+    processor_user_id = fields.Many2one(
+        string='Processor',
+        comodel_name='res.users',
+        default=_default_processor_user_id,
+        readonly=True,
+        index=True,)
+
+    decrypted_complainant_email = fields.Char(
+        string='Decrypted complainant e-mail',
+        related='complaint_id.decrypted_complainant_email',)
+
+    with_email = fields.Boolean(
+        string='With e-mail',
+        compute='_compute_with_email',)
+
+    automatic_email_validate_com = fields.Boolean(
+        string='E-mail to complainant after validate communication (y/n)',
+        compute='_compute_automatic_email_validate_com',)
+
+    state = fields.Selection(
+        string="State",
+        selection=[
+            ('01_draft',
+             'Draft'),
+            ('02_validated',
+             'Validated'),
+        ],
+        default='02_validated',
+        required=True,
+        index=True,
+        track_visibility='onchange',)
+
+    communication_date = fields.Date(
+        string='Communication Date',
+        store=True,
+        compute='_compute_communication_date',
+        index=True,)
+
+    document_01 = fields.Binary(
+        string='Attachment 1',
+        attachment=True,)
+
+    document_01_name = fields.Char(
+        string='Name of the attachment 1',)
+
+    document_02 = fields.Binary(
+        string='Attachment 2',
+        attachment=True,)
+
+    document_02_name = fields.Char(
+        string='Name of the attachment 2',)
+
+    document_03 = fields.Binary(
+        string='Attachment 3',
+        attachment=True,)
+
+    document_03_name = fields.Char(
+        string='Name of the attachment 3',)
+
+    document_04 = fields.Binary(
+        string='Attachment 4',
+        attachment=True,)
+
+    document_04_name = fields.Char(
+        string='Name of the attachment 4',)
+
+    document_05 = fields.Binary(
+        string='Attachment 5',
+        attachment=True,)
+
+    document_05_name = fields.Char(
+        string='Name of the attachment 5',)
+
+    document_06 = fields.Binary(
+        string='Attachment 6',
+        attachment=True,)
+
+    document_06_name = fields.Char(
+        string='Name of the attachment 6',)
+
+    number_of_attachments = fields.Integer(
+        string='Number of attachments',
+        compute='_compute_number_of_attachments',)
+
+    is_sent = fields.Boolean(
+        string='Communication Sent',
+        default=False,
+        readonly=True,)
+
+    icon_inputoutput = fields.Binary(
+        string='Icon for input/output',
+        compute='_compute_icon_inputoutput')
+
+    notes = fields.Html(
+        string='Notes',)
+
+    _sql_constraints = [
+        ('valid_communication_number',
+         'CHECK (communication_number > 0)',
+         'The communication number must be a positive value.'),
+        ('name_unique',
+         'UNIQUE (name)',
+         'Existing communication.'),
+        ]
+
+    @api.depends('complaint_id', 'communication_number')
+    def _compute_name(self):
+        for record in self:
+            name = ''
+            if record.complaint_id and record.communication_number:
+                name = record.complaint_id.name + '-' + \
+                    str(record.communication_number).zfill(
+                        self.SIZE_COMMUNICATION_NUMBER)
+            record.name = name
+
+    @api.multi
+    def _compute_from_complainant_as_text(self):
+        for record in self:
+            from_complainant_as_text = _('Complainant')
+            if not record.from_complainant:
+                from_complainant_as_text = _('Investigating User')
+            record.from_complainant_as_text = from_complainant_as_text
+
+    @api.multi
+    def _compute_user_in_group_cim_settings(self):
+        user_in_group_cim_settings = \
+            self.env.user.has_group(
+                'cim_complaints_channel.group_cim_settings')
+        for record in self:
+            record.user_in_group_cim_settings = user_in_group_cim_settings
+
+    @api.multi
+    def _compute_with_email(self):
+        for record in self:
+            with_email = False
+            if record.complaint_id and record.complaint_id.complainant_email:
+                with_email = True
+            record.with_email = with_email
+
+    @api.multi
+    def _compute_automatic_email_validate_com(self):
+        automatic_email_validate_com = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'automatic_email_validate_com')
+        for record in self:
+            record.automatic_email_validate_com = automatic_email_validate_com
+
+    @api.depends('state')
+    def _compute_communication_date(self):
+        for record in self:
+            communication_date = None
+            if record.state == '02_validated':
+                communication_date = fields.Datetime.now()
+            record.communication_date = communication_date
+
+    @api.multi
+    def _compute_number_of_attachments(self):
+        for record in self:
+            number_of_attachments = CimComplaint.MAX_DOCUMENTS
+            if not record.document_06_name:
+                number_of_attachments = number_of_attachments - 1
+                if not record.document_05_name:
+                    number_of_attachments = number_of_attachments - 1
+                    if not record.document_04_name:
+                        number_of_attachments = number_of_attachments - 1
+                        if not record.document_03_name:
+                            number_of_attachments = number_of_attachments - 1
+                            if not record.document_02_name:
+                                number_of_attachments = \
+                                        number_of_attachments - 1
+                                if not record.document_01_name:
+                                    number_of_attachments = \
+                                            number_of_attachments - 1
+            record.number_of_attachments = number_of_attachments
+
+    @api.multi
+    def _compute_icon_inputoutput(self):
+        image_path_input = \
+            modules.module.get_resource_path('cim_complaints_channel',
+                                             'static/img', 'icon_right.png')
+        image_path_output = \
+            modules.module.get_resource_path('cim_complaints_channel',
+                                             'static/img', 'icon_left.png')
+        for record in self:
+            icon_inputoutput = None
+            image_path = None
+            if record.from_complainant:
+                image_path = image_path_input
+            else:
+                image_path = image_path_output
+            if image_path:
+                image_file = open(image_path, 'rb')
+                icon_inputoutput = base64.b64encode(image_file.read())
+            record.icon_inputoutput = icon_inputoutput
+
+    @api.multi
+    def name_get(self):
+        result = []
+        # communication_show_complete_code
+        communication_show_complete_code = \
+            self.env.context.get('communication_show_complete_code', True)
+        for record in self:
+            display_name = record.name
+            if record.complaint_id and record.communication_number:
+                if communication_show_complete_code:
+                    display_name = _('Complaint') + ' ' + \
+                        record.complaint_id.name + ', ' + \
+                        _('communication #') + ' ' + \
+                        str(record.communication_number)
+                else:
+                    display_name = _('#') + ' ' + \
+                        str(record.communication_number)
+            result.append((record.id, display_name))
+        return result
+
+    @api.multi
+    def action_go_to_state_02_validated(self):
+        self.ensure_one()
+        print 'action_go_to_state_02_validated'
+
+    @api.multi
+    def action_undo(self):
+        self.ensure_one()
+        print 'action_undo'
+
+    @api.multi
+    def action_send_mail(self):
+        self.ensure_one()
+        print 'action_send_mail'

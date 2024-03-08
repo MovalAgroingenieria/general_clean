@@ -93,6 +93,61 @@
 .o_cim_complaints_channel_complaint_view_tree [data-field="state"] {
     text-align: center;
 }
+.o_cim_complaints_channel_complaint_view_tree [data-id="icon_warning"] {
+    min-width: 40px;
+    width: 40px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_view_tree [data-field="icon_warning"] {
+    text-align: center;
+}
+
+/**/
+/* o_cim_complaints_channel_complaint_communication_view_tree */
+/**/
+.o_cim_complaints_channel_complaint_communication_view_tree [data-id="icon_inputoutput"] {
+    min-width: 40px;
+    width: 40px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="icon_inputoutput"] {
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-id="communication_number"] {
+    min-width: 40px;
+    width: 40px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="communication_number"] {
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-id="communication_date"] {
+    min-width: 70px;
+    width: 80px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="communication_date"] {
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="processor_user_id"] {
+    min-width: 140px;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-id="number_of_attachments"] {
+    min-width: 70px;
+    width: 80px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="number_of_attachments"] {
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-id="state"] {
+    min-width: 70px;
+    width: 80px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_communication_view_tree [data-field="state"] {
+    text-align: center;
+}
 
 /**/
 /* Custom classes */
