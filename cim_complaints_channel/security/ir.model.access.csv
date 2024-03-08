@@ -5,3 +5,5 @@ access_cim_link_type_restricted,access.cim.link.type.restricted,model_cim_link_t
 access_cim_link_type_manager,access.cim.link.type.manager,model_cim_link_type,cim_complaints_channel.group_cim_manager,1,1,1,1
 access_cim_complaint_restricted,access.cim.complaint.restricted,model_cim_complaint,cim_complaints_channel.group_cim_restricted,1,0,0,0
 access_cim_complaint_manager,access.cim.complaint.manager,model_cim_complaint,cim_complaints_channel.group_cim_manager,1,1,1,1
+access_cim_complaint_communication_restricted,access.cim.complaint.communication.restricted,model_cim_complaint_communication,cim_complaints_channel.group_cim_restricted,1,0,0,0
+access_cim_complaint_communication_manager,access.cim.complaint.communication.manager,model_cim_complaint_communication,cim_complaints_channel.group_cim_manager,1,1,1,1
