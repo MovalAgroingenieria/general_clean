@@ -15,6 +15,7 @@
     'data': [
         'data/ir_config_parameter.xml',
         'data/aeat_sii_tax_agency_data.xml',
+        'security/ir.model.access.csv',
     ],
     'installable': True,
     'application': False,
