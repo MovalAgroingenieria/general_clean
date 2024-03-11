@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Conditions the title between payment order and debit order -->
+    <template id="account_payment_order_document_type" inherit_id="account_payment_order.print_account_payment_order_document">
+
+        <xpath expr="//h2" position="replace">
+            <h2 t-if="doc.payment_type != 'inbound'">Payment Order / Payment</h2>
+            <h2 t-if="doc.payment_type == 'inbound'">Debit Order / Debit </h2>
+        </xpath>
+
+    </template>
+
+</odoo>
