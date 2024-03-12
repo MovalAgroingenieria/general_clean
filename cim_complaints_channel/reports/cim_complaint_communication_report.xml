@@ -44,12 +44,12 @@
         <div name="global_content">
             <div class="row" name="section_complaint_data" style="margin-top:20px;">
                 <div class="col-xs-3">C O M P L A I N T :</div>
-                <div class="col-xs-2"><span t-field="o.complaint_id.name" style="margin-left:40px"/></div>
+                <div class="col-xs-2"><span t-field="o.complaint_id.name" style="margin-left:30px"/></div>
                 <div class="col-xs-7"><span t-field="o.complaint_id.issue"/></div>
                 <div class="col-xs-3" style="margin-top:10px">I S S U E :</div>
-                <div class="col-xs-9" style="margin-top:10px"><span style="margin-left:40px" t-field="o.issue"/></div>
+                <div class="col-xs-9" style="margin-top:10px"><span style="margin-left:30px" t-field="o.issue"/></div>
                 <div class="col-xs-3" style="margin-top:10px">S O U R C E :</div>
-                <div class="col-xs-2" style="margin-top:10px"><span style="margin-left:40px" t-field="o.communication_date"/></div>
+                <div class="col-xs-2" style="margin-top:10px"><span style="margin-left:30px" t-field="o.communication_date"/></div>
                 <t t-if="o.from_complainant">
                     <div class="col-xs-7" style="margin-top:10px">(communication created by the complainant)</div>
                 </t>

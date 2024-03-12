@@ -1018,7 +1018,7 @@ msgstr "ERROR, el e-mail no se ha podido enviar. Destino:"
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
 msgid "Email after change state"
-msgstr "Email después de cambiar de estado"
+msgstr "Crear comunicación tras cambiar de estado"
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
