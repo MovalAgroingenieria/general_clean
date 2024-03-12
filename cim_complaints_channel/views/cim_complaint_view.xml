@@ -10,6 +10,7 @@
                 <field name="setted_sequence" invisible="1"/>
                 <field name="deadline_state" invisible="1"/>
                 <field name="is_rejected" invisible="1"/>
+                <field name="is_extended" invisible="1"/>
                 <field name="is_acknowledgement_expired" invisible="1"/>
                 <field name="user_in_group_cim_settings" invisible="1"/>
                 <field name="document_01_name" invisible="1"/>
@@ -74,6 +75,13 @@
                             icon="fa-hand-o-right"
                             attrs="{'invisible': ['|','|','|',('id','=',False),('is_delegated','=',False),('is_rejected','=',True),('state','=','05_resolved')]}"
                             groups="cim_complaints_channel.group_cim_settings"/>
+                    <button name="action_extend" type="object"
+                            string="Extend"
+                            style="width: 125px;"
+                            icon="fa-expand"
+                            attrs="{'invisible': ['|',('is_extended','=',True),('state','!=','03_in_progress')]}"
+                            groups="cim_complaints_channel.group_cim_settings"
+                            confirm="Are you sure you want to extend the complaint deadline?"/>
                     <field name="state"
                            widget="statusbar"
                            statusbar_visible="01_received,02_admitted,03_in_progress,04_ready,05_resolved"/>
@@ -424,6 +432,8 @@
                        string="Instructor"/>
                 <field name="number_of_attachments"
                        string="N. attach."/>
+                <field name="number_of_communications"
+                       string="N. com."/>
                 <field name="state"
                        string="State"/>
                 <field name="icon_warning"
@@ -593,6 +603,24 @@
               sequence="1"
               action="cim_complaint_action"/>
 
+    <record id="cim_complaint_go_to_state_02_validated" model="ir.actions.server">
+        <field name="name">Validate communication</field>
+        <field name="model_id" ref="cim_complaints_channel.model_cim_complaint_communication"/>
+        <field name="code">
+            if context.get('active_id'):
+                action = env['cim.complaint.communication'].action_go_to_state_02_validated(context['active_id'])
+        </field>
+    </record>
+
+    <record id="cim_complaint_send_mail" model="ir.actions.server">
+        <field name="name">Send e-mail</field>
+        <field name="model_id" ref="cim_complaints_channel.model_cim_complaint_communication"/>
+        <field name="code">
+            if context.get('active_id'):
+                action = env['cim.complaint.communication'].action_send_mail(context['active_id'])
+        </field>
+    </record>
+
     <record id="cim_complaint_communication_view_form" model="ir.ui.view">
         <field name="name">cim.complaint.communication.view.form</field>
         <field name="model">cim.complaint.communication</field>
@@ -611,7 +639,7 @@
                 <field name="with_email" invisible="1"/>
                 <field name="automatic_email_validate_com" invisible="1"/>
                 <header>
-                    <button name="action_go_to_state_02_validated" type="object"
+                    <button name="%(cim_complaint_go_to_state_02_validated)d" type="action"
                             string="Validate"
                             style="width: 125px;"
                             icon="fa-check-circle"
@@ -622,14 +650,14 @@
                             string="Undo"
                             style="width: 125px;"
                             icon="fa-undo"
-                            attrs="{'invisible': [('state','=','01_draft')]}"
+                            attrs="{'invisible': ['|', ('state','=','01_draft'), ('from_complainant', '=', True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
                             confirm="This action will change to the 'Draft' state. Proceed?"/>
-                    <button name="action_send_mail" type="object"
-                            string="Send"
+                    <button name="%(cim_complaint_send_mail)d" type="action"
+                            string="Send e-mail"
                             style="width: 125px;"
                             icon="fa-envelope-o"
-                            attrs="{'invisible': ['|', '|', ('state','=','01_draft'), ('with_email', '=', False), ('automatic_email_validate_com', '=', True)]}"
+                            attrs="{'invisible': ['|', '|', '|', ('state','=','01_draft'), ('with_email', '=', False), ('automatic_email_validate_com', '=', True), ('from_complainant', '=', True)]}"
                             groups="cim_complaints_channel.group_cim_manager"
                             confirm="Are you sure you want to send the communication to the complainant?"/>
                     <field name="state"
@@ -669,7 +697,7 @@
                     <group name="group_02">
                         <group name="group_02_left">
                             <field name="issue" string="Issue"
-                                   attrs="{'readonly': [('from_complainant', '=', True)]}"/>
+                                   attrs="{'readonly': ['|', ('from_complainant', '=', True), ('state', '=', '02_validated')]}"/>
                         </group>
                         <group name="group_02_right">
                             <field name="from_complainant_as_text"
@@ -694,7 +722,7 @@
                              style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;margin-bottom:20px;min-height:75px">
                             <field name="description" nolabel="1"
                                    style="margin-top:5px;min-height:55px"
-                                   attrs="{'readonly': [('from_complainant', '=', True)]}"/>
+                                   attrs="{'readonly': ['|', ('from_complainant', '=', True), ('state', '=', '02_validated')]}"/>
                         </div>
                     </group>
                     <notebook>
@@ -754,7 +782,7 @@
                 <field name="icon_inputoutput"
                        widget="image" string=" "/>
                 <field name="communication_number"
-                       string="C. #"/>
+                       string="Com. #"/>
                 <field name="issue"
                        string="Issue"/>
                 <field name="communication_date"
@@ -801,5 +829,5 @@
             </search>
         </field>
     </record>
-                
+
 </odoo>
