@@ -57,7 +57,7 @@
     text-align: center;
 }
 .o_cim_complaints_channel_complaint_view_tree [data-id="complaint_type_id"] {
-    min-width: 200px;
+    min-width: 160px;
 }
 .o_cim_complaints_channel_complaint_view_tree [data-id="resolution_date"] {
     min-width: 70px;
@@ -84,6 +84,13 @@
     text-align: center;
 }
 .o_cim_complaints_channel_complaint_view_tree [data-field="number_of_attachments"] {
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_view_tree [data-id="number_of_communications"] {
+    min-width: 70px;
+    text-align: center;
+}
+.o_cim_complaints_channel_complaint_view_tree [data-field="number_of_communications"] {
     text-align: center;
 }
 .o_cim_complaints_channel_complaint_view_tree [data-id="state"] {
@@ -114,8 +121,8 @@
     text-align: center;
 }
 .o_cim_complaints_channel_complaint_communication_view_tree [data-id="communication_number"] {
-    min-width: 40px;
-    width: 40px;
+    min-width: 60px;
+    width: 60px;
     text-align: center;
 }
 .o_cim_complaints_channel_complaint_communication_view_tree [data-field="communication_number"] {

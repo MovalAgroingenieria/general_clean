@@ -91,18 +91,18 @@
             <div name="logo_title_header" class="row">
                 <t t-if="company.logo">
                     <div class="col-xs-1">
-                        <img t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height:75px;width: auto;"/>
+                        <img t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height:75px;max-width:75px;"/>
                     </div>
-                    <div class="col-xs-7" style="margin-top:35px;">
+                    <div class="col-xs-7" style="margin-top:30px;">
                         <span style="margin-left:20px;" t-field="company.name"/>
                     </div>
                 </t>
                 <t t-else="">
-                    <div class="col-xs-8" style="margin-top:35px;">
+                    <div class="col-xs-8" style="margin-top:30px;">
                         <span t-field="company.name"/>
                     </div>
                 </t>
-                <div class="col-xs-4 text-right" style="margin-top:35px;">
+                <div class="col-xs-4 text-right" style="margin-top:30px;">
                     <span>TRACKING CODE</span>
                 </div>
             </div>

@@ -36,3 +36,4 @@ class WizardRejectComplaint(models.TransientModel):
                 'is_rejected': True,
                 'rejection_cause': self.rejection_cause,
                 })
+            record._create_communication()

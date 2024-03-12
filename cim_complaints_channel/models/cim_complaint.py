@@ -5,6 +5,7 @@
 import base64
 import string
 import random
+import locale
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from lxml import etree
@@ -381,6 +382,10 @@ class CimComplaint(models.Model):
         selection=_lang_get,
         string="Language",)
 
+    automatic_email_state = fields.Boolean(
+        string='E-mail to complainant after complaint change state (y/n)',
+        compute='_compute_automatic_email_state',)
+
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
         for record in self:
@@ -716,6 +721,12 @@ class CimComplaint(models.Model):
                 decrypted_complainant_data = decrypted_complainant_data[:-1]
             record.decrypted_complainant_data = decrypted_complainant_data
 
+    def _compute_automatic_email_state(self):
+        automatic_email_state = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'automatic_email_state')
+        for record in self:
+            record.automatic_email_state = automatic_email_state
+
     @api.constrains('is_rejected', 'state')
     def _check_is_rejected(self):
         for record in self:
@@ -794,6 +805,7 @@ class CimComplaint(models.Model):
                 mail_template_tracking_code.with_context(
                     lang=user_lang).send_mail(
                         new_complaint.id, force_send=True)
+        new_complaint.create_initial_communication()
         return new_complaint
 
     @api.multi
@@ -1054,6 +1066,7 @@ class CimComplaint(models.Model):
         self.ensure_one()
         if self.state == '01_received' and not self.is_rejected:
             self.state = '02_admitted'
+            self._create_communication()
 
     @api.multi
     def action_reject(self):
@@ -1094,6 +1107,7 @@ class CimComplaint(models.Model):
                         'is_rejected': True,
                         'rejection_cause': _('Incomplete information.'),
                         })
+                    complaint._create_communication()
 
     @api.multi
     def action_go_to_state_03_in_progress(self):
@@ -1103,6 +1117,8 @@ class CimComplaint(models.Model):
             if not self.investigating_user_id:
                 vals['investigating_user_id'] = self.env.user.id
             self.write(vals)
+            if self.automatic_email_state:
+                self._create_communication()
 
     @api.multi
     def action_go_to_state_04_ready(self):
@@ -1131,10 +1147,14 @@ class CimComplaint(models.Model):
             self.state = '01_received'
         elif self.state == '03_in_progress':
             self.state = '02_admitted'
+            if self.is_extended:
+                self.is_extended = False
         elif self.state == '04_ready':
             self.state = '03_in_progress'
         elif self.state == '05_resolved':
             self.state = '04_ready'
+        if self.state != '04_ready' and self.automatic_email_state:
+            self._create_communication()
 
     @api.model
     def encrypt_data(self, data_to_encrypt, cipher_key):
@@ -1185,6 +1205,117 @@ class CimComplaint(models.Model):
                 'target': 'new',
             }
             return act_window
+
+    @api.multi
+    def action_extend(self):
+        self.ensure_one()
+        if (self.state == '03_in_progress' and (not self.is_extended)):
+            self.is_extended = True
+            self._create_communication(extension=True)
+
+    @api.multi
+    def _create_communication(self, extension=False):
+        self.ensure_one()
+        vals = {
+            'complaint_id': self.id,
+            'from_complainant': False,
+            'state': '02_validated', }
+        issue = _('Communication of complaint') + ' ' + self.name
+        description = '-'
+        if extension:
+            issue = _('Extended instruction period')
+            description = \
+                _('Due to the special complexity of the case, '
+                  'the investigation phase is being extended. '
+                  'New response deadline:') + ' ' + \
+                self._get_date_str(self.deadline_date) + '.'
+        else:
+            if self.is_rejected:
+                issue = _('Complaint rejected')
+                description = _('Reason:') + ' ' + self.rejection_cause
+            else:
+                if self.state == '02_admitted':
+                    issue = _('Complaint accepted')
+                    description = \
+                        _('The deadline to complete the investigation of the '
+                          'complaint ends on the following date:') + ' ' + \
+                        self._get_date_str(self.deadline_date) + '.'
+                if self.state == '03_in_progress':
+                    issue = _('Instruction phase begins')
+                    description = \
+                        _('The assigned investigating user is:') + ' ' + \
+                        self.investigating_user_id.name
+                if self.state == '05_resolved':
+                    issue = _('Resolution of the complaint')
+                    description = self.resolution_text
+        vals['issue'] = issue
+        vals['description'] = description
+        new_communication = \
+            self.env['cim.complaint.communication'].create(vals)
+        if new_communication.automatic_email_validate_com:
+            new_communication.send_mails()
+
+    def _get_date_str(self, raw_date):
+        resp = raw_date
+        default_locale = locale.setlocale(locale.LC_TIME)
+        is_english = True
+        if (self.env.context and 'lang' in self.env.context):
+            is_english = self.env.context['lang'] == 'en_US'
+        try:
+            if is_english:
+                locale.setlocale(locale.LC_TIME, 'en_US.utf8')
+            resp = datetime.strptime(raw_date, '%Y-%m-%d').strftime('%x')
+        finally:
+            locale.setlocale(locale.LC_TIME, default_locale)
+        return resp
+
+    @api.multi
+    def create_initial_communication(self):
+        for record in self:
+            issue = _('New complaint:') + ' ' + record.name
+            vals = {
+                'complaint_id': record.id,
+                'issue': issue,
+                'from_complainant': True,
+                'state': '02_validated', }
+            description = _('COMPLAINT ISSUE:') + '\n\n' + \
+                record.complaint_type_id.name + ': ' + \
+                self._refine_text(record.issue) + '\n\n' + \
+                _('FACTS DENUNCED:') + '\n\n' + \
+                self._refine_text(record.description)
+            if record.defendant_name:
+                description = description + '\n\n' + _('DEFENDANT:') + \
+                    '\n\n' + self._refine_text(record.defendant_name)
+            vals['description'] = description
+            if record.is_delegated:
+                vals['from_complainant'] = False
+            if record.document_01:
+                vals['document_01'] = record.document_01
+                vals['document_01_name'] = record.document_01_name
+            if record.document_02:
+                vals['document_02'] = record.document_02
+                vals['document_02_name'] = record.document_02_name
+            if record.document_03:
+                vals['document_03'] = record.document_03
+                vals['document_03_name'] = record.document_03_name
+            if record.document_04:
+                vals['document_04'] = record.document_04
+                vals['document_04_name'] = record.document_04_name
+            if record.document_05:
+                vals['document_05'] = record.document_05
+                vals['document_05_name'] = record.document_05_name
+            if record.document_06:
+                vals['document_06'] = record.document_06
+                vals['document_06_name'] = record.document_06_name
+            new_communication = \
+                self.env['cim.complaint.communication'].create(vals)
+            new_communication.send_mails()
+
+    def _refine_text(self, str_to_refine):
+        resp = str_to_refine
+        if resp and resp[-1] != '.':
+            resp = resp + '.'
+        return resp
 
 
 class CimComplaintCommunication(models.Model):
@@ -1484,17 +1615,229 @@ class CimComplaintCommunication(models.Model):
             result.append((record.id, display_name))
         return result
 
+    @api.model
+    def create(self, vals):
+        vals = self._process_vals(vals, is_create=True)
+        new_communication = super(CimComplaintCommunication, self).create(vals)
+        return new_communication
+
     @api.multi
-    def action_go_to_state_02_validated(self):
-        self.ensure_one()
-        print 'action_go_to_state_02_validated'
+    def write(self, vals):
+        vals = self._process_vals(vals)
+        super(CimComplaintCommunication, self).write(vals)
+        return True
+
+    @api.model
+    def _process_vals(self, vals, is_create=False):
+        if vals:
+            if ((is_create or len(self) == 1) and
+                    ('document_01' in vals or 'document_02' in vals or
+                     'document_03' in vals or 'document_04' in vals or
+                     'document_05' in vals or 'document_06' in vals)):
+                vals = self._compact_document_fields(vals, is_create)
+            if is_create and 'complaint_id' in vals and vals['complaint_id']:
+                communication_number = 1
+                last_communication = \
+                    self.env['cim.complaint.communication'].search(
+                        [('complaint_id', '=', vals['complaint_id'])],
+                        limit=1, order='communication_number desc')
+                if last_communication:
+                    last_communication = last_communication[0]
+                    communication_number = \
+                        last_communication.communication_number + 1
+                vals['communication_number'] = communication_number
+        return vals
+
+    @api.model
+    def _compact_document_fields(self, vals, is_create=False):
+        if ('document_01' in vals or 'document_02' in vals or
+                'document_03' in vals or 'document_04' in vals or
+                'document_05' in vals or 'document_06' in vals):
+            value_document_01 = None
+            value_document_01_name = None
+            if 'document_01' in vals:
+                value_document_01 = vals['document_01']
+                value_document_01_name = vals['document_01_name']
+            elif not is_create:
+                value_document_01 = self.document_01
+                value_document_01_name = self.document_01_name
+            value_document_02 = None
+            value_document_02_name = None
+            if 'document_02' in vals:
+                value_document_02 = vals['document_02']
+                value_document_02_name = vals['document_02_name']
+            elif not is_create:
+                value_document_02 = self.document_02
+                value_document_02_name = self.document_02_name
+            value_document_03 = None
+            value_document_03_name = None
+            if 'document_03' in vals:
+                value_document_03 = vals['document_03']
+                value_document_03_name = vals['document_03_name']
+            elif not is_create:
+                value_document_03 = self.document_03
+                value_document_03_name = self.document_03_name
+            value_document_04 = None
+            value_document_04_name = None
+            if 'document_04' in vals:
+                value_document_04 = vals['document_04']
+                value_document_04_name = vals['document_04_name']
+            elif not is_create:
+                value_document_04 = self.document_04
+                value_document_04_name = self.document_04_name
+            value_document_05 = None
+            value_document_05_name = None
+            if 'document_05' in vals:
+                value_document_05 = vals['document_05']
+                value_document_05_name = vals['document_05_name']
+            elif not is_create:
+                value_document_05 = self.document_05
+                value_document_05_name = self.document_05_name
+            value_document_06 = None
+            value_document_06_name = None
+            if 'document_06' in vals:
+                value_document_06 = vals['document_06']
+                value_document_06_name = vals['document_06_name']
+            elif not is_create:
+                value_document_06 = self.document_06
+                value_document_06_name = self.document_06_name
+            values = []
+            if value_document_01:
+                values.append({'document': value_document_01,
+                               'document_name': value_document_01_name, })
+            if value_document_02:
+                values.append({'document': value_document_02,
+                               'document_name': value_document_02_name, })
+            if value_document_03:
+                values.append({'document': value_document_03,
+                               'document_name': value_document_03_name, })
+            if value_document_04:
+                values.append({'document': value_document_04,
+                               'document_name': value_document_04_name, })
+            if value_document_05:
+                values.append({'document': value_document_05,
+                               'document_name': value_document_05_name, })
+            if value_document_06:
+                values.append({'document': value_document_06,
+                               'document_name': value_document_06_name, })
+            number_of_values = len(values)
+            for i in range(number_of_values):
+                field_document = 'document_01'
+                field_document_name = 'document_01_name'
+                if i == 1:
+                    field_document = 'document_02'
+                    field_document_name = 'document_02_name'
+                elif i == 2:
+                    field_document = 'document_03'
+                    field_document_name = 'document_03_name'
+                elif i == 3:
+                    field_document = 'document_04'
+                    field_document_name = 'document_04_name'
+                elif i == 4:
+                    field_document = 'document_05'
+                    field_document_name = 'document_05_name'
+                elif i == 5:
+                    field_document = 'document_06'
+                    field_document_name = 'document_06_name'
+                vals[field_document] = values[i]['document']
+                vals[field_document_name] = values[i]['document_name']
+            if number_of_values < CimComplaint.MAX_DOCUMENTS:
+                for i in reversed(range(number_of_values,
+                                        CimComplaint.MAX_DOCUMENTS)):
+                    field_document = 'document_06'
+                    field_document_name = 'document_06_name'
+                    if i == 4:
+                        field_document = 'document_05'
+                        field_document_name = 'document_05_name'
+                    elif i == 3:
+                        field_document = 'document_04'
+                        field_document_name = 'document_04_name'
+                    elif i == 2:
+                        field_document = 'document_03'
+                        field_document_name = 'document_03_name'
+                    elif i == 1:
+                        field_document = 'document_02'
+                        field_document_name = 'document_02_name'
+                    elif i == 0:
+                        field_document = 'document_01'
+                        field_document_name = 'document_01_name'
+                    vals[field_document] = None
+                    vals[field_document_name] = None
+        return vals
+
+    def unlink(self):
+        for record in self:
+            if record.state != '01_draft':
+                raise exceptions.UserError(_(
+                    'It is not possile to delete a validated communication.'))
+            if (record.complaint_id.state == '04_ready' or
+               record.complaint_id.state == '05_resolved'):
+                raise exceptions.UserError(_(
+                    'The complaint has completed its investigation phase, '
+                    'so it is no longer possible to delete communications.'))
+        return super(CimComplaintCommunication, self).unlink()
+
+    # NOTE: if api.multi, problem with send_mail
+    @api.model
+    def action_go_to_state_02_validated(self, communication_id):
+        if communication_id:
+            communication = self.browse(communication_id)
+            if communication and communication.state == '01_draft':
+                communication.state = '02_validated'
+                if communication.automatic_email_validate_com:
+                    communication.send_mails()
 
     @api.multi
     def action_undo(self):
         self.ensure_one()
-        print 'action_undo'
+        if self.state == '02_validated':
+            self.state = '01_draft'
+
+    @api.model
+    def action_send_mail(self, communication_id):
+        if communication_id:
+            communication = self.browse(communication_id)
+            if (communication and communication.state == '02_validated' and
+               communication.with_email):
+                communication.send_mails()
 
     @api.multi
-    def action_send_mail(self):
-        self.ensure_one()
-        print 'action_send_mail'
+    def send_mails(self):
+        for record in self:
+            complainant_email = record.complaint_id.decrypted_complainant_email
+            if record.state == '02_validated' and complainant_email:
+                text_for_log_ok = _('Email sent. Destination:')
+                text_for_log_fail = _('ERROR, the email could not be sent. '
+                                      'Destination:')
+                mail_ok = self._send_communication(record)
+                if mail_ok:
+                    record.is_sent = True
+                    record.message_post(text_for_log_ok + ' ' +
+                                        complainant_email)
+                else:
+                    record.message_post(text_for_log_fail + ' ' +
+                                        complainant_email)
+
+    @api.model
+    def _send_communication(self, communication):
+        resp = True
+        mail_template_communication = None
+        try:
+            mail_template_communication = self.env.ref(
+                'cim_complaints_channel.'
+                'mail_template_communication').sudo()
+        except Exception:
+            mail_template_communication = None
+        if mail_template_communication:
+            user_lang = 'en_US'
+            if communication.complaint_id.complaint_lang:
+                user_lang = communication.complaint_id.complaint_lang
+            try:
+                mail_template_communication.with_context(
+                    lang=user_lang).send_mail(
+                        communication.id, force_send=True)
+            except Exception:
+                resp = False
+        else:
+            resp = False
+        return resp

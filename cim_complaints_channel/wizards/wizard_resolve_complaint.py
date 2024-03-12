@@ -36,3 +36,5 @@ class WizardResolveComplaint(models.TransientModel):
                 'state': '05_resolved',
                 'resolution_text': self.resolution_text,
                 })
+            if record.automatic_email_state:
+                record._create_communication()
