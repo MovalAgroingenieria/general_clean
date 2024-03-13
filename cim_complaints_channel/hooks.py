@@ -43,6 +43,14 @@ def post_init_hook(cr, registry):
         model_complaint.write({
             'website_form_access': True,
             'website_form_label': 'Add complaint form', })
+    # Idem for the "cim.complaint.communication" model.
+    model_complaint_communication = models.search(
+        [('model', '=', 'cim.complaint.communication')])
+    if model_complaint_communication:
+        model_complaint_communication = model_complaint_communication[0]
+        model_complaint_communication.write({
+            'website_form_access': True,
+            'website_form_label': 'Add communication form', })
 
 
 def uninstall_hook(cr, registry):
