@@ -102,16 +102,18 @@ odoo.define('cim_complaints_channel.animation', function (require) {
                             self.check_error_fields(result_data.error_fields);
                         }
                     } else {
+                        // Modified EIS
+                        $(location).attr('href', '/page/complaints-channel');
                         // Success, redirect or update status
-                        var success_page = self.$target.attr('data-success_page');
-                        if(success_page) {
-                            $(location).attr('href', success_page);
-                        }
-                        else {
-                            self.update_status('success');
-                        }
-                        // Reset the form
-                        self.$target[0].reset();
+                        // var success_page = self.$target.attr('data-success_page');
+                        // if(success_page) {
+                        //     $(location).attr('href', success_page);
+                        // }
+                        // else {
+                        //     self.update_status('success');
+                        // }
+                        // // Reset the form
+                        // self.$target[0].reset();
                     }
                 }
             })

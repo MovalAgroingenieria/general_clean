@@ -1325,6 +1325,7 @@ class CimComplaintCommunication(models.Model):
     _order = 'name'
 
     SIZE_COMMUNICATION_NUMBER = 4
+    EMPTY_TRACKING_CODE = '-'
 
     def _default_communication_number(self):
         resp = 1
@@ -1359,8 +1360,7 @@ class CimComplaintCommunication(models.Model):
         string='Complaint',
         comodel_name='cim.complaint',
         index=True,
-        ondelete='cascade',
-        required=True,)
+        ondelete='cascade',)
 
     communication_number = fields.Integer(
         string='Communication Number',
@@ -1497,6 +1497,11 @@ class CimComplaintCommunication(models.Model):
     notes = fields.Html(
         string='Notes',)
 
+    decrypted_tracking_code = fields.Char(
+        string='Tracking Code',
+        size=CimComplaint.SIZE_BIG,
+        required=True,)
+
     _sql_constraints = [
         ('valid_communication_number',
          'CHECK (communication_number > 0)',
@@ -1595,6 +1600,15 @@ class CimComplaintCommunication(models.Model):
                 icon_inputoutput = base64.b64encode(image_file.read())
             record.icon_inputoutput = icon_inputoutput
 
+    @api.constrains('complaint_id', 'communication_number')
+    def _check_complaint_id(self):
+        for record in self:
+            if ((not record.complaint_id) or
+               (not record.communication_number)):
+                raise exceptions.ValidationError(
+                    _('It is mandatory to enter the complaint of the '
+                      'communication.'))
+
     @api.multi
     def name_get(self):
         result = []
@@ -1617,8 +1631,11 @@ class CimComplaintCommunication(models.Model):
 
     @api.model
     def create(self, vals):
+        vals = self._test_tracking_code(vals)
         vals = self._process_vals(vals, is_create=True)
         new_communication = super(CimComplaintCommunication, self).create(vals)
+        if new_communication.from_complainant:
+            new_communication.send_mails()
         return new_communication
 
     @api.multi
@@ -1626,6 +1643,28 @@ class CimComplaintCommunication(models.Model):
         vals = self._process_vals(vals)
         super(CimComplaintCommunication, self).write(vals)
         return True
+
+    @api.model
+    def _test_tracking_code(self, vals):
+        if vals:
+            if 'decrypted_tracking_code' not in vals:
+                vals['decrypted_tracking_code'] = self.EMPTY_TRACKING_CODE
+            if (vals['decrypted_tracking_code'] != self.EMPTY_TRACKING_CODE and
+               ('complaint_id' not in vals)):
+                model_cim_complaint = self.env['cim.complaint']
+                complaints = model_cim_complaint.search([], order='id desc')
+                for complaint in (complaints or []):
+                    decrypted_tracking_code_of_complaint = \
+                        model_cim_complaint.decrypt_data(
+                            complaint.tracking_code,
+                            model_cim_complaint._cipher_key)
+                    if (vals['decrypted_tracking_code'] ==
+                       decrypted_tracking_code_of_complaint):
+                        vals['complaint_id'] = complaint.id
+                        vals['decrypted_tracking_code'] = \
+                            self.EMPTY_TRACKING_CODE
+                        break
+        return vals
 
     @api.model
     def _process_vals(self, vals, is_create=False):
