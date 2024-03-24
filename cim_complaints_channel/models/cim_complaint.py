@@ -1186,7 +1186,8 @@ class CimComplaint(models.Model):
             self.state = '03_in_progress'
         elif self.state == '05_resolved':
             self.state = '04_ready'
-        if self.state != '04_ready' and self.automatic_email_state:
+        if (self.state != '01_received' and self.state != '04_ready' and
+           self.automatic_email_state):
             self._create_communication()
 
     @api.model
