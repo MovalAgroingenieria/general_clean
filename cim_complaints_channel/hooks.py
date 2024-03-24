@@ -28,6 +28,8 @@ def post_init_hook(cr, registry):
     values.set_default('res.cim.config.settings',
                        'automatic_email_validate_com', False)
     values.set_default('res.cim.config.settings',
+                       'automatic_email_complainant_com', False)
+    values.set_default('res.cim.config.settings',
                        'notice_period', 15)
     values.set_default('res.cim.config.settings',
                        'deadline', 3)

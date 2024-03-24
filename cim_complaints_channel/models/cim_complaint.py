@@ -230,6 +230,10 @@ class CimComplaint(models.Model):
         string='Extended Deadline (number of months)',
         compute='_compute_param_deadline_extended',)
 
+    param_email_for_notice = fields.Char(
+        string='E-mail for notice',
+        compute='_compute_param_email_for_notice',)
+
     deadline_date = fields.Date(
         string='Deadline Date',
         compute='_compute_deadline_date',)
@@ -454,6 +458,16 @@ class CimComplaint(models.Model):
             param_deadline_extended = 1
         for record in self:
             record.param_deadline_extended = param_deadline_extended
+
+    @api.multi
+    def _compute_param_email_for_notice(self):
+        param_email_for_notice = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'email_for_notice')
+        if not param_email_for_notice:
+            param_email_for_notice = ''
+        param_email_for_notice = param_email_for_notice.strip()
+        for record in self:
+            record.param_email_for_notice = param_email_for_notice
 
     @api.multi
     def _compute_deadline_date(self):
@@ -836,6 +850,24 @@ class CimComplaint(models.Model):
                                (not vals['link_type_id']))):
                 vals['link_type_id'] = self.env.ref(
                     'cim_complaints_channel.cim_link_type_other').id
+            if (is_create and ('document_01_name' in vals) and
+               ('document_01' not in vals)):
+                vals.pop('document_01_name')
+            if (is_create and ('document_02_name' in vals) and
+               ('document_02' not in vals)):
+                vals.pop('document_02_name')
+            if (is_create and ('document_03_name' in vals) and
+               ('document_03' not in vals)):
+                vals.pop('document_03_name')
+            if (is_create and ('document_04_name' in vals) and
+               ('document_04' not in vals)):
+                vals.pop('document_04_name')
+            if (is_create and ('document_05_name' in vals) and
+               ('document_05' not in vals)):
+                vals.pop('document_05_name')
+            if (is_create and ('document_06_name' in vals) and
+               ('document_06' not in vals)):
+                vals.pop('document_06_name')
             if 'complaint_frequency' in vals and vals['complaint_frequency']:
                 if vals['complaint_frequency'] != '02_specific_day':
                     vals['complaint_time'] = None
@@ -1056,6 +1088,7 @@ class CimComplaint(models.Model):
             'domain': [('complaint_id', '=', current_complaint.id)],
             'context': {'default_complaint_id': current_complaint.id,
                         'default_from_complainant': False,
+                        'from_backend': True,
                         'default_state': '01_draft',
                         'communication_show_complete_code': False, },
             }
@@ -1307,9 +1340,7 @@ class CimComplaint(models.Model):
             if record.document_06:
                 vals['document_06'] = record.document_06
                 vals['document_06_name'] = record.document_06_name
-            new_communication = \
-                self.env['cim.complaint.communication'].create(vals)
-            new_communication.send_mails()
+            self.env['cim.complaint.communication'].create(vals)
 
     def _refine_text(self, str_to_refine):
         resp = str_to_refine
@@ -1345,14 +1376,13 @@ class CimComplaintCommunication(models.Model):
         return resp
 
     def _default_processor_user_id(self):
-        resp = 0
-        default_from_complainant = False
+        resp = None
+        from_backend = False
         try:
-            default_from_complainant = \
-                self.env.context['default_from_complainant']
+            from_backend = self.env.context['from_backend']
         except Exception:
-            default_from_complainant = False
-        if not default_from_complainant:
+            from_backend = False
+        if from_backend:
             resp = self.env.user.id
         return resp
 
@@ -1419,6 +1449,10 @@ class CimComplaintCommunication(models.Model):
     automatic_email_validate_com = fields.Boolean(
         string='E-mail to complainant after validate communication (y/n)',
         compute='_compute_automatic_email_validate_com',)
+
+    automatic_email_complainant_com = fields.Boolean(
+        string='Send the complainant a copy of your communications (y/n)',
+        compute='_compute_automatic_email_complainant_com',)
 
     state = fields.Selection(
         string="State",
@@ -1502,6 +1536,10 @@ class CimComplaintCommunication(models.Model):
         size=CimComplaint.SIZE_BIG,
         required=True,)
 
+    description_as_html = fields.Char(
+        string='Communication Data (as html)',
+        compute='_compute_description_as_html',)
+
     _sql_constraints = [
         ('valid_communication_number',
          'CHECK (communication_number > 0)',
@@ -1552,6 +1590,14 @@ class CimComplaintCommunication(models.Model):
         for record in self:
             record.automatic_email_validate_com = automatic_email_validate_com
 
+    @api.multi
+    def _compute_automatic_email_complainant_com(self):
+        automatic_email_complainant_com = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'automatic_email_complainant_com')
+        for record in self:
+            record.automatic_email_complainant_com = \
+                automatic_email_complainant_com
+
     @api.depends('state')
     def _compute_communication_date(self):
         for record in self:
@@ -1600,6 +1646,15 @@ class CimComplaintCommunication(models.Model):
                 icon_inputoutput = base64.b64encode(image_file.read())
             record.icon_inputoutput = icon_inputoutput
 
+    @api.multi
+    def _compute_description_as_html(self):
+        for record in self:
+            description_as_html = ''
+            if record.description:
+                description_as_html = self._convert_text_to_html(
+                    record.description)
+            record.description_as_html = description_as_html
+
     @api.constrains('complaint_id', 'communication_number')
     def _check_complaint_id(self):
         for record in self:
@@ -1635,7 +1690,10 @@ class CimComplaintCommunication(models.Model):
         vals = self._process_vals(vals, is_create=True)
         new_communication = super(CimComplaintCommunication, self).create(vals)
         if new_communication.from_complainant:
-            new_communication.send_mails()
+            if new_communication.automatic_email_complainant_com:
+                new_communication.send_mails()
+            if new_communication.complaint_id.param_email_for_notice:
+                self._send_notice(new_communication)
         return new_communication
 
     @api.multi
@@ -1669,6 +1727,24 @@ class CimComplaintCommunication(models.Model):
     @api.model
     def _process_vals(self, vals, is_create=False):
         if vals:
+            if (is_create and ('document_01_name' in vals) and
+               ('document_01' not in vals)):
+                vals.pop('document_01_name')
+            if (is_create and ('document_02_name' in vals) and
+               ('document_02' not in vals)):
+                vals.pop('document_02_name')
+            if (is_create and ('document_03_name' in vals) and
+               ('document_03' not in vals)):
+                vals.pop('document_03_name')
+            if (is_create and ('document_04_name' in vals) and
+               ('document_04' not in vals)):
+                vals.pop('document_04_name')
+            if (is_create and ('document_05_name' in vals) and
+               ('document_05' not in vals)):
+                vals.pop('document_05_name')
+            if (is_create and ('document_06_name' in vals) and
+               ('document_06' not in vals)):
+                vals.pop('document_06_name')
             if ((is_create or len(self) == 1) and
                     ('document_01' in vals or 'document_02' in vals or
                      'document_03' in vals or 'document_04' in vals or
@@ -1880,3 +1956,35 @@ class CimComplaintCommunication(models.Model):
         else:
             resp = False
         return resp
+
+    @api.model
+    def _send_notice(self, communication):
+        resp = True
+        mail_template_notice = None
+        try:
+            mail_template_notice = self.env.ref(
+                'cim_complaints_channel.'
+                'mail_template_notice').sudo()
+        except Exception:
+            mail_template_notice = None
+        if mail_template_notice:
+            user_lang = 'en_US'
+            if communication.complaint_id.complaint_lang:
+                user_lang = communication.complaint_id.complaint_lang
+            try:
+                mail_template_notice.with_context(
+                    lang=user_lang).send_mail(
+                        communication.id, force_send=True)
+            except Exception:
+                resp = False
+        else:
+            resp = False
+        return resp
+
+    @api.model
+    def _convert_text_to_html(self, text):
+        html = ''
+        if text:
+            html = text.replace('\n', '<br/>')
+            html = '<span>' + html + '</span>'
+        return html

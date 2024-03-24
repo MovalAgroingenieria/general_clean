@@ -732,29 +732,29 @@
                                     <field name="document_01"
                                            filename="document_01_name"
                                            string="Document #1"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_02"
                                            filename="document_02_name"
                                            string="Document #2"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_03"
                                            filename="document_03_name"
                                            string="Document #3"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                 </group>
                                 <group name="documents_right">
                                     <field name="document_04"
                                            filename="document_04_name"
                                            string="Document #4"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_05"
                                            filename="document_05_name"
                                            string="Document #5"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                     <field name="document_06"
                                            filename="document_06_name"
                                            string="Document #6"
-                                           attrs="{'readonly': ['|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
+                                           attrs="{'readonly': [('id', '>', 0), '|', '|', ('from_complainant', '=', True), ('state', '=', '02_validated'), ('user_in_group_cim_settings', '=', False)]}"/>
                                 </group>
                             </group>
                         </page>

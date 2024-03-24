@@ -42,6 +42,12 @@ class ResCimConfigSettings(models.TransientModel):
         required=True,
         help='Send e-mail to complainant after validate the communication',)
 
+    automatic_email_complainant_com = fields.Boolean(
+        string='Send the complainant a copy of your communications (y/n)',
+        default=False,
+        required=True,
+        help='Send e-mail to complainant a copy of your communications',)
+
     mailtemplate_communication_id = fields.Many2one(
         string='E-mail Template',
         comodel_name='mail.template',
@@ -66,6 +72,9 @@ class ResCimConfigSettings(models.TransientModel):
         default=1,
         required=True,
         help='Extended complaint deadline (number of months)',)
+
+    email_for_notice = fields.Char(
+        string='E-mail for notice',)
 
     _sql_constraints = [
         ('valid_length_tracking_code',
@@ -110,6 +119,9 @@ class ResCimConfigSettings(models.TransientModel):
                            'automatic_email_validate_com',
                            self.automatic_email_validate_com)
         values.set_default('res.cim.config.settings',
+                           'automatic_email_complainant_com',
+                           self.automatic_email_complainant_com)
+        values.set_default('res.cim.config.settings',
                            'mailtemplate_communication_id',
                            self.mailtemplate_communication_id.id)
         values.set_default('res.cim.config.settings',
@@ -121,3 +133,6 @@ class ResCimConfigSettings(models.TransientModel):
         values.set_default('res.cim.config.settings',
                            'deadline_extended',
                            self.deadline_extended)
+        values.set_default('res.cim.config.settings',
+                           'email_for_notice',
+                           self.email_for_notice)

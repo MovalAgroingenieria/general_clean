@@ -30,6 +30,8 @@
                            string="Email after change state"/>
                     <field name="automatic_email_validate_com"
                            string="Email after validate communication"/>
+                    <field name="automatic_email_complainant_com"
+                           string="Send the complainant a copy of your communications"/>
                     <field name="mailtemplate_communication_id"
                            string="E-mail Template"
                            options="{'no_quick_create':True,'no_create_edit':True}"
@@ -43,6 +45,8 @@
                     <field name="deadline_extended"
                            string="Deadline Extended (months)"
                            style="width:100px"/>
+                    <field name="email_for_notice"
+                           string="E-mail for notice"/>
                 </group>
             </form>
         </field>
