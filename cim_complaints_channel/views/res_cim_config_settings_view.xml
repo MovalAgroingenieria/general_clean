@@ -32,10 +32,6 @@
                            string="Email after validate communication"/>
                     <field name="automatic_email_complainant_com"
                            string="Send the complainant a copy of your communications"/>
-                    <field name="mailtemplate_communication_id"
-                           string="E-mail Template"
-                           options="{'no_quick_create':True,'no_create_edit':True}"
-                           style="width:300px"/>
                     <field name="notice_period"
                            string="Notice Period (days)"
                            style="width:100px"/>

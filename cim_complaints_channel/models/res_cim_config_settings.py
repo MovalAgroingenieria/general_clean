@@ -48,11 +48,6 @@ class ResCimConfigSettings(models.TransientModel):
         required=True,
         help='Send e-mail to complainant a copy of your communications',)
 
-    mailtemplate_communication_id = fields.Many2one(
-        string='E-mail Template',
-        comodel_name='mail.template',
-        help='E-mail template for the communications to complainant',)
-
     notice_period = fields.Integer(
         string='Notice Period (number of days)',
         default=10,
@@ -121,9 +116,6 @@ class ResCimConfigSettings(models.TransientModel):
         values.set_default('res.cim.config.settings',
                            'automatic_email_complainant_com',
                            self.automatic_email_complainant_com)
-        values.set_default('res.cim.config.settings',
-                           'mailtemplate_communication_id',
-                           self.mailtemplate_communication_id.id)
         values.set_default('res.cim.config.settings',
                            'notice_period',
                            self.notice_period)
