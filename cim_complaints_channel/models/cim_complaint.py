@@ -1284,7 +1284,8 @@ class CimComplaint(models.Model):
         vals['issue'] = issue
         vals['description'] = description
         new_communication = \
-            self.env['cim.complaint.communication'].create(vals)
+            self.env['cim.complaint.communication'].with_context(
+                from_backend=True).create(vals)
         if new_communication.automatic_email_validate_com:
             new_communication.send_mails()
 
