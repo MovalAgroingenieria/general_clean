@@ -7,8 +7,8 @@
             model="account.invoice"/>
 
     <template id="facturae_header">
-        &lt;fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2009/v3.2/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"&gt;
-        <t t-raw="0"/>
+        &lt;fe:Facturae xmlns:fe="http://www.facturae.es/Facturae/2014/v3.2.1/Facturae" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"&gt;
+        <t t-raw="0" />
         &lt;/fe:Facturae&gt;
     </template>
 
@@ -111,7 +111,7 @@
             <t t-set="currency_rate" t-value="currency.rate if currency else 1.0"/>
             <t t-set="euro_rate" t-value="euro.rate if euro else 1.0"/>
             <FileHeader>
-                <SchemaVersion t-esc="'3.2'"/>
+                <SchemaVersion t-esc="'3.2.1'"/>
                 <Modality t-esc="'I'"/>
                 <InvoiceIssuerType t-esc="'EM'"/>
                 <Batch>
@@ -259,9 +259,17 @@
                             <IssuerContractDate t-if="False"/>
                             <IssuerTransactionReference t-length="20" t-if="False"/>
                             <IssuerTransactionDate t-if="False"/>
-                            <ReceiverContractReference t-length="20" t-if="False"/>
+                            <!--<ReceiverContractReference t-length="20" t-if="False"/>-->
+                            <!--Only in version 3_2_2 -->
+                            <ReceiverContractReference t-length="20"
+                                    t-esc="invoice.facturae_receiver_contract_reference"
+                                    t-if="invoice.facturae_receiver_contract_reference"/>
                             <ReceiverContractDate t-if="False"/>
-                            <ReceiverTransactionReference t-length="20" t-if="False"/>
+                            <!--<ReceiverTransactionReference t-length="20" t-if="False"/>-->
+                            <!--Only in version 3_2_2 -->
+                            <ReceiverTransactionReference t-length="20"
+                                    t-esc="invoice.facturae_receiver_transaction_reference"
+                                    t-if="invoice.facturae_receiver_transaction_reference"/>
                             <ReceiverTransactionDate t-if="False"/>
                             <FileReference t-length="20" t-if="False"/>
                             <FileDate t-if="False"/>

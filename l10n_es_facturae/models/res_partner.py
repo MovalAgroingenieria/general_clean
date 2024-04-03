@@ -17,8 +17,7 @@ class ResPartner(models.Model):
     organo_proponente = fields.Char('Órgano proponente', size=10)
     invoice_integration_method_ids = fields.Many2many(
         comodel_name='account.invoice.integration.method',
-        string="Integration Methods"
-    )
+        string="Integration Methods")
 
     def get_facturae_residence(self):
         if not self.country_id:

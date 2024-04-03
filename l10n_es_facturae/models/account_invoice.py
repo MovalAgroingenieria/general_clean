@@ -98,6 +98,12 @@ class AccountInvoice(models.Model):
 
     can_integrate = fields.Boolean(compute="_compute_can_integrate")
 
+    # New fields from v14 [Added on 22.03.2024]
+    facturae_receiver_transaction_reference = fields.Char(
+        string="Transaction Reference")
+    facturae_receiver_contract_reference = fields.Char(
+        string="Contract Reference")
+
     @api.multi
     def action_integrations(self):
         self.ensure_one()
@@ -413,7 +419,7 @@ class AccountInvoice(models.Model):
         return invoice_file, file_name
 
     def _get_facturae_schema_file(self):
-        return tools.file_open("Facturaev3_2.xsd",
+        return tools.file_open("Facturaev3_2_1.xsd",
                                subdir="addons/l10n_es_facturae/data")
 
     def _validate_facturae(self, xml_string):
