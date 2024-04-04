@@ -30,7 +30,7 @@
         <field name="arch" type="xml">
             <filter name="binary_filter" position="after">
                 <filter name="is_prl" string="Is PRL" domain="[('is_prl', '=', True)]"/>
-                <filter name="is_not_prl" string="Is Not PRL" domain="[('is_prl', '=', True)]"/>
+                <filter name="is_not_prl" string="Is Not PRL" domain="[('is_prl', '!=', True)]"/>
                 <separator/>
                 <field name="date_request" />
                 <field name="expiration_date" />
