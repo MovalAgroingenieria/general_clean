@@ -62,6 +62,10 @@ class IrAttachment(models.Model):
                 "default_is_prl" not in self.env.context):
             return super(IrAttachment, self).create(vals_list)
         if ("active_model" in self.env.context and
+                self.env.context.get("active_model") ==
+                "account.journal"):
+            return super(IrAttachment, self).create(vals_list)
+        if ("active_model" in self.env.context and
             self.env.context.get("active_model", "aa") ==
                 "account.analytic.line"):
             if isinstance(vals_list, dict):
