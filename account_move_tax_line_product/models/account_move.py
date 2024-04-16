@@ -21,15 +21,23 @@ class AccountMoveLine(models.Model):
         num_tax_move_lines = len(tax_move_lines)
         _logger.info("TAX LINES WITHOUT PRODUCT: %s" % num_tax_move_lines)
         # Insert product_id in tax move line based on invoice
-        if num_tax_move_lines > 0:
-            for tax_move_line in tax_move_lines:
+        for tax_move_line in tax_move_lines:
+            try:
                 invoice = self.env['account.invoice'].browse(
                     tax_move_line.invoice_id.id)
+                # Itera sobre las líneas de factura.
                 for invoice_line in invoice.invoice_line_ids:
+                    # Comprueba si la cuenta y la cuenta analítica coinciden.
                     if (invoice_line.account_id == tax_move_line.account_id and
-                        invoice_line.account_analytic_id ==
-                            tax_move_line.analytic_account_id):
+                        invoice_line.account_analytic_id == tax_move_line.
+                            analytic_account_id):
+                        # Asigna el producto de la línea de factura a la línea
+                        # de movimiento de impuestos.
                         tax_move_line.product_id = invoice_line.product_id
                         _logger.info("INSERT PRODUCT %s IN TAX LINE %s."
                                      % (invoice_line.product_id.name,
                                         tax_move_line.id))
+            except Exception as e:
+                # Loguea el error sin detener la ejecución del bucle.
+                _logger.error("Error processing tax move line %s: %s" % (
+                    tax_move_line.id, str(e)))
