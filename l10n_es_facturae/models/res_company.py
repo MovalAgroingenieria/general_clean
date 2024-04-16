@@ -59,6 +59,8 @@ class ResCompany(models.Model):
         self.facturae_cert_state = "draft"
 
     def facturae_cert_get_certificates(self, company=False):
+        public_crt = False
+        private_key = False
         if not company:
             company = self.env.user.company_id
         today = fields.Date.today()
