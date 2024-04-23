@@ -2,6 +2,7 @@
 # 2023 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from lxml import etree
 from odoo import api, models
 
 
@@ -89,3 +90,20 @@ class AccountInvoice(models.Model):
                     self._get_sii_tax_dict(tax_line, sign),
                 )
         return taxes_dict, tax_amount
+
+    @api.model
+    def fields_view_get(self, view_id=None, view_type='form', toolbar=False,
+                        submenu=False):
+        res = super(AccountInvoice, self).fields_view_get(
+            view_id=view_id, view_type=view_type, toolbar=toolbar,
+            submenu=submenu)
+        is_portal_user = self.env.user.has_group('base.group_portal')
+        if not is_portal_user:
+            return res
+        if view_type == 'form':
+            doc = etree.XML(res['arch'])
+            for node in doc.xpath("//field[@name='invoice_jobs_ids']"):
+                parent = node.getparent()
+                parent.remove(node)
+            res['arch'] = etree.tostring(doc)
+        return res
