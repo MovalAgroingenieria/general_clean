@@ -79,7 +79,8 @@ class IrAttachment(models.Model):
                         del vals["res.model"]
             return super(IrAttachment, self).create(vals_list)
         for vals in vals_list:
-            vals["res_model"] = "res.partner"
+            #Annotated to avoid problems when attaching files to disfrimur emails
+            # vals["res_model"] = "res.partner"
             if "is_prl" in vals and vals.get("is_prl", False):
                 if ("document_type" in vals and "worker_id" in vals
                     and vals.get("document_type") == "worker" and
