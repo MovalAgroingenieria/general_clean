@@ -75,6 +75,12 @@ class BankinplayInterface(models.AbstractModel):
             'Authorization': 'Bearer %s' % access_data['access_token'],
         }
 
+    def _get_request_headers_remote(self):
+        '''Get headers with authorization for remote endpoint requests.'''
+        return {
+            'Accept': 'application/json',
+        }
+
     def _set_access_account(self, access_data, account_number):
         '''Set bankinplay account for bank account in access_data.'''
         url = BANKINPLAY_ENDPOINT + '/api/v2/entidad/cuentaBancaria'
@@ -114,6 +120,29 @@ class BankinplayInterface(models.AbstractModel):
             'bankinplay_date_until': date_until,
         }
 
+    def _set_close_movements_callback_remote_endpoint(
+            self, date_since, date_until, endpoint_url, bankinplay_account):
+        '''Set the info that will be posted and then a callback will fill,
+        '''
+        url = endpoint_url
+        return_url = self.env['ir.config_parameter'].sudo().get_param(
+            'web.base.url')
+        params = {
+            'date_since': date_since.strftime('%d/%m/%Y'),
+            'date_until': date_until.strftime('%d/%m/%Y'),
+            'bankinplay_account': [bankinplay_account],
+            'return_url': return_url,
+        }
+        data = self._post_request_remote(url, params)
+        signature = data.get('signature', '')
+        response_id = data.get('response_id', '')
+        return {
+            'bankinplay_signature': signature,
+            'bankinplay_responseid': response_id,
+            'bankinplay_date_since': date_since,
+            'bankinplay_date_until': date_until,
+        }
+
     def _post_request(self, access_data, url, params):
         '''Interact with Bankinplay to get data.'''
         headers = self._get_request_headers(access_data)
@@ -130,6 +159,18 @@ class BankinplayInterface(models.AbstractModel):
                 response_parsed.get('data', False),
                 access_data.get('username', False),
                 access_data.get('password', False),)
+        return response_parsed
+
+    def _post_request_remote(self, url, params):
+        '''Interact with Remote Endpoint to get data.'''
+        headers = self._get_request_headers_remote()
+        _logger.debug(
+            _('POST request to %s with headers %s and params %s'), url, params,
+            headers
+        )
+        response = requests.post(url, json=params, headers=headers)
+        response_parsed = self._get_response_data(response)
+        response_parsed = response_parsed.get('result', {})
         return response_parsed
 
     def _get_request(self, access_data, url, params):

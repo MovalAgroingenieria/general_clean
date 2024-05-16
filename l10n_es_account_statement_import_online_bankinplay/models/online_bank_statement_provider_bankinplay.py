@@ -38,7 +38,7 @@ class OnlineBankStatementProviderBankinplay(models.Model):
     bankinplay_end_point_type = fields.Selection(
         [
             ('same_endpoint', 'Same Endpoint'),
-            ('different_endpoint', 'Different Endpoint'),
+            ('remote_endpoint', 'Remote Endpoint'),
         ],
         string='Bankinplay End Point',
         required=True,
@@ -47,7 +47,6 @@ class OnlineBankStatementProviderBankinplay(models.Model):
 
     bankinplay_end_point = fields.Char(
         string='Bankinplay endpoint',
-        default='execution_date',
         help='Where callback webhook is gonna be setted, just in case don\'t. '
         'want to use the default controller functions',
     )
@@ -98,8 +97,13 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         '''Translate information from Bankinplay to Odoo bank statement
            lines.'''
         self.ensure_one()
-        all_transactions = self._bankinplay_get_transactions_from_data(
-            data)
+        if (self.bankinplay_end_point_type == 'remote_endpoint'):
+            # Already decoded
+            all_transactions = self.\
+                _bankinplay_get_transactions_from_data_remote(data)
+        else:
+            all_transactions = self._bankinplay_get_transactions_from_data(
+                data)
         self._create_or_update_statement(
             (all_transactions, {}), bank_statement.bankinplay_date_since,
             bank_statement.bankinplay_date_until)
@@ -113,10 +117,17 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         '''
         response_data = {}
         interface_model = self.env['bankinplay.interface']
-        access_data = interface_model._login(self.username, self.password)
-        interface_model._set_access_account(access_data, self.account_number)
-        response_data = interface_model._set_close_movements_callback(
-            access_data, date_since, date_until)
+        if (self.bankinplay_end_point_type == 'same_endpoint'):
+            access_data = interface_model._login(self.username, self.password)
+            interface_model._set_access_account(
+                access_data, self.account_number)
+            response_data = interface_model._set_close_movements_callback(
+                access_data, date_since, date_until)
+        else:
+            response_data = interface_model.\
+                _set_close_movements_callback_remote_endpoint(
+                    date_since, date_until, self.bankinplay_end_point,
+                    self.account_number)
         return response_data
 
     def _bankinplay_get_transactions_from_data(self, data):
@@ -126,6 +137,18 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         transactions_decrypted = interface_model._decrypt_bankinplay_data(
             data, access_data['username'], access_data['password']).get(
             'results', [])
+        sequence = 0
+        all_transactions = []
+        for transaction_decrypted in transactions_decrypted:
+            transaction_line = self._bankinplay_get_transaction_vals(
+                transaction_decrypted, sequence)
+            all_transactions.append(transaction_line)
+            sequence += 1
+        return all_transactions
+
+    def _bankinplay_get_transactions_from_data_remote(self, data):
+        '''Translate information from Bankinplay to statement line vals.'''
+        transactions_decrypted = data.get('results', [])
         sequence = 0
         all_transactions = []
         for transaction_decrypted in transactions_decrypted:

@@ -46,7 +46,7 @@ class ResConfigSettings(models.TransientModel):
             bankinplay_api_key, bankinplay_api_secret)
         result = bankinplay_interface._register_bankinplay_callbacks(
             access_data, bankinplay_url)
-        if (result and 'id' in result):
+        if (result and 'data' in result and 'id' in result['data']):
             return {
                 'type': 'ir.actions.client',
                 'tag': 'display_notification',
