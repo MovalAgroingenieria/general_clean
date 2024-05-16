@@ -5,6 +5,7 @@ import json
 import logging
 import re
 from datetime import datetime
+from dateutil.relativedelta import MO, relativedelta
 
 import pytz
 
@@ -22,9 +23,26 @@ class OnlineBankStatementProviderBankinplay(models.Model):
             ('value_date', 'Value Date'),
         ],
         string='Bankinplay Date Field',
+        required=True,
         default='operation_date',
         help='Select the Bankinplay date field that will be used for '
         'the Odoo bank statement line date.',
+    )
+
+    bankinplay_delay_days = fields.Integer(
+        string='Delay Days',
+        required=True,
+        default=0,
+    )
+
+    bankinplay_end_point_type = fields.Selection(
+        [
+            ('same_endpoint', 'Same Endpoint'),
+            ('different_endpoint', 'Different Endpoint'),
+        ],
+        string='Bankinplay End Point',
+        required=True,
+        default='same_endpoint',
     )
 
     bankinplay_end_point = fields.Char(
@@ -40,6 +58,17 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         return super()._get_available_services() + [
             ('bankinplay', 'BankInPlay.com'),
         ]
+
+    def _get_statement_date_since(self, date):
+        self.ensure_one()
+        date = date.replace(hour=0, minute=0, second=0, microsecond=0)
+        date = date - relativedelta(days=self.bankinplay_delay_days)
+        if self.statement_creation_mode == "daily":
+            return date
+        elif self.statement_creation_mode == "weekly":
+            return date + relativedelta(weekday=MO(-1))
+        elif self.statement_creation_mode == "monthly":
+            return date.replace(day=1)
 
     def _obtain_statement_data(self, date_since, date_until):
         '''Check wether called for bankinplay servide, otherwise pass the
