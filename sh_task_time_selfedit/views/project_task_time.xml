@@ -1,0 +1,17 @@
+<?xml version ="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sh_project_task_analytic_line_inherit_form_self_view" model="ir.ui.view">
+        <field name="name">project.task.analytic.line.form</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="arch" type="xml">
+            <xpath expr="//page//field[@name='timesheet_ids']//tree//field[@name='unit_amount']" position="after">
+                <field name="tasktime_modificated" invisible="1"/>
+                <field name="tasktime_edited"/>
+                <field name="tasktime_observations"
+                    placeholder="Required if task time is modified by user (Min. 6 chars)"
+                    attrs="{'required': [('tasktime_modificated', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
