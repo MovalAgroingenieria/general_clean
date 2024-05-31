@@ -529,6 +529,10 @@ class ResNotificationset(models.Model):
         else:
             self.generate_pdfs()
 
+    # Hook for change info of notification after
+    def _action_notif_generation(self, notification):
+        pass
+
     @api.model
     def generate_pdfs_background(self, notificationset_id):
         with api.Environment.manage():
@@ -578,6 +582,7 @@ class ResNotificationset(models.Model):
                                             'document': encodestring(pdf),
                                             'document_name': n.name + '.pdf'
                                             })
+                                        self._action_notif_generation(n)
                                 except Exception:
                                     suffix_message = _('FAIL!')
                                 _logger.info(preffix_message + suffix_message)
@@ -622,10 +627,12 @@ class ResNotificationset(models.Model):
                             ' ' + n.name + '... '
                         suffix_message = _('generated')
                         try:
+                            self._action_notif_generation(n)
                             pdf = self.env['report'].with_context(
                                 {'lang': n.partner_id.lang}).get_pdf(
                                     [n.id], report_name)
                             if pdf:
+
                                 self.env.cr.execute(
                                     'UPDATE res_notification ' +
                                     'SET state = \'02_generated\' '
@@ -636,6 +643,7 @@ class ResNotificationset(models.Model):
                                     'document': encodestring(pdf),
                                     'document_name': n.name + '.pdf'
                                     })
+
                         except Exception:
                             suffix_message = _('FAIL')
                         _logger.info(preffix_message + suffix_message)
