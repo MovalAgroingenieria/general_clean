@@ -104,3 +104,13 @@ class LawParameter(models.Model):
                 notes_text = model_converter.text_from_html(
                     record.notes, 50, 150)
             record.notes_text = notes_text
+
+    @api.onchange('with_maximum_value_admissible')
+    def _onchange_with_maximum_value_admissible(self):
+        if not self.with_maximum_value_admissible:
+            self.maximum_value_admissible = 0.0
+
+    @api.onchange('with_maximum_deviation_admissible')
+    def _onchange_with_maximum_deviation_admissible(self):
+        if not self.with_maximum_deviation_admissible:
+            self.maximum_deviation_admissible = 0.0
