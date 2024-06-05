@@ -6,5 +6,13 @@
             <link rel="stylesheet"
              href="/law_water_quality/static/src/css/law_water_quality_views.css"/>
         </xpath>
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/law_water_quality/static/lib/water_quality_iconset/water_quality_iconset.css"/>
+        </xpath>
+    </template>
+    <template id="minimal_layout_law_water_quality_integration" inherit_id="report.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" type="text/css" href="/law_water_quality/static/lib/water_quality_iconset/water_quality_iconset.css"/>
+        </xpath>
     </template>
 </odoo>

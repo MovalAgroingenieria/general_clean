@@ -83,7 +83,6 @@
                         string="Water Type"
                         context="{'group_by': 'watertype_id'}"/>
             </search>
-
         </field>
     </record>
 
