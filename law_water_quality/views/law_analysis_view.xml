@@ -114,10 +114,4 @@
                         'view_id': ref('law_analysis_view_form')})]"/>
     </record>
 
-    <menuitem id="law_analysis_menu"
-              name="Analysis"
-              parent="water_quality_menu"
-              sequence="1"
-              action="law_analysis_action"/>
-
 </odoo>
