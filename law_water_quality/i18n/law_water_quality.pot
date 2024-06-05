@@ -450,7 +450,7 @@ msgstr ""
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The client must be unique!"
+msgid "The name must be unique!"
 msgstr ""
 
 #. module: law_water_quality

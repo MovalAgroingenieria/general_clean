@@ -471,8 +471,8 @@ msgstr "L’hora d’inici d’anàlisi ha de ser després de l’anàlisi de fi
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The client must be unique!"
-msgstr "El client ha de ser únic"
+msgid "The name must be unique!"
+msgstr "El nom ha de ser únic"
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0

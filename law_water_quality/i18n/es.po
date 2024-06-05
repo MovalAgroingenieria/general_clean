@@ -471,8 +471,8 @@ msgstr "El inicio del análisis debe ser anterior al fin del análisis"
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The client must be unique!"
-msgstr "El cliente debe ser único!"
+msgid "The name must be unique!"
+msgstr "El nombre debe ser único!"
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0

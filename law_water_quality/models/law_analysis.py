@@ -96,7 +96,7 @@ class LawAnalysis(models.Model):
 
     _sql_constraints = [
         ('name_unique', 'unique(name)',
-         'The client must be unique!'),
+         'The name must be unique!'),
         ('coordinate_x_equal_greater_than_0',
          'CHECK(coordinate_x >= 0)',
          'The coordinate X must be equal or greater than 0!'),
