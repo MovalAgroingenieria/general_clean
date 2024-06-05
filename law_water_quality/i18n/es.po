@@ -176,7 +176,7 @@ msgstr "Fecha Inicio Análisis"
 #. module: law_water_quality
 #: model:ir.ui.menu,name:law_water_quality.lab_analytics_menu
 msgid "Analytics"
-msgstr "Analíticas"
+msgstr "Análisis"
 
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_client_id
