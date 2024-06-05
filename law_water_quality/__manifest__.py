@@ -22,7 +22,6 @@
         'views/law_analysis_parameter_view.xml',
         'views/law_parameter_uom_view.xml',
         'views/law_parameter_view.xml',
-        'views/law_water_quality_menus.xml',
         'views/law_watertype_view.xml',
         'views/law_water_quality_menus.xml',
         'reports/law_analysis_report.xml',
