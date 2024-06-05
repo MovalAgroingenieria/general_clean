@@ -15,6 +15,7 @@
     <menuitem id="lab_analytics_menu"
               name="Analytics"
               parent="water_quality_menu"
+              action="law_analysis_action"
               sequence="1"/>
 
     <menuitem id="configuration_menu"
