@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="law_watertype_view_form" model="ir.ui.view">
+        <field name="name">Watertype (form view)</field>
+        <field name="model">law.watertype</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                    </div>
+                    <group name="master_data">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="parameter_uom_page" string="Analysis Parameters">
+                                <field name="analysis_ids">
+                                    <tree class="o_law_parameter_uom_view_tree_notebook"
+                                          editable="bottom">
+                                          <field name="name"/>
+                                          <field name="laboratory_id"/>
+                                          <field name="location"/>
+                                          <field name="collection_time"/>
+                                          <field name="receival_time"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="law_watertype_view_search" model="ir.ui.view">
+        <field name="name">Watertype (search view)</field>
+        <field name="model">law.watertype</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id = "law_watertype_view_tree" model="ir.ui.view">
+        <field name="name">Watertype (tree view)</field>
+        <field name="model">law.watertype</field>
+        <field name="arch" type="xml">
+            <tree class="law_water_quality_watertype_tree">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_watertype_action" model="ir.actions.act_window">
+        <field name="name">Water Types</field>
+        <field name="res_model">law.watertype</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_watertype_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_watertype_view_form')})]"/>
+    </record>
+
+</odoo>

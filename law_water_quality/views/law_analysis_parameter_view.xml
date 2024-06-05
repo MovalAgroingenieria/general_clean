@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="law_analysis_parameter_view_search" model="ir.ui.view">
+        <field name="name">LAW Analysis Parameter (search view)</field>
+        <field name="model">law.analysis.parameter</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="analysis_id"/>
+                <field name="parameter_id"/>
+                <field name="analysis_procedure"/>
+                <filter name="parameter_above_mav"
+                        string="Result above VMA"
+                        domain="[('parameter_above_mav', '=', True)]"/>
+                <filter name="analysis_id"
+                        string="Analysis"
+                        context="{'group_by': 'analysis_id'}"/>
+                <filter name="parameter_id"
+                        string="Parameter"
+                        context="{'group_by': 'parameter_id'}"/>
+                <filter name="parameter_uom_id"
+                        string="Measurement Unit"
+                        context="{'group_by': 'parameter_uom_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="law_analysis_parameter_view_tree" model="ir.ui.view">
+        <field name="name">LAW Analysis Parameter (tree view)</field>
+        <field name="model">law.analysis.parameter</field>
+        <field name="arch" type="xml">
+            <tree class="law_water_quality_analysis_parameter_tree"
+                  colors="red:parameter_value_above_mav==True"
+                  create="false" edit="false" delete="false">
+                <field name="analysis_id"/>
+                <field name="parameter_id"/>
+                <field name="parameter_uom_id"/>
+                <field name="result_value"/>
+                <field name="parameter_maximum_value_admissible" string="Maximum Value Admissible"/>
+                <field name="analysis_procedure"/>
+                <field name="notes"/>
+                <field name="parameter_value_above_mav" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_analysis_parameter_action" model="ir.actions.act_window">
+        <field name="name">Analysis Parameters</field>
+        <field name="res_model">law.analysis.parameter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_analysis_parameter_view_tree')})
+                ]"/>
+    </record>
+
+</odoo>

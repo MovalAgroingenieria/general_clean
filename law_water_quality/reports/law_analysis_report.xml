@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Paper format for report -->
+    <record id="paperformat_law_analysis_reports" model="report.paperformat">
+        <field name="name">European A4 Reports</field>
+        <field name="default" eval="True" />
+        <field name="format">A4</field>
+        <field name="page_height">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">38</field>
+        <field name="margin_bottom">24</field>
+        <field name="margin_left">7</field>
+        <field name="margin_right">7</field>
+        <field name="header_line" eval="False" />
+        <field name="header_spacing">36</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="law_analysis_report"
+        string="LAW Analysis Report"
+        model="law.analysis"
+        report_type="qweb-pdf"
+        file="law_water_quality.law_analysis_report_document"
+        name="law_water_quality.law_analysis_report_document"
+        paperformat="law_water_quality.paperformat_law_analysis_reports" />
+
+    <template id="law_analysis_report_document">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="report.external_layout">
+                <div class="page">
+
+                    <link rel="stylesheet"
+                          type="text/css"
+                          href="/law_water_quality/static/src/css/law_water_quality_reports.css"/>
+
+                    <!-- Title -->
+
+                    <div name="title" class="text-center">
+                        <h4 style="margin-top:0px; padding-top:0px; margin-bottom:15px;">
+                            <strong name="law_analysis_report">
+                                <span>Analysis </span>
+                                <t t-if="o.name">
+                                    <span t-field="o.name" />
+                                </t>
+                            </strong>
+                        </h4>
+                    </div>
+
+                    <div class="row" style="margin-top: 4px;">
+                        <div class="col-xs-12" style="display: table;">
+                            <div style="display: table-cell;">
+                                <div class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                                    <t t-if="report_style == 'light'">
+                                        <div class="col-xs-12 theme-report-color"
+                                            style="border-bottom: 1px solid; padding: 1px 1px;">
+                                            <div style="float: left; width: 32px; margin-left: 5px">
+                                                <span class="fa fa-file-text" />
+                                            </div>
+                                            <div style="float: left; display: inline;">
+                                                <strong>Request</strong>
+                                            </div>
+                                        </div>
+                                    </t>
+                                    <t t-else="">
+                                        <div class="col-xs-12 bg-theme-report-color"
+                                            style="color: white; padding: 1px 1px;">
+                                            <div style="float: left; width: 32px; margin-left: 5px;">
+                                                <span class="fa fa-file-text" />
+                                            </div>
+                                            <div style="float: left; display: inline;">
+                                                <strong>Request</strong>
+                                            </div>
+                                        </div>
+                                    </t>
+                                </div>
+                                <table name="initial_data" class="table table-condensed"
+                                    style="width:100%;">
+                                    <tbody>
+                                        <tr name="tr_client">
+                                            <td>
+                                                <span class="fa fa-user" />
+                                                <strong>
+                                                    <span> Client:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.client_id.name" />
+                                            </td>
+                                        </tr>
+                                        <tr name="tr_location">
+                                            <td> &amp;nbsp;<span class="fa fa-map-marker" />
+                                                <strong>
+                                                    <span>Location:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <t t-if="o.location">
+                                                    <span t-field="o.location" />
+                                                    <t
+                                                        t-if="o.coordinate_x != 0.0 or o.coordinate_y != 0.0">
+                                                        &amp;nbsp;( <span t-field="o.coordinate_x" />
+                                                        ;&amp;nbsp; <span t-field="o.coordinate_y" />
+                                                        )&amp;nbsp;-&amp;nbsp; <span
+                                                            t-field="o.coordinate_srs" />
+                                                    </t>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                        <tr name="tr_laboratory">
+                                            <td>
+                                                <span class="fa fa-eyedropper" />
+                                                <strong>
+                                                    <span> Laboratory:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.laboratory_id.name" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Report Data-->
+
+                    <div name="report_data">
+                        <div class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                            <t t-if="report_style == 'light'">
+                                <div class="col-xs-12 theme-report-color"
+                                    style="border-bottom: 1px solid; padding: 1px 1px;">
+                                    <div style="float: left; width: 32px; margin-left: 5px">
+                                        <span class="fa fa-folder-open" />
+                                    </div>
+                                    <div style="float: left; display: inline;">
+                                        <strong>Data</strong>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="col-xs-12 bg-theme-report-color"
+                                    style="color: white; padding: 1px 1px;">
+                                    <div style="float: left; width: 32px; margin-left: 5px;">
+                                        <span class="fa fa-folder-open" />
+                                    </div>
+                                    <div style="float: left; display: inline;">
+                                        <strong>Data</strong>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <div class="row" style="margin-top: 4px;">
+                            <div class="col-xs-6" style="display: table;">
+                                <div style="display: table-cell;">
+                                    <table name="data_table_left" class="table table-condensed">
+                                        <tr name="water_type_id">
+                                            <td>
+                                                <strong>
+                                                    <span> Water Type:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.watertype_id.name" />
+                                            </td>
+                                        </tr>
+                                        <tr name="sample_taker">
+                                            <td>
+                                                <strong>
+                                                    <span> Sample Taker:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.sample_taker" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-xs-6" style="display: table;">
+                                <div style="display: table-cell;">
+                                    <table name="data_table_right" class="table table-condensed">
+                                        <tr name="collection_time">
+                                            <td>
+                                                <strong>
+                                                    <span> Collection Time:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.collection_time" />
+                                            </td>
+                                        </tr>
+                                        <tr name="receival_time">
+                                            <td>
+                                                <strong>
+                                                    <span> Receival Time:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.receival_time" />
+                                            </td>
+                                        </tr>
+                                        <tr name="analysis_start_time">
+                                            <td>
+                                                <strong>
+                                                    <span> Analysis Start Time:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.analysis_start_time" />
+                                            </td>
+                                        </tr>
+                                        <tr name="analysis_end_time">
+                                            <td>
+                                                <strong>
+                                                    <span> Analysis End Time:</span>
+                                                </strong>
+                                            </td>
+                                            <td class="text-right">
+                                                <span t-field="o.analysis_end_time" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Parameters -->
+
+                    <div name="analysis_parameters">
+                        <div name="ap_header" class="row h4 mt28 mb4" style="padding-bottom: 4px;">
+                            <t t-if="report_style == 'light'">
+                                <div class="col-xs-12 theme-report-color"
+                                    style="border-bottom: 1px solid; padding: 1px 1px;">
+                                    <div style="float: left; width: 32px; margin-left: 5px">
+                                        <span class="fa fa-wrench" />
+                                    </div>
+                                    <div style="float: left; display: inline;">
+                                        <strong>Analysis Parameters</strong>
+                                    </div>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <div class="col-xs-12 bg-theme-report-color"
+                                    style="color: white; padding: 1px 1px;">
+                                    <div style="float: left; width: 32px; margin-left: 5px;">
+                                        <span class="fa fa-wrench" />
+                                    </div>
+                                    <div style="float: left; display: inline;">
+                                        <strong>Analysis Parameters</strong>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <table name="analysis_parameter_table" class="table table-condensed">
+                            <thead name="analysis_parameter_header">
+                                <tr name="ap_header">
+                                    <th name="th_parameter">Parameter</th>
+                                    <th name="th_VMA">VMA</th>
+                                    <th name="result_value">Result Value</th>
+                                    <th name="analysis_procedure">Analysis Procedure</th>
+                                    <th name="notes">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody name="analysis_parameter_body">
+                                <t t-foreach="o.analysis_parameter_ids" t-as="ap">
+                                    <tr name="ap_rows">
+                                        <td name="td_name">
+                                            <span t-field="ap.parameter_id.name" />
+                                        </td>
+                                        <td name="td_vma">
+                                            <span t-field="ap.parameter_maximum_value_admissible"/> <span t-field="ap.parameter_uom_id.short_name"/>
+                                        </td>
+                                        <td name="td_result_pos" t-if="ap.parameter_value_above_mav">
+                                            <span class="text_red" t-field="ap.result_value"/> <span class="text_red" t-field="ap.parameter_uom_id.short_name"/>
+                                        </td>
+                                        <td name="td_result_neg" t-if="not ap.parameter_value_above_mav">
+                                            <span t-field="ap.result_value"/> <span t-field="ap.parameter_uom_id.short_name"/>
+                                        </td>
+                                        <td name="td_procedure">
+                                            <span t-field="ap.analysis_procedure"/>
+                                        </td>
+                                        <td name="td_notes" style="width: 20%;">
+                                            <span t-field="ap.notes"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

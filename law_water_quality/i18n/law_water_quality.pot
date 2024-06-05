@@ -1,0 +1,514 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* law_water_quality
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-05 11:28+0000\n"
+"PO-Revision-Date: 2024-06-05 11:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "&amp;nbsp;("
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "&amp;nbsp;<span class=\"fa fa-map-marker\"/>\n"
+"                                                <strong>\n"
+"                                                    <span>Location:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid ")&amp;nbsp;-&amp;nbsp;"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid ";&amp;nbsp;"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<span class=\"fa fa-eyedropper\"/>\n"
+"                                                <strong>\n"
+"                                                    <span> Laboratory:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<span class=\"fa fa-user\"/>\n"
+"                                                <strong>\n"
+"                                                    <span> Client:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<span>Analysis </span>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Analysis End Time:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Analysis Start Time:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Collection Time:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Receival Time:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Sample Taker:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>\n"
+"                                                    <span> Water Type:</span>\n"
+"                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>Analysis Parameters</strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>Data</strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "<strong>Request</strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_analysis_action
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_analysis_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_analysis_ids
+#: model:ir.ui.menu,name:law_water_quality.law_analysis_menu
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
+msgid "Analysis"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_end_time
+msgid "Analysis End Time"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_analysis_parameter_action
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_parameter_ids
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_analysis_parameter_ids
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_watertype_view_form
+msgid "Analysis Parameters"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_analysis_procedure
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_analysis_procedure
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "Analysis Procedure"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_start_time
+msgid "Analysis Start Time"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.lab_analytics_menu
+msgid "Analytics"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_client_id
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
+#: selection:law.analysis,sample_taker:0
+msgid "Client"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_collection_time
+msgid "Collection Time"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_coordinate_srs
+msgid "Coordinate System"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_coordinate_x
+msgid "Coordinate X"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_coordinate_y
+msgid "Coordinate Y"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_description
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_description
+msgid "Description"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_id
+msgid "ID"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.report.xml,name:law_water_quality.law_analysis_report
+msgid "LAW Analysis Report"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_laboratory_id
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
+#: selection:law.analysis,sample_taker:0
+msgid "Laboratory"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.module.category,name:law_water_quality.module_category_laboratory_analysis_waters
+msgid "Laboratory Analysis Waters"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_analysis
+msgid "Law Analysis"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_analysis_parameter
+msgid "Law Analysis Parameter"
+msgstr ""
+
+#. module: law_water_quality
+#: model:res.groups,name:law_water_quality.group_law_manager
+msgid "Law Manager"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_parameter
+msgid "Law Parameter"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_parameter_uom
+msgid "Law Parameter Unit of Measure"
+msgstr ""
+
+#. module: law_water_quality
+#: model:res.groups,name:law_water_quality.group_law_user
+msgid "Law User"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_watertype
+msgid "Law Watertype"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_location
+msgid "Location"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_maximum_deviation_admissible
+msgid "Maximum Deviation Admisible (DMA)"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_tree
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
+msgid "Maximum Value Admissible"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_maximum_value_admissible
+msgid "Maximum Value Admissible (VMA)"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_search
+msgid "Measurement Unit"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_parameter_uom_action
+#: model:ir.ui.menu,name:law_water_quality.measurement_units_menu
+msgid "Measurement Units"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_name
+msgid "Name"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_notes
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_uom_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_watertype_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_notes_text
+msgid "Notes (as text)"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_parameter_action
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_id
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "Parameter"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_maximum_value_admissible
+msgid "Parameter Maximum Value Admissible"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_parameter_ids
+#: model:ir.ui.menu,name:law_water_quality.configuration_menu
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_uom_view_form
+msgid "Parameters"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.quality_parameters_lines_menu
+msgid "Quality Parameter Lines"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.quality_parameters_menu
+msgid "Quality Parameters"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_receival_time
+msgid "Receival Time"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_result_value
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "Result Value"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
+msgid "Result above VMA"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
+msgid "SRS:"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_sample_taker
+msgid "Sample Taker"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
+msgid "Sample Taker: Client"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
+msgid "Sample Taker: Laboratory"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_short_name
+msgid "Short Name"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.technical_menu
+msgid "Technical"
+msgstr ""
+
+#. module: law_water_quality
+#: sql_constraint:law.analysis:0
+msgid "The analysis start time must be after the analysis end time!"
+msgstr ""
+
+#. module: law_water_quality
+#: sql_constraint:law.analysis:0
+msgid "The client must be unique!"
+msgstr ""
+
+#. module: law_water_quality
+#: sql_constraint:law.analysis:0
+msgid "The collection time must be after the receival time!"
+msgstr ""
+
+#. module: law_water_quality
+#: sql_constraint:law.analysis:0
+msgid "The coordinate X must be equal or greater than 0!"
+msgstr ""
+
+#. module: law_water_quality
+#: sql_constraint:law.analysis:0
+msgid "The coordinate Y must be equal or greater than 0!"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_uom_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_id_12724
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
+msgid "VMA"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_value_above_mav
+msgid "Value Above MAV"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.main_menu
+#: model:ir.ui.menu,name:law_water_quality.water_quality_menu
+msgid "Water Quality"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_watertype_id
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
+msgid "Water Type"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_watertype_action
+#: model:ir.ui.menu,name:law_water_quality.water_types_menu
+msgid "Water Types"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_with_maximum_deviation_admissible
+msgid "With DMA"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_with_maximum_value_admissible
+msgid "With VMA"
+msgstr ""
+

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="law_parameter_uom_view_form" model="ir.ui.view">
+        <field name="name">LAW Parameter UOM (form view)</field>
+        <field name="model">law.parameter.uom</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                    </div>
+                    <group name="master_data">
+                        <field name="name"/>
+                        <field name="short_name"/>
+                        <field name="description"/>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="parameter_uom_page" string="Parameters">
+                                <field name="parameter_ids">
+                                    <tree class="law_water_quality_parameter_uom_tree"
+                                          editable="bottom">
+                                        <field name="name"/>
+                                        <field name="analysis_procedure"/>
+                                        <field name="maximum_value_admissible"/>
+                                        <field name="maximum_deviation_admissible"/>
+                                        <field name="notes_text" string="Notes"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="law_parameter_uom_view_search" model="ir.ui.view">
+        <field name="name">LAW Parameter UOM (search view)</field>
+        <field name="model">law.parameter.uom</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="short_name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <record id = "law_parameter_uom_view_tree" model="ir.ui.view">
+        <field name="name">LAW Parameter UOM (tree view)</field>
+        <field name="model">law.parameter.uom</field>
+        <field name="arch" type="xml">
+            <tree class="law_water_quality_uom_tree">
+                <field name="name"/>
+                <field name="short_name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_parameter_uom_action" model="ir.actions.act_window">
+        <field name="name">Measurement Units</field>
+        <field name="res_model">law.parameter.uom</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_parameter_uom_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_parameter_uom_view_form')})]"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="law_analysis_view_form" model="ir.ui.view">
+        <field name="name">Laboratory Analysis for Waters (form view)</field>
+        <field name="model">law.analysis</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                    </div>
+                    <group name="master_data">
+                        <group name="master_data_id">
+                            <field name="name"/>
+                            <field name="client_id"/>
+                            <field name="laboratory_id"/>
+                            <field name="watertype_id"/>
+                            <field name="sample_taker"/>
+                            <br/>
+                            <br/>
+                            <field name="collection_time"/>
+                            <field name="receival_time"/>
+                            <field name="analysis_start_time"/>
+                            <field name="analysis_end_time"/>
+                        </group>
+                        <group name="master_data_desc">
+                            <field name="location"/>
+                            <field name="coordinate_x" string="X:"/>
+                            <field name="coordinate_y" string="Y:"/>
+                            <field name="coordinate_srs" string="SRS:"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="analysis_parameter_page" string="Analysis Parameters">
+                                <field name="analysis_parameter_ids">
+                                    <tree class="law_water_quality_analysis_analysis_parameter_tree"
+                                          editable="bottom"
+                                          colors="red:parameter_value_above_mav==True">
+                                        <field name="parameter_id"/>
+                                        <field name="parameter_maximum_value_admissible" string="Maximum Value Admissible"/>
+                                        <field name="result_value"/>
+                                        <field name="parameter_uom_id"/>
+                                        <field name="analysis_procedure"/>
+                                        <field name="notes" class="column-notes"/>
+                                        <field name="parameter_value_above_mav" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="law_analysis_view_search" model="ir.ui.view">
+        <field name="name">Laboratory Analysis for Waters (search view)</field>
+        <field name="model">law.analysis</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="client_id"/>
+                <field name="laboratory_id"/>
+                <field name="location"/>
+                <field name="watertype_id"/>
+                <filter name="sample_taker"
+                        string="Sample Taker: Client"
+                        domain="[('sample_taker', '=', '00_client')]"/>
+                <filter name="sample_taker"
+                        string="Sample Taker: Laboratory"
+                        domain="[('sample_taker', '=', '01_laboratory')]"/>
+                <filter name="client_id"
+                        string="Client"
+                        context="{'group_by': 'client_id'}"/>
+                <filter name="laboratory_id"
+                        string="Laboratory"
+                        context="{'group_by': 'laboratory_id'}"/>
+                <filter name="watertype_id"
+                        string="Water Type"
+                        context="{'group_by': 'watertype_id'}"/>
+            </search>
+
+        </field>
+    </record>
+
+    <record id = "law_analysis_view_tree" model="ir.ui.view">
+        <field name="name"> Laboratory Analysis for Waters (tree view)</field>
+        <field name="model">law.analysis</field>
+        <field name="arch" type="xml">
+            <tree class="o_law_water_quality_analysis_view_tree">
+                <field name="name"/>
+                <field name="laboratory_id"/>
+                <field name="watertype_id"/>
+                <field name="location"/>
+                <field name="collection_time"/>
+                <field name="receival_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_analysis_action" model="ir.actions.act_window">
+        <field name="name">Analysis</field>
+        <field name="res_model">law.analysis</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_analysis_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_analysis_view_form')})]"/>
+    </record>
+
+    <menuitem id="law_analysis_menu"
+              name="Analysis"
+              parent="water_quality_menu"
+              sequence="1"
+              action="law_analysis_action"/>
+
+</odoo>

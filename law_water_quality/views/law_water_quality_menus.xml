@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="main_menu"
+              name="Water Quality"
+              sequence="5"
+              web_icon="law_water_quality,static/description/icon.png"
+              groups="law_water_quality.group_law_manager"/>
+
+    <menuitem id="water_quality_menu"
+              name="Water Quality"
+              parent="main_menu"
+              sequence="1"/>
+
+    <menuitem id="lab_analytics_menu"
+              name="Analytics"
+              parent="water_quality_menu"
+              sequence="1"/>
+
+    <menuitem id="configuration_menu"
+              name="Parameters"
+              parent="main_menu"
+              sequence="2"/>
+
+    <menuitem id="quality_parameters_menu"
+              name="Quality Parameters"
+              parent="configuration_menu"
+              action="law_water_quality.law_parameter_action"
+              sequence="1"/>
+
+    <menuitem id="measurement_units_menu"
+              name="Measurement Units"
+              parent="configuration_menu"
+              action="law_water_quality.law_parameter_uom_action"
+              sequence="2"/>
+
+    <menuitem id="water_types_menu"
+              name="Water Types"
+              parent="configuration_menu"
+              action="law_water_quality.law_watertype_action"
+              sequence="3"/>
+
+    <menuitem id="technical_menu"
+              name="Technical"
+              parent="main_menu"
+              sequence="3"/>
+
+    <menuitem id="quality_parameters_lines_menu"
+              name="Quality Parameter Lines"
+              parent="technical_menu"
+              action="law_water_quality.law_analysis_parameter_action"
+              sequence="1"/>
+
+</odoo>

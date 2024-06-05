@@ -1,0 +1,120 @@
+/* law_water_quality_parameter_tree_view */
+
+.law_water_quality_parameter_tree [data-id="name"]{
+    width: 35%;
+}
+
+.law_water_quality_parameter_tree [data-id="uom_id"]{
+    width: 25%;
+}
+
+.law_water_quality_parameter_tree [data-id="maximum_value_admissible"]{
+    width: 20%;
+}
+
+.law_water_quality_parameter_tree [data-id="maximum_deviation_admissible"]{
+    width: 20%;
+}
+
+/* law_water_quality_uom_tree */
+
+.law_water_quality_uom_tree [data-id="name"]{
+    width: 30%;
+}
+
+.law_water_quality_uom_tree [data-id="short_name"]{
+    width: 10%;
+}
+
+.law_water_quality_uom_tree [data-id="description"]{
+    width: 60%;
+}
+
+/* law_water_quality_analysis_analysis_parameter_tree */
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="parameter_id"]{
+    width: 20%;
+}
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="result_value"]{
+    width: 10%;
+}
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="parameter_maximum_value_admissible"]{
+    width: 10%;
+}
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="parameer_uom_id"]{
+    width: 15%;
+}
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="analysis_procedure"]{
+    width: 20%;
+}
+
+.law_water_quality_analysis_analysis_parameter_tree [data-id="notes"]{
+    width: 25%;
+}
+
+/* law_water_quality_parameter_uom_tree */
+
+.law_water_quality_parameter_uom_tree [data-id="name"]{
+    width: 20%;
+}
+
+.law_water_quality_parameter_uom_tree [data-id="analysis_procedure"]{
+    width: 20%;
+}
+
+.law_water_quality_parameter_uom_tree [data-id="maximum_value_admissible"]{
+    width: 10%;
+}
+
+.law_water_quality_parameter_uom_tree [data-id="maximum_deviation_admissible"]{
+    width: 10%;
+}
+
+.law_water_quality_parameter_uom_tree [data-id="notes_text"]{
+    width: 40%;
+}
+
+/* law_water_quality_watertype_tree */
+
+.law_water_quality_watertype_tree [data-id="name"]{
+    width: 25%;
+}
+
+.law_water_quality_watertype_tree [data-id="description"]{
+    width: 75%;
+}
+
+/* law_water_quality_analysis_parameter_tree */
+
+.law_water_quality_analysis_parameter_tree [data-id="analysis_id"]{
+    width: 15%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="parameter_id"]{
+    width: 15%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="parameter_uom_id"]{
+    width: 15%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="result_value"]{
+    width: 10%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="parameter_maximum_value_admissible"]{
+    width: 10%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="analysis_procedure"]{
+    width: 15%;
+}
+
+.law_water_quality_analysis_parameter_tree [data-id="notes"]{
+    width: 25%;
+}
+

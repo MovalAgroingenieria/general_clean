@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="law_parameter_view_form" model="ir.ui.view">
+        <field name="name">LAW Parameter (form view)</field>
+        <field name="model">law.parameter</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                    </div>
+                    <group name="master_data">
+                        <group name="master_data_id">
+                            <field name="name"/>
+                            <field name="uom_id"/>
+                            <field name="analysis_procedure"/>
+                        </group>
+                        <group name="master_data_desc">
+                            <field name="with_maximum_value_admissible"/>
+                            <field name="maximum_value_admissible" attrs="{'invisible': [('with_maximum_value_admissible', '=', False)]}"/>
+                            <br/>
+                            <br/>
+                            <field name="with_maximum_deviation_admissible"/>
+                            <field name="maximum_deviation_admissible" attrs="{'invisible': [('with_maximum_deviation_admissible', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="analysis_parameter_page" string="Analysis Parameters">
+                                <field name="analysis_parameter_ids">
+                                    <tree name="law_analysis_analysis_parameter_tree"
+                                          class="o_law_parameter_view_tree_notebook"
+                                          editable="bottom"
+                                          colors="red:parameter_value_above_mav==True">
+                                        <field name="analysis_id"/>
+                                        <field name="result_value"/>
+                                        <field name="parameter_maximum_value_admissible" string="Maximum Value Admissible"/>
+                                        <field name="analysis_procedure"/>
+                                        <field name="notes"/>
+                                        <field name="parameter_value_above_mav" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="law_parameter_view_search" model="ir.ui.view">
+        <field name="name">LAW Parameter (search view)</field>
+        <field name="model">law.parameter</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="analysis_procedure"/>
+                <filter name="uom_id"
+                        string="Measurement Unit"
+                        context="{'group_by': 'uom_id'}"/>
+            </search>
+
+        </field>
+    </record>
+
+    <record id = "law_parameter_view_tree" model="ir.ui.view">
+        <field name="name">LAW Parameter (tree view)</field>
+        <field name="model">law.parameter</field>
+        <field name="arch" type="xml">
+            <tree class="law_water_quality_parameter_tree">
+                <field name="name"/>
+                <field name="uom_id"/>
+                <field name="maximum_value_admissible"/>
+                <field name="maximum_deviation_admissible"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_parameter_action" model="ir.actions.act_window">
+        <field name="name">Parameter</field>
+        <field name="res_model">law.parameter</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_parameter_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_parameter_view_form')})]"/>
+    </record>
+
+</odoo>
