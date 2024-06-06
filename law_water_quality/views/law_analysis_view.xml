@@ -33,8 +33,8 @@
                     <group name="slave_data">
                         <notebook name="slave_data_notebook">
                             <page name="analysis_parameter_page" string="Analysis Parameters">
-                                <field name="analysis_parameter_ids">
-                                    <tree class="law_water_quality_analysis_analysis_parameter_tree"
+                                <field name="analysis_parameter_ids" groups="law_water_quality.group_law_manager">
+                                    <tree class="o_law_water_quality_analysis_analysis_parameter_tree"
                                           editable="bottom"
                                           colors="red:parameter_value_above_mav==True">
                                         <field name="parameter_id"/>

@@ -1,13 +1,13 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_law_user,access.law.watertype.law.user,model_law_watertype,law_water_quality.group_law_user,1,0,0,0
-access_law_user,access.law.analysis.parameter.law.user,model_law_watertype,law_water_quality.group_law_user,1,0,0,0
-access_law_user,access.law.parameter.law.user,model_law_parameter,law_water_quality.group_law_user,1,0,0,0
-access_law_user,access.law.parameter.uom.law.user,model_law_parameter_uom,law_water_quality.group_law_user,1,0,0,0
-access_law_user,access.law.analysis.law.user,model_law_analysis,law_water_quality.group_law_user,1,0,0,0
+access_law_watertype_law_user,access.law.watertype.law.user,model_law_watertype,law_water_quality.group_law_user,1,0,0,0
 access_law_watertype_law_manager,access.law.watertype.law.manager,model_law_watertype,law_water_quality.group_law_manager,1,1,1,1
+access_law_analysis_parameter_law_user,access.law.analysis.parameter.law.user,model_law_analysis_parameter,law_water_quality.group_law_user,1,0,0,0
 access_law_analysis_parameter_law_manager,access.law.analysis.parameter.law.manager,model_law_analysis_parameter,law_water_quality.group_law_manager,1,1,1,1
+access_law_parameter_law_user,access.law.parameter.law.user,model_law_parameter,law_water_quality.group_law_user,1,0,0,0
 access_law_parameter_law_manager,access.law.parameter.law.manager,model_law_parameter,law_water_quality.group_law_manager,1,1,1,1
+access_law_parameter_uom_law_user,access.law.parameter.uom.law.user,model_law_parameter_uom,law_water_quality.group_law_user,1,0,0,0
 access_law_parameter_uom_law_manager,access.law.parameter.uom.law.manager,model_law_parameter_uom,law_water_quality.group_law_manager,1,1,1,1
+access_law_analysis_user,access.law.analysis.law.user,model_law_analysis,law_water_quality.group_law_user,1,0,0,0
 access_law_analysis_law_manager,access.law.analysis.law.manager,model_law_analysis,law_water_quality.group_law_manager,1,1,1,1
 
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-05 11:28+0000\n"
-"PO-Revision-Date: 2024-06-05 11:28+0000\n"
+"POT-Creation-Date: 2024-06-06 16:22+0000\n"
+"PO-Revision-Date: 2024-06-06 16:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -52,6 +52,30 @@ msgid "<span class=\"fa fa-user\"/>\n"
 "                                                <strong>\n"
 "                                                    <span> Client:</span>\n"
 "                                                </strong>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_uom_view_form
+msgid "<span class=\"o_stat_text\">\n"
+"                                            Parameters\n"
+"                                        </span>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_watertype_view_form
+msgid "<span class=\"o_stat_text\">\n"
+"                                        Analysis\n"
+"                                    </span>"
+msgstr ""
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
+msgid "<span class=\"o_stat_text\">\n"
+"                                        Analysis\n"
+"                                    </span>\n"
+"                                    <span class=\"o_stat_text\">\n"
+"                                        Parameters\n"
+"                                    </span>"
 msgstr ""
 
 #. module: law_water_quality
@@ -117,11 +141,13 @@ msgid "<strong>Request</strong>"
 msgstr ""
 
 #. module: law_water_quality
+#: code:addons/law_water_quality/models/law_watertype.py:48
+#: code:addons/moval_addons/general/law_water_quality/models/law_watertype.py:48
 #: model:ir.actions.act_window,name:law_water_quality.law_analysis_action
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_analysis_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_analysis_ids
-#: model:ir.ui.menu,name:law_water_quality.law_analysis_menu
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
+#, python-format
 msgid "Analysis"
 msgstr ""
 
@@ -131,12 +157,13 @@ msgid "Analysis End Time"
 msgstr ""
 
 #. module: law_water_quality
+#: code:addons/law_water_quality/models/law_parameter.py:124
+#: code:addons/moval_addons/general/law_water_quality/models/law_parameter.py:124
 #: model:ir.actions.act_window,name:law_water_quality.law_analysis_parameter_action
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_parameter_ids
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_analysis_parameter_ids
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
-#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
-#: model:ir.ui.view,arch_db:law_water_quality.law_watertype_view_form
+#, python-format
 msgid "Analysis Parameters"
 msgstr ""
 
@@ -232,6 +259,11 @@ msgid "LAW Analysis Report"
 msgstr ""
 
 #. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_watertype
+msgid "LAW Watertype"
+msgstr ""
+
+#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_laboratory_id
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_search
 #: selection:law.analysis,sample_taker:0
@@ -301,11 +333,6 @@ msgid "Law User"
 msgstr ""
 
 #. module: law_water_quality
-#: model:ir.model,name:law_water_quality.model_law_watertype
-msgid "Law Watertype"
-msgstr ""
-
-#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_location
 msgid "Location"
 msgstr ""
@@ -318,7 +345,6 @@ msgstr ""
 #. module: law_water_quality
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_tree
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
-#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
 msgid "Maximum Value Admissible"
 msgstr ""
 
@@ -381,9 +407,11 @@ msgid "Parameter Maximum Value Admissible"
 msgstr ""
 
 #. module: law_water_quality
+#: code:addons/law_water_quality/models/law_parameter_uom.py:64
+#: code:addons/moval_addons/general/law_water_quality/models/law_parameter_uom.py:64
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_parameter_ids
 #: model:ir.ui.menu,name:law_water_quality.configuration_menu
-#: model:ir.ui.view,arch_db:law_water_quality.law_parameter_uom_view_form
+#, python-format
 msgid "Parameters"
 msgstr ""
 
@@ -445,27 +473,17 @@ msgstr ""
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The analysis start time must be after the analysis end time!"
+msgid "The analysis must be unique."
 msgstr ""
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The name must be unique!"
+msgid "The analysis start time must be before the analysis end time."
 msgstr ""
 
 #. module: law_water_quality
 #: sql_constraint:law.analysis:0
-msgid "The collection time must be after the receival time!"
-msgstr ""
-
-#. module: law_water_quality
-#: sql_constraint:law.analysis:0
-msgid "The coordinate X must be equal or greater than 0!"
-msgstr ""
-
-#. module: law_water_quality
-#: sql_constraint:law.analysis:0
-msgid "The coordinate Y must be equal or greater than 0!"
+msgid "The collection time must be before the receival time."
 msgstr ""
 
 #. module: law_water_quality

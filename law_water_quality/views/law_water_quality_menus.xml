@@ -10,46 +10,54 @@
     <menuitem id="water_quality_menu"
               name="Water Quality"
               parent="main_menu"
-              sequence="1"/>
+              sequence="1"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="lab_analytics_menu"
               name="Analytics"
               parent="water_quality_menu"
               action="law_analysis_action"
-              sequence="1"/>
+              sequence="1"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="configuration_menu"
               name="Parameters"
               parent="main_menu"
-              sequence="2"/>
+              sequence="2"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="quality_parameters_menu"
               name="Quality Parameters"
               parent="configuration_menu"
               action="law_water_quality.law_parameter_action"
-              sequence="1"/>
+              sequence="1"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="measurement_units_menu"
               name="Measurement Units"
               parent="configuration_menu"
               action="law_water_quality.law_parameter_uom_action"
-              sequence="2"/>
+              sequence="2"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="water_types_menu"
               name="Water Types"
               parent="configuration_menu"
               action="law_water_quality.law_watertype_action"
-              sequence="3"/>
+              sequence="3"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="technical_menu"
               name="Technical"
               parent="main_menu"
-              sequence="3"/>
+              sequence="3"
+              groups="law_water_quality.group_law_manager"/>
 
     <menuitem id="quality_parameters_lines_menu"
               name="Quality Parameter Lines"
               parent="technical_menu"
               action="law_water_quality.law_analysis_parameter_action"
-              sequence="1"/>
+              sequence="1"
+              groups="law_water_quality.group_law_manager"/>
 
 </odoo>

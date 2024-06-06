@@ -8,6 +8,17 @@
             <form duplicate="0">
                 <sheet>
                     <div name="buttons" class="oe_button_box">
+                        <button name="action_see_analysis"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-water-quality-tube-duotone"
+                                groups="law_water_quality.group_law_manager">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">
+                                        Analysis
+                                    </span>
+                                </div>
+                        </button>
                     </div>
                     <group name="master_data">
                         <field name="name"/>
@@ -15,18 +26,6 @@
                     </group>
                     <group name="slave_data">
                         <notebook name="slave_data_notebook">
-                            <page name="parameter_uom_page" string="Analysis Parameters">
-                                <field name="analysis_ids">
-                                    <tree class="o_law_parameter_uom_view_tree_notebook"
-                                          editable="bottom">
-                                          <field name="name"/>
-                                          <field name="laboratory_id"/>
-                                          <field name="location"/>
-                                          <field name="collection_time"/>
-                                          <field name="receival_time"/>
-                                    </tree>
-                                </field>
-                            </page>
                             <page name="notes_page" string="Notes">
                                 <field name="notes"/>
                             </page>
@@ -52,7 +51,7 @@
         <field name="name">Watertype (tree view)</field>
         <field name="model">law.watertype</field>
         <field name="arch" type="xml">
-            <tree class="law_water_quality_watertype_tree">
+            <tree class="o_law_water_quality_watertype_tree">
                 <field name="name"/>
                 <field name="description"/>
             </tree>

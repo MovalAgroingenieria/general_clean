@@ -29,7 +29,7 @@
         <field name="name">LAW Analysis Parameter (tree view)</field>
         <field name="model">law.analysis.parameter</field>
         <field name="arch" type="xml">
-            <tree class="law_water_quality_analysis_parameter_tree"
+            <tree class="o_law_water_quality_analysis_parameter_tree"
                   colors="red:parameter_value_above_mav==True"
                   create="false" edit="false" delete="false">
                 <field name="analysis_id"/>

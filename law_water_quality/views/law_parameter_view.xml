@@ -7,6 +7,20 @@
             <form duplicate="0">
                 <sheet>
                     <div name="buttons" class="oe_button_box">
+                        <button name="action_see_parameter_analysis"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-water-quality-tube-duotone"
+                                groups="law_water_quality.group_law_manager">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">
+                                        Analysis
+                                    </span>
+                                    <span class="o_stat_text">
+                                        Parameters
+                                    </span>
+                                </div>
+                        </button>
                     </div>
                     <group name="master_data">
                         <group name="master_data_id">
@@ -25,21 +39,6 @@
                     </group>
                     <group name="slave_data">
                         <notebook name="slave_data_notebook">
-                            <page name="analysis_parameter_page" string="Analysis Parameters">
-                                <field name="analysis_parameter_ids">
-                                    <tree name="law_analysis_analysis_parameter_tree"
-                                          class="o_law_parameter_view_tree_notebook"
-                                          editable="bottom"
-                                          colors="red:parameter_value_above_mav==True">
-                                        <field name="analysis_id"/>
-                                        <field name="result_value"/>
-                                        <field name="parameter_maximum_value_admissible" string="Maximum Value Admissible"/>
-                                        <field name="analysis_procedure"/>
-                                        <field name="notes"/>
-                                        <field name="parameter_value_above_mav" invisible="1"/>
-                                    </tree>
-                                </field>
-                            </page>
                             <page name="notes_page" string="Notes">
                                 <field name="notes"/>
                             </page>
@@ -61,7 +60,6 @@
                         string="Measurement Unit"
                         context="{'group_by': 'uom_id'}"/>
             </search>
-
         </field>
     </record>
 
@@ -69,7 +67,7 @@
         <field name="name">LAW Parameter (tree view)</field>
         <field name="model">law.parameter</field>
         <field name="arch" type="xml">
-            <tree class="law_water_quality_parameter_tree">
+            <tree class="o_law_water_quality_parameter_tree">
                 <field name="name"/>
                 <field name="uom_id"/>
                 <field name="maximum_value_admissible"/>
