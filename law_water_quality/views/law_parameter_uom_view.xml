@@ -12,8 +12,7 @@
                             <button name="action_see_parameters"
                                     type="object"
                                     class="oe_stat_button"
-                                    icon="fa-water-quality-tube-duotone"
-                                    groups="law_water_quality.group_law_manager">
+                                    icon="fa-water-quality-tube-duotone">
                                     <div class="o_form_field o_stat_info">
                                         <span class="o_stat_text">
                                             Parameters

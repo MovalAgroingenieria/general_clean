@@ -17,6 +17,7 @@ class LawAnalysis(models.Model):
         default=lambda self: self.env["res.company"].browse(
             self.env.context.get("company_id", self.env.user.company_id.id)
             ).partner_id.id,
+        readonly=True,
     )
 
     laboratory_id = fields.Many2one(
@@ -31,7 +32,7 @@ class LawAnalysis(models.Model):
     )
 
     name = fields.Char(
-        string="Name",
+        string="Sample Code",
         required=True,
         index=True,
     )
@@ -61,12 +62,12 @@ class LawAnalysis(models.Model):
 
     sample_taker = fields.Selection(
         string="Sample Taker",
-        selection=[("00_client",
+        selection=[("01_client",
                     "Client"),
-                   ("01_laboratory",
+                   ("02_laboratory",
                     "Laboratory")],
         index=True,
-        default="00_client",
+        default="01_client",
         required=True,
     )
 
@@ -100,7 +101,7 @@ class LawAnalysis(models.Model):
     )
 
     _sql_constraints = [
-        ("name_unique", "unique(name)",
+        ("sample_code_unique", "unique(sample_code)",
          "The analysis must be unique."),
         ("collection_time_before_receival_time",
          "CHECK(collection_time <= receival_time)",

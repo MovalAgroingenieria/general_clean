@@ -78,16 +78,6 @@ class LawAnalysisParameter(models.Model):
          "The analysis parameter must be unique."),
     ]
 
-    @api.depends("analysis_id", "analysis_id.name", "parameter_id",
-                 "parameter_id.name")
-    def _compute_name(self):
-        for record in self:
-            name = ""
-            if (record.analysis_id and record.parameter_id):
-                name = record.analysis_id.name + u"-" +\
-                    record.parameter_id.name
-            record.name = name
-
     def name_get(self):
         result = []
         for record in self:
@@ -97,6 +87,16 @@ class LawAnalysisParameter(models.Model):
                     u" (" + record.parameter_id.name + u")"
             result.append((record.id, display_name))
         return result
+
+    @api.depends("analysis_id", "analysis_id.name", "parameter_id",
+                 "parameter_id.name")
+    def _compute_name(self):
+        for record in self:
+            name = ""
+            if (record.analysis_id and record.parameter_id):
+                name = record.analysis_id.name + u"-" +\
+                    record.parameter_id.name
+            record.name = name
 
     @api.depends("result_value", "parameter_id",
                  "parameter_id.with_maximum_value_admissible",

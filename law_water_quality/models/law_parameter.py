@@ -76,21 +76,6 @@ class LawParameter(models.Model):
          "The parameter must be unique.")
     ]
 
-    @api.model
-    def create(self, vals):
-        if not vals.get("with_maximum_value_admisible", True):
-            vals["maximum_value_admisible"] = 0.0
-        if not vals.get("with_maximum_deviation_admisible", True):
-            vals["maximum_deviation_admisible"] = 0.0
-        return super(LawParameter, self).create(vals)
-
-    def write(self, vals):
-        if not vals.get("with_maximum_value_admisible", True):
-            vals["maximum_value_admisible"] = 0.0
-        if not vals.get("with_maximum_deviation_admisible", True):
-            vals["maximum_deviation_admisible"] = 0.0
-        return super(LawParameter, self).write(vals)
-
     @api.depends("notes")
     def _compute_notes_text(self):
         model_converter = self.env["ir.fields.converter"]
@@ -111,6 +96,21 @@ class LawParameter(models.Model):
         if not self.with_maximum_deviation_admissible:
             self.maximum_deviation_admissible = 0.0
 
+    @api.model
+    def create(self, vals):
+        if not vals.get("with_maximum_value_admisible", True):
+            vals["maximum_value_admisible"] = 0.0
+        if not vals.get("with_maximum_deviation_admisible", True):
+            vals["maximum_deviation_admisible"] = 0.0
+        return super(LawParameter, self).create(vals)
+
+    def write(self, vals):
+        if not vals.get("with_maximum_value_admisible", True):
+            vals["maximum_value_admisible"] = 0.0
+        if not vals.get("with_maximum_deviation_admisible", True):
+            vals["maximum_deviation_admisible"] = 0.0
+        return super(LawParameter, self).write(vals)
+
     @api.multi
     def action_see_parameter_analysis(self):
         self.ensure_one()
@@ -129,5 +129,6 @@ class LawParameter(models.Model):
             'search_view_id': (search_view.id, search_view.name),
             'domain': condition,
             'target': 'current',
+            'context': '{\'create\': False, \'edit\': False}',
         }
         return act_window

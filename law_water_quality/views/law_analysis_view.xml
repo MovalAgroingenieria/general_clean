@@ -13,7 +13,7 @@
                         <group name="master_data_id">
                             <field name="name"/>
                             <field name="client_id"/>
-                            <field name="laboratory_id"/>
+                            <field name="laboratory_id" default_supplier="True"/>
                             <field name="watertype_id"/>
                             <field name="sample_taker"/>
                             <br/>
@@ -33,7 +33,7 @@
                     <group name="slave_data">
                         <notebook name="slave_data_notebook">
                             <page name="analysis_parameter_page" string="Analysis Parameters">
-                                <field name="analysis_parameter_ids" groups="law_water_quality.group_law_manager">
+                                <field name="analysis_parameter_ids">
                                     <tree class="o_law_water_quality_analysis_analysis_parameter_tree"
                                           editable="bottom"
                                           colors="red:parameter_value_above_mav==True">

@@ -7,7 +7,7 @@ from odoo import models, fields, api, _
 
 class LawWatertype(models.Model):
     _name = "law.watertype"
-    _description = "LAW Watertype"
+    _description = "Law Watertype"
 
     name = fields.Char(
         string="Name",
@@ -53,5 +53,6 @@ class LawWatertype(models.Model):
             'search_view_id': (search_view.id, search_view.name),
             'domain': condition,
             'target': 'current',
+            'context': '{\'create\': False, \'edit\': False}',
         }
         return act_window
