@@ -92,8 +92,8 @@
                                         </tr>
                                         <tr class="border-black">
                                             <td><strong>Total working hours</strong></td>
-                                            <td></td>
-                                            <td class="text-right">
+                                            <td name="td_space"/>
+                                            <td name="td_total_hours" class="text-right">
                                                 <t t-set="total_time" t-value="attendance_data[-1]"/>
                                                 <b><span t-esc="total_time['total_working_time_show']"/></b>
                                             </td>
