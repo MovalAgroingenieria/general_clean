@@ -10,13 +10,17 @@
     "website": "http://www.moval.es",
     "category": "Human Resources/Attendance",
     "depends": [
+        "web",
+        "hr_attendance",
+        "bus",
     ],
     "data": [
         "views/resources.xml",
     ],
     'qweb': [
-        'static/src/xml/tray_icons.xml',
+        'static/src/xml/tray_icons_template.xml',
     ],
     "application": False,
     "installable": True,
+    "uninstall_hook": "uninstall_hook",
 }

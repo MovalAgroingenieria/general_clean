@@ -1,14 +1,14 @@
-.o_tray_icon_container {
+.o_tray_icon_li {
+    list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    margin-right: 5px;
 }
 
-.o_tray_icon {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin: 5px;
+.gray_circle, .green_circle, .red_circle {
+    border: 0.5px solid white;
 }
 
 .gray_circle {
@@ -21,4 +21,13 @@
 
 .red_circle {
     background-color: red;
+}
+
+/* Ajuste para el texto */
+.o_AttendanceMenu_hours_display {
+    margin-left: 3px;
+    font-size: 14px;
+    color: white;
+    line-height: 24px; /* Ajustar esto si es necesario */
+    font-family: inherit;
 }
