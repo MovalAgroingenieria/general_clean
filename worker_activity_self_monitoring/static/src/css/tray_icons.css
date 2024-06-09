@@ -1,14 +1,34 @@
-.o_tray_icon_li {
+
+/* Solo añadir el fondo azul */
+.o_menu_systray::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #008DCA; /* Fondo azul */
+    border-bottom: 1px solid #5f5e97;
+    z-index: -1; /* Asegurar que esté detrás del contenido */
+}
+
+/* Estilos para los iconos */
+.o_task_icon_li, .o_tray_icon_li {
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     margin-right: 5px;
+    color: white;
 }
 
+/* Estilos para los círculos */
 .gray_circle, .green_circle, .red_circle {
     border: 0.5px solid white;
+    border-radius: 50%;
+    display: inline-block;
 }
 
 .gray_circle {
@@ -24,7 +44,7 @@
 }
 
 /* Ajuste para el texto */
-.o_AttendanceMenu_hours_display {
+.o_AttendanceMenu_hours_display, .o_TaskMenu_task_display {
     margin-left: 3px;
     font-size: 14px;
     color: white;

@@ -4,7 +4,8 @@
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/css" href="/worker_activity_self_monitoring/static/src/css/tray_icons.css"/>
             <script type="text/javascript" src="/worker_activity_self_monitoring/static/src/js/hr_attendance_extension.js"/>
-            <script type="text/javascript" src="/worker_activity_self_monitoring/static/src/js/tray_icons.js"/>
+            <script type="text/javascript" src="/worker_activity_self_monitoring/static/src/js/attendance_tray_icons.js"/>
+            <script type="text/javascript" src="/worker_activity_self_monitoring/static/src/js/task_tray_icons.js"/>
         </xpath>
     </template>
 </odoo>

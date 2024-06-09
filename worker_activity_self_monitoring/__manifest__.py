@@ -18,7 +18,8 @@
         "views/resources.xml",
     ],
     'qweb': [
-        'static/src/xml/tray_icons_template.xml',
+        'static/src/xml/attendance_tray_icons_template.xml',
+        'static/src/xml/task_tray_icons_template.xml',
     ],
     "application": False,
     "installable": True,
