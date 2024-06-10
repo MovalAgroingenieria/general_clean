@@ -3,7 +3,7 @@
 
     <menuitem id="main_menu"
               name="Water Quality"
-              sequence="5"
+              sequence="-30"
               web_icon="law_water_quality,static/description/icon.png"
               groups="law_water_quality.group_law_user"/>
 
