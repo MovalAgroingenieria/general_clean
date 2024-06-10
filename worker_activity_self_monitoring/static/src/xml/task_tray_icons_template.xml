@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <t t-name="task_icon">
-        <a href="#" title="Tareas" role="button" aria-expanded="false" aria-haspopup="true" class="o_TaskMenu_toggler">
+        <a href="#"
+           title="Tareas"
+           role="button"
+           aria-expanded="false"
+           aria-haspopup="true"
+           class="o_TaskMenu_toggler">
             <span id="task_status_icon" class="badge badge-pill gray_circle">
                 <i role="img" aria-label="Task" class="fa fa-tasks"></i>
             </span>

@@ -1,15 +1,3 @@
-.o_menu_systray {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    overflow: hidden;
-}
-
-.o_menu_systray li {
-    flex: 0 1 auto;
-}
-
 .o_task_icon_li, .o_tray_icon_li {
     list-style: none;
     display: flex;
@@ -49,7 +37,6 @@
     white-space: nowrap;
 }
 
-/* Para ocultar el texto si el contenedor se vuelve demasiado pequeño */
 @media screen and (max-width: 1400px) {
     .o_TaskMenu_task_display, .o_AttendanceMenu_hours_display {
         max-width: 2vw;

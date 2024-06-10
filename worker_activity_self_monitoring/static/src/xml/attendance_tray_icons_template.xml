@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <t t-name="tray_icon">
-        <a href="#action=hr_attendance.hr_attendance_action_my_attendances" title="Asistencias" role="button" aria-expanded="false" aria-haspopup="true" class="o_AttendanceMenu_toggler">
+        <a href="#action=hr_attendance.hr_attendance_action_my_attendances"
+           title="Asistencias"
+           role="button"
+           aria-expanded="false"
+           aria-haspopup="true"
+           class="o_AttendanceMenu_toggler">
             <span id="attendance_status_icon" class="badge badge-pill gray_circle">
                 <i role="img" aria-label="Attendance" class="fa fa-clock-o"></i>
             </span>
             <span id="attendance_hours_display" class="o_AttendanceMenu_hours_display">00:00</span>
         </a>
     </t>
-
 </odoo>

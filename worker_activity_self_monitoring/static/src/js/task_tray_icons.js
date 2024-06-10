@@ -80,7 +80,7 @@ odoo.define('worker_activity_self_monitoring.TaskIcon', function (require) {
             this.taskStartTime = null;
             $icon.removeClass('gray_circle green_circle').addClass('gray_circle');
             $taskDisplay.hide();
-            this.$('.o_TaskMenu_toggler').attr('href', `/web#action=project.action_view_all_task&cids=&menu_id=PROJECT_MENU_ID&search_default_my_tasks=1&all_task=0&search_default_project_tasks=1`);
+            $('.o_TaskMenu_toggler').attr('href', `/web#action=project.action_view_all_task`);
         },
         navigateToTask: function (event) {
             event.preventDefault();
