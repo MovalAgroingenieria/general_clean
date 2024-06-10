@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-23 13:55+0000\n"
-"PO-Revision-Date: 2024-05-23 13:55+0000\n"
+"POT-Creation-Date: 2024-06-10 08:27+0000\n"
+"PO-Revision-Date: 2024-06-10 08:27+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,6 +36,11 @@ msgid "ID"
 msgstr ""
 
 #. module: sh_task_time_selfedit
+#: model:ir.model.fields,field_description:sh_task_time_selfedit.field_account_analytic_line__original_time_line
+msgid "Initial Quantity"
+msgstr "Cantidad real"
+
+#. module: sh_task_time_selfedit
 #: model:ir.model.fields,field_description:sh_task_time_selfedit.field_account_analytic_line____last_update
 msgid "Last Modified on"
 msgstr "Última modificación en"
@@ -51,6 +56,7 @@ msgid "Observations"
 msgstr "Observaciones"
 
 #. module: sh_task_time_selfedit
+#: model_terms:ir.ui.view,arch_db:sh_task_time_selfedit.hr_timesheet_sheet_form_self_edit
 #: model_terms:ir.ui.view,arch_db:sh_task_time_selfedit.sh_project_task_analytic_line_inherit_form_self_view
 msgid "Required if task time is modified by user (Min. 6 chars)"
 msgstr "Rquerido si el tiempo es modificado por el usuario (Min 6 caracteres)"

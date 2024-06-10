@@ -12,7 +12,8 @@
     "depends": [
         'project',
         'hr_timesheet',
-        'analytic'
+        'analytic',
+        'hr_timesheet_sheet',
     ],
     "data": [
         'views/project_task_time.xml',

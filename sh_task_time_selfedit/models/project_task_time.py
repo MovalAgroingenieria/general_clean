@@ -25,6 +25,9 @@ class AccountAnalyticLine(models.Model):
     tasktime_modificated = fields.Boolean(
         string="Modified",
         default=False)
+    
+    original_time_line = fields.Float(
+        string="Initial Quantity", default=0.0)
 
     @api.depends('tasktime_edited')
     def _compute_tasktime_edited_show(self):
@@ -82,5 +85,7 @@ class AccountAnalyticLine(models.Model):
                 att_obs = vals['tasktime_observations'].lstrip().rstrip()
                 att_obs = re.sub(' +', ' ', att_obs)
                 vals['tasktime_observations'] = att_obs
-        resp = super(AccountAnalyticLine, self).write(vals)
+            if ('end_date' in vals) and vals['amount']:
+                self.original_time_line = vals['amount']
+            resp = super(AccountAnalyticLine, self).write(vals)
         return resp
