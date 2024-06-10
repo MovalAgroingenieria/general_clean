@@ -327,16 +327,21 @@ class AccountPaymentOrder(models.Model):
         ('08', '08 (volunteer)'),
         ('09', '09 (volunteer)'),
         ('10', '10 (volunteer)'),
-        ('11', '11 (executive)'),
-        ('12', '12 (executive)'),
-        ('13', '13 (executive)'),
-        ('14', '14 (executive)'),
-        ('15', '15 (executive)'),
+        ('11', '11 (volunteer)'),
+        ('12', '12 (volunteer)'),
+        ('13', '13 (volunteer)'),
+        ('14', '14 (volunteer)'),
+        ('15', '15 (volunteer)'),
         ('16', '16 (executive)'),
         ('17', '17 (executive)'),
         ('18', '18 (executive)'),
         ('19', '19 (executive)'),
-        ('20', '20 (executive)')],
+        ('20', '20 (executive)'),
+        ('21', '21 (executive)'),
+        ('22', '22 (executive)'),
+        ('23', '23 (executive)'),
+        ('24', '24 (executive)'),
+        ('25', '25 (executive)')],
         string="Charge issuance",
         default="01",
         help="Used to differentiate charges in the same year\n"
@@ -429,23 +434,24 @@ class AccountPaymentOrder(models.Model):
             record.concept_description = concept_desc
 
     # Warning user when charge issuance is not valid
+    # INFO: Changed to 1-15 in volunteer in 2024.06.10
     @api.onchange('payment_mode_name', 'charge_issuance', 'charge_type')
     def _onchange_charge_issuance(self):
         if self.payment_mode_name == 'SUMA':
             if self.charge_type == "V":
                 title = "Charge issuance error"
-                if int(self.charge_issuance) > 10:
+                if int(self.charge_issuance) > 15:
                     message = \
                         _("Charge issuance for volunteer period has to "
-                          "be less than 10.")
+                          "be less than 16.")
                     warning = {'title': title, 'message': message}
                     return {'warning': warning}
             elif self.charge_type == "E":
                 title = "Charge issuance error"
-                if int(self.charge_issuance) < 10:
+                if int(self.charge_issuance) < 16:
                     message = \
                         _("Charge issuance for executive period has to "
-                          "be greater than 10.")
+                          "be greater than 15.")
                     warning = {'title': title, 'message': message}
                     return {'warning': warning}
 
