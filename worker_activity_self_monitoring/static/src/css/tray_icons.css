@@ -1,19 +1,15 @@
-
-/* Solo añadir el fondo azul */
-.o_menu_systray::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #008DCA; /* Fondo azul */
-    border-bottom: 1px solid #5f5e97;
-    z-index: -1; /* Asegurar que esté detrás del contenido */
+.o_menu_systray {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 
-/* Estilos para los iconos */
+.o_menu_systray li {
+    flex: 0 1 auto;
+}
+
 .o_task_icon_li, .o_tray_icon_li {
     list-style: none;
     display: flex;
@@ -24,7 +20,6 @@
     color: white;
 }
 
-/* Estilos para los círculos */
 .gray_circle, .green_circle, .red_circle {
     border: 0.5px solid white;
     border-radius: 50%;
@@ -43,11 +38,21 @@
     background-color: red;
 }
 
-/* Ajuste para el texto */
 .o_AttendanceMenu_hours_display, .o_TaskMenu_task_display {
     margin-left: 3px;
     font-size: 14px;
     color: white;
-    line-height: 24px; /* Ajustar esto si es necesario */
+    line-height: 24px;
     font-family: inherit;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Para ocultar el texto si el contenedor se vuelve demasiado pequeño */
+@media screen and (max-width: 1400px) {
+    .o_TaskMenu_task_display, .o_AttendanceMenu_hours_display {
+        max-width: 2vw;
+        display: block;
+    }
 }
