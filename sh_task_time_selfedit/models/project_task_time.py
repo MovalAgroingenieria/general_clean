@@ -79,6 +79,7 @@ class AccountAnalyticLine(models.Model):
         return super(AccountAnalyticLine, self).create(vals)
 
     def write(self, vals):
+        resp = super(AccountAnalyticLine, self).write(vals)
         for record in self:
             if ('tasktime_observations' in vals and
                     vals['tasktime_observations']):
@@ -86,6 +87,6 @@ class AccountAnalyticLine(models.Model):
                 att_obs = re.sub(' +', ' ', att_obs)
                 vals['tasktime_observations'] = att_obs
             if ('end_date' in vals) and vals['amount']:
-                self.original_time_line = vals['amount']
-            resp = super(AccountAnalyticLine, self).write(vals)
+                record.original_time_line = vals['amount']
+            resp = super(AccountAnalyticLine, record).write(vals)
         return resp
