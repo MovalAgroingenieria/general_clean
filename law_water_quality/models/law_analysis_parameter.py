@@ -69,6 +69,12 @@ class LawAnalysisParameter(models.Model):
         compute="_compute_parameter_value_above_mav",
     )
 
+    collection_time = fields.Date(
+        string="Collection Time",
+        store=True,
+        compute="_compute_collection_time",
+    )
+
     notes = fields.Char(
         string="Notes",
     )
@@ -109,6 +115,14 @@ class LawAnalysisParameter(models.Model):
                      record.parameter_id.maximum_value_admissible)):
                 parameter_value_above_mav = True
             record.parameter_value_above_mav = parameter_value_above_mav
+
+    @api.depends("analysis_id", "analysis_id.collection_time")
+    def _compute_collection_time(self):
+        for record in self:
+            collection_time = False
+            if record.analysis_id:
+                collection_time = record.analysis_id.collection_time
+            record.collection_time = collection_time
 
     @api.onchange("parameter_id")
     def _onchange_parameter_id(self):

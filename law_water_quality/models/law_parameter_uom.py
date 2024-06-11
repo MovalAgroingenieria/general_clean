@@ -17,7 +17,6 @@ class LawParameterUom(models.Model):
 
     short_name = fields.Char(
         string="Short Name",
-        required=True,
         index=True,
     )
 
