@@ -6,6 +6,7 @@
     height: 100%;
     margin-right: 5px;
     color: white;
+    overflow: hidden;
 }
 
 .gray_circle, .green_circle, .red_circle {
