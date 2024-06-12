@@ -4,8 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-12 11:02+0000\n"
+"PO-Revision-Date: 2024-06-12 11:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -14,106 +16,70 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.view_project_kanban
+#: model:ir.ui.view,arch_db:maintenance_project.view_project_kanban
 msgid "<span class=\"o_label\">Equipments</span>"
 msgstr ""
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.view_project_kanban
+#: model:ir.ui.view,arch_db:maintenance_project.view_project_kanban
 msgid "<span class=\"o_label\">Requests</span>"
 msgstr ""
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.report_maintenance_request_document
-msgid "<strong>Project:</strong>"
+#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_create_project_from_equipment
+msgid "Create project from equipment"
 msgstr ""
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.report_maintenance_request_document
-msgid "<strong>Task:</strong>"
-msgstr ""
-
-#. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment__create_project_from_equipment
-msgid "Create Project From Equipment"
-msgstr ""
-
-#. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment__preventive_default_task_id
+#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_preventive_default_task_id
 msgid "Default Task"
 msgstr ""
 
 #. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_project_project__equipment_count
-msgid "Equipment Count"
+#: model:ir.model,name:maintenance_project.model_maintenance_equipment
+msgid "Equipment"
 msgstr ""
 
 #. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_project_project__equipment_ids
-#: model_terms:ir.ui.view,arch_db:maintenance_project.edit_project
+#: model:ir.model.fields,field_description:maintenance_project.field_project_project_equipment_count
+msgid "Equipment count"
+msgstr ""
+
+#. module: maintenance_project
+#: model:ir.model.fields,field_description:maintenance_project.field_project_project_equipment_ids
+#: model:ir.ui.view,arch_db:maintenance_project.edit_project
 msgid "Equipments"
 msgstr ""
 
 #. module: maintenance_project
-#: model:maintenance.equipment,name:maintenance_project.equipment_3
-msgid "Generic Computer with own project"
-msgstr ""
-
-#. module: maintenance_project
-#: model:maintenance.equipment,name:maintenance_project.equipment_1
-msgid "Generic Monitor"
-msgstr ""
-
-#. module: maintenance_project
-#: model:maintenance.equipment,name:maintenance_project.equipment_2
-msgid "Generic Monitor with preventive"
-msgstr ""
-
-#. module: maintenance_project
-#: model:ir.model,name:maintenance_project.model_maintenance_equipment
-msgid "Maintenance Equipment"
-msgstr ""
-
-#. module: maintenance_project
 #: model:ir.model,name:maintenance_project.model_maintenance_request
-msgid "Maintenance Request"
-msgstr ""
-
-#. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_project_project__maintenance_request_count
-msgid "Maintenance Request Count"
-msgstr ""
-
-#. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_project_project__maintenance_request_ids
+#: model:ir.model.fields,field_description:maintenance_project.field_project_project_maintenance_request_ids
 msgid "Maintenance Requests"
 msgstr ""
 
 #. module: maintenance_project
+#: model:ir.model.fields,field_description:maintenance_project.field_project_project_maintenance_request_count
+msgid "Maintenance request count"
+msgstr ""
+
+#. module: maintenance_project
 #: model:ir.model,name:maintenance_project.model_project_project
-#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment__project_id
-#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request__project_id
 msgid "Project"
 msgstr ""
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.hr_equipment_request_view_kanban
-#: model_terms:ir.ui.view,arch_db:maintenance_project.hr_equipment_view_kanban
-msgid "Project:"
+#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_project_id
+#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request_project_id
+msgid "Project id"
 msgstr ""
 
 #. module: maintenance_project
-#: model_terms:ir.ui.view,arch_db:maintenance_project.edit_project
+#: model:ir.ui.view,arch_db:maintenance_project.edit_project
 msgid "Requests"
 msgstr ""
 
 #. module: maintenance_project
-#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request__task_id
-msgid "Task"
-msgstr ""
-
-#. module: maintenance_project
-#: model:project.project,label_tasks:maintenance_project.project_project_1
-msgid "Tasks"
+#: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request_task_id
+msgid "Task id"
 msgstr ""
 

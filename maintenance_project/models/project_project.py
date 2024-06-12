@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2019 Solvos Consultoría Informática (<http://www.solvos.es>)
-# License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
+# 2024 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from odoo import models, fields, api
 
@@ -11,12 +11,15 @@ class ProjectProject(models.Model):
 
     equipment_count = fields.Integer(
         compute='_compute_equipment_count')
+
     equipment_ids = fields.One2many(
         'maintenance.equipment',
         'project_id',
         string='Equipments')
+
     maintenance_request_count = fields.Integer(
         compute='_compute_maintenance_request_count')
+
     maintenance_request_ids = fields.One2many(
         'maintenance.request',
         'project_id',

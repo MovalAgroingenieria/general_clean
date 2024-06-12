@@ -4,26 +4,24 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
-    'name': 'Maintenance Projects',
-    'summary': 'Adds projects to maintenance equipments and requests',
+    'name': 'Maintenance Timesheets',
+    'summary': 'Adds timesheets to maintenance request',
     'version': '10.0.1.0.1',
-    'category': 'Maintenance',
+    'category': 'Human Resources',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',
     'license': 'AGPL-3',
     'depends': [
-        'base_maintenance_config',
-        'maintenance',
-        'project',
+        'maintenance_project',
+        'hr_timesheet',
     ],
     'data': [
-        'security/maintenance_project_security.xml',
-        'views/maintenance_equipment_views.xml',
+        'security/maintenance_timesheet_security.xml',
+        'views/hr_timesheet_views.xml',
         'views/maintenance_request_views.xml',
-        'views/project_project_views.xml',
     ],
     'demo': [
-        'data/demo_maintenance_project.xml',
+        'data/demo_maintenance_timesheet.xml',
     ],
     'installable': True,
     'application': False,

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-12 11:03+0000\n"
-"PO-Revision-Date: 2024-06-12 11:03+0000\n"
+"POT-Creation-Date: 2024-06-12 11:02+0000\n"
+"PO-Revision-Date: 2024-06-12 11:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,68 +18,68 @@ msgstr ""
 #. module: maintenance_project
 #: model:ir.ui.view,arch_db:maintenance_project.view_project_kanban
 msgid "<span class=\"o_label\">Equipments</span>"
-msgstr "<span class=\"o_label\">Equipamientos</span>"
+msgstr "<span class=\"o_label\">Equipaments</span>"
 
 #. module: maintenance_project
 #: model:ir.ui.view,arch_db:maintenance_project.view_project_kanban
 msgid "<span class=\"o_label\">Requests</span>"
-msgstr "<span class=\"o_label\">Solicitudes</span>"
+msgstr "<span class=\"o_label\">Sol·licituds</span>"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_create_project_from_equipment
 msgid "Create project from equipment"
-msgstr "Crear un proyecto a partir del equipamiento"
+msgstr "Crear un projecte a partir de l'equipament"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_preventive_default_task_id
 msgid "Default Task"
-msgstr "Tarea por defecto"
+msgstr "Tasca per defecte"
 
 #. module: maintenance_project
 #: model:ir.model,name:maintenance_project.model_maintenance_equipment
 msgid "Equipment"
-msgstr "Equipamiento"
+msgstr "Equipament"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_project_project_equipment_count
 msgid "Equipment count"
-msgstr "Nº de equipos"
+msgstr "Nº Equipaments"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_project_project_equipment_ids
 #: model:ir.ui.view,arch_db:maintenance_project.edit_project
 msgid "Equipments"
-msgstr "Equipamientos"
+msgstr "Equipaments"
 
 #. module: maintenance_project
 #: model:ir.model,name:maintenance_project.model_maintenance_request
 #: model:ir.model.fields,field_description:maintenance_project.field_project_project_maintenance_request_ids
 msgid "Maintenance Requests"
-msgstr "Solicitudes de mantenimiento"
+msgstr "Sol·licituds de manteniment"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_project_project_maintenance_request_count
 msgid "Maintenance request count"
-msgstr "Nº solicitudes de mantenimiento"
+msgstr "Nº sol·licituds de manteniment"
 
 #. module: maintenance_project
 #: model:ir.model,name:maintenance_project.model_project_project
 msgid "Project"
-msgstr "Proyecto"
+msgstr "Projecte"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_maintenance_equipment_project_id
 #: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request_project_id
 msgid "Project id"
-msgstr "Proyecto"
+msgstr "Projecte"
 
 #. module: maintenance_project
 #: model:ir.ui.view,arch_db:maintenance_project.edit_project
 msgid "Requests"
-msgstr "Solicitudes"
+msgstr "Sol·licituds"
 
 #. module: maintenance_project
 #: model:ir.model.fields,field_description:maintenance_project.field_maintenance_request_task_id
 msgid "Task id"
-msgstr "Tarea"
+msgstr "Tasca"
 
