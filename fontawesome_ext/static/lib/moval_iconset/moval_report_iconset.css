@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'moval_report_iconset';
-  src:  url('fonts/moval_report_iconset.eot?hmubc1');
-  src:  url('fonts/moval_report_iconset.eot?hmubc1#iefix') format('embedded-opentype'),
-    url('fonts/moval_report_iconset.ttf?hmubc1') format('truetype'),
-    url('fonts/moval_report_iconset.woff?hmubc1') format('woff'),
-    url('fonts/moval_report_iconset.svg?hmubc1#moval_report_iconset') format('svg');
+  src:  url('fonts/moval_report_iconset.eot?9b0k3j');
+  src:  url('fonts/moval_report_iconset.eot?9b0k3j#iefix') format('embedded-opentype'),
+    url('fonts/moval_report_iconset.ttf?9b0k3j') format('truetype'),
+    url('fonts/moval_report_iconset.woff?9b0k3j') format('woff'),
+    url('fonts/moval_report_iconset.svg?9b0k3j#moval_report_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -40,6 +40,9 @@
 }
 
 /* Icons */
+.fa-moval-hammer:before {
+  content: "\e900";
+}
 .fa-moval-parcel:before {
   content: "\e904";
 }
