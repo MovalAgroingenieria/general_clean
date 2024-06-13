@@ -3,6 +3,7 @@
 
 from odoo import http
 from odoo.http import request
+import json
 import requests
 from datetime import datetime
 
@@ -58,7 +59,8 @@ class BankinplayCallbackController(http.Controller):
                     requests.post(url, json=json_data, headers={
                         'Accept': 'application/json',
                     })
-                    remote_response.unlink()
+                    remote_response.bankinplay_response = json.dumps(json_data)
+                    # remote_response.unlink()
 
     @http.route(
         '/remote/bankinplay_callback', type='json', auth='public',

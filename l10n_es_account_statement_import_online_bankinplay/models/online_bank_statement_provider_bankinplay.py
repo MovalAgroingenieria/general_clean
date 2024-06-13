@@ -92,6 +92,78 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         response_data = self._bankinplay_retrieve_data(date_since, date_until)
         return [], response_data
 
+    def _create_or_update_statement_bankinplay(
+        self, data, statement_date_since, statement_date_until
+    ):
+        """Create or update bank statement with the data retrieved from
+           provider."""
+        self.ensure_one()
+        repost_statement = False
+        AccountBankStatement = self.env["account.bank.statement"]
+        is_scheduled = self.env.context.get("scheduled")
+        if is_scheduled:
+            AccountBankStatement = AccountBankStatement.with_context(
+                tracking_disable=True,
+            )
+        if not data:
+            data = ([], {})
+        if not data[0] and not data[1] and not self.allow_empty_statements:
+            return
+        lines_data, statement_values = data
+        if not lines_data:
+            lines_data = []
+        if not statement_values:
+            statement_values = {}
+        statement_date = self._get_statement_date(
+            statement_date_since,
+            statement_date_until,
+        )
+        statement = AccountBankStatement.search(
+            [
+                ("journal_id", "=", self.journal_id.id),
+                ("date", "=", statement_date),
+            ],
+            limit=1,
+        )
+        if not statement:
+            statement_values.update(
+                {
+                    "name": "%s/%s"
+                    % (self.journal_id.code, statement_date.strftime(
+                        "%Y-%m-%d")),
+                    "journal_id": self.journal_id.id,
+                    "date": statement_date,
+                }
+            )
+            statement = AccountBankStatement.with_context(
+                journal_id=self.journal_id.id,
+            ).create(
+                # NOTE: This is needed since create() alters values
+                statement_values.copy()
+            )
+        # If posted but not lines reconciled, try to add new data
+        elif (statement.state == 'posted' and len(statement.line_ids.filtered(
+                lambda x: x.is_reconciled)) < 1):
+            statement.button_reopen()
+            repost_statement = True
+        filtered_lines = self._get_statement_filtered_lines(
+            lines_data, statement_values, statement_date_since,
+            statement_date_until
+        )
+        statement_values.update(
+            {"line_ids": [[0, False, line] for line in filtered_lines]}
+        )
+        if "balance_start" in statement_values:
+            statement_values["balance_start"] = float(
+                statement_values["balance_start"])
+        if "balance_end_real" in statement_values:
+            statement_values["balance_end_real"] = float(
+                statement_values["balance_end_real"]
+            )
+        statement.write(statement_values)
+        if (repost_statement):
+            statement.button_post()
+
     def _bankinplay_update_statement_data_after_callback(
             self, bank_statement, data):
         '''Translate information from Bankinplay to Odoo bank statement
@@ -104,7 +176,14 @@ class OnlineBankStatementProviderBankinplay(models.Model):
         else:
             all_transactions = self._bankinplay_get_transactions_from_data(
                 data)
-        self._create_or_update_statement(
+        if (not all_transactions or len(all_transactions) < 1):
+            message_to_user = _(
+                'There is no transactions from bankinplay, original message:')
+            message_to_user += json.dumps(data)
+            bank_statement.message_post(
+                body=message_to_user
+            )
+        self._create_or_update_statement_bankinplay(
             (all_transactions, {}), bank_statement.bankinplay_date_since,
             bank_statement.bankinplay_date_until)
         bank_statement.balance_end_real = bank_statement.balance_end
