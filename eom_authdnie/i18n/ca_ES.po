@@ -1,0 +1,566 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eom_authdnie
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-14 17:09+0000\n"
+"PO-Revision-Date: 2024-06-14 17:09+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<br/>\n"
+"                                    <strong>Authority:</strong>"
+msgstr "<br/>\n"
+"                                    <strong>Autoritat:</strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<br/>\n"
+"                                    <strong>First Name:</strong>"
+msgstr "<br/>\n"
+"                                    <strong>Nom:</strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<br/>\n"
+"                                    <strong>Last Name:</strong>"
+msgstr "<br/>\n"
+"                                    <strong>Cognoms:</strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.view_partner_form
+msgid "<span attrs=\"{'invisible': [('vat', '!=', False)]}\">(not assigned)</span>"
+msgstr "<span attrs=\"{'invisible': [('vat', '!=', False)]}\">(no assignat)</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.view_partner_form
+msgid "<span class=\"o_stat_text\">VAT</span>"
+msgstr "<span class=\"o_stat_text\">DNI</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "<span class=\"o_stat_text\">accesses</span>"
+msgstr "<span class=\"o_stat_text\">accessos</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "<span class=\"o_stat_text\">requests</span>"
+msgstr "<span class=\"o_stat_text\">peticions</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_kanban
+msgid "<span style=\"margin-right:5px\">Last Access:</span>"
+msgstr "<span style=\"margin-right:5px\">Darrer accés:</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_error
+msgid "<strong>(no data found)</strong>"
+msgstr "<strong>(sense dades)</strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<strong>(there is no associated contact)</strong>"
+msgstr "<strong>(sense contacte associat)</strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.confirmation_message
+msgid "<strong><span class=\"text-danger\">Error updating data.</span></strong>"
+msgstr "<strong><span class=\"text-danger\">Error en actualitzar les dades.</span></strong>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
+"                            <span style=\"margin-right:7px\">🖍</span>"
+msgstr "<strong><span style=\"margin-right:35px\">Seu electrònica</span></strong>\n"
+"                            <span style=\"margin-right:7px\">🖍</span>"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "<strong>VAT:</strong>"
+msgstr "<strong>DNI:</strong>"
+
+#. module: eom_authdnie
+#: code:addons/eom_authdnie/models/res_partner.py:48
+#, python-format
+msgid "A partner can only have one digital register."
+msgstr "Un contacte només pot estar associat a un certificat digital."
+
+#. module: eom_authdnie
+#: model:ir.model.fields,help:eom_authdnie.field_res_eom_config_settings_editable_notes
+msgid "Ability to edit internal annotations"
+msgstr "Permetre fer anotacions internes"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "Accept"
+msgstr "Acceptar"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_tree
+msgid "Access"
+msgstr "Accés"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+msgid "Access Time"
+msgstr "Instant d'accés"
+
+#. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_eom_digitalregister_access
+msgid "Access of a digital register"
+msgstr "Accés d'un certificat digital"
+
+#. module: eom_authdnie
+#: code:addons/eom_authdnie/models/eom_digitalregister.py:377
+#: model:ir.actions.act_window,name:eom_authdnie.eom_digitalregister_access_action
+#: model:ir.ui.menu,name:eom_authdnie.digitalregister_access_menu
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+#, python-format
+msgid "Accesses"
+msgstr "Accessos"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_digitalregisteraccess_ids
+msgid "Accesses of the digital certificate"
+msgstr "Accessos del certificat digital"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_partner_digitalregisteraccess_ids
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_users_digitalregisteraccess_ids
+msgid "Accesses of the partner"
+msgstr "Accessos del contacte"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.res_eom_config_settings_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.wizard_set_vat_view_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "Associated Contact"
+msgstr "Contacte associat"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_authority
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_authority
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+msgid "Authority"
+msgstr "Autoritat"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.res_eom_config_settings_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.wizard_set_vat_view_form
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_color
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_color
+msgid "Color Index"
+msgstr "Índex de color"
+
+#. module: eom_authdnie
+#: model:ir.ui.menu,name:eom_authdnie.configuration_menu
+msgid "Configuration"
+msgstr "Configuració"
+
+#. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_res_cim_config_settings
+#: model:ir.model,name:eom_authdnie.model_res_eom_config_settings
+msgid "Configuration of the electronic office"
+msgstr "Configuració de la seu electrònica"
+
+#. module: eom_authdnie
+#: model:ir.actions.act_window,name:eom_authdnie.res_eom_config_settings_action
+msgid "Configure electronic office management"
+msgstr "Gestió de la configuració de la seu electrònica"
+
+#. module: eom_authdnie
+#: code:addons/eom_authdnie/models/res_partner.py:87
+#, python-format
+msgid "Contact"
+msgstr "Contacte"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_create_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_create_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_create_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_create_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_create_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_create_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.wizard_set_vat_view_form
+msgid "Data of a VAT"
+msgstr "Dades d´un DNI"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_detail
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "Detail"
+msgstr "Detall"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_detail_text
+msgid "Detail (text)"
+msgstr "Detall (text)"
+
+#. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_wizard_set_vat
+msgid "Dialog box to set a VAT"
+msgstr "Diàleg per assignar DNI"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_digitalregister_id
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+msgid "Digital Certificate"
+msgstr "Certificat digital"
+
+#. module: eom_authdnie
+#: model:ir.actions.act_window,name:eom_authdnie.eom_digitalregister_action
+#: model:ir.ui.menu,name:eom_authdnie.digitalregister_menu
+msgid "Digital Certificates"
+msgstr "Certificats digitals"
+
+#. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_eom_digitalregister
+msgid "Digital Register"
+msgstr "Certificat digital"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_partner_digitalregister_id
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_users_digitalregister_id
+msgid "Digital register of the partner"
+msgstr "Certificat digital del contacte"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_display_name
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_display_name
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_display_name
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_editable_notes
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_editable_notes
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_editable_notes
+#: model:ir.ui.view,arch_db:eom_authdnie.res_eom_config_settings_view_form
+msgid "Editable Notes (y/n)"
+msgstr "Notes editables (s/n)"
+
+#. module: eom_authdnie
+#: model:ir.ui.menu,name:eom_authdnie.electronicoffice_menu
+#: model:ir.ui.menu,name:eom_authdnie.main_menu
+msgid "Electronic Office"
+msgstr "Seu electrònica"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.res_eom_config_settings_view_form
+msgid "Electronic-Office Management"
+msgstr "Gestió de la seu electrònica"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.res_eom_config_settings_view_form
+msgid "Electronic-Office Settings"
+msgstr "Configuració de la seu electrònica"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_email
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "Email"
+msgstr "Correu electrònic"
+
+#. module: eom_authdnie
+#: sql_constraint:eom.digitalregister.access:0
+msgid "Existing access."
+msgstr "El registre d'accés ja existeix."
+
+#. module: eom_authdnie
+#: sql_constraint:eom.digitalregister:0
+msgid "Existing digital certificate."
+msgstr "El certificat digital ja existeix."
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_firstname
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_firstname
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_tree
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+msgid "First Name"
+msgstr "Nom"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_fullname
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_fullname
+msgid "Full Name"
+msgstr "Nom complet"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_fullname_firstname
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_fullname_firstname
+msgid "Full Name (firstname and lastname)"
+msgstr "Nom complet (nom i cognoms)"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_fullname_html
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_fullname_html
+msgid "Full Name (html)"
+msgstr "Nom complet (html)"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_id
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_id
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_id
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_image
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_image
+msgid "Image"
+msgstr "Imatge"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_image_small
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_image_small
+msgid "Image (small)"
+msgstr "Imatge (reduïda)"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+msgid "Is a request: no"
+msgstr "És una petició: no"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+msgid "Is a request: yes"
+msgstr "És una petició: sí"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_last_event_time
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+msgid "Last Access"
+msgstr "Darrer accés"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister___last_update
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access___last_update
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings___last_update
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_lastname
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_lastname
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_tree
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+msgid "Last Name"
+msgstr "Cognoms"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_write_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_write_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_write_uid
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_write_uid
+msgid "Last Updated by"
+msgstr "Última actualització per"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_write_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_write_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_eom_config_settings_write_date
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_write_date
+msgid "Last Updated on"
+msgstr "Última actualització el"
+
+#. module: eom_authdnie
+#: model:res.groups,name:eom_authdnie.group_eom_manager
+msgid "Manager"
+msgstr "Mànager"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+msgid "Mapped to contact: no"
+msgstr "Contacte associat: no"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+msgid "Mapped to contact: yes"
+msgstr "Contacte associat: sí"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_mobile
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "Mobile"
+msgstr "Mòbil"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_name
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+msgid "Name"
+msgstr "Nom"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_notes
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_notes
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "Notes"
+msgstr "Notes"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_number_of_accesses
+msgid "Number of accesses"
+msgstr "Nombre d'accessos"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_number_of_requests
+msgid "Number of requests"
+msgstr "Nombre de peticions"
+
+#. module: eom_authdnie
+#: model:ir.ui.menu,name:eom_authdnie.parameters_menu
+msgid "Parameters"
+msgstr "Paràmetres"
+
+#. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_res_partner
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_partner_id
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_partner_id
+msgid "Partner"
+msgstr "Contacte"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_phone
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+msgid "Phone"
+msgstr "Telèfon"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.wizard_set_vat_view_form
+msgid "Please, update the VAT"
+msgstr "Si us plau, introduïu DNI"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_partner_digitalregister_ids
+#: model:ir.model.fields,field_description:eom_authdnie.field_res_users_digitalregister_ids
+msgid "Possible digital register of the partner"
+msgstr "Possibles certificats digitals del soci"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
+msgid "REQUEST"
+msgstr "PETICIÓ"
+
+#. module: eom_authdnie
+#: code:addons/eom_authdnie/models/eom_digitalregister.py:408
+#: model:ir.actions.act_window,name:eom_authdnie.eom_digitalregister_access_with_userdata_action
+#: model:ir.ui.menu,name:eom_authdnie.digitalregister_access_with_userdata_menu
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+#, python-format
+msgid "Requests"
+msgstr "Peticions"
+
+#. module: eom_authdnie
+#: model:res.groups,name:eom_authdnie.group_eom_settings
+msgid "Settings"
+msgstr "Configuració"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_summary
+msgid "Summary"
+msgstr "Resum"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "Summary (*)"
+msgstr "Resum (*)"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.confirmation_message
+msgid "Thank you, the data entered has been successfully registered."
+msgstr "Gràcies, les dades indicades han estat registrades satisfactòriament."
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_event_time
+msgid "Time"
+msgstr "Instant"
+
+#. module: eom_authdnie
+#: model:res.groups,name:eom_authdnie.group_eom_user
+msgid "User"
+msgstr "Usuari"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_name
+#: model:ir.model.fields,field_description:eom_authdnie.field_wizard_set_vat_vat
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_tree
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_form
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_search
+#: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
+#: model:ir.ui.view,arch_db:eom_authdnie.wizard_set_vat_view_form
+msgid "VAT"
+msgstr "DNI"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_icon_with_contact
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_icon_with_contact
+msgid "With contact (icon)"
+msgstr "Amb contacte (icona)"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_icon_with_userdata
+msgid "With user data (icon)"
+msgstr "Amb petició (icona)"
+
+#. module: eom_authdnie
+#: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_with_userdata
+msgid "With user data (y/n)"
+msgstr "Amb petició (s/n)"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "⦁ Identification"
+msgstr "⦁ Identificació"
+
+#. module: eom_authdnie
+#: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
+msgid "⦁ New request"
+msgstr "⦁ Nova petició"
+
