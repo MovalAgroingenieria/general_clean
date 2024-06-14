@@ -115,7 +115,7 @@
                     <div class="container">
                         <div name="header" style="margin-top:22px">
                             <t t-if="update_ok">
-                                <h4>Thank you, the data entered has been successfully registered.</h4>    
+                                <h3>Thank you, the data entered has been successfully registered.</h3>    
                             </t>
                             <t t-else="">
                                 <strong><span class="text-danger">Error updating data.</span></strong>
