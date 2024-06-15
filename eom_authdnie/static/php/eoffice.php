@@ -5,6 +5,7 @@
     </head>
     <body>
         <?php
+        header("Connection: close");
         // Certificate OK?
         $dir = "/tmp/";
         $RootCA = "/etc/ssl/certs/ac_raiz_dnie_2_ac_raiz_fnmt_rcm.crt";
