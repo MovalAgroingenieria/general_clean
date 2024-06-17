@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'moval_iconset';
-  src:  url('fonts/moval_iconset.eot?d4ztxx');
-  src:  url('fonts/moval_iconset.eot?d4ztxx#iefix') format('embedded-opentype'),
-    url('fonts/moval_iconset.ttf?d4ztxx') format('truetype'),
-    url('fonts/moval_iconset.woff?d4ztxx') format('woff'),
-    url('fonts/moval_iconset.svg?d4ztxx#moval_iconset') format('svg');
+  src:  url('fonts/moval_iconset.eot?92is0k');
+  src:  url('fonts/moval_iconset.eot?92is0k#iefix') format('embedded-opentype'),
+    url('fonts/moval_iconset.ttf?92is0k') format('truetype'),
+    url('fonts/moval_iconset.woff?92is0k') format('woff'),
+    url('fonts/moval_iconset.svg?92is0k#moval_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -40,30 +40,6 @@
 }
 
 /* Icons */
-.fa-moval-sede-electronica:before {
-  content: "\e924";
-}
-.fa-moval-sede-electronica-duotone::before {
-  content: "\e925";
-}
-.fa-moval-sede-electronica-duotone::after {
-  content: "\e926";
-}
-.fa-moval-logo-duotone::before {
-  content: "\e998";
-}
-.fa-moval-logo-duotone::after {
-  content: "\e999";
-}
-.fa-moval-logo-xmas-duotone::before {
-  content: "\e99a";
-}
-.fa-moval-logo-xmas-duotone::after {
-  content: "\e99b";
-}
-.fa-moval-hammer:before {
-  content: "\e923";
-}
 .fa-moval-gis-viewer:before {
   content: "\e900";
 }
@@ -478,8 +454,20 @@
 .fa-moval-logo:before {
   content: "\e98d";
 }
+.fa-moval-logo-duotone::before {
+  content: "\e998";
+}
+.fa-moval-logo-duotone::after {
+  content: "\e999";
+}
 .fa-moval-logo-xmas:before {
   content: "\e98e";
+}
+.fa-moval-logo-xmas-duotone::before {
+  content: "\e99a";
+}
+.fa-moval-logo-xmas-duotone::after {
+  content: "\e99b";
 }
 .fa-moval-agf-territory:before {
   content: "\e98f";
@@ -513,4 +501,16 @@
 }
 .fa-moval-sun:before {
   content: "\f185";
+}
+.fa-moval-hammer:before {
+  content: "\e923";
+}
+.fa-moval-sede-electronica:before {
+  content: "\e924";
+}
+.fa-moval-sede-electronica-duotone::before {
+  content: "\e925";
+}
+.fa-moval-sede-electronica-duotone::after {
+  content: "\e926";
 }
