@@ -8,18 +8,39 @@
         <field name="domain">[('project_id', '!=', False), ('maintenance_request_id', '!=', False)]</field>
     </record>
 
-    <!--
+    <record id="hr_timesheet_line_tree" model="ir.ui.view">
+        <field name="name">hr.timesheet.line.tree</field>
+        <field name="res_model">account.analytic.line</field>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="maintenance_request_id" invisible="context.get('default_maintenance_request_id', False)"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_task_form2_inherited">
+        <field name="name">project.task.form.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='unit_amount']" position="before">
+                <field name="maintenance_request_id" invisible="context.get('default_maintenance_request_id', False)"/>
+            </xpath>
+        </field>
+    </record>
+
     <record id="timesheet_action_view_from_request_list" model="ir.actions.act_window.view">
         <field name="sequence" eval="5"/>
         <field name="view_mode">tree</field>
-        <field name="view_id" ref="hr_timesheet.timesheet_view_tree_user"/>
+        <field name="view_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
         <field name="act_window_id" ref="timesheet_action_from_request"/>
-    </record> -->
+    </record>
 
     <record id="timesheet_action_view_from_request_form" model="ir.actions.act_window.view">
         <field name="sequence" eval="10"/>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="hr_timesheet_line_form"/>
+        <field name="view_id" ref="hr_timesheet.hr_timesheet_line_form"/>
         <field name="act_window_id" ref="timesheet_action_from_request"/>
     </record>
 
@@ -53,14 +74,12 @@
         </field>
     </record>
 
-    <!--
     <record id="hr_equipment_request_view_form" model="ir.ui.view">
         <field name="model">maintenance.request</field>
         <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form" />
         <field name="arch" type="xml">
-        <div class="oe_title">
-            <xpath expr="//div[@class='oe_title']" position="after">
-                <div name="buttons" class="oe_button_box">
+            <xpath expr="//div[@class='oe_right']" position="before">
+                <div class="oe_button_box" name="button_box">
                     <button class="oe_stat_button" type="object" name="action_view_timesheet_ids" icon="fa-calendar"
                             groups="hr_timesheet.group_hr_timesheet_user">
                         <field name="timesheet_total_hours"  widget="timesheet_uom"/>
@@ -69,6 +88,6 @@
                 </div>
             </xpath>
         </field>
-    </record> -->
+    </record>
 
 </odoo>

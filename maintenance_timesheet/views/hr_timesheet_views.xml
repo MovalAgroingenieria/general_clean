@@ -26,10 +26,9 @@
         </field>
     </record>
 
-    <!-- This view does not exist in v10
-    <record id="hr_timesheet_view_tree_user" model="ir.ui.view">
+    <!-- <record id="hr_timesheet_view_tree_user" model="ir.ui.view">
         <field name="model">account.analytic.line</field>
-        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_view_tree_user"/>
+        <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='employee_id']" position="attributes">
                 <attribute name="readonly">context.get('readonly_employee_id', False)</attribute>
@@ -42,7 +41,7 @@
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_form" />
         <field name="arch" type="xml">
             <field name="project_id" position="before">
-                <field name="maintenance_request_id" />
+                <field name="maintenance_request_id"/>
             </field>
         </field>
     </record>
