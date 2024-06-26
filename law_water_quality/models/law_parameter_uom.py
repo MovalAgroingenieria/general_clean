@@ -46,8 +46,12 @@ class LawParameterUom(models.Model):
         for record in self:
             name = record.name or ""
             short_name = record.short_name or ""
-            display_name = "{} ({})".format(name, short_name)
-            result.append((record.id, display_name))
+            if short_name:
+                display_name = "{} ({})".format(name, short_name)
+            else:
+                display_name = name
+            display_name_bytes = display_name.encode('utf-8')
+            result.append((record.id, display_name_bytes))
         return result
 
     @api.multi

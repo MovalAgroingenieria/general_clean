@@ -2,7 +2,7 @@
 # 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class LawAnalysis(models.Model):
@@ -110,3 +110,14 @@ class LawAnalysis(models.Model):
          "CHECK(analysis_start_time <= analysis_end_time)",
          "The analysis start time must be before the analysis end time."),
     ]
+
+    @api.model
+    def create(self, vals):
+        record = super(LawAnalysis, self).create(vals)
+        if 'laboratory_id' in vals:
+            laboratory_id = vals['laboratory_id']
+            laboratory = self.env['res.partner'].browse(laboratory_id)
+            if laboratory.exists():
+                laboratory.write({'supplier': True})
+
+        return record
