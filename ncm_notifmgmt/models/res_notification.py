@@ -209,8 +209,9 @@ class ResNotification(models.Model):
     def _compute_vat(self):
         for record in self:
             vat = ''
-            if record.partner_id and record.partner_id.vat:
-                vat = record.partner_id.vat
+            # sudo to access partner vat without permissions
+            if record.sudo().partner_id and record.sudo().partner_id.vat:
+                vat = record.sudo().partner_id.vat
             record.vat = vat
 
     @api.depends('partner_id')
