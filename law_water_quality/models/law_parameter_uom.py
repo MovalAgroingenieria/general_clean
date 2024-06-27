@@ -47,7 +47,7 @@ class LawParameterUom(models.Model):
             name = record.name or ""
             short_name = record.short_name or ""
             if short_name:
-                display_name = "{} ({})".format(name, short_name)
+                display_name = u"{} ({})".format(name, short_name)
             else:
                 display_name = name
             display_name_bytes = display_name.encode('utf-8')
