@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device -->
+
+    <!-- Definición de la vista formulario -->
+    <record id="law_measuring_device_view_form" model="ir.ui.view">
+        <field name="name">Measuring Device (form view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="arch" type="xml">
+            <form duplicate="0">
+                <field name="id" invisible="1"/>
+                <sheet>
+                    <div name="buttons" class="oe_button_box">
+                        <field name="active" invisible="1"/>
+                        <button
+                                name="action_show_measuring_device_measurement"
+                                type="object" class="oe_stat_button"
+                                icon="fa-list"
+                                groups="base_wua.group_wua_user">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Measurements</span>
+                                </div>
+                        </button>
+                        <button
+                                name="toggle_active"
+                                type="object"
+                                class="oe_stat_button"
+                                confirm="Are you sure you want to toggle visibility?"
+                                icon="fa-archive">
+                                <field
+                                        name="active"
+                                        widget="boolean_button"
+                                        options='{"terminology": "archive"}'
+                                />
+                        </button>
+                    </div>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="measuring_device_type_id"/>
+<!--                            <field name="measurement_ids"/>-->
+                        </group>
+                        <group name="master_data_right">
+                            <field name="number_of_measurements" string="Number of Measurements"/>
+                            <div colspan="2" style="margin-top: 10px; margin-bottom: 10px;" class="text-center">
+                                <span style="font-weight: bold;">LAST MEASUREMENT</span>
+                            </div>
+                            <field name="last_measurement_time" string="Instant"/>
+                            <field name="last_measurement_value" string="Value "/>
+                            <field name="uom_id"/>
+                            <br/><br/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="notes_page" string="Notes">
+                                <field name="notes"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista árbol -->
+    <record id="wua_measuring_device_view_tree" model="ir.ui.view">
+        <field name="name">Measuring Device (tree view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="arch" type="xml">
+            <tree class="o_base_wua_pressurized_irrigation_pressuresensors_view_tree">
+                <field name="name"/>
+                <field name="description"/>
+                <field name="measuring_device_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Definición de la vista búsqueda -->
+    <record id="wua_measuring_device_view_search" model="ir.ui.view">
+        <field name="name">Measuring Device (search view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Definición de la acción -->
+    <record id="law_measuring_device_action" model="ir.actions.act_window">
+        <field name="name">Measurement Device</field>
+        <field name="res_model">law.measuring.device</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('wua_measuring_device_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_measuring_device_view_form')})]"/>
+    </record>
+
+
+
+    <!-- GROUPS -->
+    <data noupdate="1">
+        <!-- Grupo de usuarios -->
+        <record id="group_law_user" model="res.groups">
+            <field name="name">Law User</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <!-- Grupo de gerentes -->
+        <record id="group_law_manager" model="res.groups">
+            <field name="name">Law Manager</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</odoo>

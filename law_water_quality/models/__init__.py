@@ -6,3 +6,6 @@ from . import law_analysis_parameter
 from . import law_parameter_uom
 from . import law_parameter
 from . import law_watertype
+from . import law_measuring_device
+from . import law_measuring_device_type
+from . import law_measuring_device_measurement

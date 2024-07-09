@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-11 08:26+0000\n"
-"PO-Revision-Date: 2024-06-11 08:26+0000\n"
+"POT-Creation-Date: 2024-07-02 10:50+0000\n"
+"PO-Revision-Date: 2024-07-02 10:50+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -97,6 +97,16 @@ msgstr "<span class=\"o_stat_text\">\n"
 "                                    </span>"
 
 #. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "<span class=\"o_stat_text\">Measurements</span>"
+msgstr "<span class=\"o_stat_text\">Mediciones</span>"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "<span style=\"font-weight: bold;\">LAST MEASUREMENT</span>"
+msgstr "<span style=\"font-weight: bold;\">ÚLTIMA MEDICIÓN</span>"
+
+#. module: law_water_quality
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
 msgid "<span>Analysis </span>"
 msgstr "<span>Análisis </span>"
@@ -171,8 +181,12 @@ msgid "<strong>Request</strong>"
 msgstr "<strong>Petición</strong>"
 
 #. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: law_water_quality
 #: code:addons/law_water_quality/models/law_watertype.py:48
-#: code:addons/moval_addons/general/law_water_quality/models/law_watertype.py:48
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_analysis_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_analysis_ids
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
@@ -193,7 +207,6 @@ msgstr "Parámetro de Análisis"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_parameter.py:124
-#: code:addons/moval_addons/general/law_water_quality/models/law_parameter.py:124
 #: model:ir.actions.act_window,name:law_water_quality.law_analysis_parameter_action
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_parameter_ids
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_analysis_parameter_ids
@@ -218,7 +231,12 @@ msgstr "Fecha Inicio Análisis"
 #: model:ir.actions.act_window,name:law_water_quality.law_analysis_action
 #: model:ir.ui.menu,name:law_water_quality.lab_analytics_menu
 msgid "Analytics"
-msgstr "Analíticas"
+msgstr "Análisis"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "Are you sure you want to toggle visibility?"
+msgstr "¿Está seguro de que quiere modificar la visibilidad?"
 
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_client_id
@@ -252,6 +270,9 @@ msgstr "Coordenada Y"
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_create_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_create_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_create_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_create_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_create_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_create_uid
@@ -261,6 +282,9 @@ msgstr "Creado por"
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_create_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_create_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_create_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_create_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_create_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_create_date
@@ -268,14 +292,24 @@ msgid "Created on"
 msgstr "Creado el"
 
 #. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_description
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_description
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_description
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_description
 msgid "Description"
 msgstr "Descripción"
 
 #. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_device_ids
+msgid "Devices"
+msgstr "Dispositivos"
+
+#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_display_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_display_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_display_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_display_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_display_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_display_name
@@ -283,13 +317,27 @@ msgid "Display Name"
 msgstr "Nombre a mostrar"
 
 #. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_measurement_view_search
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_type_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_id
 msgid "ID"
 msgstr "ID"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "Instant"
+msgstr "Instante"
 
 #. module: law_water_quality
 #: model:ir.actions.report.xml,name:law_water_quality.law_analysis_report
@@ -309,8 +357,16 @@ msgid "Laboratory Analysis Waters"
 msgstr "Análisis de Laboratorio de Aguas"
 
 #. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_last_measurement_value
+msgid "Last Measurement Value"
+msgstr "Ultimo valor medido"
+
+#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis___last_update
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement___last_update
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type___last_update
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter___last_update
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom___last_update
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype___last_update
@@ -320,6 +376,9 @@ msgstr "Última modificación en"
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_write_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_write_uid
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_write_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_write_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_write_uid
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_write_uid
@@ -329,11 +388,19 @@ msgstr "Última actualización por"
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_write_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_write_date
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_write_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_write_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_write_date
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_write_date
 msgid "Last Updated on"
 msgstr "Última actualización el"
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_last_measurement_time
+msgid "Last measurement"
+msgstr "Última medición"
 
 #. module: law_water_quality
 #: model:ir.model,name:law_water_quality.model_law_analysis
@@ -351,6 +418,31 @@ msgid "Law Manager"
 msgstr "Gestor Análisis de Calidad de Aguas"
 
 #. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_measuring_device
+msgid "Law Measuring Device"
+msgstr "Dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_measuring_device_measurement
+msgid "Law Measuring Device Measurement"
+msgstr "Medida de dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_measuring_device_measurement_action
+msgid "Law Measuring Device Measurements"
+msgstr "Mediciones de dispositivos"
+
+#. module: law_water_quality
+#: model:ir.model,name:law_water_quality.model_law_measuring_device_type
+msgid "Law Measuring Device Type"
+msgstr "Tipo de dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_measuring_device_type_action
+msgid "Law Measuring Device Types"
+msgstr "Tipos de dispositivos de medición"
+
+#. module: law_water_quality
 #: model:ir.model,name:law_water_quality.model_law_parameter
 msgid "Law Parameter"
 msgstr "Parámetro de Calidad"
@@ -359,6 +451,11 @@ msgstr "Parámetro de Calidad"
 #: model:ir.model,name:law_water_quality.model_law_parameter_uom
 msgid "Law Parameter Unit of Measure"
 msgstr "Unidad de Medida"
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.law_parameter_menu
+msgid "Law Parameters"
+msgstr "Parametros LAW"
 
 #. module: law_water_quality
 #: model:res.groups,name:law_water_quality.group_law_user
@@ -392,6 +489,31 @@ msgid "Maximum Value Admissible (VMA)"
 msgstr "Valor Máximo Admisible (VMA)"
 
 #. module: law_water_quality
+#: model:ir.actions.act_window,name:law_water_quality.law_measuring_device_action
+msgid "Measurement Device"
+msgstr "Dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.measuring_device
+msgid "Measurement Devices"
+msgstr "Dispositivos de medición"
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.law_measuring_device_measurement_menu
+msgid "Measurement Devices Measurements"
+msgstr "Mediciones de dispositivos"
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.measuring_device_type_menu
+msgid "Measurement Devices Type"
+msgstr "Tipos de dispositivos de medición"
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_measurement_time
+msgid "Measurement Time"
+msgstr "Fecha de medición"
+
+#. module: law_water_quality
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_parameter_view_search
 #: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_search
 msgid "Measurement Unit"
@@ -404,7 +526,47 @@ msgid "Measurement Units"
 msgstr "Unidades de Medida"
 
 #. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_value
+msgid "Measurement Value"
+msgstr "Valor de medición"
+
+#. module: law_water_quality
+#: code:addons/law_water_quality/models/law_measuring_device.py:97
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_ids
+#, python-format
+msgid "Measurements"
+msgstr "Mediciones"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_measurement_view_search
+msgid "Measuring Device"
+msgstr "Dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_measuring_device_id
+msgid "Measuring Device ID"
+msgstr "Dispositivo de medición"
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measuring_device_type_id
+msgid "Measuring Device Type"
+msgstr "Tipos de dispositivos de medición"
+
+#. module: law_water_quality
+#: model:ir.ui.menu,name:law_water_quality.measuring_device_menu
+msgid "Measuring Devices"
+msgstr "Dispositivos de medición"
+
+#. module: law_water_quality
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_number_of_measurements
+msgid "N. of measurements"
+msgstr "Nº de mediciones"
+
+#. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_name
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_name
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_name
@@ -414,11 +576,15 @@ msgstr "Nombre"
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_notes
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_notes
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_notes
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_notes
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_notes
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_notes
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_type_view_form
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
 #: model:ir.ui.view,arch_db:law_water_quality.law_parameter_uom_view_form
 #: model:ir.ui.view,arch_db:law_water_quality.law_parameter_view_form
 #: model:ir.ui.view,arch_db:law_water_quality.law_watertype_view_form
@@ -429,6 +595,11 @@ msgstr "Notas"
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_notes_text
 msgid "Notes (as text)"
 msgstr "Notas (como texto)"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "Number of Measurements"
+msgstr "Número de mediciones"
 
 #. module: law_water_quality
 #: model:ir.actions.act_window,name:law_water_quality.law_parameter_action
@@ -445,7 +616,6 @@ msgstr "Máximo Valor Admisible"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_parameter_uom.py:63
-#: code:addons/moval_addons/general/law_water_quality/models/law_parameter_uom.py:63
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_parameter_ids
 #: model:ir.ui.menu,name:law_water_quality.configuration_menu
 #, python-format
@@ -530,7 +700,12 @@ msgstr "El tiempo de colección debe ser anterior a su recepción."
 
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_uom_id
-#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_id_12742
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_uom_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_type_uom_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_uom_id
+#: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_id_14332
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_measurement_view_search
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_type_view_search
 msgid "Unit of Measure"
 msgstr "Unidad de medida"
 
@@ -538,6 +713,11 @@ msgstr "Unidad de medida"
 #: model:ir.ui.view,arch_db:law_water_quality.law_analysis_report_document
 msgid "VMA"
 msgstr "VMA"
+
+#. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
+msgid "Value"
+msgstr "Valor"
 
 #. module: law_water_quality
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_parameter_value_above_mav
@@ -571,4 +751,3 @@ msgstr "Con DMA"
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_with_maximum_value_admissible
 msgid "With VMA"
 msgstr "Con VMA"
-

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device Measurement -->
+
+    <!-- Vista árbol -->
+    <record id="law_measuring_device_measurement_view_tree" model="ir.ui.view">
+        <field name="name">Law Measuring Device Measurement Tree</field>
+        <field name="model">law.measuring.device.measurement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="measuring_device_id"/>
+                <field name="measurement_time"/>
+                <field name="value"/>
+                <field name="uom_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista búsqueda -->
+    <record id="law_measuring_device_measurement_view_search" model="ir.ui.view">
+        <field name="name">Law Measuring Device Measurement Search</field>
+        <field name="model">law.measuring.device.measurement</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="measuring_device_id"/>
+                <group expand="0" string="Group By">
+                    <filter string="Measuring Device" name="measuring_device_id" context="{'group_by':'measuring_device_id'}"/>
+                    <filter string="Unit of Measure" name="uom_id" context="{'group_by':'uom_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción ventana -->
+    <record id="law_measuring_device_measurement_action" model="ir.actions.act_window">
+        <field name="name">Law Measuring Device Measurements</field>
+        <field name="res_model">law.measuring.device.measurement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('law_measuring_device_measurement_view_tree')})]"/>
+    </record>
+
+
+</odoo>

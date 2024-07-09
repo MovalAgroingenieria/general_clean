@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device Type -->
+
+    <!-- Vista formulario -->
+    <record id="law_measuring_device_type_view_form" model="ir.ui.view">
+        <field name="name">Law Measuring Device Type Form</field>
+        <field name="model">law.measuring.device.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="uom_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista árbol -->
+    <record id="law_measuring_device_type_view_tree" model="ir.ui.view">
+        <field name="name">Law Measuring Device Type Tree</field>
+        <field name="model">law.measuring.device.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="uom_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista búsqueda -->
+    <record id="law_measuring_device_type_view_search" model="ir.ui.view">
+        <field name="name">Law Measuring Device Type Search</field>
+        <field name="model">law.measuring.device.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+                <group expand="0" string="Group By">
+                    <filter string="Unit of Measure" name="uom_id" context="{'group_by':'uom_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción ventana -->
+    <record id="law_measuring_device_type_action" model="ir.actions.act_window">
+        <field name="name">Law Measuring Device Types</field>
+        <field name="res_model">law.measuring.device.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[(5, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('law_measuring_device_type_view_tree')}), (0, 0, {'view_mode': 'form', 'view_id': ref('law_measuring_device_type_view_form')})]"/>
+    </record>
+
+</odoo>
