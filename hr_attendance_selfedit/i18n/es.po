@@ -1,0 +1,94 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_attendance_selfedit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-16 14:49+0000\n"
+"PO-Revision-Date: 2024-07-16 14:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_selfedit
+#: model:ir.model,name:hr_attendance_selfedit.model_hr_attendance
+msgid "Attendance"
+msgstr "Asistencias"
+
+#. module: hr_attendance_selfedit
+#: model:ir.model.fields,field_description:hr_attendance_selfedit.field_hr_attendance_attendance_edited
+#: model:ir.ui.view,arch_db:hr_attendance_selfedit.hr_attendance_view_filter
+msgid "Edited"
+msgstr "Editada"
+
+#. module: hr_attendance_selfedit
+#: model:ir.actions.act_window,name:hr_attendance_selfedit.hr_attendance_employee_action
+#: model:ir.ui.menu,name:hr_attendance_selfedit.menu_hr_attendance_view_user_attendances
+msgid "Employee attendances"
+msgstr "Mis asistencias"
+
+#. module: hr_attendance_selfedit
+#: model:ir.actions.act_window,name:hr_attendance_selfedit.hr_attendance_group_attendances_action
+msgid "Group attendances"
+msgstr "Asistencias grupo"
+
+#. module: hr_attendance_selfedit
+#: model:ir.ui.menu,name:hr_attendance_selfedit.menu_hr_attendance_view_group_attendances
+msgid "Group employee attendances"
+msgstr "Asistencias grupo de empleados"
+
+#. module: hr_attendance_selfedit
+#: model:ir.ui.view,arch_db:hr_attendance_selfedit.hr_attendance_view_filter
+msgid "Modificated"
+msgstr "Modificada"
+
+#. module: hr_attendance_selfedit
+#: model:ir.model.fields,field_description:hr_attendance_selfedit.field_hr_attendance_attendance_modificated
+msgid "Modified"
+msgstr "Modificada"
+
+#. module: hr_attendance_selfedit
+#: model:ir.actions.act_window,help:hr_attendance_selfedit.hr_attendance_employee_action
+#: model:ir.actions.act_window,help:hr_attendance_selfedit.hr_attendance_group_attendances_action
+msgid "No attendance records found"
+msgstr "No se ha encontrado ningún registro asistencia"
+
+#. module: hr_attendance_selfedit
+#: model:ir.model.fields,field_description:hr_attendance_selfedit.field_hr_attendance_attendance_observations
+msgid "Observations"
+msgstr "Observaciones"
+
+#. module: hr_attendance_selfedit
+#: model:ir.ui.view,arch_db:hr_attendance_selfedit.hr_attendance_view_form
+#: model:ir.ui.view,arch_db:hr_attendance_selfedit.view_attendance_tree
+msgid "Required if attendance is modified by user (Min. 6 chars)"
+msgstr "Obligatorio si la asistencia es modificada por el usuario (mín. 6 caracteres)"
+
+#. module: hr_attendance_selfedit
+#: code:addons/hr_attendance_selfedit/models/hr_attendance.py:95
+#, python-format
+msgid "The field observations must be filled."
+msgstr "El campo Observaciones debe rellenarse"
+
+#. module: hr_attendance_selfedit
+#: code:addons/hr_attendance_selfedit/models/hr_attendance.py:102
+#, python-format
+msgid "The length of observations must be at least 6 characters."
+msgstr "La longitud de las Observaciones debe ser al menos de 6 caracteres"
+
+#. module: hr_attendance_selfedit
+#: model:ir.model.fields,help:hr_attendance_selfedit.field_hr_attendance_attendance_observations
+msgid "This field is required if attendance is modified or it is created outside the current time (margin 30 minutes) by user. Min. 6 chars."
+msgstr "Este campo es obligatorio si la asistencia es modificada o se crea fuera de la hora actual (margen 30 minutos) por el usuario. (Mín. 6 caracteres)."
+
+#. module: hr_attendance_selfedit
+#: model:ir.actions.act_window,help:hr_attendance_selfedit.hr_attendance_employee_action
+#: model:ir.actions.act_window,help:hr_attendance_selfedit.hr_attendance_group_attendances_action
+msgid "Your attendance records will be displayed here."
+msgstr "Aquí se mostrarán sus registros de asistencia."
+
