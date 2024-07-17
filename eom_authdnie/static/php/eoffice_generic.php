@@ -61,6 +61,9 @@ if (count($parts) == 2) {
 } else {
    $dni = $serialNumber;
 }
+if (preg_match('/^[a-zA-Z]{2}/', $dni)) {
+   $dni = substr($dni, 2);
+}
 $country = isset($parsedCert['subject']['C']) ? $parsedCert['subject']['C'] : 'Unknown';
 $first_name = isset($parsedCert['subject']['GN']) ? $parsedCert['subject']['GN'] : 'Unknown';
 $last_name = isset($parsedCert['subject']['SN']) ? $parsedCert['subject']['SN'] : 'Unknown';
