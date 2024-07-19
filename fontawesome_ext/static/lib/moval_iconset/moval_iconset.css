@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'moval_iconset';
-  src:  url('fonts/moval_iconset.eot?ylyeqz');
-  src:  url('fonts/moval_iconset.eot?ylyeqz#iefix') format('embedded-opentype'),
-    url('fonts/moval_iconset.ttf?ylyeqz') format('truetype'),
-    url('fonts/moval_iconset.woff?ylyeqz') format('woff'),
-    url('fonts/moval_iconset.svg?ylyeqz#moval_iconset') format('svg');
+  src:  url('fonts/moval_iconset.eot?l9jfhl');
+  src:  url('fonts/moval_iconset.eot?l9jfhl#iefix') format('embedded-opentype'),
+    url('fonts/moval_iconset.ttf?l9jfhl') format('truetype'),
+    url('fonts/moval_iconset.woff?l9jfhl') format('woff'),
+    url('fonts/moval_iconset.svg?l9jfhl#moval_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -40,6 +40,18 @@
 }
 
 /* Icons */
+.fa-moval-logo-duotone::before {
+  content: "\e99c";
+}
+.fa-moval-logo-duotone::after {
+  content: "\e99d";
+}
+.fa-moval-logo-duotone .path3:before {
+  content: "\e99e";
+}
+.fa-moval-logo:before {
+  content: "\e99f";
+}
 .fa-moval-gis-viewer:before {
   content: "\e900";
 }
@@ -185,10 +197,10 @@
   content: "\e936";
 }
 .fa-moval-drop-water-duotone::before {
-  content: "\e923";
+  content: "\e937";
 }
 .fa-moval-drop-water-duotone::after {
-  content: "\e924";
+  content: "\e938";
 }
 .fa-moval-watering-request:before {
   content: "\e939";
@@ -224,10 +236,10 @@
   content: "\e943";
 }
 .fa-moval-file-irrigation-duotone::before {
-  content: "\e925";
+  content: "\e944";
 }
 .fa-moval-file-irrigation-duotone::after {
-  content: "\e926";
+  content: "\e945";
 }
 .fa-moval-file-quotas:before {
   content: "\e946";
@@ -341,10 +353,10 @@
   content: "\e96a";
 }
 .fa-moval-waterpipe-consumption-duotone::before {
-  content: "\e937";
+  content: "\e96b";
 }
 .fa-moval-waterpipe-consumption-duotone::after {
-  content: "\e938";
+  content: "\e96c";
 }
 .fa-moval-pumpunit:before {
   content: "\e96d";
@@ -383,10 +395,10 @@
   content: "\e978";
 }
 .fa-moval-efficiency-energy-duotone::before {
-  content: "\e944";
+  content: "\e979";
 }
 .fa-moval-efficiency-energy-duotone::after {
-  content: "\e945";
+  content: "\e97a";
 }
 .fa-moval-efficiency-lightbulb:before {
   content: "\e97b";
@@ -451,23 +463,23 @@
 .fa-moval-user-check-duotone::after {
   content: "\e922";
 }
-.fa-moval-logo:before {
+.fa-moval-logo-2023:before {
   content: "\e98d";
 }
-.fa-moval-logo-duotone::before {
-  content: "\e96b";
+.fa-moval-logo-duotone-2023 .path1:before {
+  content: "\e998";
 }
-.fa-moval-logo-duotone::after {
-  content: "\e96c";
+.fa-moval-logo-duotone-2023 .path2:before {
+  content: "\e999";
 }
 .fa-moval-logo-xmas:before {
   content: "\e98e";
 }
 .fa-moval-logo-xmas-duotone::before {
-  content: "\e979";
+  content: "\e99a";
 }
 .fa-moval-logo-xmas-duotone::after {
-  content: "\e97a";
+  content: "\e99b";
 }
 .fa-moval-agf-territory:before {
   content: "\e98f";
@@ -502,12 +514,15 @@
 .fa-moval-sun:before {
   content: "\f185";
 }
+.fa-moval-hammer:before {
+  content: "\e923";
+}
 .fa-moval-sede-electronica:before {
-  content: "\e998";
+  content: "\e924";
 }
 .fa-moval-sede-electronica-duotone::before {
-  content: "\e999";
+  content: "\e925";
 }
 .fa-moval-sede-electronica-duotone::after {
-  content: "\e99a";
+  content: "\e926";
 }
