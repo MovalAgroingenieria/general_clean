@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'moval_report_iconset';
-  src:  url('fonts/moval_report_iconset.eot?9b0k3j');
-  src:  url('fonts/moval_report_iconset.eot?9b0k3j#iefix') format('embedded-opentype'),
-    url('fonts/moval_report_iconset.ttf?9b0k3j') format('truetype'),
-    url('fonts/moval_report_iconset.woff?9b0k3j') format('woff'),
-    url('fonts/moval_report_iconset.svg?9b0k3j#moval_report_iconset') format('svg');
+  src:  url('fonts/moval_report_iconset.eot?bquyx4');
+  src:  url('fonts/moval_report_iconset.eot?bquyx4#iefix') format('embedded-opentype'),
+    url('fonts/moval_report_iconset.ttf?bquyx4') format('truetype'),
+    url('fonts/moval_report_iconset.woff?bquyx4') format('woff'),
+    url('fonts/moval_report_iconset.svg?bquyx4#moval_report_iconset') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +12,7 @@
 /* Simplified fa-moval class (inspired by the native Base Fontawesome module) */
 [class^="fa-moval-"], [class*=" fa-moval-"] {
    display: inline-block;
-   font-family: moval_report_iconset;
+   font-family: moval_iconset;
    font-style: normal;
    font-weight: normal;
    font-variant: normal;
@@ -40,6 +40,18 @@
 }
 
 /* Icons */
+.fa-moval-logo-duotone::before {
+  content: "\e901";
+}
+.fa-moval-logo-duotone::after {
+  content: "\e902";
+}
+.fa-moval-logo-duotone .path3:before {
+  content: "\e903";
+}
+.fa-moval-logo:before {
+  content: "\e911";
+}
 .fa-moval-hammer:before {
   content: "\e900";
 }
