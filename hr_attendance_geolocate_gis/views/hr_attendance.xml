@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+
+        <record id="view_attendance_tree_inh" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.inh</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance_geolocate.view_attendance_tree_inh"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="editable">bottom</attribute>
+                </xpath>
+                <xpath expr="//field[@name='message']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='url']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='message_out']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='url_out']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
