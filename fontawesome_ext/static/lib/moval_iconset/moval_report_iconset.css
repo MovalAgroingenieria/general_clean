@@ -12,7 +12,7 @@
 /* Simplified fa-moval class (inspired by the native Base Fontawesome module) */
 [class^="fa-moval-"], [class*=" fa-moval-"] {
    display: inline-block;
-   font-family: moval_iconset;
+   font-family: moval_report_iconset;
    font-style: normal;
    font-weight: normal;
    font-variant: normal;
