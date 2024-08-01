@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+# 2024 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 from odoo import http
 from odoo.http import request
 import json
@@ -27,13 +31,14 @@ class HrAttendanceController(http.Controller):
             ('check_out', '<=', end_date_str)
         ]
         attendances = request.env['hr.attendance'].search(domain)
-        output = []
+        output = {}
         for attendance in attendances:
-            output.append({
-                'employee_id': attendance.employee_id.id,
-                'employee_name': attendance.employee_id.name,
-                'check_in': attendance.check_in,
-                'check_out': attendance.check_out,
+            employee_name = attendance.employee_id.name
+            if employee_name not in output:
+                output[employee_name] = []
+            output[employee_name].append({
+                'check_in': int(attendance.check_in.timestamp()) * 1000,
+                'check_out': int(attendance.check_out.timestamp()) * 1000,
                 'geo_lat': attendance.geo_lat,
                 'geo_long': attendance.geo_long,
                 'geo_lat_out': attendance.geo_lat_out,
