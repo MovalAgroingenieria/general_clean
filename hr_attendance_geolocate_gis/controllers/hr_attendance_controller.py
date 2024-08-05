@@ -2,7 +2,7 @@
 # 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import http
+from odoo import http, fields
 from odoo.http import request
 import json
 from datetime import datetime
@@ -37,8 +37,13 @@ class HrAttendanceController(http.Controller):
             if employee_name not in output:
                 output[employee_name] = []
             output[employee_name].append({
-                'check_in': int(attendance.check_in.timestamp()) * 1000,
-                'check_out': int(attendance.check_out.timestamp()) * 1000,
+                # Set as epoch time in milliseconds
+                'check_in': (
+                    fields.Datetime.from_string(attendance.check_in) -
+                    datetime.datetime(1970, 1, 1)).total_seconds() * 1000,
+                'check_out': (
+                    fields.Datetime.from_string(attendance.check_out) -
+                    datetime.datetime(1970, 1, 1)).total_seconds() * 1000,
                 'geo_lat': attendance.geo_lat,
                 'geo_long': attendance.geo_long,
                 'geo_lat_out': attendance.geo_lat_out,
