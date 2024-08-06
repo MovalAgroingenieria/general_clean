@@ -40,10 +40,10 @@ class HrAttendanceController(http.Controller):
                 # Set as epoch time in milliseconds
                 'check_in': (
                     fields.Datetime.from_string(attendance.check_in) -
-                    datetime.datetime(1970, 1, 1)).total_seconds() * 1000,
+                    datetime(1970, 1, 1)).total_seconds() * 1000,
                 'check_out': (
                     fields.Datetime.from_string(attendance.check_out) -
-                    datetime.datetime(1970, 1, 1)).total_seconds() * 1000,
+                    datetime(1970, 1, 1)).total_seconds() * 1000,
                 'geo_lat': attendance.geo_lat,
                 'geo_long': attendance.geo_long,
                 'geo_lat_out': attendance.geo_lat_out,
