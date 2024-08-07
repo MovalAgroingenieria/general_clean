@@ -153,7 +153,8 @@ class ResNotification(models.Model):
         string='Email',
         store=True,
         index=True,
-        compute='_compute_email',)
+        compute='_compute_email',
+        compute_sudo=True,)
 
     _sql_constraints = [
         ('unique_name',
