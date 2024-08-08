@@ -60,7 +60,7 @@
               name="File Tags"
               parent="configuration_menu"
               action="res_filetag_action"
-              sequence="6"
+              sequence="7"
               groups="crm_filemgmt.group_file_user"/>
 
 </odoo>

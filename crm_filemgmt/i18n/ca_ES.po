@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-25 12:45+0000\n"
-"PO-Revision-Date: 2022-11-25 12:45+0000\n"
+"POT-Creation-Date: 2024-08-08 11:22+0000\n"
+"PO-Revision-Date: 2024-08-08 11:22+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -83,14 +83,18 @@ msgstr "<span class=\"o_stat_text\">\n"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
-msgid "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">C A N C E L L E D</span>"
-msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">C A N C E L · L A T</span>"
+msgid "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R C H I V E D</span>"
+msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R X I V A T</span>"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_partner_access_file_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_users_access_file_filemgmt
-msgid "Access to file management"
-msgstr "Accés a la gestió d'expedients"
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "A R C H I V E D"
+msgstr "A R X I V A T"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_active
+msgid "Active"
+msgstr "Actiu"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
@@ -99,8 +103,28 @@ msgstr "Aplicar"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "Are you sure you want to do this operation? The file closing date will be deleted."
-msgstr "Esteu segur de realitzar aquesta operació? La data de tancament de l'expedient serà eliminada."
+msgid "Archive"
+msgstr "Arxivar"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+msgid "Archived: No"
+msgstr "Arxivat: No"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+msgid "Archived: Yes"
+msgstr "Arxivat: Sí"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Are you sure you want to archive this file?"
+msgstr "Esteu segur d'arxivar aquest expedient?"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Are you sure you want to unarchive this file?"
+msgstr "Esteu segur de desarxivar aquest expedient?"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_file_ids
@@ -135,30 +159,24 @@ msgid "Blocked: Yes"
 msgstr "Bloquejat: Sí"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_bottom_comment_template_id
+msgid "Bottom Comment Template"
+msgstr "Plantilla de comentari inferior"
+
+#. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "C A N C E L L E D"
-msgstr "C A N C E L · L A T"
+msgid "Bottom Comments"
+msgstr "Comentaris inferiors"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_bottom_comment
+msgid "Bottom comment"
+msgstr "Comentari inferior"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Cancel"
 msgstr "Cancel·la"
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_is_cancelled
-msgid "Cancelled"
-msgstr "Cancel·lat"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-msgid "Cancelled: No"
-msgstr "Cancel·lat: No"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-msgid "Cancelled: Yes"
-msgstr "Cancel·lat: Sí"
 
 #. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.file_category_menu
@@ -190,6 +208,11 @@ msgid "Click to add a new container type"
 msgstr "Cliqueu per afegir un nou tipus de contenidor"
 
 #. module: crm_filemgmt
+#: model:ir.actions.act_window,help:crm_filemgmt.res_file_stage_action
+msgid "Click to add a new fil stage"
+msgstr "Cliqueu per afegir una nova etapa al flux d'expedients"
+
+#. module: crm_filemgmt
 #: model:ir.actions.act_window,help:crm_filemgmt.res_file_action
 msgid "Click to add a new file"
 msgstr "Cliqueu per afegir una nou expedient"
@@ -215,15 +238,9 @@ msgid "Click to add a new file tag"
 msgstr "Cliqueu per afegir una nova etiqueta d'expedient."
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "Close"
-msgstr "Tancar"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-#: selection:res.file,state:0
-msgid "Closed"
-msgstr "Tancat"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_is_closing_stage
+msgid "Closing Stage"
+msgstr "Etapa de tancament"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_closing_date
@@ -247,6 +264,11 @@ msgstr "Codi"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_color
 msgid "Color Index"
 msgstr "Índex de color"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Comments"
+msgstr "Comentaris"
 
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_company
@@ -306,6 +328,7 @@ msgstr "Tipus contenidor"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_create_uid
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_create_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_create_uid
 msgid "Created by"
 msgstr "Creat per"
@@ -319,6 +342,7 @@ msgstr "Creat per"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_create_date
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_create_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_create_date
 msgid "Created on"
 msgstr "Creat el"
@@ -360,15 +384,10 @@ msgstr "Data d'alta"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_display_name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_display_name
 msgid "Display Name"
 msgstr "Mostrar Nom"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-#: selection:res.file,state:0
-msgid "Draft"
-msgstr "Esborrany"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -379,11 +398,6 @@ msgstr "Menu"
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
 msgid "Edit File"
 msgstr "Edita expedient"
-
-#. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_enable_access_file_filemgmt_portal_user
-msgid "Enable access of portal user to file management"
-msgstr "Habilitar accés d'usuaris de portal a la gestió d'expedients"
 
 #. module: crm_filemgmt
 #: sql_constraint:res.file.category:0
@@ -424,11 +438,6 @@ msgstr "El codi de la ubicació ja existeix."
 #: model:res.file.category,name:crm_filemgmt.resfilecategory_external_file
 msgid "External Files"
 msgstr "Expedients Externs"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
-msgid "File_"
-msgstr "Expedient"
 
 #. module: crm_filemgmt
 #: model:ir.actions.act_window,name:crm_filemgmt.res_file_category_action
@@ -474,6 +483,19 @@ msgid "File Partnerlinks"
 msgstr "Socis"
 
 #. module: crm_filemgmt
+#: model:ir.model,name:crm_filemgmt.model_res_file_stage
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_stage_form_view
+msgid "File Stage"
+msgstr "Etapa expedient"
+
+#. module: crm_filemgmt
+#: model:ir.actions.act_window,name:crm_filemgmt.res_file_stage_action
+#: model:ir.ui.menu,name:crm_filemgmt.menu_res_file_stage
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_stage_tree_view
+msgid "File Stages"
+msgstr "Etapes expedient"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_name
 msgid "File Tag"
 msgstr "Etiqueta expedient"
@@ -491,8 +513,8 @@ msgid "File attachments"
 msgstr "Adjunts"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:257
-#: code:addons/crm_filemgmt/models/res_partner.py:83
+#: code:addons/crm_filemgmt/models/res_file.py:240
+#: code:addons/crm_filemgmt/models/res_partner.py:89
 #, python-format
 msgid "File registers"
 msgstr "Registres expedient"
@@ -508,6 +530,7 @@ msgstr "Registre expedient"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_file_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_file_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_letter_file_id
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_filter
 msgid "File_"
 msgstr "Expedient"
 
@@ -520,8 +543,10 @@ msgstr "Expedient"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_number_of_files
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_ids
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_number_of_containers
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_file_ids
 #: model:ir.ui.menu,name:crm_filemgmt.files_menu
 #: model:ir.ui.menu,name:crm_filemgmt.main_menu
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_stage_form_view
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_calendar
 #: model:ir.ui.view,arch_db:crm_filemgmt.view_company_form
 #, python-format
@@ -529,9 +554,9 @@ msgid "Files"
 msgstr "Expedients"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings_enable_access_file_filemgmt_portal_user
-msgid "Grant or revoke access of portal users to file management"
-msgstr "Habilita o deshabilita l'accés dels usuaris de portal a la gestió d'expedients"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_fold
+msgid "Folded in Kanban"
+msgstr "Plegat a Kanban"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_search
@@ -556,14 +581,15 @@ msgid "Has registres"
 msgstr "Té registres"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_5376
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_12734
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_5408
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_12766
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_id
 msgid "ID"
 msgstr "ID"
@@ -575,9 +601,13 @@ msgstr "Si és marcat aquest soci serà el principal"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-#: selection:res.file,state:0
-msgid "In progress"
-msgstr "En progrés"
+msgid "In closed stage"
+msgstr "En etapa de tancament"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,help:crm_filemgmt.field_res_file_stage_is_closing_stage
+msgid "Indicates if this stage is a closing stage."
+msgstr "Indica si és una etapa de tancament."
 
 #. module: crm_filemgmt
 #: model:res.file.category,name:crm_filemgmt.resfilecategory_internal_file
@@ -585,12 +615,17 @@ msgid "Internal Files"
 msgstr "Expedients Interns"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_is_closing_stage
+msgid "Is Closing Stage"
+msgstr "És etapa de tancament"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_is_multi_company
 msgid "Is multicompany"
 msgstr "És multicompanyia"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:391
+#: code:addons/crm_filemgmt/models/res_file.py:408
 #, python-format
 msgid "It is mandatory to check the primary partner."
 msgstr "És obligatori marcar un soci principal."
@@ -604,6 +639,7 @@ msgstr "És obligatori marcar un soci principal."
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink___last_update
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
 msgstr "Última modificació el "
@@ -616,6 +652,7 @@ msgstr "Última modificació el "
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_write_uid
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_uid
 msgid "Last Updated by"
@@ -629,10 +666,16 @@ msgstr "Última actualització per"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_write_date
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_date
 msgid "Last Updated on"
 msgstr "Última actualització el"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Load a template"
+msgstr "Carregar una plantilla"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_location_id
@@ -669,6 +712,7 @@ msgstr "Director"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_name
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_name
 msgid "Name"
 msgstr "Nom"
 
@@ -702,7 +746,7 @@ msgid "Num. of files"
 msgstr "Nº d'expedients"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:394
+#: code:addons/crm_filemgmt/models/res_file.py:411
 #, python-format
 msgid "Only one primary partner is allowed."
 msgstr "Només es permet un soci principal."
@@ -732,7 +776,7 @@ msgstr "Enllaços a socis"
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Soci"
+msgstr "Partner of a WUA"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
@@ -747,20 +791,20 @@ msgid "Photo / Image"
 msgstr "Foto / Imatge"
 
 #. module: crm_filemgmt
+#: model:res.groups,name:crm_filemgmt.group_file_portal
+msgid "Portal"
+msgstr "Portal"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_company_filemgmt_annual_seq_prefix
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
 msgid "Prefix (annual seq.)"
-msgstr "Prefix (annual seq.)"
+msgstr "Prefix (sec/any)"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_is_main
 msgid "Primary"
 msgstr "Principal"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "Reactive"
-msgstr "Reactivar"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_is_readonly
@@ -773,9 +817,9 @@ msgid "Related File"
 msgstr "Expedient relacionat"
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "Revert"
-msgstr "Revertir"
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_sequence
+msgid "Sequence"
+msgstr "Seqüència"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_location_id
@@ -783,16 +827,11 @@ msgid "Site"
 msgstr "Ubicació"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_state
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_state
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_stage_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id_17250
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
-msgid "State"
-msgstr "Estat"
-
-#. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
-msgid "State:"
-msgstr "Estat:"
+msgid "Stage"
+msgstr "Etapa"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_subject
@@ -823,22 +862,22 @@ msgid "The container code has to be positive."
 msgstr "El codi de l'contenidor ha de ser positiu."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:411
+#: code:addons/crm_filemgmt/models/res_file.py:428
 #, python-format
 msgid "The file cannot be self-referenced."
 msgstr "Un expedient no pot ser auto-referenciat."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:363
+#: code:addons/crm_filemgmt/models/res_file.py:351
 #, python-format
 msgid "The file name cannot start or end with a slash (/)."
 msgstr "El nom de l'expedient no pot començar o acabar amb una barra (/)."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:377
+#: code:addons/crm_filemgmt/models/res_file.py:365
 #, python-format
-msgid "The file number must be an integer."
-msgstr "El nombre de l'expedient ha de ser un nombre enter."
+msgid "The file number must be an integer, found: %s"
+msgstr "El número d'expedient deu un enter, trobat: %s"
 
 #. module: crm_filemgmt
 #: sql_constraint:res.file.location:0
@@ -846,7 +885,7 @@ msgid "The location code has to be positive."
 msgstr "El codi de la ubicació ha de ser positiu."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:357
+#: code:addons/crm_filemgmt/models/res_file.py:345
 #, python-format
 msgid "The prefix must be separated from the rest of the file name by a hyphen (-)."
 msgstr "El prefix ha de ser separat de la resta de el nom del fitxer per un guió (-)."
@@ -858,22 +897,42 @@ msgid "The read only categories cannot be removed."
 msgstr "Les categories de sol lectura no poden ser eliminades."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:418
+#: code:addons/crm_filemgmt/models/res_file.py:435
 #, python-format
 msgid "There are repeated files."
 msgstr "Hi ha expedients repetits."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:400
+#: code:addons/crm_filemgmt/models/res_file.py:417
 #, python-format
 msgid "There are repeated partners."
 msgstr "Hi ha socis repetits."
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:371
+#: code:addons/crm_filemgmt/models/res_file.py:359
 #, python-format
 msgid "There cannot be more than one slash in the name of the file."
 msgstr "No hi pot haver més d'una barra en el nom de l'expedient."
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,help:crm_filemgmt.field_res_file_stage_fold
+msgid "This stage is folded in the kanban view."
+msgstr "Aquesta etapa està plegada a la vista kanban."
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_top_comment_template_id
+msgid "Top Comment Template"
+msgstr "Plantilla de comentari superior"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Top Comments"
+msgstr "Comentaris superiors"
+
+#. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_file_top_comment
+msgid "Top comment"
+msgstr "Comentari superior"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_containertype_id
@@ -885,6 +944,11 @@ msgstr "Tipus"
 #: model:ir.model,name:crm_filemgmt.model_res_file_containertype
 msgid "Type of containers"
 msgstr "Tipus contenidor"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
+msgid "Unarchive"
+msgstr "Unarchive"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -902,11 +966,6 @@ msgid "User id"
 msgstr "ID d'Usuari"
 
 #. module: crm_filemgmt
-#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
-msgid "Validate"
-msgstr "Validar"
-
-#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_with_technician
 msgid "With technician"
 msgstr "Amb tècnic"
@@ -922,7 +981,13 @@ msgid "With technician: Yes"
 msgstr "Amb tècnic: Sí"
 
 #. module: crm_filemgmt
-#: code:addons/crm_filemgmt/models/res_file.py:276
+#: code:addons/crm_filemgmt/models/res_file.py:464
+#, python-format
+msgid "You cannot move a file from a non-closing stage to a closing stage."
+msgstr "No es pot moure un expedient duna etapa de no tancament a una etapa de tancament."
+
+#. module: crm_filemgmt
+#: code:addons/crm_filemgmt/models/res_file.py:259
 #, python-format
 msgid "[no subject]"
 msgstr "[sense assumpte]"

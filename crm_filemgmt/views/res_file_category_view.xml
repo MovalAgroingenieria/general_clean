@@ -87,7 +87,7 @@
     <menuitem id="file_category_menu"
               name="Categories"
               parent="configuration_menu"
-              sequence="2"
+              sequence="3"
               action="res_file_category_action"
               groups="crm_filemgmt.group_file_user"/>
 

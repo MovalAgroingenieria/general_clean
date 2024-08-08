@@ -177,14 +177,14 @@
     <menuitem id="files_container_menu"
               name="Containers"
               parent="configuration_menu"
-              sequence="4"
+              sequence="5"
               action="res_file_container_action"
               groups="crm_filemgmt.group_file_user"/>
 
     <menuitem id="files_containertype_menu"
               name="Containers Type"
               parent="configuration_menu"
-              sequence="5"
+              sequence="6"
               action="res_file_containertype_action"
               groups="crm_filemgmt.group_file_user"/>
 

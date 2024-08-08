@@ -4,7 +4,7 @@
 
 import datetime
 from lxml import etree
-from odoo import models, fields, api, exceptions, _
+from odoo import models, fields, api, SUPERUSER_ID, exceptions, _
 
 
 class ResFile(models.Model):
@@ -88,6 +88,7 @@ class ResFile(models.Model):
         string='Photo / Image',
         attachment=True)
 
+    # To be deleted after migration
     state = fields.Selection(
         selection=[
             ('01_draft', 'Draft'),
@@ -100,11 +101,25 @@ class ResFile(models.Model):
         index=True,
         track_visibility='onchange')
 
+    stage_id = fields.Many2one(
+        string='Stage',
+        comodel_name='res.file.stage',
+        required=True,
+        default=lambda self: self._default_stage_id(),
+        group_expand='_read_group_stage_ids',
+        track_visibility='onchange')
+
+    is_closing_stage = fields.Boolean(
+        string='Is Closing Stage',
+        store=True,
+        compute='_compute_is_closing_stage')
+
     is_blocked = fields.Boolean(
         string='Blocked',
         default=False,
         track_visibility='onchange')
 
+    # To be deleted after migration
     is_cancelled = fields.Boolean(
         string='Cancelled',
         default=False,
@@ -195,24 +210,30 @@ class ResFile(models.Model):
         store=True,
         compute="_compute_with_technician")
 
+    file_top_comment_template_id = fields.Many2one(
+        'base.comment.template',
+        string='Top Comment Template')
+
+    file_bottom_comment_template_id = fields.Many2one(
+        'base.comment.template',
+        string='Bottom Comment Template')
+
+    file_top_comment = fields.Html(
+        string='Top comment',
+        translate=True)
+
+    file_bottom_comment = fields.Html(
+        string='Bottom comment',
+        translate=True)
+
+    active = fields.Boolean(
+        default=True)
+
     _sql_constraints = [
         ('unique_name',
          'UNIQUE (name)',
          'Existing file code.'),
         ]
-
-    @api.multi
-    def action_validate_file(self):
-        self.ensure_one()
-        self.state = '02_inprogress'
-
-    @api.multi
-    def action_close_file(self):
-        self.ensure_one()
-        if self.is_blocked:
-            self.state = False
-        else:
-            self.state = '03_closed'
 
     @api.multi
     def action_block_file(self):
@@ -223,26 +244,6 @@ class ResFile(models.Model):
     def action_unblock_file(self):
         self.ensure_one()
         self.is_blocked = False
-
-    @api.multi
-    def action_cancel_file(self):
-        self.ensure_one()
-        self.is_cancelled = True
-
-    @api.multi
-    def action_reactive_file(self):
-        self.ensure_one()
-        self.is_cancelled = False
-
-    @api.multi
-    def action_reactive_file_to_draft(self):
-        self.ensure_one()
-        self.state = '01_draft'
-
-    @api.multi
-    def action_reactive_file_to_inprogress(self):
-        self.ensure_one()
-        self.state = '02_inprogress'
 
     @api.multi
     def action_get_file_registers(self):
@@ -304,10 +305,15 @@ class ResFile(models.Model):
                 number_of_file_registers = len(file_registers)
             record.number_of_file_registers = number_of_file_registers
 
-    @api.depends('state')
+    @api.depends('stage_id')
+    def _compute_is_closing_stage(self):
+        for record in self:
+            record.is_closing_stage = record.stage_id.is_closing_stage
+
+    @api.depends('stage_id')
     def _compute_closing_date(self):
         for record in self:
-            if record.state == '03_closed':
+            if record.is_closing_stage:
                 record.closing_date = datetime.datetime.now()
             else:
                 record.closing_date = False
@@ -398,6 +404,16 @@ class ResFile(models.Model):
             res['arch'] = etree.tostring(doc)
         return res
 
+    @api.model
+    def _default_stage_id(self):
+        return self.env['res.file.stage'].search([], limit=1)
+
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order):
+        stage_ids = stages._search([], order=order,
+                                   access_rights_uid=SUPERUSER_ID)
+        return stages.browse(stage_ids)
+
     @api.constrains('partnerlink_ids')
     def _check_partnerlink_ids(self):
         if len(self) == 1:
@@ -447,6 +463,26 @@ class ResFile(models.Model):
             access_file_filemgmt = True
         return access_file_filemgmt
 
+    @api.onchange('file_top_comment_template_id')
+    def _set_file_top_comment(self):
+        comment = self.file_top_comment_template_id
+        if comment:
+            self.file_top_comment = comment.get_value(self.partner_id.id)
+
+    @api.onchange('file_bottom_comment_template_id')
+    def _set_file_bottom_comment(self):
+        comment = self.file_bottom_comment_template_id
+        if comment:
+            self.file_bottom_comment = comment.get_value(self.partner_id.id)
+
+    @api.onchange('stage_id')
+    def _onchange_stage_id(self):
+        if (self.stage_id.is_closing_stage and
+                not self._origin.stage_id.is_closing_stage):
+            raise exceptions.UserError(
+                _('You cannot move a file from a non-closing stage '
+                  'to a closing stage.'))
+
 
 class ResFilePartnerlink(models.Model):
     _name = 'res.file.partnerlink'
@@ -478,9 +514,9 @@ class ResFilePartnerlink(models.Model):
         string='Discharge date',
         related='file_id.date_file')
 
-    state = fields.Selection(
-        string='State',
-        related='file_id.state')
+    stage_id = fields.Many2one(
+        string='Stage',
+        related='file_id.stage_id')
 
     category_id = fields.Many2one(
         string='Category',

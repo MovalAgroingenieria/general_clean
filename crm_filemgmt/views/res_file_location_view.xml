@@ -91,7 +91,7 @@
     <menuitem id="files_location_menu"
               name="Locations"
               parent="configuration_menu"
-              sequence="3"
+              sequence="4"
               action="res_file_location_action"
               groups="crm_filemgmt.group_file_user"/>
 

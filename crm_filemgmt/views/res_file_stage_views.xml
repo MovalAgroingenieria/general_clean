@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_file_stage_tree_view" model="ir.ui.view">
+        <field name="name">res.file.stage.tree</field>
+        <field name="model">res.file.stage</field>
+        <field name="arch" type="xml">
+            <tree string="File Stages">
+                <field name="name"/>
+                <field name="sequence"/>
+                <field name="fold"/>
+                <field name="is_closing_stage"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_file_stage_form_view" model="ir.ui.view">
+        <field name="name">res.file.stage.form</field>
+        <field name="model">res.file.stage</field>
+        <field name="arch" type="xml">
+            <form string="File Stage">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                    </group>
+                    <group>
+                        <field name="fold"/>
+                        <field name="is_closing_stage"/>
+                    </group>
+                </group>
+                <group>
+                    <notebook name="notebook">
+                        <page name="files_page" string="Files">
+                            <field name="file_ids"/>
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_file_stage_action" model="ir.actions.act_window">
+        <field name="name">File Stages</field>
+        <field name="res_model">res.file.stage</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="res_file_stage_tree_view"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to add a new fil stage
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_res_file_stage"
+              name="File Stages"
+              parent="configuration_menu"
+              action="res_file_stage_action"
+              sequence="2"
+              groups="crm_filemgmt.group_file_user"/>
+
+</odoo>
