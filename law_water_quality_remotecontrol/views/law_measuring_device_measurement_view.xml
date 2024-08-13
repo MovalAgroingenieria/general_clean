@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device Measurement -->
+
+    <record id="law_measuring_device_measurement_view_tree" model="ir.ui.view">
+        <field name="name">Law Measuring Device Measurement Tree</field>
+        <field name="model">law.measuring.device.measurement</field>
+        <field name="inherit_id" ref="law_water_quality.law_measuring_device_measurement_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='uom_id']" position="after">
+                <field name="from_remotecontrol"/>
+                <field name="raw_remotecontrol_value" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="law_measuring_device_measurement_view_search" model="ir.ui.view">
+        <field name="name">Law Measuring Device Measurement Search</field>
+        <field name="model">law.measuring.device.measurement</field>
+        <field name="inherit_id" ref="law_water_quality.law_measuring_device_measurement_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='measuring_device_id']" position="after">
+                <filter string="From Remote Control" name="from_remotecontrol" domain="[('from_remotecontrol', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -8,7 +8,7 @@ from odoo import models, api
 class LawMeasuringConfiguration(models.TransientModel):
     _inherit = 'res.config.settings'
     _name = 'law.measuring.configuration'
-    _description = 'Configuration of wua_law_water_quality module'
+    _description = 'Configuration of law_water_quality module'
 
     @api.multi
     def set_default_values(self):

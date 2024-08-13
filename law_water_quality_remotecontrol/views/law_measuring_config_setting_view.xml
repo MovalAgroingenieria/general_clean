@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="law_measuring_config_settings_view_form" model="ir.ui.view">
+        <field name="name">Parameters</field>
+        <field name="model">law.measuring.configuration</field>
+        <field name='inherit_id' ref='law_water_quality.law_measuring_config_settings_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="after">
+                <group string="Remotecontrol Settings" name="remotecontrol_settings_group">
+                    <field name="remotecontrol_enabled"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

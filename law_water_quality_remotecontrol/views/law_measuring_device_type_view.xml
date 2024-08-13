@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device Type -->
+
+    <record id="law_measuring_device_type_view_form" model="ir.ui.view">
+        <field name="name">Law Measuring Device Type Form</field>
+        <field name="model">law.measuring.device.type</field>
+        <field name="inherit_id" ref='law_water_quality.law_measuring_device_type_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description']" position="after">
+                <field name="remotecontrol_enabled" invisible="1"/>
+                <field name="remotecontrol_measurement_transformation"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

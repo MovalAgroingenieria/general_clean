@@ -13,7 +13,8 @@ class AccountConfigSettings(models.TransientModel):
     _inherit = 'account.config.settings'
 
     entity_code = fields.Selection([
-        ("13706", "13706 - Comunidad de Regantes Torre Abraham")],
+        ("13706", "13706 - Comunidad de Regantes Torre Abraham"),
+        ("13720", "13720 - Comunidad de Regantes Santa Cruz de los Cáñamos")],
         string="Entity Code",
         default="13706",
         help="This code identifies the entity that sends the delegated "

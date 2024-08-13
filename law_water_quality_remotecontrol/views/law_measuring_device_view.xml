@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device -->
+
+    <record id="law_measuring_device_view_form" model="ir.ui.view">
+        <field name="name">Measuring Device (form view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="inherit_id" ref='law_water_quality.law_measuring_device_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='measuring_device_type_id']" position="after">
+                <field name="telecontrol_associated"/>
+                <field name="remotecontrol_measurement_transformation"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="law_measuring_device_view_search" model="ir.ui.view">
+        <field name="name">Measuring Device (search view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="inherit_id" ref="law_water_quality.law_measuring_device_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='description']">
+                <group expand="0" string="Group By">
+                    <filter string="Type of telecontrol associated"
+                            name="telecontrol_associated"
+                            context="{'group_by':'telecontrol_associated'}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

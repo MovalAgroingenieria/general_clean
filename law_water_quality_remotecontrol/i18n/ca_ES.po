@@ -1,0 +1,177 @@
+# Traducció del servidor Odoo.
+# Aquest fitxer conté la traducció dels següents mòduls:
+#    * law_water_quality_remotecontrol
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-13 12:45+0000\n"
+"PO-Revision-Date: 2024-08-13 12:45+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: law_water_quality_remotecontrol
+#: model:mail.template,subject:law_water_quality_remotecontrol.telecontrol_failed_email_template
+msgid " Remote control has experienced some problem"
+msgstr " El telecontrol ha experimentat algun problema"
+
+#. module: law_water_quality_remotecontrol
+#. openerp-web
+#: code:addons/law_water_quality_remotecontrol/static/src/xml/button_import_measurements.xml:6
+#, python-format
+msgid "&nbsp;&nbsp;"
+msgstr "&nbsp;&nbsp;"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model,name:law_water_quality_remotecontrol.model_law_measuring_configuration
+msgid "Configuration of law_water_quality module"
+msgstr "Configuració del mòdul law_water_quality"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_measurement_from_remotecontrol
+#: model:ir.ui.view,arch_db:law_water_quality_remotecontrol.law_measuring_device_measurement_view_search
+msgid "From Remote Control"
+msgstr "Origen telecontrol"
+
+#. module: law_water_quality_remotecontrol
+#. openerp-web
+#: code:addons/law_water_quality_remotecontrol/static/src/xml/button_import_measurements.xml:6
+#, python-format
+msgid "Get from remote control"
+msgstr "Obtenir del telecontrol"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.ui.view,arch_db:law_water_quality_remotecontrol.law_measuring_device_view_search
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. module: law_water_quality_remotecontrol
+#. openerp-web
+#: code:addons/law_water_quality_remotecontrol/static/src/js/button_import_measurements.js:32
+#, python-format
+msgid "Import measurements?"
+msgstr "Importar mesures?"
+
+#. module: law_water_quality_remotecontrol
+#: model:res.groups,name:law_water_quality_remotecontrol.group_law_manager
+msgid "Law Manager"
+msgstr "Gerent"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model,name:law_water_quality_remotecontrol.model_law_measuring_device
+msgid "Law Measuring Device"
+msgstr "Dispositiu de mesura"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model,name:law_water_quality_remotecontrol.model_law_measuring_device_measurement
+msgid "Law Measuring Device Measurement"
+msgstr "Mesura de dispositiu de mesura"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model,name:law_water_quality_remotecontrol.model_law_measuring_device_type
+msgid "Law Measuring Device Type"
+msgstr "Tipus de dispositiu de mesura"
+
+#. module: law_water_quality_remotecontrol
+#: model:res.groups,name:law_water_quality_remotecontrol.group_law_user
+msgid "Law User"
+msgstr "Usuari"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_remotecontrol_measurement_transformation
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_type_remotecontrol_measurement_transformation
+msgid "Measurement Transformation"
+msgstr "Transformació de la mesura"
+
+#. module: law_water_quality_remotecontrol
+#. openerp-web
+#: code:addons/law_water_quality_remotecontrol/static/src/js/button_import_measurements.js:38
+#, python-format
+msgid "Number of measurements"
+msgstr "Nombre de mesures"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_measurement_raw_remotecontrol_value
+msgid "Raw Remote Control Value"
+msgstr "Valor original del telecontrol"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_remotecontrol_enabled
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_type_remotecontrol_enabled
+msgid "Remote Control enabled"
+msgstr "Telecontrol habilitat"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device_measurement.py:59
+#, python-format
+msgid "Remote Control: Error getting measurements"
+msgstr "Telecontrol: Error en obtenir les mesures"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device_measurement.py:52
+#, python-format
+msgid "Remote Control: Getting measurements"
+msgstr "Telecontrol: Obtenint mesures"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device_measurement.py:145
+#, python-format
+msgid "Remote Control: Saved measurements"
+msgstr "Telecontrol: Mesures guardades"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device.py:54
+#, python-format
+msgid "Remote Control: Starting import measurement in measuremente devices"
+msgstr "Telecontrol: Començant la importació de mesures en dispositius de mesura"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device.py:72
+#, python-format
+msgid "Remote Control: Starting reading in measuring devices"
+msgstr "Telecontrol: Començant la lectura en dispositius de mesura"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_configuration_remotecontrol_enabled
+msgid "Remotecontrol Enabled"
+msgstr "Telecontrol habilitat"
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.ui.view,arch_db:law_water_quality_remotecontrol.law_measuring_config_settings_view_form
+msgid "Remotecontrol Settings"
+msgstr "Configuració del telecontrol"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device_measurement.py:91
+#, python-format
+msgid "The communication with the remote control is not enabled."
+msgstr "La comunicació amb el telecontrol no està habilitada."
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,help:law_water_quality_remotecontrol.field_law_measuring_device_remotecontrol_measurement_transformation
+msgid "Transformation to apply to the measurement value before saving. Use $ as placeholder for the original raw value."
+msgstr "Transformació a aplicar al valor de la mesura abans de guardar-lo. Utilitzeu $ com a substitut per al valor original."
+
+#. module: law_water_quality_remotecontrol
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol.field_law_measuring_device_telecontrol_associated
+#: model:ir.ui.view,arch_db:law_water_quality_remotecontrol.law_measuring_device_view_search
+msgid "Type of telecontrol associated"
+msgstr "Tipus de telecontrol associat"
+
+#. module: law_water_quality_remotecontrol
+#. openerp-web
+#: code:addons/law_water_quality_remotecontrol/static/src/js/button_import_measurements.js:39
+#, python-format
+msgid "WARNING"
+msgstr "AVÍS"
+
+#. module: law_water_quality_remotecontrol
+#: code:addons/law_water_quality_remotecontrol/models/law_measuring_device.py:67
+#, python-format
+msgid "You do not have permission to execute this action."
+msgstr "No tens permís per executar aquesta acció."
