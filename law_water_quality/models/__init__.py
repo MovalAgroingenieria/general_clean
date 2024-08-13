@@ -9,3 +9,4 @@ from . import law_watertype
 from . import law_measuring_device
 from . import law_measuring_device_type
 from . import law_measuring_device_measurement
+from . import law_measuring_config_settings

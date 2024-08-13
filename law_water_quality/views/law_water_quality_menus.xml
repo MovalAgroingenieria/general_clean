@@ -5,60 +5,15 @@
               name="Water Quality"
               sequence="-30"
               web_icon="law_water_quality,static/description/icon.png"
-              groups="law_water_quality.group_law_user"/>
+              groups="law_water_quality.group_law_user"
+    />
 
     <menuitem id="water_quality_menu"
               name="Water Quality"
               parent="main_menu"
               sequence="1"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="lab_analytics_menu"
-              name="Analytics"
-              parent="water_quality_menu"
-              action="law_analysis_action"
-              sequence="1"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="configuration_menu"
-              name="Parameters"
-              parent="main_menu"
-              sequence="1001"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="quality_parameters_menu"
-              name="Quality Parameters"
-              parent="configuration_menu"
-              action="law_water_quality.law_parameter_action"
-              sequence="1"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="measurement_units_menu"
-              name="Measurement Units"
-              parent="configuration_menu"
-              action="law_water_quality.law_parameter_uom_action"
-              sequence="2"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="water_types_menu"
-              name="Water Types"
-              parent="configuration_menu"
-              action="law_water_quality.law_watertype_action"
-              sequence="3"
-              groups="law_water_quality.group_law_user"/>
-
-    <menuitem id="technical_menu"
-              name="Technical"
-              parent="main_menu"
-              sequence="9000"
-              groups="law_water_quality.group_law_manager"/>
-
-    <menuitem id="quality_parameters_lines_menu"
-              name="Quality Parameter Lines"
-              parent="technical_menu"
-              action="law_water_quality.law_analysis_parameter_action"
-              sequence="1"
-              groups="law_water_quality.group_law_manager"/>
+              groups="law_water_quality.group_law_user"
+    />
 
     <menuitem id="measuring_device_menu"
               name="Measuring Devices"
@@ -66,42 +21,89 @@
               sequence="11"
     />
 
-    <menuitem id="law_parameter_menu"
-              name="Law Parameters"
-              parent="configuration_menu"
+    <menuitem id="configuration_menu"
+              name="Parameters"
+              parent="main_menu"
+              sequence="1001"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="technical_menu"
+              name="Technical"
+              parent="main_menu"
+              sequence="9000"
+              groups="law_water_quality.group_law_manager"
+    />
+
+    <menuitem id="lab_analytics_menu"
+              name="Analytics"
+              parent="water_quality_menu"
+              action="law_analysis_action"
               sequence="10"
+              groups="law_water_quality.group_law_user"
     />
 
     <menuitem id="measuring_device"
               name="Measurement Devices"
               parent="measuring_device_menu"
               action="law_measuring_device_action"
-              sequence="2"
-              groups="law_water_quality.group_law_user"/>
+              sequence="10"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="measuring_devices_configuration_menu"
+              name="Configuration"
+              parent="configuration_menu"
+              sequence="10"
+              action="law_measuring_configuration_action"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="quality_parameters_menu"
+              name="Quality Parameters"
+              parent="configuration_menu"
+              action="law_water_quality.law_parameter_action"
+              sequence="20"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="measurement_units_menu"
+              name="Measurement Units"
+              parent="configuration_menu"
+              action="law_water_quality.law_parameter_uom_action"
+              sequence="30"
+              groups="law_water_quality.group_law_user"
+    />
 
     <menuitem id="measuring_device_type_menu"
               name="Measurement Devices Type"
               parent="configuration_menu"
               action="law_measuring_device_type_action"
-              sequence="2"
-              groups="law_water_quality.group_law_user"/>
+              sequence="40"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="water_types_menu"
+              name="Water Types"
+              parent="configuration_menu"
+              action="law_water_quality.law_watertype_action"
+              sequence="50"
+              groups="law_water_quality.group_law_user"
+    />
+
+    <menuitem id="quality_parameters_lines_menu"
+              name="Quality Parameter Lines"
+              parent="technical_menu"
+              action="law_water_quality.law_analysis_parameter_action"
+              sequence="10"
+              groups="law_water_quality.group_law_manager"
+    />
 
     <menuitem id="law_measuring_device_measurement_menu"
               name="Measurement Devices Measurements"
               parent="technical_menu"
               action="law_measuring_device_measurement_action"
-              sequence="10"/>
+              sequence="20"
+    />
 
-<!--    <menuitem id="base_wua_infrastructure_configuration_menu"-->
-<!--              name="Configuration"-->
-<!--              parent="base_wua_infrastructure_menu"-->
-<!--              sequence="1001"-->
-<!--              groups="base_wua.group_wua_user"/>-->
-
-<!--    <menuitem id="wua_infrastructure_configuration_menu"-->
-<!--              name="Parameters"-->
-<!--              parent="base_wua_infrastructure_configuration_menu"-->
-<!--              action="wua_infrastructure_configuration_action"-->
-<!--              sequence="1"-->
-<!--              groups="base.group_system"/>-->
 </odoo>
