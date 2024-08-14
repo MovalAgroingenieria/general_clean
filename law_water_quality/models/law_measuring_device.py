@@ -68,22 +68,27 @@ class LawMeasuringDevice(models.Model):
          "The analysis parameter must be unique."),
     ]
 
-    @api.depends('measurement_ids.measurement_time')
+    @api.multi
     def _compute_last_measurement(self):
         for record in self:
-            last_measurement = self.env['law.measuring.device.measurement']\
-                .search([('measuring_device_id', '=', record.id)
-                         ], order='measurement_time desc', limit=1)
-            if last_measurement:
-                record.write({
-                    'last_measurement_time': last_measurement.measurement_time,
-                    'last_measurement_value': last_measurement.value
-                })
-            else:
-                record.write({
-                    'last_measurement_time': False,
-                    'last_measurement_value': False
-                })
+            last_measurement_time = None
+            last_measurement_value = 0
+            self.env.cr.execute("""
+                SELECT measurement_time, value
+                FROM law_measuring_device_measurement
+                WHERE measuring_device_id=""" + str(record.id) + """
+                ORDER BY measurement_time DESC
+                LIMIT 1""")
+            query_results = self.env.cr.dictfetchall()
+            if (query_results and
+               query_results[0].get('measurement_time') is not None):
+                last_measurement_time = \
+                    query_results[0].get('measurement_time')
+                last_measurement_value = \
+                    query_results[0].get('value')
+            record.last_measurement_time = last_measurement_time
+            record.last_measurement_value = \
+                last_measurement_value
 
     @api.multi
     def _compute_number_of_measurements(self):

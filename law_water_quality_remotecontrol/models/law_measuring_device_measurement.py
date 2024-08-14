@@ -104,27 +104,24 @@ class LawMeasuringDeviceMeasurement(models.Model):
 
     def refine_measurements(self, measurements):
         resp = []
-        devices = self.env['law.measuring.device']
         for measurement in measurements:
-            filtered_device = devices.search(
-                [('name', '=', measurement['device_name'])])
-            if filtered_device:
-                device = filtered_device[0]
-                # If not specified measurement time will be the current one
-                measurement_time = self.get_measurement_time(measurement)
-                # Transform the value
-                measurement_value = self.transform_measurement_value(
-                    measurement['value'],
-                    device.remotecontrol_measurement_transformation)
-                # Set refined data
-                refined_measurement = {
-                    'measurement_device_id': device.id,
-                    'measurement_time': measurement_time,
-                    'device_name': filtered_device.name,
-                    'value': measurement_value,
-                    'raw_remotecontrol_value': str(measurement['value']),
-                    }
-                resp.append(refined_measurement)
+            device = measurement['measuring_device_id']
+            # If not specified measurement time will be the current one
+            measurement_time = self.get_measurement_time(measurement)
+            # Transform the value
+            measurement_value = self.transform_measurement_value(
+                measurement['value'],
+                device.remotecontrol_measurement_transformation)
+            # Set refined data
+            refined_measurement = {
+                'measuring_device_id': device.id,
+                'measurement_time': measurement_time,
+                'device_name': device.name,
+                'value': measurement_value,
+                'uom_id': device.uom_id.id,
+                'raw_remotecontrol_value': str(measurement['value']),
+                }
+            resp.append(refined_measurement)
         return resp
 
     def save_measurements(self, measurements, update_log=True):
@@ -132,12 +129,13 @@ class LawMeasuringDeviceMeasurement(models.Model):
         if number_of_measurements > 0:
             for measurement in measurements:
                 self.create({
-                    'measurement_device_id': measurement[
-                        'measurement_device_id'],
+                    'measuring_device_id': measurement[
+                        'measuring_device_id'],
                     'measurement_time': measurement['measurement_time'],
                     'value': measurement['value'],
                     'raw_remotecontrol_value': measurement[
                         'raw_remotecontrol_value'],
+                    'uom_id': measurement['uom_id'],
                     'from_remotecontrol': True,
                     })
             if update_log:

@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* law_water_quality_remotecontrol_salz
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-14 12:19+0000\n"
+"PO-Revision-Date: 2024-08-14 12:19+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: law_water_quality_remotecontrol_salz
+#: code:addons/law_water_quality_remotecontrol_salz/models/law_measuring_device_measurement.py:111
+#, python-format
+msgid " It is not possible to get a response. "
+msgstr " No s'ha pogut obtenir cap resposta. "
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_api_rest_salz
+msgid "API REST URL"
+msgstr "URL de l'API REST"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_app_salz
+msgid "APP Salz URL"
+msgstr "URL de l'aplicació SALZ"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model,name:law_water_quality_remotecontrol_salz.model_law_measuring_configuration
+msgid "Configuration of law_water_quality module"
+msgstr "Configuració del mòdul law_water_quality"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model,name:law_water_quality_remotecontrol_salz.model_law_measuring_device
+msgid "Law Measuring Device"
+msgstr "Dispositiu de mesura"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model,name:law_water_quality_remotecontrol_salz.model_law_measuring_device_measurement
+msgid "Law Measuring Device Measurement"
+msgstr "Mesura de dispositiu de mesura"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.actions.server,name:law_water_quality_remotecontrol_salz.law_remotecontrol_application_action_salz
+msgid "Native remotecontrol application Salz"
+msgstr "Telecontrol: SALZ"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_api_rest_password_salz
+msgid "Password"
+msgstr "Contrasenya"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_api_rest_password_salz
+msgid "Password for authentication in remote API"
+msgstr "Contrasenya per a autenticació en API remota"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.ui.view,arch_db:law_water_quality_remotecontrol_salz.law_measuring_config_settings_view_form
+msgid "Remotecontrol Settings SALZ"
+msgstr "Configuració Telecontrol: SALZ"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.ui.menu,name:law_water_quality_remotecontrol_salz.law_remotecontrol_application_menu_salz
+msgid "Salz APP"
+msgstr "Telecontrol: SALZ"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_device_gid
+msgid "Salz Device GID"
+msgstr "GID de dispositiu Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: sql_constraint:law.measuring.device:0
+msgid "Salz Device GID can not be negative."
+msgstr "GID de dispositiu Salz no pot ser negatiu."
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_device_id
+msgid "Salz Device ID"
+msgstr "ID de dispositiu Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: sql_constraint:law.measuring.device:0
+msgid "Salz Device ID can not be negative."
+msgstr "ID de dispositiu Salz no pot ser negatiu."
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_measure_variable
+msgid "Salz Measure Variable"
+msgstr "Variable de mesura Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_plate_number
+msgid "Salz Plate Number"
+msgstr "Nº Placa Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: sql_constraint:law.measuring.device:0
+msgid "Salz plate number can not be negative."
+msgstr "Nº placa Salz no pot ser negatiu."
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_device_gid
+msgid "The id that identifies the group of the remote Salz measuring device"
+msgstr "L'ID que identifica el grup del dispositiu de mesura remot Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_measure_variable
+msgid "The id that identifies the measure variable of the remote Salz measuring device (description on remote)"
+msgstr "L'ID que identifica la mida del dispositiu de mesura remot Salz (camp descripció)"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_device_id
+msgid "The id that identifies the remote Salz measuring device"
+msgstr "L'ID que identifica el dispositiu de mesura remot Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_device_salz_plate_number
+msgid "The plate number that stores the measure variable of the remote Salz measuring device"
+msgstr "El nombre de placa que emmagatzema la variable de mesura del dispositiu de mesura remot Salz"
+
+#. module: law_water_quality_remotecontrol_salz
+#: code:addons/law_water_quality_remotecontrol_salz/models/law_measuring_device_measurement.py:19
+#, python-format
+msgid "The remote control is not enabled."
+msgstr "El telecontrol no està habilitat."
+
+#. module: law_water_quality_remotecontrol_salz
+#: code:addons/law_water_quality_remotecontrol_salz/models/law_measuring_device_measurement.py:24
+#, python-format
+msgid "There is not a URL for the remote control application."
+msgstr "No s'ha establert un URL per a l'aplicació."
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,field_description:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_api_rest_username_salz
+msgid "Username"
+msgstr "Nom d'usuari"
+
+#. module: law_water_quality_remotecontrol_salz
+#: model:ir.model.fields,help:law_water_quality_remotecontrol_salz.field_law_measuring_configuration_url_remote_api_rest_username_salz
+msgid "Username for authentication in remote API"
+msgstr "Usuari per autenticació en API remota"
+

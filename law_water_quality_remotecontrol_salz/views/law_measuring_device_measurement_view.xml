@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device Measurement -->
+
+    <record id="law_remotecontrol_application_action_salz" model="ir.actions.server">
+        <field name="name">Native remotecontrol application Salz</field>
+        <field name="model_id" ref="model_law_measuring_device_measurement"/>
+        <field name="state">code</field>
+        <field name="code">
+            action = env['law.measuring.device.measurement'].run_remotecontrol_application_url_salz()
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="law_remotecontrol_application_menu_salz"
+              name="Salz APP"
+              parent="law_water_quality.technical_menu"
+              action="law_remotecontrol_application_action_salz"
+              sequence="900"
+              groups="law_water_quality.group_law_manager"
+    />
+
+</odoo>

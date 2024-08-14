@@ -2,13 +2,11 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-==============================================
-Laboratory Analysis for Waters: Remote Control
-==============================================
+===================================================
+Laboratory Analysis for Waters: Salz Remote Control
+===================================================
 
-Base module for other modules that implement communication dialogues with
-remote control systems for water analysis.
-
+Integration of measurements retrieval from SALZ endpoint.
 
 Credits
 =======

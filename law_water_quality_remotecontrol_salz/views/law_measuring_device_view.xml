@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!-- Law Measuring Device -->
+
+    <record id="law_measuring_device_view_form" model="ir.ui.view">
+        <field name="name">Measuring Device (form view)</field>
+        <field name="model">law.measuring.device</field>
+        <field name="inherit_id" ref='law_water_quality_remotecontrol.law_measuring_device_view_form'/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='telecontrol_associated']" position="after">
+                <field name="salz_device_id"
+                       attrs="{'invisible': [('telecontrol_associated', '!=', 'salz')]}"/>
+                <field name="salz_device_gid"
+                       attrs="{'invisible': [('telecontrol_associated', '!=', 'salz')]}"/>
+                <field name="salz_plate_number"
+                       attrs="{'invisible': [('telecontrol_associated', '!=', 'salz')]}"/>
+                <field name="salz_measure_variable"
+                       attrs="{'invisible': [('telecontrol_associated', '!=', 'salz')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

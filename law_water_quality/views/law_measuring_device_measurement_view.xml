@@ -37,7 +37,7 @@
         <field name="name">Law Measuring Device Measurements</field>
         <field name="res_model">law.measuring.device.measurement</field>
         <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree</field>
         <field name="view_ids" eval="[(5, 0), (0, 0, {'view_mode': 'tree', 'view_id': ref('law_measuring_device_measurement_view_tree')})]"/>
     </record>
 
