@@ -27,12 +27,6 @@
                 <attribute name="attrs" add="{'readonly':[('payment_mode_name','=', 'DipuCR')]}"/>
             </xpath>
 
-            <!-- Make date_scheduled non required when SUMA 
-            <xpath expr="//field[@name='date_scheduled']" position="replace">
-                <field name="date_scheduled" attrs="{'invisible': [('date_prefered', '!=', 'fixed')],
-                    'required': [('date_prefered', '=', 'fixed'), ('payment_mode_name','!=', 'SUMA')]}"/>
-            </xpath> -->
-
             <!-- Set description as required field -->
             <xpath expr="//field[@name='description']" position="attributes">
                 <attribute name="attrs" add="{'required':[('payment_mode_name','=', 'DipuCR')]}"/>
@@ -52,8 +46,8 @@
                         <field name="concept" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="period" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="issue_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
-                        <field name="approval_decree_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}"/>
-                        <field name="approval_decree_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}"/>
+                        <field name="approval_decree_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('charge_type', '=', 'E')]}"/>
+                        <field name="approval_decree_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('charge_type', '=', 'E')]}"/>
                     </group>
                 </group>
             </xpath>

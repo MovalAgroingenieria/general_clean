@@ -16,7 +16,6 @@ class AccountConfigSettings(models.TransientModel):
         ("13706", "13706 - Comunidad de Regantes Torre Abraham"),
         ("13720", "13720 - Comunidad de Regantes Santa Cruz de los Cáñamos")],
         string="Entity Code",
-        default="13706",
         help="This code identifies the entity that sends the delegated "
              "charge to 'Diputación de Ciudad Real'")
 
@@ -91,7 +90,8 @@ class AccountPaymentOrder(models.Model):
              " the accounting configuration")
 
     charge_type = fields.Selection([
-        ('E', 'Executive')],
+        ('E', 'Executive'),
+        ('V', 'Voluntary')],
         string="Charge type",
         default="E",
         help="Period in which debts should be managed")
@@ -303,9 +303,15 @@ class AccountPaymentOrder(models.Model):
         # Summrize tax not changing params 3 - Position [574-617] Length 44
         tax_other_params_3 = accounting_ref + cadastral_ref + accounting_year
         # Approval decree date - Position [618-625] Length 8
-        approval_decree_date = self.approval_decree_date.replace('-', '')
+        if charge_type == 'E':
+            approval_decree_date = self.approval_decree_date.replace('-', '')
+        elif charge_type == 'V':
+            approval_decree_date = str('0' * 8)
         # Approval decree number - Position [626-655] Length 30
-        approval_decree_number = self.approval_decree_number.ljust(30)
+        if charge_type == 'E':
+            approval_decree_number = self.approval_decree_number.ljust(30)
+        elif charge_type == 'V':
+            approval_decree_number = str(' ' * 30)
         # Voluntary start date - Position [656-663] Length 8
         voluntary_start_date = str('0' * 8)
         # LOPD - Position [672-679] Length 8
@@ -317,8 +323,11 @@ class AccountPaymentOrder(models.Model):
         # Notification result - Position [690-719] Length 30
         notification_number = str(' ' * 30)
         # Notification sign date - Position [720-727] Length 8
-        # @INFO: Equal to  approval_decree_date
-        notification_sign_date =  approval_decree_date
+        if charge_type == 'E':
+            # @INFO: Equal to  approval_decree_date
+            notification_sign_date = approval_decree_date
+        elif charge_type == 'V':
+            notification_sign_date = str('0' * 8)
         # Notification agency - Position [728-757] Length 30
         notification_agency = str(' ' * 30)
         # Notification voluntary date - Position [758-765] Length 8
@@ -483,7 +492,7 @@ class AccountPaymentOrder(models.Model):
                           "street not found for partner %s" %
                           (entry_num_padded, line.partner_id.name)) + \
                         '\n'
-                    taxpayer_address_street_name = str(" " * 20)
+                    taxpayer_address_street_name = str(" " * 40)
                 else:
                     raise ValidationError(
                         _("The entry number %s has failed, taxpayer "
@@ -526,11 +535,9 @@ class AccountPaymentOrder(models.Model):
                 else:
                     city_name = line.partner_id.city
 
-                # Simplify city name to compare
-                city_name_simplified = \
-                    unicodedata.normalize('NFKD', city_name).encode(
-                        self.ENCODING_NAME,
-                        self.ENCODING_TYPE).upper()
+                # City name
+                city_name_simplified = city_name.encode(
+                    self.ENCODING_NAME, self.ENCODING_TYPE).upper()
                 city = city_name_simplified[:30].upper().ljust(30)
             else:
                 if self.error_mode == 'permissive':
