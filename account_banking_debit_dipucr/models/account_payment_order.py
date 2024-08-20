@@ -622,7 +622,7 @@ class AccountPaymentOrder(models.Model):
             # @INFO: Outside the loop
 
             # Voluntary end date - Position [664-671] Length 8
-            # @INFO: Mandatory
+            # @INFO: Mandatory if Executive charge type
             voluntary_end_date = False
             exercise = False
             external_ref = str(' ' * 29)
@@ -637,20 +637,36 @@ class AccountPaymentOrder(models.Model):
                             exercise = l.invoice_id.date_invoice.split('-')[0]
                             external_ref = l.invoice_id.number.ljust(29)
                             invoice = l.invoice_id
-            if not voluntary_end_date or not exercise:
-                if self.error_mode == 'permissive':
-                    error_num += 1
-                    errors += '[' + str(error_num).zfill(4) + '] ' + \
-                        _("The entry number %s has failed, voluntary end date "
-                          "or exercise not found for partner %s" %
-                          (entry_num_padded, line.partner_id.name)) + \
-                        '\n'
-                    voluntary_end_date = str('0' * 8)
-                else:
-                    raise ValidationError(
-                        _("The entry number %s has failed, voluntary end date "
-                          "or exercise not found for partner %s" %
-                          (entry_num_padded, line.partner_id.name)))
+            if charge_type == 'E':
+                if not voluntary_end_date or not exercise:
+                    if self.error_mode == 'permissive':
+                        error_num += 1
+                        errors += '[' + str(error_num).zfill(4) + '] ' + \
+                            _("The entry number %s has failed, voluntary end "
+                              "date or exercise not found for partner %s" %
+                              (entry_num_padded, line.partner_id.name)) + '\n'
+                        voluntary_end_date = str('0' * 8)
+                        exercise = str('0' * 4)
+                    else:
+                        raise ValidationError(
+                            _("The entry number %s has failed, voluntary end "
+                              "date or exercise not found for partner %s" %
+                              (entry_num_padded, line.partner_id.name)))
+            elif charge_type == 'V':
+                voluntary_end_date = str('0' * 8)
+                if not exercise:
+                    if self.error_mode == 'permissive':
+                        error_num += 1
+                        errors += '[' + str(error_num).zfill(4) + '] ' + \
+                            _("The entry number %s has failed, exercise "
+                              "not found for partner %s" %
+                              (entry_num_padded, line.partner_id.name)) + '\n'
+                        exercise = str('0' * 4)
+                    else:
+                        raise ValidationError(
+                            _("The entry number %s has failed, exercise "
+                              "not found for partner %s" %
+                              (entry_num_padded, line.partner_id.name)))
 
             # Summrize notification params - Position [672-2040] Length 1369
             # @INFO: Outside the loop
