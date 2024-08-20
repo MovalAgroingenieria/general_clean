@@ -5,7 +5,6 @@
 from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import logging
-import unicodedata
 from datetime import datetime
 
 
@@ -380,7 +379,7 @@ class AccountPaymentOrder(models.Model):
             # @INFO: Relation DV <--> LI
             #        This number is associate to each bank line
             value_list_refnum = self.env['ir.sequence'].next_by_code(
-                 'dipucr_seq_value_list_refnum')
+                'dipucr_seq_value_list_refnum')
 
             # VAT - Position [068-077] Length 10
             # @INFO: The two first chars are sliced
@@ -512,9 +511,7 @@ class AccountPaymentOrder(models.Model):
                     filter(lambda x: x.isdigit(),
                            line.partner_id.street_num)
                 taxpayer_address_street_number = \
-                    str(taxpayer_address_street_number.encode(
-                        self.ENCODING_NAME,
-                        self.ENCODING_TYPE)).zfill(5)
+                    str(taxpayer_address_street_number).zfill(5)
             else:
                 taxpayer_address_street_number = str(" " * 5)
 
@@ -524,7 +521,6 @@ class AccountPaymentOrder(models.Model):
             # City - Position [263-292] Length 30
             if line.partner_id.city:
                 city_name = ""
-                city_name_simplified = ""
 
                 if '(' in line.partner_id.city:
                     # Get name between parenthesis
@@ -534,11 +530,7 @@ class AccountPaymentOrder(models.Model):
                     city_name = line.partner_id.city.split('/')[0]
                 else:
                     city_name = line.partner_id.city
-
-                # City name
-                city_name_simplified = city_name.encode(
-                    self.ENCODING_NAME, self.ENCODING_TYPE).upper()
-                city = city_name_simplified[:30].upper().ljust(30)
+                city = city_name[:30].upper().ljust(30)
             else:
                 if self.error_mode == 'permissive':
                     error_num += 1
@@ -582,8 +574,7 @@ class AccountPaymentOrder(models.Model):
                     errors += '[' + str(error_num).zfill(4) + '] ' + \
                         _("The entry number %s has failed, taxpayer zip "
                           "not found for partner %s" %
-                          (entry_num_padded, line.partner_id.name)) + \
-                        '\n'
+                          (entry_num_padded, line.partner_id.name)) + '\n'
                     city_zip = str(" " * 5)
                 else:
                     raise ValidationError(
