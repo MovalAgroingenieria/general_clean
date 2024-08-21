@@ -35,6 +35,7 @@ Credits
 Contributors
 ------------
 
+* Ana Bernal <abernal@dipucr.es>
 * Alberto Hernández <ahernandez@moval.es>
 * Eduardo Iniesta <einiesta@moval.es>
 * Miguel Mora <mmora@moval.es>
