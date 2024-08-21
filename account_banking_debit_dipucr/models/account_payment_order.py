@@ -174,6 +174,12 @@ class AccountPaymentOrder(models.Model):
         string="Approval decree number",
         size=30)
 
+    value_type = fields.Selection([
+        ('L', 'Liquidation'),
+        ('R', 'Receipt')],
+        string="Value type",
+        default="L")
+
     # Methods
     @api.depends('payment_mode_id')
     def _compute_payment_mode_name(self):
@@ -228,7 +234,7 @@ class AccountPaymentOrder(models.Model):
         issue_number = self.issue_number
 
         # Value type - Position [014-014] Length 1
-        value_type = "L"
+        value_type = self.value_type
 
         # Line format - Position [021-022] Length 2
         line_format = "DV"

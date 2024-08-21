@@ -44,6 +44,7 @@
                     </group>
                     <group name="dipucr-right">
                         <field name="concept" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
+                        <field name="value_type" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="period" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="issue_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="approval_decree_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('charge_type', '=', 'E')]}"/>
