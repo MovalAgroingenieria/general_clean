@@ -84,8 +84,8 @@ msgstr "Té notes"
 
 #. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
-msgid "Insufficient address"
-msgstr "Direcció insuficient"
+msgid "Incorrect address"
+msgstr "Direcció incorrecta"
 
 #. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_invoice_date
@@ -102,6 +102,11 @@ msgstr "Per publicació Butlletí"
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication_date
 msgid "Newsletter Publication Date"
 msgstr "Data publicació Butlletí"
+
+#. module: account_credit_control_extended
+#: selection:credit.control.line,return_reason:0
+msgid "No one takes responsibility"
+msgstr "Ningú se'n fa càrrec"
 
 #. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0

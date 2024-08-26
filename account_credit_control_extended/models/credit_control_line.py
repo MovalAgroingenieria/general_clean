@@ -27,10 +27,11 @@ class CreditControlLine(models.Model):
     return_reason = fields.Selection([
         ('unknown', 'Unknown'),
         ('absent', 'Absent'),
-        ('insufficient_address', 'Insufficient address'),
+        ('incorrect_address', 'Incorrect address'),
         ('refused', 'Refused'),
         ('deceased', 'Deceased'),
-        ('not_retired', 'Not retired')],
+        ('not_retired', 'Not retired'),
+        ('no_one_takes_responsibility','No one takes responsibility')],
         string="Return reason")
 
     description_html = fields.Html(
