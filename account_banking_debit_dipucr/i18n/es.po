@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 09:39+0000\n"
-"PO-Revision-Date: 2024-08-21 09:39+0000\n"
+"POT-Creation-Date: 2024-08-26 11:55+0000\n"
+"PO-Revision-Date: 2024-08-26 11:55+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgid "ANUAL"
 msgstr "ANUAL"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:864
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:918
 #, python-format
 msgid "Amount: "
 msgstr "Importe: "
@@ -237,7 +237,7 @@ msgid "Entity Code"
 msgstr "Código organismo"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:841
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:895
 #, python-format
 msgid "Entity type code not set"
 msgstr "El código del Organismo no está establecido"
@@ -254,7 +254,7 @@ msgid "Errors"
 msgstr "Errores"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:823
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:877
 #, python-format
 msgid "Errors in payment file "
 msgstr "Errores en el archivo de pago "
@@ -295,7 +295,7 @@ msgid "Invoice"
 msgstr "Factura"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:863
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:917
 #, python-format
 msgid "Invoice num: "
 msgstr "Num. Factura: "
@@ -376,9 +376,19 @@ msgid "Period"
 msgstr "Periodo"
 
 #. module: account_banking_debit_dipucr
+#: model:ir.model.fields,field_description:account_banking_debit_dipucr.field_account_payment_order_period_end_date
+msgid "Period end date"
+msgstr "Fecha fin periodo"
+
+#. module: account_banking_debit_dipucr
 #: model:ir.model.fields,help:account_banking_debit_dipucr.field_account_payment_order_charge_type
 msgid "Period in which debts should be managed"
 msgstr "Periodo en el que se deben gestionar las deudas"
+
+#. module: account_banking_debit_dipucr
+#: model:ir.model.fields,field_description:account_banking_debit_dipucr.field_account_payment_order_period_start_date
+msgid "Period start date"
+msgstr "Fecha inicio periodo"
 
 #. module: account_banking_debit_dipucr
 #: selection:account.payment.order,error_mode:0
@@ -391,7 +401,7 @@ msgid "QUINTO BIMESTRE"
 msgstr "QUINTO BIMESTRE"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:875
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:929
 #, python-format
 msgid "Quantity: "
 msgstr "Cantidad: "
@@ -473,98 +483,98 @@ msgid "The date on which the shipment was approved in Executive."
 msgstr "La fecha en que se aprobó el envío en Ejecutiva."
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:224
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:274
 #, python-format
 msgid "The entity has not been configured. Set it in Accounting/Settings."
 msgstr "La entidad no ha sido configurada. Establézcalo en Contabilidad/Configuración."
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:611
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:619
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:665
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:673
 #, python-format
 msgid "The entry number %s has failed, amount not found for partner %s"
 msgstr "La entrada número %s ha fallado, cantidad no encontrada para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:546
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:552
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:600
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:606
 #, python-format
 msgid "The entry number %s has failed, debtor city not found for partner %s"
 msgstr "El número de entrada %s ha fallado, no se ha encontrado la ciudad para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:566
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:572
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:620
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:626
 #, python-format
 msgid "The entry number %s has failed, debtor state not found for partner %s"
 msgstr "El número de entrada %s ha fallado, no se ha encontrado la provincia para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:669
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:675
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:723
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:729
 #, python-format
 msgid "The entry number %s has failed, exercise not found for partner %s"
 msgstr "The entry number %s has failed, exercise not found for partner %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:473
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:478
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:527
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:532
 #, python-format
 msgid "The entry number %s has failed, taxpayer name not found."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el nombre."
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:498
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:505
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:552
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:559
 #, python-format
 msgid "The entry number %s has failed, taxpayer street not found for partner %s"
 msgstr "El número de entrada %s ha fallado, no se ha encontrado la calle para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:583
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:589
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:637
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:643
 #, python-format
 msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el código postal para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:377
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:382
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:431
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:436
 #, python-format
 msgid "The entry number %s has failed, the bank line %s seems that it has already been sent through DipuCR"
 msgstr "El número de entrada %s ha fallado, la línea bancaria %s parece que ya fue enviada a DipuCR"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:461
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:466
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:515
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:520
 #, python-format
 msgid "The entry number %s has failed, the firstname for partner %s not found."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el nombre para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:447
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:452
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:501
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:506
 #, python-format
 msgid "The entry number %s has failed, the lastnamefor partner %s not found."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el apellido para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:401
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:408
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:455
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:462
 #, python-format
 msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
 msgstr "La entrada número %s ha fallado, el NIF %s para el socio %s no es válido."
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:416
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:422
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:470
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:476
 #, python-format
 msgid "The entry number %s has failed, vat not found for partner %s."
 msgstr "El número de entrada %s ha fallado, no se ha encontrado el NIF para el socio %s"
 
 #. module: account_banking_debit_dipucr
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:653
-#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:660
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:707
+#: code:addons/account_banking_debit_dipucr/models/account_payment_order.py:714
 #, python-format
 msgid "The entry number %s has failed, voluntary end date or exercise not found for partner %s"
 msgstr "The entry number %s has failed, voluntary end date or exercise not found for partner %s"

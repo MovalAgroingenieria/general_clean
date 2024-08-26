@@ -46,6 +46,10 @@
                     <group name="dipucr-right">
                         <field name="concept" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="period" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
+                        <field name="period_start_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('period', '=', 'SIN PERIODO')],
+                                                                'invisible':[('period', '!=', 'SIN PERIODO')]}"/>
+                        <field name="period_end_date" attrs="{'required':[('payment_mode_name', '=', 'DipuCR'),('period', '=', 'SIN PERIODO')],
+                                                              'invisible':[('period', '!=', 'SIN PERIODO')]}"/>
                         <field name="issue_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="approval_decree_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('charge_type', '=', 'E')]}"/>
                         <field name="approval_decree_number" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('charge_type', '=', 'E')]}"/>

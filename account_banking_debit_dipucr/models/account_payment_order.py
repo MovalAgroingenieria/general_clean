@@ -6,6 +6,7 @@ from odoo import models, fields, api, _
 from odoo.exceptions import ValidationError
 import logging
 from datetime import datetime
+import calendar
 
 
 class AccountConfigSettings(models.TransientModel):
@@ -45,6 +46,18 @@ class AccountPaymentOrder(models.Model):
 
     ENCODING_NAME = '8859'
     ENCODING_TYPE = 'replace'
+    MONTHS = {'ENERO': 1, 'FEBRERO': 2, 'MARZO': 3, 'ABRIL': 4, 'MAYO': 5,
+              'JUNIO': 6, 'JULIO': 7, 'AGOSTO': 8, 'SEPTIEMBRE': 9,
+              'OCTUBRE': 10, 'NOVIEMBRE': 11, 'DICIEMBRE': 12}
+    BIMONTHS = {'PRIMER BIMESTRE': (1, 2), 'SEGUNDO BIMESTRE': (3, 4),
+                'TERCER BIMESTRE': (5, 6), 'CUARTO BIMESTRE': (7, 8),
+                'QUINTO BIMESTRE': (9, 10), 'SEXTO BIMESTRE': (11, 12)}
+    TRIMONTHS = {'PRIMER TRIMESTRE': (1, 3), 'SEGUNDO TRIMESTRE': (4, 6),
+                 'TERCER TRIMESTRE': (7, 9), 'CUARTO TRIMESTRE': (10, 12)}
+    FOURMONTHS = {'PRIMER CUATRIMESTRE': (1, 4),
+                  'SEGUNDO CUATRIMESTRE': (5, 8),
+                  'TERCER CUATRIMESTRE': (9, 12)}
+    SIXMONTHS = {'PRIMER SEMESTRE': (1, 6), 'SEGUNDO SEMESTRE': (7, 12)}
 
     def _get_entity_config_dipucr(self):
         code = self.env['ir.values'].get_default(
@@ -180,6 +193,12 @@ class AccountPaymentOrder(models.Model):
         string="Value type",
         default="L")
 
+    period_start_date = fields.Date(
+        string="Period start date")
+
+    period_end_date = fields.Date(
+        string="Period end date")
+
     # Methods
     @api.depends('payment_mode_id')
     def _compute_payment_mode_name(self):
@@ -198,6 +217,37 @@ class AccountPaymentOrder(models.Model):
     def _compute_entity(self):
         for record in self:
             record.entity = record._get_entity_config_dipucr()
+
+    # Calculate period dates
+    def _get_period_dates(self, period, charge_year):
+        if period != 'SIN PERIODO':
+            charge_year = int(charge_year)
+            if period == 'ANUAL':
+                period_start_date = datetime(charge_year, 1, 1)
+                period_end_date = datetime(charge_year, 12, 31)
+            elif period in self.MONTHS:
+                month_num = MONTHS[period]
+                period_start_date = datetime(charge_year, month_num, 1)
+                last_month_day = calendar.monthrange(charge_year, month_num)[1]
+                period_end_date = datetime(
+                    charge_year, month_num, last_month_day)
+            elif (period in self.BIMONTHS or period in self.TRIMONTHS
+                  or period in self.FOURMONTHS or period in self.SIXMONTHS):
+                if period in self.BIMONTHS:
+                    start_month, end_month = self.BIMONTHS[period]
+                elif period in self.TRIMONTHS:
+                    start_month, end_month = self.TRIMONTHS[period]
+                elif period in self.FOURMONTHS:
+                    start_month, end_month = self.FOURMONTHS[period]
+                elif period in self.SIXMONTHS:
+                    start_month, end_month = self.SIXMONTHS[period]
+                period_start_date = datetime(charge_year, start_month, 1)
+                last_month_day = calendar.monthrange(charge_year, end_month)[1]
+                period_end_date = datetime(
+                    charge_year, end_month, last_month_day)
+            period_start_date = period_start_date.strftime('%Y%m%d')
+            period_end_date = period_end_date.strftime('%Y%m%d')
+            return period_start_date, period_end_date
 
     # Generate payment file
     @api.multi
@@ -340,9 +390,13 @@ class AccountPaymentOrder(models.Model):
         # Notification voluntary result - Position [766-767] Length 2
         notification_vol_result = str(' ' * 2)
         # Period start date - Position [768-775] Length 8
-        period_start_date = str('0' * 8)
-        # Period end date - Position [776-783] Length 8
-        period_end_date = str('0' * 8)
+        # Period end date   - Position [776-783] Length 8
+        if self.period != 'SIN PERIODO':
+            period_start_date, period_end_date = self._get_period_dates(
+                self.period, charge_year)
+        else:
+            period_start_date = self.period_start_date.replace('-', '')
+            period_end_date = self.period_end_date.replace('-', '')
         # Dates description interruption - Position [784-1123] Lenght 340
         dates_interruption = (str('0' * 8) + str(' ' * 60)) * 5
         # Direct debit data - Position [1124-2040] Lenght 917
