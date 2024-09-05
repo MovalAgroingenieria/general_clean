@@ -18,11 +18,7 @@ Account Payment Order: Payment Line Date
 Description
 ===========
 
-This module reverts the change introduced by commit 1724c83d3 on line 190 of
-the method *_prepare_account_payment_vals()* in the model account_payment_line.
-
-It also allows to tick the option ‘Allow date in the past’ when it is not a
-fixed payment run type.
+This module adds requested payment date to transactions payment lines.
 
 
 Credits

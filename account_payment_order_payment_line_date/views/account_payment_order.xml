@@ -6,8 +6,10 @@
         <field name="model">account.payment.order</field>
         <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='allow_past_date']" position="attributes">
-                <attribute name="attrs"></attribute>
+            <xpath expr="//field[@name='payment_ids']" position="attributes">
+                <attribute name="context">
+                    {'tree_view_ref': 'account_payment_order_payment_line_date.view_account_payment_tree_payment_order'}
+                </attribute>
             </xpath>
         </field>
     </record>

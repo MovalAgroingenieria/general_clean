@@ -4,7 +4,7 @@
 
 {
     'name': 'Account Payment Order: Payment line date',
-    'summary': 'Change date in payment line',
+    'summary': 'Add payment request date to payment lines',
     'version': '14.0.1.0.0',
     'category': 'Moval General Addons',
     'website': 'http://www.moval.es',
@@ -14,6 +14,7 @@
         'account_payment_order',
     ],
     'data': [
+        'views/account_payment_views.xml',
         'views/account_payment_order.xml',
     ],
     'installable': True,
