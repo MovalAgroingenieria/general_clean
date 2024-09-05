@@ -156,8 +156,8 @@ class AccountPaymentOrder(models.Model):
         text5 = self._cabecera_beneficiario_68(line)
         text5 += '014'
         text5 += num_of_payment
-        if 'date' in line:
-            date_pago = line['date']
+        if 'payment_line_date' in line:
+            date_pago = line['payment_line_date']
         else:
             date_pago = datetime.today()
 
