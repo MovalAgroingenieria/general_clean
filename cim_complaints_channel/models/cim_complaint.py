@@ -1269,11 +1269,16 @@ class CimComplaint(models.Model):
                 description = _('Reason:') + ' ' + self.rejection_cause
             else:
                 if self.state == '02_admitted':
-                    issue = _('Complaint accepted')
+                    issue = \
+                        _('Acknowledgement of receipt of the complaint filed')
                     description = \
-                        _('The deadline to complete the investigation of the '
-                          'complaint ends on the following date:') + ' ' + \
-                        self._get_date_str(self.deadline_date) + '.'
+                        _('You have received an acknowledgement of receipt of '
+                          'your complaint. A preliminary analysis of its '
+                          'admissibility will then be carried out. You are '
+                          'also informed that the deadline for completing the '
+                          'investigation of the complaint is the following '
+                          'date: ') \
+                        + self._get_date_str(self.deadline_date) + '.'
                 if self.state == '03_in_progress':
                     issue = _('Instruction phase begins')
                     description = \

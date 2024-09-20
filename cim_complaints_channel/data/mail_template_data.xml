@@ -59,8 +59,9 @@
                     <p>There is a new complaint or a new communication of a pre-existing complaint.</p>
                     <p>· ISSUE:</p>
                     <p>${object.issue}</p>
-                    <p>· DATA OF THE COMMUNICATION:</p>
-                    <p>${object.description}</p>
+                    <!-- Due to data protection reasons this part is not communicated -->
+                    <!--<p>· DATA OF THE COMMUNICATION:</p>
+                    <p>${object.description}</p>-->
                 </div>
             </field>
             <field name="auto_delete" eval="True"/>
