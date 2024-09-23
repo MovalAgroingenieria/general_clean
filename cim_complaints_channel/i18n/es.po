@@ -375,7 +375,7 @@ msgstr "Plazo de admisión de la denuncia"
 #. module: cim_complaints_channel
 #: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_acknowledgement_period
 msgid "Acknowledgement period for the complaint admission (number of days)"
-msgstr "Plazo de adminisión de la denuncia (número de días)"
+msgstr "Plazo de admisión de la denuncia (número de días)"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_type_active
