@@ -28,7 +28,7 @@ class HrAttendanceController(http.Controller):
         end_date_str = end_date_dt.strftime('%Y-%m-%d 23:59:59')
         domain = [
             ('check_in', '>=', start_date_str),
-            ('check_out', '<=', end_date_str)
+            ('check_out', '<=', end_date_str),
         ]
         attendances = request.env['hr.attendance'].search(domain)
         output = {}
@@ -44,9 +44,10 @@ class HrAttendanceController(http.Controller):
                 'check_out': (
                     fields.Datetime.from_string(attendance.check_out) -
                     datetime(1970, 1, 1)).total_seconds() * 1000,
-                'geo_lat': attendance.geo_lat,
-                'geo_long': attendance.geo_long,
-                'geo_lat_out': attendance.geo_lat_out,
-                'geo_long_out': attendance.geo_long_out,
+                # If coordinates 0.0, then False to avoid weird markers
+                'geo_lat': attendance.geo_lat or False,
+                'geo_long': attendance.geo_long or False,
+                'geo_lat_out': attendance.geo_lat_out or False,
+                'geo_long_out': attendance.geo_long_out or False,
             })
         return json.dumps(output)
