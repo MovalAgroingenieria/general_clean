@@ -45,9 +45,9 @@ class HrAttendanceController(http.Controller):
                     fields.Datetime.from_string(attendance.check_out) -
                     datetime(1970, 1, 1)).total_seconds() * 1000,
                 # If coordinates 0.0, then False to avoid weird markers
-                'geo_lat': attendance.geo_lat or False,
-                'geo_long': attendance.geo_long or False,
-                'geo_lat_out': attendance.geo_lat_out or False,
-                'geo_long_out': attendance.geo_long_out or False,
+                'geo_lat': float(attendance.geo_lat) or False,
+                'geo_long': float(attendance.geo_long) or False,
+                'geo_lat_out': float(attendance.geo_lat_out) or False,
+                'geo_long_out': float(attendance.geo_long_out) or False,
             })
         return json.dumps(output)
