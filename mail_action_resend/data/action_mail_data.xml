@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="resend_action" model="ir.actions.server">
+            <field name="name">Resend Mail Action</field>
+            <field name="model_id" ref="account_credit_control.model_mail_mail"/>
+            <field name="code">
+                for r in records:
+                    r.mark_outgoing()
+                    r.send()
+            </field>
+        </record>
+</odoo>

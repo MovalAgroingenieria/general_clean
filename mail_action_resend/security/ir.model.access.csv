@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_action_mail_rule,action.mail.rule,account_credit_control.model_mail_mail,,1,0,0,0
+access_action_mail_rule_config,action.mail.rule config,account_credit_control.model_mail_mail,base.group_system,1,1,1,1
