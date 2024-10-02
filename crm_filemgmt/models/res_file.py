@@ -88,19 +88,6 @@ class ResFile(models.Model):
         string='Photo / Image',
         attachment=True)
 
-    # To be deleted after migration
-    state = fields.Selection(
-        selection=[
-            ('01_draft', 'Draft'),
-            ('02_inprogress', 'In progress'),
-            ('03_closed', 'Closed'),
-        ],
-        string='State',
-        default='01_draft',
-        required=True,
-        index=True,
-        track_visibility='onchange')
-
     stage_id = fields.Many2one(
         string='Stage',
         comodel_name='res.file.stage',
@@ -116,12 +103,6 @@ class ResFile(models.Model):
 
     is_blocked = fields.Boolean(
         string='Blocked',
-        default=False,
-        track_visibility='onchange')
-
-    # To be deleted after migration
-    is_cancelled = fields.Boolean(
-        string='Cancelled',
         default=False,
         track_visibility='onchange')
 

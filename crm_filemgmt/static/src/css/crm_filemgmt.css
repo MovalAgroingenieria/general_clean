@@ -35,14 +35,6 @@
     text-align: center;
 }
 
-.o_res_file_view_tree [data-id="is_cancelled"] {
-    width: 6%;
-    text-align: center;
-}
-.o_res_file_view_tree [data-field="is_cancelled"] {
-    text-align: center;
-}
-
 .o_res_file_view_tree [data-id="category_id"] {
     text-align: center;
 }
@@ -50,11 +42,11 @@
     text-align: center;
 }
 
-.o_res_file_view_tree [data-id="state"] {
+.o_res_file_view_tree [data-id="stage_id"] {
     width: 8%;
     text-align: center;
 }
-.o_res_file_view_tree [data-field="state"] {
+.o_res_file_view_tree [data-field="stage_id"] {
     text-align: center;
 }
 
@@ -76,11 +68,11 @@
     text-align: center;
 }
 
-.o_res_file_partnerlink_view_tree [data-id="state"] {
+.o_res_file_partnerlink_view_tree [data-id="stage_id"] {
     width: 10%;
     text-align: center;
 }
-.o_res_file_partnerlink_view_tree [data-field="state"] {
+.o_res_file_partnerlink_view_tree [data-field="stage_id"] {
     text-align: center;
 }
 
@@ -109,11 +101,11 @@
     text-align: center;
 }
 
-.o_res_file_partnerlink_of_partner_view_tree [data-id="state"] {
+.o_res_file_partnerlink_of_partner_view_tree [data-id="stage_id"] {
     width: 10%;
     text-align: center;
 }
-.o_res_file_partnerlink_of_partner_view_tree [data-field="state"] {
+.o_res_file_partnerlink_of_partner_view_tree [data-field="stage_id"] {
     text-align: center;
 }
 
