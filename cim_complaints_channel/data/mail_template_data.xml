@@ -46,10 +46,6 @@
             <field name="auto_delete" eval="True"/>
         </record>
 
-    </data>
-
-    <data noupdate="0">
-
         <record id="mail_template_notice" model="mail.template">
             <field name="name">Send notice related to a communication from the claimant</field>
             <field name="model_id"
@@ -63,9 +59,6 @@
                     <p>There is a new complaint or a new communication of a pre-existing complaint.</p>
                     <p>· ISSUE:</p>
                     <p>${object.issue}</p>
-                    <!-- Due to data protection reasons this part is not communicated -->
-                    <!--<p>· DATA OF THE COMMUNICATION:</p>
-                    <p>${object.description}</p>-->
                 </div>
             </field>
             <field name="auto_delete" eval="True"/>
