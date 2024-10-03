@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="electronic_files_page" name="📋">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <t t-if="digitalregister">
+                                <div name="body_content">
+                                    <h4>⸰ Electronic Files</h4>
+                                    <hr/>
+                                    <strong>VAT:</strong>
+                                    <span t-esc="digitalregister.name"></span>
+                                    <!-- TODO -->
+                                    <br/><br/><span class="text-danger">Pending... (TODO)</span>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <strong><span class="text-danger">Digital register not found.</span></strong>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="csv_code_form" name="🔑">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <t t-if="digitalregister">
+                                <span>To ensure the confidentiality and integrity of your data and files, you must enter the CSV code of the signed document you wish to access. Thank you very much.</span>
+                                <form class="oe_login_form" role="form" action="/getfromcsv" method="post" autocomplete="off">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <div class="form-group">
+                                        <label for="csvcode" class="control-label">CSV Code</label>
+                                        <input name="csvcode" t-att-value="(CSV)" id="csvcode" class="form-control" required="required"/>
+                                    </div>
+                                    <div class="clearfix oe_login_buttons">
+                                        <button type="submit" class="btn btn-primary pull-left">Accept</button>
+                                    </div>
+                                </form>
+                                <div name="error_text" class="text-center">
+                                    <span class="text-danger"><t t-esc="error_message"/></span>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <strong><span class="text-danger">Digital register not found.</span></strong>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="generic_instance_form" name="📋">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <t t-if="digitalregister">
+                                <div name="body_content" class="col-sm-12">
+                                    <h4>⸰ Generic instance for any procedure</h4>
+                                    <hr/>
+                                    <form role="form" action="/confirmation" method="post" autocomplete="off" enctype="multipart/form-data">
+                                        <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                        <input type="hidden" name="electronicfile_id" t-att-value="electronicfile_id"/>
+                                        <div class="form-group">
+                                            <label for="exposition" class="control-label">EXPOSES</label>
+                                            <textarea type="text" name="exposition" rows="5" id="exposition" class="form-control" required="required"/>
+                                            <br/>
+                                            <label for="request" class="control-label">REQUESTS</label>
+                                            <textarea type="text" name="request" rows="5" id="request" class="form-control" required="required"/>
+                                            <br/>
+                                            <input type="file" name="attachments" multiple="true"/>
+                                        </div>
+                                        <div class="clearfix text-center">
+                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <strong><span class="text-danger">Digital register not found.</span></strong>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="suggestion_form" name="📋">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <t t-if="digitalregister">
+                                <div name="body_content" class="col-sm-12">
+                                    <h4>⸰ Suggestion Box (general improvements)</h4>
+                                    <hr/>
+                                    <form role="form" action="/confirmation" method="post" autocomplete="off" enctype="multipart/form-data">
+                                        <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                        <input type="hidden" name="electronicfile_id" t-att-value="electronicfile_id"/>
+                                        <div class="form-group">
+                                            <label for="suggestion" class="control-label">PROPOSES</label>
+                                            <textarea type="text" name="suggestion" rows="7" id="suggestion" class="form-control" required="required"/>
+                                            <br/>
+                                            <input type="file" name="attachments" multiple="true"/>
+                                        </div>
+                                        <div class="clearfix text-center">
+                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </t>
+                            <t t-else="">
+                                <strong><span class="text-danger">Digital register not found.</span></strong>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="confirmation_and_home" name="📋">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <t t-if="digitalregister">
+                                <h3>Thank you, the data entered has been successfully registered.</h3>
+                                <h4>
+                                    <form id="eoffice" role="form" action="/eoffice" method="post">
+                                          <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                          <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('eoffice').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
+                                    </form>
+                                </h4>
+                            </t>
+                            <t t-else="">
+                                <strong><span class="text-danger">Error updating data.</span></strong>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

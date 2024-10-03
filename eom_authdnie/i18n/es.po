@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 17:06+0000\n"
-"PO-Revision-Date: 2024-06-14 17:06+0000\n"
+"POT-Creation-Date: 2024-10-03 17:05+0000\n"
+"PO-Revision-Date: 2024-10-03 17:05+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -79,9 +79,9 @@ msgstr "<strong><span class=\"text-danger\">Error al actualizar los datos.</span
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
 msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
-"                            <span style=\"margin-right:7px\">🖍</span>"
+"                            <span style=\"margin-right:7px\">🖳</span>"
 msgstr "<strong><span style=\"margin-right:35px\">Sede electrónica</span></strong>\n"
-"                            <span style=\"margin-right:7px\">🖍</span>"
+"                            <span style=\"margin-right:7px\">🖳</span>"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
@@ -179,7 +179,6 @@ msgid "Configuration"
 msgstr "Configuración"
 
 #. module: eom_authdnie
-#: model:ir.model,name:eom_authdnie.model_res_cim_config_settings
 #: model:ir.model,name:eom_authdnie.model_res_eom_config_settings
 msgid "Configuration of the electronic office"
 msgstr "Configuración de la sede electrónica"
@@ -480,7 +479,7 @@ msgstr "Por favor, introduzca DNI"
 #: model:ir.model.fields,field_description:eom_authdnie.field_res_partner_digitalregister_ids
 #: model:ir.model.fields,field_description:eom_authdnie.field_res_users_digitalregister_ids
 msgid "Possible digital register of the partner"
-msgstr "Posibles certificados digitales del socio"
+msgstr "Posibles certificados digitales del contacto"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_access_view_form
@@ -556,11 +555,11 @@ msgstr "Con petición (s/n)"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
-msgid "⦁ Identification"
-msgstr "⦁ Identificación"
+msgid "⸰ Identification"
+msgstr "⸰ Identificación"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
-msgid "⦁ New request"
-msgstr "⦁ Nueva petición"
+msgid "⸰ New request"
+msgstr "⸰ Nueva solicitud"
 

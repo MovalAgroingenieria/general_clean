@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="eom_electronicfile_view_form" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.form</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="arch" type="xml">
+            <form duplicate="false" create="false">
+                <field name="editable_notes" invisible="1"/>
+                <sheet>
+                    <group name="master_data">
+                        <group name="master_data_left">
+                            <field name="event_time"
+                                   string="Access"/>
+                            <field name="digitalregister_id"
+                                   string="Digital Certificate"
+                                   readonly="True"/>
+                            <field name="partner_id"
+                                   string="Associated Contact"
+                                   readonly="True"
+                                   attrs="{'invisible': [('partner_id', '=', False)]}"/>
+                        </group>
+                        <group name="master_data_right">
+                            <field name="exposition"
+                                   string="Exposition"
+                                   readonly="True"
+                                   attrs="{'invisible': [('exposition', '=', False)]}"/>
+                            <field name="request"
+                                   string="Request"
+                                   readonly="True"
+                                   attrs="{'invisible': [('request', '=', False)]}"/>
+                            <field name="suggestion"
+                                   string="Suggestion"
+                                   readonly="True"
+                                   attrs="{'invisible': [('suggestion', '=', False)]}"/>
+                        </group>
+                    </group>
+                    <group name="slave_data">
+                        <notebook name="slave_data_notebook">
+                            <page name="notes" string="Notes">
+                                <field name="notes"
+                                       attrs="{'readonly': [('editable_notes', '=', False)]}"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_view_tree" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.tree</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="arch" type="xml">
+            <tree class="o_eom_eoffice_electronicfile_view_tree"
+                  create="false"
+                  default_order="event_time desc">
+                <field name="event_time"
+                       string="Access"/>
+                <field name="digitalregister_id"
+                       string="VAT"/>
+                <field name="type"
+                       string="Type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_view_search" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.search</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="fullname" string="Name"/>
+                <field name="digitalregister_id" string="VAT"/>
+                <filter string="Mapped to contact: yes"
+                        name="with_contact_yes"
+                        domain="[('partner_id', '!=', False)]"/>
+                <filter string="Mapped to contact: no"
+                        name="with_contact_no"
+                        domain="[('partner_id', '=', False)]"/>
+                <separator/>
+                <filter name="inactive"
+                        string="Archived"
+                        domain="[('active', '=', False)]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Type"
+                            name="grouped_type"
+                     context="{'group_by':'type'}"/>
+                    <filter string="Digital Certificate"
+                            name="grouped_fullname"
+                     context="{'group_by':'fullname'}"/>
+                    <filter string="Access Time"
+                            name="grouped_event_time"
+                     context="{'group_by':'event_time'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_action"
+            model="ir.actions.act_window">
+        <field name="name">Electronic Files</field>
+        <field name="res_model">eom.electronicfile</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('eom_electronicfile_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('eom_electronicfile_view_form')})]"/>
+        <field name="search_view_id" ref="eom_electronicfile_view_search"/>
+    </record>
+
+    <menuitem id="electronicfile_menu"
+              name="Electronic Files"
+              parent="eom_authdnie.electronicoffice_menu"
+              sequence="0"
+              action="eom_electronicfile_action"/>
+
+    <record model="ir.ui.menu" id="eom_authdnie.digitalregister_access_with_userdata_menu">
+        <field name="action" eval="False"/>
+    </record>
+
+</odoo>
