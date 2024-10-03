@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eom_eoffice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-03 18:17+0000\n"
+"PO-Revision-Date: 2024-10-03 18:17+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+msgid "<br/><br/><span class=\"text-danger\">Pending... (TODO)</span>"
+msgstr "<br/><br/><span class=\"text-danger\">Pendiente... (TODO)</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span class=\"fa fa-home\"/>\n"
+"                    <span class=\"text-danger\">Pending: show the postal address data... (TODO)</span>"
+msgstr "<span class=\"fa fa-home\"/>\n"
+"                    <span class=\"text-danger\">Pendiente: mostrar la dirección postal... (TODO)</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "<span style=\"margin-left:10px\">to return to the home page.</span>"
+msgstr "<span style=\"margin-left:10px\">para volver a la página de inicio de la sede electrónica.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "<span style=\"margin-right:10px\">Click</span>"
+msgstr "<span style=\"margin-right:10px\">Click</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span>Click here if you wish to change the address to which notifications should be sent. You can choose between a postal address or an email address.</span>"
+msgstr "<span>Haga click aquí si quiere modificar la dirección a la que deben enviársele las notificaciones. Podrá elegir entre dirección postal o correo electrónico.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span>Click here to access your previous requests. You will be able to review their content and add new data and/or files.</span>"
+msgstr "<span>Haga click aquí para acceder a sus solicitudes anteriores. Podrá consultar su contenido y añadir nuevos datos y/o archivos.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span>If you would like to make any suggestions for general improvements, please choose this option.</span>"
+msgstr "<span>Si quiere aportar cualquier propuesta que tenga que ver con alguna mejora general, por favor elija esta opción.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span>Select this option to obtain any of the documents sent to you from this office. You will need to enter the CSV code of the document.</span>"
+msgstr "<span>Elija esta opción para obtener alguno de los documentos que se le haya remitido desde esta sede. Tendrá que introducir el código CSV del documento.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "<span>This procedure will allow you to submit any generic request, of any type. If you are unsure, choose this option.</span>"
+msgstr "<span>Este trámite le permitirá cursar cualquier solicitud genérica, de cualquier tipo. Si no está seguro, elija esta opción.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
+msgid "<span>To ensure the confidentiality and integrity of your data and files, you must enter the CSV code of the signed document you wish to access. Thank you very much.</span>"
+msgstr "<span>Con el fin de garantizar la confidencialidad e integridad de sus datos y archivos, es necesario que introduzca el código CSV del documento firmado al que desea acceder. Muchas gracias.</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "<strong><span class=\"text-danger\">Digital register not found.</span></strong>"
+msgstr "<strong><span class=\"text-danger\">No se ha encontrado el certificado digital.</span></strong>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "<strong><span class=\"text-danger\">Error updating data.</span></strong>"
+msgstr "<strong><span class=\"text-danger\">Error al actualizar los datos.</span></strong>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+#: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
+"                            <span style=\"margin-right:7px\">🖳</span>"
+msgstr "<strong><span style=\"margin-right:35px\">Sede electrónica</span></strong>\n"
+"                            <span style=\"margin-right:7px\">🖳</span>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+msgid "<strong>VAT:</strong>"
+msgstr "<strong>DNI:</strong>"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "Accept"
+msgstr "Aceptar"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
+msgid "Access"
+msgstr "Acceso"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Access Time"
+msgstr "Instante de acceso"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_active
+msgid "Active"
+msgstr "Activo"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Archived"
+msgstr "Archivado"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_access_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Associated Contact"
+msgstr "Contacto asociado"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
+msgid "CSV Code"
+msgstr "Código CSV"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "Change the postal or email address"
+msgstr "Cambio de dirección postal y/o email"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_digitalregister_id
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Digital Certificate"
+msgstr "Certificado digital"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+msgid "EXPOSES"
+msgstr "EXPONE"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_editable_notes
+msgid "Editable Notes (y/n)"
+msgstr "Notas editables (s/n)"
+
+#. module: eom_eoffice
+#: model:ir.model,name:eom_eoffice.model_eom_electronicfile
+msgid "Electronic File"
+msgstr "Expediente electrónico"
+
+#. module: eom_eoffice
+#: model:ir.actions.act_window,name:eom_eoffice.eom_electronicfile_action
+#: model:ir.ui.menu,name:eom_eoffice.electronicfile_menu
+msgid "Electronic Files"
+msgstr "Expedientes electrónicos"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_exposition
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Exposition"
+msgstr "Exposición"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_firstname
+msgid "First Name"
+msgstr "Nombre"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_fullname
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#. module: eom_eoffice
+#: selection:eom.electronicfile,type:0
+msgid "Generic Instance"
+msgstr "Instancia general"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "Generic instance for any procedure"
+msgstr "Instancia general"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "Get document from a CSV code"
+msgstr "Obtención de documentos por CSV"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_id
+msgid "ID"
+msgstr "ID"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_lastname
+msgid "Last Name"
+msgstr "Apellidos"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "List of electronic files processed"
+msgstr "Expedientes electrónicos tramitados"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Mapped to contact: no"
+msgstr "Contacto asociado: no"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Mapped to contact: yes"
+msgstr "Contacto asociado: sí"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Name"
+msgstr "Nombre"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_notes
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "PROPOSES"
+msgstr "PROPONE"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_partner_id
+msgid "Partner"
+msgstr "Contacto"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+msgid "REQUESTS"
+msgstr "SOLICITA"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_request
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_suggestion
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Request"
+msgstr "Solicitud"
+
+#. module: eom_eoffice
+#: selection:eom.electronicfile,type:0
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Suggestion"
+msgstr "Sugerencia"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "Suggestion Box (general improvements)"
+msgstr "Buzón de sugerencias (mejoras globales)"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "Thank you, the data entered has been successfully registered."
+msgstr "Gracias, los datos indicados han sido registrados satisfactoriamente."
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_event_time
+msgid "Time"
+msgstr "Instante"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_type
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
+msgid "Type"
+msgstr "Tipo"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
+msgid "VAT"
+msgstr "DNI"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "here"
+msgstr "aquí"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+msgid "⸰ Electronic Files"
+msgstr "⸰ Expedientes electrónicos"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+msgid "⸰ Generic instance for any procedure"
+msgstr "⸰ Instancia general"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "⸰ List of procedures"
+msgstr "⸰ Lista de trámites"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "⸰ Mailing address"
+msgstr "⸰ Dirección de envío"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
+msgid "⸰ Queries"
+msgstr "⸰ Consultas"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "⸰ Suggestion Box (general improvements)"
+msgstr "⸰ Buzón de sugerencias (mejoras globales)"
+

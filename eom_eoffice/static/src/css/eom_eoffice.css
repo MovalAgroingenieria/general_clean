@@ -1,0 +1,16 @@
+/**/
+/* eom.electronicfile */
+/**/
+.o_eom_eoffice_electronicfile_view_tree [data-id="event_time"] {
+    min-width: 150px;
+    text-align: center;
+}
+.o_eom_eoffice_electronicfile_view_tree [data-field="event_time"] {
+    text-align: center;
+}
+.o_eom_eoffice_electronicfile_view_tree [data-id="digitalregister_id"] {
+    width: 100%;
+}
+.o_eom_eoffice_electronicfile_view_tree [data-id="type"] {
+    min-width: 150px;
+}

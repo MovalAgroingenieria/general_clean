@@ -8,22 +8,23 @@
                     <div class="container">
                         <div name="header" style="margin-top:22px">
                             <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖍</span><strong><span t-esc="identif_header"></span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
                         </div>
                         <hr/>
                         <div name="body" class="container">
                             <div name="body_content" class="row">
                                 <div name="body_content_left" class="col-sm-6">
-                                    <h4>⦁ Identification</h4>
+                                    <h4>⸰ Identification</h4>
                                     <hr/>
                                     <strong>VAT:</strong>
-                                    <span t-esc="access.digitalregister_id.name"></span><br/>
+                                    <span t-esc="access.digitalregister_id.name"/><br/>
                                     <strong>Last Name:</strong>
-                                    <span t-esc="access.digitalregister_id.lastname"></span><br/>
+                                    <span t-esc="access.digitalregister_id.lastname"/><br/>
                                     <strong>First Name:</strong>
-                                    <span t-esc="access.digitalregister_id.firstname"></span><br/>
+                                    <span t-esc="access.digitalregister_id.firstname"/><br/>
                                     <strong>Authority:</strong>
-                                    <span t-esc="access.digitalregister_id.authority"></span><br/><br/>
+                                    <span t-esc="access.digitalregister_id.authority"/><br/><br/>
                                     <t t-if="access.partner_id">
                                         <t t-if="access.partner_id.image">
                                             <div class="modal-body row">
@@ -32,36 +33,36 @@
                                                 </div>
                                                 <div class="col-md-8">
                                                     <span class="fa fa-user"/>
-                                                    <span t-esc="access.partner_id.name"></span><br/>
+                                                    <span t-esc="access.partner_id.name"/><br/>
                                                     <t t-if="access.partner_id.email">
                                                         <span class="fa fa-envelope"/>
-                                                        <span t-esc="access.partner_id.email"></span><br/>
+                                                        <span t-esc="access.partner_id.email"/><br/>
                                                     </t>
                                                     <t t-if="access.partner_id.phone">
                                                         <span class="fa fa-phone"/>
-                                                        <span t-esc="access.partner_id.phone"></span><br/>
+                                                        <span t-esc="access.partner_id.phone"/><br/>
                                                     </t>
                                                     <t t-if="access.partner_id.mobile">
                                                         <span class="fa fa-phone"/>
-                                                        <span t-esc="access.partner_id.mobile"></span><br/>
+                                                        <span t-esc="access.partner_id.mobile"/><br/>
                                                     </t>
                                                 </div>
                                             </div>
                                         </t>
                                         <t t-else="">
                                             <span class="fa fa-user"/>
-                                            <span t-esc="access.partner_id.name"></span><br/>
+                                            <span t-esc="access.partner_id.name"/><br/>
                                             <t t-if="access.partner_id.email">
                                                 <span class="fa fa-envelope"/>
-                                                <span t-esc="access.partner_id.email"></span><br/>
+                                                <span t-esc="access.partner_id.email"/><br/>
                                             </t>
                                             <t t-if="access.partner_id.phone">
                                                 <span class="fa fa-phone"/>
-                                                <span t-esc="access.partner_id.phone"></span><br/>
+                                                <span t-esc="access.partner_id.phone"/><br/>
                                             </t>
                                             <t t-if="access.partner_id.mobile">
                                                 <span class="fa fa-phone"/>
-                                                <span t-esc="access.partner_id.mobile"></span><br/>
+                                                <span t-esc="access.partner_id.mobile"/><br/>
                                             </t>
                                         </t>
                                     </t>
@@ -70,7 +71,7 @@
                                     </t>
                                 </div>
                                 <div name="body_content_right" class="col-sm-6">
-                                    <h4>⦁ New request</h4>
+                                    <h4>⸰ New request</h4>
                                     <hr/>
                                     <form role="form" action="/confirm" method="post" autocomplete="off">
                                         <input type="hidden" name="identif_token" t-att-value="identif_token"/>
