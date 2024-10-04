@@ -10,6 +10,9 @@
                 <sheet>
                     <group name="master_data">
                         <group name="master_data_left">
+                            <field name="name"
+                                   string="Code"
+                                   readonly="True"/>
                             <field name="event_time"
                                    string="Access"/>
                             <field name="digitalregister_id"
@@ -21,18 +24,21 @@
                                    attrs="{'invisible': [('partner_id', '=', False)]}"/>
                         </group>
                         <group name="master_data_right">
+                            <field name="type"
+                                   string="Type"
+                                   readonly="True"/>
                             <field name="exposition"
                                    string="Exposition"
                                    readonly="True"
-                                   attrs="{'invisible': [('exposition', '=', False)]}"/>
+                                   attrs="{'invisible': [('type', '!=', '01_generic_instance')]}"/>
                             <field name="request"
                                    string="Request"
                                    readonly="True"
-                                   attrs="{'invisible': [('request', '=', False)]}"/>
+                                   attrs="{'invisible': [('type', '!=', '01_generic_instance')]}"/>
                             <field name="suggestion"
                                    string="Suggestion"
                                    readonly="True"
-                                   attrs="{'invisible': [('suggestion', '=', False)]}"/>
+                                   attrs="{'invisible': [('type', '!=', '02_suggestion')]}"/>
                         </group>
                     </group>
                     <group name="slave_data">
@@ -54,7 +60,9 @@
         <field name="arch" type="xml">
             <tree class="o_eom_eoffice_electronicfile_view_tree"
                   create="false"
-                  default_order="event_time desc">
+                  default_order="name desc">
+                <field name="name"
+                       string="Code"/>
                 <field name="event_time"
                        string="Access"/>
                 <field name="digitalregister_id"
@@ -70,6 +78,7 @@
         <field name="model">eom.electronicfile</field>
         <field name="arch" type="xml">
             <search>
+                <field name="name" string="Code"/>
                 <field name="fullname" string="Name"/>
                 <field name="digitalregister_id" string="VAT"/>
                 <filter string="Mapped to contact: yes"
@@ -79,9 +88,6 @@
                         name="with_contact_no"
                         domain="[('partner_id', '=', False)]"/>
                 <separator/>
-                <filter name="inactive"
-                        string="Archived"
-                        domain="[('active', '=', False)]"/>
                 <group expand="0" string="Group By">
                     <filter string="Type"
                             name="grouped_type"

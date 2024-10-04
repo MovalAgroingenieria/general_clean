@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-03 18:17+0000\n"
-"PO-Revision-Date: 2024-10-03 18:17+0000\n"
+"POT-Creation-Date: 2024-10-04 18:10+0000\n"
+"PO-Revision-Date: 2024-10-04 18:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "<span style=\"margin-left:10px\">per tornar a la pàgina d'inici de la s
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
 msgid "<span style=\"margin-right:10px\">Click</span>"
-msgstr "<span style=\"margin-right:10px\">Click</span>"
+msgstr "<span style=\"margin-right:10px\">Feu clic</span>"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
@@ -115,16 +115,6 @@ msgid "Access Time"
 msgstr "Instant d'accés"
 
 #. module: eom_eoffice
-#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_active
-msgid "Active"
-msgstr "Actiu"
-
-#. module: eom_eoffice
-#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
-msgid "Archived"
-msgstr "Arxivat"
-
-#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_access_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
@@ -142,6 +132,24 @@ msgid "Change the postal or email address"
 msgstr "Canvi de direcció postal i/o email"
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
+msgid "Code"
+msgstr "Codi"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "Code of the generated file:"
+msgstr "Codi de l'expedient generat:"
+
+#. module: eom_eoffice
+#: model:ir.model,name:eom_eoffice.model_res_eom_config_settings
+msgid "Configuration of the electronic office"
+msgstr "Configuració de la seu electrònica"
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_uid
 msgid "Created by"
 msgstr "Creat per"
@@ -150,6 +158,11 @@ msgstr "Creat per"
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_date
 msgid "Created on"
 msgstr "Creat el"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_sequence_electronicfile_code_id
+msgid "Default values of the electronic file codes"
+msgstr "Default values of the electronic file codes"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_digitalregister_id
@@ -183,6 +196,11 @@ msgstr "Expedient electrònic"
 #: model:ir.ui.menu,name:eom_eoffice.electronicfile_menu
 msgid "Electronic Files"
 msgstr "Expedients electrònics"
+
+#. module: eom_eoffice
+#: sql_constraint:eom.electronicfile:0
+msgid "Existing electronic file (repeated code)."
+msgstr "Expedient electrònic existent (codi repetit)."
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_exposition
@@ -261,7 +279,6 @@ msgid "Mapped to contact: yes"
 msgstr "Contacte associat: sí"
 
 #. module: eom_eoffice
-#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Name"
 msgstr "Nom"
@@ -280,7 +297,7 @@ msgstr "PROPOSA"
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_partner_id
 msgid "Partner"
-msgstr "Contacte"
+msgstr "Empresa"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
@@ -293,6 +310,16 @@ msgstr "SOL·LICITA"
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 msgid "Request"
 msgstr "Sol·licitud"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.res_eom_config_settings_view_form
+msgid "Sequence for code"
+msgstr "Seqüència per al codi"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_sequence_electronicfile_code_id
+msgid "Sequence for the codes of electronic files"
+msgstr "Seqüència per als codis d'expedients electrònics"
 
 #. module: eom_eoffice
 #: selection:eom.electronicfile,type:0
@@ -317,6 +344,7 @@ msgstr "Instant"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_type
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
 msgid "Type"

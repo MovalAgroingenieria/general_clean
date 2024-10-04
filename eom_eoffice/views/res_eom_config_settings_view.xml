@@ -10,7 +10,8 @@
                     <field name="sequence_electronicfile_code_id"
                            string="Sequence for code"
                            options="{'no_quick_create':True,'no_create_edit':True}"
-                           style="width:300px"/>
+                           style="width:300px"
+                           required="1"/>
               </xpath>
         </field>
     </record>

@@ -8,9 +8,21 @@ from odoo import models, fields, api
 class EomElectronicfile(models.Model):
     _name = 'eom.electronicfile'
     _description = 'Electronic File'
-    _order = 'event_time desc'
 
-    SIZE_NAME = 50
+    SIZE_NAME = 25
+
+    def _default_name(self):
+        resp = None
+        sequence_electronicfile_code_id = self.env['ir.values'].get_default(
+            'res.eom.config.settings', 'sequence_electronicfile_code_id')
+        if sequence_electronicfile_code_id:
+            model_ir_sequence = self.env['ir.sequence'].sudo()
+            sequence_electronicfile_code = \
+                model_ir_sequence.browse(sequence_electronicfile_code_id)
+            if sequence_electronicfile_code:
+                resp = model_ir_sequence.next_by_code(
+                    sequence_electronicfile_code.code)
+        return resp
 
     event_time = fields.Datetime(
         string='Time',
@@ -28,10 +40,11 @@ class EomElectronicfile(models.Model):
         ondelete='restrict',)
 
     name = fields.Char(
+        string='Code',
         size=SIZE_NAME,
-        store=True,
-        index=True,
-        compute='_compute_name',)
+        default=_default_name,
+        required=True,
+        index=True,)
 
     partner_id = fields.Many2one(
         string='Partner',
@@ -83,21 +96,14 @@ class EomElectronicfile(models.Model):
         string='Editable Notes (y/n)',
         compute='_compute_editable_notes',)
 
-    active = fields.Boolean(
-        default=True,
-        store=True,
-        compute='_compute_active',)
-
     notes = fields.Html(
         string='Notes',)
 
-    @api.depends('event_time', 'digitalregister_id')
-    def _compute_name(self):
-        for record in self:
-            name = ''
-            if record.event_time and record.digitalregister_id:
-                name = record.event_time + '-' + record.digitalregister_id.name
-            record.name = name
+    _sql_constraints = [
+        ('name_unique',
+         'UNIQUE (name)',
+         'Existing electronic file (repeated code).'),
+        ]
 
     @api.depends('digitalregister_id', 'digitalregister_id.partner_id')
     def _compute_partner_id(self):
@@ -147,15 +153,3 @@ class EomElectronicfile(models.Model):
             'res.eom.config.settings', 'editable_notes')
         for record in self:
             record.editable_notes = editable_notes
-
-    @api.depends('type', 'exposition', 'request', 'suggestion')
-    def _compute_active(self):
-        for record in self:
-            active = True
-            if record.type == '01_generic_instance':
-                if (not record.exposition) or (not record.request):
-                    active = False
-            elif record.type == '02_suggestion':
-                if not record.suggestion:
-                    active = False
-            record.active = active

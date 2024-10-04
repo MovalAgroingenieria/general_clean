@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-03 18:17+0000\n"
-"PO-Revision-Date: 2024-10-03 18:17+0000\n"
+"POT-Creation-Date: 2024-10-04 18:10+0000\n"
+"PO-Revision-Date: 2024-10-04 18:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -113,16 +113,6 @@ msgid "Access Time"
 msgstr ""
 
 #. module: eom_eoffice
-#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_active
-msgid "Active"
-msgstr ""
-
-#. module: eom_eoffice
-#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
-msgid "Archived"
-msgstr ""
-
-#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_access_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
@@ -140,6 +130,24 @@ msgid "Change the postal or email address"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
+msgid "Code"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
+msgid "Code of the generated file:"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model,name:eom_eoffice.model_res_eom_config_settings
+msgid "Configuration of the electronic office"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_uid
 msgid "Created by"
 msgstr ""
@@ -147,6 +155,11 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_create_date
 msgid "Created on"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_sequence_electronicfile_code_id
+msgid "Default values of the electronic file codes"
 msgstr ""
 
 #. module: eom_eoffice
@@ -180,6 +193,11 @@ msgstr ""
 #: model:ir.actions.act_window,name:eom_eoffice.eom_electronicfile_action
 #: model:ir.ui.menu,name:eom_eoffice.electronicfile_menu
 msgid "Electronic Files"
+msgstr ""
+
+#. module: eom_eoffice
+#: sql_constraint:eom.electronicfile:0
+msgid "Existing electronic file (repeated code)."
 msgstr ""
 
 #. module: eom_eoffice
@@ -259,7 +277,6 @@ msgid "Mapped to contact: yes"
 msgstr ""
 
 #. module: eom_eoffice
-#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Name"
 msgstr ""
@@ -293,6 +310,16 @@ msgid "Request"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.res_eom_config_settings_view_form
+msgid "Sequence for code"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_sequence_electronicfile_code_id
+msgid "Sequence for the codes of electronic files"
+msgstr ""
+
+#. module: eom_eoffice
 #: selection:eom.electronicfile,type:0
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 msgid "Suggestion"
@@ -315,6 +342,7 @@ msgstr ""
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_type
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
 msgid "Type"

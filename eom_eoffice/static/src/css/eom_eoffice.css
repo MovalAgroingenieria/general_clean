@@ -1,6 +1,13 @@
 /**/
 /* eom.electronicfile */
 /**/
+.o_eom_eoffice_electronicfile_view_tree [data-id="name"] {
+    min-width: 100px;
+    text-align: center;
+}
+.o_eom_eoffice_electronicfile_view_tree [data-field="name"] {
+    text-align: center;
+}
 .o_eom_eoffice_electronicfile_view_tree [data-id="event_time"] {
     min-width: 150px;
     text-align: center;

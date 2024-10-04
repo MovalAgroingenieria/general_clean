@@ -89,7 +89,7 @@
                                     <hr/>
                                     <form role="form" action="/confirmation" method="post" autocomplete="off" enctype="multipart/form-data">
                                         <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                        <input type="hidden" name="electronicfile_id" t-att-value="electronicfile_id"/>
+                                        <input type="hidden" name="electronicfile_type" value="01_generic_instance"/>
                                         <div class="form-group">
                                             <label for="exposition" class="control-label">EXPOSES</label>
                                             <textarea type="text" name="exposition" rows="5" id="exposition" class="form-control" required="required"/>
@@ -133,7 +133,7 @@
                                     <hr/>
                                     <form role="form" action="/confirmation" method="post" autocomplete="off" enctype="multipart/form-data">
                                         <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                        <input type="hidden" name="electronicfile_id" t-att-value="electronicfile_id"/>
+                                        <input type="hidden" name="electronicfile_type" value="02_suggestion"/>
                                         <div class="form-group">
                                             <label for="suggestion" class="control-label">PROPOSES</label>
                                             <textarea type="text" name="suggestion" rows="7" id="suggestion" class="form-control" required="required"/>
@@ -170,6 +170,8 @@
                         <div name="body" class="container">
                             <t t-if="digitalregister">
                                 <h3>Thank you, the data entered has been successfully registered.</h3>
+                                <h4>Code of the generated file:<strong><span style="margin-left:10px" t-esc="electronicfile_code"/></strong></h4>
+                                <br/>
                                 <h4>
                                     <form id="eoffice" role="form" action="/eoffice" method="post">
                                           <input type="hidden" name="identif_token" t-att-value="identif_token"/>
