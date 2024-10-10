@@ -148,7 +148,7 @@
                 <field name="date_file"/>
                 <field name="category_id"/>
                 <field name="subject"/>
-                <field name="stage_id" invisible="1"/>
+                <field name="stage_id"/>
                 <field name="technician_id"/>
                 <field name="is_blocked"/>
                 <field name="category_id" invisible="1"/>
