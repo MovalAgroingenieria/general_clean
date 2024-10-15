@@ -1,0 +1,303 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_financial_report_qweb_add_filters
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-03 08:26+0000\n"
+"PO-Revision-Date: 2024-10-03 08:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+msgid "- From"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:70
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Account"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model,name:account_financial_report_qweb_add_filters.model_account_account_type
+msgid "Account Type"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:47
+#, python-format
+msgid "Accounts:"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:16
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Analytic Account"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_account_account_type_group_by
+msgid "Balance Lines Grouped By"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
+msgid "Cancel"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:37
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_company_id
+#, python-format
+msgid "Company"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:71
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Credit"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:37
+#, python-format
+msgid "Date From"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:37
+#, python-format
+msgid "Date To"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_date_from
+msgid "Date from"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_date_range_id
+msgid "Date range"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_date_to
+msgid "Date to"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:71
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Debit"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
+msgid "Export Excel"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
+msgid "Export PDF"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_account_ids
+msgid "Filter accounts"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_journal_ids
+msgid "Filter journals"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_partner_ids
+msgid "Filter partners"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:72
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Final Balance"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_fy_start_date
+msgid "Fy start date"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.menu,name:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard_menu
+msgid "General Ledger Balance Grouped"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.view_account_type_form
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.view_account_type_tree
+msgid "Group By"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_id
+msgid "ID"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:70
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Initial Balance"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+msgid "Item"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:14
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Journal"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:18
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "N/A"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+msgid "Nothing"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:13
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Partner"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:71
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Period Balance"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:12
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Product"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,help:account_financial_report_qweb_add_filters.field_account_account_type_group_by
+msgid "Set the field for the account lines to group the lines in the new balance report."
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model.fields,field_description:account_financial_report_qweb_add_filters.field_trial_balance_report_grouped_wizard_show_account_zero
+msgid "Show account at 0"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: selection:account.account.type,group_by:0
+#: code:addons/account_financial_report_qweb_add_filters/models/controllers.py:15
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+#, python-format
+msgid "Tag"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: code:addons/account_financial_report_qweb_add_filters/wizard/trial_balance_wizard.py:121
+#, python-format
+msgid "The Company in the Trial Balance Report Wizard and in Date Range must be the same."
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.actions.act_window,name:account_financial_report_qweb_add_filters.action_trial_balance_grouped_wizard
+msgid "Trial Balance Grouped"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+msgid "Trial Balance Report"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.actions.report.xml,name:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped_action
+msgid "Trial Balance Report Grouped"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.model,name:account_financial_report_qweb_add_filters.model_trial_balance_report_grouped_wizard
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
+msgid "Trial Balance Report Wizard"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+msgid "Year"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
+msgid "or"
+msgstr ""
+
+#. module: account_financial_report_qweb_add_filters
+#: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped
+msgid "to"
+msgstr ""
