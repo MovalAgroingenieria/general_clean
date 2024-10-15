@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_production_lot_image_form">
+        <field name="name">stock.production.lot.image.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+<!--            <xpath expr="//div[@class='oe_title']" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--            </xpath>-->
+            <xpath expr="//div[@class='oe_title']" position="after">
+<!--                <div class="row">-->
+<!--                    <div class="oe_title col-6" name="name">-->
+<!--                        <label for="name" class="oe_edit_only"/>-->
+<!--                        <h1>-->
+<!--                            <field name="name" placeholder="e.g. LOT/0001/20121"/>-->
+<!--                        </h1>-->
+<!--                    </div>-->
+<!--                    <div class="col-4"/>-->
+<!--                    <div class="col-2" name="image">-->
+                <div style="width:100%;text-align:right;margin-top: 10px;">
+                    <field name="image_1920"
+                           widget="image"
+                           class="oe_edit_only"
+                           options='{"preview_image":
+                                     "image_256"}'
+                           nolabel="1"
+                           style="border-color:#696969;border-width:1px;border-style:solid"/>
+                    <div name="div_image_read_only"
+                         style="display:inline-block;"
+                         class="oe_read_only">
+                        <field name="image"
+                               widget="image"
+                               options='{"preview_image":
+                                         "image_256",
+                                         "zoom": true, "zoom_delay": 500}'
+                               nolabel="1"
+                               style="border-color:#696969;border-width:1px;border-style:solid"/>
+
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
