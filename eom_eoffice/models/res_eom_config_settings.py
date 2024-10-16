@@ -13,6 +13,11 @@ class ResEomConfigSettings(models.TransientModel):
         comodel_name='ir.sequence',
         help='Default values of the electronic file codes',)
 
+    deadline = fields.Integer(
+        string='Deadline (months)',
+        default=3,
+        help='Number of months for resolution within the deadline.')
+
     @api.multi
     def set_default_values(self):
         super(ResEomConfigSettings, self).set_default_values()
@@ -20,3 +25,5 @@ class ResEomConfigSettings(models.TransientModel):
         values.set_default('res.eom.config.settings',
                            'sequence_electronicfile_code_id',
                            self.sequence_electronicfile_code_id.id)
+        values.set_default('res.eom.config.settings',
+                           'deadline', self.deadline)

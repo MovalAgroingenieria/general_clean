@@ -9,12 +9,38 @@
             <xpath expr="//button[@name='action_requests']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//button[@name='action_accesses']" position="after">
+                <button name="action_electronic_files" class="oe_stat_button"
+                    type="object" icon="fa-file"
+                    attrs="{'invisible':[('number_of_files', '=', 0)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="number_of_files"/>
+                        </span>
+                        <span class="o_stat_text">files</span>
+                    </div>
+                </button>
+            </xpath>
             <xpath expr="//field[@name='partner_id']" position="replace"/>
             <xpath expr="//field[@name='email']" position="before">
                 <field name="partner_id"
                        string="Associated Contact"
                        readonly="True"
                        attrs="{'invisible': [('partner_id', '=', False)]}"/>
+                <field name="notification_address"/>
+                <field name="notification_phone"/>
+                <field name="notification_mobile"/>
+                <field name="notification_email"/>
+                <field name="postal_notification"/>
+            </xpath>
+            <xpath expr="//field[@name='email']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='mobile']" position="attributes">
+                <attribute name="invisible">1</attribute>
             </xpath>
         </field>
     </record>

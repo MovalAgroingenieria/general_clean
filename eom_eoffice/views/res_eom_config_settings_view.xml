@@ -12,6 +12,7 @@
                            options="{'no_quick_create':True,'no_create_edit':True}"
                            style="width:300px"
                            required="1"/>
+                    <field name="deadline" style="width:300px" required="1"/>
               </xpath>
         </field>
     </record>
