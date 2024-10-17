@@ -186,40 +186,48 @@ class TrialBalanceReportWizard(models.TransientModel):
             
             # Convertir el diccionario de vuelta a una lista de diccionarios
             # all_mlines = list(all_mlines_dict.values())
-            if (group_by_field == 'partner_id'):
-                partners_in_move_lines = {line['partner_id']: line for line in
-                                      move_lines}
-                # Recorremos cada elemento en move_lines_back
-                move_lines_old = []
-                for line in move_lines_back:
-                    # Si el partner_id no está en move_lines, añadimos el registro
-                    if line['partner_id'] not in partners_in_move_lines:
-                        group_value = line.get(group_by_field)
-                        initial_balance = self.get_initial_balance(
-                            account, group_value, start_date)
-                        line['credit'] = 0
-                        line['debit'] = 0
-                        line['balance'] = 0
-                        final_balance = initial_balance + line['balance']
-                        if (
-                                not self.show_account_zero and not initial_balance and
-                                line.get('credit') == 0 and line.get(
-                            'debit') == 0):
-                            continue
-                        else:
-                            item_lines.append({
-                                'credit': line.get('credit', 0.0),
-                                'debit': line.get('debit', 0.0),
-                                'balance': line.get('balance', 0.0),
-                                'initial_balance': initial_balance,
-                                'final_balance': final_balance,
-                                'product_id': line.get('product_id', False),
-                                'partner_id': line.get('partner_id', False),
-                                'journal_id': line.get('journal_id', False),
-                                'tag': line.get('name', False),
-                                'analytic_account_id': line.get(
-                                    'analytic_account_id', False)
-                            })
+            # if (group_by_field == 'partner_id'):
+            #     partners_in_move_lines = {line['partner_id']: line for line in
+            #                           move_lines}
+            # Diccionario dinámico en función del campo de agrupación
+            values_in_move_lines = {line[group_by_field]: line for line in
+                                    move_lines}
+                
+            # Recorremos cada elemento en move_lines_back
+            move_lines_old = []
+            for line in move_lines_back:
+                # Obtenemos el valor de agrupación actual
+                group_value = line.get(group_by_field)
+    
+                # Si el partner_id no está en move_lines, añadimos el registro
+                if (values_in_move_lines and
+                        group_value not in values_in_move_lines or
+                        not values_in_move_lines):
+                    
+                    initial_balance = self.get_initial_balance(
+                        account, group_value, start_date)
+                    line['credit'] = 0
+                    line['debit'] = 0
+                    line['balance'] = 0
+                    final_balance = initial_balance + line['balance']
+                    # Verificamos si la cuenta es cero para excluir si es necesario
+                    if (not self.show_account_zero and not initial_balance and
+                        line.get('credit') == 0 and line.get('debit') == 0):
+                        continue
+                    else:
+                        item_lines.append({
+                            'credit': line.get('credit', 0.0),
+                            'debit': line.get('debit', 0.0),
+                            'balance': line.get('balance', 0.0),
+                            'initial_balance': initial_balance,
+                            'final_balance': final_balance,
+                            'product_id': line.get('product_id', False),
+                            'partner_id': line.get('partner_id', False),
+                            'journal_id': line.get('journal_id', False),
+                            'tag': line.get('name', False),
+                            'analytic_account_id': line.get(
+                                'analytic_account_id', False)
+                        })
             for line in move_lines:
                 group_value = line.get(group_by_field)
                 initial_balance = self.get_initial_balance(
@@ -282,24 +290,27 @@ class TrialBalanceReportWizard(models.TransientModel):
         
         group_by_field = self.get_group_by_field(account)
         if group_value and group_by_field:
-            domain.append((group_by_field, '=', group_value[:-1]))
+            if group_by_field == 'name':
+                domain.append((group_by_field, '=', group_value))
+            else:
+                domain.append((group_by_field, '=', group_value[:-1]))
         elif not group_value and group_by_field:
             domain.append((group_by_field, '=', False))
-        if account.group_id.code_prefix == '129':
+        if account.code[:3] == '129':
             # domain67 = [
             #     ('account_id.group_id.account_group_01_id', 'in',[('6', '7')]),
             #     ('date', '<', start_date)
             # ]
             # Buscar los grupos de cuentas de tipo 6 y 7
-            group_6_7_ids = self.env['account.group'].search([
+            accounts_6_7_ids = self.env['account.account'].search([
                 '|',
-                ('code_prefix', '=like', '6%'),
-                ('code_prefix', '=like', '7%')
+                ('code', '=like', '6%'),
+                ('code', '=like', '7%')
             ]).ids
             
             # Buscar las líneas contables de estas cuentas
             move_lines = self.env['account.move.line'].search([
-                ('account_id.group_id', 'in', group_6_7_ids),
+                ('account_id', 'in', accounts_6_7_ids),
                 ('date', '<', start_date)
             ])
             
@@ -333,11 +344,8 @@ class TrialBalanceReportWizard(models.TransientModel):
     
     def is_root_account_6_7(self, account):
         # Recorre la jerarquía de padres
-        group = account.group_id
-        while group:
-            if (group.code_prefix == '6' or group.code_prefix == '7'):
-                return True  # La cuenta pertenece a la cuenta raíz indicada
-            group = group.parent_id
+        if (account.code[:1] == '6' or account.code[:1] == '7'):
+                return True
         return False
     # @api.multi
     # def button_export_pdf(self):
