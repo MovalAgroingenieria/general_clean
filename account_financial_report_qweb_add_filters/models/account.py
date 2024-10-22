@@ -2,8 +2,7 @@
 # 2024 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import models, fields, api, _
-
+from odoo import models, fields
 
 
 class AccountAccountType(models.Model):
@@ -40,25 +39,27 @@ class AccountAccountType(models.Model):
     #             level = self.group_id.parent_id.level
     #             group = group.parent_id.group_id
     #         record.account_group_01_id = group
-    
+
     # def _compute_account_group_id_01(self):
     #     for record in self:
-    #         # Encuentra el grupo de nivel 1 correspondiente a la cuenta actual
+    #         # Encuentra el grupo de nivel 1 correspondiente a la cuenta
+    #         # actual
     #         group_nivel_1 = self.env['account.group'].search([
     #             ('id', 'parent_of', record.group_id.id),
     #             ('level', '=', 1)
     #         ], limit=1)
     #         record.account_group_01_id = group_nivel_1
-        
+
+
 class AccountAccountGroup(models.Model):
     _inherit = "account.group"
-    
+
     account_group_01_id = fields.Char(
         string="Level 1 Account Group",
         comodel_name='account.account.group',
         index=True,
         compute="_compute_account_group_id_01")
-    
+
     def _compute_account_group_id_01(self):
         for record in self:
             # Encuentra el grupo de nivel 1 correspondiente a la cuenta actual

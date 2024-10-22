@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+# 2024 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 import xlsxwriter
 from io import BytesIO
 from odoo import http, _
@@ -6,7 +9,7 @@ from odoo.http import request, content_disposition
 
 
 class ReportController(http.Controller):
-    
+
     def get_group_by_header_and_field(self, group_by):
         group_by_map = {
             'product_id': _('Product'),
@@ -16,7 +19,7 @@ class ReportController(http.Controller):
             'analytic_account_id': _('Analytic Account'),
         }
         return group_by_map.get(group_by, _('N/A')), group_by
-        
+
     @http.route('/report/trial_balance_excel/<int:wizard_id>', type='http',
                 auth="user", website=True)
     def report_trial_balance_excel(self, wizard_id, **kw):
@@ -24,20 +27,20 @@ class ReportController(http.Controller):
             'trial.balance.report.grouped.wizard'].sudo().browse(wizard_id)
         if not wizard:
             return request.not_found()
-        
+
         # Generar el archivo Excel
         output = BytesIO()
         workbook = xlsxwriter.Workbook(output, {'in_memory': True})
         worksheet = workbook.add_worksheet()
-        
+
         # Definir formatos para el archivo Excel.
         bold_format = workbook.add_format({'bold': True})
         decimal_format = workbook.add_format({'num_format': '0.00'})
-        
+
         headers = [_('Date From'), _('Date To'), _('Company')]
         for col_num, header in enumerate(headers):
             worksheet.write(0, col_num, header, bold_format)
-        
+
         row = 1
         worksheet.write(row, 0, str(wizard.date_from))
         worksheet.write(row, 1, str(wizard.date_to))
@@ -57,17 +60,17 @@ class ReportController(http.Controller):
                             account_num -= 7
                     if account_num == 0:
                         row_count += 1
-                        row +=1
+                        row += 1
                 worksheet.write(row, account_num, account.code)
-            
+
         row += 2
         accounts = wizard.get_accounts()
         if accounts:
             for account in accounts:
                 group_by_header, group_by_field =\
                     self.get_group_by_header_and_field(
-                    account.user_type_id.group_by)
-                
+                        account.user_type_id.group_by)
+
                 # Escribir encabezados de las cuentas
                 headers = [_('Account'), group_by_header, _('Initial Balance'),
                            _('Debit'), _('Credit'), _('Period Balance'),
@@ -80,7 +83,7 @@ class ReportController(http.Controller):
                     for col_num, header in enumerate(headers):
                         worksheet.write(row, col_num, header, bold_format)
                     row += 1
-                    
+
                     account_code_name = account.code + " - " + account.name
                     for item in items:
                         group_by_value = item.get(group_by_field)
@@ -101,13 +104,13 @@ class ReportController(http.Controller):
                             row, 6, item['final_balance'] or 0,
                             decimal_format)
                         row += 1
-    
+
         workbook.close()
-       
+
         # Devolver el archivo Excel como respuesta
         excel_content = output.getvalue()
         output.close()
-        
+
         return request.make_response(
             excel_content, headers=[
                 ('Content-Type',

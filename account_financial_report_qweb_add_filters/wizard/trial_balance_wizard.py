@@ -5,15 +5,11 @@
 # Copyright 2018 Eficent Business and IT Consuting Services, S.L.
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from odoo import api, fields, models, _, http
-from odoo.tools.safe_eval import safe_eval
-from odoo.exceptions import UserError, ValidationError
-import xlsxwriter
+from odoo import api, fields, models, _
+from odoo.exceptions import ValidationError
 import logging
-from io import BytesIO
-from odoo.http import request, content_disposition
-
 _logger = logging.getLogger(__name__)
+
 
 class TrialBalanceReportWizard(models.TransientModel):
     """Trial balance report wizard."""
@@ -25,11 +21,11 @@ class TrialBalanceReportWizard(models.TransientModel):
         comodel_name='res.company',
         default=lambda self: self.env.user.company_id,
         required=False,
-        string='Company'
+        string='Company',
     )
     date_range_id = fields.Many2one(
         comodel_name='date.range',
-        string='Date range'
+        string='Date range',
     )
     partner_ids = fields.Many2many(
         comodel_name='res.partner',
@@ -38,7 +34,7 @@ class TrialBalanceReportWizard(models.TransientModel):
     date_from = fields.Date(required=True)
     date_to = fields.Date(required=True)
     fy_start_date = fields.Date(compute='_compute_fy_start_date')
-   
+
     account_ids = fields.Many2many(
         comodel_name='account.account',
         string='Filter accounts',
@@ -58,7 +54,7 @@ class TrialBalanceReportWizard(models.TransientModel):
         count = self.env['account.account'].search_count(
             [
                 ('user_type_id', '=', account_type.id),
-                ('company_id', '=', self.company_id.id)
+                ('company_id', '=', self.company_id.id),
             ])
         self.not_only_one_unaffected_earnings_account = count != 1
         if self.company_id and self.date_range_id.company_id and \
@@ -81,7 +77,7 @@ class TrialBalanceReportWizard(models.TransientModel):
                           'partner_ids': [],
                           'date_range_id': [],
                           'journal_ids': [],
-                          }
+                          },
                }
         if not self.company_id:
             return res
@@ -99,14 +95,14 @@ class TrialBalanceReportWizard(models.TransientModel):
             res['domain']['journal_ids'] += [
                 ('company_id', '=', self.company_id.id)]
         return res
-    
+
     @api.depends('date_from')
     def _compute_fy_start_date(self):
         for wiz in self.filtered('date_from'):
             date = fields.Datetime.from_string(wiz.date_from)
             res = self.company_id.compute_fiscalyear_dates(date)
             wiz.fy_start_date = res['date_from']
-    
+
     @api.onchange('date_range_id')
     def onchange_date_range_id(self):
         """Handle date range change."""
@@ -123,7 +119,6 @@ class TrialBalanceReportWizard(models.TransientModel):
                     _('The Company in the Trial Balance Report Wizard and in '
                       'Date Range must be the same.'))
 
-
     @api.multi
     def get_accounts(self):
         """Retrieve accounts based on the selected filters."""
@@ -134,7 +129,7 @@ class TrialBalanceReportWizard(models.TransientModel):
         if not accounts:
             return []
         return accounts
-    
+
     def get_group_by_field(self, account):
         """Determine the field to group by based on account type."""
         if account.user_type_id.group_by == 'product_id':
@@ -148,71 +143,74 @@ class TrialBalanceReportWizard(models.TransientModel):
         elif account.user_type_id.group_by == 'analytic_account_id':
             return 'analytic_account_id'
         return None
-  
+
     @api.multi
     def get_item_ids(self, account, start_date, end_date):
         group_by_field = self.get_group_by_field(account)
-        
+
         # Construir el dominio de búsqueda
         domain = [
             ('account_id', '=', account.id),
             ('date', '>=', start_date),
-            ('date', '<=', end_date)
+            ('date', '<=', end_date),
         ]
         domain_back = [
             ('account_id', '=', account.id),
             ('date', '<=', start_date),
-            ('full_reconcile_id', '=', None)
+            ('full_reconcile_id', '=', None),
         ]
-        
+
         if group_by_field:
             # Usar read_group si se especifica un campo de agrupación
             move_lines = self.env['account.move.line'].read_group(
                 domain=domain,
                 fields=['credit:sum', 'debit:sum', 'balance:sum',
                         group_by_field],
-                groupby=[group_by_field]
+                groupby=[group_by_field],
             )
             move_lines_back = self.env['account.move.line'].read_group(
                 domain=domain_back,
                 fields=['credit:sum', 'debit:sum', 'balance:sum',
                         group_by_field],
-                groupby=[group_by_field]
+                groupby=[group_by_field],
             )
             item_lines = []
             # all_mlines = move_lines + move_lines_back
             # all_mlines_dict = {line[group_by_field]: line for line in
             #                    move_lines + move_lines_back}
-            
+
             # Convertir el diccionario de vuelta a una lista de diccionarios
             # all_mlines = list(all_mlines_dict.values())
             # if (group_by_field == 'partner_id'):
-            #     partners_in_move_lines = {line['partner_id']: line for line in
+            #     partners_in_move_lines = {line['partner_id']: line for line
+            #       in
             #                           move_lines}
             # Diccionario dinámico en función del campo de agrupación
             values_in_move_lines = {line[group_by_field]: line for line in
                                     move_lines}
-                
+
             # Recorremos cada elemento en move_lines_back
-            move_lines_old = []
+            # move_lines_old = []
             for line in move_lines_back:
                 # Obtenemos el valor de agrupación actual
                 group_value = line.get(group_by_field)
-    
+
                 # Si el partner_id no está en move_lines, añadimos el registro
                 if (values_in_move_lines and
                         group_value not in values_in_move_lines or
                         not values_in_move_lines):
-                    
+
                     initial_balance = self.get_initial_balance(
                         account, group_value, start_date)
                     line['credit'] = 0
                     line['debit'] = 0
                     line['balance'] = 0
                     final_balance = initial_balance + line['balance']
-                    # Verificamos si la cuenta es cero para excluir si es necesario
+                    # Verificamos si la cuenta es cero para excluir si es
+                    # necesario
                     if (not self.show_account_zero and not initial_balance and
-                        line.get('credit') == 0 and line.get('debit') == 0):
+                            line.get('credit') == 0 and line.get('debit') ==
+                            0):
                         continue
                     else:
                         item_lines.append({
@@ -226,7 +224,7 @@ class TrialBalanceReportWizard(models.TransientModel):
                             'journal_id': line.get('journal_id', False),
                             'tag': line.get('name', False),
                             'analytic_account_id': line.get(
-                                'analytic_account_id', False)
+                                'analytic_account_id', False),
                         })
             for line in move_lines:
                 group_value = line.get(group_by_field)
@@ -247,7 +245,8 @@ class TrialBalanceReportWizard(models.TransientModel):
                         'partner_id': line.get('partner_id', False),
                         'journal_id': line.get('journal_id', False),
                         'tag': line.get('name', False),
-                        'analytic_account_id': line.get('analytic_account_id', False)
+                        'analytic_account_id': line.get(
+                            'analytic_account_id', False),
                     })
         else:
             # Devolver líneas individuales si no hay campo de agrupación
@@ -259,8 +258,8 @@ class TrialBalanceReportWizard(models.TransientModel):
             total_debit = sum(line.debit for line in move_lines)
             total_credit = sum(line.credit for line in move_lines)
             final_balance = initial_balance + (total_debit - total_credit)
-            if (not self.show_account_zero and initial_balance == 0
-                    and total_credit == 0 and total_debit == 0):
+            if (not self.show_account_zero and initial_balance == 0 and
+                    total_credit == 0 and total_debit == 0):
                 return
             else:
                 item_lines.append({
@@ -276,18 +275,18 @@ class TrialBalanceReportWizard(models.TransientModel):
                     # 'analytic_account_id': line.analytic_account_id.name
                     # Utiliza el ID de la línea como identificador único
                 })
-                    # initial_balance = final_balance
-    
+                # initial_balance = final_balance
+
         return item_lines if item_lines else []
- 
-    
+
     def get_initial_balance(self, account, group_value, start_date):
-        """Calculate initial balance up to the start date for the given group."""
+        """Calculate initial balance up to the start date for the given
+           group."""
         domain = [
             ('account_id', '=', account.id),
-            ('date', '<', start_date)
+            ('date', '<', start_date),
         ]
-        
+
         group_by_field = self.get_group_by_field(account)
         if group_value and group_by_field:
             if group_by_field == 'name':
@@ -298,28 +297,29 @@ class TrialBalanceReportWizard(models.TransientModel):
             domain.append((group_by_field, '=', False))
         if account.code[:3] == '129':
             # domain67 = [
-            #     ('account_id.group_id.account_group_01_id', 'in',[('6', '7')]),
+            #     ('account_id.group_id.account_group_01_id', 'in',
+            #       [('6', '7')]),
             #     ('date', '<', start_date)
             # ]
             # Buscar los grupos de cuentas de tipo 6 y 7
             accounts_6_7_ids = self.env['account.account'].search([
                 '|',
                 ('code', '=like', '6%'),
-                ('code', '=like', '7%')
+                ('code', '=like', '7%'),
             ]).ids
-            
+
             # Buscar las líneas contables de estas cuentas
             move_lines = self.env['account.move.line'].search([
                 ('account_id', 'in', accounts_6_7_ids),
-                ('date', '<', start_date)
+                ('date', '<', start_date),
             ])
-            
+
             # Sumatorio de débitos y créditos
             total_debit = sum(line.debit for line in move_lines)
             total_credit = sum(line.credit for line in move_lines)
             amlines = self.env['account.move.line'].search_read(
                 domain=domain,
-                fields=['debit', 'credit']
+                fields=['debit', 'credit'],
             )
             # amline_account_6_7 = self.env['account.move.line'].search_read(
             #     domain=domain67,
@@ -332,20 +332,20 @@ class TrialBalanceReportWizard(models.TransientModel):
         else:
             amlines = self.env['account.move.line'].search_read(
                 domain=domain,
-                fields=['debit', 'credit']
+                fields=['debit', 'credit'],
             )
-            
+
             initial_balance = sum(
                 line['debit'] - line['credit'] for line in amlines)
             if self.is_root_account_6_7(account):
                 initial_balance = 0
-                
+
         return initial_balance
-    
+
     def is_root_account_6_7(self, account):
         # Recorre la jerarquía de padres
         if (account.code[:1] == '6' or account.code[:1] == '7'):
-                return True
+            return True
         return False
     # @api.multi
     # def button_export_pdf(self):
@@ -366,7 +366,7 @@ class TrialBalanceReportWizard(models.TransientModel):
         return self.env['report'].get_action(
             self, 'account_financial_report_qweb_add_filters.'
             'template_report_trial_balance')
-    
+
     def button_export_excel(self):
         return {
             'type': 'ir.actions.act_url',
