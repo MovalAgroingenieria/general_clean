@@ -41,13 +41,13 @@
                 <br/>
                 <h4>⸰ Mailing address</h4>
                 <hr/>
-                <t t-if="access.partner_id.email">
-                    <span class="fa fa-envelope"/>
-                    <span t-esc="access.partner_id.email"/>
+                <t t-if="access.digitalregister_id.postal_notification">
+                    <span class="fa fa-home"/>
+                    <span t-esc="access.digitalregister_id.notification_address"/>
                 </t>
                 <t t-else="">
-                    <span class="fa fa-home"/>
-                    <span class="text-danger">Pending: show the postal address data... (TODO)</span>
+                    <span class="fa fa-envelope"/>
+                    <span t-esc="access.digitalregister_id.notification_email"/>
                 </t>
                 <br/><br/>
                 <h4>
