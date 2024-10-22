@@ -134,7 +134,12 @@
                                                     <t t-foreach="efile['communications']" t-as="comm">
                                                         <tr>
                                                             <td>
-                                                                <span t-esc="comm['is_notification'] and 'Notification' or 'Input'"/>
+                                                                <t t-if="comm['is_notification']">
+                                                                    <span>Notification</span>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <span>Input</span>
+                                                                </t>
                                                             </td>
                                                             <td t-esc="comm['issue']"></td>
                                                             <td t-esc="comm['state']"></td>
@@ -185,7 +190,7 @@
                                                     <input type="hidden" name="efile_id" t-att-value="efile['id']"/>
                                                     <input type="hidden" name="attachment_id" t-att-value="att['id']"/>
                                                     <button class="btn btn-link" type="submit">
-                                                        <span class="fa fa-download"></span> <t t-esc="att['name']"/>
+                                                        <span class="fa fa-download" style="margin-right: 5px;"></span> <t t-esc="att['name']"/>
                                                     </button>
                                                 </form>
                                             </t>
@@ -273,7 +278,7 @@
                                                         <input type="hidden" name="efile_id" t-att-value="communication['electronicfile_id']"/>
                                                         <input type="hidden" name="communication_id" t-att-value="communication['id']"/>
                                                         <input type="hidden" name="attachment_id" t-att-value="att['id']"/>
-                                                        <button class="btn btn-link" type="submit"><span class="fa fa-download"></span><t t-esc="att['name']"/></button>
+                                                        <button class="btn btn-link" type="submit"><span class="fa fa-download" style="margin-right: 5px;"></span><t t-esc="att['name']"/></button>
                                                     </form>
                                                 </t>
                                             </div>
