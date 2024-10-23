@@ -125,7 +125,7 @@ msgid "<strong>\n"
 "                            </strong>\n"
 "                            <span style=\"margin-right:7px\">🖳</span>"
 msgstr "<strong>\n"
-"                                <span style=\"margin-right:35px\">Oficina Electrónica</span>\n"
+"                                <span style=\"margin-right:35px\">Sede Electrónica</span>\n"
 "                            </strong>\n"
 "                            <span style=\"margin-right:7px\">🖳</span>"
 
@@ -161,6 +161,7 @@ msgstr "<strong><span class=\"text-danger\">Error al actualizar los datos.</span
 #: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_address_form

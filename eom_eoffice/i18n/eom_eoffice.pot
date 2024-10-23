@@ -158,6 +158,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_address_form
