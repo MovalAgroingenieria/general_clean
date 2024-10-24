@@ -47,7 +47,12 @@
         <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='unit_amount']" position="after">
-                <field name="original_time_line" optional="show" widget="timesheet_uom" sum="Total" decoration-danger="original_time_line &gt; 24"/>
+                <field name="original_time_line" optional="show" readonly="True" widget="timesheet_uom" sum="Total" decoration-danger="original_time_line &gt; 24"/>
+                <field name="tasktime_modificated" invisible="1"/>
+                <field name="tasktime_edited"/>
+                <field name="tasktime_observations"
+                    placeholder="Required if task time is modified by user (Min. 6 chars)"
+                    attrs="{'required': [('tasktime_modificated', '=', True)]}"/>
             </xpath>
         </field>
     </record>
