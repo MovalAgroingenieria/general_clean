@@ -35,8 +35,10 @@ class ReportController(http.Controller):
 
         # Definir formatos para el archivo Excel.
         bold_format = workbook.add_format({'bold': True})
-        decimal_format = workbook.add_format({'num_format': '0.00'})
-
+        decimal_format = workbook.add_format({'num_format': '#,##0.00'})
+        bold_decimal_format = workbook.add_format(
+            {'bold': True, 'num_format': '#,##0.00'})
+        
         headers = [_('Date From'), _('Date To'), _('Company')]
         for col_num, header in enumerate(headers):
             worksheet.write(0, col_num, header, bold_format)
@@ -66,22 +68,43 @@ class ReportController(http.Controller):
         row += 2
         accounts = wizard.get_accounts()
         if accounts:
+            line_headers = [_('Account'), _('Group By')]
+            for col_num, header in enumerate(line_headers):
+                worksheet.write(row, col_num, header, bold_format)
+            row += 1
             for account in accounts:
                 group_by_header, group_by_field =\
                     self.get_group_by_header_and_field(
                         account.user_type_id.group_by)
 
                 # Escribir encabezados de las cuentas
-                headers = [_('Account'), group_by_header, _('Initial Balance'),
-                           _('Debit'), _('Credit'), _('Period Balance'),
-                           _('Final Balance')]
+                # header = [_('Account'), group_by_header, _('Initial Balance'),
+                #           _('Debit'), _('Credit'), _('Period Balance'),
+                #           _('Final Balance')]
+                # line_headers = [_('Account'), group_by_header]
 
                 items = wizard.get_item_ids(
                     account, wizard.date_from, wizard.date_to)
                 if items or not items and wizard.show_account_zero:
+                    total_initial_balance = sum(
+                        item['initial_balance'] for item in items)
+                    total_debit = sum(
+                        item['debit'] for item in items)
+                    total_credit = sum(
+                        item['credit'] for item in items)
+                    total_period_balance = sum(
+                        item['balance'] for item in items)
+                    total_final_balance = sum(
+                        item['final_balance'] for item in items)
+                    header_line = [_('Account') + ' - ' + account.code, group_by_header,
+                              total_initial_balance, total_debit, total_credit,
+                              total_period_balance, total_final_balance]
                     row += 2
-                    for col_num, header in enumerate(headers):
-                        worksheet.write(row, col_num, header, bold_format)
+                    for col_num, header in enumerate(header_line):
+                        worksheet.write(row, col_num, header, bold_decimal_format)
+                    # row += 2
+                    # for col_num, header in enumerate(line_headers):
+                    #     worksheet.write(row, col_num, header, bold_format)
                     row += 1
 
                     account_code_name = account.code + " - " + account.name
