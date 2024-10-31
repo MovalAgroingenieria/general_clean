@@ -5,3 +5,5 @@
 from . import eom_electronicfile
 from . import res_eom_config_settings
 from . import eom_digitalregister
+from . import eom_electronicfile_communication
+from . import report

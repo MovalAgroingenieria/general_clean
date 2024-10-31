@@ -4,7 +4,8 @@
 
 {
     "name": "Electronic Office",
-    "summary": "Electronic Office with authentication based on digital certificate.",
+    "summary": "Electronic Office with authentication based on digital "
+               "certificate.",
     "version": '10.0.1.0.0',
     "category": "Electronic Offices Management",
     "website": "http://www.moval.es",
@@ -23,8 +24,12 @@
         "views/eom_digitalregister_templates.xml",
         "views/eom_electronicfile_templates.xml",
         "views/res_eom_config_settings_view.xml",
+        "views/eom_electronicfile_communication_view.xml",
+        "reports/report_notification.xml",
+        "data/ir_cron_data.xml",
     ],
     "installable": True,
     "post_init_hook": "post_init_hook",
+    "uninstall_hook": "uninstall_hook",
     "application": True,
 }

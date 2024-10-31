@@ -21,3 +21,39 @@
 .o_eom_eoffice_electronicfile_view_tree [data-id="type"] {
     min-width: 150px;
 }
+
+/**/
+/* eom.electronicfile.communication */
+/**/
+.o_eom_electronicfile_communication_view_tree [data-id="icon_notification_or_entry"] {
+    width: 4%;
+    text-align: center;
+}
+.o_eom_electronicfile_communication_view_tree [data-field="icon_notification_or_entry"] {
+    text-align: center;
+}
+.o_eom_electronicfile_communication_view_tree [data-id="communication_number"] {
+    width: 6%;
+    text-align: right;
+}
+.o_eom_electronicfile_communication_view_tree [data-field="communication_number"] {
+    text-align: right;
+}
+.o_eom_electronicfile_communication_view_tree [data-id="validation_time"] {
+    width: 12%;
+    text-align: center;
+}
+.o_eom_electronicfile_communication_view_tree [data-field="validation_time"] {
+    text-align: center;
+}
+.o_eom_electronicfile_communication_view_tree [data-id="number_of_attachments"] {
+    width: 8%;
+    text-align: right;
+}
+.o_eom_electronicfile_communication_view_tree [data-id="state"] {
+    width: 8%;
+    text-align: center;
+}
+.o_eom_electronicfile_communication_view_tree [data-field="state"] {
+    text-align: center;
+}

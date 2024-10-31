@@ -51,7 +51,8 @@
                                     <field name="digitalregister_id" readonly="True" colspan="2"/>
                                     <field name="partner_id" string="Associated Contact" readonly="True" colspan="2"
                                         attrs="{'invisible': [('partner_id', '=', False)]}"/>
-                                    <field name="technician_id" colspan="2"/>
+                                    <field name="technician_id" colspan="2"
+                                         attrs="{'readonly': [('state', '!=', '02_in_progress')]}"/>
                                 </group>
                             </div>
                             <div colspan="1"/>
@@ -126,6 +127,12 @@
                         </notebook>
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                        widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids"
+                        widget="mail_thread"/>
+                </div>
             </form>
         </field>
     </record>
@@ -166,6 +173,8 @@
                 <separator/>
                 <filter string="Expired: yes" name="expired_yes"
                         domain="[('expired_deadline', '=', True)]"/>
+                <filter string="Expired: no" name="expired_no"
+                        domain="[('expired_deadline', '!=', True)]"/>
                 <separator/>
                 <group expand="0" string="Group By">
                     <filter string="Type" name="grouped_type" context="{'group_by':'type'}"/>

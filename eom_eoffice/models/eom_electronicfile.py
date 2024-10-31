@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 import base64
-from datetime import datetime, timedelta
+from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from odoo import models, fields, api, modules, exceptions, _
 
@@ -11,6 +11,7 @@ from odoo import models, fields, api, modules, exceptions, _
 class EomElectronicfile(models.Model):
     _name = 'eom.electronicfile'
     _description = 'Electronic File'
+    _inherit = 'mail.thread'
 
     SIZE_NAME = 25
 
@@ -112,7 +113,8 @@ class EomElectronicfile(models.Model):
             ('01_received', 'Received'),
             ('02_in_progress', 'In progress'),
             ('03_resolved', 'Resolved')],
-        default='01_received')
+        default='01_received',
+        track_visibility='onchange')
 
     deadline_date = fields.Datetime(
         string='Deadline',
@@ -120,7 +122,8 @@ class EomElectronicfile(models.Model):
 
     expired_deadline = fields.Boolean(
         string='Expired Deadline',
-        compute='_compute_expired_deadline')
+        compute='_compute_expired_deadline',
+        search='_search_expired_deadline')
 
     icon_warning_expired_deadline = fields.Binary(
         string='Icon warning expired deadline',
@@ -129,7 +132,8 @@ class EomElectronicfile(models.Model):
     technician_id = fields.Many2one(
         string='Technician',
         comodel_name='res.users',
-        index=True)
+        index=True,
+        track_visibility='onchange')
 
     resolution = fields.Text(
         string='Resolution',
@@ -242,21 +246,37 @@ class EomElectronicfile(models.Model):
 
     @api.multi
     def _compute_deadline_date(self):
-        deadline_months = self.env['ir.values'].get_default(
-            'res.eom.config.settings', 'deadline')
-        if not deadline_months:
-            raise exceptions.ValidationError(
-                _('Deadline parameter has not been set.'))
         for record in self:
-            event_time_obj = datetime.strptime(
-                record.event_time, '%Y-%m-%d %H:%M:%S')
-            record.deadline_date = \
-                event_time_obj + relativedelta(months=deadline_months)
+            deadline_date_obj = record._get_deadline_date(record.event_time)
+            record.deadline_date = datetime.strftime(
+                deadline_date_obj, '%Y-%m-%d %H:%M:%S')
 
     @api.multi
     def _compute_expired_deadline(self):
+        date_now = datetime.now()
         for record in self:
-            pass
+            record.expired_deadline = False
+            deadline_date_obj = record._get_deadline_date(record.event_time)
+            if deadline_date_obj < date_now:
+                record.expired_deadline = True
+
+    @api.model
+    def _search_expired_deadline(self, operator, value):
+        electronicfile_ids = []
+        deadline_months = self.env['ir.values'].get_default(
+            'res.eom.config.settings', 'deadline')
+        operator_of_filter = 'in'
+        if operator == '!=':
+            operator_of_filter = 'not in'
+        where_clause = "WHERE event_time + INTERVAL '%s months' < NOW()" \
+            % (deadline_months)
+        sql_statement = 'SELECT id FROM eom_electronicfile ' + where_clause
+        self.env.cr.execute(sql_statement)
+        sql_resp = self.env.cr.fetchall()
+        if sql_resp:
+            for item in sql_resp:
+                electronicfile_ids.append(item[0])
+        return [('id', operator_of_filter, electronicfile_ids)]
 
     @api.multi
     def _compute_icon_warning_expired_deadline(self):
@@ -317,10 +337,10 @@ class EomElectronicfile(models.Model):
     def _check_technician_id(self):
         if self.state != '01_received' and self.technician_id is False:
             raise exceptions.ValidationError(
-                _('At the present state (%s), the Technician is mandatory.')
+                _('At the present state (%s) the Technician is mandatory.')
                 % (self.state))
 
-    @api.constrains('resolution')
+    @api.constrains('state')
     def _check_resolution(self):
         if self.state == '03_resolved' and self.resolution is False:
             raise exceptions.ValidationError(
@@ -330,37 +350,61 @@ class EomElectronicfile(models.Model):
     def action_communications(self):
         self.ensure_one()
         current_electronicfile = self
-        # id_tree_view = self.env.ref(
-        #     'eom_eoffice.eom_electronicfile_communication_view_tree').id
-        # id_form_view = self.env.ref(
-        #     'eom_eoffice.eom_electronicfile_communication_view_form').id
-        # search_view = self.env.ref(
-        #     'eom_eoffice.eom_electronicfile_communication_view_search')
-        # act_window = {
-        #     'type': 'ir.actions.act_window',
-        #     'name': _('Communitacions'),
-        #     'res_model': 'eom.electronicfile.communication',
-        #     'view_type': 'form',
-        #     'view_mode': 'kanban,form,tree',
-        #     'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
-        #     'search_view_id': [search_view.id],
-        #     'target': 'current',
-        #     'domain': [('electronicfile', '=', current_electronicfile.id)],
-        #     'context': {'hide_image': True,
-        #                 'search_default_grouped_event_time': True,
-        #                 'reduced_register_id': True,
-        #                 'reduced_access_id': True, },
-        #     }
-        # return act_window
+        communications = self.env['eom.electronicfile.communication'].search(
+            [('electronicfile_id', '=', self.id)])
+        num_communications = len(communications)
+        if num_communications == 0:
+            next_communication_number = 1
+        else:
+            next_communication_number = num_communications + 1
+        identifier = current_electronicfile.name + '-'
+        identifier += str(next_communication_number).zfill(4)
+        id_tree_view = self.env.ref(
+            'eom_eoffice.eom_electronicfile_communication_view_tree').id
+        id_form_view = self.env.ref(
+            'eom_eoffice.eom_electronicfile_communication_view_form').id
+        id_kanban_view = self.env.ref(
+            'eom_eoffice.eom_electronicfile_communication_view_kanban').id
+        search_view = self.env.ref(
+            'eom_eoffice.eom_electronicfile_communication_view_search')
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Communications'),
+            'res_model': 'eom.electronicfile.communication',
+            'view_type': 'form',
+            'view_mode': 'kanban,form,tree',
+            'views': [(id_tree_view, 'tree'), (id_form_view, 'form'),
+                      (id_kanban_view, 'kanban')],
+            'search_view_id': [search_view.id],
+            'target': 'current',
+            'domain': [('electronicfile_id', '=', current_electronicfile.id)],
+            'context': {'hide_image': True,
+                        'reduced_register_id': True,
+                        'reduced_access_id': True,
+                        'default_electronicfile_id': self.id,
+                        'default_communication_number':
+                            next_communication_number,
+                        'default_name': identifier,
+                        'show_complete_code': False},
+            }
+        return act_window
 
+    @api.multi
+    def write(self, vals):
+        if 'state' in vals:
+            if vals['state'] == '01_received':
+                vals['technician_id'] = False
+            elif vals['state'] == '02_in_progress':
+                if 'technician_id' not in vals:
+                    vals['technician_id'] = self.env.user.id
+        return super(EomElectronicfile, self).write(vals)
 
-class EomElectronicfileCommunication(models.Model):
-    _name = 'eom.electronicfile.communication'
-    _description = 'Electronic File Communication'
-
-    electronicfile_id = fields.Many2one(
-        string='Electronic File',
-        comodel_name='eom.electronicfile',
-        required=True,
-        index=True,
-        readonly=True)
+    def _get_deadline_date(self, event_time):
+        deadline_months = self.env['ir.values'].get_default(
+            'res.eom.config.settings', 'deadline')
+        if not deadline_months:
+            raise exceptions.ValidationError(
+                _('Deadline parameter has not been set.'))
+        event_time_obj = datetime.strptime(event_time, '%Y-%m-%d %H:%M:%S')
+        deadline_date = event_time_obj + relativedelta(months=deadline_months)
+        return deadline_date

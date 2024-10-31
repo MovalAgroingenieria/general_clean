@@ -18,6 +18,24 @@ class ResEomConfigSettings(models.TransientModel):
         default=3,
         help='Number of months for resolution within the deadline.')
 
+    max_size_attachments = fields.Integer(
+        string='Max. size attachments (MB)',
+        default=20,
+        help='The maximal size of attachments (in Megabytes).')
+
+    notification_deadline = fields.Integer(
+        string='Notification Deadline (days)',
+        default=10,
+        help='Number of days to read a notification.')
+
+    sign_certificate_path = fields.Char(
+        string="Certificate file path",
+        help="Path to PKCS#12 certificate file")
+
+    sign_certificate_password_path = fields.Char(
+        string="Password file path",
+        help="Path to certificate password file")
+
     @api.multi
     def set_default_values(self):
         super(ResEomConfigSettings, self).set_default_values()
@@ -27,3 +45,12 @@ class ResEomConfigSettings(models.TransientModel):
                            self.sequence_electronicfile_code_id.id)
         values.set_default('res.eom.config.settings',
                            'deadline', self.deadline)
+        values.set_default('res.eom.config.settings',
+                           'max_size_attachments', self.max_size_attachments)
+        values.set_default('res.eom.config.settings',
+                           'notification_deadline', self.notification_deadline)
+        values.set_default('res.eom.config.settings',
+                           'sign_certificate_path', self.sign_certificate_path)
+        values.set_default('res.eom.config.settings',
+                           'sign_certificate_password_path',
+                           self.sign_certificate_password_path)

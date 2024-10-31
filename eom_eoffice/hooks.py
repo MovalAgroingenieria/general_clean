@@ -18,3 +18,20 @@ def post_init_hook(cr, registry):
         values.set_default('res.eom.config.settings',
                            'sequence_electronicfile_code_id',
                            sequence_coding_code_id)
+    # Set default config params
+    values.set_default('res.eom.config.settings', 'deadline', 3)
+    values.set_default('res.eom.config.settings', 'notification_deadline', 10)
+    values.set_default('res.eom.config.settings', 'max_size_attachmentse', 20)
+
+
+def uninstall_hook(cr, registry):
+    env = api.Environment(cr, SUPERUSER_ID, {})
+    try:
+        env.cr.savepoint()
+        env.cr.execute("""
+            DELETE FROM ir_values
+            WHERE model='res.eom.config.settings'
+            AND name != 'editable_notes'""")
+        env.cr.commit()
+    except (Exception,):
+        env.cr.rollback()

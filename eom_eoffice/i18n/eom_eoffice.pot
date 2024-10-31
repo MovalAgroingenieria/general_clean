@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-22 14:18+0000\n"
-"PO-Revision-Date: 2024-10-22 14:18+0000\n"
+"POT-Creation-Date: 2024-10-31 15:57+0000\n"
+"PO-Revision-Date: 2024-10-31 15:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,10 +16,51 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>CSV Code</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>Email</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>I S S U E</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>Mobile</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>Num.</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>Number of attachments</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>T E X T</b>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<b>Validation Time</b>"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_address_form
 #: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
@@ -68,9 +109,19 @@ msgid "<span style=\"margin-left:10px\">to return to the home page.</span>"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
+msgid "<span style=\"margin-right: 10px;\">Num.</span>"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.confirm_notification_address
 #: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
 msgid "<span style=\"margin-right:10px\">Click</span>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
+msgid "<span><b>N O T I F I C A T I O N</b></span>"
 msgstr ""
 
 #. module: eom_eoffice
@@ -119,14 +170,6 @@ msgid "<span>To ensure the confidentiality and integrity of your data and files,
 msgstr ""
 
 #. module: eom_eoffice
-#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
-msgid "<strong>\n"
-"                                <span style=\"margin-right:35px\">Electronic Office</span>\n"
-"                            </strong>\n"
-"                            <span style=\"margin-right:7px\">🖳</span>"
-msgstr ""
-
-#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
 msgid "<strong><span class=\"text-danger\">Communication Not found.</span></strong>"
 msgstr ""
@@ -154,17 +197,28 @@ msgid "<strong><span class=\"text-danger\">Error updating data.</span></strong>"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
+msgid "<strong><span class=\"text-danger\">Error uploading attachments.</span></strong>"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.confirm_notification_address
 #: model:ir.ui.view,arch_db:eom_eoffice.confirmation_and_home
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
-#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_address_form
 #: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
 msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
 "                            <span style=\"margin-right:7px\">🖳</span>"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
+msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
+"                        <span style=\"margin-right:7px\">🖳</span>"
 msgstr ""
 
 #. module: eom_eoffice
@@ -244,7 +298,13 @@ msgid "Associated Contact"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:321
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:276
+#, python-format
+msgid "At the present state (%s) the Text is mandatory."
+msgstr ""
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:340
 #, python-format
 msgid "At the present state (%s), the Technician is mandatory."
 msgstr ""
@@ -261,12 +321,13 @@ msgid "Body of Notification:"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_csv_code
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 msgid "CSV Code"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:237
+#: code:addons/eom_eoffice/controllers/main.py:238
 #, python-format
 msgid "CSV not found"
 msgstr ""
@@ -277,12 +338,18 @@ msgid "Cancel"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_sign_certificate_path
+msgid "Certificate file path"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.identification_data_page
 msgid "Change the postal or email address"
 msgstr ""
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Code"
 msgstr ""
@@ -300,6 +367,12 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_ids
 msgid "Communications of the file"
+msgstr ""
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:372
+#, python-format
+msgid "Communitacions"
 msgstr ""
 
 #. module: eom_eoffice
@@ -331,7 +404,12 @@ msgid "Deadline (months)"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:250
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_expired_deadline
+msgid "Deadline Exceeded"
+msgstr ""
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:407
 #, python-format
 msgid "Deadline parameter has not been set."
 msgstr ""
@@ -348,14 +426,14 @@ msgid "Digital Certificate"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:213
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:216
 #: model:ir.model,name:eom_eoffice.model_eom_digitalregister
 #, python-format
 msgid "Digital Register"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:245
+#: code:addons/eom_eoffice/controllers/main.py:246
 #, python-format
 msgid "Digitalregister not found"
 msgstr ""
@@ -364,6 +442,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_display_name
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_document_name
+msgid "Document Name"
 msgstr ""
 
 #. module: eom_eoffice
@@ -389,8 +472,14 @@ msgid "Electronic File"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.actions.report.xml,name:eom_eoffice.action_eom_eoffice_notification_report
 #: model:ir.model,name:eom_eoffice.model_eom_electronicfile_communication
 msgid "Electronic File Communication"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.actions.act_window,name:eom_eoffice.eom_electronicfile_communication_action
+msgid "Electronic File Communitacions"
 msgstr ""
 
 #. module: eom_eoffice
@@ -436,8 +525,18 @@ msgid "Enter your phone number"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
+msgid "Entries"
+msgstr ""
+
+#. module: eom_eoffice
 #: sql_constraint:eom.electronicfile:0
 msgid "Existing electronic file (repeated code)."
+msgstr ""
+
+#. module: eom_eoffice
+#: sql_constraint:eom.electronicfile.communication:0
+msgid "Existing electronic file communication name (repeated identifier)."
 msgstr ""
 
 #. module: eom_eoffice
@@ -446,6 +545,13 @@ msgid "Expired Deadline"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
+msgid "Expired: no"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Expired: yes"
 msgstr ""
@@ -487,6 +593,7 @@ msgid "Get document from a CSV code"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Group By"
 msgstr ""
@@ -495,6 +602,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_id
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_id
 msgid "ID"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_icon_notification_or_entry
+msgid "Icon Notificacion or Entry"
 msgstr ""
 
 #. module: eom_eoffice
@@ -553,6 +665,11 @@ msgid "List of electronic files processed"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
+msgid "MB"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Mapped to contact: no"
 msgstr ""
@@ -560,6 +677,21 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Mapped to contact: yes"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
+msgid "Mark as readed"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
+msgid "Mark as rejected"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_max_size_attachments
+msgid "Max. size attachments (MB)"
 msgstr ""
 
 #. module: eom_eoffice
@@ -579,9 +711,16 @@ msgid "New Communication"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_notes
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_notes
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 msgid "Notes"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_document
+msgid "Notification"
 msgstr ""
 
 #. module: eom_eoffice
@@ -592,6 +731,16 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_digitalregister_notification_address
 msgid "Notification Address"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_notification_deadline
+msgid "Notification Deadline"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_notification_deadline
+msgid "Notification Deadline (days)"
 msgstr ""
 
 #. module: eom_eoffice
@@ -615,8 +764,24 @@ msgid "Notification Phone"
 msgstr ""
 
 #. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:221
+#, python-format
+msgid "Notification deadline parameter has not been set."
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
+msgid "Notifications"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_tree
+msgid "Num."
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_number_of_attachments
-msgid "Number of Attachments"
+msgid "Number of attachments"
 msgstr ""
 
 #. module: eom_eoffice
@@ -627,6 +792,11 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_number_of_communications
 msgid "Number of communications"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_notification_deadline
+msgid "Number of days to read a notification."
 msgstr ""
 
 #. module: eom_eoffice
@@ -646,10 +816,25 @@ msgid "PROPOSES"
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:228
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:231
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_partner_id
 #, python-format
 msgid "Partner"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_sign_certificate_password_path
+msgid "Password file path"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_sign_certificate_path
+msgid "Path to PKCS#12 certificate file"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_sign_certificate_password_path
+msgid "Path to certificate password file"
 msgstr ""
 
 #. module: eom_eoffice
@@ -680,13 +865,13 @@ msgid "REQUESTS"
 msgstr ""
 
 #. module: eom_eoffice
-#: selection:eom.electronicfile.communication,state:0
-msgid "Read"
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
+msgid "Read N."
 msgstr ""
 
 #. module: eom_eoffice
-#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
-msgid "Read N."
+#: selection:eom.electronicfile.communication,state:0
+msgid "Readed"
 msgstr ""
 
 #. module: eom_eoffice
@@ -722,6 +907,11 @@ msgid "Reopen"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.model,name:eom_eoffice.model_report
+msgid "Report"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_request
 msgid "Request"
 msgstr ""
@@ -742,6 +932,7 @@ msgid "Resolved"
 msgstr ""
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 msgid "Restart"
 msgstr ""
@@ -762,9 +953,16 @@ msgid "Sequence for the codes of electronic files"
 msgstr ""
 
 #. module: eom_eoffice
+#: code:addons/eom_eoffice/models/report.py:122
+#, python-format
+msgid "Signing report (PDF): jPdfSign failed (error code: %s). Message: %s. Output: %s"
+msgstr ""
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_state
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_state
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "State"
 msgstr ""
@@ -793,6 +991,7 @@ msgstr ""
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_communication_text
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
 msgid "Text"
 msgstr ""
 
@@ -803,9 +1002,19 @@ msgid "Thank you, the data entered has been successfully registered."
 msgstr ""
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:328
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:347
 #, python-format
 msgid "The Resolution is mandatory in Resolved state"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_max_size_attachments
+msgid "The maximal size of attachments (in Megabytes)."
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
+msgid "The size of attachments is:"
 msgstr ""
 
 #. module: eom_eoffice
@@ -824,6 +1033,11 @@ msgstr ""
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
 msgid "VAT"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
+msgid "Validate"
 msgstr ""
 
 #. module: eom_eoffice
@@ -849,6 +1063,11 @@ msgstr ""
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_files_page
 msgid "View Efile"
+msgstr ""
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
+msgid "and the maximum size allowed is"
 msgstr ""
 
 #. module: eom_eoffice

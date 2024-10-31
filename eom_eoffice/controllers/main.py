@@ -95,7 +95,8 @@ class WebsiteEOffice(WebsiteEom):
     def format_efile(self, efile, digitalregister):
         efiles_model = request.env['eom.electronicfile']
         attachment_model = request.env['ir.attachment']
-        communications = efile.communication_ids.mapped(
+        communications = efile.communication_ids.filtered(
+            lambda x: x.state != '01_draft').mapped(
             lambda x: self.format_communication(x, digitalregister))
         attachments = attachment_model.search(
             [('res_model', '=', 'eom.electronicfile'),
@@ -364,11 +365,43 @@ class WebsiteEOffice(WebsiteEom):
                         vals['suggestion'] = kwargs.get('suggestion', False)
                     model_electronicfile = request.env[
                         'eom.electronicfile'].sudo()
-                    electronicfile = model_electronicfile.create(vals)
-                    electronicfile_code = electronicfile.name
                     uploaded_files = request.httprequest.files.getlist(
                         'attachments')
+                    # Check upload size
                     if uploaded_files:
+                        max_size_reached, max_size_attachments, \
+                            total_attachments_size = \
+                            self.check_upload_files_size(uploaded_files)
+                        if max_size_reached:
+                            template = 'eom_eoffice.error_max_size_attachments'
+                            context = {
+                                'max_size_attachments': max_size_attachments,
+                                'total_attachments_size':
+                                    total_attachments_size}
+                            return request.render(template, context)
+                    # Create electronicfile
+                    electronicfile = model_electronicfile.create(vals)
+                    electronicfile_code = electronicfile.name
+                    if uploaded_files:
+                        max_size_attachments = \
+                            request.env['ir.values'].get_default(
+                                'res.eom.config.settings',
+                                'max_size_attachments')
+                        total_attachments_size_bytes = 0.0
+                        for file in uploaded_files:
+                            file.stream.seek(0, 2)
+                            total_attachments_size_bytes += file.stream.tell()
+                            file.stream.seek(0)
+                        total_attachments_size = \
+                            total_attachments_size_bytes / (1024 * 1024)
+                        if total_attachments_size > max_size_attachments:
+                            template = 'eom_eoffice.error_max_size_attachments'
+                            context = {
+                                'max_size_attachments': max_size_attachments,
+                                'total_attachments_size':
+                                    total_attachments_size,
+                            }
+                            return request.render(template, context)
                         for uploaded_file in uploaded_files:
                             name = uploaded_file.filename
                             datas = base64.b64encode(uploaded_file.read())
@@ -471,17 +504,17 @@ class WebsiteEOffice(WebsiteEom):
                 if communication_record:
                     communication_obj = communication_record
                     efile_obj = communication_obj.electronicfile_id
-                    efile = self.format_efile(efile_obj, digitalregister)
                     if (button_action == 'read' and
                             communication_obj.is_notification and
                             communication_obj.state == '02_validated'):
-                        communication_obj.action_mark_as_read()
+                        communication_obj.action_mark_as_readed()
                     elif (button_action == 'reject' and
                           communication_obj.is_notification and
                           communication_obj.state == '02_validated'):
-                        communication_obj.action_reject()
+                        communication_obj.action_mark_as_rejected()
                     communication = self.format_communication(
                         communication_obj, digitalregister)
+                    efile = self.format_efile(efile_obj, digitalregister)
                     if button_action == 'view':
                         template = \
                             'eom_eoffice.electronic_file_communication_page'
@@ -541,9 +574,22 @@ class WebsiteEOffice(WebsiteEom):
                         'validation_time': fields.Datetime.now(),
                         'is_notification': False,
                     }
-                    communication = model_communication.create(vals)
                     uploaded_files = request.httprequest.files.getlist(
                         'attachments')
+                    # Check upload size
+                    if uploaded_files:
+                        max_size_reached, max_size_attachments, \
+                            total_attachments_size = \
+                            self.check_upload_files_size(uploaded_files)
+                        if max_size_reached:
+                            template = 'eom_eoffice.error_max_size_attachments'
+                            context = {
+                                'max_size_attachments': max_size_attachments,
+                                'total_attachments_size':
+                                    total_attachments_size}
+                            return request.render(template, context)
+                    # Create communication
+                    communication = model_communication.create(vals)
                     if uploaded_files:
                         for uploaded_file in uploaded_files:
                             name = uploaded_file.filename
@@ -568,3 +614,18 @@ class WebsiteEOffice(WebsiteEom):
                         'efile': efile,
                     }
         return request.render(template, context)
+
+    def check_upload_files_size(self, uploaded_files):
+        max_size_reached = False
+        max_size_attachments = request.env['ir.values'].get_default(
+            'res.eom.config.settings', 'max_size_attachments')
+        total_attachments_size_bytes = 0.0
+        for file in uploaded_files:
+            file.stream.seek(0, 2)
+            total_attachments_size_bytes += file.stream.tell()
+            file.stream.seek(0)
+        total_attachments_size = \
+            total_attachments_size_bytes / (1024 * 1024)
+        if total_attachments_size > max_size_attachments:
+            max_size_reached = True
+        return max_size_reached, max_size_attachments, total_attachments_size

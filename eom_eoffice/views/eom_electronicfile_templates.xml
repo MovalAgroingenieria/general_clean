@@ -547,13 +547,44 @@
                                 <h4>
                                     <form id="eoffice" role="form" action="/eoffice" method="post">
                                           <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                          <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('eoffice').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
+                                          <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('efile').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
                                     </form>
                                 </h4>
                             </t>
                             <t t-else="">
                                 <strong><span class="text-danger">Error updating data.</span></strong>
                             </t>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="error_max_size_attachments" name="📋">
+        <t t-call="website.layout">
+            <div name="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <div name="header" style="margin-top:22px">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                        </div>
+                        <hr/>
+                        <div name="body" class="container">
+                            <div style="display: inline; float:right;">
+                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <a href="#" onclick="document.getElementById('confirmation_and_home').submit();">
+                                    <span class="fa fa-arrow-left"></span> Go Back
+                                </a>
+                            </div>
+                            <h4 style="display: inline;"><strong><span class="text-danger">Error uploading attachments.</span></strong></h4>
+                            <br/>
+                            <h4>
+                                The size of attachments is: <strong><span t-esc="'%.2f' % (total_attachments_size)"/> MB</strong>
+                                and the maximum size allowed is <strong><span t-esc="'%.2f' % (max_size_attachments)"/> MB</strong>
+                            </h4>
                         </div>
                     </div>
                 </div>
