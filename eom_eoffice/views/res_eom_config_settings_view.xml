@@ -15,8 +15,8 @@
                     <field name="deadline" style="width:300px" required="1"/>
                     <field name="notification_deadline" style="width:300px" required="1"/>
                     <field name="max_size_attachments" style="width:300px" required="1"/>
-                    <field name="sign_certificate_path"/>
-                    <field name="sign_certificate_password_path"/>
+                    <field name="sign_certificate_path" style="width:300px"/>
+                    <field name="sign_certificate_password_path" style="width:300px"/>
               </xpath>
         </field>
     </record>

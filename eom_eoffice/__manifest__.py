@@ -18,6 +18,7 @@
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
+        "data/ir_cron_data.xml",
         "views/resources.xml",
         "views/eom_electronicfile_view.xml",
         "views/eom_digitalregister_view.xml",
@@ -26,7 +27,6 @@
         "views/res_eom_config_settings_view.xml",
         "views/eom_electronicfile_communication_view.xml",
         "reports/report_notification.xml",
-        "data/ir_cron_data.xml",
     ],
     "installable": True,
     "post_init_hook": "post_init_hook",

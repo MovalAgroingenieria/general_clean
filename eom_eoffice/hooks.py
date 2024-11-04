@@ -21,7 +21,7 @@ def post_init_hook(cr, registry):
     # Set default config params
     values.set_default('res.eom.config.settings', 'deadline', 3)
     values.set_default('res.eom.config.settings', 'notification_deadline', 10)
-    values.set_default('res.eom.config.settings', 'max_size_attachmentse', 20)
+    values.set_default('res.eom.config.settings', 'max_size_attachments', 20)
 
 
 def uninstall_hook(cr, registry):

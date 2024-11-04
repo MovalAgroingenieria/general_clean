@@ -139,9 +139,9 @@ class EomElectronicfile(models.Model):
         string='Resolution',
         index=True)
 
-    number_of_attachmets = fields.Integer(
-        string='Number of attachmets',
-        compute='_compute_number_of_attachmets')
+    number_of_attachments = fields.Integer(
+        string='Number of attachments',
+        compute='_compute_number_of_attachments')
 
     communication_ids = fields.One2many(
         string='Communications of the file',
@@ -297,12 +297,12 @@ class EomElectronicfile(models.Model):
             record.icon_warning_expired_deadline = icon_warning
 
     @api.multi
-    def _compute_number_of_attachmets(self):
+    def _compute_number_of_attachments(self):
         for record in self:
             attachments = self.env['ir.attachment'].search(
                 [('res_model', '=', 'eom.electronicfile'),
                  ('res_id', '=', record.id)])
-            record.number_of_attachmets = len(attachments)
+            record.number_of_attachments = len(attachments)
 
     @api.multi
     def _compute_number_of_communications(self):

@@ -15,17 +15,14 @@ class ResEomConfigSettings(models.TransientModel):
 
     deadline = fields.Integer(
         string='Deadline (months)',
-        default=3,
         help='Number of months for resolution within the deadline.')
 
     max_size_attachments = fields.Integer(
         string='Max. size attachments (MB)',
-        default=20,
         help='The maximal size of attachments (in Megabytes).')
 
     notification_deadline = fields.Integer(
         string='Notification Deadline (days)',
-        default=10,
         help='Number of days to read a notification.')
 
     sign_certificate_path = fields.Char(

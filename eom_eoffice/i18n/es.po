@@ -787,8 +787,8 @@ msgid "Number of attachments"
 msgstr "Nº adjuntos"
 
 #. module: eom_eoffice
-#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_number_of_attachmets
-msgid "Number of attachmets"
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_number_of_attachments
+msgid "Number of attachments"
 msgstr "Nº de adjuntos"
 
 #. module: eom_eoffice
