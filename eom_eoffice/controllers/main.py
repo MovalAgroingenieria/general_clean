@@ -618,7 +618,7 @@ class WebsiteEOffice(WebsiteEom):
     def check_upload_files_size(self, uploaded_files):
         max_size_reached = False
         max_size_attachments = request.env['ir.values'].get_default(
-            'res.eom.config.settings', 'max_size_attachments')
+            'res.eom.config.settings', 'max_size_attachments') or 0.0
         total_attachments_size_bytes = 0.0
         for file in uploaded_files:
             file.stream.seek(0, 2)
