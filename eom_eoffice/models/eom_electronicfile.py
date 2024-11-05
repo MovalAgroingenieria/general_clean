@@ -271,8 +271,13 @@ class EomElectronicfile(models.Model):
         where_clause = "WHERE event_time + INTERVAL '%s months' < NOW()" \
             % (deadline_months)
         sql_statement = 'SELECT id FROM eom_electronicfile ' + where_clause
-        self.env.cr.execute(sql_statement)
-        sql_resp = self.env.cr.fetchall()
+        sql_resp = False
+        try:
+            self.env.cr.savepoint()
+            self.env.cr.execute(sql_statement)
+            sql_resp = self.env.cr.fetchall()
+        except Exception:
+            self.env.cr.rollback()
         if sql_resp:
             for item in sql_resp:
                 electronicfile_ids.append(item[0])

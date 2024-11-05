@@ -254,8 +254,13 @@ class EomElectronicfileCommunication(models.Model):
             % (deadline_days)
         sql_statement = 'SELECT id FROM eom_electronicfile_communication ' \
             + where_clause
-        self.env.cr.execute(sql_statement)
-        sql_resp = self.env.cr.fetchall()
+        sql_resp = False
+        try:
+            self.env.cr.savepoint()
+            self.env.cr.execute(sql_statement)
+            sql_resp = self.env.cr.fetchall()
+        except Exception:
+            self.env.cr.rollback()
         if sql_resp:
             for item in sql_resp:
                 electronicfile_communications_ids.append(item[0])
