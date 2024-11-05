@@ -44,7 +44,7 @@
                 <div>
                     <span><field name="driver_id" widget="res_partner_many2one"/></span>
                 </div>
-                <div t-att-style="'display: flex; justify-content: space-between;'">
+                <div t-att-style="'display: flex; flex-direction: column;'">
                     <span><field name="initial_value"/> Km</span>
                     <span><field name="value"/> Km</span>
                     <span><field name="quantity"/> Km</span>
