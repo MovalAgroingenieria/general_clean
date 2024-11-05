@@ -1,0 +1,184 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_limited_access
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-05 11:20+0000\n"
+"PO-Revision-Date: 2024-11-05 11:20+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_ir_attachment
+msgid "Attachment"
+msgstr "Adjunt"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_attachment__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_http__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_project_project__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__display_name
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_parent_mixin__display_name
+msgid "Display Name"
+msgstr "Nom a mostrar"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_ir_http
+msgid "HTTP Routing"
+msgstr "Enrutament HTTP"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public__hide_messages
+#: model:ir.model.fields,help:project_limited_access.field_hr_employee_public__hide_messages
+msgid "Hide messages"
+msgstr "Ocultar missatges"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public__hide_notes
+#: model:ir.model.fields,help:project_limited_access.field_hr_employee_public__hide_notes
+msgid "Hide notes"
+msgstr "Ocultar notes"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public__hide_notifications
+#: model:ir.model.fields,help:project_limited_access.field_hr_employee_public__hide_notifications
+msgid "Hide notifications"
+msgstr "Ocultar notificacions"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public__id
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_attachment__id
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_http__id
+#: model:ir.model.fields,field_description:project_limited_access.field_project_project__id
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__id
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__id
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_parent_mixin__id
+msgid "ID"
+msgstr "ID"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_hr_employee_public____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_attachment____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_ir_http____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_project_project____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin____last_update
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_parent_mixin____last_update
+msgid "Last Modified on"
+msgstr "Última modificació el"
+
+#. module: project_limited_access
+#: model:res.groups,name:project_limited_access.group_portal_project_user
+msgid "Portal Project User"
+msgstr "Usuari del portal de projectes"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_project_project
+msgid "Project"
+msgstr "Projecte"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_hr_employee_public
+msgid "Public Employee"
+msgstr "Empleat Públic"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_mail_channel__rating_ids
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__rating_ids
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__rating_ids
+msgid "Rating"
+msgstr "Classificació"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_mail_channel__rating_last_feedback
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__rating_last_feedback
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__rating_last_feedback
+msgid "Rating Last Feedback"
+msgstr "Valoració darrers comentaris"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_mail_channel__rating_last_image
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__rating_last_image
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__rating_last_image
+msgid "Rating Last Image"
+msgstr "Valoració de la darrera imatge"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_mail_channel__rating_last_value
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__rating_last_value
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_mixin__rating_last_value
+msgid "Rating Last Value"
+msgstr "Classificar últim valor"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_rating_mixin
+msgid "Rating Mixin"
+msgstr "Barreja de valoracions"
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_rating_parent_mixin
+msgid "Rating Parent Mixin"
+msgstr "Barreja de valoracions pare"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_im_livechat_channel__rating_ids
+#: model:ir.model.fields,field_description:project_limited_access.field_project_project__rating_ids
+#: model:ir.model.fields,field_description:project_limited_access.field_rating_parent_mixin__rating_ids
+msgid "Ratings"
+msgstr "Valoracions"
+
+#. module: project_limited_access
+#: model:ir.model.fields,help:project_limited_access.field_mail_channel__rating_last_feedback
+#: model:ir.model.fields,help:project_limited_access.field_project_task__rating_last_feedback
+#: model:ir.model.fields,help:project_limited_access.field_rating_mixin__rating_last_feedback
+msgid "Reason of the rating"
+msgstr "Raó de la valoració"
+
+#. module: project_limited_access
+#: model:ir.model.fields,field_description:project_limited_access.field_project_project__restricted_user_ids
+#: model:ir.model.fields,field_description:project_limited_access.field_project_task__restricted_user_ids
+msgid "Restricted Users"
+msgstr "Usuaris restringits"
+
+#. module: project_limited_access
+#: code:addons/project_limited_access/models/ir_attachment.py:0
+#: code:addons/project_limited_access/models/ir_attachment.py:0
+#, python-format
+msgid "Sorry, you are not allowed to access this document."
+msgstr "Ho sentim, no té permís per accedir a aquest document."
+
+#. module: project_limited_access
+#: model:ir.model,name:project_limited_access.model_project_task
+msgid "Task"
+msgstr "Tasca"
+
+#. module: project_limited_access
+#: model:ir.model.fields,help:project_limited_access.field_project_project__restricted_user_ids
+msgid "Users who have limited access to this project and its tasks."
+msgstr "Usuaris que tenen accés limitat a aquest projecte i les seves tasques."
+
+#. module: project_limited_access
+#: model:ir.model.fields,help:project_limited_access.field_project_task__restricted_user_ids
+msgid "Users with restricted access to this task."
+msgstr "Usuaris amb accés restringit a aquesta tasca."
+
+#. module: project_limited_access
+#: code:addons/project_limited_access/models/project_task.py:0
+#, python-format
+msgid "You cannot modify restricted users on this task."
+msgstr "No pot modificar els usuaris restringits en aquesta tasca."
+
+#. module: project_limited_access
+#: code:addons/project_limited_access/models/project_task.py:0
+#, python-format
+msgid "You do not have permission to delete tasks."
+msgstr "No té permís per eliminar tasques."
