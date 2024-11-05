@@ -9,9 +9,8 @@ from odoo.osv import expression
 
 
 class FleetVehicleOdometer(models.Model):
-    _name = 'fleet.vehicle.odometer'
+    _inherit = 'fleet.vehicle.odometer'
     _description = 'Odometer log for a vehicle'
-    _order = 'date desc'
  
     initial_value = fields.Float('Initial Odometer Value', group_operator="max")
     project_id = fields.Many2one('project.project', 'Project', required=True)
