@@ -3,20 +3,18 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 {
-    "name": "Task Timer Self Edit",
-    "summary": "Track and edit task time",
+    "name": "Fleet Vehicle Odoometer",
+    "summary": "Add init value and project in odometer",
     "version": "14.0.1.0.0",
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "category": "Human Resources/Attendances",
     "depends": [
         'project',
-        'hr_timesheet',
-        'analytic',
-        'hr_timesheet_sheet',
+        'fleet',
     ],
     "data": [
-        'views/project_task_time.xml',
+        'views/fleet_vehicle_views.xml',
     ],
     "installable": True,
     "application": False,
