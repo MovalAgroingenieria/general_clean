@@ -62,15 +62,13 @@
         <field name="model">fleet.vehicle.odometer</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_search"/>
         <field name="arch" type="xml">
-            <search string="Vehicles odometers" >
-                <xpath expr="//field[@name='value']" position="before">
-                    <field name="project_id"/>
-                    <field name="initial_value"/>
-                </xpath>
-                <xpath expr="//field[@name='value']" position="after">
-                    <field name="quantity"/>
-                </xpath>
-            </search>
+            <xpath expr="//field[@name='value']" position="before">
+                <field name="project_id"/>
+                <field name="initial_value"/>
+            </xpath>
+            <xpath expr="//field[@name='value']" position="after">
+                <field name="quantity"/>
+            </xpath>
         </field>
     </record>
 
