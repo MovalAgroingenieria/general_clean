@@ -174,7 +174,7 @@
                                     <t t-if="efile['state_key'] != '03_resolved'">
                                         <button type="button" class="btn btn-success" onclick="document.getElementById('communication_add_dialog').showModal()">Add New Communication</button>
                                     </t>
-                                    <!-- <t t-if="efile['attachments']">
+                                    <t t-if="efile['attachments']">
                                         <hr/>
                                         <h4>⸰ Attachments:</h4>
                                         <div class="list-group">
@@ -189,7 +189,7 @@
                                                 </form>
                                             </t>
                                         </div>
-                                    </t> -->
+                                    </t>
                                 </t>
                                 <t t-else="">
                                     <strong><span class="text-danger">Electronic File not found.</span></strong>
@@ -261,7 +261,7 @@
                                             <label for="communication_text">Body of Notification:</label>
                                             <textarea style="background-color: unset;" rows="5" t-esc="communication['communication_text']" name="communication_text" id="communication_text" class="form-control" disabled="1"/>
                                         </div>
-                                        <!-- <t t-if="communication['attachments']">
+                                        <t t-if="communication['attachments']">
                                             <hr/>
                                             <h4>⸰ Attachments:</h4>
                                             <div class="list-group">
@@ -275,7 +275,7 @@
                                                     </form>
                                                 </t>
                                             </div>
-                                        </t> -->
+                                        </t>
                                     </t>
                                     <t t-else="">
                                         <strong><span class="text-danger">Communication Not found.</span></strong>

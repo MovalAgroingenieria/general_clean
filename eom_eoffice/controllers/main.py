@@ -464,65 +464,65 @@ class WebsiteEOffice(WebsiteEom):
                     }
         return request.render(template, context)
 
-    # @http.route('/efile_attachment', type='http', auth='public',
-    #             website=True, csrf=False)
-    # def download_attachment_efile(self, **kwargs):
-    #     user_info = self.get_user_info(kwargs)
-    #     response = request.render('eom_authdnie.identification_error', {})
-    #     if user_info:
-    #         digitalregister = user_info['digitalregister']
-    #         if digitalregister:
-    #             efile_id = kwargs.get('efile_id', False)
-    #             attachment_id = kwargs.get('attachment_id', False)
-    #             efile = request.env['eom.electronicfile'].sudo().search([
-    #                 ('id', '=', int(efile_id)),
-    #                 ('digitalregister_id', '=', digitalregister.id),
-    #             ], limit=1)
-    #             if efile:
-    #                 attachment = request.env['ir.attachment'].sudo().search([
-    #                     ('id', '=', int(attachment_id)),
-    #                     ('res_model', '=', 'eom.electronicfile'),
-    #                     ('res_id', '=', efile.id),
-    #                 ], limit=1)
-    #                 file_content = StringIO(base64.b64decode(
-    #                     attachment.datas))
-    #                 response = http.send_file(
-    #                     file_content,
-    #                     filename=attachment.datas_fname or attachment.name,
-    #                     as_attachment=True)
-    #     return response
+    @http.route('/efile_attachment', type='http', auth='public',
+                website=True, csrf=False)
+    def download_attachment_efile(self, **kwargs):
+        user_info = self.get_user_info(kwargs)
+        response = request.render('eom_authdnie.identification_error', {})
+        if user_info:
+            digitalregister = user_info['digitalregister']
+            if digitalregister:
+                efile_id = kwargs.get('efile_id', False)
+                attachment_id = kwargs.get('attachment_id', False)
+                efile = request.env['eom.electronicfile'].sudo().search([
+                    ('id', '=', int(efile_id)),
+                    ('digitalregister_id', '=', digitalregister.id),
+                ], limit=1)
+                if efile:
+                    attachment = request.env['ir.attachment'].sudo().search([
+                        ('id', '=', int(attachment_id)),
+                        ('res_model', '=', 'eom.electronicfile'),
+                        ('res_id', '=', efile.id),
+                    ], limit=1)
+                    file_content = StringIO(base64.b64decode(
+                        attachment.datas))
+                    response = http.send_file(
+                        file_content,
+                        filename=attachment.datas_fname or attachment.name,
+                        as_attachment=True)
+        return response
 
-    # @http.route('/communication_attachment', type='http', auth='public',
-    #             website=True, csrf=False)
-    # def download_attachment_communication(self, **kwargs):
-    #     user_info = self.get_user_info(kwargs)
-    #     request.render('eom_authdnie.identification_error', {})
-    #     if user_info:
-    #         digitalregister = user_info['digitalregister']
-    #         if digitalregister:
-    #             communication_id = kwargs.get('communication_id', False)
-    #             attachment_id = kwargs.get('attachment_id', False)
-    #             communication = request.env[
-    #                 'eom.electronicfile.communication'].sudo().search([
-    #                     ('id', '=', int(communication_id)),
-    #                     ('electronicfile_id.digitalregister_id', '=',
-    #                      digitalregister.id),
-    #                 ], limit=1)
-    #             if communication:
-    #                 attachment = request.env['ir.attachment'].sudo().search([
-    #                     ('id', '=', int(attachment_id)),
-    #                     ('res_model', '=',
-    #                      'eom.electronicfile.communication'),
-    #                     ('res_id', '=', communication.id),
-    #                 ], limit=1)
-    #                 file_content = StringIO(
-    #                     base64.b64decode(attachment.datas))
-    #                 response = http.send_file(
-    #                     file_content,
-    #                     filename=(attachment.datas_fname or attachment.name).
-    #                     encode('utf-8'),
-    #                     as_attachment=True)
-    #     return response
+    @http.route('/communication_attachment', type='http', auth='public',
+                website=True, csrf=False)
+    def download_attachment_communication(self, **kwargs):
+        user_info = self.get_user_info(kwargs)
+        request.render('eom_authdnie.identification_error', {})
+        if user_info:
+            digitalregister = user_info['digitalregister']
+            if digitalregister:
+                communication_id = kwargs.get('communication_id', False)
+                attachment_id = kwargs.get('attachment_id', False)
+                communication = request.env[
+                    'eom.electronicfile.communication'].sudo().search([
+                        ('id', '=', int(communication_id)),
+                        ('electronicfile_id.digitalregister_id', '=',
+                         digitalregister.id),
+                    ], limit=1)
+                if communication:
+                    attachment = request.env['ir.attachment'].sudo().search([
+                        ('id', '=', int(attachment_id)),
+                        ('res_model', '=',
+                         'eom.electronicfile.communication'),
+                        ('res_id', '=', communication.id),
+                    ], limit=1)
+                    file_content = StringIO(
+                        base64.b64decode(attachment.datas))
+                    response = http.send_file(
+                        file_content,
+                        filename=(attachment.datas_fname or attachment.name).
+                        encode('utf-8'),
+                        as_attachment=True)
+        return response
 
     @http.route('/communication', type='http', auth='public', website=True,
                 csrf=False)
