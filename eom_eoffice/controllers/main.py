@@ -55,14 +55,16 @@ class WebsiteEOffice(WebsiteEom):
             utc_time = fields.Datetime.from_string(time)
             local_timezone = pytz.timezone(tz)
             local_time = pytz.utc.localize(utc_time).astimezone(local_timezone)
-            lang_model = request.env['res.lang'].search([('code', '=', lang)])
+            lang_model = request.env['res.lang'].sudo().search(
+                [('code', '=', lang)])
             formated_date_str = local_time.strftime(
                 lang_model.date_format + u' ' + lang_model.time_format)
         return formated_date_str
 
     def format_communication(self, communication, digitalregister):
-        communication_model = request.env['eom.electronicfile.communication']
-        attachment_model = request.env['ir.attachment']
+        communication_model = request.env[
+            'eom.electronicfile.communication'].sudo()
+        attachment_model = request.env['ir.attachment'].sudo()
         attachments = attachment_model.search(
             [('res_model', '=', 'eom.electronicfile.communication'),
              ('res_id', '=', communication.id)],
@@ -93,8 +95,8 @@ class WebsiteEOffice(WebsiteEom):
         }
 
     def format_efile(self, efile, digitalregister):
-        efiles_model = request.env['eom.electronicfile']
-        attachment_model = request.env['ir.attachment']
+        efiles_model = request.env['eom.electronicfile'].sudo()
+        attachment_model = request.env['ir.attachment'].sudo()
         communications = efile.communication_ids.filtered(
             lambda x: x.state != '01_draft').mapped(
             lambda x: self.format_communication(x, digitalregister))
@@ -421,7 +423,7 @@ class WebsiteEOffice(WebsiteEom):
                     electronicfile_code = electronicfile.name
                     if uploaded_files:
                         max_size_attachments = \
-                            request.env['ir.values'].get_default(
+                            request.env['ir.values'].sudo().get_default(
                                 'res.eom.config.settings',
                                 'max_size_attachments')
                         total_attachments_size_bytes = 0.0
@@ -663,7 +665,7 @@ class WebsiteEOffice(WebsiteEom):
 
     def check_upload_files_size(self, uploaded_files):
         max_size_reached = False
-        max_size_attachments = request.env['ir.values'].get_default(
+        max_size_attachments = request.env['ir.values'].sudo().get_default(
             'res.eom.config.settings', 'max_size_attachments') or 0.0
         total_attachments_size_bytes = 0.0
         for file in uploaded_files:
