@@ -15,9 +15,6 @@ class FleetVehicleOdometer(models.Model):
     initial_value = fields.Float('Initial Odometer Value', group_operator="max")
     project_id = fields.Many2one('project.project', 'Project', required=True)
     quantity = fields.Float('Quantity', compute='_compute_qty_odometer_kms')
-    company_id = fields.Many2one("res.company", "Company",
-                                 default=lambda self: self.env.company
-    )
 
     @api.depends('value', 'initial_value')
     def _compute_qty_odometer_kms(self):
