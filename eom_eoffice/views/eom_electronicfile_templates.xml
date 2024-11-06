@@ -12,6 +12,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <a href="#" onclick="document.getElementById('electronic_office').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
                                 </a>
@@ -73,6 +74,7 @@
                         <strong><span t-esc="identif_header"/></strong>
                         <form id="electronic_files" role="form" style="display: inline; margin-left: 10px;" action="/efiles" method="post">
                             <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                            <input type="hidden" name="same_access" value="1"/>
                             <a href="#" onclick="document.getElementById('electronic_files').submit();">
                                 <span class="fa fa-arrow-left"></span> Go Back
                             </a>
@@ -85,8 +87,8 @@
                                 <t t-if="efile">
                                     <h2>⸰ Electronic File: <span t-esc="efile['name']"/></h2>
                                     <p>
-                                        <strong>Type:</strong> <span t-esc="efile['type']"></span>
-                                        <strong>State:</strong> <span t-esc="efile['state']"></span>
+                                        <strong>⸰ Type:</strong> <span t-esc="efile['type']"></span>
+                                        <strong style="margin-left: 15px;">⸰ State:</strong> <span t-esc="efile['state']"></span>
                                     </p>
                                     <hr/>
                                     <t t-if="efile['type_key'] == '01_generic_instance'">
@@ -172,7 +174,7 @@
                                     <t t-if="efile['state_key'] != '03_resolved'">
                                         <button type="button" class="btn btn-success" onclick="document.getElementById('communication_add_dialog').showModal()">Add New Communication</button>
                                     </t>
-                                    <t t-if="efile['attachments']">
+                                    <!-- <t t-if="efile['attachments']">
                                         <hr/>
                                         <h4>⸰ Attachments:</h4>
                                         <div class="list-group">
@@ -187,7 +189,7 @@
                                                 </form>
                                             </t>
                                         </div>
-                                    </t>
+                                    </t> -->
                                 </t>
                                 <t t-else="">
                                     <strong><span class="text-danger">Electronic File not found.</span></strong>
@@ -238,6 +240,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_file" role="form" style="display: inline; margin-left: 10px;" action="/efile" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <input type="hidden" name="efile_id" t-att-value="communication['electronicfile_id']"/>
                                 <a href="#" onclick="document.getElementById('electronic_file').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
@@ -258,7 +261,7 @@
                                             <label for="communication_text">Body of Notification:</label>
                                             <textarea style="background-color: unset;" rows="5" t-esc="communication['communication_text']" name="communication_text" id="communication_text" class="form-control" disabled="1"/>
                                         </div>
-                                        <t t-if="communication['attachments']">
+                                        <!-- <t t-if="communication['attachments']">
                                             <hr/>
                                             <h4>⸰ Attachments:</h4>
                                             <div class="list-group">
@@ -272,7 +275,7 @@
                                                     </form>
                                                 </t>
                                             </div>
-                                        </t>
+                                        </t> -->
                                     </t>
                                     <t t-else="">
                                         <strong><span class="text-danger">Communication Not found.</span></strong>
@@ -300,6 +303,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <a href="#" onclick="document.getElementById('electronic_office').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
                                 </a>
@@ -344,6 +348,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <a href="#" onclick="document.getElementById('electronic_office').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
                                 </a>
@@ -417,6 +422,7 @@
                                 <h4>
                                     <form id="eoffice" role="form" action="/eoffice" method="post">
                                           <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                          <input type="hidden" name="same_access" value="1"/>
                                           <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('eoffice').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
                                     </form>
                                 </h4>
@@ -442,6 +448,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <a href="#" onclick="document.getElementById('electronic_office').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
                                 </a>
@@ -492,6 +499,7 @@
                             <strong><span t-esc="identif_header"/></strong>
                             <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
                                 <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
                                 <a href="#" onclick="document.getElementById('electronic_office').submit();">
                                     <span class="fa fa-arrow-left"></span> Go Back
                                 </a>
@@ -547,7 +555,8 @@
                                 <h4>
                                     <form id="eoffice" role="form" action="/eoffice" method="post">
                                           <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                          <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('efile').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
+                                          <input type="hidden" name="same_access" value="1"/>
+                                          <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('eoffice').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
                                     </form>
                                 </h4>
                             </t>
@@ -574,10 +583,11 @@
                         <hr/>
                         <div name="body" class="container">
                             <div style="display: inline; float:right;">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <a href="#" onclick="document.getElementById('confirmation_and_home').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
+                                <form id="eoffice" role="form" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <span style="margin-right:10px">Click</span><a href="#" onclick="document.getElementById('eoffice').submit();">here</a><span style="margin-left:10px">to return to the home page.</span>
+                                </form>
                             </div>
                             <h4 style="display: inline;"><strong><span class="text-danger">Error uploading attachments.</span></strong></h4>
                             <br/>
