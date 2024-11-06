@@ -10,7 +10,8 @@
                 <attribute name="string">Vehicle</attribute>
             </xpath>
             <xpath expr="//field[@name='value']" position="before">
-                <field name="driver_id" domain="[('company_id', '=', user.company_id.id)]"/>
+                <field name="company_id" invisible="1"/>
+                <field name="driver_id" domain="[('company_id', '=', company_id.id)]"/>
                 <field name="project_id"/>
                 <field name="initial_value"/>
             </xpath>
