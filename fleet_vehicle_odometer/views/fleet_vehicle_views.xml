@@ -6,8 +6,11 @@
         <field name="model">fleet.vehicle.odometer</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='vehicle_id']" position="attributes">
+                <attribute name="string">Vehicle</attribute>
+            </xpath>
             <xpath expr="//field[@name='value']" position="before">
-                <field name="driver_id"/>
+                <field name="driver_id" domain="[('company_id', '=', user.company_id.id)]"/>
                 <field name="project_id"/>
                 <field name="initial_value"/>
             </xpath>
