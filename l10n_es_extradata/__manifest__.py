@@ -4,9 +4,9 @@
 {
     "name": "l10n_es_extradata",
     "version": "10.0.2.0.0",
-    "author": "Moval",
+    "author": "Moval Agroingeniería",
     "website": 'https://moval.es',
-    "category": "moval",
+    "category": "Accounting",
     "license": "AGPL-3",
     "depends": [
         "account",
@@ -21,5 +21,6 @@
         "data/tax_code_map_mod347_data.xml",
         "views/account_view.xml",
     ],
+    'images':  ['static/description/banner.png'],
     'installable': True,
 }
