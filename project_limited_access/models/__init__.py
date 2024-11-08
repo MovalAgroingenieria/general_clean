@@ -8,3 +8,4 @@ from . import ir_http
 from . import rating_mixin
 from . import hr_employee_public
 from . import ir_attachment
+from . import mail_message

@@ -23,7 +23,6 @@
         "moval_odoo_management",
     ],
     "data": [
-        'data/mail_data.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
         'views/project_views.xml',
