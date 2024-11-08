@@ -17,7 +17,6 @@
             <t t-call="report.external_layout">
                 <div class="page">
                     <t t-foreach="docs" t-as="o">
-                        <!--<t t-call="eom_eoffice.notification_report_document" t-lang="o.partner_id.lang"/>-->
                         <t t-call="eom_eoffice.notification_report_document"/>
                         <p style="page-break-after:always;"></p>
                     </t>
@@ -27,7 +26,12 @@
     </template>
 
     <template id="notification_report_document">
-        <!--<t t-set="o" t-value="o.with_context(lang=o.lang)"/>-->
+        <t t-set="user_lang" t-value="o.env.user.lang"/>
+        <t t-set="partner_lang" t-value="o.electronicfile_id.digitalregister_id.partner_id.lang"/>
+        <t t-if="partner_lang"><t t-set="doc_lang" t-value="partner_lang"/></t>
+        <t t-elif="user_lang"><t t-set="doc_lang" t-value="user_lang"/></t>
+        <t t-else=""><t t-set="doc_lang" t-value="'en_US'"/></t>
+        <t t-set="o" t-value="o.with_context(lang=doc_lang)"/>
 
         <div name="notification_title" style="border-bottom: 1px solid black;">
             <span><b>N O T I F I C A T I O N</b></span>

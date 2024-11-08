@@ -256,9 +256,11 @@ class EomElectronicfile(models.Model):
         date_now = datetime.now()
         for record in self:
             record.expired_deadline = False
-            deadline_date_obj = record._get_deadline_date(record.event_time)
-            if deadline_date_obj < date_now:
-                record.expired_deadline = True
+            if record.state != '03_resolved':
+                deadline_date_obj = record._get_deadline_date(
+                    record.event_time)
+                if deadline_date_obj < date_now:
+                    record.expired_deadline = True
 
     @api.model
     def _search_expired_deadline(self, operator, value):
@@ -268,8 +270,8 @@ class EomElectronicfile(models.Model):
         operator_of_filter = 'in'
         if operator == '!=':
             operator_of_filter = 'not in'
-        where_clause = "WHERE event_time + INTERVAL '%s months' < NOW()" \
-            % (deadline_months)
+        where_clause = """WHERE state != '03_resolved' AND event_time +
+            INTERVAL '%s months' < NOW()""" % (deadline_months)
         sql_statement = 'SELECT id FROM eom_electronicfile ' + where_clause
         sql_resp = False
         try:
@@ -292,13 +294,14 @@ class EomElectronicfile(models.Model):
         for record in self:
             icon_warning = None
             image_path = None
-            if record.expired_deadline:
-                image_path = image_path_is_expired_deadline_yes
-            else:
-                image_path = image_path_is_expired_deadline_no
-            if image_path:
-                image_file = open(image_path, 'rb')
-                icon_warning = base64.b64encode(image_file.read())
+            if record.state != '03_resolved':
+                if record.expired_deadline:
+                    image_path = image_path_is_expired_deadline_yes
+                else:
+                    image_path = image_path_is_expired_deadline_no
+                if image_path:
+                    image_file = open(image_path, 'rb')
+                    icon_warning = base64.b64encode(image_file.read())
             record.icon_warning_expired_deadline = icon_warning
 
     @api.multi
@@ -330,7 +333,21 @@ class EomElectronicfile(models.Model):
     def action_go_to_state_03_resolved(self):
         self.ensure_one()
         if self.state == '02_in_progress':
-            self.state = '03_resolved'
+            # Check communications state
+            sql_statement = """
+                SELECT id FROM eom_electronicfile_communication
+                 WHERE electronicfile_id = %s
+                   AND (state = '01_draft' OR state = '02_validated')""" % \
+                (self.id)
+            self.env.cr.execute(sql_statement)
+            num_communications = len(self.env.cr.fetchall())
+            if num_communications > 0:
+                raise exceptions.ValidationError(
+                    _('The File cannot be resolved, there are still %s '
+                      'communications in Draft or In progress state.')
+                    % (num_communications))
+            else:
+                self.state = '03_resolved'
 
     @api.multi
     def action_return_to_state_02_in_progress(self):

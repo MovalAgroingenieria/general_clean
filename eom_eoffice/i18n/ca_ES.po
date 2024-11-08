@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-06 13:13+0000\n"
-"PO-Revision-Date: 2024-11-06 13:13+0000\n"
+"POT-Creation-Date: 2024-11-08 16:45+0000\n"
+"PO-Revision-Date: 2024-11-08 16:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,25 @@ msgstr "<b>T E X T</b>"
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
 msgid "<b>Validation Time</b>"
 msgstr "<b>Instant de validació</b>"
+
+#. module: eom_eoffice
+#: model:mail.template,body_html:eom_eoffice.mail_template_notification_validated
+msgid "<div style=\"background:#F0F0F0;color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;\">\n"
+"                    <p>Dear user,</p>\n"
+"                    <p>You have received a new communication <b>${object.name}</b> for the Electronic File <b>${object.electronicfile_id.name}</b>.</p>\n"
+"                    <br/>\n"
+"                    <p>Visit our Electronic Office to review this communication and the status of the File.</p>\n"
+"                    <p>Thank you.</p>\n"
+"                </div>\n"
+"            "
+msgstr "<div style=\"background:#F0F0F0;color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;\">\n"
+"                    <p>Estimat usuari,</p>\n"
+"                    <p>Ha rebut una nova notificació <b>${object.name}</b> per a l'expedient <b>${object.electronicfile_id.name}</b>.</p>\n"
+"                    <br/>\n"
+"                    <p>Vesteix la nostra Oficina Electrònica per revisar aquesta notificació i l'estat de l'expedient.</p>\n"
+"                    <p>Gràcies..</p>\n"
+"                </div>\n"
+"            "
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
@@ -220,7 +239,7 @@ msgstr "<strong><span class=\"text-danger\">Error pujant els fitxers adjunts.</s
 msgid "<strong><span style=\"margin-right:35px\">Electronic Office</span></strong>\n"
 "                            <span style=\"margin-right:7px\">🖳</span>"
 msgstr "<strong><span style=\"margin-right:35px\">Seu electrònica</span></strong>\n"
-"                            <span style=\"margin-right:7px\">🖳</span>"
+"                            <span style=\"margin-right:7px\">🖍</span>"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
@@ -260,6 +279,12 @@ msgid "<strong>⸰ Type:</strong>"
 msgstr "<strong>Tipus:</strong>"
 
 #. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:325
+#, python-format
+msgid "A notification cannot be created for a Resolved File."
+msgstr "No es pot crear una notificació per a un expedient resolt."
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.csv_code_form
 #: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_address_form
@@ -294,6 +319,11 @@ msgid "Address"
 msgstr "Adreça"
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
+msgid "Are you sure you have resolved the File? (Can only be undone by admin)"
+msgstr "Esteu segur que voleu resoldre l'expedient? (Només pot ser reobert per l'administrador)"
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_access_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_digitalregister_view_form
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
@@ -301,13 +331,13 @@ msgid "Associated Contact"
 msgstr "Contacte associat"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:345
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:362
 #, python-format
 msgid "At the present state (%s) the Technician is mandatory."
 msgstr "En l'estat actual (%s) el Tècnic és obligatori."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:281
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:318
 #, python-format
 msgid "At the present state (%s) the Text is mandatory."
 msgstr "A l'estat actual (%s) el Text és obligatori."
@@ -330,7 +360,7 @@ msgid "CSV Code"
 msgstr "Codi CSV"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:272
+#: code:addons/eom_eoffice/controllers/main.py:274
 #, python-format
 msgid "CSV not found"
 msgstr "Codi CSV no trobat"
@@ -338,7 +368,7 @@ msgstr "Codi CSV no trobat"
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Cancel·lar"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_sign_certificate_path
@@ -352,7 +382,6 @@ msgstr "Canvi d'adreça postal i/o email"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
-#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Code"
 msgstr "Codi"
@@ -368,7 +397,7 @@ msgid "Communication Number"
 msgstr "Núm. de comunicació"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:377
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:394
 #, python-format
 msgid "Communications"
 msgstr "Communications"
@@ -399,7 +428,7 @@ msgstr "Creat el"
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_deadline_date
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_tree
 msgid "Deadline"
-msgstr "Data limit"
+msgstr "Termini"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_deadline
@@ -412,7 +441,7 @@ msgid "Deadline Exceeded"
 msgstr "Termini excedit"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:412
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:429
 #, python-format
 msgid "Deadline parameter has not been set."
 msgstr "El paràmetre de termini no s'ha establert."
@@ -436,7 +465,7 @@ msgid "Digital Register"
 msgstr "Registre digital"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:280
+#: code:addons/eom_eoffice/controllers/main.py:282
 #, python-format
 msgid "Digitalregister not found"
 msgstr "No s'ha trobat el registre digital"
@@ -483,7 +512,12 @@ msgstr "Comunicació de l'expedient electrònic"
 #. module: eom_eoffice
 #: model:ir.actions.act_window,name:eom_eoffice.eom_electronicfile_communication_action
 msgid "Electronic File Communications"
-msgstr "Electronic File Communications"
+msgstr "Comunicacions de lexpedient electrònic"
+
+#. module: eom_eoffice
+#: model:mail.template,subject:eom_eoffice.mail_template_notification_validated
+msgid "Electronic File Notification ${object.name}"
+msgstr "Notificació ${object.name}"
 
 #. module: eom_eoffice
 #: model:ir.actions.act_window,name:eom_eoffice.eom_electronicfile_action
@@ -557,7 +591,7 @@ msgstr "Termini expirat: no"
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Expired: yes"
-msgstr "Termini expirat: sí"
+msgstr "Vençut: sí"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_exposition
@@ -610,7 +644,7 @@ msgstr "ID"
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_icon_notification_or_entry
 msgid "Icon Notificacion or Entry"
-msgstr "Icon Notificacion or Entry"
+msgstr "Icona notificació o entrada"
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_icon_warning_expired_deadline
@@ -767,7 +801,7 @@ msgid "Notification Phone"
 msgstr "Telèfon per a notificacions"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:221
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:259
 #, python-format
 msgid "Notification deadline parameter has not been set."
 msgstr "El paràmetre 'Termini per llegir notificacions' no s'ha establert."
@@ -778,7 +812,15 @@ msgid "Notifications"
 msgstr "Notificacions"
 
 #. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:331
+#, python-format
+msgid "Notifications cannot be edited for a File in a Resolved state."
+msgstr "Les notificacions no es poden editar en un expedient resolt."
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:157
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_tree
+#, python-format
 msgid "Num."
 msgstr "Nº"
 
@@ -855,7 +897,7 @@ msgstr "Notificació per correu postal"
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_form
 msgid "Process"
-msgstr "Processar"
+msgstr "Tramitar"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
@@ -952,6 +994,11 @@ msgid "Sequence for the codes of electronic files"
 msgstr "Seqüència per als codis dels expedients electrònics"
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_show_expired_deadline
+msgid "Show Deadline Exceeded"
+msgstr "Show Deadline Exceeded"
+
+#. module: eom_eoffice
 #: code:addons/eom_eoffice/models/report.py:122
 #, python-format
 msgid "Signing report (PDF): jPdfSign failed (error code: %s). Message: %s. Output: %s"
@@ -1001,7 +1048,13 @@ msgid "Thank you, the data entered has been successfully registered."
 msgstr "Gràcies, les dades indicades han estat registrades satisfactòriament."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:352
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:346
+#, python-format
+msgid "The File cannot be resolved, there are still %s communications in Draft or In progress state."
+msgstr "L'expedient no pot ser resolt, encara hi ha %s comunicacions en estat Esborrany o En curs."
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:369
 #, python-format
 msgid "The Resolution is mandatory in Resolved state"
 msgstr "La resolució és obligatòria en l'estat Resolt"
@@ -1075,6 +1128,12 @@ msgstr "i la mida màxima permesa és"
 #: model:ir.ui.view,arch_db:eom_eoffice.error_max_size_attachments
 msgid "here"
 msgstr "aquí"
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page
+#: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
+msgid "⸰ Attachments:"
+msgstr "⸰ Adjunts:"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_communication_page

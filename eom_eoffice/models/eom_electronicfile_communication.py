@@ -97,6 +97,10 @@ class EomElectronicfileCommunication(models.Model):
         compute='_compute_expired_deadline',
         search='_search_expired_deadline')
 
+    show_expired_deadline = fields.Boolean(
+        string='Show Deadline Exceeded',
+        compute='_compute_show_expired_deadline')
+
     document = fields.Binary(
         string='Notification',
         readonly=True,
@@ -142,6 +146,19 @@ class EomElectronicfileCommunication(models.Model):
                 digitalregister_id.notification_mobile
 
     @api.multi
+    def name_get(self):
+        result = []
+        show_complete_code = self.env.context.get('show_complete_code', True)
+        for record in self:
+            if show_complete_code:
+                display_name = record.name
+            else:
+                communication_number = record.communication_number or 0
+                display_name = _('Num.') + str(communication_number)
+            result.append((record.id, display_name))
+        return result
+
+    @api.multi
     def _compute_number_of_attachments(self):
         for record in self:
             attachments = self.env['ir.attachment'].search(
@@ -174,6 +191,27 @@ class EomElectronicfileCommunication(models.Model):
                     'document': base64.encodestring(pdf),
                     'document_name': document_name,
                 })
+            digitalregister = self.electronicfile_id.digitalregister_id
+            postal_notification = digitalregister.postal_notification
+            if not postal_notification:
+                mail_template_communication_state = None
+                partner = False
+                try:
+                    mail_template_communication_state = self.env.ref(
+                        'eom_eoffice.mail_template_notification_validated').\
+                        sudo()
+                except Exception:
+                    mail_template_communication_state = None
+                if mail_template_communication_state:
+                    partner = digitalregister.partner_id
+                    if partner.lang:
+                        doc_lang = partner.lang
+                    elif self.env.user.id.lang:
+                        doc_lang = self.env.user.id.lang
+                    else:
+                        doc_lang = 'en_US'
+                    mail_template_communication_state.with_context(
+                        lang=doc_lang).send_mail(self.id, force_send=True)
 
     @api.multi
     def action_return_to_state_01_draft(self):
@@ -221,7 +259,8 @@ class EomElectronicfileCommunication(models.Model):
                 _('Notification deadline parameter has not been set.'))
         for record in self:
             record.expired_deadline = False
-            if record.validation_time:
+            if record.validation_time and (record.state == '03_readed' or
+                                           record.state == '04_rejected'):
                 validation_time_obj = datetime.strptime(
                     record.validation_time, '%Y-%m-%d %H:%M:%S')
                 notification_deadline_date = \
@@ -229,18 +268,14 @@ class EomElectronicfileCommunication(models.Model):
                 if notification_deadline_date < date_now:
                     record.expired_deadline = True
 
-    @api.multi
-    def name_get(self):
-        result = []
-        show_complete_code = self.env.context.get('show_complete_code', True)
+    @api.depends('expired_deadline')
+    def _compute_show_expired_deadline(self):
         for record in self:
-            if show_complete_code:
-                display_name = record.name
-            else:
-                communication_number = record.communication_number or 0
-                display_name = str(communication_number).zfill(4)
-            result.append((record.id, display_name))
-        return result
+            show_expired_deadline = False
+            if (record.state in ('01_draft', '02_validated') and
+                    record.expired_deadline):
+                show_expired_deadline = True
+            record.show_expired_deadline = show_expired_deadline
 
     @api.model
     def _search_expired_deadline(self, operator, value):
@@ -250,7 +285,9 @@ class EomElectronicfileCommunication(models.Model):
         operator_of_filter = 'in'
         if operator == '!=':
             operator_of_filter = 'not in'
-        where_clause = "WHERE validation_time + INTERVAL '%s days' < NOW()" \
+        where_clause = """
+            WHERE validation_time + INTERVAL '%s days' < NOW()
+              AND (state != '03_readed' OR state != '04_rejected')""" \
             % (deadline_days)
         sql_statement = 'SELECT id FROM eom_electronicfile_communication ' \
             + where_clause
@@ -281,8 +318,18 @@ class EomElectronicfileCommunication(models.Model):
                     _('At the present state (%s) the Text is mandatory.')
                     % (state_str))
 
+    @api.constrains('electronicfile_id')
+    def _check_eletronicfile_state(self):
+        if self.electronicfile_id.state == '03_resolved':
+            raise exceptions.ValidationError(
+                _('A notification cannot be created for a Resolved File.'))
+
     @api.multi
     def write(self, vals):
+        if self.electronicfile_id.state == '03_resolved':
+            raise exceptions.ValidationError(
+                _('Notifications cannot be edited for a File in a '
+                  'Resolved state.'))
         if 'state' in vals:
             if vals['state'] == '01_draft':
                 vals['csv_code'] = False

@@ -20,19 +20,19 @@
                     <button name="action_go_to_state_03_resolved" type="object"
                             string="Resolve" style="width: 125px;" icon="fa-check"
                             attrs="{'invisible': [('state','!=','02_in_progress')]}"
+                            confirm="Are you sure you have resolved the File? (Can only be undone by admin)"
                             groups="eom_authdnie.group_eom_manager"/>
                     <button name="action_return_to_state_02_in_progress" type="object"
                             string="Reopen" style="width: 125px;" icon="fa-folder-open"
                             attrs="{'invisible': [('state','!=','03_resolved')]}"
-                            groups="eom_authdnie.group_eom_manager"/>
+                            groups="eom_authdnie.group_eom_settings"/>
                     <field name="state" widget="statusbar"
                         statusbar_visible="01_received,02_in_progress,03_resolved"/>
                 </header>
                 <sheet>
+                    <field name="icon_warning_expired_deadline" widget="image" style="float:right;max-width:32px;margin-left:20px;"/>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_communications" class="oe_stat_button"
-                            type="object" icon="fa-comments"
-                            attrs="{'invisible':[('number_of_communications', '=', 0)]}">
+                        <button name="action_communications" class="oe_stat_button" type="object" icon="fa-comments" style="width: 150px !important;">
                             <div class="o_form_field o_stat_info">
                                 <span class="o_stat_value">
                                     <field name="number_of_communications"/>
@@ -42,7 +42,7 @@
                         </button>
                     </div>
                     <div name="div_code" class="oe_title">
-                        <h1><field name="name" style="width:320px" readonly="True"/></h1>
+                        <h1><field name="name" style="width:100px" readonly="True"/></h1>
                     </div>
                     <group name="group_01" style="margin-top:-10px">
                         <group name="group_01_left" col="50">
@@ -91,7 +91,7 @@
                                          attrs="{'invisible': [('type', '!=', '01_generic_instance')]}">
                                         <field name="request" readonly="True" nolabel="1" style="margin-top:5px;min-height:55px"/>
                                     </div>
-                                    <div name="group_02_left_inner_suggestion" colspan="2" style="text-align:center;margin-bottom:5px"
+                                    <div name="group_02_left_inner_suggestion" colspan="2" style="text-align:center;margin-bottom:2px"
                                         attrs="{'invisible': [('type', '!=', '02_suggestion')]}">
                                         <span style="font-weight:bold">SUGGESTION</span>
                                     </div>
@@ -196,11 +196,16 @@
                 <field name="event_time"/>
                 <field name="digitalregister_id"/>
                 <field name="type"/>
+                <field name="icon_warning_expired_deadline"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_res_partner_kanban">
                             <div class="oe_kanban_details">
-                                <strong class="oe_partner_heading"><field name="name"/></strong>
+                                <div style="display:inline;"><b><field name="name"/></b></div>
+                                <div style="display:inline;float:right;">
+                                    <img t-att-src="kanban_image('eom.electronicfile', 'icon_warning_expired_deadline', record.id.value)"
+                                         style="max-width:16px;"/>
+                                </div>
                                 <ul style="margin-top:2%;">
                                     <li t-if="record.digitalregister_id.raw_value">
                                         <span class="fa fa-certificate" title="Digital Certificate"/>

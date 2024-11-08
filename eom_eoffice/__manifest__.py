@@ -14,6 +14,7 @@
     "depends": [
         "document",
         "eom_authdnie",
+        "web_tree_image",
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -27,6 +28,7 @@
         "views/res_eom_config_settings_view.xml",
         "views/eom_electronicfile_communication_view.xml",
         "reports/report_notification.xml",
+        "data/mail_template_data.xml",
     ],
     "installable": True,
     "post_init_hook": "post_init_hook",
