@@ -421,6 +421,13 @@ class EomElectronicfile(models.Model):
                     vals['technician_id'] = self.env.user.id
         return super(EomElectronicfile, self).write(vals)
 
+    def unlink(self):
+        for record in self:
+            if record.state == '03_resolved':
+                raise exceptions.UserError(_(
+                    'It is not possile to delete a File in resolved state.'))
+        return super(EomElectronicfile, self).unlink()
+
     def _get_deadline_date(self, event_time):
         deadline_months = self.env['ir.values'].get_default(
             'res.eom.config.settings', 'deadline')

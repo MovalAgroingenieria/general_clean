@@ -154,7 +154,7 @@ class EomElectronicfileCommunication(models.Model):
                 display_name = record.name
             else:
                 communication_number = record.communication_number or 0
-                display_name = _('Num.') + str(communication_number)
+                display_name = _('Num. ') + str(communication_number)
             result.append((record.id, display_name))
         return result
 
@@ -326,10 +326,6 @@ class EomElectronicfileCommunication(models.Model):
 
     @api.multi
     def write(self, vals):
-        if self.electronicfile_id.state == '03_resolved':
-            raise exceptions.ValidationError(
-                _('Notifications cannot be edited for a File in a '
-                  'Resolved state.'))
         if 'state' in vals:
             if vals['state'] == '01_draft':
                 vals['csv_code'] = False
@@ -381,6 +377,15 @@ class EomElectronicfileCommunication(models.Model):
         identifier += str(vals['communication_number']).zfill(4)
         vals['name'] = identifier
         return super(EomElectronicfileCommunication, self).create(vals)
+
+    def unlink(self):
+        for record in self:
+            state = record.electronicfile_id.state
+            if state == '03_resolved':
+                raise exceptions.UserError(_(
+                    'It is not possile to delete a Comunication of a '
+                    'resolved File.'))
+        return super(EomElectronicfileCommunication, self).unlink()
 
     def _generate_random_csv_code(self):
         character_set = string.ascii_letters + string.digits

@@ -30,7 +30,9 @@
                         statusbar_visible="01_received,02_in_progress,03_resolved"/>
                 </header>
                 <sheet>
-                    <field name="icon_warning_expired_deadline" widget="image" style="float:right;max-width:32px;margin-left:20px;"/>
+                    <field name="icon_warning_expired_deadline" widget="image"
+                        attrs="{'invisible': [('state','=','03_resolved')]}"
+                        style="float:right;max-width:32px;margin-left:20px;"/>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_communications" class="oe_stat_button" type="object" icon="fa-comments" style="width: 150px !important;">
                             <div class="o_form_field o_stat_info">
@@ -61,7 +63,7 @@
                             <div colspan="1"/>
                             <div colspan="49">
                                 <group name="group_01_right_inner">
-                                    <field name="type" colspan="2"/>
+                                    <field name="type" colspan="2" attrs="{'readonly': [('state', '=', '03_resolved')]}"/>
                                     <field name="event_time" string="Access" colspan="2"/>
                                     <field name="deadline_date" colspan="2"/>
                                 </group>
@@ -113,7 +115,7 @@
                                     </div>
                                     <div name="section_resolution" colspan="2" class="panel-body"
                                          style="background:#fbfbfb;border-color:#cccccc;border-width:1px;border-style:solid;margin:0 auto;min-height:264px;">
-                                        <field name="resolution" nolabel="1" style="margin-top:5px;"/>
+                                        <field name="resolution" nolabel="1" style="margin-top:5px;" attrs="{'readonly': [('state', '=', '03_resolved')]}"/>
                                     </div>
                                 </group>
                             </div>

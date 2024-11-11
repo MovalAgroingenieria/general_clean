@@ -69,7 +69,7 @@ msgstr "<div style=\"background:#F0F0F0;color:#515166;padding:10px 0px;font-fami
 "                    <p>Estimado usuario,</p>\n"
 "                    <p>Ha recibido una nueva notificación <b>${object.name}</b> para el expediente <b>${object.electronicfile_id.name}</b>.</p>\n"
 "                    <br/>\n"
-"                    <p>Viste nuestra Oficina Electrónica para revisar esta notificación y el estado del expediente.</p>\n"
+"                    <p>Visite nuestra Oficina Electrónica para revisar esta notificación y el estado del expediente.</p>\n"
 "                    <p>Gracias.</p>\n"
 "                </div>\n"
 "            "
@@ -709,12 +709,12 @@ msgstr "MB"
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Mapped to contact: no"
-msgstr "Contacto asociado: no"
+msgstr "Contacto asociado: No"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Mapped to contact: yes"
-msgstr "Contacto asociado: sí"
+msgstr "Contacto asociado: Sí"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
@@ -819,8 +819,12 @@ msgstr "Las notificaciones no pueden ser editadas en un expediente resuelto."
 
 #. module: eom_eoffice
 #: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:157
-#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_tree
 #, python-format
+msgid "Num. "
+msgstr "Nº "
+
+#. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_tree
 msgid "Num."
 msgstr "Nº"
 
