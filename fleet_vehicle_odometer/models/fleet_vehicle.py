@@ -12,12 +12,23 @@ class FleetVehicleOdometer(models.Model):
     _inherit = 'fleet.vehicle.odometer'
     _description = 'Odometer log for a vehicle'
  
-    initial_value = fields.Float('Initial Odometer Value', group_operator="max")
-    project_id = fields.Many2one('project.project', 'Project', required=True)
-    quantity = fields.Float('Quantity', compute='_compute_qty_odometer_kms')
-    driver_id = fields.Many2one('res.partner', string='Driver', tracking=True,
-                                help='Driver of the trip', copy=False,
-                                default=lambda self: self._default_driver_id()
+    initial_value = fields.Float(
+        string='Initial Odometer Value',
+        group_operator="max")
+    project_id = fields.Many2one(
+        comodel_name='project.project',
+        string='Project',
+        required=True)
+    quantity = fields.Float(
+        string='Quantity',
+        compute='_compute_qty_odometer_kms')
+    trip_driver_id = fields.Many2one(
+        comodel_name='res.partner',
+        string='Trip Driver',
+        tracking=True,
+        help='Driver of the trip',
+        copy=False,
+        default=lambda self: self._default_driver_id()
     )
 
     @api.model

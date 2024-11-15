@@ -9,8 +9,10 @@
             <xpath expr="//field[@name='vehicle_id']" position="attributes">
                 <attribute name="string">Vehicle</attribute>
             </xpath>
+            <xpath expr="//field[@name='vehicle_id']" position="after">
+                <field name="trip_driver_id"/>
+            </xpath>
             <xpath expr="//field[@name='value']" position="before">
-                <field name="driver_id"/>
                 <field name="project_id"/>
                 <field name="initial_value"/>
             </xpath>
@@ -25,8 +27,10 @@
         <field name="model">fleet.vehicle.odometer</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='driver_id']" position="attributes">
+                <attribute name="attrs">{'invisible': True}</attribute>            </xpath>
             <xpath expr="//field[@name='vehicle_id']" position="after">
-                <field name="driver_id"/>
+                <field name="trip_driver_id" widget="many2one_avatar"/>
             </xpath>
             <xpath expr="//field[@name='value']" position="before">
                 <field name="project_id"/>
@@ -45,7 +49,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='driver_id']/../.." position="replace">
                 <div>
-                    <span><field name="driver_id" widget="res_partner_many2one"/></span>
+                    <span><field name="trip_driver_id" widget="res_partner_many2one"/></span>
                 </div>
                 <div t-att-style="'display: flex; flex-direction: column;'">
                     <span><field name="initial_value"/> Km</span>
@@ -67,6 +71,7 @@
             </xpath>
             <xpath expr="//field[@name='value']" position="after">
                 <field name="quantity"/>
+                <field name="trip_driver_id"/>
             </xpath>
         </field>
     </record>
