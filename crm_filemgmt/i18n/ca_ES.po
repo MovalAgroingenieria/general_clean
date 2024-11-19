@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-09 14:22+0000\n"
-"PO-Revision-Date: 2024-10-09 14:22+0000\n"
+"POT-Creation-Date: 2024-11-19 16:13+0000\n"
+"PO-Revision-Date: 2024-11-19 16:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -84,7 +84,7 @@ msgstr "<span class=\"o_stat_text\">\n"
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
 msgid "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R C H I V E D</span>"
-msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R X I V A T</span>"
+msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">C A N C E L · L A T</span>"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -176,7 +176,7 @@ msgstr "Comentari inferior"
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.filemgmt_config_settings_view_form
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr "Treure validació"
 
 #. module: crm_filemgmt
 #: model:ir.ui.menu,name:crm_filemgmt.file_category_menu
@@ -387,7 +387,7 @@ msgstr "Data d'alta"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_display_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_display_name
 msgid "Display Name"
-msgstr "Mostrar Nom"
+msgstr "Veure el nom"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -581,9 +581,7 @@ msgid "Has registres"
 msgstr "Té registres"
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_8984
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_9016
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -642,7 +640,7 @@ msgstr "És obligatori marcar un soci principal."
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
-msgstr "Última modificació el "
+msgstr "Darrera modificació el"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_uid
@@ -656,7 +654,7 @@ msgstr "Última modificació el "
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_uid
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_uid
 msgid "Last Updated by"
-msgstr "Última actualització per"
+msgstr "Darrera Actualització per"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_date
@@ -670,7 +668,7 @@ msgstr "Última actualització per"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_write_date
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag_write_date
 msgid "Last Updated on"
-msgstr "Última actualització el"
+msgstr "Darrera Actualització el"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -776,12 +774,12 @@ msgstr "Enllaços a socis"
 #. module: crm_filemgmt
 #: model:ir.model,name:crm_filemgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Partner of a WUA"
+msgstr "Soci de C.R."
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_ids
 msgid "Partners"
-msgstr "Empreses"
+msgstr "Socis"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_image
@@ -799,7 +797,7 @@ msgstr "Portal"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_company_company_filemgmt_annual_seq_prefix
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
 msgid "Prefix (annual seq.)"
-msgstr "Prefix (sec/any)"
+msgstr "Prefix (annual seq.)"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_is_main
@@ -828,8 +826,8 @@ msgstr "Ubicació"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_stage_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id_16126
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_tree
 msgid "Stage"
 msgstr "Etapa"
 
@@ -838,7 +836,7 @@ msgstr "Etapa"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_subject
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_subject
 msgid "Subject"
-msgstr "Assumpte"
+msgstr "Assumpte de l'correu"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
