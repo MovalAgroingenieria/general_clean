@@ -27,6 +27,7 @@
     "data": [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'views/hr_timesheet_views.xml',
         'views/project_views.xml',
         'views/project_task_views.xml',
         'views/mail_menus.xml',

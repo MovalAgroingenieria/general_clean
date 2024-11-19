@@ -9,4 +9,5 @@ from . import rating_mixin
 from . import hr_employee_public
 from . import ir_attachment
 from . import mail_message
+from . import mail_thread
 from . import res_users
