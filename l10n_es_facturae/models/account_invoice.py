@@ -78,6 +78,18 @@ class AccountInvoice(models.Model):
         copy=False
     )
 
+    start_date = fields.Date(
+        string="Start Date",
+        help="Start date of the period to be included in the invoice",
+        required=False
+    )
+
+    end_date = fields.Date(
+        string="End Date",
+        help="End date of the period to be included in the invoice",
+        required=False
+    )
+
     @api.depends('integration_ids')
     def _compute_integrations_count(self):
         self.integration_count = len(self.integration_ids)

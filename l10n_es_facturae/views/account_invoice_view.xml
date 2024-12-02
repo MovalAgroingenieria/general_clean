@@ -36,6 +36,14 @@
                         <field name="facturae_receiver_contract_reference"
                             attrs="{'readonly':[('state','!=','draft')]}"/>
                     </group>
+
+                    <!-- To fix, if one is not None, it will fail to set both to None -->
+                    <group string="Invoice period" style="width:50%">
+                        <field name="start_date"
+                               attrs="{'required':[('end_date','!=',False)]}"/>
+                        <field name="end_date"
+                               attrs="{'required':[('start_date','!=',False)]}"/>
+                    </group>
                 </page>
             </xpath>
         </field>

@@ -81,5 +81,5 @@ class CreateFacturae(models.TransientModel):
             'view_type': 'form',
             'res_id': self.id,
             'views': [(False, 'form')],
-            'target': 'new'
+            'target': 'new',
         }

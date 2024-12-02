@@ -224,6 +224,8 @@
             </Parties>
             <Invoices>
                 <Invoice>
+                    <t t-set="start_date" t-value="invoice.start_date"/>
+                    <t t-set="end_date" t-value="invoice.end_date"/>
                     <t t-set="withheld" t-value="False"/>
                     <t t-set="amount_tax" t-value="0.00"/>
                     <t t-set="amount_tax_withheld" t-value="0.00"/>
@@ -277,6 +279,12 @@
                     </InvoiceHeader>
                     <InvoiceIssueData>
                         <IssueDate t-esc="invoice.date_invoice"/>
+                        <t t-if="invoice.start_date">
+                            <InvoicingPeriod>
+                                <StartDate t-esc="start_date"/>
+                                <EndDate t-esc="end_date"/>
+                            </InvoicingPeriod>
+                        </t>
                         <OperationDate t-if="False"/>
                         <PlaceOfIssue t-if="False"/>
                         <InvoicingPeriod t-if="False"/>
