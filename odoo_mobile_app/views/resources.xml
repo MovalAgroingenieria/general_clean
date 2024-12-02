@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="assets_backend" name="static_resources_odoo_mobile_app" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/odoo_mobile_app/static/lib/oma_iconset/oma_iconset.css"/>
+        </xpath>
+    </template>
+
+    <template id="minimal_layout_odoo_mobile_app" inherit_id="report.minimal_layout">
+        <xpath expr="//head" position="inside">
+            <link rel="stylesheet" type="text/css" href="/odoo_mobile_app/static/lib/oma_iconset/oma_iconset.css"/>
+        </xpath>
+    </template>
+
+</odoo>
+
