@@ -5,6 +5,7 @@ import base64
 import datetime
 import pytz
 import babel
+import unicodedata
 from Crypto.Cipher import AES
 from odoo import models, _
 
@@ -86,3 +87,12 @@ class CommonFunctions(models.AbstractModel):
                     if year:
                         resp = resp + ', ' + year
             return resp
+
+    def remove_accents(self, original_string):
+        resp = original_string
+        if resp:
+            normalized_string = unicodedata.normalize('NFD', original_string)
+            resp = ''.join(
+                c for c in normalized_string if not unicodedata.combining(c)
+            )
+        return resp
