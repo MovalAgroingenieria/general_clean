@@ -4,20 +4,20 @@
 
 {
     'name': 'Moval Corporate Image',
-    'summary': """Decorate instances with moval image""",
-    "version": '10.0.1.1.0',
-    "category": "Moval General Addons",
-    "website": "http://www.moval.es",
-    "author": "Moval Agroingeniería",
-    "license": "AGPL-3",
-    "depends": [
+    'summary': 'Decorate instances with moval image',
+    'version': '10.0.1.1.0',
+    'category': 'Moval General Addons',
+    'website': 'http://www.moval.es',
+    'author': 'Moval Agroingeniería',
+    'license': 'AGPL-3',
+    'depends': [
         'web_responsive',
         'fontawesome_ext',
     ],
-    "data": [
-        "views/navbar.xml",
+    'data': [
+        'views/navbar.xml',
+        'views/login_view_extended.xml',
     ],
-    "installable": True,
-    "application": False,
+    'installable': True,
+    'application': False,
 }
-
