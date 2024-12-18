@@ -5,7 +5,7 @@
         name="Grafana"
         action="login_into_grafana_action"
         web_icon="board_grafana_integration,static/description/icon.png"
-        sequence="-18"/>
+        sequence="-24"/>
 
     <!-- Overwrite original icon -->
     <menuitem id="base.menu_board_root"

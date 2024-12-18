@@ -3,7 +3,7 @@
 
     <menuitem id="main_menu"
               name="Electronic Office"
-              sequence="5"
+              sequence="-20"
               web_icon="eom_authdnie,static/description/icon.png"
               groups="eom_authdnie.group_eom_user"/>
 
