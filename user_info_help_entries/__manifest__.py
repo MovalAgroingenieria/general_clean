@@ -17,6 +17,7 @@
         "security/ir.model.access.csv",
         "views/help_entry_views.xml",
         "views/resources.xml",
+        'data/shortcut_definitions.xml',
     ],
     'installable': True,
     'application': False,
