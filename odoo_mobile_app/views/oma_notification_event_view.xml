@@ -1,0 +1,38 @@
+<odoo>
+    <record id="oma_notification_event_tree_view" model="ir.ui.view">
+        <field name="name">oma.notification.event.tree</field>
+        <field name="model">oma.notification.event</field>
+        <field name="arch" type="xml">
+            <tree edit="0" create="0">
+                <field name="notification_id"/>
+                <field name="event_type"/>
+                <field name="event_message"/>
+                <field name="event_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="oma_notification_event_form_view" model="ir.ui.view">
+        <field name="name">oma.notification.event.form</field>
+        <field name="model">oma.notification.event</field>
+        <field name="arch" type="xml">
+            <form string="Notification Event" create="0" edit="0">
+                <sheet>
+                    <group>
+                        <field name="notification_id"/>
+                        <field name="event_type"/>
+                        <field name="event_message"/>
+                        <field name="event_time"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="oma_notification_event_action" model="ir.actions.act_window">
+        <field name="name">Notification Events</field>
+        <field name="res_model">oma.notification.event</field>
+        <field name="view_mode">tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+</odoo>

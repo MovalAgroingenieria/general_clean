@@ -1,0 +1,105 @@
+<odoo>
+    <record id="oma_notification_tree_view" model="ir.ui.view">
+        <field name="name">oma.notification.tree</field>
+        <field name="model">oma.notification</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="body"/>
+                <field name="send_date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="oma_notification_form_view" model="ir.ui.view">
+        <field name="name">oma.notification.form</field>
+        <field name="model">oma.notification</field>
+        <field name="arch" type="xml">
+            <form string="Notification">
+                <header>
+                    <button name="action_prepare"
+                            string="Prepare"
+                            type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', '01_draft')]}"/>
+                    <button name="action_return_to_draft"
+                                string="Draft"
+                                type="object"
+                                class="btn-primary"
+                                attrs="{'invisible': [('state', '=', '01_draft')]}"/>
+                    <button name="action_send"
+                            string="Send"
+                            type="object"
+                            class="btn-primary"
+                            attrs="{'invisible': [('state', '!=', '02_prepared')]}"/>
+                    <button name="action_resend"
+                            string="Resend"
+                            type="object"
+                            attrs="{'invisible': [('state', '!=', '99_error')]}"
+                            class="btn-primary"/>
+                    <field name="state"
+                    widget="statusbar"
+                    statusbar_visible="01_draft,02_prepared,03_sending,04_sent,05_received,06_read,99_error"/>
+                </header>
+                <sheet>
+                    <group name="master_data">
+                        <field name="name"/>
+                        <field name="title"/>
+                        <field name="subtitle"/>
+                        <field name="body"/>
+                        <field name="url_img"/>
+                        <field name="url_notification"/>
+                        <field name="send_date"/>
+                        <field name="token_id"/>
+                    </group>
+                    <group name="slave_data">
+                        <notebook>
+                            <page name="page_events" string="Events">
+                                <field name="notificationevent_ids" readonly="1">
+                                    <tree>
+                                        <field name="event_time"/>
+                                        <field name="event_type"/>
+                                        <field name="event_message"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="oma_notification_search_view" model="ir.ui.view">
+        <field name="name">oma.notification.search</field>
+        <field name="model">oma.notification</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+    <record id="oma_notification_action" model="ir.actions.act_window">
+        <field name="name">Notifications</field>
+        <field name="res_model">oma.notification</field>
+        <field name="view_mode">tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+
+    <record id="oma_notification_resend" model="ir.actions.server">
+        <field name="name">Resend notification</field>
+        <field name="model_id" ref="odoo_mobile_app.model_oma_notification"/>
+        <field name="code">
+            action =  env['oma.notification'].browse(context['active_ids']).action_send()
+        </field>
+    </record>
+
+    <record id="wua_action_regenerate_aerial_img_individual" model="ir.values">
+        <field name="name">Resend notification</field>
+        <field name="model">oma.notification</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('oma_notification_resend'))"/>
+    </record>
+</odoo>

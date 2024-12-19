@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+oma_notification_user_access,oma.notification.user,model_oma_notification,odoo_mobile_app.group_notifications_user,1,0,0,0
+oma_notification_manager_access,oma.notification.manager,model_oma_notification,odoo_mobile_app.group_notifications_manager,1,1,1,1
+oma_notification_set_user_access,oma.notification.set.user,model_oma_notification_set,odoo_mobile_app.group_notifications_user,1,0,0,0
+oma_notification_set_manager_access,oma.notification.set.manager,model_oma_notification_set,odoo_mobile_app.group_notifications_manager,1,1,1,1
+oma_token_user_access,oma.token.user,model_oma_token,odoo_mobile_app.group_notifications_user,1,0,0,0
+oma_token_manager_access,oma.token.manager,model_oma_token,odoo_mobile_app.group_notifications_manager,1,1,1,1
+oma_notification_event_user_access,oma.notification.event.user,model_oma_notification_event,odoo_mobile_app.group_notifications_user,1,0,0,0
+oma_notification_event_manager_access,oma.notification.event.manager,model_oma_notification_event,odoo_mobile_app.group_notifications_manager,1,1,1,1

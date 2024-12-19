@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="odoo_mobile_app.module_category_oma_notifications"
+                model="ir.module.category">
+            <field name="name">Odoo Mobile App Notifications</field>
+        </record>
+
+        <record id="group_notifications_user" model="res.groups">
+            <field name="name">Notifications User</field>
+            <field name="category_id" ref="odoo_mobile_app.module_category_oma_notifications"/>
+        </record>
+
+        <record id="group_notifications_manager" model="res.groups">
+            <field name="name">Notifications Manager</field>
+            <field name="category_id" ref="odoo_mobile_app.module_category_oma_notifications"/>
+        </record>
+
+    </data>
+</odoo>
+
+

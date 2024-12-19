@@ -1,0 +1,54 @@
+<odoo>
+    <menuitem id="oma_notifications_main_menu"
+              name="Oma Notifications"
+              web_icon="odoo_mobile_app,static/description/icon.png"
+              sequence="10"/>
+
+    <menuitem id="oma_notifications_menu"
+              name="Notifications"
+              parent="oma_notifications_main_menu"
+              sequence="10"/>
+
+    <menuitem id="oma_notification_set_menu"
+              name="Notification Sets"
+              parent="oma_notifications_menu"
+              action="oma_notification_set_action"
+              sequence="10"/>
+
+    <menuitem id="oma_notifications_list_menu"
+              name="Notifications"
+              parent="oma_notifications_menu"
+              action="oma_notification_action"
+              sequence="20"/>
+
+    <menuitem id="oma_parameters_menu"
+              name="Parameters"
+              parent="oma_notifications_main_menu"
+              sequence="20"/>
+
+    <menuitem id="oma_configuration_menu"
+              name="Configuration"
+              parent="oma_parameters_menu"
+              action="oma_configuration_action"
+              sequence="10"
+              groups="odoo_mobile_app.group_notifications_manager"/>
+
+    <menuitem id="oma_technical_menu"
+              name="Technical menu"
+              parent="oma_notifications_main_menu"
+              sequence="30"
+              groups="odoo_mobile_app.group_notifications_manager"/>
+
+    <menuitem id="oma_tokens_menu"
+              name="Tokens"
+              parent="oma_technical_menu"
+              action="oma_token_action"
+              sequence="10"/>
+
+    <menuitem id="oma_notification_events_menu"
+              name="Notification Events"
+              parent="oma_technical_menu"
+              action="oma_notification_event_action"
+              sequence="20"/>
+
+</odoo>

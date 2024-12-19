@@ -1,0 +1,476 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* odoo_mobile_app
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-19 11:07+0000\n"
+"PO-Revision-Date: 2024-12-19 11:07+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+msgid "<span class=\"o_stat_text\">Notifications</span>"
+msgstr "<span class=\"o_stat_text\">Notificaciones</span>"
+
+#. module: odoo_mobile_app
+#: selection:oma.token,device_type:0
+msgid "Android"
+msgstr "Android"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_config_settings_view_form
+msgid "Apply"
+msgstr "Aplicar"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_config_settings_view_form
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_configuration_menu
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_body
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_body
+msgid "Content"
+msgstr "Contenido"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_create_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_create_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_create_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_create_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_create_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_create_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_create_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_create_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_token_id
+msgid "Device Token"
+msgstr "Token dispositivo"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_token_ids
+msgid "Device Tokens"
+msgstr "Token dispositivos"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_device_type
+msgid "Device Type"
+msgstr "Tipo dispositivo"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_display_name
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_display_name
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_display_name
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_display_name
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_display_name
+msgid "Display Name"
+msgstr "Nombre a mostrar"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+#: selection:oma.notification,state:0
+#: selection:oma.notification.set,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+msgid "Error"
+msgstr "Error"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_event_message
+msgid "Event Message"
+msgstr "Evento mensaje"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_event_time
+msgid "Event Time"
+msgstr "Hora del evento"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_event_type
+msgid "Event Type"
+msgstr "Tipo de evento"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:84
+#, python-format
+msgid "Event created correctly."
+msgstr "Evento creado correctamente."
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_notificationevent_ids
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+msgid "Events"
+msgstr "Eventos"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_fcm_endpoint
+msgid "FCM Endpoint"
+msgstr "FCM Endpoint"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_config_settings_view_form
+msgid "Firebase API Settings"
+msgstr "Opciones API Firebase"
+
+#. module: odoo_mobile_app
+#: model:ir.model,name:odoo_mobile_app.model_oma_configuration
+msgid "Firebase Cloud Messaging Configuration"
+msgstr "Configuración Firebase Cloud Messaging"
+
+#. module: odoo_mobile_app
+#: model:ir.actions.act_window,name:odoo_mobile_app.oma_configuration_action
+msgid "Firebase Configurations"
+msgstr "Configuraciones Firebase"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_firebase_credentials
+msgid "Firebase Credentials"
+msgstr "Credenciales"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_firebase_credentials_filename
+msgid "Firebase Credentials Filename"
+msgstr "Nombre de archivo credenciales Firebase"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_firebase_project_id
+msgid "Firebase Project ID"
+msgstr "Id Proyecto Firebase"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_id
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_id
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_id
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_id
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_id
+msgid "ID"
+msgstr "ID"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_url_img
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_url_img
+msgid "Image URL"
+msgstr "URL Imagen"
+
+#. module: odoo_mobile_app
+#: model:ir.model,name:odoo_mobile_app.model_oma_notification
+msgid "Individual Notification"
+msgstr "Notificación Individual"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:19
+#, python-format
+msgid "Invalid device type. Allowed values are 01_android, 02_ios or 99_unknown."
+msgstr "Tipo de dispositivo inválido. Los valores permitidos son 01_android, 02_ios o 99_unknown."
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:59
+#, python-format
+msgid "Invalid event type. Allowed values are read or error."
+msgstr "Tipo de evento inválido. Los valores permitidos son read o error."
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration___last_update
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification___last_update
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event___last_update
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set___last_update
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token___last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_write_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_write_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_write_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_write_uid
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_configuration_write_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_write_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_write_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_write_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:52
+#, python-format
+msgid "Missing parameters: notification_idand event_type are required."
+msgstr "Faltan parámetros: notification_id y event_type son necesarios."
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:27
+#, python-format
+msgid "Missing parameters: token and device_type are required."
+msgstr "Faltan parámetros: token y device_type son necesarios."
+
+#. module: odoo_mobile_app
+#: model:ir.model,name:odoo_mobile_app.model_oma_token
+msgid "Mobile Device Token"
+msgstr "Token dispositivo móvil"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_event_notification_id
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+msgid "Notification"
+msgstr "Notificación"
+
+#. module: odoo_mobile_app
+#: model:ir.model,name:odoo_mobile_app.model_oma_notification_event
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_event_form_view
+msgid "Notification Event"
+msgstr "Evento Notificación"
+
+#. module: odoo_mobile_app
+#: model:ir.actions.act_window,name:odoo_mobile_app.oma_notification_event_action
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_notification_events_menu
+msgid "Notification Events"
+msgstr "Eventos Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_name
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_name
+msgid "Notification Identifier"
+msgstr "Identificador Notificación"
+
+#. module: odoo_mobile_app
+#: model:ir.model,name:odoo_mobile_app.model_oma_notification_set
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_notificationset_id
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+msgid "Notification Set"
+msgstr "Lote de notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.actions.act_window,name:odoo_mobile_app.oma_notification_set_action
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_notification_set_menu
+msgid "Notification Sets"
+msgstr "Lotes de notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_url_notification
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_url_notification
+msgid "Notification URL"
+msgstr "URL Notificación"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:68
+#, python-format
+msgid "Notification not found. Invalid notification_id."
+msgstr "Notificación no encontrada. Inválida notification_id."
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/models/oma_notification_set.py:184
+#: model:ir.actions.act_window,name:odoo_mobile_app.oma_notification_action
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_notification_ids
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_notifications_list_menu
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_notifications_menu
+#, python-format
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:res.groups,name:odoo_mobile_app.group_notifications_manager
+msgid "Notifications Manager"
+msgstr "Responsable Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:res.groups,name:odoo_mobile_app.group_notifications_user
+msgid "Notifications User"
+msgstr "Usuario Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.module.category,name:odoo_mobile_app.module_category_oma_notifications
+msgid "Odoo Mobile App Notifications"
+msgstr "Odoo Mobile App Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_notifications_main_menu
+msgid "Oma Notifications"
+msgstr "Oma Notificaciones"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_parameters_menu
+msgid "Parameters"
+msgstr "Parámetros"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+msgid "Prepare"
+msgstr "Preparar"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+#: selection:oma.notification.set,state:0
+msgid "Prepared"
+msgstr "Preparado"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+msgid "Read"
+msgstr "Leído"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+msgid "Received"
+msgstr "Recibido"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+msgid "Resend"
+msgstr "Reenviar"
+
+#. module: odoo_mobile_app
+#: model:ir.actions.server,name:odoo_mobile_app.oma_notification_resend
+msgid "Resend notification"
+msgstr "Reenviar Notificación"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_form_view
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_notification_set_form_view
+msgid "Send"
+msgstr "Enviar"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_send_date
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_send_date
+msgid "Send Date"
+msgstr "Fecha de envío"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+#: selection:oma.notification.set,state:0
+msgid "Sending"
+msgstr "Enviando"
+
+#. module: odoo_mobile_app
+#: selection:oma.notification,state:0
+#: selection:oma.notification.set,state:0
+msgid "Sent"
+msgstr "Enviado"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_state
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_state
+msgid "Status"
+msgstr "Estado"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_subtitle
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_subtitle
+msgid "Subtitle"
+msgstr "Subtítulo"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_technical_menu
+msgid "Technical menu"
+msgstr "Menú técnico"
+
+#. module: odoo_mobile_app
+#: sql_constraint:oma.notification:0
+msgid "The notification identifier must be unique."
+msgstr "El identificador de la notificación debe ser único."
+
+#. module: odoo_mobile_app
+#: sql_constraint:oma.notification.set:0
+msgid "The notification set identifier must be unique."
+msgstr "El identificador del lote de notificaciones debe ser único."
+
+#. module: odoo_mobile_app
+#: sql_constraint:oma.token:0
+msgid "The token name must be unique."
+msgstr "El nombre del token debe ser único."
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_set_title
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_notification_title
+msgid "Title"
+msgstr "Título"
+
+#. module: odoo_mobile_app
+#: model:ir.ui.view,arch_db:odoo_mobile_app.oma_token_form_view
+msgid "Token"
+msgstr "Token"
+
+#. module: odoo_mobile_app
+#: model:ir.model.fields,field_description:odoo_mobile_app.field_oma_token_name
+msgid "Token Name"
+msgstr "Nombre token"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:40
+#, python-format
+msgid "Token already exists."
+msgstr "El token ya existe."
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:37
+#, python-format
+msgid "Token created correctly."
+msgstr "Token created correctamente."
+
+#. module: odoo_mobile_app
+#: model:ir.actions.act_window,name:odoo_mobile_app.oma_token_action
+#: model:ir.ui.menu,name:odoo_mobile_app.oma_tokens_menu
+msgid "Tokens"
+msgstr "Tokens"
+
+#. module: odoo_mobile_app
+#: selection:oma.token,device_type:0
+msgid "Unknown"
+msgstr "Desconocido"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:17
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:25
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:39
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:50
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:57
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:66
+#, python-format
+msgid "error"
+msgstr "error"
+
+#. module: odoo_mobile_app
+#: selection:oma.token,device_type:0
+msgid "iOS"
+msgstr "iOS"
+
+#. module: odoo_mobile_app
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:36
+#: code:addons/odoo_mobile_app/controllers/oma_token_controller.py:83
+#, python-format
+msgid "ok"
+msgstr "ok"
+
