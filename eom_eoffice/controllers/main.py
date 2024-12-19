@@ -87,6 +87,8 @@ class WebsiteEOffice(WebsiteEom):
             'document_name': False,
             'validation_time': self.transform_time_to_locale(
                 communication.validation_time, digitalregister),
+            'notification_deadline_date': self.transform_time_to_locale(
+                communication.notification_deadline_date, digitalregister),
             'reading_time': self.transform_time_to_locale(
                 communication.reading_time, digitalregister),
             'rejection_time': self.transform_time_to_locale(
@@ -457,12 +459,33 @@ class WebsiteEOffice(WebsiteEom):
                                     'res_model': 'eom.electronicfile',
                                     'res_id': electronicfile.id,
                                 })
+                    model_communication = request.env[
+                        'eom.electronicfile.communication'].sudo()
+                    communication_date = self.transform_time_to_locale(
+                        fields.Datetime.now(), digitalregister)
+                    communication_text = _(
+                        'Electronic file with code %s '
+                        'has been created correctly on %s') % (
+                            electronicfile.name, communication_date)
+                    vals = {
+                        'state': '01_draft',
+                        'electronicfile_id': electronicfile.id,
+                        'issue': _('Procedure confirmed'),
+                        'communication_text': communication_text,
+                        'validation_time': fields.Datetime.now(),
+                        'reading_time': fields.Datetime.now(),
+                        'is_notification': True,
+                    }
+                    communication = model_communication.create(vals)
+                    communication.action_go_to_state_02_validated()
+                    communication.action_mark_as_readed()
                     template = 'eom_eoffice.confirmation_and_home'
                     context = {
                         'identif_token': identif_token,
                         'identif_header': identif_header,
                         'digitalregister': digitalregister,
                         'electronicfile_code': electronicfile_code,
+                        'csv_code': communication.csv_code,
                     }
         return request.render(template, context)
 

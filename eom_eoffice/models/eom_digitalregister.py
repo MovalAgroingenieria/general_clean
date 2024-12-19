@@ -64,7 +64,7 @@ class EomDigitalregister(models.Model):
             'context': {'hide_image': True,
                         'search_default_grouped_event_time': True,
                         'reduced_register_id': True,
-                        'reduced_access_id': True, },
+                        'reduced_access_id': True},
             }
         return act_window
 

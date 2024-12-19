@@ -6,17 +6,22 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <a href="#" onclick="document.getElementById('electronic_office').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <a href="#" onclick="document.getElementById('electronic_office').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -68,17 +73,22 @@
         <t t-call="website.layout">
             <div name="wrap" class="container">
                 <div class="oe_structure">
-                    <div name="header" style="margin-top:22px">
-                        <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                        <span style="margin-right:7px">🖳</span>
-                        <strong><span t-esc="identif_header"/></strong>
-                        <form id="electronic_files" role="form" style="display: inline; margin-left: 10px;" action="/efiles" method="post">
-                            <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                            <input type="hidden" name="same_access" value="1"/>
-                            <a href="#" onclick="document.getElementById('electronic_files').submit();">
-                                <span class="fa fa-arrow-left"></span> Go Back
-                            </a>
-                        </form>
+                    <div style="display: flex;justify-content: space-between; margin-top:22px">
+                        <div name="header">
+                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                            <span style="margin-right:7px">🖳</span>
+                            <strong><span t-esc="identif_header"/></strong>
+                            <form id="electronic_files" role="form" style="display: inline; margin-left: 10px;" action="/efiles" method="post">
+                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                <input type="hidden" name="same_access" value="1"/>
+                                <a href="#" onclick="document.getElementById('electronic_files').submit();">
+                                    <span class="fa fa-arrow-left"></span> Go Back
+                                </a>
+                            </form>
+                        </div>
+                        <div>
+                            <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                        </div>
                     </div>
                     <hr/>
                     <div name="body" class="container">
@@ -120,6 +130,7 @@
                                                         <th>State</th>
                                                         <th>Validation Date</th>
                                                         <th>Reading Time</th>
+                                                        <th>Notification Deadline Date</th>
                                                         <th>Rejection Time</th>
                                                         <th>Actions</th>
                                                     </tr>
@@ -139,6 +150,7 @@
                                                             <td t-esc="comm['state']"></td>
                                                             <td t-esc="comm['validation_time'] or ' '"></td>
                                                             <td t-esc="comm['reading_time'] or ' '"></td>
+                                                            <td t-esc="comm['notification_deadline_date'] or ' '"></td>
                                                             <td t-esc="comm['rejection_time'] or ' '"></td>
                                                             <td>
                                                                 <form method="post" action="/communication" class="d-inline">
@@ -234,18 +246,23 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_file" role="form" style="display: inline; margin-left: 10px;" action="/efile" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <input type="hidden" name="efile_id" t-att-value="communication['electronicfile_id']"/>
-                                <a href="#" onclick="document.getElementById('electronic_file').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_file" role="form" style="display: inline; margin-left: 10px;" action="/efile" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <input type="hidden" name="efile_id" t-att-value="communication['electronicfile_id']"/>
+                                    <a href="#" onclick="document.getElementById('electronic_file').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -297,17 +314,22 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <a href="#" onclick="document.getElementById('electronic_office').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <a href="#" onclick="document.getElementById('electronic_office').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -342,20 +364,25 @@
             <div class="container" style="margin-top: 22px;">
                 <div class="row">
                     <div class="col-xs-12">
-                        <div name="header">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <a href="#" onclick="document.getElementById('electronic_office').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <a href="#" onclick="document.getElementById('electronic_office').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
-                        <hr/>
                     </div>
+                    <hr/>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
@@ -410,10 +437,15 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -442,17 +474,22 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <a href="#" onclick="document.getElementById('electronic_office').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <a href="#" onclick="document.getElementById('electronic_office').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -473,7 +510,8 @@
                                             <input type="file" name="attachments" multiple="true"/>
                                         </div>
                                         <div class="clearfix text-center">
-                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                            <button type="submit" confirm="When clicking the Accept and Submit button the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted." class="btn btn-primary">Accept and Submit</button>
+                                            <p style="color: red; font-weight: bold;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
                                         </div>
                                     </form>
                                 </div>
@@ -493,17 +531,22 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
-                            <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
-                                <input type="hidden" name="identif_token" t-att-value="identif_token"/>
-                                <input type="hidden" name="same_access" value="1"/>
-                                <a href="#" onclick="document.getElementById('electronic_office').submit();">
-                                    <span class="fa fa-arrow-left"></span> Go Back
-                                </a>
-                            </form>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                                <form id="electronic_office" role="form" style="display: inline; margin-left: 10px;" action="/eoffice" method="post">
+                                    <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                    <input type="hidden" name="same_access" value="1"/>
+                                    <a href="#" onclick="document.getElementById('electronic_office').submit();">
+                                        <span class="fa fa-arrow-left"></span> Go Back
+                                    </a>
+                                </form>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -521,7 +564,8 @@
                                             <input type="file" name="attachments" multiple="true"/>
                                         </div>
                                         <div class="clearfix text-center">
-                                            <button type="submit" class="btn btn-primary">Accept</button>
+                                            <button type="submit" class="btn btn-primary">Accept and Submit</button>
+                                            <p style="color: red; font-weight: bold;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
                                         </div>
                                     </form>
                                 </div>
@@ -541,10 +585,15 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -552,6 +601,13 @@
                                 <h3>Thank you, the data entered has been successfully registered.</h3>
                                 <h4>Code of the generated file:<strong><span style="margin-left:10px" t-esc="electronicfile_code"/></strong></h4>
                                 <br/>
+                                <h4>
+                                    <form role="form" action="/document" method="post" autocomplete="off">
+                                        <input type="hidden" name="identif_token" t-att-value="identif_token"/>
+                                        <input type="hidden" name="csvcode" t-att-value="csv_code" id="csvcode"/>
+                                        <span>You can download the following attachment as acknowledgment of receipt: <button type="submit" class="btn btn-link" t-esc="electronicfile_code + '.pdf'"></button></span>
+                                    </form>
+                                </h4>
                                 <h4>
                                     <form id="eoffice" role="form" action="/eoffice" method="post">
                                           <input type="hidden" name="identif_token" t-att-value="identif_token"/>
@@ -575,10 +631,15 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">

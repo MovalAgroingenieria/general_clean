@@ -18,6 +18,11 @@ class EomElectronicfileCommunication(models.Model):
 
     SIZE_CSV_CODE = 16
 
+    def _get_default_notification_deadline(self):
+        notification_deadline_days = self.env['ir.values'].get_default(
+            'res.eom.config.settings', 'notification_deadline')
+        return notification_deadline_days
+
     electronicfile_id = fields.Many2one(
         string='Electronic File',
         comodel_name='eom.electronicfile',
@@ -82,6 +87,11 @@ class EomElectronicfileCommunication(models.Model):
         store=True,
         compute='_compute_reading_time')
 
+    notification_deadline_date = fields.Datetime(
+        string='Notification Deadline Date',
+        compute='_compute_notification_deadline_date',
+    )
+
     rejection_time = fields.Datetime(
         string='Rejection Time',
         store=True,
@@ -89,7 +99,8 @@ class EomElectronicfileCommunication(models.Model):
 
     notification_deadline = fields.Integer(
         string='Notification Deadline',
-        compute='_compute_notification_deadline')
+        default=_get_default_notification_deadline,
+    )
 
     expired_deadline = fields.Boolean(
         string='Deadline Exceeded',
@@ -250,23 +261,32 @@ class EomElectronicfileCommunication(models.Model):
             record.icon_notification_or_entry = icon
 
     @api.multi
+    def _compute_notification_deadline_date(self):
+        for record in self:
+            notification_deadline_date = None
+            if record.is_notification and record.validation_time and \
+                    record.state not in ['03_readed']:
+                notification_deadline_date = \
+                    fields.Datetime.from_string(record.validation_time) + \
+                    relativedelta(days=record.notification_deadline)
+            record.notification_deadline_date = notification_deadline_date
+
+    @api.multi
     def _compute_expired_deadline(self):
-        date_now = datetime.now()
+        date_now = fields.Datetime.now()
         deadline_days = self.env['ir.values'].get_default(
             'res.eom.config.settings', 'notification_deadline')
         if not deadline_days:
             raise exceptions.ValidationError(
                 _('Notification deadline parameter has not been set.'))
         for record in self:
-            record.expired_deadline = False
-            if record.validation_time and (record.state == '03_readed' or
-                                           record.state == '04_rejected'):
-                validation_time_obj = datetime.strptime(
-                    record.validation_time, '%Y-%m-%d %H:%M:%S')
-                notification_deadline_date = \
-                    validation_time_obj + relativedelta(days=deadline_days)
+            expired_deadline = False
+            if record.is_notification and record.validation_time and \
+                    record.state not in ['03_readed']:
+                notification_deadline_date = record.notification_deadline_date
                 if notification_deadline_date < date_now:
-                    record.expired_deadline = True
+                    expired_deadline = True
+            record.expired_deadline = expired_deadline
 
     @api.depends('expired_deadline')
     def _compute_show_expired_deadline(self):
@@ -280,15 +300,13 @@ class EomElectronicfileCommunication(models.Model):
     @api.model
     def _search_expired_deadline(self, operator, value):
         electronicfile_communications_ids = []
-        deadline_days = self.env['ir.values'].get_default(
-            'res.eom.config.settings', 'notification_deadline')
         operator_of_filter = 'in'
         if operator == '!=':
             operator_of_filter = 'not in'
         where_clause = """
-            WHERE validation_time + INTERVAL '%s days' < NOW()
-              AND (state != '03_readed' OR state != '04_rejected')""" \
-            % (deadline_days)
+            WHERE  is_notification AND (validation_time + INTERVAL '1 day' *
+                                        notification_deadline) < NOW()
+              AND (state != '03_readed')"""
         sql_statement = 'SELECT id FROM eom_electronicfile_communication ' \
             + where_clause
         sql_resp = False

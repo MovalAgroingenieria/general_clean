@@ -51,7 +51,9 @@
                             <field name="validation_time"/>
                             <field name="reading_time"/>
                             <field name="rejection_time"/>
-                            <!--<field name="notification_deadline"/>-->
+                            <field name="notification_deadline" attrs="{'invisible': ['|', ('state', 'in', ['01_draft', '03_readed']), ('is_notification','=', False)],
+                                                                             'readonly':['|', ('state', '=', '03_readed'), ('state', '=', '04_rejected')]}"/>
+                            <field name="notification_deadline_date" attrs="{'invisible': ['|', ('state', 'in', ['01_draft', '03_readed']), ('is_notification','=', False)]}"/>
                             <field name="expired_deadline"/>
                         </group>
                     </group>

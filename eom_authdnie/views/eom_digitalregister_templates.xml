@@ -6,10 +6,15 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <strong><span style="margin-right:35px">Electronic Office</span></strong>
-                            <span style="margin-right:7px">🖳</span>
-                            <strong><span t-esc="identif_header"/></strong>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <strong><span style="margin-right:35px">Electronic Office</span></strong>
+                                <span style="margin-right:7px">🖳</span>
+                                <strong><span t-esc="identif_header"/></strong>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                         <hr/>
                         <div name="body" class="container">
@@ -114,13 +119,18 @@
             <div name="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <div name="header" style="margin-top:22px">
-                            <t t-if="update_ok">
-                                <h3>Thank you, the data entered has been successfully registered.</h3>    
-                            </t>
-                            <t t-else="">
-                                <strong><span class="text-danger">Error updating data.</span></strong>
-                            </t>
+                        <div style="display: flex;justify-content: space-between; margin-top:22px">
+                            <div name="header">
+                                <t t-if="update_ok">
+                                    <h3>Thank you, the data entered has been successfully registered.</h3>
+                                </t>
+                                <t t-else="">
+                                    <strong><span class="text-danger">Error updating data.</span></strong>
+                                </t>
+                            </div>
+                            <div>
+                                <a role="menuitem" href="/web/session/logout?redirect=/">Logout</a>
+                            </div>
                         </div>
                     </div>
                 </div>
