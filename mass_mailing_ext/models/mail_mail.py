@@ -22,11 +22,9 @@ class MailMail(models.Model):
         email_to_raw = res.get('email_to')
         email_to_coded = email_to_raw[0].encode('utf-8')
         partner_name_raw, only_emails_raw = email_to_coded.split('<')
-        partner_name = partner_name_raw.rstrip(' ').encode('utf-8')
         only_emails = only_emails_raw.rstrip('>').replace(';', ',')
         emails = tools.email_split(only_emails)
-        if len(emails) > 1:
-            res['email_to'] = emails
+        res['email_to'] = emails
         if self.mailing_id and res.get('body') and res.get('email_to'):
             original_email_to = res.get('email_to')[0]
             modified_email_to = original_email_to.encode('utf-8')
