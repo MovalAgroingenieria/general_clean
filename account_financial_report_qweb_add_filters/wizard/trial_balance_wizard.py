@@ -15,7 +15,7 @@ class TrialBalanceReportWizard(models.TransientModel):
     """Trial balance report wizard."""
 
     _name = "trial.balance.report.grouped.wizard"
-    _description = "Trial Balance Report Wizard"
+    _description = "Trial Balance Report Grouped Wizard"
 
     company_id = fields.Many2one(
         comodel_name='res.company',
@@ -98,10 +98,20 @@ class TrialBalanceReportWizard(models.TransientModel):
 
     @api.depends('date_from')
     def _compute_fy_start_date(self):
-        for wiz in self.filtered('date_from'):
-            date = fields.Datetime.from_string(wiz.date_from)
-            res = self.company_id.compute_fiscalyear_dates(date)
-            wiz.fy_start_date = res['date_from']
+        for wiz in self:
+            if wiz.date_from and wiz.company_id:
+                try:
+                    # Convierte la fecha y calcula el ejercicio fiscal
+                    date = fields.Date.from_string(wiz.date_from)
+                    res = wiz.company_id.compute_fiscalyear_dates(date)
+                    wiz.fy_start_date = res.get('date_from')  # Asegúrate de que 'date_from' existe en el dict
+                except Exception as e:
+                    # Log para depuración
+                    _logger.error("Error calculating fiscal year start date: %s", e)
+                    wiz.fy_start_date = False
+            else:
+                # Asegúrate de asignar un valor en todos los casos
+                wiz.fy_start_date = False
 
     @api.onchange('date_range_id')
     def onchange_date_range_id(self):

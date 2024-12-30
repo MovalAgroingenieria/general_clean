@@ -284,8 +284,8 @@ msgstr "Balance de Sumas y Saldos Agrupado"
 #. module: account_financial_report_qweb_add_filters
 #: model:ir.model,name:account_financial_report_qweb_add_filters.model_trial_balance_report_grouped_wizard
 #: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
-msgid "Trial Balance Report Wizard"
-msgstr "Asistente de informe de balance de sumas y saldos"
+msgid "Trial Balance Report Grouped Wizard"
+msgstr "Asistente de informe de balance de sumas y saldos agrupado"
 
 #. module: account_financial_report_qweb_add_filters
 #: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.report_general_ledger_balance_grouped

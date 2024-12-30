@@ -284,7 +284,7 @@ msgstr ""
 #. module: account_financial_report_qweb_add_filters
 #: model:ir.model,name:account_financial_report_qweb_add_filters.model_trial_balance_report_grouped_wizard
 #: model:ir.ui.view,arch_db:account_financial_report_qweb_add_filters.trial_balance_grouped_wizard
-msgid "Trial Balance Report Wizard"
+msgid "Trial Balance Report Grouped Wizard"
 msgstr ""
 
 #. module: account_financial_report_qweb_add_filters
