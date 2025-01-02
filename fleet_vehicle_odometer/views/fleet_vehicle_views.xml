@@ -18,6 +18,7 @@
             </xpath>
             <xpath expr="//field[@name='value']" position="after">
                 <field name="quantity"/>
+                <field name="gap_exists_before" invisible="1"/>
             </xpath>
        </field>
     </record>
@@ -27,8 +28,12 @@
         <field name="model">fleet.vehicle.odometer</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_odometer_view_tree"/>
         <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-warning">gap_exists_before</attribute>
+            </xpath>
             <xpath expr="//field[@name='driver_id']" position="attributes">
-                <attribute name="attrs">{'invisible': True}</attribute>            </xpath>
+                <attribute name="attrs">{'invisible': True}</attribute>
+            </xpath>
             <xpath expr="//field[@name='vehicle_id']" position="after">
                 <field name="trip_driver_id" widget="many2one_avatar"/>
             </xpath>
@@ -38,6 +43,7 @@
             </xpath>
             <xpath expr="//field[@name='value']" position="after">
                 <field name="quantity"/>
+                <field name="gap_exists_before" invisible="1"/>
             </xpath>
         </field>
     </record>
@@ -55,6 +61,7 @@
                     <span><field name="initial_value"/> Km</span>
                     <span><field name="value"/> Km</span>
                     <span><field name="quantity"/> Km</span>
+                    <span><field name="gap_exists_before" invisible="1"/></span>
                 </div>
             </xpath>
         </field>
@@ -72,6 +79,10 @@
             <xpath expr="//field[@name='value']" position="after">
                 <field name="quantity"/>
                 <field name="trip_driver_id"/>
+                <field name="gap_exists_before" invisible="1"/>
+            </xpath>
+            <xpath expr="//filter[@name='groupby_vehicle']" position="after">
+                <filter string="Gaps Exist" name="filter_gaps" domain="[('gap_exists_before', '=', True)]"/>
             </xpath>
         </field>
     </record>

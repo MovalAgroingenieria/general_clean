@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-# 2024 Moval Agroingeniería
+# 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html)
 
 {
-    "name": "Fleet Vehicle Odoometer",
+    "name": "Fleet Vehicle Odometer",
     "summary": "Add init value and project in odometer",
     "version": "14.0.1.0.0",
     "author": "Moval Agroingeniería",
