@@ -16,7 +16,7 @@
     ],
     'data': [
         'views/navbar.xml',
-        'views/login_view_extended.xml',
+        # 'views/login_view_extended.xml',
     ],
     'installable': True,
     'application': False,
