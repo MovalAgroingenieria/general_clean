@@ -111,7 +111,7 @@ class ReportController(http.Controller):
                     for item in items:
                         group_by_value = item.get(group_by_field)
                         if isinstance(group_by_value, tuple):
-                            group_by_value = group_by_value[1]
+                            group_by_value = str(group_by_value[1])
                         worksheet.write(row, 0, account_code_name)
                         worksheet.write(row, 1, group_by_value or 'N/A')
                         worksheet.write(
