@@ -215,10 +215,10 @@ class EomElectronicfileCommunication(models.Model):
                     mail_template_communication_state = None
                 if mail_template_communication_state:
                     partner = digitalregister.partner_id
-                    if partner.lang:
+                    if partner and partner.lang:
                         doc_lang = partner.lang
-                    elif self.env.user.id.lang:
-                        doc_lang = self.env.user.id.lang
+                    elif self.env.user.lang:
+                        doc_lang = self.env.user.lang
                     else:
                         doc_lang = 'en_US'
                     mail_template_communication_state.with_context(
