@@ -7,7 +7,6 @@ from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models, _
 from odoo.osv import expression
 
-from core.odoo.tools.populate import compute
 
 
 class FleetVehicleOdometer(models.Model):
