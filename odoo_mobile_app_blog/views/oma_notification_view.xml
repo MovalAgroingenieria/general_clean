@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<record id="inherit_oma_notification_form_view" model="ir.ui.view">
+    <field name="name">inherit.oma.notification.form</field>
+    <field name="model">oma.notification</field>
+    <field name="inherit_id" ref="odoo_mobile_app.oma_notification_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='title']" position="after">
+            <field name="post_id"/>
+        </xpath>
+    </field>
+</record>
+</odoo>
