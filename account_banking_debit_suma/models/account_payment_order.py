@@ -838,6 +838,20 @@ class AccountPaymentOrder(models.Model):
                                   city_name_simplified2)])
 
                     if ine_codes:
+                        if len(ine_codes) > 1:
+                            partner_zip = line.partner_id.zip
+                            if partner_zip and len(partner_zip) > 2:
+                                province_code = partner_zip[:2]
+                                filtered_ine_codes = ine_codes.filtered(
+                                    lambda code:
+                                        code.ine_code_province == province_code
+                                )
+                                if filtered_ine_codes:
+                                    ine_codes = filtered_ine_codes[0]
+                                else:
+                                    ine_codes = ine_codes[0]
+                            else:
+                                ine_codes = ine_codes[0]
                         # County INE code - Position [138-140] Length 3
                         county_ine_code = \
                             str(ine_codes.ine_code_city).zfill(3)
