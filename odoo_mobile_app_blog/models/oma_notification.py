@@ -10,8 +10,8 @@ class Notification(models.Model):
     _inherit = 'oma.notification'
 
     post_id = fields.Many2one(
-        comodel_name='blog.post',
         string="Related Blog Post",
+        comodel_name='blog.post',
         domain=[('website_published', '=', True)],
         help="Select a related blog post."
     )

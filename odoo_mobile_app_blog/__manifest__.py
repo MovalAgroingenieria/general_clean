@@ -12,6 +12,7 @@
     "license": "AGPL-3",
     "depends": [
         'odoo_mobile_app',
+        'website_blog',
     ],
     "data": [
         "views/resources.xml",

@@ -105,12 +105,28 @@ class OmaNotificationSet(models.Model):
                     'url_notification': url_notification,
                     'notification_id': str(notification_id),
                     'html_body': body,
+                    'badge': '1',
+                    'imageUrl': url_img,
                 },
                 'token': token,
             }
         }
         resp = requests.post(endpoint, data=json.dumps(data), headers=headers)
         return resp
+
+    def _get_values_for_notification_creation(self, notification_set, token):
+        return {
+            'name': notification_set.name + '_' + token.name,
+            'title': notification_set.title,
+            'subtitle': notification_set.subtitle,
+            'url_img': notification_set.url_img,
+            'url_notification': notification_set.url_notification,
+            'notificationset_id': notification_set.id,
+            'send_date': notification_set.send_date,
+            'token_id': token.id,
+            'body': notification_set.body,
+            'state': '02_prepared',
+        }
 
     @api.multi
     def action_prepare(self):
@@ -119,18 +135,10 @@ class OmaNotificationSet(models.Model):
                 record.state = '02_prepared'
                 notifications = []
                 for token in record.token_ids:
-                    notification = self.env['oma.notification'].create({
-                        'name': record.name + '_' + token.name,
-                        'title': record.title,
-                        'subtitle': record.subtitle,
-                        'url_img': record.url_img,
-                        'url_notification': record.url_notification,
-                        'notificationset_id': record.id,
-                        'send_date': record.send_date,
-                        'token_id': token.id,
-                        'body': record.body,
-                        'state': '02_prepared',
-                    })
+                    notification_vals = self.\
+                        _get_values_for_notification_creation(record, token)
+                    notification = self.env['oma.notification'].create(
+                        notification_vals)
                     notifications.append(notification)
                 record.notification_ids = [
                     (6, 0, [n.id for n in notifications])]

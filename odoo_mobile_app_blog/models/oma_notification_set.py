@@ -11,11 +11,17 @@ class OmaNotificationSet(models.Model):
     _inherit = 'oma.notification.set'
 
     post_id = fields.Many2one(
-        comodel_name='blog.post',
         string="Related Blog Post",
+        comodel_name='blog.post',
         domain=[('website_published', '=', True)],
         help="Select a related blog post."
     )
+
+    def _get_values_for_notification_creation(self, notification_set, token):
+        notification_vals = super(OmaNotificationSet, self).\
+            _get_values_for_notification_creation(notification_set, token)
+        notification_vals['post_id'] = notification_set.post_id.id
+        return notification_vals
 
     @api.onchange('post_id')
     def _onchange_post_id(self):
@@ -47,6 +53,8 @@ class OmaNotificationSet(models.Model):
             format(project_id)
         notification_data = {
             'url_img': url_img,
+            'badge': '1',
+            'imageUrl': url_img,
             'url_notification': url_notification,
             'notification_id': str(notification_id),
         }
