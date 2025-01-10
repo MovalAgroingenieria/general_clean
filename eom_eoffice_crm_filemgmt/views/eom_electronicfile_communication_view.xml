@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="eom_electronicfile_communication_view_form" model="ir.ui.view">
+        <field name="name">eom.electronicfile.communication.view.form</field>
+        <field name="model">eom.electronicfile.communication</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_communication_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expired_deadline']" position="after">
+                <field name="res_letter_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_communication_view_tree" model="ir.ui.view">
+        <field name="name">eom.electronicfile.communication.view.tree</field>
+        <field name="model">eom.electronicfile.communication</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_communication_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='issue']" position="after">
+                <field name="res_letter_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_communication_view_search" model="ir.ui.view">
+        <field name="name">eom.electronicfile.communication.view.search</field>
+        <field name="model">eom.electronicfile.communication</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_communication_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='issue']" position="after">
+                <field name="res_letter_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_communication_view_kanban" model="ir.ui.view">
+        <field name="name">eom.electronicfile.communication.view.kanban</field>
+        <field name="model">eom.electronicfile.communication</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_communication_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='issue']" position="after">
+                <field name="res_letter_id"/>
+            </xpath>
+            <xpath expr="//li[@t-if='record.issue.raw_value']" position="after">
+                <li t-if="record.res_letter_id.raw_value">
+                    <span class="fa fa-lettermgmt-inout" title="Registre"/>
+                    <a name="action_show_res_letter_id" type="object">
+                        <field name="res_letter_id"/>
+                    </a>
+                </li>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

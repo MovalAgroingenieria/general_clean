@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="eom_electronicfile_view_form" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.form</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='technician_id']" position="after">
+                <field name="file_id" colspan="2" attrs="{'readonly': [('state', '=', '03_resolved')]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_view_tree" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.tree</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='technician_id']" position="after">
+                <field name="file_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_view_search" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.search</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='resolution']" position="after">
+                <field name="file_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='grouped_by_technician_id']" position="after">
+                <filter string="File_" name="grouped_by_file_id" context="{'group_by':'file_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="eom_electronicfile_view_kanban" model="ir.ui.view">
+        <field name="name">eom.electronicfile.view.kanban</field>
+        <field name="model">eom.electronicfile</field>
+        <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='icon_warning_expired_deadline']" position="after">
+                <field name="file_id"/>
+            </xpath>
+            <xpath expr="//li[@t-if='record.type.raw_value']" position="after">
+                <li t-if="record.file_id.raw_value">
+                    <span class="fa fa-filemgmt-files" title="File_"/>
+                    <a name="action_show_file_id" type="object">
+                        <field name="file_id"/>
+                    </a>
+                </li>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

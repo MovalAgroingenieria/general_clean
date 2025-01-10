@@ -7,7 +7,6 @@
         <field name="arch" type="xml">
             <form duplicate="false">
                 <field name="id" invisible="1"/>
-                <field name="expired_deadline" invisible="1"/>
                 <field name="show_expired_deadline" invisible="1"/>
                 <field name="is_notification" invisible="1"/>
                 <header>
@@ -127,6 +126,7 @@
                 <field name="validation_time"/>
                 <field name="number_of_attachments"/>
                 <field name="state"/>
+                <field name="csv_code"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_res_partner_kanban">

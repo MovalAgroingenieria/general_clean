@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="res_letter_tree_view" model="ir.ui.view">
+        <field name="name">Letter Tree</field>
+        <field name="model">res.letter</field>
+        <field name="inherit_id" ref="crm_filemgmt.res_letter_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='file_id']" position="after">
+                <field name="electronicfile_communication_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_letter_filter" model="ir.ui.view">
+        <field name="name">Letter Search</field>
+        <field name="model">res.letter</field>
+        <field name="inherit_id" ref="crm_filemgmt.res_letter_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='file_id']" position="after">
+                <field name="electronicfile_communication_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_letter_form_view" model="ir.ui.view">
+        <field name="name">Letter Search</field>
+        <field name="model">res.letter</field>
+        <field name="inherit_id" ref="crm_filemgmt.res_letter_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='file_id']" position="after">
+                <field name="electronicfile_communication_id"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
