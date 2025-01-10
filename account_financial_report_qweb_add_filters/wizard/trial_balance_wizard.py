@@ -295,6 +295,7 @@ class TrialBalanceReportWizard(models.TransientModel):
         domain = [
             ('account_id', '=', account.id),
             ('date', '<', start_date),
+            ('move_id.state', '=', 'posted'),
         ]
 
         group_by_field = self.get_group_by_field(account)
@@ -322,6 +323,7 @@ class TrialBalanceReportWizard(models.TransientModel):
             move_lines = self.env['account.move.line'].search([
                 ('account_id', 'in', accounts_6_7_ids),
                 ('date', '<', start_date),
+                ('move_id.state', '=', 'posted'),
             ])
 
             # Sumatorio de débitos y créditos
