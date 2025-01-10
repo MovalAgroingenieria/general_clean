@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_payment_order_form" model="ir.ui.view">
+        <field name="name">account.payment.order.form</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Set description as required field -->
+            <xpath expr="//field[@name='name']/.." position="after">
+                <field name="is_sepa_mismatch" invisible="1"/>
+                <div name="issepamismatch"
+                     style="display: inline-block;color:red;padding-top: 5px;padding-bottom: 5px;padding-left: 10px;"
+                     attrs="{'invisible':[('is_sepa_mismatch','&lt;=',0.0)]}">
+                ( Payment Mode is SEPA but some bank line is not setted as IBAN )
+            </div>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

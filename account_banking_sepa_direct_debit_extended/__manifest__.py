@@ -15,6 +15,7 @@
         "account_banking_sepa_direct_debit",
     ],
     "data": [
+        'views/account_payment_order_views.xml',
     ],
     "installable": True,
     "application": False,
