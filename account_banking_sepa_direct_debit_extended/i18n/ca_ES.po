@@ -1,0 +1,68 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_sepa_direct_debit_extended
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-10 11:49+0000\n"
+"PO-Revision-Date: 2025-01-10 11:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: model:ir.ui.view,arch_db:account_banking_sepa_direct_debit_extended.account_payment_order_form
+msgid "( Payment Mode is SEPA but some bank line is not setted as IBAN )"
+msgstr "(El mode de pagament és SEPA, però algunes línies bancàries no s'estableixen com a IBAN)"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: model:ir.model,name:account_banking_sepa_direct_debit_extended.model_account_banking_mandate
+msgid "A generic banking mandate"
+msgstr "Un mandat bancari genèric"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: code:addons/account_banking_sepa_direct_debit_extended/models/account_payment_order.py:36
+#, python-format
+msgid "Company bank account is not set as IBAN."
+msgstr "El compte bancari de l'empresa no està definit com a IBAN."
+
+#. module: account_banking_sepa_direct_debit_extended
+#: model:ir.model.fields,help:account_banking_sepa_direct_debit_extended.field_account_payment_order_is_sepa_mismatch
+msgid "Indicates that the payment order has a SEPA mismatch"
+msgstr "Indica que l'ordre de pagament té un desajust SEPA"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: model:ir.model,name:account_banking_sepa_direct_debit_extended.model_account_payment_order
+msgid "Payment Order"
+msgstr "Ordre de pagament"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: code:addons/account_banking_sepa_direct_debit_extended/models/account_payment_order.py:46
+#, python-format
+msgid "Payment line with reference %s has a bank account that is not set as IBAN."
+msgstr "La línia de pagament amb la referència %s té un compte bancari que no està definit com a IBAN."
+
+#. module: account_banking_sepa_direct_debit_extended
+#: code:addons/account_banking_sepa_direct_debit_extended/models/account_payment_order.py:41
+#, python-format
+msgid "Payment line with reference %s has a currency that is not EUR."
+msgstr "La línia de pagament amb la referència %s té una moneda que no és EUR."
+
+#. module: account_banking_sepa_direct_debit_extended
+#: model:ir.model.fields,field_description:account_banking_sepa_direct_debit_extended.field_account_payment_order_is_sepa_mismatch
+msgid "SEPA Mismatch"
+msgstr "Incompatibilitat SEPA"
+
+#. module: account_banking_sepa_direct_debit_extended
+#: code:addons/account_banking_sepa_direct_debit_extended/models/account_payment_order.py:51
+#, python-format
+msgid "The following errors were found:\n"
+""
+msgstr "S'han trobat els errors següents:\n"
+""
+

@@ -27,29 +27,30 @@ class AccountPaymentOrder(models.Model):
             record.is_sepa_mismatch = is_sepa_mismatch
 
     @api.multi
-    def generated2uploaded(self):
+    def open2generated(self):
+        self.ensure_one()
         eur = self.env.ref('base.EUR')
-        for order in self:
-            if order.is_sepa_mismatch:
-                errors = []
-                if order.company_partner_bank_id.acc_type != 'iban':
-                    errors.append(_(
-                        'Company bank account is not set as IBAN.'))
-                for pline in order.payment_line_ids:
-                    if pline.currency_id != eur:
-                        errors.append(
-                            _('Payment line with reference %s has a currency '
-                              'that is not EUR.') % (pline.name or 'unknown'),
-                        )
-                    if pline.partner_bank_id.acc_type != 'iban':
-                        errors.append(
-                            _('Payment line with reference %s has a bank '
-                              'account that is not set as IBAN.') % (
-                                pline.name or 'unknown'),
-                        )
-                raise ValidationError(
-                    _('The following errors were found:\n') + '\n'.join(
-                        errors),
-                )
-        res = super(AccountPaymentOrder, self).generated2uploaded()
+        order = self
+        if order.is_sepa_mismatch:
+            errors = []
+            if order.company_partner_bank_id.acc_type != 'iban':
+                errors.append(_(
+                    'Company bank account is not set as IBAN.'))
+            for pline in order.payment_line_ids:
+                if pline.currency_id != eur:
+                    errors.append(
+                        _('Payment line with reference %s has a currency '
+                            'that is not EUR.') % (pline.name or 'unknown'),
+                    )
+                if pline.partner_bank_id.acc_type != 'iban':
+                    errors.append(
+                        _('Payment line with reference %s has a bank '
+                            'account that is not set as IBAN.') % (
+                            pline.name or 'unknown'),
+                    )
+            raise ValidationError(
+                _('The following errors were found:\n') + '\n'.join(
+                    errors),
+            )
+        res = super(AccountPaymentOrder, self).open2generated()
         return res
