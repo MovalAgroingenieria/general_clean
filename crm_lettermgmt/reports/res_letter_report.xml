@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report id="action_res_letter_report"
+            string="Registry report"
+            model="res.letter"
+            report_type="qweb-pdf"
+            file="crm_lettermgmt.template_res_letter_report"
+            name="crm_lettermgmt.template_res_letter_report"/>
+
+    <record model="ir.actions.report.xml" id="action_res_letter_report">
+        <field name="print_report_name">(object.number.replace('/', '_') + '.pdf')</field>
+    </record>
+
+    <template id="template_res_letter_report">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="crm_lettermgmt.res_letter_report_document" t-lang="o.recipient_partner_id.lang"/>
+                <p style="page-break-after:always;"></p>
+            </t>
+        </t>
+    </template>
+
+    <template id="res_letter_report_document">
+        <t t-call="report.external_layout">
+            <div class="page">
+                <span>hola</span>
+
+                <div name="title" style="text-align: center; margin-bottom: 24px;">
+                    <t t-if="o.move == 'out'"><span><b>O U T</b></span></t>
+                    <t t-if="o.move == 'in'"><span><b>I N</b></span></t>
+                    <span><b>R E G I S T R Y</b></span>
+                </div>
+
+                <div name="registry_data" class="col-xs-12" style="display:table; margin-top:8px; margin-bottom:24px;">
+                    <div style="width: 50%; display: table-cell; border-right: 1px solid black; padding-right: 32px;">
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td><b>Issue:</b></td>
+                                    <td><span t-field="o.name"/></td>
+                                </tr>
+                                                         </tbody>
+                        </table>
+                    </div>
+                    <div style="display: table-cell; padding-left: 32px;">
+                        <table style="width: 100%;">
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div> <!-- end page -->
+        </t>
+
+    </template>
+
+</odoo>
