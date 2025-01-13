@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 2024 Moval Agroingeniería
+# 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 {
@@ -15,11 +15,11 @@
         'crm_filemgmt',
     ],
     'data': [
-        #'views/res_letter_view.xml',
         'views/eom_electronicfile_view.xml',
         'views/eom_electronicfile_communication_view.xml',
         'views/res_partner_view.xml',
-        #'views/resources.xml',
+        'views/res_letter_view.xml',
+        'views/res_file_view.xml',
     ],
     'installable': True,
     'application': False,

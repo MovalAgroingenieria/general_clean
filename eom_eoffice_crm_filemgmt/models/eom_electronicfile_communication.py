@@ -63,10 +63,16 @@ class EomElectronicfileCommunication(models.Model):
             'date': registry_date,
             'name': resgistry_issue,
             'note': resgistry_note,
-            'state': 'sent', }
+            'state': 'sent',
+            'created_by_authdnie': True,
+        }
         registry = self.env['res.letter'].create(res_letter_vals)
         # Write the registry id in the communication
         res.write({'res_letter_id': registry.id})
+        # Add registry to file_id
+        file_id = electronicfile.file_id or False
+        if file_id:
+            file_id.file_res_letter_ids = [(4, registry.id)]
         return res
 
     @api.multi
@@ -108,7 +114,13 @@ class EomElectronicfileCommunication(models.Model):
                 'date': registry_date,
                 'name': resgistry_issue,
                 'note': resgistry_note,
-                'state': 'sent', }
+                'state': 'sent',
+                'created_by_authdnie': True,
+            }
             registry = self.env['res.letter'].create(res_letter_vals)
             vals['res_letter_id'] = registry.id
+            # Add registry to file_id
+            file_id = electronicfile.file_id or False
+            if file_id:
+                file_id.file_res_letter_ids = [(4, registry.id)]
         return super(EomElectronicfileCommunication, self).write(vals)

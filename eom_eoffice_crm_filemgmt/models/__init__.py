@@ -7,3 +7,4 @@ from . import eom_electronicfile
 from . import eom_electronicfile_communication
 from . import res_partner
 from . import res_letter
+from . import res_file

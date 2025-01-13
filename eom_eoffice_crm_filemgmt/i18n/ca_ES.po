@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-10 11:36+0000\n"
-"PO-Revision-Date: 2025-01-10 11:36+0000\n"
+"POT-Creation-Date: 2025-01-13 11:25+0000\n"
+"PO-Revision-Date: 2025-01-13 11:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #. module: eom_eoffice_crm_filemgmt
 #: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:58
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:103
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:109
 #, python-format
 msgid "Communication Issue: %s \n"
 ""
@@ -25,20 +25,23 @@ msgstr "Assumpte comunicació: %s \n"
 ""
 
 #. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_filter
 #: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.view_res_partner_filter
 msgid "Created by Auth DNIe: No"
-msgstr "Creat per DNIe: No"
+msgstr "Creat per Seu electrònica: No"
 
 #. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_filter
 #: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.view_res_partner_filter
 msgid "Created by Auth DNIe: Yes"
-msgstr "Creat per DNIe: Sí"
+msgstr "Creat per Seu electrònica: Sí"
 
 #. module: eom_eoffice_crm_filemgmt
+#: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_letter_created_by_authdnie
 #: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_partner_created_by_authdnie
 #: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_users_created_by_authdnie
 msgid "Created by AuthDNIe"
-msgstr "Creat per DNIe"
+msgstr "Creat per Seu electrònica"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_eom_digitalregister
@@ -62,18 +65,32 @@ msgid "Electronic File Communication"
 msgstr "Comunicació de l'expedient electrònic"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:100
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:106
 #, python-format
 msgid "Electronic Notification %s"
 msgstr "Notificació electrònica %s"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:22
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:27
 #: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_eom_electronicfile_file_id
-#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.eom_electronicfile_view_search
 #, python-format
 msgid "File_"
 msgstr "Expedient"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_file_has_associated_electronicfile
+msgid "Has associated electronic file"
+msgstr "Té associat un expedient electrònic"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_eom_electronicfile_has_associated_file
+msgid "Has associated file"
+msgstr "Té associat un expedient"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file
+msgid "Log of Files Movements"
+msgstr "Bitàcola de moviments d'expedients"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_letter
@@ -87,7 +104,7 @@ msgstr "Soci"
 
 #. module: eom_eoffice_crm_filemgmt
 #: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:50
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:95
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:101
 #, python-format
 msgid "Partner or Company not found, cannot create registry."
 msgstr "Contacte o companyia no trobada, no es pot crear el registre."
@@ -99,3 +116,32 @@ msgstr "Contacte o companyia no trobada, no es pot crear el registre."
 msgid "Registry"
 msgstr "Registre"
 
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_file_view_search
+msgid "With Electronic File: No"
+msgstr "Sense expedient electrònic: No"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_file_view_search
+msgid "With Electronic File: Yes"
+msgstr "Amb expedient electrònic: Sí"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.eom_electronicfile_view_search
+msgid "With File: No"
+msgstr "Sense expedient: No"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.eom_electronicfile_view_search
+msgid "With File: Yes"
+msgstr "Amb expedient: Sí"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_filelink
+msgid "res.file.filelink"
+msgstr "res.file.filelink"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_partnerlink
+msgid "res.file.partnerlink"
+msgstr "res.file.partnerlink"

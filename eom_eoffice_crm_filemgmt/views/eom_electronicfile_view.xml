@@ -31,8 +31,12 @@
             <xpath expr="//field[@name='resolution']" position="after">
                 <field name="file_id"/>
             </xpath>
-            <xpath expr="//filter[@name='grouped_by_technician_id']" position="after">
-                <filter string="File_" name="grouped_by_file_id" context="{'group_by':'file_id'}"/>
+            <xpath expr="//group[@expand='0']" position="before">
+                <filter string="With File: Yes" name="associatedelectronicfile_yes"
+                    domain="[('has_associated_file','=',True)]"/>
+                <filter string="With File: No" name="associatedelectronicfile_yes"
+                    domain="[('has_associated_file','=',False)]"/>
+                <separator/>
             </xpath>
         </field>
     </record>
