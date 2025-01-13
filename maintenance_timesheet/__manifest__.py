@@ -6,7 +6,7 @@
 {
     'name': 'Maintenance Timesheets',
     'summary': 'Adds timesheets to maintenance request',
-    'version': '10.0.1.0.1',
+    'version': '10.0.1.1.0',
     'category': 'Human Resources',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',
