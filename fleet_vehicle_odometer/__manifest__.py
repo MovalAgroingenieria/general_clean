@@ -15,6 +15,7 @@
     ],
     "data": [
         'views/fleet_vehicle_views.xml',
+        'security/fleet_security.xml',
     ],
     "installable": True,
     "application": False,

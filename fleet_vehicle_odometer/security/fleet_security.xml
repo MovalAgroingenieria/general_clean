@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!-- Desactivar la regla original -->
+    <record id="fleet.fleet_rule_vehicle_visibility_user" model="ir.rule">
+        <field name="active">False</field>
+    </record>
+
+    <!-- Nueva regla para que usuario vea sus vehículos y los no asignados -->
+    <record id="fleet_rule_vehicle_visibility_user_extended" model="ir.rule">
+        <field name="name">User can see his/her vehicle or unassigned</field>
+        <field name="model_id" ref="fleet.model_fleet_vehicle"/>
+        <field name="groups" eval="[(4, ref('fleet.fleet_group_user'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="domain_force">
+            [ '|', ('driver_id','=',False), ('driver_id','=',user.partner_id.id)]
+        </field>
+    </record>
+
+</odoo>
