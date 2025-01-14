@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 16:14+0000\n"
-"PO-Revision-Date: 2024-11-19 16:14+0000\n"
+"POT-Creation-Date: 2025-01-14 16:04+0000\n"
+"PO-Revision-Date: 2025-01-14 16:04+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,6 +32,56 @@ msgstr " [tipo: "
 #: model:ir.model.fields,help:crm_filemgmt.field_res_filetag_color
 msgid "0:grey, 1:green, 2:yellow, 3:orange, 4:red, 5:purple, 6:blue, 7:cyan, 8:light-green, 9:magenta"
 msgstr "0:gris, 1:verde, 2:amarillo, 3:naranja, 4:rojo, 5:púrpura, 6:azul, 7:cian, 8:verde brillante, 9:magenta"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Attachments</b>"
+msgstr "<b>Adjuntos</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Category</b>"
+msgstr "<b>Categoría</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Closing Date</b>"
+msgstr "<b>Fecha de cierre</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Code</b>"
+msgstr "<b>Código</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Container</b>"
+msgstr "<b>Contenedor</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File Date</b>"
+msgstr "<b>Fecha expediente</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File registers</b>"
+msgstr "<b>Registros expediente</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File</b>"
+msgstr "<b>Expediente</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Stage</b>"
+msgstr "<b>Etapa</b>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Technician</b>"
+msgstr "<b>Técnico</b>"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_location_view_form
@@ -84,7 +134,37 @@ msgstr "<span class=\"o_stat_text\">\n"
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
 msgid "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R C H I V E D</span>"
-msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R C H I V A D O</span>"
+msgstr "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">C A N C E L A D O</span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span> bytes</span>"
+msgstr "<span> bytes</span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Attachments</b></span>"
+msgstr "<span><b>Adjuntos</b></span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>F I L E</b></span>"
+msgstr "<span><b>E X P E D I E N T E</b></span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Files</b></span>"
+msgstr "<span><b>Expedientes asociados</b></span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Issue: </b></span>"
+msgstr "<span><b>Asunto: </b></span>"
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Partners</b></span>"
+msgstr "<span><b>Socios</b></span>"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -193,6 +273,7 @@ msgstr "Categorías de expedientes"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_category_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_category_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Category"
 msgstr "Categoría"
 
@@ -355,7 +436,7 @@ msgstr "Fecha:"
 #. module: crm_filemgmt
 #: model:ir.model.fields,help:crm_filemgmt.field_res_file_config_settings_default_annual_seq_prefix
 msgid "Default code for Files: <prefix>/<year>/num. It is not used if you are in a multi-company environment."
-msgstr "El código por defecto para Expedientes: <prefix>/<year>/num. No se utiliza si estás en ambiente multi-compañía."
+msgstr "Default code for Files: <prefix>/<year>/num. It is not used if you are in a multi-company environment."
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
@@ -417,7 +498,7 @@ msgstr "El nombre del contenedor ya existe."
 #. module: crm_filemgmt
 #: sql_constraint:res.file.containertype:0
 msgid "Existing container type."
-msgstr "El tipo de contenedor ya existe."
+msgstr "Existing container type."
 
 #. module: crm_filemgmt
 #: sql_constraint:res.file:0
@@ -556,7 +637,7 @@ msgstr "Expedientes"
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_fold
 msgid "Folded in Kanban"
-msgstr "Plegada en Kanban"
+msgstr "Plegado en Kanban"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_container_view_search
@@ -581,7 +662,9 @@ msgid "Has registres"
 msgstr "Tiene registros"
 
 #. module: crm_filemgmt
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_13025
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_13053
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -640,7 +723,7 @@ msgstr "Es obligatorio marcar un socio principal"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage___last_update
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_filetag___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_write_uid
@@ -707,10 +790,16 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "Mime Type"
+msgstr "Tipo MIME"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_name
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Name"
 msgstr "Nombre"
 
@@ -764,7 +853,7 @@ msgstr "Categoría padre"
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_partner_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 msgid "Partner"
-msgstr "Socio"
+msgstr "Asociado"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
@@ -801,6 +890,7 @@ msgstr "Prefijo (sec/año)"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_is_main
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Primary"
 msgstr "Principal"
 
@@ -811,6 +901,7 @@ msgstr "Categoría de solo lectura"
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_id
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Related File"
 msgstr "Expediente relacionado"
 
@@ -825,7 +916,14 @@ msgid "Site"
 msgstr "Ubicación"
 
 #. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_stage_id
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id_15868
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_tree
 msgid "Stage"
 msgstr "Etapa"
@@ -945,7 +1043,7 @@ msgstr "Tipos contenedor"
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form
 msgid "Unarchive"
-msgstr "Unarchive"
+msgstr "Desarchivar"
 
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_form

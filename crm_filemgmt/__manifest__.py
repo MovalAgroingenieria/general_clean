@@ -31,6 +31,7 @@
         'views/res_file_container_view.xml',
         'views/res_company_view.xml',
         'views/res_file_stage_views.xml',
+        'reports/res_letter_report.xml',
     ],
     'application': False,
     'installable': True,

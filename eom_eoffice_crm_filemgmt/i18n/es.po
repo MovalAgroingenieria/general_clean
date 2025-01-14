@@ -6,14 +6,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-13 11:26+0000\n"
-"PO-Revision-Date: 2025-01-13 11:26+0000\n"
+"POT-Creation-Date: 2025-01-14 16:30+0000\n"
+"PO-Revision-Date: 2025-01-14 16:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Attachments</b>"
+msgstr "<b>Adjuntos</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>CSV code</b>"
+msgstr "<b>Código CSV</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Deadline Exceeded</b>"
+msgstr "<b>Plazo excedido</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Electronic File</b>"
+msgstr "<b>Expediente electrónico</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Email</b>"
+msgstr "<b>Correo electrónico</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Mobile</b>"
+msgstr "<b>Móvil</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Reading Time</b>"
+msgstr "<b>Fecha de lectura</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Rejection Time</b>"
+msgstr "<b>Fecha de rechazo</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>State</b>"
+msgstr "<b>Estado</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Type</b>"
+msgstr "<b>Tipo</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Validation Time</b>"
+msgstr "<b>Instante de validación</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span><b>E L E C T R O N I C</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>O F F I C E</b></span>"
+msgstr "<span><b>O F I C I N A</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>E L E C T R Ó N I C A</b></span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span><b>Issue: </b></span>"
+msgstr "<span><b>Asunto: </b></span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span>Communication</span>"
+msgstr "<span>Comunicación</span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span>Notification</span>"
+msgstr "<span>Notificación</span>"
 
 #. module: eom_eoffice_crm_filemgmt
 #: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:58
@@ -135,14 +214,4 @@ msgstr "Con expediente: No"
 #: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.eom_electronicfile_view_search
 msgid "With File: Yes"
 msgstr "Con expediente: Sí"
-
-#. module: eom_eoffice_crm_filemgmt
-#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_filelink
-msgid "res.file.filelink"
-msgstr "res.file.filelink"
-
-#. module: eom_eoffice_crm_filemgmt
-#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_partnerlink
-msgid "res.file.partnerlink"
-msgstr "res.file.partnerlink"
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-19 16:12+0000\n"
-"PO-Revision-Date: 2024-11-19 16:12+0000\n"
+"POT-Creation-Date: 2025-01-14 16:03+0000\n"
+"PO-Revision-Date: 2025-01-14 16:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,6 +31,56 @@ msgstr ""
 #: model:ir.model.fields,help:crm_filemgmt.field_res_file_color
 #: model:ir.model.fields,help:crm_filemgmt.field_res_filetag_color
 msgid "0:grey, 1:green, 2:yellow, 3:orange, 4:red, 5:purple, 6:blue, 7:cyan, 8:light-green, 9:magenta"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Attachments</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Category</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Closing Date</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Code</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Container</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File Date</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File registers</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>File</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Stage</b>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<b>Technician</b>"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -73,6 +123,36 @@ msgstr ""
 #. module: crm_filemgmt
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_kanban
 msgid "<span style=\"color:red; float:right; margin-right:3%; font-size:10px;\">A R C H I V E D</span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span> bytes</span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Attachments</b></span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>F I L E</b></span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Files</b></span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Issue: </b></span>"
+msgstr ""
+
+#. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "<span><b>Partners</b></span>"
 msgstr ""
 
 #. module: crm_filemgmt
@@ -182,6 +262,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_category_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_category_id
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Category"
 msgstr ""
 
@@ -570,9 +651,9 @@ msgid "Has registres"
 msgstr ""
 
 #. module: crm_filemgmt
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_4951
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_category_id_13025
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_config_settings_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_4983
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_id_13053
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_id
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_id
@@ -698,10 +779,16 @@ msgid "Manager"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "Mime Type"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_container_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_containertype_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_location_name
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_name
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Name"
 msgstr ""
 
@@ -792,6 +879,7 @@ msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_is_main
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Primary"
 msgstr ""
 
@@ -802,6 +890,7 @@ msgstr ""
 
 #. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_filelink_related_file_id
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
 msgid "Related File"
 msgstr ""
 
@@ -816,8 +905,13 @@ msgid "Site"
 msgstr ""
 
 #. module: crm_filemgmt
+#: model:ir.ui.view,arch_db:crm_filemgmt.res_letter_report_document
+msgid "Size"
+msgstr ""
+
+#. module: crm_filemgmt
 #: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_partnerlink_stage_id
-#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id_16627
+#: model:ir.model.fields,field_description:crm_filemgmt.field_res_file_stage_id_15868
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_search
 #: model:ir.ui.view,arch_db:crm_filemgmt.res_file_view_tree
 msgid "Stage"

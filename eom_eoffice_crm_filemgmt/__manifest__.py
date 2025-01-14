@@ -20,6 +20,7 @@
         'views/res_partner_view.xml',
         'views/res_letter_view.xml',
         'views/res_file_view.xml',
+        'reports/res_letter_report.xml',
     ],
     'installable': True,
     'application': False,

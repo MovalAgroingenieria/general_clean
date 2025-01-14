@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="res_letter_report_document" inherit_id="crm_filemgmt.res_letter_report_document">
+
+        <xpath expr="//t[@name='file_details']" position="after">
+            <t t-if="o.created_by_authdnie">
+                <t t-set="communication" t-value="o.env['eom.electronicfile.communication'].search([('res_letter_id', '=', o.id)])"/>
+                <t t-if="communication">
+                    <t t-set="electronicfile" t-value="o.env['eom.electronicfile'].search([('id', '=', communication.electronicfile_id.id)])"/>
+                </t>
+                <t t-if="electronicfile and communication">
+                    <div name="file_title" style="border-bottom: 1px solid black;">
+                        <span><b>E L E C T R O N I C</b></span>
+                        <span><![CDATA[&nbsp;&nbsp;]]></span>
+                        <span><b>O F F I C E</b></span>
+                        <img t-att-src="'data:image/png;base64,' + communication.icon_notification_or_entry" style="max-width:20px;float:right;margin-left:8px;"/>
+                        <div t-if="o.move == 'in' and electronicfile.digitalregister_id" style="float:right;">
+                            <span t-field="electronicfile.digitalregister_id"/>
+                        </div>
+                    </div>
+                    <div name="communication_issue" t-if="communication.issue" style="margin-top:16px;">
+                        <span><b>Issue: </b></span><span t-field="communication.issue"/>
+                    </div>
+                    <div name="eoffice_data" class="col-xs-12" style="display:table; margin-top:8px; margin-bottom:24px;">
+                        <div style="width: 50%; display: table-cell; border-right: 1px solid black; padding-right: 24px;">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr t-if="electronicfile.event_time">
+                                        <td><b>Electronic File</b></td>
+                                        <td class="text-right"><span t-field="electronicfile.name"/></td>
+                                    </tr>
+                                    <tr name="type">
+                                        <td><b>Type</b></td>
+                                        <td class="text-right">
+                                            <t t-if="communication.is_notification"><span>Notification</span></t>
+                                            <t t-else=""><span>Communication</span></t>
+                                        </td>
+                                    </tr>
+                                    <tr t-if="communication.state">
+                                        <td><b>State</b></td>
+                                        <td class="text-right"><span t-field="communication.state"/></td>
+                                    </tr>
+                                    <tr t-if="communication.csv_code">
+                                        <td><b>CSV code</b></td>
+                                        <td class="text-right"><span t-field="communication.csv_code"/></td>
+                                    </tr>
+                                    <tr t-if="communication.number_of_attachments > 0">
+                                        <td><b>Attachments</b></td>
+                                        <td class="text-right"><span t-field="communication.number_of_attachments"/></td>
+                                    </tr>
+                                    <tr t-if="communication.email">
+                                        <td><b>Email</b></td>
+                                        <td class="text-right"><span t-field="communication.email"/></td>
+                                    </tr>
+                                    <tr t-if="communication.mobile">
+                                        <td><b>Mobile</b></td>
+                                        <td class="text-right"><span t-field="communication.mobile"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="display: table-cell; padding-left: 24px;">
+                            <table style="width: 100%;">
+                                <tbody>
+                                     <tr t-if="communication.validation_time">
+                                        <td><b>Validation Time</b></td>
+                                        <td class="text-right"><span t-field="communication.validation_time"/></td>
+                                    </tr>
+                                    <tr t-if="communication.reading_time">
+                                        <td><b>Reading Time</b></td>
+                                        <td class="text-right"><span t-field="communication.reading_time"/></td>
+                                    </tr>
+                                    <tr t-if="communication.rejection_time">
+                                        <td><b>Rejection Time</b></td>
+                                        <td class="text-right"><span t-field="communication.rejection_time"/></td>
+                                    </tr>
+                                    <tr t-if="communication.expired_deadline">
+                                        <td><b>Deadline Exceeded</b></td>
+                                        <td class="text-right">
+                                            <t t-if="communication.expired_deadline"><span class="fa fa-check"/></t>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+
+    </template>
+
+</odoo>

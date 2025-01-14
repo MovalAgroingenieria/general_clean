@@ -2,7 +2,7 @@
 <odoo>
 
     <report id="action_res_letter_report"
-            string="Registry report"
+            string="Registry Report"
             model="res.letter"
             report_type="qweb-pdf"
             file="crm_lettermgmt.template_res_letter_report"
@@ -24,33 +24,125 @@
     <template id="res_letter_report_document">
         <t t-call="report.external_layout">
             <div class="page">
-                <span>hola</span>
 
                 <div name="title" style="text-align: center; margin-bottom: 24px;">
-                    <t t-if="o.move == 'out'"><span><b>O U T</b></span></t>
-                    <t t-if="o.move == 'in'"><span><b>I N</b></span></t>
-                    <span><b>R E G I S T R Y</b></span>
+                    <strong>
+                        <span>R E G I S T R Y</span>
+                        <span><![CDATA[&nbsp;&nbsp;]]></span>
+                        <t t-if="o.move == 'out'"><span>O U T</span></t>
+                        <t t-if="o.move == 'in'"><span>I N</span></t>
+                        <span><![CDATA[&nbsp;&nbsp;]]></span>
+                        <span><span t-field="o.number"/></span>
+                    </strong>
                 </div>
 
-                <div name="registry_data" class="col-xs-12" style="display:table; margin-top:8px; margin-bottom:24px;">
-                    <div style="width: 50%; display: table-cell; border-right: 1px solid black; padding-right: 32px;">
+                <div name="registry_main_data_title" style="border-bottom: 1px solid black;">
+                    <span><b>M A I N</b></span>
+                    <span><![CDATA[&nbsp;&nbsp;]]></span>
+                    <span><b>D A T A</b></span>
+                </div>
+                <div name="issue" t-if="o.name" style="margin-top:16px;">
+                    <span><b>Issue: </b></span><span t-field="o.name"/>
+                </div>
+                <div name="registry_main_data" class="col-xs-12" style="display:table; margin-top:8px; margin-bottom:24px;">
+                    <div style="width: 50%; display: table-cell; border-right: 1px solid black; padding-right: 24px;">
                         <table style="width: 100%;">
                             <tbody>
                                 <tr>
-                                    <td><b>Issue:</b></td>
-                                    <td><span t-field="o.name"/></td>
+                                    <td><b>Recipient</b></td>
+                                    <td class="text-right"><span t-field="o.recipient_partner_id"/></td>
                                 </tr>
-                                                         </tbody>
+                                <tr>
+                                    <td><b>Sender</b></td>
+                                    <td class="text-right"><span t-field="o.sender_partner_id"/></td>
+                                </tr>
+                                <tr t-if="o.state">
+                                    <td><b>State</b></td>
+                                    <td class="text-right"><span t-field="o.state"/></td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
-                    <div style="display: table-cell; padding-left: 32px;">
+                    <div style="display: table-cell; padding-left: 24px;">
                         <table style="width: 100%;">
                             <tbody>
-
+                                <tr t-if="o.date">
+                                    <td><b>Letter Date</b></td>
+                                    <td class="text-right"><span t-field="o.date"/></td>
+                                </tr>
+                                <tr t-if="o.channel_id">
+                                    <td><b>Channel</b></td>
+                                    <td class="text-right"><span t-field="o.channel_id"/></td>
+                                </tr>
+                                <tr t-if="o.track_ref">
+                                    <td><b>Tracking Reference</b></td>
+                                    <td class="text-right"><span t-field="o.track_ref"/></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
+
+                <t t-if="o.type_id or o.folder_id or o.orig_ref or o.document_date or o.snd_date or o.rec_date or o.expeditor_ref">
+                    <div name="registry_addicional_data_title" style="border-bottom: 1px solid black;">
+                        <span><b>A D D I T I O N A L</b></span>
+                        <span><![CDATA[&nbsp;&nbsp;]]></span>
+                        <span><b>D A T A</b></span>
+                    </div>
+                    <div name="registry_addicional_data" class="col-xs-12" style="display:table; margin-top:8px; margin-bottom:24px;">
+                        <div style="width: 50%; display: table-cell; border-right: 1px solid black; padding-right: 24px;">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr t-if="o.type_id">
+                                        <td><b>Type</b></td>
+                                        <td class="text-right"><span t-field="o.type_id"/></td>
+                                    </tr>
+                                    <tr t-if="o.folder_id">
+                                        <td><b>Folder</b></td>
+                                        <td class="text-right"><span t-field="o.folder_id"/></td>
+                                    </tr>
+                                    <tr t-if="o.orig_ref">
+                                        <td><b>Original Reference</b></td>
+                                        <td class="text-right"><span t-field="o.orig_ref"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="display: table-cell; padding-left: 24px;">
+                            <table style="width: 100%;">
+                                <tbody>
+                                    <tr t-if="o.document_date">
+                                        <td><b>Document Date</b></td>
+                                        <td class="text-right"><span t-field="o.document_date"/></td>
+                                    </tr>
+                                    <tr t-if="o.snd_date">
+                                        <td><b>Sent Date</b></td>
+                                        <td class="text-right"><span t-field="o.snd_date"/></td>
+                                    </tr>
+                                    <tr t-if="o.rec_date">
+                                        <td><b>Received Date</b></td>
+                                        <td class="text-right"><span t-field="o.rec_date"/></td>
+                                    </tr>
+                                    <tr t-if="o.expeditor_ref">
+                                        <td><b>Expeditor Reference</b></td>
+                                        <td class="text-right"><span t-field="o.expeditor_ref"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </t>
+
+                <t t-if="o.note">
+                    <div name="notes_title" style="border-bottom: 1px solid black;">
+                        <span><b>D E L I V E R Y</b></span>
+                        <span><![CDATA[&nbsp;&nbsp;]]></span>
+                        <span><b>N O T E S</b></span>
+                    </div>
+                    <div name="notes" class="col-xs-12" style="margin-top:8px; margin-bottom:24px;">
+                        <span t-field="o.note"/>
+                    </div>
+                </t>
 
             </div> <!-- end page -->
         </t>

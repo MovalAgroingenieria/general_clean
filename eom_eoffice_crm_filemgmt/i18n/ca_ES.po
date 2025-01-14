@@ -6,14 +6,93 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-13 11:25+0000\n"
-"PO-Revision-Date: 2025-01-13 11:25+0000\n"
+"POT-Creation-Date: 2025-01-14 16:29+0000\n"
+"PO-Revision-Date: 2025-01-14 16:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Attachments</b>"
+msgstr "<b>Adjunts</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>CSV code</b>"
+msgstr "<b>Codi CSV</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Deadline Exceeded</b>"
+msgstr "<b>Termini excedit</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Electronic File</b>"
+msgstr "<b>Expedient electrònic</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Email</b>"
+msgstr "<b>Correu electrònic</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Mobile</b>"
+msgstr "<b>Mòbil</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Reading Time</b>"
+msgstr "<b>Data de lectura</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Rejection Time</b>"
+msgstr "<b>Data de rebuig</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>State</b>"
+msgstr "<b>Estat</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Type</b>"
+msgstr "<b>Tipus</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<b>Validation Time</b>"
+msgstr "<b>Instant de validació</b>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span><b>E L E C T R O N I C</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>O F F I C E</b></span>"
+msgstr "<span><b>O F I C I N A</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>E L E C T R Ò N I C A</b></span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span><b>Issue: </b></span>"
+msgstr "<span><b>Assumpte: </b></span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span>Communication</span>"
+msgstr "<span>Comunicació</span>"
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_report_document
+msgid "<span>Notification</span>"
+msgstr "<span>Notificació</span>"
 
 #. module: eom_eoffice_crm_filemgmt
 #: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:58
@@ -46,7 +125,7 @@ msgstr "Creat per Seu electrònica"
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_eom_digitalregister
 msgid "Digital Register"
-msgstr "Registre digital"
+msgstr "Certificat digital"
 
 #. module: eom_eoffice_crm_filemgmt
 #: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:55
@@ -90,12 +169,12 @@ msgstr "Té associat un expedient"
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file
 msgid "Log of Files Movements"
-msgstr "Bitàcola de moviments d'expedients"
+msgstr "Bloc de moviments d'expedients"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_letter
 msgid "Log of Letter Movements"
-msgstr "Bitàcola de moviments de registres"
+msgstr "Log de moviments de registres"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_partner
@@ -136,12 +215,3 @@ msgstr "Sense expedient: No"
 msgid "With File: Yes"
 msgstr "Amb expedient: Sí"
 
-#. module: eom_eoffice_crm_filemgmt
-#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_filelink
-msgid "res.file.filelink"
-msgstr "res.file.filelink"
-
-#. module: eom_eoffice_crm_filemgmt
-#: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_file_partnerlink
-msgid "res.file.partnerlink"
-msgstr "res.file.partnerlink"

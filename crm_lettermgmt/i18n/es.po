@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 15:52+0000\n"
-"PO-Revision-Date: 2023-11-15 15:52+0000\n"
+"POT-Creation-Date: 2025-01-14 15:51+0000\n"
+"PO-Revision-Date: 2025-01-14 15:51+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -43,6 +43,71 @@ msgstr "\n"
 "            * Cancelado: ha sido cancelado, ya no se puede enviar."
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Channel</b>"
+msgstr "<b>Canal</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Document Date</b>"
+msgstr "<b>Fecha documento</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Expeditor Reference</b>"
+msgstr "<b>Referencia del expedidor</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Folder</b>"
+msgstr "<b>Carpeta</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Letter Date</b>"
+msgstr "<b>Fecha del registro</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Original Reference</b>"
+msgstr "<b>Referencia original</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Received Date</b>"
+msgstr "<b>Fecha de recepción</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Recipient</b>"
+msgstr "<b>Destinatario</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Sender</b>"
+msgstr "<b>Remitente</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Sent Date</b>"
+msgstr "<b>Fecha de envío</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>State</b>"
+msgstr "<b>Estado</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Tracking Reference</b>"
+msgstr "<b>Referencia de seguimiento</b>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<b>Type</b>"
+msgstr "<b>Tipo</b>"
+
+#. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.view_partner_form
 msgid "<span class=\"o_stat_text\">\n"
 "                            <span attrs=\"{'invisible': [('number_of_total_registers','&gt;', 1)]}\"> register</span>\n"
@@ -52,6 +117,64 @@ msgstr "<span class=\"o_stat_text\">\n"
 "                            <span attrs=\"{'invisible': [('number_of_total_registers','&gt;', 1)]}\"> registro</span>\n"
 "                            <span attrs=\"{'invisible': [('number_of_total_registers','=', 1)]}\"> registros</span>\n"
 "                        </span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span>&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<span>&amp;nbsp;&amp;nbsp;</span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span><b>A D D I T I O N A L</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>D A T A</b></span>"
+msgstr "<span><b>D A T O S</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>A D I C I O N A L E S</b></span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span><b>D E L I V E R Y</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>N O T E S</b></span>"
+msgstr "<span><b>N O T A S</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"<span><b>D E</b></span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                        <span><b>E N T R E G A</b></span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span><b>Issue: </b></span>"
+msgstr "<span><b>Asunto: </b></span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span><b>M A I N</b></span>\n"
+"                    <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                    <span><b>D A T A</b></span>"
+msgstr "<span><b>D A T O S</b></span>\n"
+"                    <span>&amp;nbsp;&amp;nbsp;</span>\n"
+"                    <span><b>P R I N C I P A L E S</b></span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span>I N</span>"
+msgstr "<span>E N T R A D A</span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span>O U T</span>"
+msgstr "<span>S A L I D A</span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span>R E G I S T R Y</span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>"
+msgstr "<span>R E G I S T R O</span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>"
+"<span>D E</span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span>"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
@@ -207,7 +330,7 @@ msgstr "Notas de entrega"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre mostrado"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_document_date
@@ -275,7 +398,7 @@ msgstr "Indicaciones para el oficial de entrega."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_uid
@@ -392,7 +515,7 @@ msgstr "Registros que aún no han llegado a su destino."
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_letter
 msgid "Log of Letter Movements"
-msgstr "Registros Entrada/Salida"
+msgstr "Bitácora de movimientos de registros"
 
 #. module: crm_lettermgmt
 #: model:res.groups,name:crm_lettermgmt.group_crm_lettermgmt_manager
@@ -562,7 +685,7 @@ msgid "Register Management Settings"
 msgstr "Parámetros del Registro de Entrada/Salida"
 
 #. module: crm_lettermgmt
-#: code:addons/crm_lettermgmt/models/res_partner.py:66
+#: code:addons/crm_lettermgmt/models/res_partner.py:77
 #, python-format
 msgid "Registers"
 msgstr "Registros"
@@ -572,6 +695,11 @@ msgstr "Registros"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_total_res_letter_ids
 msgid "Registry"
 msgstr "Registro"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.report.xml,name:crm_lettermgmt.action_res_letter_report
+msgid "Registry Report"
+msgstr "Informe de registro"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_recipient_res_letter_ids
