@@ -10,7 +10,7 @@
                     <t t-set="electronicfile" t-value="o.env['eom.electronicfile'].search([('id', '=', communication.electronicfile_id.id)])"/>
                 </t>
                 <t t-if="electronicfile and communication">
-                    <div name="file_title" style="border-bottom: 1px solid black;">
+                    <div name="eoffice_title" style="border-bottom: 1px solid black;">
                         <span><b>E L E C T R O N I C</b></span>
                         <span><![CDATA[&nbsp;&nbsp;]]></span>
                         <span><b>O F F I C E</b></span>
