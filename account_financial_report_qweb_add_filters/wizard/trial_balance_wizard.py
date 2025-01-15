@@ -163,10 +163,12 @@ class TrialBalanceReportWizard(models.TransientModel):
             ('account_id', '=', account.id),
             ('date', '>=', start_date),
             ('date', '<=', end_date),
+            ('move_id.state', '=', 'posted'),
         ]
         domain_back = [
             ('account_id', '=', account.id),
             ('date', '<=', start_date),
+            ('move_id.state', '=', 'posted'),
             ('full_reconcile_id', '=', None),
         ]
 
