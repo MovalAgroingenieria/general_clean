@@ -4,3 +4,4 @@
 
 from . import gisviewer_profile
 from . import gisviewer_layer
+from . import res_users

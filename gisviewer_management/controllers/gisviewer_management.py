@@ -18,6 +18,6 @@ class GisviewerManagementController(http.Controller):
                 profile_configs['visiblePrivate'] = \
                     layerprofile.visible_private
             output[layer.code] = {
-                'profileConfigs': profile_configs
+                'profileConfigs': profile_configs,
             }
         return json.dumps(output)

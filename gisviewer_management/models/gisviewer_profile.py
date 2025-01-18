@@ -17,24 +17,35 @@ class GisviewerProfile(models.Model):
 
     name = fields.Char(
         string="GIS Profile",
-        translate=True,)
+        translate=True,
+    )
 
     code = fields.Char(
         string="Technical Code",
-        required=True,)
+        required=True,
+    )
 
     layerprofile_ids = fields.One2many(
         string='Layer Profiles',
         comodel_name='gisviewer.layer.profile',
-        inverse_name='gisviewer_profile_id')
+        inverse_name='gisviewer_profile_id',
+    )
 
     notes = fields.Html(
-        string='Internal Notes',)
+        string='Internal Notes',
+    )
 
     is_readonly = fields.Boolean(
         string="Readonly",
         required=True,
-        default=False,)
+        default=False,
+    )
+
+    user_ids = fields.One2many(
+        string='Users',
+        comodel_name='res.users',
+        inverse_name='gisviewer_profile_id',
+    )
 
     @api.multi
     def unlink(self):

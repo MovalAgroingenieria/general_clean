@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-21 09:16+0000\n"
-"PO-Revision-Date: 2023-04-21 09:16+0000\n"
+"POT-Creation-Date: 2025-01-18 19:30+0000\n"
+"PO-Revision-Date: 2025-01-18 19:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -81,6 +81,7 @@ msgstr "Capes GIS"
 #. module: gisviewer_management
 #: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_gisviewer_profile_id
 #: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_name
+#: model:ir.model.fields,field_description:gisviewer_management.field_res_users_gisviewer_profile_id
 msgid "GIS Profile"
 msgstr "Perfil GIS"
 
@@ -130,7 +131,7 @@ msgid "Internal Notes"
 msgstr "Notes internes"
 
 #. module: gisviewer_management
-#: code:addons/gisviewer_management/models/gisviewer_profile.py:44
+#: code:addons/gisviewer_management/models/gisviewer_profile.py:55
 #, python-format
 msgid "It is not possible to remove system profiles."
 msgstr "No és possible eliminar els perfils del sistema."
@@ -199,6 +200,16 @@ msgstr "Codi"
 #: sql_constraint:gisviewer.profile:0
 msgid "Technical Code must be unique."
 msgstr "El codi ha de ser únic."
+
+#. module: gisviewer_management
+#: model:ir.model,name:gisviewer_management.model_res_users
+msgid "User of WUA (MR)"
+msgstr "Usuari (MR)"
+
+#. module: gisviewer_management
+#: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_profile_user_ids
+msgid "Users"
+msgstr "Usuaris"
 
 #. module: gisviewer_management
 #: model:ir.model.fields,field_description:gisviewer_management.field_gisviewer_layer_profile_visible_private

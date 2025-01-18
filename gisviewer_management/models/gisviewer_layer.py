@@ -17,19 +17,23 @@ class GisviewerLayer(models.Model):
 
     name = fields.Char(
         string="Layer",
-        translate=True,)
+        translate=True,
+    )
 
     code = fields.Char(
         string="Technical Code",
-        required=True,)
+        required=True,
+    )
 
     layerprofile_ids = fields.One2many(
         string='Layer Profiles',
         comodel_name='gisviewer.layer.profile',
-        inverse_name='gisviewer_layer_id',)
+        inverse_name='gisviewer_layer_id',
+    )
 
     notes = fields.Html(
-        string='Internal Notes',)
+        string='Internal Notes',
+    )
 
     @api.multi
     def action_get_available_profiles(self):
@@ -58,37 +62,44 @@ class GisviewerLayerProfile(models.Model):
         string='GIS Layer Profile Relation',
         store=True,
         compute='_compute_name',
-        index=True,)
+        index=True,
+    )
 
     gisviewer_layer_id = fields.Many2one(
         string='GIS Layer',
         comodel_name='gisviewer.layer',
         required=True,
         index=True,
-        ondelete='cascade',)
+        ondelete='cascade',
+    )
 
     gisviewer_profile_id = fields.Many2one(
         string='GIS Profile',
         comodel_name='gisviewer.profile',
         required=True,
         index=True,
-        ondelete='cascade',)
+        ondelete='cascade',
+    )
 
     visible_public = fields.Boolean(
         string='Visible Public?',
-        default=True,)
+        default=True,
+    )
 
     active_public = fields.Boolean(
         string='Active Public?',
-        default=True,)
+        default=True,
+    )
 
     visible_private = fields.Boolean(
         string='Visible Private?',
-        default=True,)
+        default=True,
+    )
 
     active_private = fields.Boolean(
         string='Active Private?',
-        default=True,)
+        default=True,
+    )
 
     @api.onchange('visible_public')
     def _change_active_state_public(self):

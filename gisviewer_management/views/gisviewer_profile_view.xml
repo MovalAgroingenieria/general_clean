@@ -12,6 +12,7 @@
                     <group name="master_data">
                         <group name="master_data_left">
                             <field name="name"/>
+                            <field name="user_ids"  widget="many2many_tags" options="{'no_create': False}"/>
                         </group>
                         <group name="master_data_right">
                             <field name="code" attrs="{'readonly':
