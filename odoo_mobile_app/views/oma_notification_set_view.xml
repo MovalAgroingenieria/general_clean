@@ -38,7 +38,6 @@
                             type="object"
                             attrs="{'invisible': [('state', '!=', '04_sent')]}"
                             class="btn-primary"/>
-                    <!-- Add planification via cron button-->
                     <field name="state"
                     widget="statusbar"
                     statusbar_visible="01_draft,02_prepared,03_sending,04_sent"/>
@@ -56,14 +55,14 @@
                         </button>
                     </div>
                     <group>
-                        <field name="name"/>
-                        <field name="title"/>
-                        <field name="subtitle"/>
-                        <field name="body"/>
-                        <field name="url_img"/>
-                        <field name="url_notification"/>
-                        <field name="send_date"/>
-                        <field name="token_ids" widget="many2many_tags"/>
+                        <field name="name" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="title" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="subtitle" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="body" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="url_img" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="url_notification" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="send_date" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="token_ids" widget="many2many_tags" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
                     </group>
                 </sheet>
             </form>

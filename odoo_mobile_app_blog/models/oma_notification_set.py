@@ -34,11 +34,13 @@ class OmaNotificationSet(models.Model):
             self.url_img = base_web_url + \
                 json.loads(self.post_id.cover_properties)['background-image']\
                     .replace('url(', '').replace(')', '')
+            self.url_notification = base_web_url + self.post_id.website_url
         else:
             self.title = False
             self.subtitle = False
             self.body = False
             self.url_img = False
+            self.url_notification = False
 
     def _send_notification(
         self, token, title, subtitle, body, url_img, url_notification,

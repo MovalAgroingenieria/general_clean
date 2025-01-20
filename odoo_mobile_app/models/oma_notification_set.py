@@ -175,6 +175,12 @@ class OmaNotificationSet(models.Model):
                     error_notifications.action_send()
                     record.state = '04_sent'
 
+    @api.model
+    def process_scheduled_notifications(self):
+        prepared_notifications = self.search([('state', '=', '02_prepared')])
+        for notification_set in prepared_notifications:
+            notification_set.action_send()
+
     @api.multi
     def action_get_notifications(self):
         self.ensure_one()

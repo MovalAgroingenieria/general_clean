@@ -13,19 +13,18 @@ class OmaTokenController(http.Controller):
         token = request.jsonrequest.get('token')
         device_type = request.jsonrequest.get('device_type')
         if device_type not in ['01_android', '02_ios', '99_unknown']:
-            return (
-                {'status': _('error'),
-                 'message':
-                 _('Invalid device type. Allowed values are 01_android, '
-                   '02_ios or 99_unknown.'
-                   )}
-            )
+            return {'status': _('error'),
+                    'message':
+                    _('Invalid device type. Allowed values are 01_android, '
+                      '02_ios or 99_unknown.'
+                      )}
         if not token or not device_type:
-            return(
-                {'status': _('error'),
-                 'message':
-                 _('Missing parameters: token and device_type are required.')}
-                )
+            return {'status': _('error'),
+                    'message':
+                    _('Missing parameters: token and device_type are required.'
+                      )
+                    }
+
         existing_token = \
             request.env['oma.token'].sudo().search([('name', '=', token)])
         if not existing_token:
@@ -46,27 +45,21 @@ class OmaTokenController(http.Controller):
         event_type = request.jsonrequest.get('event_type')
 
         if not notification_id or not event_type:
-            return(
-                {'status': _('error'),
-                 'message':
-                 _('Missing parameters: notification_id'
-                   'and event_type are required.')}
-                )
+            return {'status': _('error'),
+                    'message':
+                    _('Missing parameters: notification_id'
+                      'and event_type are required.')}
         if event_type not in ['read', 'error', 'received']:
-            return (
-                {'status': _('error'),
-                 'message':
-                 _('Invalid event type. Allowed values are read or error.')}
-                )
+            return {'status': _('error'),
+                    'message':
+                    _('Invalid event type. Allowed values are read or error.')}
         existing_notification = \
             request.env['oma.notification'].sudo().search(
                 [('id', '=', notification_id)])
         if not existing_notification:
-            return (
-                {'status': _('error'),
-                 'message':
-                 _('Notification not found. Invalid notification_id.')}
-            )
+            return {'status': _('error'),
+                    'message':
+                    _('Notification not found. Invalid notification_id.')}
         request.env['oma.notification.event'].sudo().create({
             'notification_id': notification_id,
             'event_type': event_type,

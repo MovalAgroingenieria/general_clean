@@ -43,14 +43,14 @@
                 </header>
                 <sheet>
                     <group name="master_data">
-                        <field name="name"/>
-                        <field name="title"/>
-                        <field name="subtitle"/>
-                        <field name="body"/>
-                        <field name="url_img"/>
-                        <field name="url_notification"/>
-                        <field name="send_date"/>
-                        <field name="token_id"/>
+                        <field name="name" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="title" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="subtitle" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="body" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="url_img" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="url_notification" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="send_date" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
+                        <field name="token_id" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
                     </group>
                     <group name="slave_data">
                         <notebook>

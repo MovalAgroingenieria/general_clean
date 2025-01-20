@@ -26,7 +26,7 @@ class OmaAppBlogController(http.Controller):
                 json.loads(post.cover_properties)['background-image']\
                 .replace('url(', '').replace(')', '')
             data.append({
-                "id": post.id,
+                "id": int(post.id),
                 "title": post.name,
                 "subtitle": post.subtitle or "",
                 "publish_date": post.published_date,
@@ -60,7 +60,7 @@ class OmaAppBlogController(http.Controller):
         return http.Response(
             json.dumps({
                 "status": "success",
-                "id": blog_id,
+                "id": int(blog_id),
                 "title": post.name,
                 "subtitle": post.subtitle or "",
                 "publish_date": post.published_date,

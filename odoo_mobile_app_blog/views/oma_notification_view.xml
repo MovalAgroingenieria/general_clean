@@ -6,7 +6,7 @@
     <field name="inherit_id" ref="odoo_mobile_app.oma_notification_form_view"/>
     <field name="arch" type="xml">
         <xpath expr="//field[@name='title']" position="after">
-            <field name="post_id"/>
+            <field name="post_id" attrs="{'readonly': [('state', '!=', '01_draft')]}"/>
         </xpath>
     </field>
 </record>

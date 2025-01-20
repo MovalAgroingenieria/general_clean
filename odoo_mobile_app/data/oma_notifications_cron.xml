@@ -2,12 +2,12 @@
     <data noupdate="1">
         <record id="oma_cron_process_scheduled_notifications_global_action" model="ir.cron">
             <field name="name">Process Scheduled Notifications</field>
-            <field name="interval_number">7</field>
-            <field name="interval_type">days</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
             <field name="numbercall">-1</field>
             <field name="doall" eval="False"/>
-            <field name="model">oma.notification</field>
+            <field name="model">oma.notification.set</field>
             <field name="function">process_scheduled_notifications</field>
-            <field name="active" eval="False"/>
+            <field name="active" eval="True"/>
     </data>
 </odoo>
