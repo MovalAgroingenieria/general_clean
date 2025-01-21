@@ -17,7 +17,7 @@
     "data": [
         "views/account_views.xml",
         "wizard/trial_balance_wizard_view.xml",
-        # "security/ir.model.access.csv",
+        "security/ir.model.access.csv",
         "report/general_ledger_balance.xml",
     ],
     "installable": True,
