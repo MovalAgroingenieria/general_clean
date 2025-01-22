@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# Part of Odoo. See LICENSE file for full copyright and licensing details.
+# 2025 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+
 
 from odoo import api, models, tools
 
@@ -21,8 +23,11 @@ class MailMail(models.Model):
             'web.base.url').rstrip('/')
         email_to_raw = res.get('email_to')
         email_to_coded = email_to_raw[0].encode('utf-8')
-        partner_name_raw, only_emails_raw = email_to_coded.split('<')
-        only_emails = only_emails_raw.rstrip('>').replace(';', ',')
+        if '<' in email_to_coded:
+            only_emails_raw = email_to_coded.split('<')[1]
+            only_emails = only_emails_raw.rstrip('>').replace(';', ',')
+        else:
+            only_emails = email_to_coded.replace(';', ',')
         emails = tools.email_split(only_emails)
         res['email_to'] = emails
         if self.mailing_id and res.get('body') and res.get('email_to'):
