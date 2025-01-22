@@ -35,5 +35,14 @@
         <field name="groups" eval="[(4, ref('project_limited_access.group_portal_project_user'))]"/>
     </record>
 
+    <record id="hr_employee_portal_user_rule" model="ir.rule">
+        <field name="name">Portal User Access to Employees</field>
+        <field name="model_id" ref="hr.model_hr_employee"/>
+        <field name="domain_force">
+            [('user_id', '=', user.id)]
+        </field>
+        <field name="groups" eval="[(4, ref('project_limited_access.group_portal_project_user'))]"/>
+    </record>
+
 
 </odoo>

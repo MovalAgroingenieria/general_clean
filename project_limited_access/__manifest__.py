@@ -23,6 +23,7 @@
         "maintenance",
         "base_search_custom_field_filter",
         "moval_odoo_management",
+        "odoo_user_login_security",
     ],
     "data": [
         'security/security.xml',

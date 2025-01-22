@@ -3,7 +3,7 @@
 
 import logging
 from collections import defaultdict
-from odoo import models, api, _
+from odoo import models, api, _, fields
 from odoo.exceptions import AccessError
 _logger = logging.getLogger(__name__)
 
@@ -11,6 +11,11 @@ _logger = logging.getLogger(__name__)
 class Attachment(models.Model):
 
     _inherit = "ir.attachment"
+
+    access_token = fields.Char(
+        groups='base.group_user,project_limited_access'
+               '.group_portal_project_user'
+    )
 
     @api.model
     def get_serving_groups(self):
