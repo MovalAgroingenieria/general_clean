@@ -30,6 +30,7 @@
         <field name="arch" type="xml">
             <xpath expr="//tree" position="attributes">
                 <attribute name="decoration-warning">gap_exists_before</attribute>
+                <attribute name="default_order">initial_value desc</attribute>
             </xpath>
             <xpath expr="//field[@name='driver_id']" position="attributes">
                 <attribute name="attrs">{'invisible': True}</attribute>
