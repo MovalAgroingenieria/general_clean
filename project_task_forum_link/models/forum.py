@@ -20,6 +20,18 @@ class Forum(models.Model):
         ondelete='restrict',
     )
 
+    tags_to_avoid = fields.Char(
+        string='Tags to avoid',
+        default='',
+        help='Comma separated regex tags to avoid',
+    )
+
+    tags_prefix = fields.Char(
+        string='Prefix tags',
+        default='',
+        help='Comma separated prefix tags to eliminate',
+    )
+
 
 class Post(models.Model):
 

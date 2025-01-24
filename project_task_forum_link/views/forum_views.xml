@@ -20,6 +20,8 @@
             <xpath expr="//field[@name='privacy']" position="after">
                 <field name="visible_from_tasks"/>
                 <field name="default_user_from_tasks"/>
+                <field name="tags_to_avoid"/>
+                <field name="tags_prefix"/>
             </xpath>
         </field>
     </record>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-23 14:25+0000\n"
-"PO-Revision-Date: 2025-01-23 14:25+0000\n"
+"POT-Creation-Date: 2025-01-24 09:34+0000\n"
+"PO-Revision-Date: 2025-01-24 09:34+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,6 +24,16 @@ msgstr "Aplicar"
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.wizard_create_forum_post_from_task_view_form
 msgid "Cancel"
 msgstr "Cancel·la"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,help:project_task_forum_link.field_forum_forum__tags_prefix
+msgid "Comma separated prefix tags to eliminate"
+msgstr "Prefixos d'etiqueta separades per comes per eliminar"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,help:project_task_forum_link.field_forum_forum__tags_to_avoid
+msgid "Comma separated regex tags to avoid"
+msgstr "Etiquetes a evitar"
 
 #. module: project_task_forum_link
 #: model:ir.model.fields,field_description:project_task_forum_link.field_wizard_create_forum_post_from_task__content
@@ -123,6 +133,11 @@ msgid "Post Title"
 msgstr "Títol de publicació"
 
 #. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_forum_forum__tags_prefix
+msgid "Prefix tags"
+msgstr "Prefixos d'etiqueta"
+
+#. module: project_task_forum_link
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.view_task_form_forum_link
 msgid "Related Post"
 msgstr "Publicació relacionada"
@@ -132,6 +147,11 @@ msgstr "Publicació relacionada"
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.view_forum_post_form_inherit_task
 msgid "Related Task"
 msgstr "Tasca relacionada"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_forum_forum__tags_to_avoid
+msgid "Tags to avoid"
+msgstr "Etiquetes a evitar"
 
 #. module: project_task_forum_link
 #: model:ir.model,name:project_task_forum_link.model_project_task

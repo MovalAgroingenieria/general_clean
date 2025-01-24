@@ -49,19 +49,40 @@ class WizardCreateForumPostFromTask(models.TransientModel):
         return self.env['forum.forum'].search(
             [('visible_from_tasks', '=', True)], limit=1).id
 
+    def _check_tag_to_avoid(self, tag, tags_to_avoid):
+        tag_lower = tag.lower()
+        for tag_to_avoid in tags_to_avoid:
+            if tag_to_avoid.lower() in tag_lower:
+                return True
+        return False
+
+    def _remove_tag_prefixes(self, prefixes, tag):
+        tag_lower = tag.lower()
+        for prefix in prefixes:
+            if tag_lower.startswith(prefix.lower()):
+                return tag[len(prefix):]
+        return tag
+
     def action_confirm(self):
         tags = []
         if self.task_id.tag_ids:
+            tags_to_avoid = self.forum_id.tags_to_avoid.split(',')
+            tags_prefix = self.forum_id.tags_prefix.split(',')
             for tag in self.task_id.tag_ids:
-                forum_tag = self.env['forum.tag'].search(
-                    [('name', '=', tag.name)], limit=1)
-                if not forum_tag:
-                    forum_tag = self.env['forum.tag'].create(
-                        {
-                            'name': tag.name,
-                            'forum_id': self.forum_id.id,
-                        })
-                tags.append(forum_tag.id)
+                name_tag = tag.name
+                # Check if we should avoid this tag
+                if (not self._check_tag_to_avoid(name_tag, tags_to_avoid)):
+                    name_tag = self._remove_tag_prefixes(
+                        tags_prefix, name_tag)
+                    forum_tag = self.env['forum.tag'].search(
+                        [('name', '=', name_tag)], limit=1)
+                    if not forum_tag:
+                        forum_tag = self.env['forum.tag'].create(
+                            {
+                                'name': name_tag,
+                                'forum_id': self.forum_id.id,
+                            })
+                    tags.append(forum_tag.id)
         forum_vals = {
             'name': self.title,
             'content': self.content,
