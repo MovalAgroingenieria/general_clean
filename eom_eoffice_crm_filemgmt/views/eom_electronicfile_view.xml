@@ -9,6 +9,9 @@
             <xpath expr="//field[@name='technician_id']" position="after">
                 <field name="file_id" colspan="2" attrs="{'readonly': [('state', '=', '03_resolved')]}"/>
             </xpath>
+            <xpath expr="//field[@name='deadline_date']" position="after">
+                <field name="res_letter_id" colspan="2"/>
+            </xpath>
         </field>
     </record>
 

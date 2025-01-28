@@ -91,36 +91,40 @@ class EomElectronicfileCommunication(models.Model):
                     efile_id)
             else:
                 electronicfile = self.electronicfile_id
-            # Get partner and company
-            partner_id = company_id = False
-            if electronicfile:
-                partner_id = electronicfile.partner_id
-                company_id = self.env.user.company_id
-            if not partner_id or not company_id:
-                raise exceptions.ValidationError(
-                    _('Partner or Company not found, cannot create registry.'))
-            # Notification (OUT)
-            registry_move = 'out'
-            sender_partner_id = company_id
-            recipient_partner_id = partner_id
-            resgistry_issue = _('Electronic Notification %s') % self.name
-            registry_date = fields.datetime.now()
-            # Create a new registry
-            resgistry_note = _('Communication Issue: %s \n') % self.issue
-            res_letter_vals = {
-                'move': registry_move,
-                'sender_partner_id': sender_partner_id.id,
-                'recipient_partner_id': recipient_partner_id.id,
-                'date': registry_date,
-                'name': resgistry_issue,
-                'note': resgistry_note,
-                'state': 'sent',
-                'created_by_authdnie': True,
-            }
-            registry = self.env['res.letter'].create(res_letter_vals)
-            vals['res_letter_id'] = registry.id
-            # Add registry to file_id
-            file_id = electronicfile.file_id or False
-            if file_id:
-                file_id.file_res_letter_ids = [(4, registry.id)]
+            # Do not create Notification if it is the first one
+            num_electronicfile_comms = len(electronicfile.communication_ids)
+            if num_electronicfile_comms > 1:
+                # Get partner and company
+                partner_id = company_id = False
+                if electronicfile:
+                    partner_id = electronicfile.partner_id
+                    company_id = self.env.user.company_id
+                if not partner_id or not company_id:
+                    raise exceptions.ValidationError(
+                        _('Partner or Company not found, cannot create '
+                          'registry.'))
+                # Notification (OUT)
+                registry_move = 'out'
+                sender_partner_id = company_id
+                recipient_partner_id = partner_id
+                resgistry_issue = _('Electronic Notification %s') % self.name
+                registry_date = fields.datetime.now()
+                # Create a new registry
+                resgistry_note = _('Communication Issue: %s \n') % self.issue
+                res_letter_vals = {
+                    'move': registry_move,
+                    'sender_partner_id': sender_partner_id.id,
+                    'recipient_partner_id': recipient_partner_id.id,
+                    'date': registry_date,
+                    'name': resgistry_issue,
+                    'note': resgistry_note,
+                    'state': 'sent',
+                    'created_by_authdnie': True,
+                }
+                registry = self.env['res.letter'].create(res_letter_vals)
+                vals['res_letter_id'] = registry.id
+                # Add registry to file_id
+                file_id = electronicfile.file_id or False
+                if file_id:
+                    file_id.file_res_letter_ids = [(4, registry.id)]
         return super(EomElectronicfileCommunication, self).write(vals)
