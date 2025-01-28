@@ -15,6 +15,7 @@
         'crm_filemgmt',
     ],
     'data': [
+        'data/letter_channel.xml',
         'views/eom_electronicfile_view.xml',
         'views/eom_electronicfile_communication_view.xml',
         'views/res_partner_view.xml',

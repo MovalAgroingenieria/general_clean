@@ -48,6 +48,9 @@ class EomElectronicfileCommunication(models.Model):
         if not partner_id or not company_id:
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
+        # Get electronic office channel
+        channel = self.env['letter.channel'].search(
+            [('name', '=', 'Electronic Office')], limit=1)
         # Communication (IN)
         registry_move = 'in'
         sender_partner_id = partner_id
@@ -64,6 +67,7 @@ class EomElectronicfileCommunication(models.Model):
             'name': resgistry_issue,
             'note': resgistry_note,
             'state': 'sent',
+            'channel_id': channel.id,
             'created_by_authdnie': True,
         }
         registry = self.env['res.letter'].create(res_letter_vals)
@@ -103,6 +107,9 @@ class EomElectronicfileCommunication(models.Model):
                     raise exceptions.ValidationError(
                         _('Partner or Company not found, cannot create '
                           'registry.'))
+                # Get electronic office channel
+                channel = self.env['letter.channel'].search(
+                    [('name', '=', 'Electronic Office')], limit=1)
                 # Notification (OUT)
                 registry_move = 'out'
                 sender_partner_id = company_id
@@ -119,6 +126,7 @@ class EomElectronicfileCommunication(models.Model):
                     'name': resgistry_issue,
                     'note': resgistry_note,
                     'state': 'sent',
+                    'channel_id': channel.id,
                     'created_by_authdnie': True,
                 }
                 registry = self.env['res.letter'].create(res_letter_vals)

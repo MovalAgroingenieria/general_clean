@@ -41,9 +41,29 @@ class EomElectronicfile(models.Model):
             }
         return act_window
 
+    @api.depends('file_id')
+    def _compute_has_associated_file(self):
+        for record in self:
+            record.has_associated_file = bool(record.file_id)
+
+    def action_show_res_letter_id(self):
+        self.ensure_one()
+        id_form_view = self.env.ref('crm_lettermgmt.res_letter_form_view').id
+        act_window = {
+            'type': 'ir.actions.act_window',
+            'name': _('Registry'),
+            'res_model': 'res.letter',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'views': [(id_form_view, 'form')],
+            'target': 'current',
+            'res_id': self.res_letter_id.id
+            }
+        return act_window
+
     @api.multi
     def write(self, vals):
-        # Add communication registries as file registries
+        # Add file and communication registries as file registries
         res = super(EomElectronicfile, self).write(vals)
         if 'file_id' in vals:
             file = self.env['res.file'].browse(vals['file_id'])
@@ -57,19 +77,14 @@ class EomElectronicfile(models.Model):
             if file_res_letter_ids:
                 for id in file_res_letter_ids:
                     file.file_res_letter_ids = [(4, id)]
+            if self.res_letter_id:
+                file.file_res_letter_ids = [(4, self.res_letter_id.id)]
         return res
-
-    @api.depends('file_id')
-    def _compute_has_associated_file(self):
-        for record in self:
-            record.has_associated_file = bool(record.file_id)
 
     @api.model
     def create(self, vals):
         vals['res_letter_id'] = False
-        res = super(EomElectronicfile, self).create(vals)
-        # Get electronic file data
-        electronicfile = self
+        electronicfile = super(EomElectronicfile, self).create(vals)
         # Get partner and company
         partner_id = company_id = False
         if electronicfile:
@@ -78,14 +93,19 @@ class EomElectronicfile(models.Model):
         if not partner_id or not company_id:
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
+        # Get electronic office channel
+        channel = self.env['letter.channel'].search(
+            [('name', '=', 'Electronic Office')], limit=1)
         # Communication (IN)
         registry_move = 'in'
         sender_partner_id = partner_id
         recipient_partner_id = company_id
-        resgistry_issue = _('New Electronic file %s') % electronicfile.name
+        resgistry_issue = _('Electronic file %s') % electronicfile.name
         registry_date = electronicfile.event_time
         # Create a new registry
-        resgistry_note = _('Electronic file type %s \n') % electronicfile.type
+        electronicfile_type = dict(self.env['eom.electronicfile'].fields_get(
+            allfields=['type'])['type']['selection'])[electronicfile.type]
+        resgistry_note = _('Electronic file type %s \n') % electronicfile_type
         res_letter_vals = {
             'move': registry_move,
             'sender_partner_id': sender_partner_id.id,
@@ -94,13 +114,10 @@ class EomElectronicfile(models.Model):
             'name': resgistry_issue,
             'note': resgistry_note,
             'state': 'sent',
+            'channel_id': channel.id,
             'created_by_authdnie': True,
         }
         registry = self.env['res.letter'].create(res_letter_vals)
-        # Write the registry id in the communication
-        res.write({'res_letter_id': registry.id})
-        # Add registry to file_id
-        file_id = electronicfile.file_id or False
-        if file_id:
-            file_id.file_res_letter_ids = [(4, registry.id)]
-        return res
+        # Write the registry id in the electronic file
+        electronicfile.write({'res_letter_id': registry.id})
+        return electronicfile

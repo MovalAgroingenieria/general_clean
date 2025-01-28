@@ -21,6 +21,7 @@
         <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_tree"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='technician_id']" position="after">
+                <field name="res_letter_id"/>
                 <field name="file_id"/>
             </xpath>
         </field>
@@ -32,6 +33,7 @@
         <field name="inherit_id" ref="eom_eoffice.eom_electronicfile_view_search"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='resolution']" position="after">
+                <field name="res_letter_id"/>
                 <field name="file_id"/>
             </xpath>
             <xpath expr="//group[@expand='0']" position="before">
@@ -51,8 +53,15 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='icon_warning_expired_deadline']" position="after">
                 <field name="file_id"/>
+                <field name="res_letter_id"/>
             </xpath>
             <xpath expr="//li[@t-if='record.type.raw_value']" position="after">
+                <li t-if="record.res_letter_id.raw_value">
+                    <span class="fa fa-lettermgmt-inout" title="Registre"/>
+                    <a name="action_show_res_letter_id" type="object">
+                        <field name="res_letter_id"/>
+                    </a>
+                </li>
                 <li t-if="record.file_id.raw_value">
                     <span class="fa fa-filemgmt-files" title="File_"/>
                     <a name="action_show_file_id" type="object">

@@ -15,4 +15,6 @@ class LetterChannel(models.Model):
     _name = 'letter.channel'
     _description = "Send/Receive channel"
 
-    name = fields.Char(required=True)
+    name = fields.Char(
+        required=True,
+        translate=True)
