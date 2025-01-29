@@ -32,6 +32,12 @@ class Forum(models.Model):
         help='Comma separated prefix tags to eliminate',
     )
 
+    default_order = fields.Selection(
+        selection_add=[('publication_date desc', 'Publication Date')],
+        ondelete={'publication_date desc': 'set default'},
+        default='publication_date desc',
+    )
+
 
 class Post(models.Model):
 
@@ -41,4 +47,10 @@ class Post(models.Model):
         string='Origin Task',
         comodel_name='project.task',
         ondelete='restrict',
+    )
+
+    publication_date = fields.Datetime(
+        string='Published Date',
+        required=True,
+        default=fields.Datetime.now,
     )

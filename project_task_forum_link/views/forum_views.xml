@@ -9,6 +9,9 @@
             <xpath expr="//field[@name='forum_id']" position="after">
                 <field name="task_id" string="Related Task"/>
             </xpath>
+            <xpath expr="//field[@name='create_date']" position="after">
+                <field name="publication_date"/>
+            </xpath>
         </field>
     </record>
 

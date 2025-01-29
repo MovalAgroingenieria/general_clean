@@ -32,6 +32,7 @@ class ProjectTask(models.Model):
                 'default_title': self.name,
                 'default_content': default_content,
                 'default_task_id': self.id,
+                'default_tag_ids': self.tag_ids.ids,
             },
         }
         return act_window

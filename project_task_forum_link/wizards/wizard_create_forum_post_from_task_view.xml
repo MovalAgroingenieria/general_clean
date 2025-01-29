@@ -12,6 +12,8 @@
                 <group name="group_parcel_code_data">
                     <field name="forum_id" options="{'no_create': True}" context="{'default_active': True}"/>
                     <field name="title"/>
+                    <field name="publication_date"/>
+                    <field name="tag_ids" widget="many2many_tags"/>
                     <field name="content"/>
                 </group>
                 <footer>

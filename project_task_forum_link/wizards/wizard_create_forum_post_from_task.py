@@ -36,9 +36,30 @@ class WizardCreateForumPostFromTask(models.TransientModel):
         required=True,
     )
 
+    tag_ids = fields.Many2many(
+        string='Related Task Tags',
+        comodel_name='project.tags',
+        required=True,
+        default=lambda self: self._default_tag_ids(),
+    )
+
+    publication_date = fields.Datetime(
+        string='Publication Date',
+        required=True,
+        default=fields.Datetime.now,
+    )
+
     @api.model
     def _default_title(self):
         return self.env.context.get('default_title', '')
+
+    @api.model
+    def _default_tag_ids(self):
+        task_id = self.env.context.get('default_task_id')
+        if task_id:
+            task = self.env['project.task'].browse(task_id)
+            return task.tag_ids.ids
+        return []
 
     @api.model
     def _default_content(self):
@@ -65,10 +86,10 @@ class WizardCreateForumPostFromTask(models.TransientModel):
 
     def action_confirm(self):
         tags = []
-        if self.task_id.tag_ids:
+        if self.tag_ids:
             tags_to_avoid = self.forum_id.tags_to_avoid.split(',')
             tags_prefix = self.forum_id.tags_prefix.split(',')
-            for tag in self.task_id.tag_ids:
+            for tag in self.tag_ids:
                 name_tag = tag.name
                 # Check if we should avoid this tag
                 if (not self._check_tag_to_avoid(name_tag, tags_to_avoid)):
@@ -88,6 +109,7 @@ class WizardCreateForumPostFromTask(models.TransientModel):
             'content': self.content,
             'task_id': self.task_id.id,
             'forum_id': self.forum_id.id,
+            'publication_date': self.publication_date,
             'tag_ids': [(6, 0, tags)],
         }
         if (self.forum_id.default_user_from_tasks):

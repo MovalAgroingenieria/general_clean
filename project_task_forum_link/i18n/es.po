@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 09:34+0000\n"
-"PO-Revision-Date: 2025-01-24 09:34+0000\n"
+"POT-Creation-Date: 2025-01-29 07:26+0000\n"
+"PO-Revision-Date: 2025-01-29 07:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -70,6 +70,11 @@ msgstr "Creado el"
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.wizard_create_forum_post_from_task_view_form
 msgid "Data of the task"
 msgstr "Información de la tarea"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_forum_forum__default_order
+msgid "Default"
+msgstr "Por defecto"
 
 #. module: project_task_forum_link
 #: model:ir.model.fields,field_description:project_task_forum_link.field_forum_forum__default_user_from_tasks
@@ -138,6 +143,17 @@ msgid "Prefix tags"
 msgstr "Prefijos de etiqueta"
 
 #. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_wizard_create_forum_post_from_task__publication_date
+#: model:ir.model.fields.selection,name:project_task_forum_link.selection__forum_forum__default_order__publication_date_desc
+msgid "Publication Date"
+msgstr "Fecha de publicación"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_forum_post__publication_date
+msgid "Published Date"
+msgstr "Fecha de publicación"
+
+#. module: project_task_forum_link
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.view_task_form_forum_link
 msgid "Related Post"
 msgstr "Publicación relacionada"
@@ -147,6 +163,11 @@ msgstr "Publicación relacionada"
 #: model_terms:ir.ui.view,arch_db:project_task_forum_link.view_forum_post_form_inherit_task
 msgid "Related Task"
 msgstr "Tarea relacionada"
+
+#. module: project_task_forum_link
+#: model:ir.model.fields,field_description:project_task_forum_link.field_wizard_create_forum_post_from_task__tag_ids
+msgid "Related Task Tags"
+msgstr "Etiquetas"
 
 #. module: project_task_forum_link
 #: model:ir.model.fields,field_description:project_task_forum_link.field_forum_forum__tags_to_avoid
