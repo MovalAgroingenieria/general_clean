@@ -21,10 +21,28 @@
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
         </record>
         <record id="help_entry_4" model="user.menu.help.entry">
-            <field name="name">Tutoriales</field>
+            <field name="name">Tutoriales Específicos</field>
             <field name="url">https://komododecks.com/recordings/</field>
             <field name="active">True</field>
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+        <record id="help_entry_8" model="user.menu.help.entry">
+            <field name="name">Tutoriales Genéricos</field>
+            <field name="url">https://komododecks.com/share/folder/uMpijVYPLT8enJHURmLc</field>
+            <field name="groups"/>
+            <field name="active">True</field>
+        </record>
+        <record id="help_entry_6" model="user.menu.help.entry">
+            <field name="name">Foro Soporte Moval</field>
+            <field name="url">https://odoo.moval.es/forum/soporte-moval-2</field>
+            <field name="groups"/>
+            <field name="active">True</field>
+        </record>
+        <record id="help_entry_7" model="user.menu.help.entry">
+            <field name="name">Formación Moval</field>
+            <field name="url">https://odoo.moval.es/slides</field>
+            <field name="groups"/>
+            <field name="active">True</field>
         </record>
     </data>
 </odoo>
