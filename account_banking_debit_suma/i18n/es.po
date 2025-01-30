@@ -1167,13 +1167,13 @@ msgstr "Emisión cargo"
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:453
 #, python-format
 msgid "Charge issuance for executive period has to be greater than 15."
-msgstr "Charge issuance for executive period has to be greater than 15."
+msgstr "La emisión de cargos para el periodo ejecutivo tiene que ser superior a 15."
 
 #. module: account_banking_debit_suma
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:445
 #, python-format
 msgid "Charge issuance for volunteer period has to be less than 16."
-msgstr "Charge issuance for volunteer period has to be less than 16."
+msgstr "La emisión de cargos para el periodo voluntario tiene que ser inferior a 16."
 
 #. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_charge_type
