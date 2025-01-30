@@ -56,9 +56,6 @@ odoo.define('user_info_help_entries.help_entry', function (require) {
 
             _.each(entries, function (entry) {
                 var url = entry.url;
-                if (!url.startsWith('http')) {
-                    url = 'http://' + url;
-                }
 
                 var $li = $('<li/>');
                 var $a = $('<a/>', {
