@@ -331,8 +331,8 @@ class ResNotificationset(models.Model):
                 i = 1
                 for partner in partners_to_add:
                     vals = \
-                        current_notificationset._get_values_of_new_notification(
-                            partner, i)
+                        current_notificationset.\
+                        _get_values_of_new_notification(partner, i)
                     new_notification = model_res_notification.create(vals)
                     new_notifications.append(new_notification)
                     i = i + 1
@@ -455,7 +455,8 @@ class ResNotificationset(models.Model):
     def write(self, vals):
         super(ResNotificationset, self).write(vals)
         if len(self) == 1:
-            return True
+            #  TODO: Why was this return True??
+            # return True
             if (self.notification_ids and
                ('main_page' in vals or 'final_paragraph' in vals)):
                 sql_statement = 'UPDATE res_notification SET '
@@ -533,6 +534,48 @@ class ResNotificationset(models.Model):
     def _action_notif_generation(self, notification):
         pass
 
+    def update_notifications_translations(self, notification_id):
+        sql_insert_translations = \
+            """
+            INSERT INTO ir_translation (lang, name, res_id, src, value, type,
+                state, module)
+            SELECT
+                t.lang,
+                'res.notification,main_page',
+                n.id,
+                t.src,
+                t.value,
+                'model',
+                'translated',
+                t.module
+            FROM ir_translation t
+            INNER JOIN res_notificationset s ON t.res_id = s.id
+            INNER JOIN res_notification n ON n.notificationset_id = s.id
+            WHERE t.name = 'res.notificationset,main_page' AND s.id = %s
+            AND n.id = %s;
+            """ % (self.id, notification_id)
+        self.env.cr.execute(sql_insert_translations)
+        sql_insert_translations = \
+            """
+            INSERT INTO ir_translation (lang, name, res_id, src, value, type,
+                state, module)
+            SELECT
+                t.lang,
+                'res.notification,final_paragraph',
+                n.id,
+                t.src,
+                t.value,
+                'model',
+                'translated',
+                t.module
+            FROM ir_translation t
+            INNER JOIN res_notificationset s ON t.res_id = s.id
+            INNER JOIN res_notification n ON n.notificationset_id = s.id
+            WHERE t.name = 'res.notificationset,final_paragraph' AND s.id = %s
+            AND n.id = %s;
+            """ % (self.id, notification_id)
+        self.env.cr.execute(sql_insert_translations)
+
     @api.model
     def generate_pdfs_background(self, notificationset_id):
         with api.Environment.manage():
@@ -568,6 +611,7 @@ class ResNotificationset(models.Model):
                                     ' ' + n.name + '... '
                                 suffix_message = _('generated')
                                 try:
+                                    ns.update_notifications_translations(n.id)
                                     pdf = new_env['report'].with_context(
                                         {'lang': n.partner_id.lang}).get_pdf(
                                             [n.id], report_name)
@@ -580,7 +624,7 @@ class ResNotificationset(models.Model):
                                         new_env.invalidate_all()
                                         n.write({
                                             'document': encodestring(pdf),
-                                            'document_name': n.name + '.pdf'
+                                            'document_name': n.name + '.pdf',
                                             })
                                         self._action_notif_generation(n)
                                 except Exception:
@@ -628,6 +672,7 @@ class ResNotificationset(models.Model):
                         suffix_message = _('generated')
                         try:
                             self._action_notif_generation(n)
+                            ns.update_notifications_translations(n.id)
                             pdf = self.env['report'].with_context(
                                 {'lang': n.partner_id.lang}).get_pdf(
                                     [n.id], report_name)

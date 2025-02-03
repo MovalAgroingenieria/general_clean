@@ -29,6 +29,7 @@
     <template id="report_res_notification">
         <t t-call="report.html_container">
             <t t-foreach="docs" t-as="o">
+                <t t-set="o" t-value="o.with_context(lang=o.partner_id.lang)"/>
                 <t name="t_call_notification_external_lyout" t-call="ncm_notifmgmt.report_res_notification_external_layout">
                     <div class="page">
                         <t t-call="ncm_notifmgmt.report_res_notification_document"/>
