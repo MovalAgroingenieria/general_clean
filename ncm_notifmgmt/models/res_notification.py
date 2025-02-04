@@ -480,9 +480,19 @@ class ResNotification(models.Model):
     @api.multi
     def action_send_notifications(self):
         for record in self:
-            if (record.state == '02_generated' or record.state == '03_sent'):
-                mail_ok = record._send_mail()
-                if mail_ok and (record.state != '03_sent' or not record.sent):
+            if (record.state == '02_generated' or
+                    record.state == '03_sent'):
+                if record.partner_id.email:
+                    mail_ok = record._send_mail()
+                    if mail_ok and (record.state != '03_sent' or
+                                    not record.sent):
+                        vals = {}
+                        if record.state != '03_sent':
+                            vals.update({'state': '03_sent'})
+                        if not record.sent:
+                            vals.update({'sent': True})
+                        record.write(vals)
+                elif record.state != '03_sent' or not record.sent:
                     vals = {}
                     if record.state != '03_sent':
                         vals.update({'state': '03_sent'})
