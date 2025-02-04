@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-29 16:37+0000\n"
-"PO-Revision-Date: 2025-01-29 16:37+0000\n"
+"POT-Creation-Date: 2025-02-04 15:15+0000\n"
+"PO-Revision-Date: 2025-02-04 15:15+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,20 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
+msgid "<em class=\"font-weight-normal text-muted\">Documents in category:</em>"
+msgstr "<em class=\"font-weight-normal text-muted\">Documents de la categoria:</em>"
+
+#. module: project_portal_wiki_tldv
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.view_project_kanban
 msgid "<i class=\"fa fa-video-camera\" role=\"img\" aria-label=\"URLs\" title=\"URLs\"/>"
 msgstr ""
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "All"
+msgstr "Tot"
 
 #. module: project_portal_wiki_tldv
 #: model:ir.model,name:project_portal_wiki_tldv.model_account_analytic_line
@@ -26,16 +37,44 @@ msgid "Analytic Line"
 msgstr "Línia analítica"
 
 #. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
+#, python-format
+msgid "Category"
+msgstr "Categoria"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "Content"
+msgstr "Contingut"
+
+#. module: project_portal_wiki_tldv
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_document_page__display_name
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_project_project__display_name
 msgid "Display Name"
-msgstr "Nom mostrat"
+msgstr "Nom Mostrat"
+
+#. module: project_portal_wiki_tldv
+#: model:ir.model,name:project_portal_wiki_tldv.model_document_page
+msgid "Document Page"
+msgstr "Pàgina Document"
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_layout
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_home
+msgid "Document Pages"
+msgstr "Pàgines Document"
 
 #. module: project_portal_wiki_tldv
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_document_page__id
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_project_project__id
 msgid "ID"
-msgstr "Id."
+msgstr ""
 
 #. module: project_portal_wiki_tldv
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.view_project_kanban
@@ -49,11 +88,59 @@ msgstr "URL de la carpeta privada de Komodo"
 
 #. module: project_portal_wiki_tldv
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_account_analytic_line____last_update
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_document_page____last_update
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_project_project____last_update
 msgid "Last Modified on"
 msgstr "Última modificació el"
 
 #. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "None"
+msgstr "Res"
+
+#. module: project_portal_wiki_tldv
 #: model:ir.model,name:project_portal_wiki_tldv.model_project_project
 msgid "Project"
 msgstr "Projecte"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "Search in All"
+msgstr "Cercar a tot"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "Search in Categories"
+msgstr "Cerca en categoria"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "Search in Content"
+msgstr "Cercar en contingut"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#, python-format
+msgid "Search in Title"
+msgstr "Cercar en títol"
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
+msgid "There are no document pages."
+msgstr "No hi ha documents"
+
+#. module: project_portal_wiki_tldv
+#: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
+#, python-format
+msgid "Title"
+msgstr "Títol"
+
+#. module: project_portal_wiki_tldv
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_document_page__allowed_portal_user_ids
+msgid "Visible to"
+msgstr "Visible per"
