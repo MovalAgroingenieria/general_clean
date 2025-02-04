@@ -12,6 +12,7 @@
                     <group name="master_data">
                         <group name="master_data_id">
                             <field name="name"/>
+                            <field name="analysis_template_id"/>
                             <field name="client_id"/>
                             <field name="laboratory_id" default_supplier="True"/>
                             <field name="watertype_id"/>
@@ -82,6 +83,9 @@
                 <filter name="watertype_id"
                         string="Water Type"
                         context="{'group_by': 'watertype_id'}"/>
+                <filter name="analysis_template_id"
+                        string="Analysis Template"
+                        context="{'group_by': 'analysis_template_id'}"/>
             </search>
         </field>
     </record>
@@ -101,6 +105,31 @@
         </field>
     </record>
 
+    <record id="law_analysis_view_calendar" model="ir.ui.view">
+        <field name="name">Laboratory Analysis for Waters (calendar view)</field>
+        <field name="model">law.analysis</field>
+        <field name="arch" type="xml">
+            <calendar date_start="collection_time"
+                      date_stop="receival_time"
+                      color="laboratory_id"
+                      mode="month"
+                      display="[name]">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="law_analysis_view_pivot" model="ir.ui.view">
+        <field name="name">LAW Analysis (pivot view)</field>
+         <field name="model">law.analysis</field>
+         <field name="arch" type="xml">
+             <pivot string="Analysis">
+                    <field name="client_id"/>
+                    <field name="expected_invoiced_quantity" type="measure"/>
+             </pivot>
+         </field>
+    </record>
+
     <record id="law_analysis_action" model="ir.actions.act_window">
         <field name="name">Analytics</field>
         <field name="res_model">law.analysis</field>
@@ -111,7 +140,11 @@
                 (0, 0, {'view_mode': 'tree',
                         'view_id': ref('law_analysis_view_tree')}),
                 (0, 0, {'view_mode': 'form',
-                        'view_id': ref('law_analysis_view_form')})]"/>
+                        'view_id': ref('law_analysis_view_form')}),
+                (0, 0, {'view_mode': 'pivot',
+                        'view_id': ref('law_analysis_view_pivot')}),
+                (0, 0, {'view_mode': 'calendar',
+                        'view_id': ref('law_analysis_view_calendar')})]"/>
     </record>
 
 </odoo>

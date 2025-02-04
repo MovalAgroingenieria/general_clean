@@ -75,6 +75,20 @@
         </field>
     </record>
 
+     <record id="law_analysis_parameter_view_calendar" model="ir.ui.view">
+        <field name="name">Laboratory Analysis for Waters (calendar view)</field>
+        <field name="model">law.analysis</field>
+        <field name="arch" type="xml">
+            <calendar date_start="collection_time"
+                      date_stop="receival_time"
+                      color="laboratory_id"
+                      mode="month"
+                      display="[name]">
+                <field name="name"/>
+            </calendar>
+        </field>
+    </record>
+
     <record id="law_analysis_parameter_action" model="ir.actions.act_window">
         <field name="name">Analysis Parameters</field>
         <field name="res_model">law.analysis.parameter</field>
@@ -84,6 +98,8 @@
          eval="[(5, 0),
                 (0, 0, {'view_mode': 'tree',
                         'view_id': ref('law_analysis_parameter_view_tree')}),
+                (0, 0, {'view_mode': 'calendar',
+                        'view_id': ref('law_analysis_parameter_view_calendar')}),
                 (0, 0, {'view_mode': 'pivot',
                         'view_id': ref('law_analysis_parameter_view_pivot')}),
                 (0, 0, {'view_mode': 'graph',

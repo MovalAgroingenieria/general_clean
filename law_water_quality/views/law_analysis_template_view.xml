@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="law_analysis_template_action" model="ir.actions.act_window">
+        <field name="name">Analysis Templates</field>
+        <field name="res_model">law.analysis.template</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids"
+         eval="[(5, 0),
+                (0, 0, {'view_mode': 'tree',
+                        'view_id': ref('law_analysis_template_view_tree')}),
+                (0, 0, {'view_mode': 'form',
+                        'view_id': ref('law_analysis_template_view_form')})]"/>
+    </record>
+
+    <record id="law_analysis_template_view_form" model="ir.ui.view">
+        <field name="name">Analysis Templates (form view)</field>
+        <field name="model">law.analysis.template</field>
+        <field name="arch" type="xml">
+            <form string="Templates">
+                <sheet>
+                     <div name="buttons" class="oe_button_box">
+                        <button
+                                name="action_show_parameters_form"
+                                type="object" class="oe_stat_button"
+                                icon="fa-list"
+                                groups="law_water_quality.group_law_user">
+                                <div class="o_form_field o_stat_info">
+                                    <span class="o_stat_text">Parameters</span>
+                                </div>
+                        </button>
+                     </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="client_id"/>
+                        <field name="laboratory_id"/>
+                        <field name="watertype_id"/>
+                        <field name="sample_taker"/>
+                        <field name="location"/>
+                        <field name="coordinate_x"/>
+                        <field name="coordinate_y"/>
+                        <field name="coordinate_srs"/>
+                    </group>
+                    <notebook>
+                        <page string="Parameters">
+                            <field name="parameter_ids">
+                                <tree editable="bottom">
+                                    <field name="parameter_id"/>
+                                    <field name="uom_id" readonly="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id = "law_analysis_template_view_tree" model="ir.ui.view">
+        <field name="name">Analysis Templates (tree view)</field>
+        <field name="model">law.analysis.template</field>
+        <field name="arch" type="xml">
+            <tree class="o_law_water_quality_analysis_template_view_tree">
+                <field name="name"/>
+                <field name="laboratory_id"/>
+                <field name="watertype_id"/>
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="law_analysis_template_view_search" model="ir.ui.view">
+        <field name="name">Analysis Templates (search view)</field>
+        <field name="model">law.analysis.template</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="laboratory_id"/>
+                <field name="watertype_id"/>
+                <field name="location"/>
+            </search>
+        </field>
+    </record>
+</odoo>

@@ -19,6 +19,7 @@
         'security/ir.model.access.csv',
         'views/resources.xml',
         'views/law_analysis_view.xml',
+        'views/law_analysis_template_view.xml',
         'views/law_measuring_config_setting_view.xml',
         'views/law_analysis_parameter_view.xml',
         'views/law_parameter_uom_view.xml',

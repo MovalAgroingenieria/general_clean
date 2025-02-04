@@ -11,7 +11,7 @@
     <menuitem id="water_quality_menu"
               name="Water Quality"
               parent="main_menu"
-              sequence="1"
+              sequence="2"
               groups="law_water_quality.group_law_user"
     />
 
@@ -35,11 +35,19 @@
               groups="law_water_quality.group_law_manager"
     />
 
+    <menuitem id="law_analysis_template_menu"
+              name="Analysis Templates"
+              parent="water_quality_menu"
+              action="law_analysis_template_action"
+              sequence="10"
+              groups="law_water_quality.group_law_user"
+    />
+
     <menuitem id="lab_analytics_menu"
               name="Analytics"
               parent="water_quality_menu"
               action="law_analysis_action"
-              sequence="10"
+              sequence="11"
               groups="law_water_quality.group_law_user"
     />
 
