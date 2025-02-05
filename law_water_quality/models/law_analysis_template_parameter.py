@@ -14,7 +14,7 @@ class LawAnalysisTemplateParameterRel(models.Model):
         string='Analysis Template',
         comodel_name='law.analysis.template',
         required=True,
-        ondelete='cascade'
+        ondelete='cascade',
     )
 
     parameter_id = fields.Many2one(
@@ -29,5 +29,5 @@ class LawAnalysisTemplateParameterRel(models.Model):
         string='Unit of Measure',
         related='parameter_id.uom_id',
         store=True,
-        readonly=True
+        readonly=True,
     )

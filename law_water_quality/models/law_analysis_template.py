@@ -20,7 +20,7 @@ class LawAnalysisTemplate(models.Model):
         string="Client",
         required=True,
         default=lambda self: self.env["res.company"].browse(
-            self.env.context.get("company_id", self.env.user.company_id.id)
+            self.env.context.get("company_id", self.env.user.company_id.id),
             ).partner_id.id,
         readonly=True,
     )

@@ -3,12 +3,16 @@ access_law_watertype_law_user,access.law.watertype.law.user,model_law_watertype,
 access_law_watertype_law_manager,access.law.watertype.law.manager,model_law_watertype,law_water_quality.group_law_manager,1,1,1,1
 access_law_analysis_parameter_law_user,access.law.analysis.parameter.law.user,model_law_analysis_parameter,law_water_quality.group_law_user,1,0,0,0
 access_law_analysis_parameter_law_manager,access.law.analysis.parameter.law.manager,model_law_analysis_parameter,law_water_quality.group_law_manager,1,1,1,1
+access_law_analysis_parameter_law_user,access.law.analysis.parameter.law.user,model_law_analysis_parameter,law_water_quality.group_law_user,1,0,0,0
+access_law_analysis_parameter_law_manager,access.law.analysis.parameter.law.manager,model_law_analysis_parameter,law_water_quality.group_law_manager,1,1,1,1
 access_law_parameter_law_user,access.law.parameter.law.user,model_law_parameter,law_water_quality.group_law_user,1,0,0,0
 access_law_parameter_law_manager,access.law.parameter.law.manager,model_law_parameter,law_water_quality.group_law_manager,1,1,1,1
 access_law_parameter_uom_law_user,access.law.parameter.uom.law.user,model_law_parameter_uom,law_water_quality.group_law_user,1,0,0,0
 access_law_parameter_uom_law_manager,access.law.parameter.uom.law.manager,model_law_parameter_uom,law_water_quality.group_law_manager,1,1,1,1
 access_law_analysis_user,access.law.analysis.law.user,model_law_analysis,law_water_quality.group_law_user,1,0,0,0
 access_law_analysis_law_manager,access.law.analysis.law.manager,model_law_analysis,law_water_quality.group_law_manager,1,1,1,1
+access_law_analysis_template_parameter_rel_user,access.law.analysis.template.parameer.rel.law.user,model_law_analysis_template_parameter_rel,law_water_quality.group_law_user,1,0,0,0
+access_law_analysis_template_parameter_rel_law_manager,access.law.analysis.template.parameter.rel.law.manager,model_law_analysis_template_parameter_rel,law_water_quality.group_law_manager,1,1,1,1
 access_law_measuring_device_law_user,access.law.measuring.device.law.user,model_law_measuring_device,law_water_quality.group_law_user,1,0,0,0
 access_law_measuring_device_type_law_user,access.law.measuring.device.type.law.user,model_law_measuring_device_type,law_water_quality.group_law_user,1,0,0,0
 access_law_measuring_device_measurement_law_user,access.law.measuring.device.measurement.law.user,model_law_measuring_device_measurement,law_water_quality.group_law_user,1,0,0,0
