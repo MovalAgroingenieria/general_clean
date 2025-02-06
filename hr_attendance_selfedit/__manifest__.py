@@ -15,6 +15,7 @@
         "hr_attendance",
     ],
     "data": [
+        "views/assets.xml",
         "views/hr_attendance_view.xml",
         "views/custom_views.xml",
     ],
