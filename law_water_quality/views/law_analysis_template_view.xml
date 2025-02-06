@@ -14,7 +14,7 @@
                                 icon="fa-list"
                                 groups="law_water_quality.group_law_user">
                                 <div class="o_form_field o_stat_info">
-                                    <span class="o_stat_text">Parameters</span>
+                                    <span class="o_stat_text">Analytics</span>
                                 </div>
                         </button>
                      </div>
@@ -28,6 +28,10 @@
                         <field name="coordinate_x"/>
                         <field name="coordinate_y"/>
                         <field name="coordinate_srs"/>
+                    </group>
+                    <group>
+                        <field name="interval_days"/>
+                        <field name="expected_invoiced_quantity"/>
                     </group>
                     <notebook>
                         <page string="Parameters">

@@ -21,10 +21,15 @@
                             <br/>
                             <field name="collection_time"/>
                             <field name="receival_time"/>
+                            <field name="analysis_receival_time"/>
                             <field name="analysis_start_time"/>
                             <field name="analysis_end_time"/>
                         </group>
                         <group name="master_data_desc">
+                            <field name="analysis_invoiced"/>
+                            <field name="invoice_number"/>
+                            <field name="expected_invoiced_quantity"/>
+                            <field name="invoiced_quantity"/>
                             <field name="location"/>
                             <field name="coordinate_x" string="X:"/>
                             <field name="coordinate_y" string="Y:"/>

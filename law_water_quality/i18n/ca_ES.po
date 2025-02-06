@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-04 10:44+0000\n"
-"PO-Revision-Date: 2025-02-04 10:44+0000\n"
+"POT-Creation-Date: 2025-02-06 16:48+0000\n"
+"PO-Revision-Date: 2025-02-06 16:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -97,14 +97,14 @@ msgstr "<span class=\"o_stat_text\">\n"
 "                                    </span>"
 
 #. module: law_water_quality
+#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_template_view_form
+msgid "<span class=\"o_stat_text\">Analytics</span>"
+msgstr "<span class=\"o_stat_text\">Analítiques</span>"
+
+#. module: law_water_quality
 #: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
 msgid "<span class=\"o_stat_text\">Measurements</span>"
 msgstr "<span class=\"o_stat_text\">Mesuraments</span>"
-
-#. module: law_water_quality
-#: model:ir.ui.view,arch_db:law_water_quality.law_analysis_template_view_form
-msgid "<span class=\"o_stat_text\">Parameters</span>"
-msgstr "<span class=\"o_stat_text\">Paràmetres</span>"
 
 #. module: law_water_quality
 #: model:ir.ui.view,arch_db:law_water_quality.law_measuring_device_view_form
@@ -192,7 +192,7 @@ msgstr "Actiu"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_watertype.py:48
-#: code:addons/moval_addons/general/law_water_quality/models/law_watertype.py:48
+#: code:addons/models/law_watertype.py:48
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_parameter_analysis_id
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_template_analysis_ids
 #: model:ir.model.fields,field_description:law_water_quality.field_law_watertype_analysis_ids
@@ -220,7 +220,7 @@ msgstr "Paràmetre d’anàlisi"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_parameter.py:124
-#: code:addons/moval_addons/general/law_water_quality/models/law_parameter.py:124
+#: code:addons/models/law_parameter.py:124
 #: model:ir.actions.act_window,name:law_water_quality.law_analysis_parameter_action
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_analysis_parameter_ids
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_analysis_parameter_ids
@@ -636,7 +636,7 @@ msgstr "Valor de mesura"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_measuring_device.py:105
-#: code:addons/moval_addons/general/law_water_quality/models/law_measuring_device.py:105
+#: code:addons/models/law_measuring_device.py:105
 #: model:ir.model.fields,field_description:law_water_quality.field_law_measuring_device_measurement_ids
 #, python-format
 msgid "Measurements"
@@ -728,7 +728,7 @@ msgstr "Valor màxim admissible"
 
 #. module: law_water_quality
 #: code:addons/law_water_quality/models/law_parameter_uom.py:67
-#: code:addons/moval_addons/general/law_water_quality/models/law_parameter_uom.py:67
+#: code:addons/models/law_parameter_uom.py:67
 #: model:ir.model.fields,field_description:law_water_quality.field_law_analysis_template_parameter_ids
 #: model:ir.model.fields,field_description:law_water_quality.field_law_parameter_uom_parameter_ids
 #: model:ir.ui.menu,name:law_water_quality.configuration_menu
