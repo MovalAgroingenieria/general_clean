@@ -15,7 +15,7 @@
             <field name="domain_force">
                 [('maintenance_request_id', '!=', False)]
             </field>
-            <field name="groups" eval="[(4, ref('base_maintenance_config.group_maintenance_user'))]"/>
+            <field name="groups" eval="[(4, ref('base_maintenance_config.group_maintenance_manager'))]"/>
         </record>
     </data>
 </odoo>
