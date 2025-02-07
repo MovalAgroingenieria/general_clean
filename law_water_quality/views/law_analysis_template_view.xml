@@ -18,20 +18,22 @@
                                 </div>
                         </button>
                      </div>
-                    <group>
-                        <field name="name"/>
-                        <field name="client_id"/>
-                        <field name="laboratory_id"/>
-                        <field name="watertype_id"/>
-                        <field name="sample_taker"/>
-                        <field name="location"/>
-                        <field name="coordinate_x"/>
-                        <field name="coordinate_y"/>
-                        <field name="coordinate_srs"/>
-                    </group>
-                    <group>
-                        <field name="interval_days"/>
-                        <field name="expected_invoiced_quantity"/>
+                     <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="client_id"/>
+                            <field name="laboratory_id"/>
+                            <field name="watertype_id"/>
+                            <field name="sample_taker"/>
+                            <field name="location"/>
+                            <field name="coordinate_x"/>
+                            <field name="coordinate_y"/>
+                            <field name="coordinate_srs"/>
+                        </group>
+                        <group>
+                            <field name="interval_days"/>
+                            <field name="expected_invoiced_quantity"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Parameters">
