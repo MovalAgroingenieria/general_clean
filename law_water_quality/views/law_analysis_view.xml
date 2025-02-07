@@ -26,14 +26,14 @@
                             <field name="analysis_end_time"/>
                         </group>
                         <group name="master_data_desc">
-                            <field name="analysis_invoiced"/>
-                            <field name="invoice_number"/>
-                            <field name="expected_invoiced_quantity"/>
-                            <field name="invoiced_quantity"/>
                             <field name="location"/>
                             <field name="coordinate_x" string="X:"/>
                             <field name="coordinate_y" string="Y:"/>
                             <field name="coordinate_srs" string="SRS:"/>
+                            <field name="analysis_invoiced"/>
+                            <field name="invoice_number"/>
+                            <field name="expected_invoiced_quantity"/>
+                            <field name="invoiced_quantity"/>
                         </group>
                     </group>
                     <group name="slave_data">
