@@ -37,6 +37,7 @@ class CustomerPortalHem(CustomerPortal):
             'name': {'label': _('Title'), 'order': 'name'},
             'content': {'label': _('Content'), 'order': 'name'},
             'parent_id': {'label': _('Category'), 'order': 'parent_id,name'},
+            'project_id': {'label': _('Project'), 'order': 'project_id,name'},
         }
         if not sortby:
             sortby = 'name'
@@ -55,12 +56,15 @@ class CustomerPortalHem(CustomerPortal):
             'content': {'input': 'content', 'label': _('Search in Content')},
             'parent_id': {'input': 'parent_id', 'label': _(
                 'Search in Categories')},
+            'project_id': {'input': 'project_id', 'label': _(
+                'Search in Projects')},
             'all': {'input': 'all', 'label': _('Search in All')},
         }
         # Group By Options
         searchbar_groupby = {
             'none': {'input': 'none', 'label': _('None')},
             'parent_id': {'input': 'parent_id', 'label': _('Category')},
+            'project_id': {'input': 'project_id', 'label': _('Project')},
         }
         if search and search_in:
             search_domain = []
@@ -70,6 +74,9 @@ class CustomerPortalHem(CustomerPortal):
             if search_in in ('parent_id', 'all'):
                 search_domain = OR([search_domain, [
                     ('parent_id.name', 'ilike', search)]])
+            if search_in in ('project_id', 'all'):
+                search_domain = OR([search_domain, [
+                    ('project_id.name', 'ilike', search)]])
             domain += search_domain
         domain.append(('type', '=', 'content'))
         # Determine Group By
@@ -77,6 +84,8 @@ class CustomerPortalHem(CustomerPortal):
             groupby = 'none'
         if groupby == 'parent_id':
             order = "parent_id, %s" % order
+        if groupby == 'project_id':
+            order = "project_id, %s" % order
         # Document Pages Count
         document_page_count = document_page_model.search_count(domain)
         # Pager
@@ -98,11 +107,13 @@ class CustomerPortalHem(CustomerPortal):
             grouped_document_pages = [
                 request.env['document.page'].concat(*g) for k, g in
                 groupbyelem(document_pages, itemgetter('parent_id'))]
+        elif groupby == 'project_id':
+            grouped_document_pages = [
+                request.env['document.page'].concat(*g) for k, g in
+                groupbyelem(document_pages, itemgetter('project_id'))]
         else:
             grouped_document_pages = [document_pages] if document_pages else []
-
         request.session['my_document_pages_history'] = document_pages.ids[:100]
-
         values.update({
             'document_pages': grouped_document_pages,
             'page_name': 'document_page',

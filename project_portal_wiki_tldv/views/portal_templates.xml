@@ -47,10 +47,15 @@
                         <thead>
                             <tr t-attf-class="{{ 'thead-light' if groupby != 'none' else '' }}">
                                 <th class="text-left">Title</th>
-                                <th t-if="groupby == 'none'">Category</th>
+                                <th t-if="groupby == 'none' or groupby == 'parent_id'">Project</th>
+                                <th t-if="groupby == 'none' or groupby == 'project_id'">Category</th>
                                 <th t-if="groupby == 'parent_id'">
                                     <em class="font-weight-normal text-muted">Documents in category:</em>
                                     <span t-field="pages[0].sudo().parent_id.name"/>
+                                </th>
+                                <th t-if="groupby == 'project_id'">
+                                    <em class="font-weight-normal text-muted">Documents in project:</em>
+                                    <span t-field="pages[0].sudo().project_id.name"/>
                                 </th>
                             </tr>
                         </thead>
@@ -62,7 +67,10 @@
                                             <span t-field="document_page.name"/>
                                         </a>
                                     </td>
-                                    <td t-if="groupby == 'none'">
+                                    <td t-if="groupby == 'none' or groupby == 'parent_id'">
+                                        <span t-field="document_page.sudo().project_id.name"/>
+                                    </td>
+                                    <td t-if="groupby == 'none' or groupby == 'project_id'">
                                         <span t-field="document_page.sudo().parent_id.name"/>
                                     </td>
                                 </tr>
@@ -73,6 +81,7 @@
             </t>
         </t>
     </template>
+
 
 
     <template id="portal_my_document_page" name="My Document Page">
