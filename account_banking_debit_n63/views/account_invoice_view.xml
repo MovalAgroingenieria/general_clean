@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">Invoices (form view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group" position="after">
+                <group>
+                    <field name="in_n63_s1"/>
+                    <field name="in_n63_s3"/>
+                    <field name="n63_s1_ref"/>
+                    <field name="n63_s3_ref"/>
+                    <field name="n63_s1_rejected"/>
+                    <field name="n63_s3_rejected"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">Invoices (tree view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="in_n63_s1"/>
+                <field name="in_n63_s3"/>
+                <field name="n63_s1_ref"/>
+                <field name="n63_s3_ref"/>
+                <field name="n63_s1_rejected"/>
+                <field name="n63_s3_rejected"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">Invoices (search view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='unpaid']" position="after">
+                <filter name="in_n63_s1" string="In Stage 1" domain="[('in_n63_s1', '=', True)]"/>
+                <filter name="in_n63_s3" string="In Stage " domain="[('in_n63_s3', '=', True)]"/>
+                <filter name="n63_s1_ref" string="Stage 1 Reference" domain="[('n63_s1_ref', '=', True)]"/>
+                <filter name="n63_s3_ref" string="Stage 2 Reference" domain="[('n63_s3_ref', '=', True)]"/>
+                <filter name="n63_s1_rejected" string="Stage 1 Rejected" domain="[('n63_s1_rejected', '=', True)]"/>
+                <filter name="n63_s3_rejected" string="Stage 3 Rejected" domain="[('n63_s3_rejected', '=', True)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

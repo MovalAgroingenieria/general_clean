@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- Add banking debit n63 fields to account payment order form -->
+    <record id="account_payment_order_form_n63" model="ir.ui.view">
+        <field name="name">account.payment.order.form.n63</field>
+        <field name="model">account.payment.order</field>
+        <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
+        <field name="arch" type="xml">
+
+            <!-- N63 options -->
+            <xpath expr="//group[@name='head']" position="after">
+                <field name="payment_mode_name" invisible="1"/>
+                <group string="n63 options" name="n63" col="2" attrs="{'invisible': ['&amp;', ('payment_mode_name', '!=', 'N63 Fase 1'), ('payment_mode_name', '!=', 'N63 Fase 3')]}">
+                    <group name="n63-left">
+                        <field name="nrbe_entity_code" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
+                        <field name="phase" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}" widget="selection"/>
+                        <field name="date_of_obtaining_the_file" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
+                        <field name="nif_issuing_organisation" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
+                        <field name="ine_code_issuring_organisation" style="width: 50%;"/>
+                        <field name="issuring_name" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}" />
+                    </group>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
