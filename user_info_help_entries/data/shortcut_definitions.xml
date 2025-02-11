@@ -7,12 +7,6 @@
             <field name="groups"/>
             <field name="active">True</field>
         </record>
-        <record id="help_entry_2" model="user.menu.help.entry">
-            <field name="name">Wiki Moval</field>
-            <field name="url">https://wiki.moval.es/</field>
-            <field name="groups"/>
-            <field name="active">True</field>
-        </record>
         <record id="help_entry_3" model="user.menu.help.entry">
             <field name="name">Soporte (xxxxxx@xxxxxxx)</field>
             <field name="url">mailto:xxxxxx@xxxxxxx</field>
@@ -29,6 +23,12 @@
         <record id="help_entry_8" model="user.menu.help.entry">
             <field name="name">Tutoriales Genéricos</field>
             <field name="url">https://komododecks.com/share/folder/uMpijVYPLT8enJHURmLc</field>
+            <field name="groups"/>
+            <field name="active">True</field>
+        </record>
+        <record id="help_entry_2" model="user.menu.help.entry">
+            <field name="name">Foro Novedades Moval</field>
+            <field name="url">https://odoo.moval.es/forum/novedades-moval-regadio-3</field>
             <field name="groups"/>
             <field name="active">True</field>
         </record>
