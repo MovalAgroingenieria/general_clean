@@ -11,9 +11,10 @@ odoo.define('user_info_help_entries.help_entry', function (require) {
             return this._super.apply(this, arguments).then(function () {
                 var userHelpEntryModel = new Model('user.menu.help.entry');
 
-                // Fetch entries along with groups
+                // Fetch entries along with groups and order by name ascending
                 return userHelpEntryModel.query(['name', 'url', 'groups'])
                     .filter([['active', '=', true]])
+                    .order_by(['name'])
                     .all().then(function (entries) {
                         if (!entries || !entries.length) {
                             // No entries to process
