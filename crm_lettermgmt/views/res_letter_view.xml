@@ -9,6 +9,22 @@
 <odoo>
   <data>
 
+    <!-- Actions -->
+
+    <record id="action_res_letter_mail_wizard" model="ir.actions.act_window">
+        <field name="name">Send Email</field>
+        <field name="res_model">res.letter.mail.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <record id="action_res_letter_mail_wizard_ir_values" model="ir.values">
+        <field name="model">res.letter</field>
+        <field name="key2">client_action_multi</field>
+        <field name="name">Send Email</field>
+        <field name="value" eval="'ir.actions.act_window,' + str(ref('action_res_letter_mail_wizard'))"/>
+    </record>
+
     <!-- Views -->
 
     <record model="ir.ui.view" id="res_letter_tree_view">
@@ -87,6 +103,7 @@
             <button name="action_rec_bad" states="sent" string="Received Damage" type="object" />
             <button name="action_cancel" states="draft,sent,rec,rec_ret,rec_bad" string="Cancel" type="object" />
             <button name="action_cancel_draft" states="cancel" string="Back to Draft" type="object" />
+            <button name="%(action_res_letter_mail_wizard)d" string="Sent email" type="action" />
             <field name="state" widget="statusbar" statusbar_visible="draft,sent,rec"/>
           </header>
           <sheet>

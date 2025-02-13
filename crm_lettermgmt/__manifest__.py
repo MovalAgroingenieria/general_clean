@@ -27,6 +27,8 @@
         'views/res_partner_view.xml',
         'views/res_letter_config_settings_view.xml',
         'reports/res_letter_report.xml',
+        'data/res_letter_mail.xml',
+        'wizards/res_letter_mail_wizard.xml',
     ],
     'demo': ['data/letter_demo.xml'],
     'application': False,

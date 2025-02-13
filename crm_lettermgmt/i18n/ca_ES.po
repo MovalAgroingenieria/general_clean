@@ -6,14 +6,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-14 15:52+0000\n"
-"PO-Revision-Date: 2025-01-14 15:52+0000\n"
+"POT-Creation-Date: 2025-02-13 15:43+0000\n"
+"PO-Revision-Date: 2025-02-13 15:43+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: crm_lettermgmt
+#: model:mail.template,body_html:crm_lettermgmt.email_template_res_letter
+msgid "\n"
+"                \n"
+"                <p> ${ctx.get('optional_text')}</p>\n"
+"                \n"
+"            "
+msgstr "\n"
+"                \n"
+"                <p> ${ctx.get('optional_text')}</p>\n"
+"                \n"
+"            "
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_state
@@ -146,7 +159,7 @@ msgstr "<span><b>N O T E S</b></span>\n"
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
 msgid "<span><b>Issue: </b></span>"
-msgstr "<span><b>Issue: </b></span>"
+msgstr "<span><b>Assumpte: </b></span>"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
@@ -172,8 +185,7 @@ msgstr "<span>S O R T I D A</span>"
 msgid "<span>R E G I S T R Y</span>\n"
 "                        <span>&amp;nbsp;&amp;nbsp;</span>"
 msgstr "<span>R E G I S T R E</span>\n"
-"                        <span>&amp;nbsp;&amp;nbsp;</span>"
-"<span>D E</span>\n"
+"                        <span>&amp;nbsp;&amp;nbsp;</span><span>D E</span>\n"
 "                        <span>&amp;nbsp;&amp;nbsp;</span>"
 
 #. module: crm_lettermgmt
@@ -215,6 +227,7 @@ msgstr "Torna a l'esborrany"
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.lettermgmt_config_settings_view_form
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.view_res_letter_mail_wizard_form
 msgid "Cancel"
 msgstr "Cancel·lar"
 
@@ -301,6 +314,7 @@ msgstr "Configurar el Registre d'Entrada/Sortida"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_create_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_create_uid
 msgid "Created by"
 msgstr "Creat per"
 
@@ -312,6 +326,7 @@ msgstr "Creat per"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_create_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_create_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_create_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_create_date
 msgid "Created on"
 msgstr "Creat el"
 
@@ -329,6 +344,7 @@ msgstr "Notes de lliurament"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_display_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_display_name
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_display_name
 msgid "Display Name"
 msgstr "Mostrar Nom"
 
@@ -365,6 +381,7 @@ msgstr "Carpeta que conté registres."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_id
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_id
 msgid "ID"
 msgstr "ID"
 
@@ -397,6 +414,7 @@ msgstr "Indicacions per a l'oficial de lliurament."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter___last_update
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings___last_update
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard___last_update
 msgid "Last Modified on"
 msgstr "Última modificació el "
 
@@ -407,6 +425,7 @@ msgstr "Última modificació el "
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_write_uid
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_uid
 msgid "Last Updated by"
 msgstr "Última actualització per"
@@ -418,6 +437,7 @@ msgstr "Última actualització per"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_config_settings_write_date
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_date
 msgid "Last Updated on"
 msgstr "Última actualització el"
@@ -565,6 +585,11 @@ msgid "OUT"
 msgstr "OUT"
 
 #. module: crm_lettermgmt
+#: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_optional_text
+msgid "Optional Text"
+msgstr "Text opcional"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_orig_ref
 msgid "Original Reference"
 msgstr "Referència original"
@@ -691,6 +716,11 @@ msgid "Registers"
 msgstr "Registres"
 
 #. module: crm_lettermgmt
+#: model:mail.template,subject:crm_lettermgmt.email_template_res_letter
+msgid "Registre ${object.number} - ${object.sender_partner_id.company_id.name}"
+msgstr "Registre ${object.number} - ${object.sender_partner_id.company_id.name}"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_total_res_letter_ids
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_users_total_res_letter_ids
 msgid "Registry"
@@ -720,8 +750,15 @@ msgstr "Cercar registres"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+#: model:ir.ui.view,arch_db:crm_lettermgmt.view_res_letter_mail_wizard_form
 msgid "Send"
 msgstr "Envia"
+
+#. module: crm_lettermgmt
+#: model:ir.actions.act_window,name:crm_lettermgmt.action_res_letter_mail_wizard
+#: model:ir.ui.view,arch_db:crm_lettermgmt.view_res_letter_mail_wizard_form
+msgid "Send Email"
+msgstr "Enviar email"
 
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_letter_channel
@@ -749,6 +786,11 @@ msgid "Sent Date"
 msgstr "Data enviament"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
+msgid "Sent email"
+msgstr "Enviar email"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_state
 msgid "State"
 msgstr "Estat"
@@ -772,6 +814,11 @@ msgstr "Etiquetes"
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Tags..."
 msgstr "Etiquetes..."
+
+#. module: crm_lettermgmt
+#: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_mail_wizard_optional_text
+msgid "Text that will be included in the email."
+msgstr "Text que serà inclòs al correu electrònic."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,help:crm_lettermgmt.field_res_letter_document_date
@@ -843,4 +890,9 @@ msgstr "Usuari"
 #: model:ir.model.fields,help:crm_lettermgmt.field_letter_reassignment_name
 msgid "User to forward letter to."
 msgstr "Usuari a qui reenviar la carta."
+
+#. module: crm_lettermgmt
+#: model:ir.model,name:crm_lettermgmt.model_res_letter_mail_wizard
+msgid "res.letter.mail.wizard"
+msgstr "res.letter.mail.wizard"
 
