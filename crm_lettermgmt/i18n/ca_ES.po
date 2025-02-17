@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 15:43+0000\n"
-"PO-Revision-Date: 2025-02-13 15:43+0000\n"
+"POT-Creation-Date: 2025-02-17 08:31+0000\n"
+"PO-Revision-Date: 2025-02-17 08:31+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -229,7 +229,7 @@ msgstr "Torna a l'esborrany"
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 #: model:ir.ui.view,arch_db:crm_lettermgmt.view_res_letter_mail_wizard_form
 msgid "Cancel"
-msgstr "Cancel·lar"
+msgstr "Cancel·la"
 
 #. module: crm_lettermgmt
 #: selection:res.letter,state:0
@@ -535,7 +535,7 @@ msgstr "Registres que encara no han arribat al seu destí."
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_letter
 msgid "Log of Letter Movements"
-msgstr "Log de moviments de registres"
+msgstr "Registres Entrada / Sortida"
 
 #. module: crm_lettermgmt
 #: model:res.groups,name:crm_lettermgmt.group_crm_lettermgmt_manager
@@ -555,6 +555,12 @@ msgstr "Assent."
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_name
 msgid "Name"
 msgstr "Nom"
+
+#. module: crm_lettermgmt
+#: code:addons/crm_lettermgmt/wizards/res_letter_mail_wizard.py:12
+#, python-format
+msgid "Notice of registration. Report attached."
+msgstr "Avís de registre. Informe adjunt."
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_partner_number_of_total_registers

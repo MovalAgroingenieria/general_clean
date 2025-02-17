@@ -2,15 +2,19 @@
 # 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 
 
 class ResLetterMailWizard(models.TransientModel):
     _name = 'res.letter.mail.wizard'
 
+    def _default_optional_text(self):
+        text = _('Notice of registration. Report attached.')
+        return text
+
     optional_text = fields.Text(
         string='Optional Text',
-        default='Notice of registration. Report attached.',
+        default=_default_optional_text,
         help='Text that will be included in the email.')
 
     @api.multi
