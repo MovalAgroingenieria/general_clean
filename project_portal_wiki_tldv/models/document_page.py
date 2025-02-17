@@ -4,11 +4,11 @@
 
 from odoo import models, fields, api
 import requests
+from datetime import date
 
 
 class DocumentPage(models.Model):
     _inherit = 'document.page'
-    _TLDV_ENDPOINT_URL = 'https://pasta.tldv.io/v1alpha1/meetings'
 
     allowed_portal_user_ids = fields.Many2many(
         comodel_name='res.users',
@@ -53,13 +53,10 @@ class DocumentPage(models.Model):
                         (6, 0, project.allowed_portal_user_ids.ids)]
         return super().write(vals)
 
-    def _get_document_page_from_tldv(self):
-        pass
-
     def generate_highlights_html(self, data, url):
         html = []
         categories = {}
-        html.append(f"<a href=\"{url}\">{url}</a>")
+        html.append(f"<a href=\'{url}\'>{url}</a>")
         for item in data:
             cat = item.get("category", {}).get("label", "")
             categories.setdefault(cat, []).append(item)
@@ -69,11 +66,14 @@ class DocumentPage(models.Model):
                 for item in items:
                     startTime = item.get("startTime", 0)
                     if startTime >= 3600:
-                        hours, remainder = divmod(startTime, 3600)
-                        minutes, seg = divmod(remainder, 60)
+                        hours = startTime // 3600
+                        remainder = startTime % 3600
+                        minutes = remainder // 60
+                        seg = remainder % 60
                         time_str = f"{hours:02d}:{minutes:02d}:{seg:02d}"
                     else:
-                        minutes, seg = divmod(startTime, 60)
+                        minutes = startTime // 60
+                        seg = startTime % 60
                         time_str = f"{minutes:02d}:{seg:02d}"
                     meeting_url = url
                     link = f"{meeting_url}?t={startTime}"
@@ -85,23 +85,22 @@ class DocumentPage(models.Model):
 
     @api.model
     def cron_retrieve_meetings_data(self):
-        last_meeting = self.env['document.page'].search(
-            [('tldv_meeting_id', '!=', False)], order="id desc", limit=1)
+        last_meeting = self.env["document.page"].search(
+            [("tldv_meeting_id", "!=", False)], order="id desc", limit=1)
         last_meeting_date = last_meeting["create_date"] if last_meeting \
             else None
         last_meeting_date = last_meeting_date.date().isoformat() if \
-            last_meeting_date else None
-
-        API_KEY = self.env['ir.config_parameter'].get_param(
-            'project_portal_wiki_tldv.api_key')
-        API_URL = self.env['ir.config_parameter'].get_param(
-            'project_portal_wiki_tldv.tldv_url')
-        DEFAULT_CATEG = int(self.env['ir.config_parameter'].get_param(
-            'project_portal_wiki_tldv.tldv_default_category_id'))
-        DEFAULT_PROJECT = int(self.env['ir.config_parameter'].get_param(
-            'project_portal_wiki_tldv.tldv_default_project_id'))
-        HEADERS = {
-            "x-api-key": API_KEY
+            last_meeting_date else date(2025, 2, 1).isoformat()
+        api_key = self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.api_key")
+        api_url = self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.tldv_url")
+        default_categ = int(self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.tldv_default_category_id"))
+        default_project = int(self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.tldv_default_project_id"))
+        headers = {
+            "x-api-key": api_key
         }
         params = {
             "from": last_meeting_date,
@@ -109,44 +108,41 @@ class DocumentPage(models.Model):
         }
         meetings = []
         try:
-            response = requests.get(
-                f"{API_URL}v1alpha1/meetings",
-                headers=HEADERS, params=params
+            meetings_response = requests.get(
+                f"{api_url}v1alpha1/meetings",
+                headers=headers, params=params
             )
-            meetings = response.json()
-        except Exception as e:
-            print("Error fetching meetings:", e)
+            meetings = meetings_response.json()
+        except Exception:
             return
-
         results = meetings.get("results", [])
-
         for item in results:
-            exists = self.env['document.page'].search([
-                ('tldv_meeting_id', '=', item["id"]),])
+            exists = self.env["document.page"].search([
+                ("tldv_meeting_id", "=", item["id"]),])
             if not exists:
                 try:
-                    response2 = requests.get(
-                        f"{API_URL}v1alpha1/meetings/{item['id']}",
-                        headers=HEADERS
+                    meeting_id_response = requests.get(
+                        f"{api_url}v1alpha1/meetings/{item['id']}",
+                        headers=headers
                     )
-                    response3 = requests.get(
-                        f"{API_URL}v1alpha1/meetings/{item['id']}/highlights",
-                        headers=HEADERS
+                    meeting_highlights = requests.get(
+                        f"{api_url}v1alpha1/meetings/{item['id']}/highlights",
+                        headers=headers
                     )
-                    details = response2.json()
-                    details2 = response3.json()
-                    html = self.generate_highlights_html(details2["data"],
-                                                         url=details["url"])
+                    meeting_id_response = meeting_id_response.json()
+                    meeting_highlights = meeting_highlights.json()
+                    html = self.generate_highlights_html(
+                        meeting_highlights["data"],
+                        url=meeting_id_response["url"])
                     self.env["document.page"].create({
-                            "name": details["name"],
-                            "tldv_meeting_id": details["id"],
-                            "tldv_meeting_url": details["url"],
-                            "draft_name": 'Rev 01',
-                            "draft_summary": 'Retrieve from TLDV',
-                            "parent_id": DEFAULT_CATEG,
-                            "project_id": DEFAULT_PROJECT,
+                            "name": meeting_id_response["name"],
+                            "tldv_meeting_id": meeting_id_response["id"],
+                            "tldv_meeting_url": meeting_id_response["url"],
+                            "draft_name": "Rev 01",
+                            "draft_summary": "Retrieve from TLDV",
+                            "parent_id": default_categ,
+                            "project_id": default_project,
                             "content": html,
                     })
-                except Exception as e:
-                    print("Error fetching meetings:", e)
-                    return
+                except Exception:
+                    pass

@@ -10,23 +10,24 @@ class WuaConfiguration(models.TransientModel):
     _description = 'Configuration of Moval TLDV API'
 
     api_key = fields.Char(
-        string="API Key",
+        string='API Key',
         config_parameter='project_portal_wiki_tldv.api_key',
     )
 
     tldv_url = fields.Char(
-        string="Tldv URL",
+        string='Tldv URL',
         config_parameter='project_portal_wiki_tldv.tldv_url',
     )
 
     tldv_default_category_id = fields.Many2one(
-        string="Default Category",
+        string='Default Category',
         config_parameter='project_portal_wiki_tldv.tldv_default_category_id',
         comodel_name='document.page',
         domain="[('type', '=', 'category')]",
     )
+
     tldv_default_project_id = fields.Many2one(
-        string="Default Project",
+        string='Default Project',
         config_parameter='project_portal_wiki_tldv.tldv_default_project_id',
         comodel_name='project.project',
     )
