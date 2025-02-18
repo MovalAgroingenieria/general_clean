@@ -30,6 +30,15 @@ class DocumentPage(models.Model):
         string="TLDV Meeting Time"
     )
 
+    draft_name = fields.Char(
+        default="Rev 01",
+    )
+
+    @api.onchange('name')
+    def _onchange_name(self):
+        if self.name:
+            self.draft_summary = self.name
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
@@ -56,7 +65,7 @@ class DocumentPage(models.Model):
     def generate_highlights_html(self, data, url):
         html = []
         categories = {}
-        html.append(f"<a href=\'{url}\'>{url}</a>")
+        html.append(f"<a href='{url}'>{url}</a>")
         for item in data:
             cat = item.get("category", {}).get("label", "")
             categories.setdefault(cat, []).append(item)
@@ -104,7 +113,7 @@ class DocumentPage(models.Model):
         }
         params = {
             "from": last_meeting_date,
-            "limit": 100
+            "limit": 1000
         }
         meetings = []
         try:
@@ -118,7 +127,7 @@ class DocumentPage(models.Model):
         results = meetings.get("results", [])
         for item in results:
             exists = self.env["document.page"].search([
-                ("tldv_meeting_id", "=", item["id"]),])
+                ("tldv_meeting_id", "=", item["id"]), ])
             if not exists:
                 try:
                     meeting_id_response = requests.get(
@@ -135,14 +144,14 @@ class DocumentPage(models.Model):
                         meeting_highlights["data"],
                         url=meeting_id_response["url"])
                     self.env["document.page"].create({
-                            "name": meeting_id_response["name"],
-                            "tldv_meeting_id": meeting_id_response["id"],
-                            "tldv_meeting_url": meeting_id_response["url"],
-                            "draft_name": "Rev 01",
-                            "draft_summary": "Retrieve from TLDV",
-                            "parent_id": default_categ,
-                            "project_id": default_project,
-                            "content": html,
+                        "name": meeting_id_response["name"],
+                        "tldv_meeting_id": meeting_id_response["id"],
+                        "tldv_meeting_url": meeting_id_response["url"],
+                        "draft_name": "Rev 01",
+                        "draft_summary": "Retrieve from TLDV",
+                        "parent_id": default_categ,
+                        "project_id": default_project,
+                        "content": html,
                     })
                 except Exception:
                     pass

@@ -5,7 +5,7 @@
             <field name='name'>Retrieve meetings data</field>
             <field name="user_id" ref="base.user_root"/>
             <field name='interval_number'>1</field>
-            <field name='interval_type'>day</field>
+            <field name='interval_type'>days</field>
             <field name="numbercall">-1</field>
             <field name="active" eval="True"/>
             <field name="doall" eval="False"/>
