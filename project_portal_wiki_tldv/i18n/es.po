@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 15:27+0000\n"
-"PO-Revision-Date: 2025-02-17 15:27+0000\n"
+"POT-Creation-Date: 2025-02-18 14:31+0000\n"
+"PO-Revision-Date: 2025-02-18 14:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,6 +44,11 @@ msgstr "<span class=\"o_form_label\">Proyecto por defecto</span>"
 
 #. module: project_portal_wiki_tldv
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
+msgid "<span class=\"o_form_label\">TLDV Start Date</span>"
+msgstr "<span class=\"o_form_label\">Fecha Inicio TLDV</span>"
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
 msgid "<span class=\"o_form_label\">TLDV Url</span>"
 msgstr ""
 
@@ -63,7 +68,6 @@ msgid "API key for tldv conection"
 msgstr "Clave de la conexión con la API TLDV"
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "All"
@@ -80,8 +84,6 @@ msgid "Api key"
 msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
@@ -96,11 +98,15 @@ msgid "Configuration of Moval TLDV API"
 msgstr "Configuración de la API TLDV"
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Content"
 msgstr "Contenido"
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
+msgid "DD-MM-YYYY"
+msgstr "DD-MM-AAAA"
 
 #. module: project_portal_wiki_tldv
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_res_config_settings__tldv_default_category_id
@@ -111,6 +117,16 @@ msgstr "Categoría por defecto"
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_res_config_settings__tldv_default_project_id
 msgid "Default Project"
 msgstr "Proyecto por defecto"
+
+#. module: project_portal_wiki_tldv
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_res_config_settings__tldv_default_start_date
+msgid "Default Start Date"
+msgstr "Fecha de inicio por defecto"
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
+msgid "Default Start Date for TLDV retrieval"
+msgstr "Fecha por defecto para el inicio de la recuperación de información de TLDV"
 
 #. module: project_portal_wiki_tldv
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_account_analytic_line__display_name
@@ -138,7 +154,7 @@ msgstr "Documentos"
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_project_project__id
 #: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_res_config_settings__id
 msgid "ID"
-msgstr ""
+msgstr "Id."
 
 #. module: project_portal_wiki_tldv
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.view_project_kanban
@@ -159,7 +175,16 @@ msgid "Last Modified on"
 msgstr "Última modificación en"
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
+#: model:ir.model.fields,field_description:project_portal_wiki_tldv.field_document_page__draft_name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: project_portal_wiki_tldv
+#: model:ir.model.fields,help:project_portal_wiki_tldv.field_document_page__draft_name
+msgid "Name for the changes made"
+msgstr "Nombre de los cambios realizados"
+
+#. module: project_portal_wiki_tldv
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "None"
@@ -171,8 +196,6 @@ msgid "Portal Wiki TLDV"
 msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #: model:ir.model,name:project_portal_wiki_tldv.model_project_project
@@ -190,39 +213,39 @@ msgid "Retrieve meetings data"
 msgstr "Recuperar datos de reuniones"
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Search in All"
-msgstr "Buscar en Todo"
+msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Search in Categories"
-msgstr "Buscar en Categorías"
+msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Search in Content"
-msgstr "Buscar en Contenido"
+msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Search in Projects"
-msgstr "Buscar en Proyecto"
+msgstr ""
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #, python-format
 msgid "Search in Title"
-msgstr "Buscar en Título"
+msgstr ""
+
+#. module: project_portal_wiki_tldv
+#: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
+msgid "Start Day"
+msgstr "Día de Inicio"
 
 #. module: project_portal_wiki_tldv
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.config_settings_view_form
@@ -260,7 +283,6 @@ msgid "There are no document pages."
 msgstr "No hay documentos"
 
 #. module: project_portal_wiki_tldv
-#: code:addons/moval_addons/general/project_portal_wiki_tldv/controllers/portal.py:0
 #: code:addons/project_portal_wiki_tldv/controllers/portal.py:0
 #: model_terms:ir.ui.view,arch_db:project_portal_wiki_tldv.portal_my_document_pages
 #, python-format

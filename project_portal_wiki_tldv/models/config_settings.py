@@ -31,3 +31,8 @@ class WuaConfiguration(models.TransientModel):
         config_parameter='project_portal_wiki_tldv.tldv_default_project_id',
         comodel_name='project.project',
     )
+
+    tldv_default_start_date = fields.Char(
+        string='Default Start Date',
+        config_parameter='project_portal_wiki_tldv.tldv_default_start_date',
+    )

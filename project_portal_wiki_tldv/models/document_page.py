@@ -4,7 +4,7 @@
 
 from odoo import models, fields, api
 import requests
-from datetime import date
+from datetime import datetime
 
 
 class DocumentPage(models.Model):
@@ -94,12 +94,15 @@ class DocumentPage(models.Model):
 
     @api.model
     def cron_retrieve_meetings_data(self):
+        default_start_date = self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.tldv_default_start_date")
         last_meeting = self.env["document.page"].search(
             [("tldv_meeting_id", "!=", False)], order="id desc", limit=1)
         last_meeting_date = last_meeting["create_date"] if last_meeting \
             else None
         last_meeting_date = last_meeting_date.date().isoformat() if \
-            last_meeting_date else date(2025, 2, 1).isoformat()
+            last_meeting_date else datetime.strptime(
+                default_start_date, '%d-%m-%Y').date()
         api_key = self.env["ir.config_parameter"].get_param(
             "project_portal_wiki_tldv.api_key")
         api_url = self.env["ir.config_parameter"].get_param(
@@ -152,6 +155,7 @@ class DocumentPage(models.Model):
                         "parent_id": default_categ,
                         "project_id": default_project,
                         "content": html,
+                        "approved_date": meeting_id_response["happenedAt"],
                     })
                 except Exception:
                     pass
