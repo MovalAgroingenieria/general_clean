@@ -454,8 +454,10 @@
                             <UnitPriceWithoutTax
                                 t-esc="'%.8f' % line.price_unit"
                             />
+                            <!--t-esc="'%.8f' % (line.price_unit * line.quantity)"-->
                             <TotalCost
-                                t-esc="'%.8f' % (line.quantity * line.price_unit)"
+
+                                t-esc="'%.8f' % line.price_subtotal"
                             />
                             <DiscountsAndRebates t-if="line.discount != 0">
                                 <Discount>
