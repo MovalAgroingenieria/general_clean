@@ -12,6 +12,7 @@
     "depends": [
         'project',
         'fleet',
+        'hr_fleet',
     ],
     "data": [
         'views/fleet_vehicle_views.xml',
