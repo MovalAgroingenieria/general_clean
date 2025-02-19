@@ -8,12 +8,18 @@
         </xpath>
     </template>
 
-    <!--
-    <template id="assets_common_fontawesome_ext" inherit_id="web.report_assets_common">
+    <template id="report_assets_common_fontawesome_ext" inherit_id="web.report_assets_common">
         <xpath expr="." position="inside">
             <link rel="stylesheet" type="text/css"
-                href="/fontawesome_ext/static/lib/moval_iconset/moval_report_iconset.css"/>
+                href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
         </xpath>
-    </template>-->
+    </template>
+
+    <template id="assets_frontend_fontawesome_ext" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
+        </xpath>
+    </template>
 
 </odoo>
