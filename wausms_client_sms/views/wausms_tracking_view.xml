@@ -20,6 +20,7 @@
                 <field name="invoice_id"/>
                 <field name="subject"/>
                 <field name="sms_confirmation"/>
+                <field name="number_of_sms" string="Num."/>
                 <field name="sms_message"/>
             </tree>
         </field>
@@ -102,6 +103,7 @@
                             <field name="subject"/>
                             <field name="response_code"/>
                             <field name="sms_confirmation_info"/>
+                            <field name="number_of_sms"/>
                         </group>
                     </group>
                     <notebook colspan="4">

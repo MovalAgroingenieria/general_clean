@@ -11,7 +11,7 @@
 /* o_wausms_tracking_view_tree */
 .o_wausms_tracking_view_tree [data-id="sms_time_data"] {
     text-align: center;
-    width: 14%;
+    width: 8%;
 }
 .o_wausms_tracking_view_tree [data-field="sms_time_data"] {
     text-align: center;
@@ -25,7 +25,7 @@
     width: 8%;
 }
 .o_wausms_tracking_view_tree [data-id="partner_id"] {
-    width: 15%;
+    width: 12%;
 }
 
 .o_wausms_tracking_view_tree [data-id="subject"] {
@@ -38,4 +38,8 @@
 }
 .o_wausms_tracking_view_tree [data-field="sms_confirmation"] {
     text-align: center;
+}
+.o_wausms_tracking_view_tree [data-id="number_of_sms"] {
+    width: 2%;
+    text-align: right;
 }

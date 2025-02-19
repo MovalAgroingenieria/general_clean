@@ -90,6 +90,11 @@ class WauSMSTracking(models.Model):
         string="Response message",
         readonly=True)
 
+    number_of_sms = fields.Integer(
+        string="Number of SMS",
+        readonly=True,
+    )
+
     @api.model
     def fields_view_get(self, view_id=None,
                         view_type='form', toolbar=False, submenu=False):
