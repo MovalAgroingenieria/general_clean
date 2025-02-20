@@ -6,7 +6,7 @@
 {
     'name': 'Maintenance Timesheets',
     'summary': 'Adds timesheets to maintenance request',
-    'version': '10.0.1.1.1',
+    'version': '10.0.1.1.2',
     'category': 'Human Resources',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',
@@ -16,7 +16,8 @@
         'hr_timesheet',
     ],
     'data': [
-        'security/maintenance_timesheet_security.xml',
+        # Removed security rules, to avoid  errors on invoices validation
+        # 'security/maintenance_timesheet_security.xml',
         'views/hr_timesheet_views.xml',
         'views/maintenance_request_views.xml',
     ],
