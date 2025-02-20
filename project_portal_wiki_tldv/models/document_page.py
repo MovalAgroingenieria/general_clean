@@ -5,6 +5,7 @@
 from odoo import models, fields, api
 import requests
 from datetime import datetime
+from dateutil import parser
 
 
 class DocumentPage(models.Model):
@@ -143,6 +144,10 @@ class DocumentPage(models.Model):
                     )
                     meeting_id_response = meeting_id_response.json()
                     meeting_highlights = meeting_highlights.json()
+                    meeting_date = parser.isoparse(
+                        meeting_id_response["happenedAt"])
+                    meeting_date_str = meeting_date.strftime(
+                        '%Y-%m-%d %H:%M:%S')
                     html = self.generate_highlights_html(
                         meeting_highlights["data"],
                         url=meeting_id_response["url"])
@@ -155,7 +160,7 @@ class DocumentPage(models.Model):
                         "parent_id": default_categ,
                         "project_id": default_project,
                         "content": html,
-                        "approved_date": meeting_id_response["happenedAt"],
+                        "approved_date": meeting_date_str,
                     })
-                except Exception:
+                except Exception as e:
                     pass
