@@ -95,19 +95,16 @@ class DocumentPage(models.Model):
 
     @api.model
     def cron_retrieve_meetings_data(self, check_meeting_date=True):
+        default_start_date = self.env["ir.config_parameter"].get_param(
+            "project_portal_wiki_tldv.tldv_default_start_date"
+        )
+        last_meeting_date = datetime.strptime(
+            default_start_date, '%d-%m-%Y').date().isoformat()
         if check_meeting_date:
             last_meeting = self.env["document.page"].search(
                 [("tldv_meeting_id", "!=", False)], order="id desc", limit=1)
-            last_meeting_date = last_meeting["create_date"] if last_meeting \
-                else None
-            last_meeting_date = last_meeting_date.date().isoformat() if \
-                last_meeting_date else None
-        else:
-            default_start_date = self.env["ir.config_parameter"].get_param(
-                "project_portal_wiki_tldv.tldv_default_start_date"
-            )
-            last_meeting_date = datetime.strptime(
-                default_start_date, '%d-%m-%Y').date().isoformat()
+            if last_meeting:
+                last_meeting_date = last_meeting.create_date.date().isoformat()
         api_key = self.env["ir.config_parameter"].get_param(
             "project_portal_wiki_tldv.api_key")
         api_url = self.env["ir.config_parameter"].get_param(
@@ -123,7 +120,7 @@ class DocumentPage(models.Model):
             "from": last_meeting_date,
             "limit": 100,
         }
-        meetings = []
+        meetings = {}
         try:
             meetings_response = requests.get(
                 f"{api_url}v1alpha1/meetings",
@@ -131,10 +128,11 @@ class DocumentPage(models.Model):
             )
             meetings = meetings_response.json()
         except Exception:
-            return
-        pages = meetings.get("pages", [])
+            meetings = {}
+        pages = meetings.get("pages", -1)
         for page in range(1, pages + 1):
             params.update({"page": page})
+            meetings = {}
             try:
                 meetings_response = requests.get(
                     f"{api_url}v1alpha1/meetings",
@@ -142,7 +140,7 @@ class DocumentPage(models.Model):
                 )
                 meetings = meetings_response.json()
             except Exception:
-                return
+                meetings = {}
             results = meetings.get("results", [])
             for item in results:
                 exists = self.env["document.page"].search([
@@ -153,18 +151,18 @@ class DocumentPage(models.Model):
                             f"{api_url}v1alpha1/meetings/{item['id']}",
                             headers=headers
                         )
+                        meeting_id_response = meeting_id_response.json()
+                        meeting_date = parser.isoparse(
+                            meeting_id_response["happenedAt"])
+                        meeting_date_str = meeting_date.strftime(
+                            '%Y-%m-%d %H:%M:%S')
                         meeting_highlights = requests.get(
                             f"{api_url}v1alpha1/meetings/"
                             f"{item['id']}/highlights",
                             headers=headers
                         )
-                        meeting_id_response = meeting_id_response.json()
                         meeting_highlights = meeting_highlights.json()
-                        meeting_date = parser.isoparse(
-                            meeting_id_response["happenedAt"])
-                        meeting_date_str = meeting_date.strftime(
-                            '%Y-%m-%d %H:%M:%S')
-                        html = self.generate_highlights_html(
+                        meeting_content = self.generate_highlights_html(
                             meeting_highlights["data"],
                             url=meeting_id_response["url"])
                         self.env["document.page"].create({
@@ -175,7 +173,7 @@ class DocumentPage(models.Model):
                             "draft_summary": "Retrieve from TLDV",
                             "parent_id": default_categ,
                             "project_id": default_project,
-                            "content": html,
+                            "content": meeting_content,
                             "approved_date": meeting_date_str,
                         })
                     except Exception:
