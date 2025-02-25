@@ -4,8 +4,11 @@
 
 from odoo import models, fields, api
 import requests
+import logging
 from datetime import datetime
 from dateutil import parser
+
+_logger = logging.getLogger(__name__)
 
 
 class DocumentPage(models.Model):
@@ -176,5 +179,6 @@ class DocumentPage(models.Model):
                             "content": meeting_content,
                             "approved_date": meeting_date_str,
                         })
-                    except Exception:
-                        pass
+                    except Exception as e:
+                        _logger.error(
+                            f'Error on document page creation: {str(e)}')
