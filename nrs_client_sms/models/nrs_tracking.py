@@ -91,6 +91,11 @@ class NRSTracking(models.Model):
         string="SMS confirmation",
         readonly=True)
 
+    number_of_sms = fields.Integer(
+        string="Number of SMS",
+        readonly=True,
+    )
+
     response_message = fields.Text(
         string="Response message",
         readonly=True)
