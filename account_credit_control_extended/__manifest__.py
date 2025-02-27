@@ -14,6 +14,7 @@
         "account_credit_control",
     ],
     "data": [
+        "wizard/wizard_massive_line_description_change.xml",
         "views/credit_control_run.xml",
         "views/credit_control_line.xml",
     ],

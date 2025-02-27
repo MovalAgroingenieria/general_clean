@@ -20,7 +20,52 @@
             <xpath expr="//field[@name='date']" position="after">
                 <field name="run_description"/>
             </xpath>
+            <xpath expr="//notebook/page[last()]" position="after">
+                <page name="jinja_template" string="Template">
+                    <group>
+                        <field name="use_line_description_template"/>
+                        <field name="line_description_template"
+                            attrs="{'invisible': [('use_line_description_template', '=', False)]}"/>
+                    </group>
+                    <group>
+                        <div>
+                            <div>
+                                <div style="background-color: #F8F8F8; margin-bottom: 2%; margin-right:2%; padding: 10px;
+                                    border-top-right-radius: 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
+                                    <field name="line_description_template_resolved" nolabel="1"/>
+                                </div>
+                            </div>
+                            <button name="action_resolve_template" type="object" class="oe_highlight"
+                                help="Try to resolve the template using a random line.
+                                    Note that not all error are catch by the system.">
+                                <div class="o_form_field">
+                                    <span class="fa fa-retweet fa-lg"/>
+                                    <span style="margin-left:8px;">Resolve </span>
+                                </div>
+                            </button>
+                        </div>
+                    </group>
+                </page>
+            </xpath>
         </field>
     </record>
+
+    <record id="account_credit_control_update_description" model="ir.actions.server">
+        <field name="name">Update Credit Line Descriptions</field>
+        <field name="model_id" ref="account_credit_control.model_credit_control_run"/>
+        <field name="code">
+            action =  env['credit.control.run'].browse(context['active_ids']).action_update_description()
+        </field>
+    </record>
+
+    <record id="account_credit_control_action_update_description" model="ir.values">
+        <field name="name">Update Credit Line Descriptions</field>
+        <field name="model">credit.control.run</field>
+        <field name="key">action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="value" eval="'ir.actions.server,' + str(ref('account_credit_control_update_description'))"/>
+    </record>
+
+
 
 </odoo>

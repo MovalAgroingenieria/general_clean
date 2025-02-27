@@ -6,14 +6,28 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-07 09:31+0000\n"
-"PO-Revision-Date: 2023-09-07 09:31+0000\n"
+"POT-Creation-Date: 2025-02-27 16:25+0000\n"
+"PO-Revision-Date: 2025-02-27 16:25+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                    <span style=\"margin-left:8px;\">Resolve </span>"
+msgstr "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                    <span style=\"margin-left:8px;\">Resoldre </span>"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                <span style=\"margin-left:8px;\">Resolve </span>"
+msgstr "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                <span style=\"margin-left:8px;\">Resoldre </span>"
 
 #. module: account_credit_control_extended
 #: model:ir.model,name:account_credit_control_extended.model_credit_control_line
@@ -26,9 +40,35 @@ msgid "Absent"
 msgstr "Absent"
 
 #. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#. module: account_credit_control_extended
+#: model:ir.actions.act_window,name:account_credit_control_extended.action_add_partners_to_file
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Change Line Description"
+msgstr "Canvia la descripció de la línia"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_control_line_ids
+msgid "Control Lines"
+msgstr "Línies de control"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_create_uid
+msgid "Created by"
+msgstr "Creat per"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_create_date
+msgid "Created on"
+msgstr "Creat el"
+
+#. module: account_credit_control_extended
 #: model:ir.model,name:account_credit_control_extended.model_credit_control_run
 msgid "Credit control line generator"
-msgstr "Credit control line generator"
+msgstr "Generador de línies de control de crèdit"
 
 #. module: account_credit_control_extended
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_pivot
@@ -67,6 +107,18 @@ msgid "Description"
 msgstr "Descripció"
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_display_name
+msgid "Display Name"
+msgstr "Mostrar Nom"
+
+#. module: account_credit_control_extended
+#: code:addons/account_credit_control_extended/models/credit_control_run.py:64
+#: code:addons/account_credit_control_extended/wizard/wizard_massive_line_description_change.py:65
+#, python-format
+msgid "Error resolving template: {}"
+msgstr "Error en resoldre la plantilla: {}"
+
+#. module: account_credit_control_extended
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
 msgid "For newsletter publication: No"
 msgstr "Per a publicació Butlletí: No"
@@ -83,6 +135,11 @@ msgid "Has notes"
 msgstr "Té notes"
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_id
+msgid "ID"
+msgstr "ID"
+
+#. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Incorrect address"
 msgstr "Direcció incorrecta"
@@ -94,6 +151,27 @@ msgid "Invoice date"
 msgstr "Data factura"
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change___last_update
+msgid "Last Modified on"
+msgstr "Última modificació el "
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_write_uid
+msgid "Last Updated by"
+msgstr "Última actualització per"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_write_date
+msgid "Last Updated on"
+msgstr "Última actualització el"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_line_description_template
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template
+msgid "Line description Jinja Template"
+msgstr "Plantilla per Descripció de la línia"
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication
 msgid "Newsletter Publication"
 msgstr "Per publicació Butlletí"
@@ -102,6 +180,13 @@ msgstr "Per publicació Butlletí"
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication_date
 msgid "Newsletter Publication Date"
 msgstr "Data publicació Butlletí"
+
+#. module: account_credit_control_extended
+#: code:addons/account_credit_control_extended/models/credit_control_run.py:49
+#: code:addons/account_credit_control_extended/wizard/wizard_massive_line_description_change.py:50
+#, python-format
+msgid "No line found"
+msgstr "No s'ha trobat cap línia"
 
 #. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
@@ -151,12 +236,54 @@ msgid "Returned letter: Yes"
 msgstr "Carta tornada: Sí"
 
 #. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "Template"
+msgstr "Plantilla"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_line_description_template_resolved
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template_resolved
+msgid "Template resolved"
+msgstr "Plantilla resolta"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,help:account_credit_control_extended.field_credit_control_run_line_description_template_resolved
+#: model:ir.model.fields,help:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template_resolved
+msgid "The template after resolve variables using random item."
+msgstr "La plantilla després de resoldre les variables fent servir un element aleatori."
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_tracking_ref
 msgid "Tracking Reference"
 msgstr "Referència de seguiment"
 
 #. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "Try to resolve the template using a random line.                                     Note that not all error are catch by the system."
+msgstr "Intenta resoldre la plantilla utilitzant una línia aleatòria.                                     Tingueu en compte que no tots els errors són capturats pel sistema."
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Try to resolve the template using a random line.                                 Note that not all error are catch by the system."
+msgstr "Intenta resoldre la plantilla utilitzant una línia aleatòria.                                     Tingueu en compte que no tots els errors són capturats pel sistema."
+
+#. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Unknown"
 msgstr "Desconegut"
+
+#. module: account_credit_control_extended
+#: model:ir.actions.server,name:account_credit_control_extended.account_credit_control_update_description
+msgid "Update Credit Line Descriptions"
+msgstr "Actualitzar les descripcions de les línies de crèdit"
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_use_line_description_template
+msgid "Use Line Description Template"
+msgstr "Utilitzeu la plantilla de descripció de línia"
+
+#. module: account_credit_control_extended
+#: model:ir.model,name:account_credit_control_extended.model_wizard_massive_line_description_change
+msgid "wizard.massive.line.description.change"
+msgstr "wizard.massive.line.description.change"
 

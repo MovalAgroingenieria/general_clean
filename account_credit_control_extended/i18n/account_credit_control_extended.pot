@@ -6,14 +6,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-26 06:50+0000\n"
-"PO-Revision-Date: 2024-08-26 06:50+0000\n"
+"POT-Creation-Date: 2025-02-27 16:23+0000\n"
+"PO-Revision-Date: 2025-02-27 16:23+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                    <span style=\"margin-left:8px;\">Resolve </span>"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "<span class=\"fa fa-retweet fa-lg\"/>\n"
+"                                <span style=\"margin-left:8px;\">Resolve </span>"
+msgstr ""
 
 #. module: account_credit_control_extended
 #: model:ir.model,name:account_credit_control_extended.model_credit_control_line
@@ -23,6 +35,32 @@ msgstr ""
 #. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Absent"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.actions.act_window,name:account_credit_control_extended.action_add_partners_to_file
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Change Line Description"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_control_line_ids
+msgid "Control Lines"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_create_date
+msgid "Created on"
 msgstr ""
 
 #. module: account_credit_control_extended
@@ -67,6 +105,18 @@ msgid "Description"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: code:addons/account_credit_control_extended/models/credit_control_run.py:64
+#: code:addons/account_credit_control_extended/wizard/wizard_massive_line_description_change.py:65
+#, python-format
+msgid "Error resolving template: {}"
+msgstr ""
+
+#. module: account_credit_control_extended
 #: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_line_search
 msgid "For newsletter publication: No"
 msgstr ""
@@ -83,6 +133,11 @@ msgid "Has notes"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_id
+msgid "ID"
+msgstr ""
+
+#. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Incorrect address"
 msgstr ""
@@ -94,6 +149,27 @@ msgid "Invoice date"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_line_description_template
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template
+msgid "Line description Jinja Template"
+msgstr ""
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication
 msgid "Newsletter Publication"
 msgstr ""
@@ -101,6 +177,13 @@ msgstr ""
 #. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_newsletter_publication_date
 msgid "Newsletter Publication Date"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: code:addons/account_credit_control_extended/models/credit_control_run.py:49
+#: code:addons/account_credit_control_extended/wizard/wizard_massive_line_description_change.py:50
+#, python-format
+msgid "No line found"
 msgstr ""
 
 #. module: account_credit_control_extended
@@ -151,11 +234,54 @@ msgid "Returned letter: Yes"
 msgstr ""
 
 #. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "Template"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_line_description_template_resolved
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template_resolved
+msgid "Template resolved"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,help:account_credit_control_extended.field_credit_control_run_line_description_template_resolved
+#: model:ir.model.fields,help:account_credit_control_extended.field_wizard_massive_line_description_change_line_description_template_resolved
+msgid "The template after resolve variables using random item."
+msgstr ""
+
+#. module: account_credit_control_extended
 #: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_line_tracking_ref
 msgid "Tracking Reference"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.credit_control_run_form
+msgid "Try to resolve the template using a random line.                                     Note that not all error are catch by the system."
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.ui.view,arch_db:account_credit_control_extended.wizard_massive_line_description_change_view_form
+msgid "Try to resolve the template using a random line.                                 Note that not all error are catch by the system."
 msgstr ""
 
 #. module: account_credit_control_extended
 #: selection:credit.control.line,return_reason:0
 msgid "Unknown"
 msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.actions.server,name:account_credit_control_extended.account_credit_control_update_description
+msgid "Update Credit Line Descriptions"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model.fields,field_description:account_credit_control_extended.field_credit_control_run_use_line_description_template
+msgid "Use Line Description Template"
+msgstr ""
+
+#. module: account_credit_control_extended
+#: model:ir.model,name:account_credit_control_extended.model_wizard_massive_line_description_change
+msgid "wizard.massive.line.description.change"
+msgstr ""
+

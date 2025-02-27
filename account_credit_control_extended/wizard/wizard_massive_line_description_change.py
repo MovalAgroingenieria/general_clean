@@ -1,23 +1,24 @@
 # -*- coding: utf-8 -*-
-# 2021 Moval Agroingeniería
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# 2025 Moval Agroingeniería
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from jinja2 import Template, TemplateError
-from odoo import fields, models, api, exceptions, _
+from odoo import models, fields, _, api, exceptions
 from datetime import datetime
 import random
 
 
-class CreditControlRun(models.Model):
-    _inherit = "credit.control.run"
+class WizardMassiveLineDescriptionChange(models.TransientModel):
+    _name = 'wizard.massive.line.description.change'
 
-    run_description = fields.Text(
-        string="Description",
-    )
+    def _default_control_line_ids(self):
+        active_ids = self.env.context.get('active_ids')
+        return [(6, 0, active_ids)] if active_ids else []
 
-    use_line_description_template = fields.Boolean(
-        string="Use Line Description Template",
-        default=False,
+    control_line_ids = fields.Many2many(
+        string="Control Lines",
+        comodel_name='credit.control.line',
+        default=_default_control_line_ids,
     )
 
     line_description_template = fields.Text(
@@ -64,24 +65,15 @@ class CreditControlRun(models.Model):
                     _('Error resolving template: {}'.format(err.message)))
         if message:
             self.line_description_template_resolved = message
+        return {
+            "type": "ir.actions.do_nothing",
+        }
 
-    def _update_credit_control_lines(self, credit_lines):
-        if self.use_line_description_template:
-            template = Template(self.line_description_template)
-            for line in credit_lines:
-                try:
-                    line.description_html = template.render(
-                        object=line, datetime=datetime)
-                except TemplateError:
-                    pass
-        return credit_lines
-
-    def _generate_credit_lines(self):
-        credit_lines = super(CreditControlRun, self)._generate_credit_lines()
-        self._update_credit_control_lines(credit_lines)
-        return credit_lines
-
-    @api.multi
-    def action_update_description(self):
-        self.ensure_one()
-        self._update_credit_control_lines(self.line_ids)
+    def generate_credit_lines_description(self):
+        template = Template(self.line_description_template)
+        for line in self.control_line_ids:
+            try:
+                line.description_html = template.render(
+                    object=line, datetime=datetime)
+            except TemplateError:
+                pass

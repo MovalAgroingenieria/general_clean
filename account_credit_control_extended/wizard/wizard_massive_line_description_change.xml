@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_massive_line_description_change_view_form" model="ir.ui.view">
+        <field name="name">Wizard Massive Line Description Change</field>
+        <field name="model">wizard.massive.line.description.change</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="line_description_template"/>
+                </group>
+                <group>
+                    <div>
+                        <div>
+                            <div style="background-color: #F8F8F8; margin-bottom: 2%; margin-right:2%; padding: 10px;
+                                border-top-right-radius: 15px; border-top-left-radius: 15px; border-bottom-left-radius: 15px;">
+                                <field name="line_description_template_resolved" nolabel="1"/>
+                            </div>
+                        </div>
+                        <button name="action_resolve_template" type="object" class="oe_highlight"
+                            help="Try to resolve the template using a random line.
+                                Note that not all error are catch by the system.">
+                            <div class="o_form_field">
+                                <span class="fa fa-retweet fa-lg"/>
+                                <span style="margin-left:8px;">Resolve </span>
+                            </div>
+                        </button>
+                    </div>
+                </group>
+                <footer>
+                    <button
+                        name="generate_credit_lines_description"
+                        type="object"
+                        class="oe_highlight"
+                        string="Change Line Description">
+                    </button>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+   <!-- Droplist action -->
+    <act_window id="action_add_partners_to_file"
+        name="Change Line Description"
+        res_model="wizard.massive.line.description.change"
+        src_model="credit.control.line"
+        key2="client_action_multi"
+        view_mode="form"
+        target="new"/>
+
+</odoo>
