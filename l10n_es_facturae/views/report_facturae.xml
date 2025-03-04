@@ -279,6 +279,8 @@
                     </InvoiceHeader>
                     <InvoiceIssueData>
                         <IssueDate t-esc="invoice.date_invoice"/>
+                        <!-- Added by Moval 4/3/2025-->
+                        <OperationDate t-if="invoice.date_invoice" t-esc="invoice.date_invoice"/>
                         <t t-if="invoice.start_date">
                             <InvoicingPeriod>
                                 <StartDate t-esc="start_date"/>
@@ -455,6 +457,7 @@
                                 t-esc="'%.8f' % line.price_unit"
                             />
                             <!--t-esc="'%.8f' % (line.price_unit * line.quantity)"-->
+                            <!-- Changed by moval 3/4/2025-->
                             <TotalCost
 
                                 t-esc="'%.8f' % line.price_subtotal"
