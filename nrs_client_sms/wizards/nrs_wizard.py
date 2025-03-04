@@ -8,6 +8,7 @@ import base64
 import requests
 import json
 import phonenumbers
+import re
 from phonenumbers import carrier
 from phonenumbers.phonenumberutil import number_type
 from datetime import datetime
@@ -322,14 +323,31 @@ class NRSWizard(models.Model):
         res['arch'] = etree.tostring(doc)
         return res
 
-    def _calculate_number_of_sms(self, sms_message):
-        if len(sms_message) <= 160:
-            number_of_sms = 1
-        else:
-            number_of_sms = (len(sms_message) // 153) + 1
-            if number_of_sms > 10:
-                number_of_sms = 10
-        return number_of_sms
+    def _calculate_number_of_sms(self, num_char, encoding):
+        if num_char == 0:
+            return 0
+        if encoding == 'utf-16':
+            if num_char <= 70:
+                return 1
+            return -(-num_char // 67)
+        if num_char <= 160:
+            return 1
+        return -(-num_char // 153)
+
+    def _extract_encoding(self, content):
+        if not isinstance(content, unicode):
+            content = content.decode('utf-8')
+
+        encoding = 'utf-16'
+        gsm7_pattern = re.compile(
+            ur"^[@£$¥èéùìòÇ\nØø\rÅåΔ_ΦΓΛΩΠΨΣΘΞÆæßÉ "
+            ur"!\"#¤%&'()*+,-./0123456789:;<=>?¡"
+            ur"ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÑÜ§¿"
+            ur"abcdefghijklmnopqrstuvwxyzäöñüà]*$")
+
+        if gsm7_pattern.match(content):
+            encoding = 'gsm'
+        return encoding
 
     @api.multi
     def send_sms_action(self, context):
@@ -426,8 +444,10 @@ class NRSWizard(models.Model):
             if raw_sms_message:
                 sms_message = self._escape_json_special_chars(raw_sms_message)
 
-            # Calculate number of sms
-            number_of_sms = self._calculate_number_of_sms(sms_message)
+            # Number of sms
+            encoding = self._extract_encoding(sms_message)
+            num_char = len(sms_message)
+            number_of_sms = self._calculate_number_of_sms(num_char, encoding)
 
             # Check size
             if len(sms_message) > 1530:
@@ -440,6 +460,7 @@ class NRSWizard(models.Model):
                 "from": sender,
                 "message": sms_message,
                 "certified": certify,
+                "encoding": encoding,
                 "flash": sms_flash,
                 "parts": number_of_sms, }
             data = json.dumps(data_raw)
