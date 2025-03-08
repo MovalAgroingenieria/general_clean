@@ -7,6 +7,7 @@ Mass Mailing Extended
 =====================
 
 Extend parent module functionalities and repare errors.
+Avoid use getaddresses.
 
 
 Credits
