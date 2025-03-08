@@ -16,4 +16,12 @@
         </xpath>
     </template>
 
+    <template id="assets_frontend_fontawesome_ogmar" inherit_id="web.assets_frontend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css"
+                href="/fontawesome_ogmar/static/lib/ogmar_iconset/ogmar_iconset.css"/>
+        </xpath>
+    </template>
+
+
 </odoo>
