@@ -133,6 +133,34 @@
                     </div>
                 </t>
 
+                <t t-if="o.res_letter_attachment_ids" style="margin-bottom:16px;">
+                    <div name="attachments_title" style="border-bottom: 1px solid black;">
+                        <span><b>A T T A C H M E N T S</b></span>
+                    </div>
+                    <table style="width: 100%; margin-top: 8px; margin-bottom: 24px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Creation Date</th>
+                                <th>Mime Type</th>
+                                <th>SHA-1 Checksum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.res_letter_attachment_ids" t-as="attachment">
+                                <tr>
+                                    <td><span t-field="attachment.name"/></td>
+                                    <td><span t-field="attachment.create_date"/></td>
+                                    <td><span t-field="attachment.mimetype"/></td>
+                                    <td>
+                                        <t t-set="hash_value" t-esc="attachment._compute_checksum(attachment.datas and attachment.datas.decode('base64'))"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+
                 <t t-if="o.note">
                     <div name="notes_title" style="border-bottom: 1px solid black;">
                         <span><b>D E L I V E R Y</b></span>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-17 08:32+0000\n"
-"PO-Revision-Date: 2025-02-17 08:32+0000\n"
+"POT-Creation-Date: 2025-03-10 11:02+0000\n"
+"PO-Revision-Date: 2025-03-10 11:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -144,6 +144,11 @@ msgid "<span><b>A D D I T I O N A L</b></span>\n"
 msgstr "<span><b>D A T O S</b></span>\n"
 "                        <span>&amp;nbsp;&amp;nbsp;</span>\n"
 "                        <span><b>A D I C I O N A L E S</b></span>"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "<span><b>A T T A C H M E N T S</b></span>"
+msgstr "<span><b>A D J U N T O S</b></span>"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
@@ -329,6 +334,11 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_create_date
 msgid "Created on"
 msgstr "Creado el"
+
+#. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "Creation Date"
+msgstr "Fecha de creación"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_note
@@ -543,6 +553,11 @@ msgid "Manager"
 msgstr "Responsable"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "Mime Type"
+msgstr "Tipo"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_move
 msgid "Move"
 msgstr "Movimiento"
@@ -553,6 +568,7 @@ msgstr "Movimiento"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_name
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_type_name
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
 msgid "Name"
 msgstr "Nombre"
 
@@ -750,6 +766,11 @@ msgid "Registry as sender"
 msgstr "Registro como remitente"
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_report_document
+msgid "SHA-1 Checksum"
+msgstr "Suma de verificación"
+
+#. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
 msgid "Search Letters"
 msgstr "Buscar registros"
@@ -901,4 +922,3 @@ msgstr "Usuario a quien reenviar el registro."
 #: model:ir.model,name:crm_lettermgmt.model_res_letter_mail_wizard
 msgid "res.letter.mail.wizard"
 msgstr "res.letter.mail.wizard"
-
