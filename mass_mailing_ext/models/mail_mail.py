@@ -11,16 +11,10 @@ class MailMail(models.Model):
 
     @api.multi
     def send_get_email_dict(self, partner=None):
-        self.ensure_one()
-        body = self.send_get_mail_body(partner=partner)
-        body_alternative = tools.html2plaintext(body)
-        res = {
-            'body': body,
-            'body_alternative': body_alternative,
-            'email_to': self.send_get_mail_to(partner=partner),
-        }
+        res = super(MailMail, self).send_get_email_dict(partner)
         base_url = self.env['ir.config_parameter'].get_param(
             'web.base.url').rstrip('/')
+        # Solution for invidual mail multi-recipient and encoding
         email_to_raw = res.get('email_to')
         email_to_coded = email_to_raw[0].encode('utf-8')
         if '<' in email_to_coded:
@@ -30,6 +24,7 @@ class MailMail(models.Model):
             only_emails = email_to_coded.replace(';', ',')
         emails = tools.email_split(only_emails)
         res['email_to'] = emails
+        # Solution for mass_mailing multi-recipient and encoding
         if self.mailing_id and res.get('body') and res.get('email_to'):
             original_email_to = res.get('email_to')[0]
             modified_email_to = original_email_to.encode('utf-8')
