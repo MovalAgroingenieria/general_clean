@@ -11,7 +11,11 @@ class MailMail(models.Model):
 
     @api.multi
     def send_get_email_dict(self, partner=None):
+        # Set mass mailing_id to none to avoid execution by super
+        mailing_id = self.mailing_id or None
+        self.mailing_id = None
         res = super(MailMail, self).send_get_email_dict(partner)
+        self.mailing_id = mailing_id
         base_url = self.env['ir.config_parameter'].get_param(
             'web.base.url').rstrip('/')
         # Solution for invidual mail multi-recipient and encoding
@@ -36,4 +40,8 @@ class MailMail(models.Model):
                 res['body'] = res['body'].replace(
                     link_to_replace,
                     unsubscribe_url if unsubscribe_url else '#')
+            # Add mass_mailing_id to tracking
+            tracking_email = self.env['mail.tracking.email'].search(
+                [('mail_id_int', '=', self.id)], limit=1)
+            tracking_email.mass_mailing_id = self.mailing_id.id
         return res
