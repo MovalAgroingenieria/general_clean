@@ -21,9 +21,9 @@
                             <br/>
                             <field name="collection_time"/>
                             <field name="receival_time"/>
-                            <field name="analysis_receival_time"/>
                             <field name="analysis_start_time"/>
                             <field name="analysis_end_time"/>
+                            <field name="analysis_receival_time"/>
                         </group>
                         <group name="master_data_desc">
                             <field name="location"/>

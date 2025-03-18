@@ -96,18 +96,19 @@ class LawAnalysisTemplate(models.Model):
     )
 
     @api.multi
-    def action_show_parameters_form(self):
+    def action_show_law_parameters_form(self):
         self.ensure_one()
-        id_tree_view = self.env.ref(
-            'law_water_quality.law_analysis_view_tree').id
+        id_tree_view = self.env.ref('law_water_quality.law_analysis_view_tree').id
+        id_form_view = self.env.ref('law_water_quality.law_analysis_view_form').id
+
         act_window = {
             'type': 'ir.actions.act_window',
-            'name': ('Analysis'),
+            'name': 'Analysis',
             'res_model': 'law.analysis',
             'view_type': 'form',
-            'view_mode': 'tree',
-            'views': [(id_tree_view, 'tree')],
+            'view_mode': 'tree,form',  # allow opening form from tree
+            'views': [(id_tree_view, 'tree'), (id_form_view, 'form')],
             'target': 'current',
             'domain': [('id', 'in', self.analysis_ids.ids)],
-            }
+        }
         return act_window
