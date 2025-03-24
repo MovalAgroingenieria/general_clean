@@ -101,10 +101,10 @@
 
     <menuitem id="quality_parameters_lines_menu"
               name="Quality Parameter Lines"
-              parent="technical_menu"
+              parent="water_quality_menu"
               action="law_water_quality.law_analysis_parameter_action"
               sequence="10"
-              groups="law_water_quality.group_law_manager"
+              groups="law_water_quality.group_law_user"
     />
 
     <menuitem id="law_measuring_device_measurement_menu"
