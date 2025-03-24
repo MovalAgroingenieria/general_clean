@@ -68,7 +68,9 @@ class ReportController(http.Controller):
         row += 2
         accounts = wizard.get_accounts()
         if accounts:
-            line_headers = [_('Account'), _('Group By')]
+            line_headers = [_('Account'), _('Group By'), _('Initial Balance'),
+                            _('Debit'), _('Credit'), _('Period Balance'),
+                            _('Final Balance')]
             for col_num, header in enumerate(line_headers):
                 worksheet.write(row, col_num, header, bold_format)
             row += 1
