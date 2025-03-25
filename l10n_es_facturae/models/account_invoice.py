@@ -90,6 +90,18 @@ class AccountInvoice(models.Model):
         required=False
     )
 
+    round_decimal = fields.Boolean(
+        string="Round Decimal",
+        help="Round decimals to two digits on invoice line total",
+        required=False
+    )
+
+    service_date = fields.Date(
+        string="Service/Supply Date",
+        help="Date of the service or supply",
+        required=False
+    )
+
     @api.depends('integration_ids')
     def _compute_integrations_count(self):
         self.integration_count = len(self.integration_ids)

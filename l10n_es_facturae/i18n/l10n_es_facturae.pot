@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-05 07:38+0000\n"
-"PO-Revision-Date: 2024-12-05 07:38+0000\n"
+"POT-Creation-Date: 2025-03-25 08:03+0000\n"
+"PO-Revision-Date: 2025-03-25 08:03+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -168,15 +168,15 @@ msgid "Company"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:194
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:194
+#: code:addons/l10n_es_facturae/models/account_invoice.py:206
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:206
 #, python-format
 msgid "Company vat is too small"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:188
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:188
+#: code:addons/l10n_es_facturae/models/account_invoice.py:200
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:200
 #, python-format
 msgid "Company vat not provided"
 msgstr ""
@@ -257,6 +257,11 @@ msgstr ""
 #: selection:account.invoice,facturae_refund_reason:0
 #: selection:account.invoice.refund,refund_reason:0
 msgid "Cálculo de cuotas retenidas"
+msgstr ""
+
+#. module: l10n_es_facturae
+#: model:ir.model.fields,help:l10n_es_facturae.field_account_invoice_service_date
+msgid "Date of the service or supply"
 msgstr ""
 
 #. module: l10n_es_facturae
@@ -659,22 +664,22 @@ msgid "Main file"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:203
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:203
+#: code:addons/l10n_es_facturae/models/account_invoice.py:215
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:215
 #, python-format
 msgid "Mandate account BIC must be 11"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:205
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:205
+#: code:addons/l10n_es_facturae/models/account_invoice.py:217
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:217
 #, python-format
 msgid "Mandate account is too small"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:199
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:199
+#: code:addons/l10n_es_facturae/models/account_invoice.py:211
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:211
 #, python-format
 msgid "Mandate is missing"
 msgstr ""
@@ -761,15 +766,15 @@ msgid "Otro"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:201
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:201
+#: code:addons/l10n_es_facturae/models/account_invoice.py:213
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:213
 #, python-format
 msgid "Partner bank in mandate is missing"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:224
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:224
+#: code:addons/l10n_es_facturae/models/account_invoice.py:236
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:236
 #, python-format
 msgid "Partner bank is missing"
 msgstr ""
@@ -780,22 +785,22 @@ msgid "Partner of a WUA"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:192
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:192
+#: code:addons/l10n_es_facturae/models/account_invoice.py:204
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:204
 #, python-format
 msgid "Partner state not provided"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:190
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:190
+#: code:addons/l10n_es_facturae/models/account_invoice.py:202
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:202
 #, python-format
 msgid "Partner vat is too small"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:186
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:186
+#: code:addons/l10n_es_facturae/models/account_invoice.py:198
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:198
 #, python-format
 msgid "Partner vat not provided"
 msgstr ""
@@ -811,8 +816,8 @@ msgid "Payment Modes"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:196
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:196
+#: code:addons/l10n_es_facturae/models/account_invoice.py:208
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:208
 #, python-format
 msgid "Payment mode is required"
 msgstr ""
@@ -902,20 +907,30 @@ msgid "Result code"
 msgstr ""
 
 #. module: l10n_es_facturae
+#: model:ir.model.fields,field_description:l10n_es_facturae.field_account_invoice_round_decimal
+msgid "Round Decimal"
+msgstr ""
+
+#. module: l10n_es_facturae
+#: model:ir.model.fields,help:l10n_es_facturae.field_account_invoice_round_decimal
+msgid "Round decimals to two digits on invoice line tota"
+msgstr ""
+
+#. module: l10n_es_facturae
 #: selection:create.facturae,state:0
 msgid "Second"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:227
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:227
+#: code:addons/l10n_es_facturae/models/account_invoice.py:239
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:239
 #, python-format
 msgid "Selected account BIC must be 11"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:229
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:229
+#: code:addons/l10n_es_facturae/models/account_invoice.py:241
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:241
 #, python-format
 msgid "Selected account is too small"
 msgstr ""
@@ -946,6 +961,11 @@ msgstr ""
 #: selection:account.invoice,facturae_refund_reason:0
 #: selection:account.invoice.refund,refund_reason:0
 msgid "Serie de la factura"
+msgstr ""
+
+#. module: l10n_es_facturae
+#: model:ir.model.fields,field_description:l10n_es_facturae.field_account_invoice_service_date
+msgid "Service/Supply Date"
 msgstr ""
 
 #. module: l10n_es_facturae
@@ -985,8 +1005,8 @@ msgid "Tax"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:183
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:183
+#: code:addons/l10n_es_facturae/models/account_invoice.py:195
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:195
 #, python-format
 msgid "Taxes not provided in invoice line %s"
 msgstr ""
@@ -997,8 +1017,8 @@ msgid "Templates for Taxes"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:448
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:448
+#: code:addons/l10n_es_facturae/models/account_invoice.py:460
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:460
 #, python-format
 msgid "The generated XML file is not valid against the official XML Schema Definition. The generated XML file and the full error have been written in the server logs. Here is the error, which may give you an idea on the cause of the problem : %s"
 msgstr ""
@@ -1054,8 +1074,8 @@ msgid "Wizard to Load Certificate"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:231
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:231
+#: code:addons/l10n_es_facturae/models/account_invoice.py:243
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:243
 #, python-format
 msgid "You can only create Factura-E files for invoices that have been validated."
 msgstr ""
@@ -1183,10 +1203,10 @@ msgid "create.facturae"
 msgstr ""
 
 #. module: l10n_es_facturae
-#: code:addons/l10n_es_facturae/models/account_invoice.py:423
-#: code:addons/l10n_es_facturae/models/account_invoice.py:428
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:423
-#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:428
+#: code:addons/l10n_es_facturae/models/account_invoice.py:435
+#: code:addons/l10n_es_facturae/models/account_invoice.py:440
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:435
+#: code:addons/moval_addons/general/l10n_es_facturae/models/account_invoice.py:440
 #, python-format
 msgid "facturae"
 msgstr ""
@@ -1212,4 +1232,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:l10n_es_facturae.field_res_users_organo_proponente
 msgid "Órgano proponente"
 msgstr ""
-

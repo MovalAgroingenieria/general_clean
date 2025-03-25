@@ -280,7 +280,9 @@
                     <InvoiceIssueData>
                         <IssueDate t-esc="invoice.date_invoice"/>
                         <!-- Added by Moval 4/3/2025-->
-                        <OperationDate t-if="invoice.date_invoice" t-esc="invoice.date_invoice"/>
+                        <t t-if="invoice.service_date">
+                            <OperationDate t-if="invoice.service_date" t-esc="invoice.service_date"/>
+                        </t>
                         <t t-if="invoice.start_date">
                             <InvoicingPeriod>
                                 <StartDate t-esc="start_date"/>
@@ -456,12 +458,15 @@
                             <UnitPriceWithoutTax
                                 t-esc="'%.8f' % line.price_unit"
                             />
-                            <!--t-esc="'%.8f' % (line.price_unit * line.quantity)"-->
                             <!-- Changed by moval 3/4/2025-->
-                            <TotalCost
-
-                                t-esc="'%.8f' % line.price_subtotal"
-                            />
+                            <TotalCost>
+                                <t t-if="invoice.round_decimal">
+                                    <t t-esc="'%.8f' % line.price_subtotal"/>
+                                </t>
+                                <t t-else="">
+                                    <t t-esc="'%.8f' % (line.price_unit * line.quantity)"/>
+                                </t>
+                            </TotalCost>
                             <DiscountsAndRebates t-if="line.discount != 0">
                                 <Discount>
                                     <DiscountReason t-esc="'Descuento'"/>

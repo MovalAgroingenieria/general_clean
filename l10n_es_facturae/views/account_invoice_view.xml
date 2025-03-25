@@ -35,6 +35,8 @@
                             attrs="{'readonly':[('state','!=','draft')]}"/>
                         <field name="facturae_receiver_contract_reference"
                             attrs="{'readonly':[('state','!=','draft')]}"/>
+                        <field name="round_decimal"/>
+                        <field name="service_date"/>
                     </group>
 
                     <!-- To fix, if one is not None, it will fail to set both to None -->
