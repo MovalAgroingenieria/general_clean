@@ -1,0 +1,337 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gistable_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-27 15:04+0000\n"
+"PO-Revision-Date: 2025-03-27 15:04+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "BigInt"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Boolean"
+msgstr ""
+
+#. module: gistable_management
+#: model:res.groups,name:gistable_management.group_gis_management
+msgid "Can View and Manage Gis tables Data"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:170
+#, python-format
+msgid "Cannot drop a readonly table."
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:390
+#, python-format
+msgid "Cannot edit a readonly and synced field."
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:398
+#, python-format
+msgid "Cannot unlink a readonly field."
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_create_uid
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_create_date
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Date"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_description
+msgid "Description"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_display_name
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "Drop Table"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_epsg
+msgid "EPSG Code"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:251
+#, python-format
+msgid "Failed to add field to DB: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:281
+#, python-format
+msgid "Failed to alter field in DB: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:232
+#, python-format
+msgid "Failed to create geom field in DB: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:215
+#, python-format
+msgid "Failed to create gid field in DB: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:407
+#, python-format
+msgid "Failed to drop field from DB: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:180
+#, python-format
+msgid "Failed to drop table: %s"
+msgstr ""
+
+#. module: gistable_management
+#: code:addons/gistable_management/models/gis_table.py:163
+#, python-format
+msgid "Failed to sync table: %s"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_name
+msgid "Field Name"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_ids
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "Fields"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model,name:gistable_management.model_gis_table_field_value
+msgid "Fixed Values for GIS Field"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model,name:gistable_management.model_gis_table
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_gis_table_id
+msgid "GIS Table"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model,name:gistable_management.model_gis_table_field
+msgid "GIS Table Field"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model,name:gistable_management.model_gis_table_record
+msgid "GIS Table Record"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model,name:gistable_management.model_gis_table_record_field_value
+msgid "GIS Table Record Field Value"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.actions.act_window,name:gistable_management.action_gis_table
+#: model:ir.ui.menu,name:gistable_management.gis_table_menu
+#: model:ir.ui.menu,name:gistable_management.gistable_root_menu
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_tree
+msgid "GIS Tables"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Geometry"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_geometry_type
+msgid "Geometry Type"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_id
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_id
+msgid "ID"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,help:gistable_management.field_gis_table_readonly
+msgid "If checked, the table cannot be deleted"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "Import from DB"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table___last_update
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_write_uid
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_write_date
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "LineString"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.actions.server,name:gistable_management.action_load_gis_tables_from_db
+#: model:ir.ui.menu,name:gistable_management.gis_table_load_menu
+msgid "Load GIS Tables from DB"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "MultiLineString"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "MultiPoint"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "MultiPolygon"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Numeric"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "Point"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,geometry_type:0
+msgid "Polygon"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_field_type
+msgid "PostgreSQL Field Type"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "Push to DB"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_readonly
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_readonly
+msgid "Read Only (DB-level)"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_related_model_id
+msgid "Related Odoo Model"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_relation_gis_field_id
+msgid "Relation Field (GIS Table)"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_relation_field_id
+msgid "Relation Field (Odoo Model)"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_required
+msgid "Required (NOT NULL)"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "Sync Table"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_field_is_synced
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_is_synced
+msgid "Synchronized with DB"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.model.fields,field_description:gistable_management.field_gis_table_name
+msgid "Table Name"
+msgstr ""
+
+#. module: gistable_management
+#: sql_constraint:gis.table:0
+msgid "Table Name must be unique."
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Text"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Timestamp"
+msgstr ""
+
+#. module: gistable_management
+#: selection:gis.table.field,field_type:0
+msgid "Varchar"
+msgstr ""
+
+#. module: gistable_management
+#: model:ir.ui.view,arch_db:gistable_management.gis_table_view_form
+msgid "WARNING: This will also delete the gis table if exists, are you sure?"
+msgstr ""
+

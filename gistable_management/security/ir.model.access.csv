@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gis_table_manager,Model GIS Table manager user access,gistable_management.model_gis_table,gistable_management.group_gis_management,1,1,1,1
+access_gis_table_field_manager,Model GIS Table Field manager user access,gistable_management.model_gis_table_field,gistable_management.group_gis_management,1,1,1,1
