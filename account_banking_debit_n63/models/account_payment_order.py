@@ -5,18 +5,11 @@
 from odoo import models, fields, api, _
 import logging
 from datetime import datetime
+import re
 
 
-class AccountPaymentLine(models.Model):
-    _inherit = 'account.payment.line'
-
-    debit_identifier = fields.Char(
-        string="Debit Identifier",
-        help="Identifier of the debit")
-
-    optional_debit_identifier = fields.Char(
-        string="Optional Debit Identifier",
-        help="Optional identifier of the debit")
+class BankPaymentLine(models.Model):
+    _inherit = 'bank.payment.line'
 
     n63_s1_ref = fields.Char(
         string="N63 Stage 1 Reference",
@@ -83,7 +76,8 @@ class AccountPaymentOrder(models.Model):
         ('5', '5'),
         ('6', '6')],
         string="Phase",
-        default="1",
+        compute='_compute_phase',
+        store=True,
         help="Phase in which the charge is made")
 
     date_of_obtaining_the_file = fields.Date(
@@ -91,17 +85,10 @@ class AccountPaymentOrder(models.Model):
         default=fields.Date.today,
         help="Date on which the file is obtained")
 
-    nif_issuing_organisation = fields.Char(
-        string="NIF Issuing Organisation",
-        help="NIF of the organisation that issues the file")
-
     ine_code_issuring_organisation = fields.Char(
         string="INE Code Issuring Organisation",
         help="INE code of the organisation that issues the file")
 
-    issuring_name = fields.Char(
-        string="Issuring Name",
-        help="Name of the organisation that issues the file")
 
     # Methods
     @api.depends('payment_mode_id')
@@ -115,6 +102,22 @@ class AccountPaymentOrder(models.Model):
     def _onchange_payment_mode_name(self):
         if self.payment_mode_name in ('N63 Fase 1', 'N63 Fase 3'):
             self.date_prefered = 'now'
+
+    @api.depends('payment_mode_id')
+    def _compute_phase(self):
+        for record in self:
+            if record.payment_mode_id.name == 'N63 Fase 1':
+                record.phase = '1'
+            elif record.payment_mode_id.name == 'N63 Fase 2':
+                record.phase = '2'
+            elif record.payment_mode_id.name == 'N63 Fase 3':
+                record.phase = '3'
+            elif record.payment_mode_id.name == 'N63 Fase 4':
+                record.phase = '4'
+            elif record.payment_mode_id.name == 'N63 Fase 5':
+                record.phase = '5'
+            elif record.payment_mode_id.name == 'N63 Fase 6':
+                record.phase = '6'
 
     # Generate payment file
     @api.multi
@@ -140,7 +143,10 @@ class AccountPaymentOrder(models.Model):
 
         # Position C [04-07] Length 04 Format N
         nrbe_entity_code = self.nrbe_entity_code
-        header_line += nrbe_entity_code
+        if nrbe_entity_code:
+            header_line += nrbe_entity_code
+        else:
+            header_line += str(' ' * 4)
         # Position D [08-15] Length 08 Format N
         #free
         pos_d = str(' ' * 8)
@@ -176,11 +182,10 @@ class AccountPaymentOrder(models.Model):
         header_line += pos_f5
 
         # Position G [57-111] Length 55 Format A
-
         # Position G1 [57-65] Length 09 Format N
-        if self.nif_issuing_organisation:
-            nif_issuing_organisation = self.nif_issuing_organisation
-        else:
+        nif_issuing_organisation = self.env['ir.values'].get_default(
+            'account.config.settings', 'nif_issuing_organisation')
+        if not nif_issuing_organisation:
             nif_issuing_organisation = str(' ' * 9)
         header_line += nif_issuing_organisation
 
@@ -199,7 +204,8 @@ class AccountPaymentOrder(models.Model):
             header_line += str('0' * 6)
 
         # Position G3 [72-111] Length 40 Format A
-        issuring_name = self.issuring_name
+        issuring_name = self.env['ir.values'].get_default(
+            'account.config.settings', 'issuring_name')
         if issuring_name:
             if len(issuring_name) > 40:
                 issuring_name = issuring_name[:40]
@@ -223,7 +229,7 @@ class AccountPaymentOrder(models.Model):
         qty_registers = 2
 
         # # Generate Lines datas
-        for payment in self.payment_line_ids:
+        for payment in self.bank_line_ids:
             bank_line = ""
             # # Position A [01-01] Length 01 Format N
             header_registre_code = self.REGISTR_CODE_LINE
@@ -278,7 +284,7 @@ class AccountPaymentOrder(models.Model):
             pos_b5 = postal_code
 
             # Position C [107-119] Length 13 Format N
-            debit_identifier = payment.name
+            debit_identifier = re.sub(r'\D', '', payment.name or '')
             if debit_identifier:
                 if len(debit_identifier) > 13:
                     debit_identifier = debit_identifier[:13]
@@ -294,7 +300,8 @@ class AccountPaymentOrder(models.Model):
                 pos_d_p1 = str(' ' * 15)
 
                 # Position E [135-142] Length 08 Format N
-                optional_debit_identifier = payment.optional_debit_identifier
+                optional_debit_identifier = re.sub(
+                    r'\D', '', payment.partner_id.vat or '')
                 if optional_debit_identifier:
                     pos_e_p1 = optional_debit_identifier[:8]
                 else:
@@ -354,9 +361,10 @@ class AccountPaymentOrder(models.Model):
                     pos_d_p3 = str('0' * 15)
 
                 # Position E [135-142] Length 08 Format N
-                optional_debit_identifier = payment.optional_debit_identifier
+                optional_debit_identifier = re.sub(
+                    r'\D', '', payment.partner_id.vat or '')
                 if optional_debit_identifier:
-                    pos_e_p3 = optional_debit_identifier
+                    pos_e_p1 = optional_debit_identifier[:8]
                 else:
                     pos_e_p3 = str(' ' * 8)
 
@@ -771,7 +779,10 @@ class AccountPaymentOrder(models.Model):
         # Position G [54-62] Length 9 Format N
 
         # Position G1 [54-62] Length 09 Format N
-        nif_issuing_organisation = self.nif_issuing_organisation
+        nif_issuing_organisation = self.env['ir.values'].get_default(
+            'account.config.settings', 'nif_issuing_organisation')
+        if not nif_issuing_organisation:
+            nif_issuing_organisation = str(' ' * 9)
         footer_line += nif_issuing_organisation
 
         # Position G2 [63-68] Length 06 Format N
@@ -789,7 +800,15 @@ class AccountPaymentOrder(models.Model):
             footer_line += str('0' * 6)
 
         # Position G3 [69-108] Length 40 Format A
-        issuring_name = self.issuring_name
+        issuring_name = self.env['ir.values'].get_default(
+            'account.config.settings', 'issuring_name')
+        if issuring_name:
+            if len(issuring_name) > 40:
+                issuring_name = issuring_name[:40]
+            else:
+                issuring_name += str(' ' * (40 - len(issuring_name)))
+        else:
+            issuring_name = str(' ' * 40)
         footer_line += issuring_name[:40]
 
         # Position H [109-651] Length 542 Format A

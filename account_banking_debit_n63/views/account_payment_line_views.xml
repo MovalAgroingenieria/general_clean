@@ -2,35 +2,31 @@
 <odoo>
 
     <!-- Form view -->
-    <record id="n63_account_payment_line_form" model="ir.ui.view">
-        <field name="name">n63.account.payment.line.form</field>
-        <field name="model">account.payment.line</field>
-        <field name="inherit_id" ref="account_payment_order.account_payment_line_form"/>
+    <record id="n63_bank_payment_line_form" model="ir.ui.view">
+        <field name="name">n63.bank.payment.line.form</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_form"/>
         <field name="arch" type="xml">
             <field name="name" position="after">
-               <field name="debit_identifier"/>
-               <field name="optional_debit_identifier"/>
                <field name="n63_s1_ref"/>
                <field name="n63_s3_ref"/>
-               <field name="n63_s1_sent"/>
-               <field name="n63_s3_sent"/>
+               <field name="n63_s1_sent" attrs="{'invisible': [('n63_s1_ref', '!=', False)]}"/>
+               <field name="n63_s3_sent" attrs="{'invisible': [('n63_s3_ref', '!=', False)]}"/>
             </field>
         </field>
     </record>
 
     <!-- Tree view -->
-    <record id="n63_account_payment_line_tree" model="ir.ui.view">
-        <field name="name">n63.account.payment.line.tree</field>
-        <field name="model">account.payment.line</field>
-        <field name="inherit_id" ref="account_payment_order.account_payment_line_tree"/>
+    <record id="n63_bank_payment_line_tree" model="ir.ui.view">
+        <field name="name">n63.bank.payment.line.tree</field>
+        <field name="model">bank.payment.line</field>
+        <field name="inherit_id" ref="account_payment_order.bank_payment_line_tree"/>
         <field name="arch" type="xml">
             <field name="name" position="after">
-               <field name="debit_identifier"/>
-               <field name="optional_debit_identifier"/>
                <field name="n63_s1_ref"/>
                <field name="n63_s3_ref"/>
-               <field name="n63_s1_sent"/>
-               <field name="n63_s3_sent"/>
+               <field name="n63_s1_sent" attrs="{'invisible': [('n63_s1_ref', '!=', False)]}"/>
+               <field name="n63_s3_sent" attrs="{'invisible': [('n63_s3_ref', '!=', False)]}"/>
             </field>
         </field>
     </record>

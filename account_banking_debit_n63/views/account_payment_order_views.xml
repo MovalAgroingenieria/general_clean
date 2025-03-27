@@ -17,9 +17,7 @@
                         <field name="nrbe_entity_code" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
                         <field name="phase" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}" widget="selection"/>
                         <field name="date_of_obtaining_the_file" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
-                        <field name="nif_issuing_organisation" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}"/>
                         <field name="ine_code_issuring_organisation" style="width: 50%;"/>
-                        <field name="issuring_name" style="width: 50%;" attrs="{'required':['|', ('payment_mode_name', '=', 'N63 Fase 1'), ('payment_mode_name', '=', 'N63 Fase 3')]}" />
                     </group>
                 </group>
             </xpath>
