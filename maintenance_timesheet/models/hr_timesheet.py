@@ -12,13 +12,31 @@ class AccountAnalyticLine(models.Model):
 
     maintenance_request_id = fields.Many2one(
         comodel_name='maintenance.request',
-        string="Maintenance Request")
+        string='Maintenance Request',
+    )
+
+    maintenance_equipment_id = fields.Many2one(
+        string='Maintenance Equipment',
+        comodel_name='maintenance.equipment',
+        compute='_compute_maintenance_equipment_id',
+        store=True,
+    )
 
     @api.onchange('maintenance_request_id')
     def onchange_maintenance_request_id(self):
         if self.maintenance_request_id and not self.project_id:
             self.project_id = self.maintenance_request_id.project_id
             self.task_id = self.maintenance_request_id.task_id
+
+    @api.depends('maintenance_request_id',
+                 'maintenance_request_id.equipment_id')
+    def _compute_maintenance_equipment_id(self):
+        for record in self:
+            equipment_id = None
+            if record.maintenance_request_id and \
+                    record.maintenance_request_id.equipment_id:
+                equipment_id = record.maintenance_request_id.equipment_id
+            record.maintenance_equipment_id = equipment_id
 
     @api.model
     def create(self, values):
