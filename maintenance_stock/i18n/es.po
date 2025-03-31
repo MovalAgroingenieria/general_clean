@@ -19,7 +19,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:maintenance_stock.equipment_request_view_form
 #: model:ir.ui.view,arch_db:maintenance_stock.hr_equipment_view_form
 msgid "<span class=\"o_stat_text\">Picking list</span>"
-msgstr "<span class=\"o_stat_text\">Albaranes materiales</span>"
+msgstr "<span class=\"o_stat_text\">Albaranes</span><span>materiales</span>"
 
 #. module: maintenance_stock
 #: model:ir.ui.view,arch_db:maintenance_stock.equipment_request_view_form
