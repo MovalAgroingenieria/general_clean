@@ -11,22 +11,25 @@ class ResPartner(models.Model):
     digitalregister_ids = fields.One2many(
         string='Possible digital register of the partner',
         comodel_name='eom.digitalregister',
-        inverse_name='partner_id')
+        inverse_name='partner_id',
+    )
 
     digitalregister_id = fields.Many2one(
         string='Digital register of the partner',
         comodel_name='eom.digitalregister',
         store=True,
-        compute='_compute_digitalregister_id',)
+        compute='_compute_digitalregister_id',
+    )
 
     digitalregisteraccess_ids = fields.One2many(
         string='Accesses of the partner',
         comodel_name='eom.digitalregister.access',
-        inverse_name='partner_id')
+        inverse_name='partner_id',
+    )
 
     @api.depends('digitalregister_ids')
     def _compute_digitalregister_id(self):
-        for record in self:
+        for record in self.sudo():
             digitalregister_id = None
             if (record.digitalregister_ids and
                len(record.digitalregister_ids) == 1):

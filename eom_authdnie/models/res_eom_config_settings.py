@@ -14,7 +14,8 @@ class ResEomConfigSettings(models.TransientModel):
         string='Editable Notes (y/n)',
         default=True,
         required=True,
-        help='Ability to edit internal annotations',)
+        help='Ability to edit internal annotations',
+    )
 
     @api.multi
     def set_default_values(self):

@@ -30,28 +30,33 @@ class EomDigitalregister(models.Model):
         string='VAT',
         size=SIZE_NAME,
         required=True,
-        index=True,)
+        index=True,
+    )
 
     firstname = fields.Char(
         string='First Name',
         size=SIZE_FIRSTNAME,
-        index=True,)
+        index=True,
+    )
 
     lastname = fields.Char(
         string='Last Name',
         size=SIZE_LASTNAME,
-        index=True,)
+        index=True,
+    )
 
     authority = fields.Char(
         string='Authority',
         size=SIZE_AUTHORITY,
-        index=True,)
+        index=True,
+    )
 
     partner_id = fields.Many2one(
         string='Partner',
         comodel_name='res.partner',
         index=True,
-        ondelete='restrict',)
+        ondelete='restrict',
+    )
 
     digitalregisteraccess_ids = fields.One2many(
         string='Accesses of the digital certificate',
@@ -60,52 +65,64 @@ class EomDigitalregister(models.Model):
 
     editable_notes = fields.Boolean(
         string='Editable Notes (y/n)',
-        compute='_compute_editable_notes',)
+        compute='_compute_editable_notes',
+    )
 
     notes = fields.Html(
-        string='Notes',)
+        string='Notes',
+    )
 
     fullname = fields.Char(
         string='Full Name',
         store=True,
         compute='_compute_fullname',
-        index=True,)
+        index=True,
+    )
 
     fullname_html = fields.Html(
         string="Full Name (html)",
-        compute='_compute_fullname_html',)
+        compute='_compute_fullname_html',
+    )
 
     fullname_firstname = fields.Char(
         string="Full Name (firstname and lastname)",
-        compute='_compute_fullname_firstname',)
+        compute='_compute_fullname_firstname',
+    )
 
     last_event_time = fields.Datetime(
         string='Last Access',
-        compute='_compute_last_event_time',)
+        compute='_compute_last_event_time',
+    )
 
     number_of_accesses = fields.Integer(
         string='Number of accesses',
-        compute='_compute_number_of_accesses',)
+        compute='_compute_number_of_accesses',
+    )
 
     number_of_requests = fields.Integer(
         string='Number of requests',
-        compute='_compute_number_of_requests',)
+        compute='_compute_number_of_requests',
+    )
 
     email = fields.Char(
         string='Email',
-        related='partner_id.email',)
+        related='partner_id.email',
+    )
 
     phone = fields.Char(
         string='Phone',
-        related='partner_id.phone',)
+        related='partner_id.phone',
+    )
 
     mobile = fields.Char(
         string='Mobile',
-        related='partner_id.mobile',)
+        related='partner_id.mobile',
+    )
 
     icon_with_contact = fields.Char(
         string='With contact (icon)',
-        compute='_compute_icon_with_contact',)
+        compute='_compute_icon_with_contact',
+    )
 
     image = fields.Binary(
         string='Image',
@@ -352,7 +369,8 @@ class EomDigitalregister(models.Model):
             model_digitalregister_access = \
                 self.env['eom.digitalregister.access']
             new_access = model_digitalregister_access.create({
-                'digitalregister_id': digitalregister.id, })
+                'digitalregister_id': digitalregister.id,
+            })
             # digitalregister.write({
             #     'digitalregisteraccess_ids': [(0, 0, {})]
             #     })
@@ -387,7 +405,8 @@ class EomDigitalregister(models.Model):
             'context': {'hide_image': True,
                         'search_default_grouped_event_time': True,
                         'reduced_register_id': True,
-                        'reduced_access_id': True, },
+                        'reduced_access_id': True,
+                        },
             }
         return act_window
 
@@ -437,7 +456,8 @@ class EomDigitalregisterAccess(models.Model):
         default=lambda self: fields.datetime.now(),
         required=True,
         index=True,
-        readonly=True,)
+        readonly=True,
+    )
 
     digitalregister_id = fields.Many2one(
         string='Digital Certificate',
@@ -445,13 +465,15 @@ class EomDigitalregisterAccess(models.Model):
         required=True,
         index=True,
         readonly=True,
-        ondelete='cascade',)
+        ondelete='cascade',
+    )
 
     name = fields.Char(
         size=SIZE_NAME,
         store=True,
         index=True,
-        compute='_compute_name',)
+        compute='_compute_name',
+    )
 
     partner_id = fields.Many2one(
         string='Partner',
@@ -459,56 +481,68 @@ class EomDigitalregisterAccess(models.Model):
         store=True,
         index=True,
         compute='_compute_partner_id',
-        ondelete='restrict',)
+        ondelete='restrict',
+    )
 
     summary = fields.Char(
         string='Summary',
         size=SIZE_SUMMARY,
-        index=True,)
+        index=True,
+    )
 
     detail = fields.Char(
         string='Detail',
-        size=SIZE_DETAIL,)
+        size=SIZE_DETAIL,
+    )
 
     detail_text = fields.Text(
         string='Detail (text)',
-        compute='_compute_detail_text',)
+        compute='_compute_detail_text',
+    )
 
     editable_notes = fields.Boolean(
         string='Editable Notes (y/n)',
-        compute='_compute_editable_notes',)
+        compute='_compute_editable_notes',
+    )
 
     with_userdata = fields.Boolean(
         string='With user data (y/n)',
         store=True,
-        compute='_compute_with_userdata',)
+        compute='_compute_with_userdata',
+    )
 
     notes = fields.Html(
-        string='Notes',)
+        string='Notes',
+    )
 
     icon_with_userdata = fields.Char(
         string='With user data (icon)',
-        compute='_compute_icon_with_userdata',)
+        compute='_compute_icon_with_userdata',
+    )
 
     firstname = fields.Char(
         string='First Name',
         store=True,
         compute='_compute_firstname',
-        index=True,)
+        index=True,
+    )
 
     lastname = fields.Char(
         string='Last Name',
         store=True,
         compute='_compute_lastname',
-        index=True,)
+        index=True,
+    )
 
     authority = fields.Char(
         string='Authority',
-        related='digitalregister_id.authority',)
+        related='digitalregister_id.authority',
+    )
 
     icon_with_contact = fields.Char(
         string='With contact (icon)',
-        related='digitalregister_id.icon_with_contact',)
+        related='digitalregister_id.icon_with_contact',
+    )
 
     image = fields.Binary(
         string='Image',
@@ -526,11 +560,13 @@ class EomDigitalregisterAccess(models.Model):
 
     fullname_html = fields.Html(
         string="Full Name (html)",
-        compute='_compute_fullname_html',)
+        compute='_compute_fullname_html',
+    )
 
     fullname_firstname = fields.Char(
         string="Full Name (firstname and lastname)",
-        compute='_compute_fullname_firstname',)
+        compute='_compute_fullname_firstname',
+    )
 
     color = fields.Integer(string='Color Index')
 
