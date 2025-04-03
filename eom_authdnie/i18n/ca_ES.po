@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-19 11:59+0000\n"
-"PO-Revision-Date: 2024-12-19 11:59+0000\n"
+"POT-Creation-Date: 2025-04-03 13:11+0000\n"
+"PO-Revision-Date: 2025-04-03 13:11+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -68,8 +68,10 @@ msgstr "<strong>(sense dades)</strong>"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
-msgid "<strong>(there is no associated contact)</strong>"
-msgstr "<strong>(sense contacte associat)</strong>"
+msgid "<strong>(there is no associated contact)</strong>\n"
+"                                        <br/>"
+msgstr "<strong>(no hi ha cap contacte associat)</strong>\n"
+"                                        <br/>"
 
 #. module: eom_authdnie
 #: model:ir.ui.view,arch_db:eom_authdnie.confirmation_message
@@ -90,6 +92,7 @@ msgstr "<strong>DNI:</strong>"
 
 #. module: eom_authdnie
 #: code:addons/eom_authdnie/models/res_partner.py:48
+#: code:addons/moval_addons/general/eom_authdnie/models/res_partner.py:48
 #, python-format
 msgid "A partner can only have one digital register."
 msgstr "Un contacte només pot estar associat a un certificat digital."
@@ -122,6 +125,7 @@ msgstr "Accés d'un certificat digital"
 
 #. module: eom_authdnie
 #: code:addons/eom_authdnie/models/eom_digitalregister.py:377
+#: code:addons/moval_addons/general/eom_authdnie/models/eom_digitalregister.py:377
 #: model:ir.actions.act_window,name:eom_authdnie.eom_digitalregister_access_action
 #: model:ir.ui.menu,name:eom_authdnie.digitalregister_access_menu
 #: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
@@ -190,6 +194,7 @@ msgstr "Gestió de la configuració de la seu electrònica"
 
 #. module: eom_authdnie
 #: code:addons/eom_authdnie/models/res_partner.py:87
+#: code:addons/moval_addons/general/eom_authdnie/models/res_partner.py:87
 #, python-format
 msgid "Contact"
 msgstr "Contacte"
@@ -464,6 +469,7 @@ msgid "Parameters"
 msgstr "Paràmetres"
 
 #. module: eom_authdnie
+#: model:ir.model,name:eom_authdnie.model_res_partner
 #: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_access_partner_id
 #: model:ir.model.fields,field_description:eom_authdnie.field_eom_digitalregister_partner_id
 msgid "Partner"
@@ -498,6 +504,7 @@ msgstr "PETICIÓ"
 
 #. module: eom_authdnie
 #: code:addons/eom_authdnie/models/eom_digitalregister.py:408
+#: code:addons/moval_addons/general/eom_authdnie/models/eom_digitalregister.py:408
 #: model:ir.actions.act_window,name:eom_authdnie.eom_digitalregister_access_with_userdata_action
 #: model:ir.ui.menu,name:eom_authdnie.digitalregister_access_with_userdata_menu
 #: model:ir.ui.view,arch_db:eom_authdnie.eom_digitalregister_view_tree
@@ -572,4 +579,3 @@ msgstr "⸰ Identificació"
 #: model:ir.ui.view,arch_db:eom_authdnie.identification_data_page
 msgid "⸰ New request"
 msgstr "⸰ Nova sol·licitud"
-

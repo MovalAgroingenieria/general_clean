@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <template id="identification_data_page"
-              inherit_id="eom_authdnie.identification_data_page">
-        <xpath expr="//t[@t-else=''][1]" position="after">
-            <h4>⸰ Queries</h4>
+    <template id="identification_data_page" inherit_id="eom_authdnie.identification_data_page">
+        <xpath expr="//t[@t-if='access.partner_id']/following-sibling::t[@t-else]" position="after">
+        <br/>
+        <br/>
+        <h4>⸰ Queries</h4>
             <hr/>
             <h4>
                 <form id="efiles" role="form" action="/efiles" method="post">
