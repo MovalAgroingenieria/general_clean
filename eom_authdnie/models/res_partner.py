@@ -55,14 +55,14 @@ class ResPartner(models.Model):
     def create(self, vals):
         new_partner = super(ResPartner, self).create(vals)
         if 'vat' in vals and vals['vat']:
-            new_partner.update_digitalregister()
+            new_partner.sudo().update_digitalregister()
         return new_partner
 
     @api.multi
     def write(self, vals):
         resp = super(ResPartner, self).write(vals)
         if 'vat' in vals:
-            self.update_digitalregister()
+            self.sudo().update_digitalregister()
         return resp
 
     @api.multi

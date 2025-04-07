@@ -33,7 +33,8 @@ class EomElectronicfile(models.Model):
         default=lambda self: fields.datetime.now(),
         required=True,
         index=True,
-        readonly=True,)
+        readonly=True,
+    )
 
     digitalregister_id = fields.Many2one(
         string='Digital Certificate',
@@ -41,14 +42,16 @@ class EomElectronicfile(models.Model):
         required=True,
         index=True,
         readonly=True,
-        ondelete='restrict',)
+        ondelete='restrict',
+    )
 
     name = fields.Char(
         string='Code',
         size=SIZE_NAME,
         default=_default_name,
         required=True,
-        index=True,)
+        index=True,
+    )
 
     partner_id = fields.Many2one(
         string='Partner',
@@ -56,7 +59,8 @@ class EomElectronicfile(models.Model):
         store=True,
         index=True,
         compute='_compute_partner_id',
-        ondelete='restrict',)
+        ondelete='restrict',
+    )
 
     type = fields.Selection(
         string="Type",
@@ -66,11 +70,13 @@ class EomElectronicfile(models.Model):
         ],
         default='01_generic_instance',
         required=True,
-        index=True,)
+        index=True,
+    )
 
     exposition = fields.Text(
         string='Exposition',
-        index=True,)
+        index=True,
+    )
 
     request = fields.Text(
         string='Request')
@@ -82,26 +88,31 @@ class EomElectronicfile(models.Model):
         string='First Name',
         store=True,
         compute='_compute_firstname',
-        index=True,)
+        index=True,
+    )
 
     lastname = fields.Char(
         string='Last Name',
         store=True,
         compute='_compute_lastname',
-        index=True,)
+        index=True,
+    )
 
     fullname = fields.Char(
         string='Full Name',
         store=True,
         compute='_compute_fullname',
-        index=True,)
+        index=True,
+    )
 
     editable_notes = fields.Boolean(
         string='Editable Notes (y/n)',
-        compute='_compute_editable_notes',)
+        compute='_compute_editable_notes',
+    )
 
     notes = fields.Html(
-        string='Notes',)
+        string='Notes',
+    )
 
     sia_code = fields.Char(
         string='SIA Code',
@@ -219,7 +230,7 @@ class EomElectronicfile(models.Model):
             'view_mode': 'form',
             'views': [(id_form_view, 'form')],
             'target': 'current',
-            'res_id': self.digitalregister_id.id
+            'res_id': self.digitalregister_id.id,
             }
         return act_window
 
@@ -234,7 +245,7 @@ class EomElectronicfile(models.Model):
             'view_mode': 'form',
             'views': [(id_form_view, 'form')],
             'target': 'current',
-            'res_id': self.partner_id.id
+            'res_id': self.partner_id.id,
             }
         return act_window
 

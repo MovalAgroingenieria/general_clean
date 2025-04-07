@@ -30,7 +30,8 @@ class EomDigitalregister(models.Model):
 
     number_of_files = fields.Integer(
         string='Number of electronic files',
-        compute='_compute_number_of_files',)
+        compute='_compute_number_of_files',
+    )
 
     @api.depends('file_ids')
     def _compute_number_of_files(self):
