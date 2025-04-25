@@ -48,6 +48,11 @@ _logger = logging.getLogger(__name__)
 
 
 def _get_wkhtmltopdf_bin():
+    custom = config.get('wkhtmltox_path')
+    if custom and custom != 'None':
+        binpath = os.path.join(custom, 'wkhtmltopdf')
+        _logger.info('>> Using custom wkhtmltopdf: %s', binpath)
+        return binpath
     return find_in_path('wkhtmltopdf')
 
 
