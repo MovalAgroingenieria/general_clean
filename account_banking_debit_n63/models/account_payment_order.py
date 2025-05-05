@@ -237,11 +237,12 @@ class AccountPaymentOrder(models.Model):
 
             # Position B [02-106] Length 105 Format A
             # Position B1 [2-10] Length 09 Format N
-            nif_customer = payment.partner_id.vat[-9:]
+            nif_customer = payment.partner_id.vat[-9:] \
+                if payment.partner_id.vat else None
             if nif_customer:
                 pos_b1 = nif_customer
             else:
-                pos_b1 += str(' ' * 9)
+                pos_b1 = str(' ' * 9)
 
             # Position B2 [11-50] Length 40 Format A
             customer_name = (payment.partner_id.lastname + ' *' +
@@ -255,8 +256,11 @@ class AccountPaymentOrder(models.Model):
             pos_b2 = customer_name[:40]
 
             # # Position B3 [51-89] Length 39 Format A
-            customer_address = payment.partner_id.street + ', ' + (
-                payment.partner_id.street_num)
+            if payment.partner_id.street_num:
+                customer_address = payment.partner_id.street + ', ' + (
+                    payment.partner_id.street_num)
+            else:
+                customer_address = payment.partner_id.street
             if customer_address:
                 if len(customer_address) > 39:
                     customer_address = customer_address[:39]
@@ -408,13 +412,16 @@ class AccountPaymentOrder(models.Model):
                     pos_j3_p3 = str(' ' * 15)
 
                     # Position J4 [216-239] Length 24 Format A
-                    if bank_ids[1] and bank_ids[1].acc_number:
-                        account_bank_2 = bank_ids[1].acc_number
-                        if len(account_bank_2) > 24:
-                            pos_j4_p3 = account_bank_2[:24]
+                    if len(bank_ids) > 1:
+                        if bank_ids[1].acc_number:
+                            account_bank_2 = bank_ids[1].acc_number
+                            if len(account_bank_2) > 24:
+                                pos_j4_p3 = account_bank_2[:24]
+                            else:
+                                pos_j4_p3 = account_bank_2 + str(' ' * (
+                                        24 - len(account_bank_2)))
                         else:
-                            pos_j4_p3 = account_bank_2 + str(' ' * (
-                                    24 - len(account_bank_2)))
+                            pos_j4_p3 = str(' ' * 24)
                     else:
                         pos_j4_p3 = str(' ' * 24)
 
@@ -427,13 +434,16 @@ class AccountPaymentOrder(models.Model):
                     pos_j6_p3 = str(' ' * 15)
 
                     # Position J7 [257-280] Length 24 Format A
-                    if bank_ids[2] and bank_ids[2].acc_number:
-                        account_bank_3 = bank_ids[2].acc_number
-                        if len(account_bank_3) > 24:
-                            pos_j7_p3 = account_bank_3[:24]
+                    if len(bank_ids) > 2:
+                        if bank_ids[2].acc_number:
+                            account_bank_3 = bank_ids[2].acc_number
+                            if len(account_bank_3) > 24:
+                                pos_j7_p3 = account_bank_3[:24]
+                            else:
+                                pos_j7_p3 = account_bank_3 + str(' ' * (
+                                        24 - len(account_bank_3)))
                         else:
-                            pos_j7_p3 = account_bank_3 + str(' ' * (
-                                    24 - len(account_bank_3)))
+                            pos_j7_p3 = str(' ' * 24)
                     else:
                         pos_j7_p3 = str(' ' * 24)
 
@@ -446,13 +456,16 @@ class AccountPaymentOrder(models.Model):
                     pos_j9_p3 = str(' ' * 15)
 
                     # Position J10 [298-321] Length 24 Format A
-                    if bank_ids[3] and bank_ids[3].acc_number:
-                        account_bank_4 = bank_ids[3].acc_number
-                        if len(account_bank_4) > 24:
-                            pos_j10_p3 = account_bank_4[:24]
+                    if len(bank_ids) > 3:
+                        if bank_ids[3].acc_number:
+                            account_bank_4 = bank_ids[3].acc_number
+                            if len(account_bank_4) > 24:
+                                pos_j10_p3 = account_bank_4[:24]
+                            else:
+                                pos_j10_p3 = account_bank_4 + str(' ' * (
+                                        24 - len(account_bank_4)))
                         else:
-                            pos_j10_p3 = account_bank_4 + str(' ' * (
-                                    24 - len(account_bank_4)))
+                            pos_j10_p3 = str(' ' * 24)
                     else:
                         pos_j10_p3 = str(' ' * 24)
 
@@ -465,13 +478,16 @@ class AccountPaymentOrder(models.Model):
                     pos_j12_p3 = str(' ' * 15)
 
                     # Position J13 [339-362] Length 24 Format A
-                    if bank_ids[4] and bank_ids[4].acc_number:
-                        account_bank_5 = bank_ids[4].acc_number
-                        if len(account_bank_5) > 24:
-                            pos_j13_p3 = account_bank_5[:24]
+                    if len(bank_ids) > 4:
+                        if bank_ids[4].acc_number:
+                            account_bank_5 = bank_ids[4].acc_number
+                            if len(account_bank_5) > 24:
+                                pos_j13_p3 = account_bank_5[:24]
+                            else:
+                                pos_j13_p3 = account_bank_5 + str(' ' * (
+                                        24 - len(account_bank_5)))
                         else:
-                            pos_j13_p3 = account_bank_5 + str(' ' * (
-                                    24 - len(account_bank_5)))
+                            pos_j13_p3 = str(' ' * 24)
                     else:
                         pos_j13_p3 = str(' ' * 24)
 
@@ -484,13 +500,16 @@ class AccountPaymentOrder(models.Model):
                     pos_j15_p3 = str(' ' * 15)
 
                     # Position J16 [380-403] Length 24 Format A
-                    if bank_ids[5] and bank_ids[5].acc_number:
-                        account_bank_6 = bank_ids[5].acc_number
-                        if len(account_bank_6) > 24:
-                            pos_j16_p3 = account_bank_6[:24]
+                    if len(bank_ids) > 5:
+                        if bank_ids[5].acc_number:
+                            account_bank_6 = bank_ids[5].acc_number
+                            if len(account_bank_6) > 24:
+                                pos_j16_p3 = account_bank_6[:24]
+                            else:
+                                pos_j16_p3 = account_bank_6 + str(' ' * (
+                                        24 - len(account_bank_6)))
                         else:
-                            pos_j16_p3 = account_bank_6 + str(' ' * (
-                                    24 - len(account_bank_6)))
+                            pos_j16_p3 = str(' ' * 24)
                     else:
                         pos_j16_p3 = str(' ' * 24)
 
@@ -515,82 +534,7 @@ class AccountPaymentOrder(models.Model):
                 pos_k_p3 = str(' ' * 6)
 
                 # Position L [427-498] Length 72 Format A
-                if bank_ids:
-                    # Position L1 [427-438] Length 12 Format N
-                    if bank_ids[0] and bank_ids[0].security_key:
-                        security_key_1 = bank_ids[0].security_key
-                        if security_key_1:
-                            if len(security_key_1) > 12:
-                                pos_l1_p3 = security_key_1[:12]
-                            else:
-                                pos_l1_p3 = security_key_1 + str(' ' * (
-                                        12 - len(security_key_1)))
-                    else:
-                        pos_l1_p3 += str(' ' * 12)
-
-                    # Position L2 [439-450] Length 12 Format N
-                    if bank_ids[1] and bank_ids[1].security_key:
-                        security_key_2 = bank_ids[1].security_key
-                        if security_key_2:
-                            if len(security_key_2) > 12:
-                                pos_l2_p3 = security_key_2[:12]
-                            else:
-                                pos_l2_p3 = security_key_2 + str(' ' * (
-                                        12 - len(security_key_2)))
-                    else:
-                        pos_l2_p3 = str(' ' * 12)
-
-                    # Position L3 [451-462] Length 12 Format N
-                    if bank_ids[2] and bank_ids[2].security_key:
-                        security_key_3 = bank_ids[2].security_key
-                        if security_key_3:
-                            if len(security_key_3) > 12:
-                                pos_l3_p3 = security_key_3[:12]
-                            else:
-                                pos_l3_p3 = security_key_3 + str(' ' * (
-                                        12 - len(security_key_3)))
-                    else:
-                        pos_l3_p3 = str(' ' * 12)
-
-                    # Position L4 [463-474] Length 12 Format N
-                    if bank_ids[3] and bank_ids[3].security_key:
-                        security_key_4 = bank_ids[3].security_key
-                        if security_key_4:
-                            if len(security_key_4) > 12:
-                                pos_l4_p3 = security_key_4[:12]
-                            else:
-                                pos_l4_p3 = security_key_4 + str(' ' * (
-                                        12 - len(security_key_4)))
-                    else:
-                        pos_l4_p3 = str(' ' * 12)
-
-                    # Position L5 [475-486] Length 12 Format N
-                    if bank_ids[4] and bank_ids[4].security_key:
-                        security_key_5 = bank_ids[4].security_key
-                        if security_key_5:
-                            if len(security_key_5) > 12:
-                                pos_l5_p3 = security_key_5[:12]
-                            else:
-                                pos_l5_p3 = security_key_5 + str(' ' * (
-                                        12 - len(security_key_5)))
-                    else:
-                        pos_l5_p3 = str(' ' * 12)
-
-                    # Position L6 [487-498] Length 12 Format N
-                    if bank_ids[5] and bank_ids[5].security_key:
-                        security_key_6 = bank_ids[5].security_key
-                        if security_key_6:
-                            if len(security_key_6) > 12:
-                                pos_l6_p3 = security_key_6[:12]
-                            else:
-                                pos_l6_p3 = security_key_6 + str(' ' * (
-                                        12 - len(security_key_6)))
-                    else:
-                        pos_l6_p3 = str(' ' * 12)
-                    pos_l_p3 = (pos_l1_p3 + pos_l2_p3 + pos_l3_p3 + pos_l4_p3 +
-                                pos_l5_p3 + pos_l6_p3)
-                else:
-                    pos_l_p3 = str(' ' * 72)
+                pos_l_p3 = str(' ' * 72)
 
                 # Position M [499-650] Length 152 Format A
                 #free
@@ -708,24 +652,6 @@ class AccountPaymentOrder(models.Model):
                                         pos_j18_p3))
                     _log.info('BANK LINE FIELD Free Pos K     (length %s [006])'
                               ': %s' % (str(len(pos_k_p3)).zfill(3), pos_k_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 1       (length %s [012])'
-                        ': %s' % (str(len(pos_l1_p3)).zfill(3), pos_l1_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 2       (length %s [012])'
-                        ': %s' % (str(len(pos_l2_p3)).zfill(3), pos_l2_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 3       (length %s [012])'
-                        ': %s' % (str(len(pos_l3_p3)).zfill(3), pos_l3_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 4       (length %s [012])'
-                        ': %s' % (str(len(pos_l4_p3)).zfill(3), pos_l4_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 5       (length %s [012])'
-                        ': %s' % (str(len(pos_l5_p3)).zfill(3), pos_l5_p3))
-                    _log.info(
-                        'BANK LINE FIELD Security Key 6       (length %s [012])'
-                        ': %s' % (str(len(pos_l6_p3)).zfill(3), pos_l6_p3))
                 else:
                     _log.info('BANK LINE FIELD Free Pos J        (length %s [24'
                               '6]): %s' % (str(len(pos_j_p3)).zfill(3),
