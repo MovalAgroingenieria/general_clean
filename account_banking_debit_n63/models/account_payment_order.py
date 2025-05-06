@@ -368,7 +368,7 @@ class AccountPaymentOrder(models.Model):
                 optional_debit_identifier = re.sub(
                     r'\D', '', payment.partner_id.vat or '')
                 if optional_debit_identifier:
-                    pos_e_p1 = optional_debit_identifier[:8]
+                    pos_e_p3 = optional_debit_identifier[:8]
                 else:
                     pos_e_p3 = str(' ' * 8)
 
