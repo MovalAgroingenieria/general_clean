@@ -201,6 +201,11 @@ class AccountPaymentOrder(models.Model):
         compute='_compute_payment_mode_name',
         string="Payment mode name")
 
+    # Check if the payment mode has grouped transactions
+    grouped_transactions = fields.Boolean(
+        string="Grouped transactions",
+        compute="_compute_grouped_transactions")
+
     # Error mode
     error_mode = fields.Selection([
         ('strict', 'Strict'),
@@ -505,6 +510,11 @@ class AccountPaymentOrder(models.Model):
         if self.payment_mode_name == 'ATRM':
             self.date_prefered = 'due'
 
+    # Check if the payment mode has grouped transactions
+    @api.depends('payment_mode_id')
+    def _compute_grouped_transactions(self):
+        self.grouped_transactions = self.payment_mode_id.group_lines
+
     # Set agency
     @api.depends('payment_mode_name')
     def _compute_agency(self):
@@ -692,8 +702,11 @@ class AccountPaymentOrder(models.Model):
         # Position [630-729] Length 100
         # debt_description = (in the loop)
 
-        # The positions from 730 to 838 are not used
-        blank_space5 = str(" " * 101) + str("0").zfill(8)
+        # Position [730-829] Length 100
+        # debt_description_2nd_line = (in the loop)
+
+        # The positions from 830 to 838 are not used
+        blank_space5 = str(" " * 1) + str("0").zfill(8)
 
         # Loop
         # Reset variables
@@ -986,18 +999,19 @@ class AccountPaymentOrder(models.Model):
                             (entry_num_padded, line.partner_id.name))
 
             # Get dates and year
-            for l in line.payment_line_ids:
-                if line.name == l.bank_line_id.name:
+            for payment_line in line.payment_line_ids:
+                if line.name == payment_line.bank_line_id.name:
                     # Set obligation_birthdate and settlement to invoice date
                     settlement_date = obligation_birthdate = \
-                        datetime.strptime(l.move_line_id.date,
+                        datetime.strptime(payment_line.move_line_id.date,
                                           '%Y-%m-%d').strftime("%d%m%Y")
 
                     # Set voluntary_expiration_date to
                     # l.move_line_id.date_maturity
                     voluntary_expiration_date = \
-                        datetime.strptime(l.move_line_id.date_maturity,
-                                          '%Y-%m-%d').strftime("%d%m%Y")
+                        datetime.strptime(
+                            payment_line.move_line_id.date_maturity,
+                            '%Y-%m-%d').strftime("%d%m%Y")
                     # Get year
                     year = obligation_birthdate[4:]
 
@@ -1169,18 +1183,35 @@ class AccountPaymentOrder(models.Model):
             # The positions from 415 to 629 are not used
             # blank_space4 = static
 
-            # Get debt_description
-            # @INFO: We take the invoice name to fill this field
-            for l in line.payment_line_ids:
-                if line.name == l.bank_line_id.name:
-                    try:
-                        invoice = l.invoice_id
-                        debt_description = invoice.number
-                        debt_description_padded = \
-                            str(debt_description).ljust(100)
-                    except not invoice:
-                        invoice = False
-                        debt_description = str(" " * 100)
+            # Get debt_description (Position [630-729] Length 100)
+            # Get debt_description 2nd line (Position [730-829] Length 100)
+            # @INFO:
+            # · If not grouped use the invoice name (only 1st line)
+            # · If grouped use communication field (if len > 100 use 2nd line)
+            if self.grouped_transactions:
+                lenght_debt_description = len(line.communication)
+                if lenght_debt_description > 100:
+                    debt_description = line.communication[:100]
+                    debt_description_padded = str(debt_description).ljust(100)
+                    debt_description_2nd_line = line.communication[100:200]
+                    debt_description_2nd_line_padded = str(
+                        debt_description_2nd_line).ljust(100)
+                else:
+                    debt_description = line.communication[:100]
+                    debt_description_padded = str(debt_description).ljust(100)
+                    debt_description_2nd_line_padded = str(" " * 100)
+            else:
+                for payment_line in line.payment_line_ids:
+                    if line.name == payment_line.bank_line_id.name:
+                        try:
+                            invoice = payment_line.invoice_id
+                            debt_description = invoice.number
+                            debt_description_padded = str(
+                                debt_description).ljust(100)
+                        except not invoice:
+                            invoice = False
+                            debt_description = str(" " * 100)
+                debt_description_2nd_line_padded = str(" " * 100)
 
             # The positions from 730 to 838 are not used
             # blank_space5 = static
@@ -1257,7 +1288,10 @@ class AccountPaymentOrder(models.Model):
             _log.info('BANK LINE FIELD Debt description  (length %s [100]): %s'
                       % (str(len(debt_description_padded)).zfill(3),
                          debt_description_padded))
-            _log.info('BANK LINE FIELD Blank spaces 5    (length %s [109]): %s'
+            _log.info('BANK LINE FIELD Debt descript 2nd (length %s [100]): %s'
+                      % (str(len(debt_description_2nd_line_padded)).zfill(3),
+                         debt_description_2nd_line_padded))
+            _log.info('BANK LINE FIELD Blank spaces 5    (length %s [009]): %s'
                       % (str(len(blank_space5)).zfill(3), blank_space5))
 
             # Construct bank line
@@ -1271,7 +1305,8 @@ class AccountPaymentOrder(models.Model):
                 amount_after_deadline + amount_after_deadline_date +\
                 voluntary_notification_date + media_notice +\
                 voluntary_expiration_date + certification_date + blank_space4\
-                + debt_description_padded + blank_space5 + "\r\n"
+                + debt_description_padded + debt_description_2nd_line_padded +\
+                blank_space5 + "\r\n"
 
             _log.info('FULL BANK LINE                    (length %s [840]): %s'
                       % (str(len(bank_line)).zfill(3),
@@ -1347,9 +1382,9 @@ class AccountPaymentOrder(models.Model):
             if order.payment_mode_id.name == 'ATRM':
                 for bline in order.bank_line_ids:
                     if bline.atrm_sent:
-                        for l in bline.payment_line_ids:
-                            if bline.name == l.bank_line_id.name:
-                                invoice = l.invoice_id
+                        for payment_line in bline.payment_line_ids:
+                            if bline.name == payment_line.bank_line_id.name:
+                                invoice = payment_line.invoice_id
                                 invoice.write({
                                     'in_atrm': True,
                                     'atrm_ref': bline.atrm_ref,
@@ -1361,9 +1396,9 @@ class AccountPaymentOrder(models.Model):
         for order in self:
             if order.payment_mode_id.name == 'ATRM':
                 for bline in order.bank_line_ids:
-                    for l in bline.payment_line_ids:
-                        if bline.name == l.bank_line_id.name:
-                            invoice = l.invoice_id
+                    for payment_line in bline.payment_line_ids:
+                        if bline.name == payment_line.bank_line_id.name:
+                            invoice = payment_line.invoice_id
                             invoice.write({
                                 'in_atrm': False,
                                 'atrm_ref': False,
