@@ -1317,7 +1317,8 @@ class AccountPaymentOrder(models.Model):
             bank_lines += bank_line
 
         # Construct header (wait until to have the total amount)
-        # Do not show decimal separator
+        # Round to 2 decimal positions and do not show decimal separator
+        total_amount = "%0.2f" % (total_amount)
         total_amount_padded = str(total_amount).replace('.', '').zfill(13)
 
         # Set atrm_total_amount for ATRM resume
