@@ -20,7 +20,7 @@
             <field name="active">True</field>
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
         </record>
-        <record id="help_entry_8" model="user.menu.help.entry">
+        <record id="help_entry_9" model="user.menu.help.entry">
             <field name="name">Tutoriales Genéricos</field>
             <field name="url">https://komododecks.com/share/folder/uMpijVYPLT8enJHURmLc</field>
             <field name="groups"/>
@@ -39,6 +39,12 @@
             <field name="active">True</field>
         </record>
         <record id="help_entry_7" model="user.menu.help.entry">
+            <field name="name">Mis Documentos/Reuniones</field>
+            <field name="url">https://odoo.moval.es/my/document_pages</field>
+            <field name="groups"/>
+            <field name="active">True</field>
+        </record>
+        <record id="help_entry_8" model="user.menu.help.entry">
             <field name="name">Formación Moval</field>
             <field name="url">https://odoo.moval.es/slides</field>
             <field name="groups"/>
