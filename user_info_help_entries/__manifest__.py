@@ -4,7 +4,7 @@
 {
     'name': 'User Info Help Entries',
     'summary': 'Shortcut configuration for other services',
-    'version': '10.0.1.1.5',
+    'version': '10.0.1.1.6',
     'category': 'Moval General Addons',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',

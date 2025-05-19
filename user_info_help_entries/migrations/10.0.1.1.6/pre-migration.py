@@ -1,39 +1,21 @@
 # -*- coding: utf-8 -*-
 
 def migrate(cr, version):
-    # This migrations script is wrong, it duplicates the record
+    # Remove the record from the main table
     cr.execute("""
-        UPDATE ir_model_data d
-        SET name = %s
-        WHERE d.module = %s
-          AND d.name = %s
-          AND NOT EXISTS (
-              SELECT 1 FROM ir_model_data
-               WHERE module = %s AND name = %s
-          )
-    """, (
-        'help_entry_9',
-        'user_info_help_entries',  # tu módulo
-        'help_entry_8',
-        'user_info_help_entries',
-        'help_entry_9',
-    ))
+        DELETE FROM user_menu_help_entry
+        WHERE id IN (SELECT res_id FROM ir_model_data
+                     WHERE module = 'user_info_help_entries'
+                     AND name = 'help_entry_9');
+    """)
+
+    # Remove the reference from ir_model_data
     cr.execute("""
-        UPDATE ir_model_data d
-        SET name = %s
-        WHERE d.module = %s
-          AND d.name = %s
-          AND NOT EXISTS (
-              SELECT 1 FROM ir_model_data
-               WHERE module = %s AND name = %s
-          )
-    """, (
-        'help_entry_8',
-        'user_info_help_entries',
-        'help_entry_7',
-        'user_info_help_entries',
-        'help_entry_8',
-    ))
+        DELETE FROM ir_model_data
+        WHERE module = 'user_info_help_entries'
+        AND name = 'help_entry_9';
+    """)
+    
     cr.execute("""
             INSERT INTO user_menu_help_entry (name, url, active)
             SELECT %s, %s, %s
@@ -58,10 +40,10 @@ def migrate(cr, version):
           )
     """, (
         'user_menu_help_entry',
-        'help_entry_7',
+        'help_entry_9',
         'user.menu.help.entry',
         False,
         'https://odoo.moval.es/my/document_pages',
         'user_menu_help_entry',
-        'help_entry_7',
+        'help_entry_9',
     ))
