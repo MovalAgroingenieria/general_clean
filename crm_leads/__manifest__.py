@@ -14,6 +14,7 @@
         'crm',
     ],
     'data': [
+        'views/crm_stage_views.xml',
         'views/crm_lead_views.xml',
     ],
     'application': True,

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-19 14:26+0000\n"
-"PO-Revision-Date: 2025-05-19 14:26+0000\n"
+"POT-Creation-Date: 2025-05-19 14:32+0000\n"
+"PO-Revision-Date: 2025-05-19 14:32+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,18 +18,18 @@ msgstr ""
 #. module: crm_leads
 #: model_terms:ir.ui.view,arch_db:crm_leads.crm_lead_view_form_inherit
 msgid "Areas"
-msgstr "Zonas"
+msgstr ""
 
 #. module: crm_leads
 #: model_terms:ir.ui.view,arch_db:crm_leads.crm_lead_view_form_inherit
 #: model_terms:ir.ui.view,arch_db:crm_leads.quick_create_opportunity_form_inherit
 msgid "Category"
-msgstr "Categoría"
+msgstr ""
 
 #. module: crm_leads
 #: model:ir.model.fields,field_description:crm_leads.field_crm_lead__display_name
 msgid "Display Name"
-msgstr "Nombre mostrado"
+msgstr "Visningsnavn"
 
 #. module: crm_leads
 #: model:ir.model.fields,field_description:crm_leads.field_crm_lead__id
@@ -40,27 +40,27 @@ msgstr ""
 #: model:ir.model.fields,help:crm_leads.field_crm_lead__stage_new
 #: model:ir.model.fields,help:crm_leads.field_crm_stage__is_new
 msgid "Indicates if the stage is new."
-msgstr "Indica si la etapa es nueva."
+msgstr ""
 
 #. module: crm_leads
 #: model:ir.model.fields,field_description:crm_leads.field_crm_stage__is_new
 msgid "Is New"
-msgstr "Es nueva"
+msgstr ""
 
 #. module: crm_leads
 #: model:ir.model.fields,field_description:crm_leads.field_crm_lead____last_update
 msgid "Last Modified on"
-msgstr "Última modificación el"
+msgstr "Sist endret"
 
 #. module: crm_leads
 #: model:ir.model,name:crm_leads.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Iniciativa/Oportunidad"
+msgstr "Lead/mulighet"
 
 #. module: crm_leads
 #: model:ir.model.fields,field_description:crm_leads.field_crm_lead__stage_new
 msgid "Stage new"
-msgstr "Etapa nueva"
+msgstr ""
 
 #. module: crm_leads
 #: code:addons/crm_leads/models/crm_lead.py:0
@@ -68,4 +68,3 @@ msgstr "Etapa nueva"
 msgid ""
 "You must indicate Category and Origin to the lead before changing the stage."
 msgstr ""
-"Debes indicar la categoría y el origen de la iniciativa antes de cambiar la etapa."
