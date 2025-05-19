@@ -245,9 +245,12 @@ class AccountPaymentOrder(models.Model):
                 pos_b1 = str(' ' * 9)
 
             # Position B2 [11-50] Length 40 Format A
-            customer_name = (payment.partner_id.lastname + ' *' +
-                             payment.partner_id.lastname2 + ' *' +
-                             payment.partner_id.firstname)
+            if payment.partner_id.company_type == 'person':
+                customer_name = (payment.partner_id.lastname + ' *' +
+                                 payment.partner_id.lastname2 + ' *' +
+                                 payment.partner_id.firstname)
+            else:
+                customer_name = (payment.partner_id.name)
             if customer_name:
                 if len(customer_name) > 40:
                     customer_name = customer_name[:40]
