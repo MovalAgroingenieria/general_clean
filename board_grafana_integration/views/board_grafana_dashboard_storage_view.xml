@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="board_grafana_dashboard_storage_view_form">
+        <field name="name">Grafana Dashboard Storage (form view)</field>
+        <field name="model">board.grafana.dashboard.storage</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_import_to_grafana"
+                        string="Import to Grafana"
+                        type="object"
+                        class="btn-primary"
+                        attrs="{'invisible': [('dashboard_json', '=', False)]}"
+                        confirm="If the board already exists in Grafana it will be overwritten. Continue?"/>
+                </header>
+                <sheet>
+                    <group name="main_data">
+                        <group name="data_left">
+                            <field name="name"/>
+                            <field name="dashboard_title" attrs="{'required': [('integrated_dashboard', '=', True)]}"/>
+                            <field name="dashboard_uid" attrs="{'required': [('integrated_dashboard', '=', True)]}"/>
+                        </group>
+                        <group name="data_right">
+                            <field name="dashboard_path"/>
+                            <field name="integrated_dashboard"/>
+                        </group>
+                    </group>
+                    <group name="complement_data">
+                        <notebook name="main_notebook">
+                            <page name="json" string="Dashboard json">
+                                <field name="dashboard_json"/>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="board_grafana_dashboard_storage_view_tree">
+        <field name="name">Grafana Dashboard Storage (tree view)</field>
+        <field name="model">board.grafana.dashboard.storage</field>
+        <field name="arch" type="xml">
+            <tree string="Grafana Dashboard Storage" class="o_board_grafana_dashboard_storage_view_tree">
+                <field name="name"/>
+                <field name="dashboard_title"/>
+                <field name="dashboard_uid"/>
+                <field name="dashboard_path"/>
+                <field name="integrated_dashboard"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="board_grafana_dashboard_storage_view_search">
+        <field name="name">Grafana Dashboard Storage (search view)</field>
+        <field name="model">board.grafana.dashboard.storage</field>
+        <field name="arch" type="xml">
+            <search string="Grafana Dashboard Storage">
+                <field name="name"/>
+                <field name="dashboard_title"/>
+                <field name="dashboard_uid"/>
+                <field name="dashboard_path"/>
+                <group expand="0" string="Group By">
+                    <filter string="Integrated Dashboard" name="integrated_dashboard"
+                        context="{'group_by':'integrated_dashboard'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="grafana_dashboard_storage_action" model="ir.actions.act_window">
+        <field name="name">Dashboards</field>
+        <field name="res_model">board.grafana.dashboard.storage</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="board_grafana_dashboard_storage_view_tree"/>
+        <field name="search_view_id" ref="board_grafana_dashboard_storage_view_search"/>
+    </record>
+
+    <menuitem id="menu_board_grafana_dashboard_storage"
+        parent="board_grafana_integration.menu_board_grafana_root"
+        action="grafana_dashboard_storage_action"
+        sequence="4"/>
+
+</odoo>

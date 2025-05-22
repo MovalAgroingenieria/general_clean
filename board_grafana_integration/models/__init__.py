@@ -4,3 +4,4 @@
 
 from . import board_grafana_config_settings
 from . import board_grafana
+from . import board_grafana_dashboard_storage

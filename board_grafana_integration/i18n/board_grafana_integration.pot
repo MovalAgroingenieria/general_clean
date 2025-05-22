@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 09:35+0000\n"
-"PO-Revision-Date: 2022-03-16 09:35+0000\n"
+"POT-Creation-Date: 2025-05-22 14:57+0000\n"
+"PO-Revision-Date: 2025-05-22 14:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,15 +31,29 @@ msgid "Cancel"
 msgstr ""
 
 #. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:108
+#, python-format
+msgid "Close"
+msgstr ""
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_create_date
 msgid "Created on"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:132
+#, python-format
+msgid "Dashboard '%s' imported successfully."
 msgstr ""
 
 #. module: board_grafana_integration
@@ -48,26 +62,101 @@ msgid "Dashboard height"
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
-msgid "Dashboard id"
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:104
+#, python-format
+msgid "Dashboard id '%s' does not match the JSON uid '%s'."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "Dashboard json"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_name
+msgid "Dashboard name"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_path
+msgid "Dashboard path"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_title
+msgid "Dashboard title"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:100
+#, python-format
+msgid "Dashboard title '%s' does not match the JSON title '%s'."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_uid
+msgid "Dashboard uid"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.actions.act_window,name:board_grafana_integration.grafana_dashboard_storage_action
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_dashboard_storage
+msgid "Dashboards"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_default_datasource
+msgid "Default datasource"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_display_name
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_display_name
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_display_name
 msgid "Display Name"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:138
+#, python-format
+msgid "Failed to import dashboard '%s'. HTTP %s: %s"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.actions.act_window,name:board_grafana_integration.login_into_grafana_action
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_home
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_root
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_sidebar
 msgid "Grafana"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_api_key
+msgid "Grafana API Key"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:142
+#, python-format
+msgid "Grafana Dashboard Import"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_tree
+msgid "Grafana Dashboard Storage"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
 msgid "Grafana URL"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:116
+#, python-format
+msgid "Grafana URL or API key not found."
 msgstr ""
 
 #. module: board_grafana_integration
@@ -92,30 +181,78 @@ msgid "Grafana url"
 msgstr ""
 
 #. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
 msgid "Height of dashboard, in pixels (optional)."
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_id
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_id
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_id
 msgid "ID"
 msgstr ""
 
 #. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "If the board already exists in Grafana it will be overwritten. Continue?"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_integrated_dashboard
+msgid "If the dashboard is integrated with a module."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "Import to Grafana"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_integrated_dashboard
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+msgid "Integrated Dashboard"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:95
+#, python-format
+msgid "Invalid JSON for dashboard '%s': %s"
+msgstr ""
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:60
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:73
+#, python-format
+msgid "Invalid JSON. Dashboard '%s': %s"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_json
+msgid "JSON Content"
+msgstr ""
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana___last_update
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration___last_update
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_write_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_write_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_date
 msgid "Last Updated on"
 msgstr ""
@@ -127,21 +264,46 @@ msgid "Settings"
 msgstr ""
 
 #. module: board_grafana_integration
+#: model:ir.model,name:board_grafana_integration.model_board_grafana_dashboard_storage
+msgid "Storage of Grafana Dashboards"
+msgstr ""
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
 msgid "The URL of grafana host."
 msgstr ""
 
 #. module: board_grafana_integration
+#: sql_constraint:board.grafana.dashboard.storage:0
+msgid "The dashboard name must be unique!"
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_default_datasource
+msgid "The default datasource."
+msgstr ""
+
+#. module: board_grafana_integration
 #: code:addons/board_grafana_integration/models/board_grafana.py:23
-#: code:addons/board_grafana_integration/models/board_grafana.py:53
-#: code:addons/board_grafana_integration/models/board_grafana.py:66
+#: code:addons/board_grafana_integration/models/board_grafana.py:54
+#: code:addons/board_grafana_integration/models/board_grafana.py:67
 #, python-format
 msgid "The grafana configuration parameters have not been set."
 msgstr ""
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
-msgid "The id of the embebbed dashboard (optional, else the default dashboard)."
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_uid
+msgid "The id of the embebbed dashboard."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_uid
+msgid "The id of the welcome dashboard (optional, else the default dashboard)."
+msgstr ""
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_title
+msgid "The title of the embebbed dashboard."
 msgstr ""
 
 #. module: board_grafana_integration

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-16 09:35+0000\n"
-"PO-Revision-Date: 2022-03-16 09:35+0000\n"
+"POT-Creation-Date: 2025-05-22 14:58+0000\n"
+"PO-Revision-Date: 2025-05-22 14:58+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,16 +31,30 @@ msgid "Cancel"
 msgstr "Cancel·la"
 
 #. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:108
+#, python-format
+msgid "Close"
+msgstr "Close"
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_create_uid
 msgid "Created by"
 msgstr "Creat per"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_create_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_create_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_create_date
 msgid "Created on"
 msgstr "Creat el"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:132
+#, python-format
+msgid "Dashboard '%s' imported successfully."
+msgstr "Tauler '%s' importat correctament."
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
@@ -48,27 +62,102 @@ msgid "Dashboard height"
 msgstr "Alçada tauler"
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
-msgid "Dashboard id"
-msgstr "ID tauler"
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:104
+#, python-format
+msgid "Dashboard id '%s' does not match the JSON uid '%s'."
+msgstr "La uid del tauler '%s' no coincideix amb la uid al JSON '%s'."
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "Dashboard json"
+msgstr "Tauler json"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_name
+msgid "Dashboard name"
+msgstr "Nom de tauler"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_path
+msgid "Dashboard path"
+msgstr "Ruta del tauler"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_title
+msgid "Dashboard title"
+msgstr "Títol del tauler"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:100
+#, python-format
+msgid "Dashboard title '%s' does not match the JSON title '%s'."
+msgstr "El títol del tauler '%s' no coincideix amb el títol a JSON '%s'."
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_uid
+msgid "Dashboard uid"
+msgstr "Tauler uid"
+
+#. module: board_grafana_integration
+#: model:ir.actions.act_window,name:board_grafana_integration.grafana_dashboard_storage_action
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_dashboard_storage
+msgid "Dashboards"
+msgstr "Taulers"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_default_datasource
+msgid "Default datasource"
+msgstr "Font de dades per defecte"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_display_name
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_display_name
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_display_name
 msgid "Display Name"
 msgstr "Veure el nom"
 
 #. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:138
+#, python-format
+msgid "Failed to import dashboard '%s'. HTTP %s: %s"
+msgstr "Error important el tauler '%s'. HTTP %s: %s"
+
+#. module: board_grafana_integration
 #: model:ir.actions.act_window,name:board_grafana_integration.login_into_grafana_action
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_home
 #: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_root
+#: model:ir.ui.menu,name:board_grafana_integration.menu_board_grafana_sidebar
 msgid "Grafana"
 msgstr "Grafana"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_api_key
+msgid "Grafana API Key"
+msgstr "Grafana API Key"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:142
+#, python-format
+msgid "Grafana Dashboard Import"
+msgstr "Importació tauler Grafana"
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_tree
+msgid "Grafana Dashboard Storage"
+msgstr "Magatzem taulers Grafana"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
 msgid "Grafana URL"
 msgstr "Grafana URL"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:116
+#, python-format
+msgid "Grafana URL or API key not found."
+msgstr "No s'ha trobat la URL o la clau API de Grafana."
 
 #. module: board_grafana_integration
 #: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_config_settings_view_form
@@ -92,30 +181,78 @@ msgid "Grafana url"
 msgstr "Grafana url"
 
 #. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_height
 msgid "Height of dashboard, in pixels (optional)."
 msgstr "Alçada del tauler en píxels (optional)."
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_id
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_id
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_id
 msgid "ID"
 msgstr "ID"
 
 #. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "If the board already exists in Grafana it will be overwritten. Continue?"
+msgstr "Si el tauler ja existeix a la instància de Grafana serà sobreescrit. Continuar?"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_integrated_dashboard
+msgid "If the dashboard is integrated with a module."
+msgstr "Determineu si el tauler està integrat amb un mòdul."
+
+#. module: board_grafana_integration
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_form
+msgid "Import to Grafana"
+msgstr "Importar Grafana"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_integrated_dashboard
+#: model:ir.ui.view,arch_db:board_grafana_integration.board_grafana_dashboard_storage_view_search
+msgid "Integrated Dashboard"
+msgstr "Tauler integrat"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:95
+#, python-format
+msgid "Invalid JSON for dashboard '%s': %s"
+msgstr "El JSON del tauler '%s' no és vàlid: %s"
+
+#. module: board_grafana_integration
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:60
+#: code:addons/board_grafana_integration/models/board_grafana_dashboard_storage.py:73
+#, python-format
+msgid "Invalid JSON. Dashboard '%s': %s"
+msgstr "El JSON del tauler '%s' no és vàlid: %s"
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_json
+msgid "JSON Content"
+msgstr "Contingut JSON"
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana___last_update
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration___last_update
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage___last_update
 msgid "Last Modified on"
 msgstr "Darrera modificació el"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_uid
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_write_uid
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_uid
 msgid "Last Updated by"
 msgstr "Darrera Actualització per"
 
 #. module: board_grafana_integration
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_configuration_write_date
+#: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_dashboard_storage_write_date
 #: model:ir.model.fields,field_description:board_grafana_integration.field_board_grafana_write_date
 msgid "Last Updated on"
 msgstr "Darrera Actualització el"
@@ -127,22 +264,47 @@ msgid "Settings"
 msgstr "Configuració"
 
 #. module: board_grafana_integration
+#: model:ir.model,name:board_grafana_integration.model_board_grafana_dashboard_storage
+msgid "Storage of Grafana Dashboards"
+msgstr "Magatzem de taulers Grafana"
+
+#. module: board_grafana_integration
 #: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_url_raw
 msgid "The URL of grafana host."
 msgstr "La URL de Grafana."
 
 #. module: board_grafana_integration
+#: sql_constraint:board.grafana.dashboard.storage:0
+msgid "The dashboard name must be unique!"
+msgstr "El nom del tauler ha de ser únic."
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_default_datasource
+msgid "The default datasource."
+msgstr "La font de dades per defecte."
+
+#. module: board_grafana_integration
 #: code:addons/board_grafana_integration/models/board_grafana.py:23
-#: code:addons/board_grafana_integration/models/board_grafana.py:53
-#: code:addons/board_grafana_integration/models/board_grafana.py:66
+#: code:addons/board_grafana_integration/models/board_grafana.py:54
+#: code:addons/board_grafana_integration/models/board_grafana.py:67
 #, python-format
 msgid "The grafana configuration parameters have not been set."
 msgstr "Els paràmetres de configuració de Grafana no s'han establert."
 
 #. module: board_grafana_integration
-#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_id
-msgid "The id of the embebbed dashboard (optional, else the default dashboard)."
-msgstr "La ID del tauler embegut (optional, sinó es fa servir el tauler per defecte)."
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_uid
+msgid "The id of the embebbed dashboard."
+msgstr "La ID del tauler incorporat."
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_configuration_grafana_dashboard_uid
+msgid "The id of the welcome dashboard (optional, else the default dashboard)."
+msgstr "La UID del tauler de benvinguda (opcional, si no s'utilitza el tauler per defecte configurat a Grafana)."
+
+#. module: board_grafana_integration
+#: model:ir.model.fields,help:board_grafana_integration.field_board_grafana_dashboard_storage_dashboard_title
+msgid "The title of the embebbed dashboard."
+msgstr "El títol del tauler incrustat."
 
 #. module: board_grafana_integration
 #: model:ir.model,name:board_grafana_integration.model_board_grafana_configuration

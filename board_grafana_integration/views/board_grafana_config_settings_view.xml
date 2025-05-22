@@ -11,9 +11,15 @@
                     <button string="Cancel" type="object" name="cancel" class="oe_link"/>
                 </header>
                 <group string="Grafana configuration" name="grafana_configuration_group">
-                    <field name="grafana_url_raw" style="width:300px"/>
-                    <field name="grafana_dashboard_height" style="width:300px"/>
-                    <field name="grafana_dashboard_id" style="width:300px"/>
+                    <group name="server">
+                        <field name="grafana_url_raw"/>
+                        <field name="grafana_api_key" password="True"/>
+                        <field name="grafana_default_datasource"/>
+                    </group>
+                    <group name="defaults">
+                        <field name="grafana_dashboard_height"/>
+                        <field name="grafana_dashboard_uid" />
+                    </group>
                 </group>
             </form>
         </field>
