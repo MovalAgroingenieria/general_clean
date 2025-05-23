@@ -20,10 +20,13 @@
                             <field name="name"/>
                             <field name="dashboard_title" attrs="{'required': [('integrated_dashboard', '=', True)]}"/>
                             <field name="dashboard_uid" attrs="{'required': [('integrated_dashboard', '=', True)]}"/>
+                            <field name="integrated_panel_id" attrs="{'invisible': [('integrated_panel_only', '=', False)],
+                                                                      'required': [('integrated_panel_only', '=', True)]}"/>
                         </group>
                         <group name="data_right">
                             <field name="dashboard_path"/>
                             <field name="integrated_dashboard"/>
+                            <field name="integrated_panel_only" attrs="{'invisible': [('integrated_dashboard', '=', False)]}"/>
                         </group>
                     </group>
                     <group name="complement_data">

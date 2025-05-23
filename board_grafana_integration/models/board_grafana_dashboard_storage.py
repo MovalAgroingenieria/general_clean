@@ -36,13 +36,22 @@ class BoardGrafana(models.Model):
         readonly=False,
         compute="_compute_dashboard_path")
 
+    dashboard_json = fields.Text(
+        string="JSON Content")
+
     integrated_dashboard = fields.Boolean(
         string="Integrated Dashboard",
         default=False,
         help="If the dashboard is integrated with a module.")
 
-    dashboard_json = fields.Text(
-        string="JSON Content")
+    integrated_panel_only = fields.Boolean(
+        string="Panel only",
+        default=False,
+        help="If only a panel of the dashboard is integrated.")
+
+    integrated_panel_id = fields.Char(
+        string="Panel id",
+        help="The id of the panel in the dashboard.")
 
     _sql_constraints = [
         ('name_uniq', 'unique(name)',
@@ -75,13 +84,19 @@ class BoardGrafana(models.Model):
                 dashboard_uid = dashboard_data.get("uid", "")
             record.dashboard_uid = dashboard_uid
 
-    @api.depends("dashboard_uid", "dashboard_title")
+    @api.depends("dashboard_uid", "dashboard_title",
+                 "integrated_panel_only", "integrated_panel_id")
     def _compute_dashboard_path(self):
         for record in self:
             path = ""
-            if record.dashboard_uid and record.dashboard_title:
+            if (record.integrated_panel_only and record.integrated_panel_id and
+                    record.dashboard_uid and record.dashboard_title):
+                path = "/d-solo/" + record.dashboard_uid + '/' + \
+                    record.dashboard_title + "?panelId=" + \
+                    str(record.integrated_panel_id)
+            elif record.dashboard_uid and record.dashboard_title:
                 path = "/d/" + record.dashboard_uid + '/' + \
-                    record.dashboard_title
+                    record.dashboard_title + "?kiosk"
             record.dashboard_path = path
 
     @api.multi
