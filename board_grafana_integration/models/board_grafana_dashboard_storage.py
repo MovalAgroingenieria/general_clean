@@ -53,6 +53,16 @@ class BoardGrafana(models.Model):
         string="Panel id",
         help="The id of the panel in the dashboard.")
 
+    frame_width = fields.Char(
+        string="Frame width",
+        default="100%",
+        help="Width of the iframe. Default is 100%.")
+
+    frame_height = fields.Char(
+        string="Frame height",
+        default="600px",
+        help="Height of the iframe. Default is 600px.")
+
     _sql_constraints = [
         ('name_uniq', 'unique(name)',
          'The dashboard name must be unique!'),
