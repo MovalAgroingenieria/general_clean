@@ -34,7 +34,7 @@ class HrEmployeeFeedbackNote(models.Model):
         required=True,
     )
 
-    note_text = fields.Text(
+    note_text = fields.Html(
         string='Note Content',
     )
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-23 08:41+0000\n"
-"PO-Revision-Date: 2025-05-23 08:41+0000\n"
+"POT-Creation-Date: 2025-05-27 07:37+0000\n"
+"PO-Revision-Date: 2025-05-27 07:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -103,6 +103,7 @@ msgstr "Tipos de nota de feedback"
 #. module: hr_employee_feedback_notes
 #: model:ir.actions.act_window,name:hr_employee_feedback_notes.action_hr_employee_feedback_note
 #: model:ir.model.fields,field_description:hr_employee_feedback_notes.field_hr_employee__feedback_note_ids
+#: model:ir.module.category,name:hr_employee_feedback_notes.module_category_human_resources_feedback_notes
 #: model_terms:ir.ui.view,arch_db:hr_employee_feedback_notes.view_hr_employee_form_feedback_note
 msgid "Feedback Notes"
 msgstr "Notas de feedback"

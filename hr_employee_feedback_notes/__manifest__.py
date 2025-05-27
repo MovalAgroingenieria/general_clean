@@ -13,7 +13,6 @@
         'security/feedback_security.xml',
         'security/ir.model.access.csv',
         'views/hr_feedback_note_views.xml',
-        'views/hr_employee_views.xml',
         'views/hr_feedback_note_menu.xml',
         'views/hr_employee_views.xml',
         'views/hr_employee_feedback_note_type_views.xml'
