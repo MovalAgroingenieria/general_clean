@@ -27,10 +27,10 @@
             <xpath expr="//field[@name='type']" position="after">
                 <field name="in_n63_s1"/>
                 <field name="in_n63_s3"/>
-                <field name="n63_s1_ref"/>
-                <field name="n63_s3_ref"/>
-                <field name="n63_s1_rejected"/>
-                <field name="n63_s3_rejected"/>
+                <field name="n63_s1_ref" invisible="1"/>
+                <field name="n63_s3_ref" invisible="1"/>
+                <field name="n63_s1_rejected" invisible="1"/>
+                <field name="n63_s3_rejected" invisible="1"/>
             </xpath>
         </field>
     </record>

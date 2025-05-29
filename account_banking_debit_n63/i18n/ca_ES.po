@@ -1,0 +1,239 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_debit_n63
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-29 09:49+0000\n"
+"PO-Revision-Date: 2025-05-29 09:49+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_debit_n63
+#: model:ir.model,name:account_banking_debit_n63.model_bank_payment_line
+msgid "Bank Payment Lines"
+msgstr "Línies de pagament bancari"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_payment_order_nrbe_entity_code
+msgid "Code of the entity that sends the delegated charge to N63"
+msgstr "Codi de l'entitat que envia el càrrec delegat a N63"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_payment_order_date_of_obtaining_the_file
+msgid "Date of obtaining the file"
+msgstr "Data d'obtenció del fitxer"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_payment_order_date_of_obtaining_the_file
+msgid "Date on which the file is obtained"
+msgstr "Data en què s'obté el fitxer"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_payment_order_ine_code_issuring_organisation
+msgid "INE Code Issuring Organisation"
+msgstr "Codi INE de l'organització emissora"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_payment_order_ine_code_issuring_organisation
+msgid "INE code of the organisation that issues the file"
+msgstr "Codi INE de l'organització que emet el fitxer"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "In Stage"
+msgstr "En fase"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "In Stage 1"
+msgstr "En fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_in_n63_s1
+msgid "In n63 Stage 1"
+msgstr "En fase n63 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_in_n63_s3
+msgid "In n63 Stage 3"
+msgstr "En fase n63 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_n63_s1_rejected
+msgid "Indicates that the invoice has been rejected by N63 in Stage 1"
+msgstr "Indica que la factura ha estat rebutjada per N63 en la fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_n63_s3_rejected
+msgid "Indicates that the invoice has been rejected by N63 in Stage 3"
+msgstr "Indica que la factura ha estat rebutjada per N63 en la fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_bank_payment_line_n63_s1_sent
+msgid "Indicates whether this payment has already been added to an N63 stage 1"
+msgstr "Indica si aquest pagament ja s'ha afegit a una fase N63 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_bank_payment_line_n63_s3_sent
+msgid "Indicates whether this payment has already been added to an N63 stage 3"
+msgstr "Indica si aquest pagament ja s'ha afegit a una fase N63 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_in_n63_s1
+msgid "Indicates whether this payment has already been done and uploaded successfully in stage 1"
+msgstr "Indica si aquest pagament ja s'ha fet i s'ha pujat correctament en la fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_in_n63_s3
+msgid "Indicates whether this payment has already been done and uploaded successfully in stage 3"
+msgstr "Indica si aquest pagament ja s'ha fet i s'ha pujat correctament en la fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model,name:account_banking_debit_n63.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_config_settings_issuring_name
+msgid "Issuring Name"
+msgstr "Nom de l'emissor"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.n63_view_account_config_settings
+msgid "N63"
+msgstr "N63"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_n63_s1_ref
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_bank_payment_line_n63_s1_ref
+msgid "N63 Stage 1 Reference"
+msgstr "Referència N63 Fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_n63_s1_rejected
+msgid "N63 Stage 1 Rejected"
+msgstr "Rebutjat N63 Fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_bank_payment_line_n63_s1_sent
+msgid "N63 Stage 1 done"
+msgstr "Realitzada fase 1 N63"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_n63_s3_ref
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_bank_payment_line_n63_s3_ref
+msgid "N63 Stage 3 Reference"
+msgstr "Referència N63 Fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_invoice_n63_s3_rejected
+msgid "N63 Stage 3 Rejected"
+msgstr "Rebutjat N63 Fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_bank_payment_line_n63_s3_sent
+msgid "N63 Stage 3 done"
+msgstr "Realitzada fase 3 N63"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_config_settings_nif_issuing_organisation
+msgid "NIF Issuing Organisation"
+msgstr "NIF de l'organització emissora"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_config_settings_nif_issuing_organisation
+msgid "NIF of the organisation that issues the file"
+msgstr "NIF de l'organització que emet el fitxer"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_payment_order_nrbe_entity_code
+msgid "NRBE Entity Code"
+msgstr "Codi d'entitat NRBE"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_config_settings_issuring_name
+msgid "Name of the organisation that issues the file"
+msgstr "Nom de l'organització que emet el fitxer"
+
+#. module: account_banking_debit_n63
+#: model:ir.model,name:account_banking_debit_n63.model_account_payment_order
+msgid "Payment Order"
+msgstr "Ordre de pagament"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,field_description:account_banking_debit_n63.field_account_payment_order_phase
+msgid "Phase"
+msgstr "Fase"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_payment_order_phase
+msgid "Phase in which the charge is made"
+msgstr "Fase en què es realitza el càrrec"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "Stage 1 Reference"
+msgstr "Referència Fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "Stage 1 Rejected"
+msgstr "Rebutjat Fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "Stage 2 Reference"
+msgstr "Referència Fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.view_account_invoice_filter
+msgid "Stage 3 Rejected"
+msgstr "Rebutjat Fase 3"
+
+#. module: account_banking_debit_n63
+#: model:account.payment.method,name:account_banking_debit_n63.payment_method_n63_s1
+msgid "Tax management. N63-S1"
+msgstr "Gestió fiscal. N63-S1"
+
+#. module: account_banking_debit_n63
+#: model:account.payment.method,name:account_banking_debit_n63.payment_method_n63_s3
+msgid "Tax management. N63-S3"
+msgstr "Gestió fiscal. N63-S3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_bank_payment_line_n63_s3_ref
+msgid "This number indicates the payment reference if it has been made by N63 in Stage 3"
+msgstr "Este número indica la referència de pagament si s'ha fet per N63 en la fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_bank_payment_line_n63_s1_ref
+msgid "This number indicates the payment reference if it has been made by n63 in Stage 1"
+msgstr "Este número indica la referència de pagament si s'ha fet per n63 en la fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_n63_s3_ref
+msgid "This number indicates the payment reference when has been made by N63 in Stage 3"
+msgstr "Este número indica la referència de pagament quan s'ha fet per N63 en la fase 3"
+
+#. module: account_banking_debit_n63
+#: model:ir.model.fields,help:account_banking_debit_n63.field_account_invoice_n63_s1_ref
+msgid "This number indicates the payment reference when has been made by n63 in Stage 1"
+msgstr "Este número indica la referència de pagament quan s'ha fet per n63 en la fase 1"
+
+#. module: account_banking_debit_n63
+#: model:ir.model,name:account_banking_debit_n63.model_account_config_settings
+msgid "account.config.settings"
+msgstr "account.config.settings"
+
+#. module: account_banking_debit_n63
+#: model:ir.ui.view,arch_db:account_banking_debit_n63.account_payment_order_form_n63
+msgid "n63 options"
+msgstr "Opcions n63"
+
