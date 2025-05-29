@@ -8,6 +8,12 @@
         </xpath>
     </template>
 
+    <template id="assets_frontend" inherit_id="web.assets_frontend" name="frontend_resources_fontawesome_ext">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/css" href="/fontawesome_ext/static/lib/moval_iconset/moval_iconset.css"/>
+        </xpath>
+    </template>
+
     <template id="minimal_layout_fontawesome_ext" inherit_id="report.minimal_layout">
         <xpath expr="//head" position="inside">
             <link rel="stylesheet" type="text/css"
