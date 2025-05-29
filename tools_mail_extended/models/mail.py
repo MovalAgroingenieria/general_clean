@@ -12,6 +12,7 @@ _EMAIL_ONLY_RE = re.compile(
     r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b'
 )
 
+
 def email_split_custom(text):
     if not text:
         return []
@@ -27,6 +28,7 @@ def email_split_custom(text):
             emails.append(raw.strip())
     return emails
 
+
 def email_split_and_format_custom(text):
     if not text:
         return []
@@ -34,6 +36,7 @@ def email_split_and_format_custom(text):
         formataddr(('', addr))
         for addr in email_split_custom(text)
     ]
+
 
 tools.email_split = email_split_custom
 tools.email_split_and_format = email_split_and_format_custom
