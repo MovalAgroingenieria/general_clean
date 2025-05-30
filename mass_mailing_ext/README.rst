@@ -6,6 +6,8 @@
 Mass Mailing Extended
 =====================
 
+**Do no install this module, install tools_mail_ext instead.**
+
 Extend parent module functionalities and repare errors.
 Avoid use getaddresses.
 

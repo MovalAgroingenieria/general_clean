@@ -4,7 +4,7 @@
 
 {
     'name': 'Mass Mailing Campaigns Extended',
-    'summary': 'Extend parent module functionality',
+    'summary': 'Do no install this module, install tools_mail_ext instead',
     'version': '10.0.0.1.0',
     'category': 'Marketing',
     'website': 'https://www.moval.es',
@@ -16,5 +16,5 @@
     'data': [
     ],
     'application': False,
-    'installable': True,
+    'installable': False,
 }
