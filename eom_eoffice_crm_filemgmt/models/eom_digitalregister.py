@@ -28,14 +28,14 @@ class EomDigitalregister(models.Model):
                 self.env['eom.digitalregister.access']
             new_access = model_digitalregister_access.create({
                 'digitalregister_id': digitalregister.id, })
-            # Create partner if it does not exist
+            # Create partner if it does not exist or update digitalregister
             partner_id = None
             model_res_partner = self.env['res.partner']
             possible_partners = model_res_partner.search([('vat', '=', dni)])
             if possible_partners and len(possible_partners) == 1:
                 partner_id = possible_partners[0].id
-            if partner_id:
-                vals['partner_id'] = partner_id
+            if partner_id and not digitalregister.partner_id:
+                digitalregister.write({'partner_id': partner_id})
             else:
                 fullname = lastname + ' ' + firstname
                 vals_partner = {
