@@ -38,7 +38,7 @@ class LawParameterUom(models.Model):
         ("name_unique", "unique(name)",
          "The unit of measure must be unique."),
         ("short_name_unique", "unique(short_name)",
-         "The unit of measure must be unique.")
+         "The unit of measure must be unique."),
     ]
 
     def name_get(self):

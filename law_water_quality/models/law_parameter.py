@@ -38,7 +38,7 @@ class LawParameter(models.Model):
     maximum_value_admissible = fields.Float(
         string="Maximum Value Admissible (VMA)",
         digits=(32, 6),
-        default=0.0
+        default=0.0,
     )
 
     with_maximum_deviation_admissible = fields.Boolean(
@@ -73,7 +73,7 @@ class LawParameter(models.Model):
 
     sql_constraints = [
         ("name_unique", "unique(name)",
-         "The parameter must be unique.")
+         "The parameter must be unique."),
     ]
 
     @api.depends("notes")

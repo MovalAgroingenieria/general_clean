@@ -28,7 +28,7 @@ class LawMeasuringDevice(models.Model):
         string='Unit of Measure',
         related='measuring_device_type_id.uom_id',
         readonly=True,
-        store=True
+        store=True,
     )
 
     description = fields.Char(
@@ -38,7 +38,7 @@ class LawMeasuringDevice(models.Model):
     measurement_ids = fields.One2many(
         comodel_name='law.measuring.device.measurement',
         inverse_name='measuring_device_id',
-        string='Measurements'
+        string='Measurements',
     )
 
     number_of_measurements = fields.Integer(
@@ -52,11 +52,11 @@ class LawMeasuringDevice(models.Model):
     last_measurement_value = fields.Float(
         string='Last Measurement Value',
         digits=(32, 4),
-        compute='_compute_last_measurement'
+        compute='_compute_last_measurement',
     )
 
     active = fields.Boolean(
-        default=True
+        default=True,
     )
 
     notes = fields.Html(

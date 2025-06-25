@@ -13,7 +13,8 @@ class MailMessage(models.Model):
         # If it's an internal note without a model,
         # clear recipients to avoid sending
         subtype = \
-            self.env['mail.message.subtype'].browse(vals.get('subtype_id'))
+            self.sudo().env['mail.message.subtype'].browse(
+                vals.get('subtype_id'))
         if (subtype and subtype.internal and not vals.get('model') and
                 vals.get('partner_ids')):
             vals['partner_ids'] = [(6, 0, [])]

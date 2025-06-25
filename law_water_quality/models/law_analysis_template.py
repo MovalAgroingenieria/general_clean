@@ -98,9 +98,10 @@ class LawAnalysisTemplate(models.Model):
     @api.multi
     def action_show_law_parameters_form(self):
         self.ensure_one()
-        id_tree_view = self.env.ref('law_water_quality.law_analysis_view_tree').id
-        id_form_view = self.env.ref('law_water_quality.law_analysis_view_form').id
-
+        id_tree_view = self.env.ref(
+            'law_water_quality.law_analysis_view_tree').id
+        id_form_view = self.env.ref(
+            'law_water_quality.law_analysis_view_form').id
         act_window = {
             'type': 'ir.actions.act_window',
             'name': 'Analysis',

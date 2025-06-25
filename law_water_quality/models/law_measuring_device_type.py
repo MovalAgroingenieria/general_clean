@@ -30,7 +30,7 @@ class LawMeasuringDeviceType(models.Model):
     device_ids = fields.One2many(
         comodel_name='law.measuring.device',
         inverse_name='measuring_device_type_id',
-        string='Devices'
+        string='Devices',
     )
 
     notes = fields.Html(

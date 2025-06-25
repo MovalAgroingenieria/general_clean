@@ -25,7 +25,8 @@ class LawMeasuringDeviceMeasurement(models.Model):
     value = fields.Float(
         string='Measurement Value',
         digits=(32, 4),
-        required=True,)
+        required=True,
+    )
 
     uom_id = fields.Many2one(
         comodel_name='law.parameter.uom',
@@ -36,7 +37,7 @@ class LawMeasuringDeviceMeasurement(models.Model):
         string='Name',
         required=True,
         index=True,
-        compute='_compute_name'
+        compute='_compute_name',
     )
 
     sql_constraints = [
