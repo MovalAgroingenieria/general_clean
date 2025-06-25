@@ -19,7 +19,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:maintenance_stock.equipment_request_view_form
 #: model:ir.ui.view,arch_db:maintenance_stock.hr_equipment_view_form
 msgid "<span class=\"o_stat_text\">Picking list</span>"
-msgstr "<span class=\"o_stat_text\">Albaranes</span><span>materiales</span>"
+msgstr "<span class=\"o_stat_text\">Lista</span><span>materiales</span>"
 
 #. module: maintenance_stock
 #: model:ir.ui.view,arch_db:maintenance_stock.equipment_request_view_form
@@ -104,7 +104,7 @@ msgstr "Id solicitud de mantenimiento"
 #. module: maintenance_stock
 #: model:ir.model.fields,field_description:maintenance_stock.field_maintenance_request_stock_picking_ids
 msgid "Picking list"
-msgstr "Albaranes materiales"
+msgstr "Lista materiales"
 
 #. module: maintenance_stock
 #: code:addons/maintenance_stock/models/stock_warehouse.py:74
