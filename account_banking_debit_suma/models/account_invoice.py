@@ -27,3 +27,7 @@ class AccountInvoice(models.Model):
     suma_leave_requested = fields.Boolean(
         string="SUMA Leave Requested",
         help='Indicates that a SUMA leave has been requested')
+
+    suma_settlement = fields.Char(
+        string="SUMA Settlement",
+        help='Fill this field with the SUMA settlement.')

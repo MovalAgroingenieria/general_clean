@@ -25,7 +25,13 @@
         "views/account_payment_order_views.xml",
         "views/account_invoice_view.xml",
         "views/resources.xml",
+        "wizards/parse_pdf_to_csv_wizard_view.xml",
     ],
+    "external_dependencies": {
+        "python": [
+            "PyPDF2",
+        ],
+    },
     "installable": True,
     "application": False,
 }

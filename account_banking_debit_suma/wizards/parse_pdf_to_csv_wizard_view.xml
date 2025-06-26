@@ -1,0 +1,32 @@
+<odoo>
+
+    <record id="view_pdf_to_csv_wizard_form" model="ir.ui.view">
+        <field name="name">pdf.to.csv.wizard.form</field>
+        <field name="model">pdf.to.csv.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Convert PDF to CSV" version="7.0">
+                <group>
+                    <field name="pdf_file" filename="pdf_filename"/>
+                    <field name="pdf_filename"/>
+                    <field name="file_type"/>
+                </group>
+                <footer>
+                    <button name="parse_pdf_to_csv" string="Generate CSV" type="object" class="oe_highlight"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+                <group>
+                    <field name="csv_file" filename="csv_filename" readonly="1"/>
+                    <field name="csv_filename" readonly="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_pdf_to_csv_wizard" model="ir.actions.act_window">
+        <field name="name">Convert PDF to CSV</field>
+        <field name="res_model">pdf.to.csv.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

@@ -39,6 +39,13 @@
                         string="Print SUMA resume" class="oe_highlight"
                         attrs="{'invisible':[ '|',('payment_mode_name', '!=', 'SUMA'),('state', '!=', 'generated')]}"/>
             </xpath>
+            <xpath expr="//button[@name='action_done_cancel']" position="after">
+                <!-- PDF to CSV wizard -->
+                <button name="%(action_pdf_to_csv_wizard)d"
+                        type="action"
+                        string="PDF to CSV"
+                        attrs="{'invisible':[('payment_mode_name', '!=', 'Liquidaciones Suma')]}"/>
+            </xpath>
 
             <!-- Lock date_prefered field -->
             <xpath expr="//field[@name='date_prefered']" position="attributes">

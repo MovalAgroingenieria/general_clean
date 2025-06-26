@@ -12,6 +12,7 @@
                     <field name="suma_ref"/>
                     <field name="suma_rejected"/>
                     <field name="suma_leave_requested"/>
+                    <field name="suma_settlement"/>
                 </group>
             </xpath>
         </field>
@@ -28,6 +29,7 @@
             <xpath expr="//field[@name='type']" position="after">
                 <field name="in_suma" string="SUMA"/>
                 <field name="suma_ref" string="SUMA Ref" invisible="1"/>
+                <field name="suma_settlement" string="SUMA Sett." invisible="1"/>
             </xpath>
         </field>
     </record>
@@ -39,6 +41,7 @@
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='unpaid']" position="before">
                 <field name="suma_ref"/>
+                <field name="suma_settlement"/>
                 <filter name="suma_done" string="SUMA" domain="[('in_suma', '=', True)]"/>
                 <separator/>
             </xpath>
