@@ -14,6 +14,7 @@
     'depends': [
         'maintenance_project',
         'hr_timesheet',
+        'maintenance_form_buttons',
     ],
     'data': [
         # Removed security rules, to avoid  errors on invoices validation

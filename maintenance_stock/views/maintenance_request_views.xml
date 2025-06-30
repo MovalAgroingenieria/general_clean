@@ -26,31 +26,23 @@
 
     <record id="equipment_request_view_form" model="ir.ui.view">
         <field name="model">maintenance.request</field>
-        <field name="inherit_id" ref="maintenance.hr_equipment_request_view_form" />
+        <field name="inherit_id" ref="maintenance_form_buttons.equipment_request_view_form" />
         <field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]" />
         <field name="arch" type="xml">
-            <xpath expr="//div[@class='oe_title']" position="after">
-                <div class="oe_button_box" name="button_box">
-                    <field name="allow_consumptions" invisible="1"/>
-                    <button class="oe_stat_button" type="object" name="action_view_stock_picking_ids" icon="fa-ticket"
-                            attrs="{'invisible': [('allow_consumptions', '=', False)]}">
-                        <div class="o_form_field o_stat_info">
-                            <span class="o_stat_text">Picking list</span>
-                        </div>
-                    </button>
-                    <button class="oe_stat_button" type="object" name="action_view_stock_move_ids" icon="fa-arrows-v"
-                            groups="base.group_no_one" attrs="{'invisible': [('allow_consumptions', '=', False)]}">
-                        <div class="o_form_field o_stat_info">
-                            <span class="o_stat_text">Stock Moves</span>
-                        </div>
-                    </button>
-                    <!-- <button class="oe_stat_button" type="object" name="action_view_stock_move_line_ids" icon="fa-arrows-v"
-                            attrs="{'invisible': [('allow_consumptions', '=', False)]}">
-                        <div class="o_form_field o_stat_info">
-                            <span class="o_stat_text">Product Moves</span>
-                        </div>
-                    </button> -->
-                </div>
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <field name="allow_consumptions" invisible="1"/>
+                <button class="oe_stat_button" type="object" name="action_view_stock_picking_ids" icon="fa-ticket"
+                        attrs="{'invisible': [('allow_consumptions', '=', False)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">Picking list</span>
+                    </div>
+                </button>
+                <button class="oe_stat_button" type="object" name="action_view_stock_move_ids" icon="fa-arrows-v"
+                        groups="base.group_no_one" attrs="{'invisible': [('allow_consumptions', '=', False)]}">
+                    <div class="o_form_field o_stat_info">
+                        <span class="o_stat_text">Stock Moves</span>
+                    </div>
+                </button>
             </xpath>
         </field>
     </record>

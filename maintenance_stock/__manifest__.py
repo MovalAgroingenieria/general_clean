@@ -14,16 +14,15 @@
     'depends': [
         'base_maintenance_config',
         'maintenance',
+        'maintenance_form_buttons',
         'stock',
     ],
     'data': [
         'views/maintenance_equipment_views.xml',
         'views/maintenance_request_views.xml',
         'views/stock_move_views.xml',
-        #'views/stock_move_line_views.xml',
         'views/stock_picking_views.xml',
     ],
-    #'post_init_hook': 'post_init_hook',
     'installable': True,
     'application': False,
 }
