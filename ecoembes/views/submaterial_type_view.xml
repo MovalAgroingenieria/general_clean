@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_submaterial_type_tree" model="ir.ui.view">
+        <field name="name">view.submaterial.type.tree</field>
+        <field name="model">submaterial.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code" />
+                <field name="submaterial_id" />
+                <field name="name" />
+                <field name="fee_per_kg" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_submaterial_type_form" model="ir.ui.view">
+        <field name="name">view.submaterial.type.form</field>
+        <field name="model">submaterial.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="code" />
+                        <field name="name" />
+                        <field name="submaterial_id" />
+                        <field name="fee_per_kg" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_submaterial_type" model="ir.actions.act_window">
+        <field name="name">Submaterial Types</field>
+        <field name="res_model">submaterial.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

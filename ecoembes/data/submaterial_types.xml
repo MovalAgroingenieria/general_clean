@@ -1,0 +1,140 @@
+<odoo>
+    <record id="type_steel_drink_cans" model="submaterial.type">
+        <field name="code">001</field>
+        <field name="name">Steel drink cans</field>
+        <field name="submaterial_id" ref="submat_steel_drink_cans"/>
+        <field name="fee_per_kg">0.185</field>
+    </record>
+    <record id="type_steel_other" model="submaterial.type">
+        <field name="code">002</field>
+        <field name="name">Steel other containers</field>
+        <field name="submaterial_id" ref="submat_steel_other"/>
+        <field name="fee_per_kg">0.196</field>
+    </record>
+    <record id="type_aluminum_drink_cans" model="submaterial.type">
+        <field name="code">003</field>
+        <field name="name">Aluminum drink cans</field>
+        <field name="submaterial_id" ref="submat_aluminum_drink_cans"/>
+        <field name="fee_per_kg">0.048</field>
+    </record>
+    <record id="type_aluminum_other" model="submaterial.type">
+        <field name="code">004</field>
+        <field name="name">Aluminum other containers</field>
+        <field name="submaterial_id" ref="submat_aluminum_other"/>
+        <field name="fee_per_kg">0.062</field>
+    </record>
+    <record id="type_pet_bottles" model="submaterial.type">
+        <field name="code">005</field>
+        <field name="name">PET bottles ≤ 3L SUP</field>
+        <field name="submaterial_id" ref="submat_pet_bottles"/>
+        <field name="fee_per_kg">0.600</field>
+    </record>
+    <record id="type_pet_rigid" model="submaterial.type">
+        <field name="code">006</field>
+        <field name="name">PET rigid</field>
+        <field name="submaterial_id" ref="submat_pet_rigid"/>
+        <field name="fee_per_kg">0.521</field>
+    </record>
+    <record id="type_pet_rigid_sup" model="submaterial.type">
+        <field name="code">007</field>
+        <field name="name">PET rigid SUP</field>
+        <field name="submaterial_id" ref="submat_pet_rigid_sup"/>
+        <field name="fee_per_kg">0.576</field>
+    </record>
+    <record id="type_hdpe_rigid" model="submaterial.type">
+        <field name="code">008</field>
+        <field name="name">HDPE rigid</field>
+        <field name="submaterial_id" ref="submat_hdpe_rigid"/>
+        <field name="fee_per_kg">0.399</field>
+    </record>
+    <record id="type_hdpe_rigid_sup" model="submaterial.type">
+        <field name="code">009</field>
+        <field name="name">HDPE rigid SUP</field>
+        <field name="submaterial_id" ref="submat_hdpe_rigid_sup"/>
+        <field name="fee_per_kg">0.454</field>
+    </record>
+    <record id="type_other_rigid" model="submaterial.type">
+        <field name="code">010</field>
+        <field name="name">Other rigid plastics</field>
+        <field name="submaterial_id" ref="submat_other_rigid"/>
+        <field name="fee_per_kg">0.721</field>
+    </record>
+    <record id="type_other_rigid_sup" model="submaterial.type">
+        <field name="code">011</field>
+        <field name="name">Other rigid plastics SUP</field>
+        <field name="submaterial_id" ref="submat_other_rigid_sup"/>
+        <field name="fee_per_kg">0.776</field>
+    </record>
+    <record id="type_flexible" model="submaterial.type">
+        <field name="code">012</field>
+        <field name="name">Flexible plastics</field>
+        <field name="submaterial_id" ref="submat_flexible"/>
+        <field name="fee_per_kg">1.081</field>
+    </record>
+    <record id="type_flexible_sup" model="submaterial.type">
+        <field name="code">013</field>
+        <field name="name">Flexible plastics SUP</field>
+        <field name="submaterial_id" ref="submat_flexible_sup"/>
+        <field name="fee_per_kg">1.136</field>
+    </record>
+    <record id="type_bags_une" model="submaterial.type">
+        <field name="code">014</field>
+        <field name="name">UNE bags</field>
+        <field name="submaterial_id" ref="submat_bags_une"/>
+        <field name="fee_per_kg">0.632</field>
+    </record>
+    <record id="type_compostable_non_sup" model="submaterial.type">
+        <field name="code">015</field>
+        <field name="name">Compostable non-SUP</field>
+        <field name="submaterial_id" ref="submat_compostable_non_sup"/>
+        <field name="fee_per_kg">0.223</field>
+    </record>
+    <record id="type_compostable_sup" model="submaterial.type">
+        <field name="code">016</field>
+        <field name="name">Compostable SUP</field>
+        <field name="submaterial_id" ref="submat_compostable_sup"/>
+        <field name="fee_per_kg">0.278</field>
+    </record>
+    <record id="type_carton_non_sup" model="submaterial.type">
+        <field name="code">017</field>
+        <field name="name">Carton non-SUP</field>
+        <field name="submaterial_id" ref="submat_carton_non_sup"/>
+        <field name="fee_per_kg">0.550</field>
+    </record>
+    <record id="type_carton_sup" model="submaterial.type">
+        <field name="code">018</field>
+        <field name="name">Carton SUP</field>
+        <field name="submaterial_id" ref="submat_carton_sup"/>
+        <field name="fee_per_kg">0.605</field>
+    </record>
+    <record id="type_paper_non_sup" model="submaterial.type">
+        <field name="code">019</field>
+        <field name="name">Paper non-SUP</field>
+        <field name="submaterial_id" ref="submat_paper_non_sup"/>
+        <field name="fee_per_kg">0.135</field>
+    </record>
+    <record id="type_paper_sup" model="submaterial.type">
+        <field name="code">020</field>
+        <field name="name">Paper SUP (with plastic)</field>
+        <field name="submaterial_id" ref="submat_paper_sup"/>
+        <field name="fee_per_kg">0.190</field>
+    </record>
+    <record id="type_ceramic" model="submaterial.type">
+        <field name="code">021</field>
+        <field name="name">Ceramic</field>
+        <field name="submaterial_id" ref="submat_ceramic"/>
+        <field name="fee_per_kg">0.014</field>
+    </record>
+    <record id="type_wood_cork" model="submaterial.type">
+        <field name="code">022</field>
+        <field name="name">Wood and cork</field>
+        <field name="submaterial_id" ref="submat_wood_cork"/>
+        <field name="fee_per_kg">0.007</field>
+    </record>
+    <record id="type_others" model="submaterial.type">
+        <field name="code">023</field>
+        <field name="name">Others</field>
+        <field name="submaterial_id" ref="submat_others"/>
+        <field name="fee_per_kg">1.081</field>
+    </record>
+</odoo>
