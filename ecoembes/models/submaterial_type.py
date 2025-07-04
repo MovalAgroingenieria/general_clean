@@ -1,4 +1,4 @@
-# © 2025 Moval Agroingeniería
+# 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
@@ -28,7 +28,7 @@ class SubmaterialType(models.Model):
 
     fee_per_kg = fields.Float(
         string="Fee €/kg",
-        digits=(16, 6),
+        digits=(16, 5),
         help="Tarifa oficial de contribución al SCRAP por kilogramo",
     )
 

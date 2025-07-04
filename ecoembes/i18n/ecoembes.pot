@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-25 09:33+0000\n"
-"PO-Revision-Date: 2025-06-25 09:33+0000\n"
+"POT-Creation-Date: 2025-07-04 08:24+0000\n"
+"PO-Revision-Date: 2025-07-04 08:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,15 +16,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_aluminum_drink_cans
-#: model:submaterial.type,name:ecoembes.type_aluminum_drink_cans
-msgid "Aluminum drink cans"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_aluminum_other
-#: model:submaterial.type,name:ecoembes.type_aluminum_other
-msgid "Aluminum other containers"
+#: model:product.submaterial,name:ecoembes.submat_aluminum
+msgid "Aluminum"
 msgstr ""
 
 #. module: ecoembes
@@ -33,20 +26,18 @@ msgid "BEVERAGE/FOOD CARTON"
 msgstr ""
 
 #. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_pet_bottles_sup
+msgid "Bottles ≤ 3L SUP"
+msgstr ""
+
+#. module: ecoembes
 #: model:product.material,name:ecoembes.material_ceramic
 msgid "CERAMIC"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_carton_sup
-#: model:submaterial.type,name:ecoembes.type_carton_sup
-msgid "Carton SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_carton_non_sup
-#: model:submaterial.type,name:ecoembes.type_carton_non_sup
-msgid "Carton non-SUP"
+#: model:product.submaterial,name:ecoembes.submat_carton_beverages
+msgid "Cardboard for drinks and food"
 msgstr ""
 
 #. module: ecoembes
@@ -70,15 +61,8 @@ msgid "Code must be unique."
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_compostable_sup
-#: model:submaterial.type,name:ecoembes.type_compostable_sup
-msgid "Compostable SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_compostable_non_sup
-#: model:submaterial.type,name:ecoembes.type_compostable_non_sup
-msgid "Compostable non-SUP"
+#: model:product.submaterial,name:ecoembes.submat_compostable_packaging
+msgid "Compostable packaging"
 msgstr ""
 
 #. module: ecoembes
@@ -108,6 +92,12 @@ msgid "Display Name"
 msgstr ""
 
 #. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_aluminum_drink_cans
+#: model:submaterial.type,name:ecoembes.type_steel_drink_cans
+msgid "Drink cans"
+msgstr ""
+
+#. module: ecoembes
 #: model:ir.ui.menu,name:ecoembes.menu_product_main
 #: model_terms:ir.ui.view,arch_db:ecoembes.nan_product_pack_form
 msgid "Ecoembes"
@@ -124,23 +114,18 @@ msgid "Fee €/kg"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_flexible
-msgid "Flexible plastic"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_flexible_sup
-msgid "Flexible plastic SUP"
+#: model:product.submaterial,name:ecoembes.submat_film_flexible_plastics
+msgid "Film plastic and flexibles"
 msgstr ""
 
 #. module: ecoembes
 #: model:submaterial.type,name:ecoembes.type_flexible
-msgid "Flexible plastics"
+msgid "Flexible packaging"
 msgstr ""
 
 #. module: ecoembes
 #: model:submaterial.type,name:ecoembes.type_flexible_sup
-msgid "Flexible plastics SUP"
+msgid "Flexible packaging SUP"
 msgstr ""
 
 #. module: ecoembes
@@ -149,23 +134,14 @@ msgid "GLASS"
 msgstr ""
 
 #. module: ecoembes
-#: model:submaterial.type,name:ecoembes.type_hdpe_rigid
-msgid "HDPE rigid"
+#: model:product.submaterial,name:ecoembes.submat_glass
+#: model:submaterial.type,name:ecoembes.type_glass
+msgid "Glass"
 msgstr ""
 
 #. module: ecoembes
-#: model:submaterial.type,name:ecoembes.type_hdpe_rigid_sup
-msgid "HDPE rigid SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_hdpe_rigid
-msgid "HDPE rigid container"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_hdpe_rigid_sup
-msgid "HDPE rigid container SUP"
+#: model:product.submaterial,name:ecoembes.submat_hdpe
+msgid "HDPE"
 msgstr ""
 
 #. module: ecoembes
@@ -251,30 +227,46 @@ msgid "Name"
 msgstr ""
 
 #. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_carton_non_sup
+#: model:submaterial.type,name:ecoembes.type_compostable_non_sup
+msgid "Non-SUP Packaging"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_paper_non_sup
+msgid "Non-SUP packaging"
+msgstr ""
+
+#. module: ecoembes
+#: model:product.submaterial,name:ecoembes.submat_other_materials
+#: model:submaterial.type,name:ecoembes.type_other_materials
+msgid "Not included in any group"
+msgstr ""
+
+#. module: ecoembes
 #: model:product.material,name:ecoembes.material_others
 msgid "OTHERS"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_others
-msgid "Other materials"
+#: model:submaterial.type,name:ecoembes.type_pet_other_bottles
+msgid "Other bottles"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_other_rigid
-#: model:submaterial.type,name:ecoembes.type_other_rigid
+#: model:submaterial.type,name:ecoembes.type_pet_other_bottles_sup
+msgid "Other bottles SUP"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_aluminum_other_containers
+#: model:submaterial.type,name:ecoembes.type_steel_other_containers
+msgid "Other containers"
+msgstr ""
+
+#. module: ecoembes
+#: model:product.submaterial,name:ecoembes.submat_other_rigid_plastics
 msgid "Other rigid plastics"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_other_rigid_sup
-#: model:submaterial.type,name:ecoembes.type_other_rigid_sup
-msgid "Other rigid plastics SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:submaterial.type,name:ecoembes.type_others
-msgid "Others"
 msgstr ""
 
 #. module: ecoembes
@@ -283,29 +275,8 @@ msgid "PAPER/CARDBOARD"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_pet_bottles
-#: model:submaterial.type,name:ecoembes.type_pet_bottles
-msgid "PET bottles ≤ 3L SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:submaterial.type,name:ecoembes.type_pet_rigid
-msgid "PET rigid"
-msgstr ""
-
-#. module: ecoembes
-#: model:submaterial.type,name:ecoembes.type_pet_rigid_sup
-msgid "PET rigid SUP"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_pet_rigid
-msgid "PET rigid container"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_pet_rigid_sup
-msgid "PET rigid container SUP"
+#: model:product.submaterial,name:ecoembes.submat_pet
+msgid "PET"
 msgstr ""
 
 #. module: ecoembes
@@ -314,15 +285,8 @@ msgid "PLASTICS"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_paper_sup
-#: model:submaterial.type,name:ecoembes.type_paper_sup
-msgid "Paper SUP (with plastic)"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_paper_non_sup
-#: model:submaterial.type,name:ecoembes.type_paper_non_sup
-msgid "Paper non-SUP"
+#: model:product.submaterial,name:ecoembes.submat_paper_cardboard
+msgid "Paper and cardboard"
 msgstr ""
 
 #. module: ecoembes
@@ -337,20 +301,44 @@ msgid "Product Template"
 msgstr ""
 
 #. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_hdpe_rigid
+msgid "Rigid packaging"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_hdpe_rigid_sup
+msgid "Rigid packaging SUP"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_other_rigid
+msgid "Rigid plastics"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_other_rigid_sup
+msgid "Rigid plastics SUP"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_carton_sup
+#: model:submaterial.type,name:ecoembes.type_compostable_sup
+msgid "SUP Packaging"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_paper_sup
+msgid "SUP packaging (with plastic)"
+msgstr ""
+
+#. module: ecoembes
 #: model_terms:ir.ui.view,arch_db:ecoembes.view_product_material_search
 msgid "Search productMaterial"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_steel_drink_cans
-#: model:submaterial.type,name:ecoembes.type_steel_drink_cans
-msgid "Steel drink cans"
-msgstr ""
-
-#. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_steel_other
-#: model:submaterial.type,name:ecoembes.type_steel_other
-msgid "Steel other containers"
+#: model:product.submaterial,name:ecoembes.submat_steel
+msgid "Steel"
 msgstr ""
 
 #. module: ecoembes
@@ -393,7 +381,16 @@ msgid "Total SCRAP Contribution (€)"
 msgstr ""
 
 #. module: ecoembes
-#: model:product.submaterial,name:ecoembes.submat_bags_une
+#: model:submaterial.type,name:ecoembes.type_pet_trays_rigid
+msgid "Trays and other rigid items"
+msgstr ""
+
+#. module: ecoembes
+#: model:submaterial.type,name:ecoembes.type_pet_trays_rigid_sup
+msgid "Trays and other rigid items SUP"
+msgstr ""
+
+#. module: ecoembes
 #: model:submaterial.type,name:ecoembes.type_bags_une
 msgid "UNE bags"
 msgstr ""

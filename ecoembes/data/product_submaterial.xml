@@ -1,132 +1,69 @@
 <odoo>
-    <!-- METALS -->
-    <record id="submat_steel_drink_cans" model="product.submaterial">
+    <record id="submat_steel" model="product.submaterial">
         <field name="code">001</field>
-        <field name="name">Steel drink cans</field>
+        <field name="name">Steel</field>
         <field name="material_id" ref="material_metals"/>
     </record>
-    <record id="submat_steel_other" model="product.submaterial">
+    <record id="submat_aluminum" model="product.submaterial">
         <field name="code">002</field>
-        <field name="name">Steel other containers</field>
+        <field name="name">Aluminum</field>
         <field name="material_id" ref="material_metals"/>
     </record>
-    <record id="submat_aluminum_drink_cans" model="product.submaterial">
+    <record id="submat_pet" model="product.submaterial">
         <field name="code">003</field>
-        <field name="name">Aluminum drink cans</field>
-        <field name="material_id" ref="material_metals"/>
+        <field name="name">PET</field>
+        <field name="material_id" ref="material_plastics"/>
     </record>
-    <record id="submat_aluminum_other" model="product.submaterial">
+    <record id="submat_hdpe" model="product.submaterial">
         <field name="code">004</field>
-        <field name="name">Aluminum other containers</field>
-        <field name="material_id" ref="material_metals"/>
+        <field name="name">HDPE</field>
+        <field name="material_id" ref="material_plastics"/>
     </record>
-
-    <!-- PLASTICS -->
-    <record id="submat_pet_bottles" model="product.submaterial">
+    <record id="submat_other_rigid_plastics" model="product.submaterial">
         <field name="code">005</field>
-        <field name="name">PET bottles ≤ 3L SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_pet_rigid" model="product.submaterial">
-        <field name="code">006</field>
-        <field name="name">PET rigid container</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_pet_rigid_sup" model="product.submaterial">
-        <field name="code">007</field>
-        <field name="name">PET rigid container SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_hdpe_rigid" model="product.submaterial">
-        <field name="code">008</field>
-        <field name="name">HDPE rigid container</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_hdpe_rigid_sup" model="product.submaterial">
-        <field name="code">009</field>
-        <field name="name">HDPE rigid container SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_other_rigid" model="product.submaterial">
-        <field name="code">010</field>
         <field name="name">Other rigid plastics</field>
         <field name="material_id" ref="material_plastics"/>
     </record>
-    <record id="submat_other_rigid_sup" model="product.submaterial">
-        <field name="code">011</field>
-        <field name="name">Other rigid plastics SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_flexible" model="product.submaterial">
-        <field name="code">012</field>
-        <field name="name">Flexible plastic</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_flexible_sup" model="product.submaterial">
-        <field name="code">013</field>
-        <field name="name">Flexible plastic SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-    <record id="submat_bags_une" model="product.submaterial">
-        <field name="code">014</field>
-        <field name="name">UNE bags</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
 
-    <!-- COMPOSTABLE -->
-    <record id="submat_compostable_non_sup" model="product.submaterial">
-        <field name="code">015</field>
-        <field name="name">Compostable non-SUP</field>
+    <record id="submat_film_flexible_plastics" model="product.submaterial">
+        <field name="code">006</field>
+        <field name="name">Film plastic and flexibles</field>
         <field name="material_id" ref="material_plastics"/>
     </record>
-    <record id="submat_compostable_sup" model="product.submaterial">
-        <field name="code">016</field>
-        <field name="name">Compostable SUP</field>
-        <field name="material_id" ref="material_plastics"/>
-    </record>
-
-    <!-- BEVERAGE/FOOD CARTON -->
-    <record id="submat_carton_non_sup" model="product.submaterial">
-        <field name="code">017</field>
-        <field name="name">Carton non-SUP</field>
-        <field name="material_id" ref="material_carton_beverages"/>
-    </record>
-    <record id="submat_carton_sup" model="product.submaterial">
-        <field name="code">018</field>
-        <field name="name">Carton SUP</field>
-        <field name="material_id" ref="material_carton_beverages"/>
-    </record>
-
-    <!-- PAPER/CARDBOARD -->
-    <record id="submat_paper_non_sup" model="product.submaterial">
-        <field name="code">019</field>
-        <field name="name">Paper non-SUP</field>
+    <record id="submat_compostable_packaging" model="product.submaterial">
+        <field name="code">007</field>
+        <field name="name">Compostable packaging</field>
         <field name="material_id" ref="material_paper_cardboard"/>
     </record>
-    <record id="submat_paper_sup" model="product.submaterial">
-        <field name="code">020</field>
-        <field name="name">Paper SUP (with plastic)</field>
+    <record id="submat_paper_cardboard" model="product.submaterial">
+        <field name="code">008</field>
+        <field name="name">Paper and cardboard</field>
         <field name="material_id" ref="material_paper_cardboard"/>
     </record>
-
-    <!-- CERAMIC -->
+    <record id="submat_carton_beverages" model="product.submaterial">
+        <field name="code">009</field>
+        <field name="name">Cardboard for drinks and food</field>
+        <field name="material_id" ref="material_carton_beverages"/>
+    </record>
     <record id="submat_ceramic" model="product.submaterial">
-        <field name="code">021</field>
+        <field name="code">010</field>
         <field name="name">Ceramic</field>
         <field name="material_id" ref="material_ceramic"/>
     </record>
-
-    <!-- WOOD/CORK -->
     <record id="submat_wood_cork" model="product.submaterial">
-        <field name="code">022</field>
+        <field name="code">011</field>
         <field name="name">Wood and cork</field>
         <field name="material_id" ref="material_wood_cork"/>
     </record>
 
-    <!-- OTHERS -->
-    <record id="submat_others" model="product.submaterial">
-        <field name="code">023</field>
-        <field name="name">Other materials</field>
+    <record id="submat_other_materials" model="product.submaterial">
+        <field name="code">012</field>
+        <field name="name">Not included in any group</field>
+        <field name="material_id" ref="material_others"/>
+    </record>
+    <record id="submat_glass" model="product.submaterial">
+        <field name="code">013</field>
+        <field name="name">Glass</field>
         <field name="material_id" ref="material_others"/>
     </record>
 </odoo>

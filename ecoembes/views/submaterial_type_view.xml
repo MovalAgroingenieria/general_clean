@@ -20,9 +20,9 @@
                 <sheet>
                     <group>
                         <field name="code" />
+                        <field name="fee_per_kg" />
                         <field name="name" />
                         <field name="submaterial_id" />
-                        <field name="fee_per_kg" />
                     </group>
                 </sheet>
             </form>
