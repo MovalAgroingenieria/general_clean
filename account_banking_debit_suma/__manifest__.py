@@ -19,19 +19,14 @@
         "account_banking_communication_wizard",
     ],
     "data": [
+        "wizards/parse_txt_to_csv_wizard_view.xml",
         "data/account_payment_method_data.xml",
         "reports/suma_resume.xml",
         "views/account_payment_line_views.xml",
         "views/account_payment_order_views.xml",
         "views/account_invoice_view.xml",
         "views/resources.xml",
-        "wizards/parse_pdf_to_csv_wizard_view.xml",
     ],
-    "external_dependencies": {
-        "python": [
-            "PyPDF2",
-        ],
-    },
     "installable": True,
     "application": False,
 }

@@ -23,75 +23,111 @@
         <field name="model">account.payment.order</field>
         <field name="inherit_id" ref="account_payment_order.account_payment_order_form"/>
         <field name="arch" type="xml">
+            <data>
+                <!-- Add resume_suma and direct_debit buttons -->
+                <xpath expr="//button[@name='generated2uploaded']" position="after">
+                    <button name="print_direct_debit_file"
+                            type="object"
+                            states="generated"
+                            string="Generate Direct Debit file"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|', ('payment_mode_name', '!=', 'SUMA'), ('state', '!=', 'generated')]}"/>
+                    <button name="%(action_suma_resume_report)d"
+                            type="action"
+                            states="generated"
+                            string="Print SUMA resume"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|', ('payment_mode_name', '!=', 'SUMA'), ('state', '!=', 'generated')]}"/>
+                </xpath>
 
-            <!-- Add resume_suma and direct_debit buttons -->
-            <xpath expr="//button[@name='generated2uploaded']" position="after">
-                <!-- Print resume SUMA -->
-                <button name="print_direct_debit_file"
-                        type="object"
-                        states="generated"
-                        string="Generate Direct Debit file" class="oe_highlight"
-                        attrs="{'invisible':[ '|',('payment_mode_name', '!=', 'SUMA'),('state', '!=', 'generated')]}"/>
-                 <!-- Print Direct Debit file -->
-                <button name="%(action_suma_resume_report)d"
-                        type="action"
-                        states="generated"
-                        string="Print SUMA resume" class="oe_highlight"
-                        attrs="{'invisible':[ '|',('payment_mode_name', '!=', 'SUMA'),('state', '!=', 'generated')]}"/>
-            </xpath>
-            <xpath expr="//button[@name='action_done_cancel']" position="after">
-                <!-- PDF to CSV wizard -->
-                <button name="%(action_pdf_to_csv_wizard)d"
-                        type="action"
-                        string="PDF to CSV"
-                        attrs="{'invisible':[('payment_mode_name', '!=', 'Liquidaciones Suma')]}"/>
-            </xpath>
+                <!-- Replace PDF wizard button with TXT-to-CSV wizard -->
+                <xpath expr="//button[@name='action_done_cancel']" position="after">
+                    <button name="%(account_banking_debit_suma.action_txt_to_csv_wizard)d"
+                            type="action"
+                            string="Upload Movements"/>
+                </xpath>
 
-            <!-- Lock date_prefered field -->
-            <xpath expr="//field[@name='date_prefered']" position="attributes">
-                <attribute name="attrs" add="{'readonly':[('payment_mode_name','=', 'SUMA')]}"/>
-            </xpath>
+                <!-- Lock date_prefered field -->
+                <xpath expr="//field[@name='date_prefered']" position="attributes">
+                    <attribute name="attrs"
+                                add="{'readonly': [('payment_mode_name', '=', 'SUMA')]}"/>
+                </xpath>
 
-            <!-- Make date_scheduled non required when SUMA -->
-            <xpath expr="//field[@name='date_scheduled']" position="replace">
-                <field name="date_scheduled" attrs="{'invisible': [('date_prefered', '!=', 'fixed')],
-                    'required': [('date_prefered', '=', 'fixed'), ('payment_mode_name','!=', 'SUMA')]}"/>
-            </xpath>
+                <!-- Make date_scheduled non-required when SUMA -->
+                <xpath expr="//field[@name='date_scheduled']" position="replace">
+                    <field name="date_scheduled"
+                            attrs="{'invisible': [('date_prefered', '!=', 'fixed')],
+                                    'required': [('date_prefered', '=', 'fixed'),
+                                                ('payment_mode_name', '!=', 'SUMA')]}"/>
+                </xpath>
 
-            <!-- Set description as required field -->
-            <xpath expr="//field[@name='description']" position="attributes">
-                <attribute name="attrs" add="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-            </xpath>
+                <!-- Set description as required when SUMA -->
+                <xpath expr="//field[@name='description']" position="attributes">
+                    <attribute name="attrs"
+                                add="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                </xpath>
 
-            <!-- SUMA options -->
-            <xpath expr="//group[@name='head']" position="after">
-                <group string="SUMA options" name="suma" col="2" attrs="{'invisible':[('payment_mode_name', '!=', 'SUMA')]}">
-                    <group name="suma-left">
-                        <field name="payment_mode_name" invisible="1"/>
-                        <field name="entity" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="entity_type_code" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="error_mode" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="charge_type" style="width: 50%;" widget="selection" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}"/>
-                        <field name="charge_year" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}" widget="selection"/>
+                <!-- SUMA options -->
+                <xpath expr="//group[@name='head']" position="after">
+                    <group string="SUMA options"
+                            name="suma"
+                            col="2"
+                            attrs="{'invisible': [('payment_mode_name', '!=', 'SUMA')]}">
+                        <group name="suma-left">
+                            <field name="payment_mode_name" invisible="1"/>
+                            <field name="entity"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="entity_type_code"
+                                    style="width: 50%;"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="error_mode"
+                                    style="width: 50%;"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="charge_type"
+                                    style="width: 50%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="charge_year"
+                                    style="width: 50%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                        </group>
+                        <group name="suma-right">
+                            <field name="concept"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="charge_issuance"
+                                    style="width: 50%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="periodicity"
+                                    style="width: 50%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')]}"/>
+                            <field name="initial_period"
+                                    style="width: 10%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')],
+                                            'invisible': [('periodicity', '=', 'A')]}"/>
+                            <field name="final_period"
+                                    style="width: 10%;"
+                                    widget="selection"
+                                    attrs="{'required': [('payment_mode_name', '=', 'SUMA')],
+                                            'invisible': [('periodicity', '=', 'A')]}"/>
+                        </group>
                     </group>
-                    <group name="suma-right">
-                        <field name="concept" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}" widget="selection"/>
-                        <field name="charge_issuance" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}" widget="selection"/>
-                        <field name="periodicity" style="width: 50%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')]}" widget="selection"/>
-                        <field name="initial_period" style="width: 10%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')],'invisible': [('periodicity', '=', 'A')]}" widget="selection"/>
-                        <field name="final_period" style="width: 10%;" attrs="{'required':[('payment_mode_name','=', 'SUMA')], 'invisible': [('periodicity', '=', 'A')]}" widget="selection"/>
-                    </group>
-                </group>
-            </xpath>
+                </xpath>
 
-            <!-- Add errors tap -->
-            <xpath expr="//page[@name='bank-payment-lines']" position="after">
-                <page name="errors" string="Errors"
-                      attrs="{'invisible':['|',('payment_mode_name', '!=', 'SUMA'), ('error_mode', '!=', 'permissive')]}">
-                    <field name="errors_found" nolabel="1"/>
-                </page>
-            </xpath>
-
+                <!-- Add errors tab -->
+                <xpath expr="//page[@name='bank-payment-lines']" position="after">
+                    <page name="errors"
+                            string="Errors"
+                            attrs="{'invisible': ['|', ('payment_mode_name', '!=', 'SUMA'),
+                                                ('error_mode', '!=', 'permissive')]}">
+                        <field name="errors_found" nolabel="1"/>
+                    </page>
+                </xpath>
+            </data>
         </field>
     </record>
 

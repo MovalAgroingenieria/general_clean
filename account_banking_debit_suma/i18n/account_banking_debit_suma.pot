@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-26 09:48+0000\n"
-"PO-Revision-Date: 2025-06-26 09:48+0000\n"
+"POT-Creation-Date: 2025-07-11 09:57+0000\n"
+"PO-Revision-Date: 2025-07-11 09:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -164,27 +164,27 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "16 (volunteer)"
+msgid "16 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "17 (volunteer)"
+msgid "17 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "18 (volunteer)"
+msgid "18 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "19 (volunteer)"
+msgid "19 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "20 (volunteer)"
+msgid "20 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -294,7 +294,7 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "21 (volunteer)"
+msgid "21 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -344,7 +344,7 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "22 (volunteer)"
+msgid "22 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -399,7 +399,7 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "23 (volunteer)"
+msgid "23 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -454,7 +454,7 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "24 (volunteer)"
+msgid "24 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -509,7 +509,7 @@ msgstr ""
 
 #. module: account_banking_debit_suma
 #: selection:account.payment.order,charge_issuance:0
-msgid "25 (volunteer)"
+msgid "25 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -550,11 +550,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "259 - Crevillent - C.R. San Cayetano de Crevillent"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "26 (volunteer)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -608,11 +603,6 @@ msgid "269 - Elx - C.G de Regantes Riegos de Levante LS"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "27 (volunteer)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "270 - Elx - C.R. de Carrizales"
 msgstr ""
@@ -660,11 +650,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "279 - Finestrat - C.R. de Finestrat"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "28 (volunteer)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -718,11 +703,6 @@ msgid "289 - Jacarilla - C.R. Ntra Sra. de Belen"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "29 (volunteer)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "290 - La Nucía - C.R. Riego Mayor de Alfaz del Pí y Benidorm"
 msgstr ""
@@ -770,11 +750,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "299 - L'Orxa - C.R. de L'Orxa"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "30 (volunteer)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -828,11 +803,6 @@ msgid "309 - Ondara - C.R. de la Villa de Ondara"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "31 (volunteer)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "310 - Orihuela - Juzgado Privativo de Aguas"
 msgstr ""
@@ -880,11 +850,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "319 - Parcent - C.R. y Usuarios del Vall del Pop "
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "32 (volunteer)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -938,11 +903,6 @@ msgid "329 - Rafol de Almunia - C.R. Pozo de San Fco. de Paula"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "33 (volunteer)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "330 - Relleu - Cdad. de Riego Mayor"
 msgstr ""
@@ -990,11 +950,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "339 - Sant Vicent del Raspeig - C.R. Alicante Norte"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "34 (volunteer)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -1048,11 +1003,6 @@ msgid "349 - Torrevieja - C.R. Torre Miguel"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "35 (volunteer)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "350 - Vall de Gallinera - C.R. Mineola"
 msgstr ""
@@ -1103,11 +1053,6 @@ msgid "359 - Villena - C.R. de Villena"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "36 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "360 - Xaló - C.R. de Xaló"
 msgstr ""
@@ -1130,51 +1075,6 @@ msgstr ""
 #. module: account_banking_debit_suma
 #: selection:account.config.settings,entity_code:0
 msgid "364 - Villena - C. Gral. del Alto Vinalopó de Villena"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "37 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "38 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "39 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "40 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "41 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "42 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "43 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "44 (executive)"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:account.payment.order,charge_issuance:0
-msgid "45 (executive)"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -1259,28 +1159,18 @@ msgid "Bank Payment Lines"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_csv_file
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_csv_file
 msgid "CSV File"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_csv_filename
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_csv_filename
 msgid "CSV Filename"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_pdf_to_csv_wizard_form
-msgid "Cancelar"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:pdf.to.csv.wizard,file_type:0
-msgid "Cancelations generation lid"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: selection:pdf.to.csv.wizard,file_type:0
-msgid "Cancellations in voluntary"
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_txt_to_csv_wizard_form
+msgid "Cancel"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -1327,18 +1217,12 @@ msgid "Concept description"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.actions.act_window,name:account_banking_debit_suma.action_pdf_to_csv_wizard
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_pdf_to_csv_wizard_form
-msgid "Convert PDF to CSV"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_create_uid
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_create_uid
 msgid "Created by"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_create_date
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_create_date
 msgid "Created on"
 msgstr ""
 
@@ -1389,7 +1273,7 @@ msgid "Direct Debit File"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_display_name
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_display_name
 msgid "Display Name"
 msgstr ""
 
@@ -1448,16 +1332,6 @@ msgid "FOUR-MONTHLY"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_file_type
-msgid "File type"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_pdf_filename
-msgid "Filename"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_invoice_suma_settlement
 msgid "Fill this field with the SUMA settlement."
 msgstr ""
@@ -1468,17 +1342,12 @@ msgid "Final period"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_pdf_to_csv_wizard_form
-msgid "Generate CSV"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
 msgid "Generate Direct Debit file"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_id
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_id
 msgid "ID"
 msgstr ""
 
@@ -1529,17 +1398,17 @@ msgid "Invoice num: "
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard___last_update
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard___last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_write_uid
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_write_date
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_write_date
 msgid "Last Updated on"
 msgstr ""
 
@@ -1554,22 +1423,29 @@ msgid "MONTHLY"
 msgstr ""
 
 #. module: account_banking_debit_suma
+#: model:ir.actions.act_window,name:account_banking_debit_suma.action_txt_to_csv_wizard
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_txt_to_csv_wizard_form
+msgid "Match Movements"
+msgstr ""
+
+#. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.view_txt_to_csv_wizard_form
+msgid "Match SUMA and PAY Movements"
+msgstr ""
+
+#. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_matches_count
+msgid "Matches"
+msgstr ""
+
+#. module: account_banking_debit_suma
 #: selection:account.payment.order,periodicity:0
 msgid "NUMBER OF QUARTERS"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model.fields,field_description:account_banking_debit_suma.field_pdf_to_csv_wizard_pdf_file
-msgid "PDF File"
-msgstr ""
-
-#. module: account_banking_debit_suma
-#: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
-msgid "PDF to CSV"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_payment_order
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_order_id
 msgid "Payment Order"
 msgstr ""
 
@@ -1622,6 +1498,11 @@ msgid "SUMA"
 msgstr ""
 
 #. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_suma_filename
+msgid "SUMA Filename"
+msgstr ""
+
+#. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_invoice_suma_leave_requested
 msgid "SUMA Leave Requested"
 msgstr ""
@@ -1653,6 +1534,11 @@ msgid "SUMA Settlement"
 msgstr ""
 
 #. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_suma_file
+msgid "SUMA TXT"
+msgstr ""
+
+#. module: account_banking_debit_suma
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_bank_payment_line_suma_sent
 msgid "SUMA done"
 msgstr ""
@@ -1678,11 +1564,6 @@ msgid "SUMA_resume"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: selection:pdf.to.csv.wizard,file_type:0
-msgid "Split receipts"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: selection:account.payment.order,error_mode:0
 msgid "Strict"
 msgstr ""
@@ -1696,6 +1577,11 @@ msgstr ""
 #: code:addons/account_banking_debit_suma/models/account_payment_order.py:1224
 #, python-format
 msgid "Surface: "
+msgstr ""
+
+#. module: account_banking_debit_suma
+#: model:ir.model,name:account_banking_debit_suma.model_txt_to_csv_wizard
+msgid "TXT to CSV Wizard"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -1908,6 +1794,11 @@ msgid "This number indicates the payment reference when has been made by SUMA"
 msgstr ""
 
 #. module: account_banking_debit_suma
+#: model:ir.model.fields,field_description:account_banking_debit_suma.field_txt_to_csv_wizard_total_amount
+msgid "Total Amount"
+msgstr ""
+
+#. module: account_banking_debit_suma
 #: selection:account.payment.order,entity_type_code:0
 msgid "Town hall"
 msgstr ""
@@ -1916,6 +1807,11 @@ msgstr ""
 #: model:ir.model.fields,help:account_banking_debit_suma.field_account_payment_order_periodicity
 msgid "Type of period settled.\n"
 "It will be applied to all transactions"
+msgstr ""
+
+#. module: account_banking_debit_suma
+#: model:ir.ui.view,arch_db:account_banking_debit_suma.account_payment_order_form_suma
+msgid "Upload Movements"
 msgstr ""
 
 #. module: account_banking_debit_suma
@@ -1940,11 +1836,6 @@ msgid "Water user assotiation"
 msgstr ""
 
 #. module: account_banking_debit_suma
-#: model:ir.model,name:account_banking_debit_suma.model_pdf_to_csv_wizard
-msgid "Wizard to convert PDF to CSV"
-msgstr ""
-
-#. module: account_banking_debit_suma
 #: model:ir.model,name:account_banking_debit_suma.model_account_config_settings
 msgid "account.config.settings"
 msgstr ""
@@ -1953,4 +1844,3 @@ msgstr ""
 #: model:ir.model.fields,field_description:account_banking_debit_suma.field_account_payment_order_suma_filename
 msgid "suma filename"
 msgstr ""
-

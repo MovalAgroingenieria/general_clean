@@ -1,0 +1,35 @@
+<odoo>
+  <record id="view_txt_to_csv_wizard_form" model="ir.ui.view">
+    <field name="name">txt.to.csv.wizard.form</field>
+    <field name="model">txt.to.csv.wizard</field>
+    <field name="arch" type="xml">
+      <form string="Match SUMA and PAY Movements">
+        <group>
+          <field name="suma_file" filename="suma_filename"/>
+          <field name="suma_filename" readonly="1"/>
+          <field name="order_id"/>
+        </group>
+        <footer>
+          <button name="action_parse_and_generate"
+                  string="Match Movements"
+                  type="object"
+                  class="oe_highlight"/>
+          <button string="Cancel"
+                  special="cancel"
+                  class="btn-secondary"/>
+        </footer>
+        <group>
+          <field name="matches_count" readonly="1"/>
+          <field name="total_amount" readonly="1"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_txt_to_csv_wizard" model="ir.actions.act_window">
+    <field name="name">Match Movements</field>
+    <field name="res_model">txt.to.csv.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+</odoo>
