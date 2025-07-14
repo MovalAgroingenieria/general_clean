@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mdm_sensor_type_view_form" model="ir.ui.view">
+        <field name="name">Sensor Type Form</field>
+        <field name="model">mdm.measurement.device.sensor.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="uom_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mdm_sensor_type_view_tree" model="ir.ui.view">
+        <field name="name">Sensor Type Tree</field>
+        <field name="model">mdm.measurement.device.sensor.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="uom_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mdm_sensor_type_view_search" model="ir.ui.view">
+        <field name="name">Sensor Type Search</field>
+        <field name="model">mdm.measurement.device.sensor.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="uom_id"/>
+                <group string="Group By" expand="0">
+                    <filter string="Unit of Measure" context="{'group_by':'uom_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="mdm_sensor_type_action" model="ir.actions.act_window">
+        <field name="name">Sensor Types</field>
+        <field name="res_model">mdm.measurement.device.sensor.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[
+            (5, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('mdm_sensor_type_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('mdm_sensor_type_view_form')})
+        ]"/>
+        <field name="search_view_id" ref="mdm_sensor_type_view_search"/>
+    </record>
+</odoo>

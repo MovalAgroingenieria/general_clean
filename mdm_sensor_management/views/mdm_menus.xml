@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="mdm_root_menu"
+              name="Measurement Devices"
+              sequence="10"
+              web_icon="mdm_sensor_management,static/description/icon.png"
+              groups="mdm_sensor_management.group_mdm_user"/>
+
+    <menuitem id="mdm_device_menu"
+              name="Devices"
+              parent="mdm_root_menu"
+              sequence="10"
+              action="mdm_sensor_management.mdm_measurement_device_action"
+              groups="mdm_sensor_management.group_mdm_user"/>
+
+    <menuitem id="mdm_configuration_menu"
+              name="Configuration"
+              parent="mdm_root_menu"
+              sequence="50"
+              groups="mdm_sensor_management.group_mdm_user"/>
+
+    <menuitem id="mdm_sensor_type_menu"
+              name="Sensor Types"
+              parent="mdm_configuration_menu"
+              action="mdm_sensor_management.mdm_sensor_type_action"
+              sequence="10"
+              groups="mdm_sensor_management.group_mdm_user"/>
+
+    <menuitem id="mdm_sensor_uom_menu"
+              name="Measurement Units"
+              parent="mdm_configuration_menu"
+              action="mdm_sensor_management.mdm_sensor_uom_action"
+              sequence="20"
+              groups="mdm_sensor_management.group_mdm_user"/>
+
+</odoo>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mdm_reading_view_form" model="ir.ui.view">
+            <field name="name">Sensor Reading Form</field>
+            <field name="model">mdm.measurement.device.sensor.reading</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="device_id"/>
+                            <field name="sensor_id"/>
+                            <field name="measurement_time"/>
+                            <field name="value"/>
+                            <field name="uom_id" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mdm_reading_view_tree" model="ir.ui.view">
+            <field name="name">Sensor Reading Tree</field>
+            <field name="model">mdm.measurement.device.sensor.reading</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="measurement_time"/>
+                    <field name="value"/>
+                    <field name="uom_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="mdm_reading_view_search" model="ir.ui.view">
+            <field name="name">Sensor Reading Search</field>
+            <field name="model">mdm.measurement.device.sensor.reading</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="measurement_time"/>
+                    <filter string="Device" name="device_id" context="{'group_by':'device_id'}"/>
+                    <filter string="Sensor" name="sensor_id" context="{'group_by':'sensor_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="mdm_reading_view_pivot" model="ir.ui.view">
+            <field name="name">Sensor Reading Pivot</field>
+            <field name="model">mdm.measurement.device.sensor.reading</field>
+            <field name="arch" type="xml">
+                <pivot string="Sensor Readings Analysis">
+                    <field name="device_id" type="row"/>
+                    <field name="sensor_id" type="row"/>
+                    <field name="measurement_time" type="col" interval="month"/>
+                    <field name="value" type="measure" operator="avg"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="mdm_sensor_reading_action" model="ir.actions.act_window">
+            <field name="name">Readings</field>
+            <field name="res_model">mdm.measurement.device.sensor.reading</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="view_ids" eval="[
+                (5, 0),
+                (0, 0, {'view_mode': 'tree',  'view_id': ref('mdm_reading_view_tree')}),
+                (0, 0, {'view_mode': 'form',  'view_id': ref('mdm_reading_view_form')}),
+                (0, 0, {'view_mode': 'pivot', 'view_id': ref('mdm_reading_view_pivot')})
+            ]"/>
+            <field name="search_view_id" ref="mdm_reading_view_search"/>
+        </record>
+</odoo>

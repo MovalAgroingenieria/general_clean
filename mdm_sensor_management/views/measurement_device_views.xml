@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ <record id="mdm_device_view_form" model="ir.ui.view">
+        <field name="name">Measurement Device Form</field>
+        <field name="model">mdm.measurement.device</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="buttons">
+                        <button name="action_view_sensors"
+                                type="object" class="oe_stat_button"
+                                icon="fa-tachometer">
+                            <field name="sensor_count" widget="statinfo" string="Sensors"/>
+                        </button>
+                        <button name="action_view_readings"
+                                type="object" class="oe_stat_button"
+                                icon="fa-list">
+                            <field name="reading_count" widget="statinfo" string="Readings"/>
+                        </button>
+                    </div>
+                    <group col="2">
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="location"/>
+                            <field name="installation_date"/>
+                        </group>
+                        <group>
+                            <field name="brand"/>
+                            <field name="model"/>
+                            <field name="serial_number"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                        <page name="page_photos" string="Photos">
+                            <group name="photos" col="4">
+                                <field name="photo"
+                                       widget="image"
+                                       class="oe_img_259_160"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mdm_device_view_tree" model="ir.ui.view">
+        <field name="name">Measurement Device Tree</field>
+        <field name="model">mdm.measurement.device</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="location"/>
+                <field name="brand"/>
+                <field name="model"/>
+                <field name="installation_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="mdm_device_view_search" model="ir.ui.view">
+        <field name="name">Measurement Device Search</field>
+        <field name="model">mdm.measurement.device</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="location"/>
+                <filter string="Brand" name="brand" context="{'group_by':'brand'}"/>
+                <filter string="Model" name="model" context="{'group_by':'model'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="mdm_measurement_device_action" model="ir.actions.act_window">
+        <field name="name">Devices</field>
+        <field name="res_model">mdm.measurement.device</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_ids" eval="[
+            (5, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('mdm_device_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('mdm_device_view_form')})
+        ]"/>
+        <field name="search_view_id" ref="mdm_device_view_search"/>
+    </record>
+
+
+</odoo>
