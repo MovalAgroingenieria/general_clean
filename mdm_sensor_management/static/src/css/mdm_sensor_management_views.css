@@ -1,0 +1,64 @@
+.o_mdm_measurement_device_tree [data-id="name"] {
+    width: auto !important;
+    min-width: 120px;
+}
+.o_mdm_measurement_device_tree [data-id="location"] {
+    width: 18%;
+}
+.o_mdm_measurement_device_tree [data-id="brand"] {
+    width: 18%;
+}
+.o_mdm_measurement_device_tree [data-id="model"] {
+    width: 18%;
+}
+.o_mdm_measurement_device_tree [data-id="installation_date"] {
+    width: 18%;
+}
+
+.o_mdm_measurement_device_sensor_tree [data-id="name"] {
+    width: auto !important;
+    min-width: 150px;
+}
+.o_mdm_measurement_device_sensor_tree [data-id="device_id"] {
+    width: 25%;
+}
+.o_mdm_measurement_device_sensor_tree [data-id="type_id"] {
+    width: 25%;
+}
+.o_mdm_measurement_device_sensor_tree [data-id="uom_id"] {
+    width: 25%;
+}
+
+.o_mdm_measurement_device_sensor_type_tree [data-id="name"] {
+    width: auto !important;
+    min-width: 120px;
+}
+.o_mdm_measurement_device_sensor_type_tree [data-id="uom_id"] {
+    width: 70%;
+}
+
+.o_mdm_measurement_device_sensor_uom_tree [data-id="name"] {
+    width: auto !important;
+    min-width: 120px;
+}
+.o_mdm_measurement_device_sensor_uom_tree [data-id="short_name"] {
+    width: 30%;
+}
+.o_mdm_measurement_device_sensor_uom_tree [data-id="description"] {
+    width: 50%;
+}
+
+.o_mdm_measurement_device_sensor_reading_tree [data-id="name"] {
+    width: auto !important;
+    min-width: 150px;
+}
+.o_mdm_measurement_device_sensor_reading_tree [data-id="measurement_time"] {
+    width: 25%;
+}
+.o_mdm_measurement_device_sensor_reading_tree [data-id="value"] {
+    width: 15%;
+}
+.o_mdm_measurement_device_sensor_reading_tree [data-id="uom_id"] {
+    width: 20%;
+}
+

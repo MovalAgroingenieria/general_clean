@@ -16,6 +16,7 @@
     'data': [
         'security/mdm_groups.xml',
         'security/ir.model.access.csv',
+        'views/resources.xml',
         'views/measurement_device_views.xml',
         'views/measurement_device_sensor_reading_views.xml',
         'views/measurement_device_sensor_type_views.xml',

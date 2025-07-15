@@ -29,7 +29,7 @@
         <field name="name">Device Sensor Tree</field>
         <field name="model">mdm.measurement.device.sensor</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree class="o_mdm_measurement_device_sensor_tree">
                 <field name="name"/>
                 <field name="device_id"/>
                 <field name="type_id"/>

@@ -23,11 +23,12 @@
             <field name="name">Sensor Reading Tree</field>
             <field name="model">mdm.measurement.device.sensor.reading</field>
             <field name="arch" type="xml">
-                <tree>
+                <tree class="o_mdm_measurement_device_sensor_reading_tree">
                     <field name="name"/>
+                    <field name="uom_id"/>
                     <field name="measurement_time"/>
                     <field name="value"/>
-                    <field name="uom_id"/>
+
                 </tree>
             </field>
         </record>

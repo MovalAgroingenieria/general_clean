@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-14 08:43+0000\n"
-"PO-Revision-Date: 2025-07-14 08:43+0000\n"
+"POT-Creation-Date: 2025-07-15 06:32+0000\n"
+"PO-Revision-Date: 2025-07-15 06:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
@@ -25,11 +25,6 @@ msgstr "Atributs"
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_search
 msgid "Brand"
 msgstr "Marca"
-
-#. module: mdm_sensor_management
-#: model:ir.ui.menu,name:mdm_sensor_management.mdm_configuration_menu
-msgid "Configuration"
-msgstr "Configuració"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_create_uid
@@ -87,8 +82,8 @@ msgstr "Agrupar per"
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_id
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_14258
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_14270
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_14539
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_14551
 msgid "ID"
 msgstr "ID"
 
@@ -156,7 +151,7 @@ msgstr "Dispositiu de mesura"
 msgid "Measurement Device Sensor"
 msgstr "Sensor del dispositiu de mesura"
 
-#. module:mdm_sensor_management
+#. module: mdm_sensor_management
 #: model:ir.model,name:mdm_sensor_management.model_mdm_measurement_device_sensor_reading
 msgid "Measurement Device Sensor Reading"
 msgstr "Lectura del sensor del dispositiu de mesura"
@@ -179,7 +174,7 @@ msgstr "Data de mesura"
 #. module: mdm_sensor_management
 #: model:ir.ui.menu,name:mdm_sensor_management.mdm_sensor_uom_menu
 msgid "Measurement Units"
-msgstr "Unitats de mesura"
+msgstr "Unitats de mesurament"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_model
@@ -204,6 +199,11 @@ msgid "Notes"
 msgstr "Notes"
 
 #. module: mdm_sensor_management
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_parameters_menu
+msgid "Parameters"
+msgstr "Paràmetres"
+
+#. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_photo
 msgid "Photo"
 msgstr "Foto"
@@ -215,17 +215,14 @@ msgstr "Fotos"
 
 #. module: mdm_sensor_management
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_reading_action
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_sensor_readings
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_readings_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_view_form
 msgid "Readings"
 msgstr "Lectures"
-
-#. module: mdm_sensor_management
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_count
-msgid "Readings count"
-msgstr "Comptador de lectures"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_sensor_id
@@ -262,17 +259,19 @@ msgstr "Unitats de sensors"
 
 #. module: mdm_sensor_management
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_action
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_sensor_ids
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_sensors_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
 msgid "Sensors"
 msgstr "Sensors"
 
 #. module: mdm_sensor_management
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_count
-msgid "Sensors count"
-msgstr "Comptador de sensors"
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_sensory_menu
+msgid "Sensory"
+msgstr "Sensorial"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_serial_number
@@ -283,6 +282,11 @@ msgstr "Núm. de sèrie"
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_short_name
 msgid "Short Name"
 msgstr "Nom curt"
+
+#. module: mdm_sensor_management
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_technical_menu
+msgid "Technical"
+msgstr "Tècnic"
 
 #. module: mdm_sensor_management
 #: sql_constraint:mdm.measurement.device:0
@@ -314,7 +318,7 @@ msgstr "La unitat de mesura ha de ser única."
 msgid "Type"
 msgstr "Tipus"
 
-#. module:mdm_sensor_management
+#. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_uom_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_uom_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id

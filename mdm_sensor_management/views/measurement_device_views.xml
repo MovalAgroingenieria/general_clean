@@ -53,7 +53,7 @@
         <field name="name">Measurement Device Tree</field>
         <field name="model">mdm.measurement.device</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree class="o_mdm_measurement_device_tree">
                 <field name="name"/>
                 <field name="location"/>
                 <field name="brand"/>

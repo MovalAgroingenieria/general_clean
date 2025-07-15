@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-14 08:42+0000\n"
-"PO-Revision-Date: 2025-07-14 08:42+0000\n"
+"POT-Creation-Date: 2025-07-15 06:30+0000\n"
+"PO-Revision-Date: 2025-07-15 06:30+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -24,11 +24,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_brand
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_search
 msgid "Brand"
-msgstr ""
-
-#. module: mdm_sensor_management
-#: model:ir.ui.menu,name:mdm_sensor_management.mdm_configuration_menu
-msgid "Configuration"
 msgstr ""
 
 #. module: mdm_sensor_management
@@ -87,8 +82,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_id
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_14258
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_14270
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_14539
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_14551
 msgid "ID"
 msgstr ""
 
@@ -204,6 +199,11 @@ msgid "Notes"
 msgstr ""
 
 #. module: mdm_sensor_management
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_parameters_menu
+msgid "Parameters"
+msgstr ""
+
+#. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_photo
 msgid "Photo"
 msgstr ""
@@ -215,16 +215,13 @@ msgstr ""
 
 #. module: mdm_sensor_management
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_reading_action
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_sensor_readings
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_readings_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_view_form
 msgid "Readings"
-msgstr ""
-
-#. module: mdm_sensor_management
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_count
-msgid "Readings count"
 msgstr ""
 
 #. module: mdm_sensor_management
@@ -262,16 +259,18 @@ msgstr ""
 
 #. module: mdm_sensor_management
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_action
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_sensor_ids
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_sensors_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
 msgid "Sensors"
 msgstr ""
 
 #. module: mdm_sensor_management
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_count
-msgid "Sensors count"
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_sensory_menu
+msgid "Sensory"
 msgstr ""
 
 #. module: mdm_sensor_management
@@ -282,6 +281,11 @@ msgstr ""
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_short_name
 msgid "Short Name"
+msgstr ""
+
+#. module: mdm_sensor_management
+#: model:ir.ui.menu,name:mdm_sensor_management.mdm_technical_menu
+msgid "Technical"
 msgstr ""
 
 #. module: mdm_sensor_management
