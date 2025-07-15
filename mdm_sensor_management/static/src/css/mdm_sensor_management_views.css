@@ -42,7 +42,7 @@
     min-width: 120px;
 }
 .o_mdm_measurement_device_sensor_uom_tree [data-id="short_name"] {
-    width: 30%;
+    width: 25%;
 }
 .o_mdm_measurement_device_sensor_uom_tree [data-id="description"] {
     width: 50%;
@@ -53,12 +53,13 @@
     min-width: 150px;
 }
 .o_mdm_measurement_device_sensor_reading_tree [data-id="measurement_time"] {
-    width: 25%;
+    width: 30%;
 }
 .o_mdm_measurement_device_sensor_reading_tree [data-id="value"] {
     width: 15%;
+    text-align: right;
 }
 .o_mdm_measurement_device_sensor_reading_tree [data-id="uom_id"] {
-    width: 20%;
+    width: 25%;
 }
 
