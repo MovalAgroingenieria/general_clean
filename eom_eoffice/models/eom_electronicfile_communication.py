@@ -378,6 +378,7 @@ class EomElectronicfileCommunication(models.Model):
         elif self.env.context.get('default_electronicfile_id'):
             electronicfile_id = self.env.context.get(
                 'default_electronicfile_id')
+        vals['electronicfile_id'] = electronicfile_id
         # Communication number
         next_communication_number = 0
         communications = self.search(

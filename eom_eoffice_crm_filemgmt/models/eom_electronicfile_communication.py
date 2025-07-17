@@ -34,7 +34,9 @@ class EomElectronicfileCommunication(models.Model):
     def create(self, vals):
         # Create the communication to get data and check draft state
         res = super(EomElectronicfileCommunication, self).create(vals)
-        if vals['state'] == '01_draft':
+        # Do not continue in draft state but allow it in first communication
+        if (vals['state'] == '01_draft' and
+                not vals['communication_number'] == 1):
             return res
         # Get parent electronic file data
         electronicfile = False
@@ -48,9 +50,8 @@ class EomElectronicfileCommunication(models.Model):
         if not partner_id or not company_id:
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
-        # Get electronic office channel
-        channel = self.env['letter.channel'].search(
-            [('name', '=', 'Electronic Office')], limit=1)
+        # Get electronic office channel (no dot use name)
+        channel = self.env.ref('eom_eoffice_crm_filemgmt.data_channel_eoffice')
         # Communication (IN)
         registry_move = 'in'
         sender_partner_id = partner_id
@@ -108,8 +109,8 @@ class EomElectronicfileCommunication(models.Model):
                         _('Partner or Company not found, cannot create '
                           'registry.'))
                 # Get electronic office channel
-                channel = self.env['letter.channel'].search(
-                    [('name', '=', 'Electronic Office')], limit=1)
+                channel = self.env.ref(
+                    'eom_eoffice_crm_filemgmt.data_channel_eoffice')
                 # Notification (OUT)
                 registry_move = 'out'
                 sender_partner_id = company_id

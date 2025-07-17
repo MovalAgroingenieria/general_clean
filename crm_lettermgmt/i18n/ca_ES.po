@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-10 11:02+0000\n"
-"PO-Revision-Date: 2025-03-10 11:02+0000\n"
+"POT-Creation-Date: 2025-07-17 08:07+0000\n"
+"PO-Revision-Date: 2025-07-17 08:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -243,6 +243,7 @@ msgstr "Cancel·la"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_channel_id
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_form_view
 msgid "Channel"
 msgstr "Canal"
@@ -384,6 +385,11 @@ msgid "Folder which contains letter."
 msgstr "Carpeta que conté registres."
 
 #. module: crm_lettermgmt
+#: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
+msgid "Group By"
+msgstr "Agrupar per"
+
+#. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_channel_id
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_folder_id
@@ -438,7 +444,7 @@ msgstr "Última modificació el "
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_write_uid
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_uid
 msgid "Last Updated by"
-msgstr "Última actualització per"
+msgstr "Darrera Actualització per"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_category_write_date
@@ -450,7 +456,7 @@ msgstr "Última actualització per"
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_mail_wizard_write_date
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_res_letter_write_date
 msgid "Last Updated on"
-msgstr "Última actualització el"
+msgstr "Darrera Actualització el"
 
 #. module: crm_lettermgmt
 #: model:ir.model.fields,field_description:crm_lettermgmt.field_letter_reassignment_letter_id
@@ -640,7 +646,7 @@ msgstr "Pare..."
 #. module: crm_lettermgmt
 #: model:ir.model,name:crm_lettermgmt.model_res_partner
 msgid "Partner of a WUA"
-msgstr "Soci"
+msgstr "Partner of a WUA"
 
 #. module: crm_lettermgmt
 #: model:ir.ui.view,arch_db:crm_lettermgmt.res_letter_filter
@@ -922,3 +928,4 @@ msgstr "Usuari a qui reenviar la carta."
 #: model:ir.model,name:crm_lettermgmt.model_res_letter_mail_wizard
 msgid "res.letter.mail.wizard"
 msgstr "res.letter.mail.wizard"
+

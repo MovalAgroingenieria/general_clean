@@ -94,8 +94,7 @@ class EomElectronicfile(models.Model):
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
         # Get electronic office channel
-        channel = self.env['letter.channel'].search(
-            [('name', '=', 'Electronic Office')], limit=1)
+        channel = self.env.ref('eom_eoffice_crm_filemgmt.data_channel_eoffice')
         # Communication (IN)
         registry_move = 'in'
         sender_partner_id = partner_id

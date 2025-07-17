@@ -35,32 +35,30 @@
           </field>
         </record>
 
-         <record id="res_letter_calendar_view" model="ir.ui.view">
-             <field name="name">Letter Calendar</field>
-             <field name="model">res.letter</field>
-             <field name="inherit_id" ref="crm_lettermgmt.res_letter_calendar_view"/>
-             <field name="arch" type="xml">
-                 <xpath expr="//field[@name='recipient_partner_id']" position="after">
-                     <field name="file_id"/>
-                 </xpath>
-             </field>
-         </record>
+        <record id="res_letter_calendar_view" model="ir.ui.view">
+            <field name="name">Letter Calendar</field>
+            <field name="model">res.letter</field>
+            <field name="inherit_id" ref="crm_lettermgmt.res_letter_calendar_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='recipient_partner_id']" position="after">
+                    <field name="file_id"/>
+                </xpath>
+            </field>
+        </record>
 
-         <record id="res_letter_filter" model="ir.ui.view">
-             <field name="name">Letter Filter</field>
-             <field name="model">res.letter</field>
-             <field name="inherit_id" ref="crm_lettermgmt.res_letter_filter"/>
-             <field name="arch" type="xml">
-                 <xpath expr="//field[@name='date']" position="after">
-                     <field name="file_id"/>
-                 </xpath>
-                 <xpath expr="//filter[@name='pending']" position="after">
-                      <group expand="0" string="Group By">
-                          <filter string="File_" name="groupby_file" context="{'group_by':'file_id'}"/>
-                      </group>
-                 </xpath>
-             </field>
-         </record>
+        <record id="res_letter_filter" model="ir.ui.view">
+            <field name="name">Letter Filter</field>
+            <field name="model">res.letter</field>
+            <field name="inherit_id" ref="crm_lettermgmt.res_letter_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="after">
+                   <field name="file_id"/>
+                </xpath>
+                <xpath expr="//filter[@name='groupby_channel']" position="after">
+                   <filter string="File_" name="groupby_file" context="{'group_by':'file_id'}"/>
+                </xpath>
+            </field>
+        </record>
 
     </data>
 </odoo>

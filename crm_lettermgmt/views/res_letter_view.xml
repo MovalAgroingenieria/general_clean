@@ -87,6 +87,9 @@
           <filter string="Pending" name="pending"
                   domain="[('state','in', ['draft', 'sent'])]"
                   help="Letters that haven't arrived to its destination yet."/>
+          <group expand="0" string="Group By">
+              <filter string="Channel" name="groupby_channel" context="{'group_by':'channel_id'}"/>
+          </group>
         </search>
       </field>
     </record>
