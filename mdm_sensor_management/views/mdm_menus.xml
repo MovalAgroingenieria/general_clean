@@ -3,7 +3,7 @@
 
     <menuitem id="mdm_root_menu"
               name="Measurement Devices"
-              sequence="10"
+              sequence="-33"
               web_icon="mdm_sensor_management,static/description/icon.png"
               groups="mdm_sensor_management.group_mdm_user"/>
 
