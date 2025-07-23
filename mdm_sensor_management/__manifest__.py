@@ -14,7 +14,7 @@
         'base',
     ],
     'data': [
-        'security/mdm_groups.xml',
+        'security/security.xml',
         'security/ir.model.access.csv',
         'views/resources.xml',
         'views/measurement_device_views.xml',

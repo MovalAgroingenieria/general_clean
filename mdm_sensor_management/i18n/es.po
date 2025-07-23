@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-15 06:31+0000\n"
-"PO-Revision-Date: 2025-07-15 06:31+0000\n"
+"POT-Creation-Date: 2025-07-23 13:57+0000\n"
+"PO-Revision-Date: 2025-07-23 13:57+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,7 @@ msgstr "Descripción"
 
 #. module: mdm_sensor_management
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_reading_view_search
+#: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_view_search
 msgid "Device"
 msgstr "Dispositivo"
 
@@ -82,8 +83,8 @@ msgstr "Agrupar por"
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_id
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_14539
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_14551
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_id_18154
+#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id_18166
 msgid "ID"
 msgstr "ID"
 
@@ -104,7 +105,7 @@ msgstr "Fecha de instalación"
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type___last_update
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom___last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_write_uid
@@ -132,12 +133,12 @@ msgstr "Ubicación"
 #. module: mdm_sensor_management
 #: model:res.groups,name:mdm_sensor_management.group_mdm_manager
 msgid "MDM Manager"
-msgstr "Gestor MDM"
+msgstr "Administrador"
 
 #. module: mdm_sensor_management
 #: model:res.groups,name:mdm_sensor_management.group_mdm_user
 msgid "MDM User"
-msgstr "Usuario MDM"
+msgstr "Usuario"
 
 #. module: mdm_sensor_management
 #: model:ir.model,name:mdm_sensor_management.model_mdm_measurement_device
@@ -214,13 +215,14 @@ msgid "Photos"
 msgstr "Fotos"
 
 #. module: mdm_sensor_management
+#: code:addons/mdm_sensor_management/models/measurement_device.py:87
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_reading_action
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_reading_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_sensor_readings
 #: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_readings_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_view_form
+#, python-format
 msgid "Readings"
 msgstr "Lecturas"
 
@@ -229,6 +231,12 @@ msgstr "Lecturas"
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_reading_view_search
 msgid "Sensor"
 msgstr "Sensor"
+
+#. module: mdm_sensor_management
+#: code:addons/mdm_sensor_management/models/measurement_device_sensor.py:56
+#, python-format
+msgid "Sensor Readings"
+msgstr "Lecturas de sensor"
 
 #. module: mdm_sensor_management
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_reading_view_pivot
@@ -258,13 +266,16 @@ msgid "Sensor Units"
 msgstr "Unidades de medida del sensor"
 
 #. module: mdm_sensor_management
+#: code:addons/mdm_sensor_management/models/measurement_device.py:76
+#: code:addons/mdm_sensor_management/models/measurement_device_sensor_type.py:43
 #: model:ir.actions.act_window,name:mdm_sensor_management.mdm_sensor_action
-#: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_count
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_sensor_ids
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_sensor_ids
 #: model:ir.ui.menu,name:mdm_sensor_management.mdm_device_sensors_menu
 #: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_device_view_form
+#: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_type_view_form
+#, python-format
 msgid "Sensors"
 msgstr "Sensores"
 
@@ -276,12 +287,12 @@ msgstr "Sensórica"
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_serial_number
 msgid "Serial Number"
-msgstr "Nº de serie"
+msgstr "Nº serie"
 
 #. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_short_name
 msgid "Short Name"
-msgstr "Nombre corto"
+msgstr "Abreviatura"
 
 #. module: mdm_sensor_management
 #: model:ir.ui.menu,name:mdm_sensor_management.mdm_technical_menu
@@ -319,6 +330,11 @@ msgid "Type"
 msgstr "Tipo"
 
 #. module: mdm_sensor_management
+#: model:ir.ui.view,arch_db:mdm_sensor_management.mdm_sensor_view_search
+msgid "UOM"
+msgstr "Unidad de medida"
+
+#. module: mdm_sensor_management
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_uom_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_type_uom_id
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_uom_id
@@ -330,3 +346,4 @@ msgstr "Unidad de medida"
 #: model:ir.model.fields,field_description:mdm_sensor_management.field_mdm_measurement_device_sensor_reading_value
 msgid "Value"
 msgstr "Valor"
+

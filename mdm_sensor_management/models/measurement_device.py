@@ -2,7 +2,7 @@
 # 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields, api
+from odoo import models, fields, _
 
 
 class MeasurementDevice(models.Model):
@@ -65,18 +65,6 @@ class MeasurementDevice(models.Model):
         string='Readings',
     )
 
-    sensor_count = fields.Integer(
-        string='Sensors',
-        compute='_compute_sensor_count',
-        store=True,
-    )
-
-    reading_count = fields.Integer(
-        string='Readings',
-        compute='_compute_reading_count',
-        store=True,
-    )
-
     _sql_constraints = [
         ('unique_name', 'unique(name)', 'The identifier must be unique.'),
     ]
@@ -85,7 +73,7 @@ class MeasurementDevice(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Sensors',
+            'name': _('Sensors'),
             'res_model': 'mdm.measurement.device.sensor',
             'view_mode': 'tree,form',
             'domain': [('device_id', '=', self.id)],
@@ -96,19 +84,9 @@ class MeasurementDevice(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Readings',
+            'name': _('Readings'),
             'res_model': 'mdm.measurement.device.sensor.reading',
             'view_mode': 'tree,form,pivot',
             'domain': [('device_id', '=', self.id)],
             'context': {'default_device_id': self.id},
         }
-
-    @api.depends('sensor_ids')
-    def _compute_sensor_count(self):
-        for rec in self:
-            rec.sensor_count = len(rec.sensor_ids)
-
-    @api.depends('reading_ids')
-    def _compute_reading_count(self):
-        for rec in self:
-            rec.reading_count = len(rec.reading_ids)

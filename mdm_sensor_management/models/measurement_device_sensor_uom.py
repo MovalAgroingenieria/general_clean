@@ -44,10 +44,10 @@ class MeasurementDeviceSensorUOM(models.Model):
     @api.multi
     def name_get(self):
         result = []
-        for rec in self:
-            if rec.short_name:
-                display_name = "%s (%s)" % (rec.name, rec.short_name)
+        for record in self:
+            if record.short_name:
+                display_name = "%s (%s)" % (record.name, record.short_name)
             else:
-                display_name = rec.name
-            result.append((rec.id, display_name))
+                display_name = record.name
+            result.append((record.id, display_name))
         return result

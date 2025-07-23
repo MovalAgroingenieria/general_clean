@@ -2,7 +2,7 @@
 # 2025 Moval Agroingeniería
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class MeasurementDeviceSensorType(models.Model):
@@ -35,3 +35,14 @@ class MeasurementDeviceSensorType(models.Model):
     _sql_constraints = [
         ('unique_name', 'unique(name)', 'The sensor type must be unique.'),
     ]
+
+    def action_view_sensors(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': _('Sensors'),
+            'res_model': 'mdm.measurement.device.sensor',
+            'view_mode': 'tree,form',
+            'domain': [('type_id', '=', self.id)],
+            'context': {'default_type_id': self.id},
+        }

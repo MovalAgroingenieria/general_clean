@@ -6,6 +6,14 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="id" invisible="1"/>
+                    <div class="oe_button_box" name="buttons">
+                        <button name="action_view_sensors"
+                                type="object" class="oe_stat_button oe_read_only"
+                                icon="fa-mdm-generic-sensor"
+                                string="Sensors"
+                                attrs="{'invisible': [('id', '=', False)]}"/>
+                    </div>
                     <group>
                         <field name="name"/>
                         <field name="description"/>
@@ -25,6 +33,7 @@
             <tree class="o_mdm_measurement_device_sensor_type_tree">
                 <field name="name"/>
                 <field name="uom_id"/>
+                <field name="description"/>
             </tree>
         </field>
     </record>

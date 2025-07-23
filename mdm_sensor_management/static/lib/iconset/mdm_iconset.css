@@ -45,9 +45,7 @@
 }
 .fa-mdm-generic-sensor-duotone::before {
   content: "\e901";
-  color: rgb(26, 26, 26);
 }
 .fa-mdm-generic-sensor-duotone::after {
   content: "\e902";
-  color: rgb(26, 26, 26);
 }

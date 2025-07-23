@@ -7,16 +7,19 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <field name="id" invisible="1"/>
                     <div class="oe_button_box" name="buttons">
                         <button name="action_view_sensors"
-                                type="object" class="oe_stat_button"
-                                icon="fa-tachometer">
-                            <field name="sensor_count" widget="statinfo" string="Sensors"/>
+                                type="object" class="oe_stat_button oe_read_only"
+                                icon="fa-mdm-generic-sensor"
+                                attrs="{'invisible': [('id', '=', False)]}"
+                                string="Sensors">
                         </button>
                         <button name="action_view_readings"
-                                type="object" class="oe_stat_button"
-                                icon="fa-list">
-                            <field name="reading_count" widget="statinfo" string="Readings"/>
+                                type="object" class="oe_stat_button oe_read_only"
+                                icon="fa-list"
+                                attrs="{'invisible': [('id', '=', False)]}"
+                                string="Readings">
                         </button>
                     </div>
                     <group col="2">

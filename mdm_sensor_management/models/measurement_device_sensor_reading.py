@@ -8,20 +8,20 @@ from odoo import models, fields, api
 class MeasurementDeviceSensorReading(models.Model):
     _name = 'mdm.measurement.device.sensor.reading'
     _description = 'Measurement Device Sensor Reading'
-    _order = 'measurement_time desc'
+    _order = 'sensor_id, measurement_time desc'
 
     name = fields.Char(
         string='Name',
         compute='_compute_name',
         store=True,
-        required=True,
         index=True,
     )
 
     device_id = fields.Many2one(
-        comodel_name='mdm.measurement.device',
         string='Measurement Device',
-        required=True,
+        comodel_name='mdm.measurement.device',
+        compute='_compute_device_id',
+        store=True,
         index=True,
         ondelete='restrict',
     )
@@ -59,36 +59,17 @@ class MeasurementDeviceSensorReading(models.Model):
 
     @api.depends('device_id.name', 'measurement_time')
     def _compute_name(self):
-        for rec in self:
-            rec.name = '%s - %s' % (
-                rec.device_id.name or '',
-                rec.measurement_time or '')
+        for record in self:
+            name = ''
+            if record.device_id and record.measurement_time:
+                name = '%s - %s' % (
+                    record.device_id.name, record.measurement_time)
+            record.name = name
 
-    @api.onchange('device_id', 'measurement_time')
-    def _onchange_name(self):
-        for rec in self:
-            rec.name = '%s - %s' % (
-                rec.device_id.name or '',
-                rec.measurement_time or '')
-
-    @api.model
-    def create(self, vals):
-        if 'device_id' in vals or 'measurement_time' in vals:
-            device = self.env['mdm.measurement.device'].browse(
-                vals.get('device_id'))
-            vals['name'] = '%s - %s' % (
-                device.name or '',
-                vals.get('measurement_time') or '')
-        return super(MeasurementDeviceSensorReading, self).create(vals)
-
-    def write(self, vals):
-        if 'device_id' in vals or 'measurement_time' in vals:
-            for rec in self:
-                device = rec.device_id
-                if 'device_id' in vals:
-                    device = self.env['mdm.measurement.device'].browse(
-                        vals['device_id'])
-                mtime = vals.get('measurement_time', rec.measurement_time)
-                vals_name = '%s - %s' % (device.name or '', mtime or '')
-                vals['name'] = vals_name
-        return super(MeasurementDeviceSensorReading, self).write(vals)
+    @api.depends('sensor_id')
+    def _compute_device_id(self):
+        for record in self:
+            device_id = None
+            if record.sensor_id and record.sensor_id.device_id:
+                device_id = record.sensor_id.device_id
+            record.device_id = device_id

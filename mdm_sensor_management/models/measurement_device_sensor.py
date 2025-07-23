@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 
-from odoo import models, fields
+from odoo import models, fields, _
 
 
 class MeasurementDeviceSensor(models.Model):
@@ -53,7 +53,7 @@ class MeasurementDeviceSensor(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'name': 'Sensor Readings',
+            'name': _('Sensor Readings'),
             'res_model': 'mdm.measurement.device.sensor.reading',
             'view_mode': 'tree,form,pivot',
             'domain': [('sensor_id', '=', self.id)],
