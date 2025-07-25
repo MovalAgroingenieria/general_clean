@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Sequences-->
+    <record id="project_milestone_seq" model="ir.sequence">
+        <field name="name">Project Milestone Sequence</field>
+        <field name="code">project.milestone</field>
+        <field name="prefix">0</field>
+        <field name="padding">1</field>
+    </record>
+
+</odoo>
