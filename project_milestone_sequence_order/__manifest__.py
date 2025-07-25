@@ -10,7 +10,7 @@
     "author": "Moval Agroingeniería",
     "license": "AGPL-3",
     "depends": [
-        "project_milestone",
+        "project",
     ],
     "data": [
         'views/project_milestone.xml',
