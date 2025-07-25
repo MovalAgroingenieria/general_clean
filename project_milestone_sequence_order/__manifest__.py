@@ -13,7 +13,7 @@
         "project_milestone",
     ],
     "data": [
-        'views/project_milestone.xml',
+        # 'views/project_milestone.xml',
     ],
     "installable": True,
     "application": False,
