@@ -64,6 +64,6 @@
     <record id="submat_glass" model="product.submaterial">
         <field name="code">013</field>
         <field name="name">Glass</field>
-        <field name="material_id" ref="material_others"/>
+        <field name="material_id" ref="material_glass"/>
     </record>
 </odoo>
