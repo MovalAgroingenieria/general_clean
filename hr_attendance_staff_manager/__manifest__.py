@@ -5,7 +5,7 @@
 {
     'name': 'Attendances Staff Manager',
     'summary': 'Add the Staff manager group to the Attendance groups',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Human Resources',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',
@@ -17,9 +17,6 @@
         'security/hr_attendance_security.xml',
         'security/ir.model.access.csv',
         'views/hr_attendance_view.xml',
-        #'views/hr_department_view.xml',
-        #'views/hr_employee_view.xml',
-        #'views/res_config_view.xml',
     ],
     'installable': True,
     'application': False,
