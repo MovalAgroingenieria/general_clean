@@ -13,6 +13,21 @@ class ResFile(models.Model):
         store=True,
         compute='_compute_has_associated_electronicfile')
 
+    company_id = fields.Many2one(
+        string='Company',
+        comodel_name='res.company',
+        ondelete='restrict',
+        store=True,
+        index=True,
+        compute='_compute_company_id',
+    )
+
+    @api.depends('file_res_letter_ids')
+    def _compute_company_id(self):
+        for record in self:
+            record.company_id = \
+                record.file_res_letter_ids[:1].company_id or False
+
     @api.multi
     def _compute_has_associated_electronicfile(self):
         for record in self:

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-19 12:04+0000\n"
-"PO-Revision-Date: 2024-12-19 12:04+0000\n"
+"POT-Creation-Date: 2025-08-13 08:02+0000\n"
+"PO-Revision-Date: 2025-08-13 08:02+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -60,6 +60,21 @@ msgstr "<b>T E X T</b>"
 #: model:ir.ui.view,arch_db:eom_eoffice.notification_report_document
 msgid "<b>Validation Time</b>"
 msgstr "<b>Instant de validació</b>"
+
+#. module: eom_eoffice
+#: model:mail.template,body_html:eom_eoffice.mail_template_notice
+msgid "<div style=\"background:#F0F0F0;color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;\">\n"
+"                    <p>There is a new electronic file creation.</p>\n"
+"                    <p>FILE NAME: ${object.electronicfile_id.name}</p>\n"
+"                    <p>URL: <a href=\"${ctx.get('link')}\" target=\"_blank\">${ctx.get('link')}</a></p>\n"
+"                </div>\n"
+"            "
+msgstr "<div style=\"background:#F0F0F0;color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;\">\n"
+"                    <p>Hi ha una nova creació electrònica de fitxers.</p>\n"
+"                    <p>Nom de fitxer: ${object.electronicfile_id.name}</p>\n"
+"                    <p>URL: <a href=\"${ctx.get('link')}\" target=\"_blank\">${ctx.get('link')}</a></p>\n"
+"                </div>\n"
+"            "
 
 #. module: eom_eoffice
 #: model:mail.template,body_html:eom_eoffice.mail_template_notification_validated
@@ -285,7 +300,7 @@ msgid "<strong>⸰ Type:</strong>"
 msgstr "<strong>Tipus:</strong>"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:343
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:384
 #, python-format
 msgid "A notification cannot be created for a Resolved File."
 msgstr "No es pot crear una notificació per a un expedient resolt."
@@ -341,13 +356,13 @@ msgid "Associated Contact"
 msgstr "Contacte associat"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:362
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:396
 #, python-format
 msgid "At the present state (%s) the Technician is mandatory."
 msgstr "En l'estat actual (%s) el Tècnic és obligatori."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:336
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:377
 #, python-format
 msgid "At the present state (%s) the Text is mandatory."
 msgstr "A l'estat actual (%s) el Text és obligatori."
@@ -391,6 +406,11 @@ msgid "Change the postal or email address"
 msgstr "Canvi d'adreça postal i/o email"
 
 #. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_choose_company
+msgid "Choose company"
+msgstr "Trieu l'empresa"
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_name
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_view_search
 msgid "Code"
@@ -407,7 +427,7 @@ msgid "Communication Number"
 msgstr "Núm. de comunicació"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:394
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:428
 #, python-format
 msgid "Communications"
 msgstr "Communications"
@@ -416,6 +436,13 @@ msgstr "Communications"
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_ids
 msgid "Communications of the file"
 msgstr "Comunicacions de l'expedient"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_company_id
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "Company"
+msgstr "Companyia"
 
 #. module: eom_eoffice
 #: model:ir.model,name:eom_eoffice.model_res_eom_config_settings
@@ -451,7 +478,7 @@ msgid "Deadline Exceeded"
 msgstr "Termini excedit"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:436
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:470
 #, python-format
 msgid "Deadline parameter has not been set."
 msgstr "El paràmetre de termini no s'ha establert."
@@ -468,7 +495,7 @@ msgid "Digital Certificate"
 msgstr "Certificat digital"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:216
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:250
 #: model:ir.model,name:eom_eoffice.model_eom_digitalregister
 #, python-format
 msgid "Digital Register"
@@ -495,6 +522,16 @@ msgstr "Nom del document"
 #: selection:eom.electronicfile.communication,state:0
 msgid "Draft"
 msgstr "Esborrany"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_email_for_notice
+msgid "E-mail address to send notices to the eoffice manager"
+msgstr "Adreça de correu electrònic per enviar avisos al gestor de la seu"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_param_email_for_notice
+msgid "E-mail for notice"
+msgstr "Correu electrònic per avís"
 
 #. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.electronic_file_page
@@ -541,7 +578,7 @@ msgid "Electronic Notification"
 msgstr "Notificació electrònica"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:466
+#: code:addons/eom_eoffice/controllers/main.py:519
 #, python-format
 msgid "Electronic file with code %s has been created correctly on %s"
 msgstr "L'expedient electrònic amb el codi %s ha estat registrat correctament a l'instant %s"
@@ -550,6 +587,13 @@ msgstr "L'expedient electrònic amb el codi %s ha estat registrat correctament a
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_digitalregister_file_ids
 msgid "Electronic files of the certificate"
 msgstr "Expedients electrònics del certificat"
+
+#. module: eom_eoffice
+#: model:mail.template,subject:eom_eoffice.mail_template_notice
+msgid "Electronic office, new communication: Communication ${object.electronicfile_id.name}\n"
+"            "
+msgstr "Seu electrònica, nova comunicació: Comunicació ${object.electronicfile_id.name}\n"
+"            "
 
 #. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_email
@@ -581,6 +625,11 @@ msgstr "Introduïu el vostre número de telèfon"
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_search
 msgid "Entries"
 msgstr "Entries"
+
+#. module: eom_eoffice
+#: model:ir.model.fields,field_description:eom_eoffice.field_res_eom_config_settings_email_for_notice
+msgid "Eoffice Manager E-Mail"
+msgstr "Correu electrònic del gestor"
 
 #. module: eom_eoffice
 #: sql_constraint:eom.electronicfile:0
@@ -615,7 +664,7 @@ msgid "Exposition"
 msgstr "Exposició"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_digitalregister.py:54
+#: code:addons/eom_eoffice/models/eom_digitalregister.py:55
 #, python-format
 msgid "Files"
 msgstr "Expedients"
@@ -673,6 +722,11 @@ msgid "Identifier"
 msgstr "Identificador"
 
 #. module: eom_eoffice
+#: model:ir.model.fields,help:eom_eoffice.field_res_eom_config_settings_choose_company
+msgid "If checked, the user will be able to choose the company onsuggestions and instances."
+msgstr "Si es comprova, l'usuari podrà triar l'empresa i instàncies."
+
+#. module: eom_eoffice
 #: selection:eom.electronicfile,state:0
 msgid "In progress"
 msgstr "En progrés"
@@ -690,13 +744,13 @@ msgid "Issue:"
 msgstr "Assumpte:"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:403
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:445
 #, python-format
 msgid "It is not possile to delete a Comunication of a resolved File."
 msgstr "No és possible eliminar una Comunicació d'un Fitxer resolt."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:427
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:461
 #, python-format
 msgid "It is not possile to delete a File in resolved state."
 msgstr "No és possible eliminar un fitxer en estat resolt."
@@ -790,6 +844,18 @@ msgid "New Communication"
 msgstr "Nova comunicació"
 
 #. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:185
+#, python-format
+msgid "No company found."
+msgstr "No es troba cap empresa."
+
+#. module: eom_eoffice
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:192
+#, python-format
+msgid "No root company found."
+msgstr "No s'ha trobat cap empresa arrel."
+
+#. module: eom_eoffice
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_communication_notes
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_notes
 #: model:ir.ui.view,arch_db:eom_eoffice.eom_electronicfile_communication_view_form
@@ -849,7 +915,7 @@ msgid "Notification Phone"
 msgstr "Telèfon per a notificacions"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:281
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:322
 #, python-format
 msgid "Notification deadline parameter has not been set."
 msgstr "El paràmetre 'Termini per llegir notificacions' no s'ha establert."
@@ -865,7 +931,7 @@ msgid "Num."
 msgstr "Nº"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:168
+#: code:addons/eom_eoffice/models/eom_electronicfile_communication.py:192
 #, python-format
 msgid "Num. "
 msgstr "Nº "
@@ -903,7 +969,7 @@ msgid "PROPOSES"
 msgstr "PROPOSA"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:231
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:265
 #: model:ir.model.fields,field_description:eom_eoffice.field_eom_electronicfile_partner_id
 #, python-format
 msgid "Partner"
@@ -941,7 +1007,7 @@ msgid "Postal Notification"
 msgstr "Notificació per correu postal"
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/controllers/main.py:473
+#: code:addons/eom_eoffice/controllers/main.py:526
 #, python-format
 msgid "Procedure confirmed"
 msgstr "Expediente registrat satisfactòriament"
@@ -1036,6 +1102,12 @@ msgid "SIA Code"
 msgstr "Codi SIA"
 
 #. module: eom_eoffice
+#: model:ir.ui.view,arch_db:eom_eoffice.generic_instance_form
+#: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
+msgid "Select a company…"
+msgstr "Seleccionar una empresa ..."
+
+#. module: eom_eoffice
 #: model:ir.ui.view,arch_db:eom_eoffice.res_eom_config_settings_view_form
 msgid "Sequence for code"
 msgstr "Seqüència per codis"
@@ -1100,13 +1172,13 @@ msgid "Thank you, the data entered has been successfully registered."
 msgstr "Gràcies, les dades indicades han estat registrades satisfactòriament."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:346
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:380
 #, python-format
 msgid "The File cannot be resolved, there are still %s communications in Draft or In progress state."
 msgstr "L'expedient no pot ser resolt, encara hi ha %s comunicacions en estat Esborrany o En curs."
 
 #. module: eom_eoffice
-#: code:addons/eom_eoffice/models/eom_electronicfile.py:369
+#: code:addons/eom_eoffice/models/eom_electronicfile.py:403
 #, python-format
 msgid "The Resolution is mandatory in Resolved state"
 msgstr "La resolució és obligatòria en l'estat Resolt"
@@ -1241,4 +1313,3 @@ msgstr "⸰ Consultes"
 #: model:ir.ui.view,arch_db:eom_eoffice.suggestion_form
 msgid "⸰ Suggestion Box (general improvements)"
 msgstr "⸰ Bústia de suggeriments (millores generals)"
-

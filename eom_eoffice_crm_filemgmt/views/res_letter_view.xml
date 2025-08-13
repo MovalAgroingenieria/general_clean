@@ -16,4 +16,15 @@
         </field>
     </record>
 
+    <record id="res_letter_form_view_inherit_company" model="ir.ui.view">
+        <field name="name">res.letter.form.inherit.company</field>
+        <field name="model">res.letter</field>
+        <field name="inherit_id" ref="crm_lettermgmt.res_letter_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="company_id"/>
+            </xpath>
+        </field>
+    </record>
+
 </odoo>

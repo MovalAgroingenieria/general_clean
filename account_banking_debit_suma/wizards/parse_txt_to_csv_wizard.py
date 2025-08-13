@@ -90,7 +90,7 @@ class TxtToCsvWizard(models.TransientModel):
         attachments = attachments.filtered(
             lambda a: (self.order_id.name or '') in (a.datas_fname or ''))
         if not attachments:
-            raise UserError("No hay fichero TXT de la orden para comparar.")
+            raise UserError("No matching attachments found for the order.")
         pay_att = attachments[0]
         raw = base64.b64decode(pay_att.datas)
         pay_name = pay_att.datas_fname or 'pay.txt'

@@ -55,6 +55,8 @@
                                         attrs="{'invisible': [('partner_id', '=', False)]}"/>
                                     <field name="technician_id" colspan="2"
                                          attrs="{'readonly': [('state', '!=', '02_in_progress')]}"/>
+                                    <field name="company_id" colspan="2"
+                                         attrs="{'readonly': [('state', '!=', '02_in_progress')]}"/>
                                 </group>
                             </div>
                             <div colspan="1"/>

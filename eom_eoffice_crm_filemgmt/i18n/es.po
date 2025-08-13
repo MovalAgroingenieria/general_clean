@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-28 13:01+0000\n"
-"PO-Revision-Date: 2025-01-28 13:01+0000\n"
+"POT-Creation-Date: 2025-08-13 08:10+0000\n"
+"PO-Revision-Date: 2025-08-13 08:10+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -95,13 +95,19 @@ msgid "<span>Notification</span>"
 msgstr "<span>Notificación</span>"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:61
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:120
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:64
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:124
 #, python-format
 msgid "Communication Issue: %s \n"
 ""
 msgstr "Asunto comunicación: %s \n"
 ""
+
+#. module: eom_eoffice_crm_filemgmt
+#: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_file_company_id
+#: model:ir.model.fields,field_description:eom_eoffice_crm_filemgmt.field_res_letter_company_id
+msgid "Company"
+msgstr "Compañía"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.res_letter_filter
@@ -128,7 +134,7 @@ msgid "Digital Register"
 msgstr "Registro digital"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:58
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:61
 #, python-format
 msgid "Electronic Communication %s"
 msgstr "Comunicación electrónica %s"
@@ -144,7 +150,7 @@ msgid "Electronic File Communication"
 msgstr "Comunicación del expediente electrónico"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:117
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:121
 #, python-format
 msgid "Electronic Notification %s"
 msgstr "Notificación electrónica %s"
@@ -155,13 +161,13 @@ msgid "Electronic Office"
 msgstr "Sede electrónica"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:103
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:104
 #, python-format
 msgid "Electronic file %s"
 msgstr "Expediente electrónico %s"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:108
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:109
 #, python-format
 msgid "Electronic file type %s \n"
 ""
@@ -197,13 +203,13 @@ msgstr "Bitácora de movimientos de registros"
 
 #. module: eom_eoffice_crm_filemgmt
 #: model:ir.model,name:eom_eoffice_crm_filemgmt.model_res_partner
-msgid "Partner of a WUA"
-msgstr "Socio"
+msgid "Partner"
+msgstr "Empresa"
 
 #. module: eom_eoffice_crm_filemgmt
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:95
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:50
-#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:108
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile.py:97
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:54
+#: code:addons/eom_eoffice_crm_filemgmt/models/eom_electronicfile_communication.py:112
 #, python-format
 msgid "Partner or Company not found, cannot create registry."
 msgstr "Contacto o compañía no encontrada, no se puede crear el registro."
@@ -236,4 +242,3 @@ msgstr "Con expediente: No"
 #: model:ir.ui.view,arch_db:eom_eoffice_crm_filemgmt.eom_electronicfile_view_search
 msgid "With File: Yes"
 msgstr "Con expediente: Sí"
-

@@ -11,7 +11,8 @@ class ResEomConfigSettings(models.TransientModel):
     sequence_electronicfile_code_id = fields.Many2one(
         string='Sequence for the codes of electronic files',
         comodel_name='ir.sequence',
-        help='Default values of the electronic file codes',)
+        help='Default values of the electronic file codes',
+    )
 
     deadline = fields.Integer(
         string='Deadline (months)',
@@ -33,6 +34,18 @@ class ResEomConfigSettings(models.TransientModel):
         string="Password file path",
         help="Path to certificate password file")
 
+    choose_company = fields.Boolean(
+        string='Choose company',
+        help='If checked, the user will be able to choose the company on'
+        ' suggestions and instances.',
+        default=False,
+    )
+
+    email_for_notice = fields.Char(
+        string='Eoffice Manager E-Mail',
+        help='E-mail address to send notices to the eoffice manager',
+    )
+
     @api.multi
     def set_default_values(self):
         super(ResEomConfigSettings, self).set_default_values()
@@ -51,3 +64,7 @@ class ResEomConfigSettings(models.TransientModel):
         values.set_default('res.eom.config.settings',
                            'sign_certificate_password_path',
                            self.sign_certificate_password_path)
+        values.set_default('res.eom.config.settings',
+                           'choose_company', self.choose_company)
+        values.set_default('res.eom.config.settings',
+                           'email_for_notice', self.email_for_notice)

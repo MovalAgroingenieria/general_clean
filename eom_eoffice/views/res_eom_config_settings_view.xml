@@ -7,6 +7,7 @@
         <field name="inherit_id" ref="eom_authdnie.res_eom_config_settings_view_form"/>
         <field name="arch" type="xml">
               <xpath expr="//field[@name='editable_notes']" position="after">
+                    <field name="choose_company"/>
                     <field name="sequence_electronicfile_code_id"
                            string="Sequence for code"
                            options="{'no_quick_create':True,'no_create_edit':True}"
@@ -17,6 +18,7 @@
                     <field name="max_size_attachments" style="width:300px" required="1"/>
                     <field name="sign_certificate_path" style="width:300px"/>
                     <field name="sign_certificate_password_path" style="width:300px"/>
+                    <field name="email_for_notice" style="width:300px"/>
               </xpath>
         </field>
     </record>

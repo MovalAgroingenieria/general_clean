@@ -62,6 +62,15 @@ class EomElectronicfile(models.Model):
         ondelete='restrict',
     )
 
+    company_id = fields.Many2one(
+        string='Company',
+        comodel_name='res.company',
+        required=True,
+        store=True,
+        index=True,
+        default='_default_company_id',
+    )
+
     type = fields.Selection(
         string="Type",
         selection=[
@@ -168,6 +177,20 @@ class EomElectronicfile(models.Model):
          'UNIQUE (name)',
          'Existing electronic file (repeated code).'),
         ]
+
+    @api.model
+    def _default_company_id(self):
+        companies = self.env['res.company'].search([])
+        if not companies:
+            raise exceptions.ValidationError(_('No company found.'))
+        if len(companies) == 1:
+            return companies.id
+        else:
+            root_company = self.env['res.company'].search([('parent_id', '=',
+                                                            False)], limit=1)
+            if not root_company:
+                raise exceptions.ValidationError(_('No root company found.'))
+            return root_company.id
 
     @api.depends('digitalregister_id', 'digitalregister_id.partner_id')
     def _compute_partner_id(self):

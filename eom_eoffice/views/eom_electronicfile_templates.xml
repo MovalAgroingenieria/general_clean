@@ -508,10 +508,24 @@
                                             <textarea type="text" name="request" rows="5" id="request" class="form-control" required="required"/>
                                             <br/>
                                             <input type="file" name="attachments" multiple="true"/>
+                                            <t t-if="choose_company">
+                                                <br/>
+                                                <label for="company_id" class="control-label">Company</label>
+                                                <select name="company_id" id="company_id" class="form-control" required="required">
+                                                    <option value="" disabled="disabled" t-att-selected="not default_company_id and 'selected'">
+                                                        Select a company…
+                                                    </option>
+                                                    <t t-foreach="companies" t-as="c">
+                                                        <option t-att-value="c['id']" t-att-selected="c['id'] == default_company_id and 'selected'">
+                                                            <t t-esc="c['name']"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </t>
                                         </div>
                                         <div class="clearfix text-center">
                                             <button type="submit" confirm="When clicking the Accept and Submit button the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted." class="btn btn-primary">Accept and Submit</button>
-                                            <p style="color: red; font-weight: bold;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
+                                            <p style="color: red; font-weight: bold; margin-top: 10px;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
                                         </div>
                                     </form>
                                 </div>
@@ -562,10 +576,24 @@
                                             <textarea type="text" name="suggestion" rows="7" id="suggestion" class="form-control" required="required"/>
                                             <br/>
                                             <input type="file" name="attachments" multiple="true"/>
+                                            <t t-if="choose_company">
+                                                <br/>
+                                                <label for="company_id" class="control-label">Company</label>
+                                                <select name="company_id" id="company_id" class="form-control" required="required">
+                                                    <option value="" disabled="disabled" t-att-selected="not default_company_id and 'selected'">
+                                                        Select a company…
+                                                    </option>
+                                                    <t t-foreach="companies" t-as="c">
+                                                        <option t-att-value="c['id']" t-att-selected="c['id'] == default_company_id and 'selected'">
+                                                            <t t-esc="c['name']"/>
+                                                        </option>
+                                                    </t>
+                                                </select>
+                                            </t>
                                         </div>
                                         <div class="clearfix text-center">
                                             <button type="submit" class="btn btn-primary">Accept and Submit</button>
-                                            <p style="color: red; font-weight: bold;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
+                                            <p style="color: red; font-weight: bold; margin-top: 10px;">* When clicking the "Accept and Submit" button, the request will be definitively sent to the office. Please review the information you have entered, as it cannot be deleted or modified once it has been submitted.</p>
                                         </div>
                                     </form>
                                 </div>

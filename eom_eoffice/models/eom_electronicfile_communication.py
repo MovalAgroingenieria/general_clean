@@ -133,11 +133,25 @@ class EomElectronicfileCommunication(models.Model):
         string='Icon Notificacion or Entry',
         compute='_compute_icon_notification_or_entry')
 
+    param_email_for_notice = fields.Char(
+        string='E-mail for notice',
+        compute='_compute_param_email_for_notice',
+    )
+
     _sql_constraints = [
         ('name_unique',
          'UNIQUE (name)',
          'Existing electronic file communication name (repeated identifier).'),
         ]
+
+    def get_form_url(self):
+        self.ensure_one()
+        base_url = self.env[
+            'ir.config_parameter'].sudo().get_param('web.base.url') or ''
+        model = self.electronicfile_id._name
+        rec_id = self.electronicfile_id.id
+        return '%s/web#id=%s&model=%s&view_type=form' % (
+            base_url, rec_id, model)
 
     @api.depends('electronicfile_id')
     def _compute_email(self):
@@ -149,6 +163,16 @@ class EomElectronicfileCommunication(models.Model):
                 email = record.electronicfile_id.\
                     digitalregister_id.notification_email
             record.email = email
+
+    @api.multi
+    def _compute_param_email_for_notice(self):
+        param_email_for_notice = self.env['ir.values'].get_default(
+            'res.eom.config.settings', 'email_for_notice')
+        if not param_email_for_notice:
+            param_email_for_notice = ''
+        param_email_for_notice = param_email_for_notice.strip()
+        for record in self:
+            record.param_email_for_notice = param_email_for_notice
 
     @api.depends('electronicfile_id')
     def _compute_mobile(self):
@@ -206,13 +230,30 @@ class EomElectronicfileCommunication(models.Model):
             postal_notification = digitalregister.postal_notification
             if not postal_notification:
                 mail_template_communication_state = None
+                mail_template_notice = None
                 partner = False
                 try:
                     mail_template_communication_state = self.env.ref(
                         'eom_eoffice.mail_template_notification_validated').\
                         sudo()
+                    mail_template_notice = self.env.ref(
+                        'eom_eoffice.mail_template_notice').sudo()
                 except Exception:
                     mail_template_communication_state = None
+                    mail_template_notice = None
+                if mail_template_notice:
+                    param_email = self.env[
+                        'ir.values'].get_default(
+                        'res.eom.config.settings', 'email_for_notice')
+                    link = self.get_form_url()
+                    if param_email and link:
+                        ctx = {
+                            'param_email': param_email,
+                            'lang': 'es_ES',
+                            'link': link,
+                        }
+                        mail_template_notice.with_context(ctx).send_mail(
+                            self.id, force_send=True)
                 if mail_template_communication_state:
                     partner = digitalregister.partner_id
                     if partner and partner.lang:

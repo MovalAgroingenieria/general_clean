@@ -352,10 +352,22 @@ class WebsiteEOffice(WebsiteEom):
             identif_header = user_info['identif_header']
             digitalregister = user_info['digitalregister']
             template = 'eom_eoffice.generic_instance_form'
+            companies = request.env[
+                'res.company'].sudo().search([]).read(['name'])
+            default_company_id = (
+                getattr(digitalregister, 'company_id', False) and
+                digitalregister.company_id.id) \
+                or request.env.user.sudo().company_id.id \
+                or (companies and companies[0]['id'])
+            choose_company = request.env['ir.values'].sudo().get_default(
+                'res.eom.config.settings', 'choose_company')
             context = {
                 'identif_token': identif_token,
                 'identif_header': identif_header,
                 'digitalregister': digitalregister,
+                'default_company_id': default_company_id,
+                'companies': companies,
+                'choose_company': choose_company,
             }
         return request.render(template, context)
 
@@ -371,10 +383,22 @@ class WebsiteEOffice(WebsiteEom):
             identif_header = user_info['identif_header']
             digitalregister = user_info['digitalregister']
             template = 'eom_eoffice.suggestion_form'
+            companies = request.env[
+                'res.company'].sudo().search([]).read(['name'])
+            default_company_id = (
+                getattr(digitalregister, 'company_id', False) and
+                digitalregister.company_id.id) \
+                or request.env.user.sudo().company_id.id \
+                or (companies and companies[0]['id'])
+            choose_company = request.env['ir.values'].sudo().get_default(
+                'res.eom.config.settings', 'choose_company')
             context = {
                 'identif_token': identif_token,
                 'identif_header': identif_header,
                 'digitalregister': digitalregister,
+                'default_company_id': default_company_id,
+                'companies': companies,
+                'choose_company': choose_company,
             }
         return request.render(template, context)
 
@@ -396,11 +420,40 @@ class WebsiteEOffice(WebsiteEom):
                         'digitalregister_id': digitalregister.id,
                         'type': electronicfile_type,
                     }
+                    company_id_str = kwargs.get('company_id')
+                    company_id = False
+                    if company_id_str:
+                        try:
+                            company_id_int = int(company_id_str)
+                            if request.env[
+                                'res.company'].sudo().browse(
+                                    company_id_int).exists():
+                                company_id = company_id_int
+                        except Exception:
+                            pass
+                    if not company_id:
+                        default_company = request.env[
+                            'res.company'].sudo().search(
+                            [('parent_id', '=', False)], limit=1,
+                        )
+                        if default_company:
+                            company_id = default_company.id
+                    vals['company_id'] = company_id
                     if electronicfile_type == '01_generic_instance':
                         vals['exposition'] = kwargs.get('exposition', False)
                         vals['request'] = kwargs.get('request', False)
                     elif electronicfile_type == '02_suggestion':
                         vals['suggestion'] = kwargs.get('suggestion', False)
+                    mod_installed = request.env[
+                        'ir.module.module'].sudo().search([
+                            ('name', '=', 'eom_eoffice_crm_filemgmt'),
+                            ('state', '=', 'installed'),
+                            ], limit=1)
+                    choose_company = request.env[
+                        'ir.values'].sudo().get_default(
+                        'res.eom.config.settings', 'choose_company')
+                    if mod_installed and choose_company:
+                        vals['company_id'] = kwargs.get('company_id', False)
                     model_electronicfile = request.env[
                         'eom.electronicfile'].sudo()
                     uploaded_files = request.httprequest.files.getlist(
@@ -476,6 +529,8 @@ class WebsiteEOffice(WebsiteEom):
                         'reading_time': fields.Datetime.now(),
                         'is_notification': True,
                     }
+                    if mod_installed:
+                        vals['company_id'] = kwargs.get('company_id', False)
                     communication = model_communication.create(vals)
                     communication.action_go_to_state_02_validated()
                     communication.action_mark_as_readed()

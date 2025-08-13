@@ -37,7 +37,7 @@ class EomElectronicfile(models.Model):
             'view_mode': 'form',
             'views': [(id_form_view, 'form')],
             'target': 'current',
-            'res_id': self.file_id.id
+            'res_id': self.file_id.id,
             }
         return act_window
 
@@ -57,7 +57,7 @@ class EomElectronicfile(models.Model):
             'view_mode': 'form',
             'views': [(id_form_view, 'form')],
             'target': 'current',
-            'res_id': self.res_letter_id.id
+            'res_id': self.res_letter_id.id,
             }
         return act_window
 
@@ -86,10 +86,12 @@ class EomElectronicfile(models.Model):
         vals['res_letter_id'] = False
         electronicfile = super(EomElectronicfile, self).create(vals)
         # Get partner and company
-        partner_id = company_id = False
+        partner_id = company_id = eom_company_id = False
         if electronicfile:
             partner_id = electronicfile.partner_id
             company_id = self.env.user.company_id
+            if electronicfile.company_id:
+                eom_company_id = electronicfile.company_id
         if not partner_id or not company_id:
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
@@ -115,6 +117,7 @@ class EomElectronicfile(models.Model):
             'state': 'sent',
             'channel_id': channel.id,
             'created_by_authdnie': True,
+            'company_id': eom_company_id.id,
         }
         registry = self.env['res.letter'].create(res_letter_vals)
         # Write the registry id in the electronic file

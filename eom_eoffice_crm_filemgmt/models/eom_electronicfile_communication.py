@@ -43,10 +43,12 @@ class EomElectronicfileCommunication(models.Model):
         electronicfile = self.env['eom.electronicfile'].browse(
             vals['electronicfile_id'])
         # Get partner and company
-        partner_id = company_id = False
+        partner_id = company_id = eom_company_id = False
         if electronicfile:
             partner_id = electronicfile.partner_id
             company_id = self.env.user.company_id
+            if electronicfile.company_id:
+                eom_company_id = electronicfile.company_id
         if not partner_id or not company_id:
             raise exceptions.ValidationError(
                 _('Partner or Company not found, cannot create registry.'))
@@ -70,6 +72,7 @@ class EomElectronicfileCommunication(models.Model):
             'state': 'sent',
             'channel_id': channel.id,
             'created_by_authdnie': True,
+            'company_id': eom_company_id.id,
         }
         registry = self.env['res.letter'].create(res_letter_vals)
         # Write the registry id in the communication
