@@ -184,25 +184,37 @@
                     />
                     <InvoicesCount t-esc="'1'"/>
                     <TotalInvoicesAmount>
-                        <TotalAmount
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalAmount t-esc="'%.2f' % invoice.amount_total"/>
+                        </t>
+                        <t t-else="">
+                            <TotalAmount t-esc="'%.8f' % invoice.amount_total"/>
+                        </t>
                         <EquivalentInEuros
                             t-esc="'%.2f' % (invoice.amount_total * euro_rate / currency_rate)"
                         />
                     </TotalInvoicesAmount>
                     <TotalOutstandingAmount>
-                        <TotalAmount
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalAmount t-esc="'%.2f' % invoice.amount_total"/>
+                        </t>
+                        <t t-else="">
+                            <TotalAmount t-esc="'%.8f' % invoice.amount_total"/>
+                        </t>
                         <EquivalentInEuros
                             t-esc="'%.2f' % (invoice.amount_total * euro_rate / currency_rate)"
                         />
                     </TotalOutstandingAmount>
                     <TotalExecutableAmount>
-                        <TotalAmount
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalAmount t-esc="'%.2f' % invoice.amount_total"/>
+                        </t>
+                        <t t-else="">
+                            <TotalAmount t-esc="'%.8f' % invoice.amount_total"/>
+                        </t>
                         <EquivalentInEuros
                             t-esc="'%.2f' % (invoice.amount_total * euro_rate / currency_rate)"
                         />
@@ -294,9 +306,13 @@
                         <InvoicingPeriod t-if="False"/>
                         <InvoiceCurrencyCode t-esc="invoice.currency_id.name"/>
                         <ExchangeRateDetails t-if="invoice.currency_id.name != 'EUR'">
-                            <ExchangeRate
-                                t-esc="'%.8f' % (euro_rate / currency_rate)"
-                            />
+                            <!-- Modify by moval on 04.08.2025 -->
+                            <t t-if="invoice.round_decimal">
+                                <ExchangeRate t-esc="'%.2f' % (euro_rate / currency_rate)"/>
+                            </t>
+                            <t t-else="">
+                                <ExchangeRate t-esc="'%.8f' % (euro_rate / currency_rate)"/>
+                            </t>
                             <ExchangeRateDate
                                 t-esc="invoice.get_exchange_rate(euro, currency)"
                             />
@@ -325,21 +341,33 @@
                         <t t-foreach="invoice.tax_line_ids" t-as="tax_line">
                             <Tax t-if="tax_line.tax_id.amount &gt;=0">
                                 <TaxTypeCode t-esc="tax_line.tax_id.facturae_code"/>
-                                <TaxRate
-                                    t-esc="'%.8f' % (tax_line.tax_id.amount)"
-                                />
+                                <!-- Modify by moval on 04.08.2025 -->
+                                <t t-if="invoice.round_decimal">
+                                    <TaxRate t-esc="'%.2f' % (tax_line.tax_id.amount)"/>
+                                </t>
+                                <t t-else="">
+                                    <TaxRate t-esc="'%.8f' % (tax_line.tax_id.amount)"/>
+                                </t>
                                 <TaxableBase>
-                                    <TotalAmount
-                                        t-esc="'%.8f' % tax_line.base"
-                                    />
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <TotalAmount t-esc="'%.2f' % tax_line.base"/>
+                                    </t>
+                                    <t t-else="">
+                                        <TotalAmount t-esc="'%.8f' % tax_line.base"/>
+                                    </t>
                                     <EquivalentInEuros
                                         t-esc="'%.2f' % (tax_line.base * euro_rate / currency_rate)"
                                     />
                                 </TaxableBase>
                                 <TaxAmount>
-                                    <TotalAmount
-                                        t-esc="'%.8f' % tax_line.amount"
-                                    />
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <TotalAmount t-esc="'%.2f' % tax_line.amount"/>
+                                    </t>
+                                    <t t-else="">
+                                        <TotalAmount t-esc="'%.8f' % tax_line.amount"/>
+                                    </t>
                                     <EquivalentInEuros
                                         t-esc="'%.2f' % (tax_line.amount * euro_rate / currency_rate)"
                                     />
@@ -355,21 +383,45 @@
                         <t t-foreach="invoice.tax_line_ids" t-as="tax_line">
                             <Tax t-if="tax_line.tax_id.amount &lt; 0">
                                 <TaxTypeCode t-esc="tax_line.tax_id.facturae_code"/>
-                                <TaxRate
-                                    t-esc="'%.8f' % (-tax_line.tax_id.amount)"
-                                />
-                                <TaxableBase>
-                                    <TotalAmount
-                                        t-esc="'%.8f' % tax_line.base"
+                                <!-- Modify by moval on 04.08.2025 -->
+                                <t t-if="invoice.round_decimal">
+                                    <TaxRate
+                                        t-esc="'%.2f' % (-tax_line.tax_id.amount)"
                                     />
+                                </t>
+                                <t t-else="">
+                                    <TaxRate
+                                        t-esc="'%.8f' % (-tax_line.tax_id.amount)"
+                                    />
+                                </t>
+                                <TaxableBase>
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <TotalAmount
+                                            t-esc="'%.2f' % tax_line.base"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <TotalAmount
+                                            t-esc="'%.8f' % tax_line.base"
+                                        />
+                                    </t>
                                     <EquivalentInEuros
                                         t-esc="'%.2f' % (tax_line.base * euro_rate / currency_rate)"
                                     />
                                 </TaxableBase>
                                 <TaxAmount>
-                                    <TotalAmount
-                                        t-esc="'%.8f' % (-tax_line.amount)"
-                                    />
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <TotalAmount
+                                            t-esc="'%.2f' % (-tax_line.amount)"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <TotalAmount
+                                            t-esc="'%.8f' % (-tax_line.amount)"
+                                        />
+                                    </t>
                                     <EquivalentInEuros
                                         t-esc="'%.2f' % (-tax_line.amount * euro_rate / currency_rate)"
                                     />
@@ -385,30 +437,78 @@
                         <GeneralSurcharges t-if="False"/>
                         <TotalGeneralDiscounts t-if="False"/>
                         <TotalGeneralSurcharges t-if="False"/>
-                        <TotalGrossAmountBeforeTaxes
-                            t-esc="'%.8f' % invoice.amount_untaxed"
-                        />
-                        <TotalTaxOutputs
-                            t-esc="'%.8f' % amount_tax"
-                        />
-                        <TotalTaxesWithheld
-                            t-esc="'%.8f' % amount_tax_withheld"
-                        />
-                        <InvoiceTotal
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalGrossAmountBeforeTaxes
+                                t-esc="'%.2f' % invoice.amount_untaxed"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalGrossAmountBeforeTaxes
+                                t-esc="'%.8f' % invoice.amount_untaxed"
+                            />
+                        </t>
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalTaxOutputs
+                                t-esc="'%.2f' % amount_tax"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalTaxOutputs
+                                t-esc="'%.8f' % amount_tax"
+                            />
+                        </t>
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalTaxesWithheld
+                                t-esc="'%.2f' % amount_tax_withheld"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalTaxesWithheld
+                                t-esc="'%.8f' % amount_tax_withheld"
+                            />
+                        </t>
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <InvoiceTotal
+                                t-esc="'%.2f' % invoice.amount_total"
+                            />
+                        </t>
+                        <t t-else="">
+                            <InvoiceTotal
+                                t-esc="'%.8f' % invoice.amount_total"
+                            />
+                        </t>
                         <Subsidies t-if="False"/>
                         <PaymentsOnAccount t-if="False"/>
                         <ReimbursableExpenses t-if="False"/>
                         <TotalFinancialExpenses t-if="False"/>
-                        <TotalOutstandingAmount
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                           <TotalOutstandingAmount
+                                t-esc="'%.2f' % invoice.amount_total"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalOutstandingAmount
+                                t-esc="'%.8f' % invoice.amount_total"
+                            />
+                        </t>
                         <TotalPaymentsOnAccount t-if="False"/>
                         <AmountsWithheld t-if="False"/>
-                        <TotalExecutableAmount
-                            t-esc="'%.8f' % invoice.amount_total"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                           <TotalExecutableAmount
+                                t-esc="'%.2f' % invoice.amount_total"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalExecutableAmount
+                                t-esc="'%.8f' % invoice.amount_total"
+                            />
+                        </t>
                         <TotalReimbursableExpenses t-if="False"/>
                         <PaymentInKind t-if="False">
                             <PaymentInKindReason t-length="2500" />
@@ -455,13 +555,21 @@
                             <ItemDescription t-length="2500" t-esc="line.name"/>
                             <Quantity t-esc="line.quantity"/>
                             <UnitOfMeasure t-if="False"/>
-                            <UnitPriceWithoutTax
-                                t-esc="'%.8f' % line.price_unit"
-                            />
-                            <!-- Changed by moval 3/4/2025-->
+                            <!-- Modify by moval on 04.08.2025 -->
+                            <t t-if="invoice.round_decimal">
+                                <UnitPriceWithoutTax
+                                    t-esc="'%.2f' % line.price_unit"
+                                />
+                            </t>
+                            <t t-else="">
+                                <UnitPriceWithoutTax
+                                    t-esc="'%.8f' % line.price_unit"
+                                />
+                            </t>
+                            <!-- Changed by moval 3/4/2025 [also modified on 04.08.2025]-->
                             <TotalCost>
                                 <t t-if="invoice.round_decimal">
-                                    <t t-esc="'%.8f' % line.price_subtotal"/>
+                                    <t t-esc="'%.2f' % (line.price_unit * line.quantity)"/>
                                 </t>
                                 <t t-else="">
                                     <t t-esc="'%.8f' % (line.price_unit * line.quantity)"/>
@@ -470,37 +578,85 @@
                             <DiscountsAndRebates t-if="line.discount != 0">
                                 <Discount>
                                     <DiscountReason t-esc="'Descuento'"/>
-                                    <DiscountRate
-                                        t-esc="'%.8f' % line.discount"
-                                    />
-                                    <DiscountAmount
-                                        t-esc="'%.8f' % (line.price_unit * line.quantity - line.price_subtotal)"
-                                    />
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <DiscountRate
+                                            t-esc="'%.2f' % line.discount"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <DiscountRate
+                                            t-esc="'%.8f' % line.discount"
+                                        />
+                                    </t>
+                                    <!-- Modify by moval on 04.08.2025 -->
+                                    <t t-if="invoice.round_decimal">
+                                        <DiscountAmount
+                                            t-esc="'%.2f' % (line.price_unit * line.quantity - line.price_subtotal)"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <DiscountAmount
+                                            t-esc="'%.8f' % (line.price_unit * line.quantity - line.price_subtotal)"
+                                        />
+                                    </t>
                                 </Discount>
                             </DiscountsAndRebates>
                             <Charges t-if="False"/>
-                            <GrossAmount
-                                t-esc="'%.8f' % line.price_subtotal"
-                            />
+                            <!-- Modify by moval on 04.08.2025 -->
+                            <t t-if="invoice.round_decimal">
+                                <GrossAmount
+                                    t-esc="'%.2f' % line.price_subtotal"
+                                />
+                            </t>
+                            <t t-else="">
+                                <GrossAmount
+                                    t-esc="'%.8f' % line.price_subtotal"
+                                />
+                            </t>
                             <TaxesWithheld t-if="withheld">
                                 <t t-foreach="line.invoice_line_tax_ids" t-as="line_tax">
                                     <Tax t-if="line_tax.amount &lt; 0">
                                         <TaxTypeCode t-esc="line_tax.facturae_code"/>
-                                        <TaxRate
-                                            t-esc="'%.8f' % (-line_tax.amount)"
-                                        />
-                                        <TaxableBase>
-                                            <TotalAmount
-                                                t-esc="'%.8f' % line.price_subtotal"
+                                        <!-- Modify by moval on 04.08.2025 -->
+                                        <t t-if="invoice.round_decimal">
+                                            <TaxRate
+                                                t-esc="'%.2f' % (-line_tax.amount)"
                                             />
+                                        </t>
+                                        <t t-else="">
+                                            <TaxRate
+                                                t-esc="'%.8f' % (-line_tax.amount)"
+                                            />
+                                        </t>
+                                        <TaxableBase>
+                                            <!-- Modify by moval on 04.08.2025 -->
+                                            <t t-if="invoice.round_decimal">
+                                                <TotalAmount
+                                                    t-esc="'%.2f' % line.price_subtotal"
+                                                />
+                                            </t>
+                                            <t t-else="">
+                                                <TotalAmount
+                                                    t-esc="'%.8f' % line.price_subtotal"
+                                                />
+                                            </t>
                                             <EquivalentInEuros
                                                 t-esc="'%.2f' % (line.price_subtotal * euro_rate / currency_rate)"
                                             />
                                         </TaxableBase>
                                         <TaxAmount>
-                                            <TotalAmount
-                                                t-esc="'%.8f' % (line.price_subtotal * (-line_tax.amount))"
-                                            />
+                                            <!-- Modify by moval on 04.08.2025 -->
+                                            <t t-if="invoice.round_decimal">
+                                                <TotalAmount
+                                                    t-esc="'%.2f' % (line.price_subtotal * (-line_tax.amount))"
+                                                />
+                                            </t>
+                                            <t t-else="">
+                                                <TotalAmount
+                                                    t-esc="'%.8f' % (line.price_subtotal * (-line_tax.amount))"
+                                                />
+                                            </t>
                                             <EquivalentInEuros
                                                 t-esc="'%.2f' % (line.price_subtotal * (-line_tax.amount) * euro_rate / currency_rate)"
                                             />
@@ -512,21 +668,45 @@
                                 <t t-foreach="line.invoice_line_tax_ids" t-as="line_tax">
                                     <Tax t-if="line_tax.amount &gt;= 0">
                                         <TaxTypeCode t-esc="line_tax.facturae_code"/>
-                                        <TaxRate
-                                            t-esc="'%.8f' % (line_tax.amount)"
-                                        />
-                                        <TaxableBase>
-                                            <TotalAmount
-                                                t-esc="'%.8f' % line.price_subtotal"
+                                        <!-- Modify by moval on 04.08.2025 -->
+                                        <t t-if="invoice.round_decimal">
+                                            <TaxRate
+                                                t-esc="'%.2f' % (line_tax.amount)"
                                             />
+                                        </t>
+                                        <t t-else="">
+                                            <TaxRate
+                                                t-esc="'%.8f' % (line_tax.amount)"
+                                            />
+                                        </t>
+                                        <TaxableBase>
+                                            <!-- Modify by moval on 04.08.2025 -->
+                                            <t t-if="invoice.round_decimal">
+                                                <TotalAmount
+                                                    t-esc="'%.2f' % line.price_subtotal"
+                                                />
+                                            </t>
+                                            <t t-else="">
+                                                <TotalAmount
+                                                    t-esc="'%.8f' % line.price_subtotal"
+                                                />
+                                            </t>
                                             <EquivalentInEuros
                                                 t-esc="'%.2f' % (line.price_subtotal * euro_rate / currency_rate)"
                                             />
                                         </TaxableBase>
                                         <TaxAmount>
-                                            <TotalAmount
-                                                t-esc="'%.8f' % (line.price_subtotal * (line_tax.amount) / 100)"
-                                            />
+                                            <!-- Modify by moval on 04.08.2025 -->
+                                            <t t-if="invoice.round_decimal">
+                                                 <TotalAmount
+                                                    t-esc="'%.2f' % (line.price_subtotal * (line_tax.amount) / 100)"
+                                                />
+                                            </t>
+                                            <t t-else="">
+                                                <TotalAmount
+                                                    t-esc="'%.8f' % (line.price_subtotal * (line_tax.amount) / 100)"
+                                                />
+                                            </t>
                                             <EquivalentInEuros
                                                 t-esc="'%.2f' % (line.price_subtotal * (line_tax.amount) / 100 * euro_rate / currency_rate)"
                                             />

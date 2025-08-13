@@ -92,7 +92,7 @@ class AccountInvoice(models.Model):
 
     round_decimal = fields.Boolean(
         string="Round Decimal",
-        help="Round decimals to two digits on invoice line total",
+        help="Round decimals to two digits on all amounts in the invoice",
         required=False
     )
 
@@ -418,8 +418,7 @@ class AccountInvoice(models.Model):
         report = self.env.ref('l10n_es_facturae.report_facturae')
         xml_facturae = \
             report.render_report(self.ids, report.report_name, {})[0]
-        # Quitamos espacios en blanco, para asegurar que el XML final quede
-        # totalmente libre de ellos.
+        # Delete white spaces
         tree = etree.fromstring(
             xml_facturae, etree.XMLParser(
                 remove_blank_text=True, encoding='UTF-8'))
