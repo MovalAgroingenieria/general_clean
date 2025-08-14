@@ -13,7 +13,7 @@ Description
 ===========
 
 It allows to link an input or output record with a communication (input) or a
-notification (output) and electronic file with a file.
+notification (output)  and electronic file with a file.
 
 Credits
 =======
