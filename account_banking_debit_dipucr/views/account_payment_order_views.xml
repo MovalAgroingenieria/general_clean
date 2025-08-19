@@ -45,6 +45,7 @@
                     </group>
                     <group name="dipucr-right">
                         <field name="concept" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
+                        <field name="tax_object" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}"/>
                         <field name="period" attrs="{'required':[('payment_mode_name','=', 'DipuCR')]}" widget="selection"/>
                         <field name="period_start_date" attrs="{'required':[('payment_mode_name','=', 'DipuCR'),('period', '=', 'SIN PERIODO')],
                                                                 'invisible':[('period', '!=', 'SIN PERIODO')]}"/>

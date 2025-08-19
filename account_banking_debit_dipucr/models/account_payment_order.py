@@ -199,6 +199,16 @@ class AccountPaymentOrder(models.Model):
     period_end_date = fields.Date(
         string="Period end date")
 
+    tax_object = fields.Char(
+        string="Tax Object",
+        size=80,
+        help="The tax object. Max 80 characters.")
+
+    _sql_constraints = [
+        ('length_tax_object', 'CHECK(LENGTH(tax_object) <= 80)',
+         'The tax object must be at most 80 characters long.')
+    ]
+
     # Methods
     @api.depends('payment_mode_id')
     def _compute_payment_mode_name(self):
@@ -325,7 +335,8 @@ class AccountPaymentOrder(models.Model):
         # County code - Position [368-372] Length 5
         county_code = str('0' * 5)
         # Tax object - Position [373-452] Length 80
-        tax_object = str(' ' * 80)
+        # @INFO: Mandatory on 18.08.2025.
+        tax_object = self.tax_object.ljust(80)
         # Tax amount - Position [477-486] Length 10
         tax_amount = str('0' * 10)
         # Provincial surcharge amount - Position [487-496] Length 10
@@ -644,11 +655,28 @@ class AccountPaymentOrder(models.Model):
 
             # County code - Position [368-372] Length 5
             # @INFO: Outside the loop
+
             # Tax object - Position [373-452] Length 80
-            # @INFO: Outside the loop
+            # @INFO: Mandatory on 18.08.2025. Outside the loop
 
             # Fixed number - Position [453-466] Length 14
-            fixed_number = str(' ' * 14)
+            # @INFO: Mandatory on 18.08.2025. Using partner_code
+            if line.partner_id.partner_code:
+                partner_code_str = str(line.partner_id.partner_code)
+                fixed_number = partner_code_str.ljust(14)
+            else:
+                if self.error_mode == 'permissive':
+                    error_num += 1
+                    errors += '[' + str(error_num).zfill(4) + '] ' + \
+                        _("The entry number %s has failed, fixed number "
+                          "not found for partner %s" %
+                          (entry_num_padded, line.partner_id.name)) + '\n'
+                    fixed_number = str(" " * 14)
+                else:
+                    raise ValidationError(
+                        _("The entry number %s has failed, fixed number "
+                          "not found for partner %s" %
+                          (entry_num_padded, line.partner_id.name)))
 
             # Main amount - Position [467-476] Length 10
             # @INFO: In euro cents with two decimals
