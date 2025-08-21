@@ -1322,7 +1322,7 @@ msgstr "Información incompleta."
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
 msgid "Indicate Company"
-msgstr "Indicate Company"
+msgstr "Indicar Compañía"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_infringement_level

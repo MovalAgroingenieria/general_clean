@@ -416,6 +416,7 @@ class CimComplaint(models.Model):
         compute='_compute_choose_company',
         string='Choose Company',
         store=False,
+        default=True,
         readonly=False)
     
     @api.depends('complaint_time')
