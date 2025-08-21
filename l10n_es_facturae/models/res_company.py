@@ -10,10 +10,6 @@ from odoo import models, fields, api, exceptions, _
 class ResCompany(models.Model):
     _inherit = 'res.company'
 
-    def _default_facturae_cert_company_id(self):
-        company_id = self.id
-        return company_id
-
     facturae_cert_state = fields.Selection(
         selection=[("draft", "Draft"), ("active", "Active")],
         string="State",
@@ -29,15 +25,8 @@ class ResCompany(models.Model):
     facturae_cert_company_id = fields.Many2one(
         comodel_name="res.company",
         string="Company",
-        required=True,
         store=True,
-        default=_default_facturae_cert_company_id,
-        compute="_compute_facturae_cert_company_id")
-
-    @api.multi
-    def _compute_facturae_cert_company_id(self):
-        for record in self:
-            record.facturae_cert_company_id = record.id
+        readonly=True)
 
     def facturae_cert_load_password_wizard(self):
         self.ensure_one()
@@ -85,3 +74,9 @@ class ResCompany(models.Model):
         if not public_crt or not private_key:
             raise exceptions.UserError(_("Error! There aren't certificates."))
         return public_crt, private_key
+
+    @api.model
+    def create(self, vals):
+        res = super(ResCompany, self).create(vals)
+        res.facturae_cert_company_id = res.id
+        return res
