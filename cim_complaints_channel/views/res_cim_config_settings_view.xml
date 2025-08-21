@@ -43,6 +43,8 @@
                            style="width:100px"/>
                     <field name="email_for_notice"
                            string="E-mail for notice"/>
+                    <field name="choose_company"
+                           string="Indicate Company"/>
                 </group>
             </form>
         </field>

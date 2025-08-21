@@ -528,6 +528,16 @@ msgid "Cause of the rejection"
 msgstr "Causa del rebuig"
 
 #. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_choose_company
+msgid "Choose Company"
+msgstr "Seleccionar companyia"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_choose_company
+msgid "Choose company"
+msgstr "Seleccionar companyia"
+
+#. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_complainant_data_name
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_name
@@ -622,6 +632,12 @@ msgstr "Comunicacions enviades"
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_communication_view_search
 msgid "Communications submitted from the website"
 msgstr "Comunicacions cursades des del lloc web"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_company_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Company"
+msgstr "Companyia"
 
 #. module: cim_complaints_channel
 #: code:addons/cim_complaints_channel/models/cim_complaint.py:1572
@@ -1255,6 +1271,11 @@ msgid "Identifier of communication"
 msgstr "Identificador de la comunicació"
 
 #. module: cim_complaints_channel
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_choose_company
+msgid "If checked, the user will be able to choose the company on suggestions and instances."
+msgstr "Si està marcat, l'usuari podrà triar l'empresa en les propostes i instàncies."
+
+#. module: cim_complaints_channel
 #: code:addons/cim_complaints_channel/models/cim_complaint.py:758
 #, python-format
 msgid "If the complaint is ready or resolved, then it is mandatory to enter the instructor."
@@ -1297,6 +1318,11 @@ msgstr "En relació amb la denúncia que apareix a continuació,\n"
 #, python-format
 msgid "Incomplete information."
 msgstr "Informació incompleta."
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Indicate Company"
+msgstr "Indiqueu companyia"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_infringement_level
@@ -1595,6 +1621,18 @@ msgstr "Nom de l'adjunt 6"
 #, python-format
 msgid "New complaint:"
 msgstr "Nova denúncia:"
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:64
+#, python-format
+msgid "No company found."
+msgstr "Companyia no trobada."
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:71
+#, python-format
+msgid "No root company found."
+msgstr "Companyia arrel no trobada."
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search

@@ -56,6 +56,20 @@ class CimComplaint(models.Model):
     @api.model
     def _lang_get(self):
         return self.env['res.lang'].get_installed()
+    
+    @api.model
+    def _default_company_id(self):
+        companies = self.env['res.company'].search([])
+        if not companies:
+            raise exceptions.ValidationError(_('No company found.'))
+        if len(companies) == 1:
+            return companies.id
+        else:
+            root_company = self.env['res.company'].search([('parent_id', '=',
+                                                            False)], limit=1)
+            if not root_company:
+                raise exceptions.ValidationError(_('No root company found.'))
+            return root_company.id
 
     name = fields.Char(
         string='Code',
@@ -390,6 +404,20 @@ class CimComplaint(models.Model):
         string='E-mail to complainant after complaint change state (y/n)',
         compute='_compute_automatic_email_state',)
 
+    company_id = fields.Many2one(
+        string='Company',
+        comodel_name='res.company',
+        required=False,
+        index=True,
+        default=lambda self: self._default_company_id(),
+    )
+
+    choose_company = fields.Boolean(
+        compute='_compute_choose_company',
+        string='Choose Company',
+        store=False,
+        readonly=False)
+    
     @api.depends('complaint_time')
     def _compute_complaint_date(self):
         for record in self:
@@ -397,6 +425,14 @@ class CimComplaint(models.Model):
             if record.complaint_time:
                 complaint_date = record.complaint_time
             record.complaint_date = complaint_date
+            
+    @api.depends()
+    def _compute_choose_company(self):
+        param_choose_company = self.env['ir.values'].get_default(
+            'res.cim.config.settings', 'choose_company')
+        flag = (param_choose_company == True)
+        for rec in self:
+            rec.choose_company = flag
 
     @api.depends('complainant_name', 'complainant_vat', 'complainant_phone')
     def _compute_is_anonymous(self):

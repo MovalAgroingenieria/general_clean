@@ -71,6 +71,13 @@ class ResCimConfigSettings(models.TransientModel):
     email_for_notice = fields.Char(
         string='E-mail for notice',)
 
+    choose_company = fields.Boolean(
+        string='Choose company',
+        help='If checked, the user will be able to choose the company on'
+        ' suggestions and instances.',
+        default=False,
+    )
+
     _sql_constraints = [
         ('valid_length_tracking_code',
          'CHECK (length_tracking_code > 0)',
@@ -128,3 +135,6 @@ class ResCimConfigSettings(models.TransientModel):
         values.set_default('res.cim.config.settings',
                            'email_for_notice',
                            self.email_for_notice)
+        values.set_default('res.cim.config.settings',
+                           'choose_company',
+                           self.choose_company)

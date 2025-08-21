@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-20 07:20+0000\n"
-"PO-Revision-Date: 2024-09-20 07:20+0000\n"
+"POT-Creation-Date: 2025-08-20 12:35+0000\n"
+"PO-Revision-Date: 2025-08-20 12:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -352,7 +352,7 @@ msgid "Accounting or financial irregularity"
 msgstr "Irregularidad contable o financiera"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1273
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1308
 #, python-format
 msgid "Acknowledgement of receipt of the complaint filed"
 msgstr "Acuse de recibo de denuncia interpuesta"
@@ -389,7 +389,7 @@ msgid "Admit"
 msgstr "Admitir"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:599
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:634
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Admitted"
@@ -497,13 +497,13 @@ msgid "COMPLAINANT DATA"
 msgstr "DATOS DEL DENUNCIANTE"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1321
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1356
 #, python-format
 msgid "COMPLAINT ISSUE:"
 msgstr "ASUNTO DE LA DENUNCIA:"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:585
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:620
 #, python-format
 msgid "COMPLAINT REJECTED"
 msgstr "DENUNCIA RECHAZADA"
@@ -526,6 +526,16 @@ msgstr "Causa"
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_wizard_reject_complaint_rejection_cause
 msgid "Cause of the rejection"
 msgstr "Causa del rechazo"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_choose_company
+msgid "Choose Company"
+msgstr "Seleccionar compañía"
+
+#. module: cim_complaints_channel
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_res_cim_config_settings_choose_company
+msgid "Choose company"
+msgstr "Seleccionar compañía"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_name
@@ -590,14 +600,14 @@ msgid "Communication from the complainant (as text)"
 msgstr "Comunicación procedente del denunciante (como texto)"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1257
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1292
 #: model:ir.model,name:cim_complaints_channel.model_cim_complaint_communication
 #, python-format
 msgid "Communication of complaint"
 msgstr "Comunicación de la denuncia"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1081
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1116
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_communication_ids
 #, python-format
 msgid "Communications"
@@ -624,7 +634,13 @@ msgid "Communications submitted from the website"
 msgstr "Comunicaciones cursadas desde el sitio web"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1572
+#: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_company_id
+#: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
+msgid "Company"
+msgstr "Compañía"
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1607
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_form
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
 #, python-format
@@ -668,10 +684,10 @@ msgid "Complainant involved"
 msgstr "Denunciante implicado"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1110
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1168
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1235
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1684
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1145
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1203
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1270
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1719
 #: model:ir.model,name:cim_complaints_channel.model_cim_complaint
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_communication_complaint_id
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_communication_view_form
@@ -736,7 +752,7 @@ msgid "Complaint deadline (number of months)"
 msgstr "Plazo para resolver la denuncia (número de meses)"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1268
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1303
 #, python-format
 msgid "Complaint rejected"
 msgstr "Denuncia rechazada"
@@ -876,7 +892,7 @@ msgid "D A T E :"
 msgstr "F E C H A :"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1327
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1362
 #, python-format
 msgid "DEFENDANT:"
 msgstr "PERSONA O ENTIDAD DENUNCIADA:"
@@ -1071,7 +1087,7 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1262
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1297
 #, python-format
 msgid "Due to the special complexity of the case, the investigation phase is being extended. New response deadline:"
 msgstr "Debido a la especial complejidad del caso, se acuerda extender la fase de instrucción. El nuevo plazo para la finalización de dicha fase es el siguiente:"
@@ -1106,7 +1122,7 @@ msgid "E-mail to complainant after validate communication (y/n)"
 msgstr "E-mail para el denunciante después de validar la comunicación (s/n)"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1932
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1967
 #, python-format
 msgid "ERROR, the email could not be sent. Destination:"
 msgstr "ERROR, el e-mail no se ha podido enviar. Destino:"
@@ -1122,7 +1138,7 @@ msgid "Email after validate communication"
 msgstr "Email después de validar la comunicación"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1931
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1966
 #, python-format
 msgid "Email sent. Destination:"
 msgstr "E-mail enviado. Destino:"
@@ -1184,7 +1200,7 @@ msgid "Extended instruction on time"
 msgstr "Instrucción extendida en plazo"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1260
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1295
 #, python-format
 msgid "Extended instruction period"
 msgstr "Período de instrucción prorrogado"
@@ -1200,7 +1216,7 @@ msgid "Extended process"
 msgstr "Instrucción extendida"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1324
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1359
 #, python-format
 msgid "FACTS DENUNCED:"
 msgstr "HECHOS DENUNCIADOS:"
@@ -1255,25 +1271,30 @@ msgid "Identifier of communication"
 msgstr "Identificador de comunicación"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:758
+#: model:ir.model.fields,help:cim_complaints_channel.field_res_cim_config_settings_choose_company
+msgid "If checked, the user will be able to choose the company on suggestions and instances."
+msgstr "If checked, the user will be able to choose the company on suggestions and instances."
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:793
 #, python-format
 msgid "If the complaint is ready or resolved, then it is mandatory to enter the instructor."
 msgstr "Si la denuncia está vista para ser resuelta, es obligatorio indicar el instructor."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:767
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:802
 #, python-format
 msgid "If the complaint is ready or resolved, then it is mandatory to enter the measures taken."
 msgstr "Si la denuncia está resuelta o vista para ser resuelta, es obligatorio indicar las medidas adoptadas."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:775
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:810
 #, python-format
 msgid "If the complaint is resolved, then it is mandatory to enter the resolution text."
 msgstr "Si la denuncia está resuelta, es obligatorio indicar el texto de la resolución."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:601
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:636
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "In progress"
@@ -1293,10 +1314,15 @@ msgstr "En relación con la denuncia cuyos datos aparecen a continuación,\n"
 "                        después nuevos datos o documentos."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1141
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1176
 #, python-format
 msgid "Incomplete information."
 msgstr "Información incompleta."
+
+#. module: cim_complaints_channel
+#: model:ir.ui.view,arch_db:cim_complaints_channel.res_cim_config_settings_view_form
+msgid "Indicate Company"
+msgstr "Indicate Company"
 
 #. module: cim_complaints_channel
 #: model:ir.model.fields,field_description:cim_complaints_channel.field_cim_complaint_infringement_level
@@ -1326,7 +1352,7 @@ msgid "Instruction period expirated"
 msgstr "Plazo de instrucción expirado"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1283
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1318
 #, python-format
 msgid "Instruction phase begins"
 msgstr "Comienza la fase de instrucción"
@@ -1346,7 +1372,7 @@ msgid "Instructor"
 msgstr "Instructor"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1574
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1609
 #, python-format
 msgid "Investigating User"
 msgstr "Instructor"
@@ -1376,19 +1402,19 @@ msgid "Issue"
 msgstr "Asunto"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:611
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:646
 #, python-format
 msgid "Issue:"
 msgstr "Asunto:"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:803
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:838
 #, python-format
 msgid "It is mandatory to enter a code for the new complaint."
 msgstr "Es obligatorio indicar un código para la nueva denuncia."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1671
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1706
 #, python-format
 msgid "It is mandatory to enter the complaint of the communication."
 msgstr "It is mandatory to enter the complaint of the communication."
@@ -1406,25 +1432,25 @@ msgid "It is not possible to remove a 'STANDARD' link type."
 msgstr "No se permite suprimir un tipo de vinculación estándar."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1062
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1097
 #, python-format
 msgid "It is not possile to delete a in force complaint."
 msgstr "No es posible eliminar una denuncia que está en vigor."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1893
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1928
 #, python-format
 msgid "It is not possile to delete a validated communication."
 msgstr "No se permite suprimir una comunicación que ya ha sido validada."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:749
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:784
 #, python-format
 msgid "It is only possible to reject a complaint if its state is 'Received'."
 msgstr "No se permite rechazar una denuncia cuyo estado sea 'Recibida'."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1136
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1171
 #, python-format
 msgid "It is only possible to reject complaints in the 'RECEIVED' state."
 msgstr "Sólo se permite marcar como rechazada una denuncia si está se encuentra en el estado 'RECIBIDA'."
@@ -1514,7 +1540,7 @@ msgid "Message"
 msgstr "Mensaje"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:592
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:627
 #: selection:cim.complaint,infringement_level:0
 #, python-format
 msgid "Mild"
@@ -1591,10 +1617,22 @@ msgid "Name of the attachment 6"
 msgstr "Nombre del adjunto 6"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1315
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1350
 #, python-format
 msgid "New complaint:"
 msgstr "Alta de denuncia:"
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:64
+#, python-format
+msgid "No company found."
+msgstr "No company found."
+
+#. module: cim_complaints_channel
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:71
+#, python-format
+msgid "No root company found."
+msgstr "No root company found."
 
 #. module: cim_complaints_channel
 #: model:ir.ui.view,arch_db:cim_complaints_channel.cim_complaint_view_search
@@ -1726,20 +1764,20 @@ msgid "Reactivate"
 msgstr "Reactivar"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:603
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:638
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Ready"
 msgstr "Lista"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1269
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1304
 #, python-format
 msgid "Reason:"
 msgstr "Motivo:"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:597
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:632
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Received"
@@ -1786,7 +1824,7 @@ msgid "Resolution Text"
 msgstr "Texto de la resolución"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1288
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1323
 #, python-format
 msgid "Resolution of the complaint"
 msgstr "Resolución de la denuncia"
@@ -1797,7 +1835,7 @@ msgid "Resolve"
 msgstr "Resolver"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:605
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:640
 #: selection:cim.complaint,state:0
 #, python-format
 msgid "Resolved"
@@ -1814,7 +1852,7 @@ msgid "S O U R C E :"
 msgstr "P R O C E D E N C I A :"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:594
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:629
 #, python-format
 msgid "SERIOUS"
 msgstr "GRAVE"
@@ -1887,7 +1925,7 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:609
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:644
 #, python-format
 msgid "Severity:"
 msgstr "Gravedad:"
@@ -1932,7 +1970,7 @@ msgid "State"
 msgstr "Estado"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:610
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:645
 #, python-format
 msgid "State:"
 msgstr "Estado:"
@@ -1948,7 +1986,7 @@ msgid "Supplier"
 msgstr "Proveedor"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1285
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1320
 #, python-format
 msgid "The assigned investigating user is:"
 msgstr "El instructor asignado a la denuncia es:"
@@ -1959,7 +1997,7 @@ msgid "The communication number must be a positive value."
 msgstr "El número de comunicación debe ser un valor estrictamente positivo."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1897
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1932
 #, python-format
 msgid "The complaint has completed its investigation phase, so it is no longer possible to delete communications."
 msgstr "Ya ha concluido la instrucción de la denuncia, por lo que no es posible borrar sus comunicaciones."
@@ -1970,7 +2008,7 @@ msgid "The deadline must be a positive value."
 msgstr "El plazo debe ser un valor positivo."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/res_cim_config_settings.py:94
+#: code:addons/cim_complaints_channel/models/res_cim_config_settings.py:101
 #, python-format
 msgid "The extended deadline can not be less than the predetermined deadline."
 msgstr "El plazo extendido no puede ser inferior al plazo normal."
@@ -2095,7 +2133,7 @@ msgid "VAT"
 msgstr "DNI"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:596
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:631
 #, python-format
 msgid "VERY SERIOUS"
 msgstr "MUY GRAVE"
@@ -2175,20 +2213,20 @@ msgid "Workplace harassment"
 msgstr "Acoso laboral"
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1065
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1129
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1100
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1164
 #, python-format
 msgid "You do not have permission to execute this action."
 msgstr "No tiene permiso para ejecutar esta operación."
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1275
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1310
 #, python-format
 msgid "You have received an acknowledgement of receipt of your complaint. A preliminary analysis of its admissibility will then be carried out. You are also informed that the deadline for completing the investigation of the complaint is the following date: "
 msgstr "Le remitimos acuse de recibo de su denuncia interpuesta. A continuación, se procederá a realizar un análisis previo sobre su admisibilidad. Asimismo, se le informa que el plazo para completar la instrucción de la denuncia concluye en la siguiente fecha: "
 
 #. module: cim_complaints_channel
-#: code:addons/cim_complaints_channel/models/cim_complaint.py:1686
+#: code:addons/cim_complaints_channel/models/cim_complaint.py:1721
 #, python-format
 msgid "communication #"
 msgstr "comunicación nº"
@@ -2208,4 +2246,3 @@ msgstr "denuncias"
 #: model:mail.template,report_name:cim_complaints_channel.mail_template_tracking_code
 msgid "tracking_code_${object.name}"
 msgstr "tracking_code_${object.name}"
-
