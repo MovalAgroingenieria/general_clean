@@ -23,7 +23,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='subject']" position="after">
                 <field name="company_id" colspan="4"
-                                   attrs="{'readonly':['|',('is_closing_stage','=', True),('is_blocked','=',True)]}"/>
+                    attrs="{'readonly':['|',('is_closing_stage','=', True),('is_blocked','=',True)]}"/>
             </xpath>
         </field>
     </record>

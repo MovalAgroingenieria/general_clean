@@ -24,9 +24,11 @@ class ResFile(models.Model):
 
     @api.depends('file_res_letter_ids')
     def _compute_company_id(self):
+        company_id = self.env.user.company_id
         for record in self:
-            record.company_id = \
-                record.file_res_letter_ids[:1].company_id or False
+            if record.file_res_letter_ids:
+                company_id = record.file_res_letter_ids[:1].company_id
+            record.company_id = company_id
 
     @api.multi
     def _compute_has_associated_electronicfile(self):

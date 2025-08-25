@@ -22,9 +22,10 @@ class ResLetter(models.Model):
         compute='_compute_company_id',
     )
 
+    @api.depends('number', 'file_id')
     def _compute_company_id(self):
+        company_id = self.env.user.company_id
         for record in self:
-            company_id = False
             electronicfile = self.env['eom.electronicfile'].search(
                 [('file_id', '=', record.id)])
             if electronicfile:

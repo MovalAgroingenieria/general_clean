@@ -5,7 +5,7 @@
 {
     'name': 'Electronic Office File Management',
     'summary': 'Link electronic files and communications with CRM modules',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'category': 'Electronic Offices Management',
     'website': 'http://www.moval.es',
     'author': 'Moval Agroingeniería',
