@@ -16,6 +16,10 @@ def post_init_hook(cr, registry):
     env.cr.execute("""
         UPDATE res_letter SET company_id = %s WHERE company_id IS NULL;
         """, (company.id,))
+    _logger.info('Add company_id to files')
+    env.cr.execute("""
+        UPDATE res_file SET company_id = %s WHERE company_id IS NULL;
+        """, (company.id,))
     env.cr.commit()
     env.invalidate_all()
     _logger.info('Post-init hook completed')
