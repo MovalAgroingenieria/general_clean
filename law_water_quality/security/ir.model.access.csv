@@ -19,10 +19,8 @@ access_law_measuring_device_measurement_law_user,access.law.measuring.device.mea
 access_law_measuring_device_law_manager,access.law.measuring.device.law.manager,model_law_measuring_device,law_water_quality.group_law_manager,1,1,1,1
 access_law_measuring_device_type_law_manager,access.law.measuring.device.type.law.manager,model_law_measuring_device_type,law_water_quality.group_law_manager,1,1,1,1
 access_law_measuring_device_measurement_law_manager,access.law.measuring.device.measurement.law.manager,model_law_measuring_device_measurement,law_water_quality.group_law_manager,1,1,1,1
-
-
-
-
+access_law_analysis_template_user,access_law_analysis_template_user,model_law_analysis_template,base.group_user,1,0,0,0
+access_law_analysis_template_manager,access_law_analysis_template_manager,model_law_analysis_template,base.group_user,1,0,0,0
 
 
 
