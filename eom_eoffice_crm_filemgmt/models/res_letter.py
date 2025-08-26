@@ -26,7 +26,7 @@ class ResLetter(models.Model):
     def _compute_company_id(self):
         company_id = self.env.user.company_id
         for record in self:
-            electronicfile = self.env['eom.electronicfile'].search(
+            electronicfile = self.env['eom.electronicfile'].sudo().search(
                 [('file_id', '=', record.id)])
             if electronicfile:
                 company_id = electronicfile.company_id
