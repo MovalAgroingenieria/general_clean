@@ -430,9 +430,17 @@
                         </t>
                     </TaxesWithheld>
                     <InvoiceTotals>
-                        <TotalGrossAmount
-                            t-esc="'%.8f' % invoice.amount_untaxed"
-                        />
+                        <!-- Modify by moval on 04.08.2025 -->
+                        <t t-if="invoice.round_decimal">
+                            <TotalGrossAmount
+                                t-esc="'%.2f' % invoice.amount_untaxed"
+                            />
+                        </t>
+                        <t t-else="">
+                            <TotalGrossAmount
+                                t-esc="'%.8f' % invoice.amount_untaxed"
+                            />
+                        </t>
                         <GeneralDiscounts t-if="False"/>
                         <GeneralSurcharges t-if="False"/>
                         <TotalGeneralDiscounts t-if="False"/>
