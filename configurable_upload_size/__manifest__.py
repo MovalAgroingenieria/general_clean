@@ -5,7 +5,7 @@
 {
     "name": "Configurable Upload Size",
     "summary": "Configurable file upload size limit.",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "category": "Technical Settings",
     "website": "http://www.moval.es",
     "author": "Moval Agroingeniería",
@@ -20,5 +20,4 @@
     ],
     "installable": True,
     "application": False,
-    "auto_install": False,
 }
