@@ -57,13 +57,16 @@ class MeasurementDeviceSensorReading(models.Model):
         ('unique_name', 'unique(name)', 'The sensor reading must be unique.'),
     ]
 
-    @api.depends('device_id.name', 'measurement_time')
+    @api.depends('device_id.name', 'sensor_id.name', 'measurement_time')
     def _compute_name(self):
         for record in self:
             name = ''
-            if record.device_id and record.measurement_time:
-                name = '%s - %s' % (
-                    record.device_id.name, record.measurement_time)
+            if (record.device_id and record.sensor_id and
+                    record.measurement_time):
+                name = '%s - %s - %s' % (
+                    record.device_id.name,
+                    record.sensor_id.name,
+                    record.measurement_time)
             record.name = name
 
     @api.depends('sensor_id')
