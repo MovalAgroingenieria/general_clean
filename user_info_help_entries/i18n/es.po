@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* user_info_help_entries
+# 	* user_info_help_entries
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-18 13:26+0000\n"
-"PO-Revision-Date: 2024-12-18 13:26+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2025-08-28 05:58+0000\n"
+"PO-Revision-Date: 2025-08-28 05:58+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,96 +16,95 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_active
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__active
 msgid "Active"
 msgstr "Activo"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_name
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__name
 msgid "Button Name"
-msgstr "Nombre del acceso"
+msgstr "Nombre del botón"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_create_uid
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__create_uid
 msgid "Created by"
 msgstr "Creado por"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_create_date
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__create_date
 msgid "Created on"
 msgstr "Creado el"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_display_name
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__display_name
 msgid "Display Name"
-msgstr "Nombre a mostrar"
+msgstr "Nombre mostrado"
 
 #. module: user_info_help_entries
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
 msgid "Groups"
 msgstr "Grupos"
 
 #. module: user_info_help_entries
 #: model:ir.actions.act_window,name:user_info_help_entries.help_entries_menu_action
 #: model:ir.ui.menu,name:user_info_help_entries.help_entries_menu
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
 msgid "Help Entries"
 msgstr "Accesos directos"
 
 #. module: user_info_help_entries
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
 msgid "Help Entry"
 msgstr "Acceso directo"
 
 #. module: user_info_help_entries
 #: model:ir.model,name:user_info_help_entries.model_user_menu_help_entry
 msgid "Help entries for user menu"
-msgstr "Accesos directos"
+msgstr "Accesos directos del menú de usuario"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_id
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__id
 msgid "ID"
 msgstr "ID"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry___last_update
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry____last_update
 msgid "Last Modified on"
-msgstr "Última modificación en"
+msgstr "Última modificación el"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_write_uid
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__write_uid
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Actualizado por"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_write_date
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__write_date
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Actualizado el"
 
 #. module: user_info_help_entries
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
 msgid "Name"
 msgstr "Nombre"
 
 #. module: user_info_help_entries
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
 msgid "Search Help Entries"
-msgstr "Búsquedas de accesos directos"
+msgstr "Buscar accesos directos"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_url
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
-#: model:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__url
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_form_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_search_view
+#: model_terms:ir.ui.view,arch_db:user_info_help_entries.help_entry_tree_view
 msgid "URL"
 msgstr "URL"
 
 #. module: user_info_help_entries
-#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry_groups
+#: model:ir.model.fields,field_description:user_info_help_entries.field_user_menu_help_entry__groups
 msgid "User Groups"
-msgstr "Grupos de usuario"
-
+msgstr "Grupos de usuarios"
