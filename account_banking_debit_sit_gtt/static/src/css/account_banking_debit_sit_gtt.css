@@ -1,0 +1,7 @@
+/* Invoice tree */
+.o_account_banking_debit_sit_gtt_invoice_tree_view [data-id="in_sit_gtt"] {
+    text-align: center;
+}
+.o_account_banking_debit_sit_gtt_invoice_tree_view [data-field="in_sit_gtt"] {
+    text-align: center;
+}

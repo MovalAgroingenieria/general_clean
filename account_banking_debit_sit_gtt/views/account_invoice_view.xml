@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_form" model="ir.ui.view">
+        <field name="name">Invoices (form view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_info']/group/group" position="after">
+                <group>
+                    <field name="in_sit_gtt" string="SIT GTT"/>
+                    <field name="sit_gtt_ref"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">Invoices (tree view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="class">o_account_banking_debit_sit_gtt_invoice_tree_view</attribute>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="after">
+                <field name="in_sit_gtt" string="SIT GTT"/>
+                <field name="sit_gtt_ref" string="SIT GTT Ref" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">Invoices (search view)</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='unpaid']" position="before">
+                <field name="sit_gtt_ref"/>
+                <filter name="sit_gtt_done" string="SIT GTT" domain="[('in_sit_gtt', '=', True)]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='status']" position="before">
+                <filter name="group_by_sit_gtt" string="SIT GTT" context="{'group_by':'in_sit_gtt'}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,663 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_banking_debit_sit_gtt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-28 09:37+0000\n"
+"PO-Revision-Date: 2025-08-28 09:37+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "01"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "02"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "03"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "04"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "05"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,issue_number:0
+msgid "06"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.config.settings,entity_code:0
+msgid "13706 - Comunidad de Regantes Torre Abraham"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.config.settings,entity_code:0
+msgid "13720 - Comunidad de Regantes Santa Cruz de los Cáñamos"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.config.settings,entity_code:0
+msgid "17703 - Comunitat de Regants del Molí de Pals"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.config.settings,entity_code:0
+msgid "17704 - Comunitat de Regants de la Presa de Colomers"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2019"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2020"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2021"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2022"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2023"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2024"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2025"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2026"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2027"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2028"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_year:0
+msgid "2029"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "ABRIL"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "AGOSTO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "ANUAL"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:948
+#, python-format
+msgid "Amount: "
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_approval_decree_date
+msgid "Approval decree date"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_approval_decree_number
+msgid "Approval decree number"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model,name:account_banking_debit_sit_gtt.model_bank_payment_line
+msgid "Bank Payment Lines"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,concept:0
+msgid "CU - Irrigation Quota"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "CUARTO BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "CUARTO TRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_charge_type
+msgid "Charge type"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_charge_year
+msgid "Charge year"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_concept
+msgid "Concept"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_concept
+msgid "Concept by which the settlement or receipt is made.\n"
+"It will be applied to all transactions"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "DICIEMBRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "ENERO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_entity
+msgid "Entity"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_config_settings_entity_code
+msgid "Entity Code"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:925
+#, python-format
+msgid "Entity type code not set"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_error_mode
+msgid "Error mode"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_errors_found
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.account_payment_order_form_sit_gtt
+msgid "Errors"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:907
+#, python-format
+msgid "Errors in payment file "
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_type:0
+msgid "Executive"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "FEBRERO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_invoice_in_sit_gtt
+msgid "In SIT GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_issue_number
+msgid "Indicates the number to add to the maximum existing issue in the DB for that year, sub-organization and concept."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_bank_payment_line_sit_gtt_sent
+msgid "Indicates whether this payment has already been added to a Sit GTT payment file"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_invoice_in_sit_gtt
+msgid "Indicates whether this payment has already been done and uploaded successfully"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model,name:account_banking_debit_sit_gtt.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:947
+#, python-format
+msgid "Invoice num: "
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_issue_number
+msgid "Issue number"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "JULIO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "JUNIO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,value_type:0
+msgid "Liquidation"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "MARZO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "MAYO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "NOVIEMBRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "OCTUBRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "PRIMER BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "PRIMER CUATRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "PRIMER SEMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "PRIMER TRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model,name:account_banking_debit_sit_gtt.model_account_payment_order
+msgid "Payment Order"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_payment_mode_name
+msgid "Payment mode name"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_period
+msgid "Period"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_period_end_date
+msgid "Period end date"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_charge_type
+msgid "Period in which debts should be managed"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_period_start_date
+msgid "Period start date"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,error_mode:0
+msgid "Permissive"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "QUINTO BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:959
+#, python-format
+msgid "Quantity: "
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,value_type:0
+msgid "Receipt"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEGUNDO BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEGUNDO CUATRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEGUNDO SEMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEGUNDO TRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEPTIEMBRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SEXTO BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "SIN PERIODO"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.invoice_form
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.invoice_tree
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.sit_gtt_payment_line_search
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.view_account_invoice_filter
+msgid "SIT GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.invoice_tree
+msgid "SIT GTT Ref"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_invoice_sit_gtt_ref
+msgid "SIT GTT Reference"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.account_payment_order_form_sit_gtt
+msgid "SIT GTT options"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:account.payment.method,name:account_banking_debit_sit_gtt.payment_method_sit_gtt
+msgid "SIT-GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_bank_payment_line_sit_gtt_sent
+msgid "Sit GTT done"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_bank_payment_line_sit_gtt_ref
+msgid "Sit GTT reference"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,error_mode:0
+msgid "Strict"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_error_mode
+msgid "Strict mode does not allow errors. The permissive mode allows but they are collected in the 'Errors' tab.'"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "TERCER BIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "TERCER CUATRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,period:0
+msgid "TERCER TRIMESTRE"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_tax_object
+msgid "Tax Object"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.ui.view,arch_db:account_banking_debit_sit_gtt.account_config_settings_sit_gtt_view
+msgid "Tax management system (SIT GTT)"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_approval_decree_date
+msgid "The date on which the shipment was approved in Executive."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:286
+#, python-format
+msgid "The entity has not been configured. Set it in Accounting/Settings."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:695
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:703
+#, python-format
+msgid "The entry number %s has failed, amount not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:613
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:619
+#, python-format
+msgid "The entry number %s has failed, debtor city not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:633
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:639
+#, python-format
+msgid "The entry number %s has failed, debtor state not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:753
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:759
+#, python-format
+msgid "The entry number %s has failed, exercise not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:675
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:681
+#, python-format
+msgid "The entry number %s has failed, fixed number not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:540
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:545
+#, python-format
+msgid "The entry number %s has failed, taxpayer name not found."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:565
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:572
+#, python-format
+msgid "The entry number %s has failed, taxpayer street not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:650
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:656
+#, python-format
+msgid "The entry number %s has failed, taxpayer zip not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:444
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:449
+#, python-format
+msgid "The entry number %s has failed, the bank line %s seems that it has already been sent through SIT GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:528
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:533
+#, python-format
+msgid "The entry number %s has failed, the firstname for partner %s not found."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:514
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:519
+#, python-format
+msgid "The entry number %s has failed, the lastnamefor partner %s not found."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:468
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:475
+#, python-format
+msgid "The entry number %s has failed, the vat %s for partner %s is not valid."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:483
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:489
+#, python-format
+msgid "The entry number %s has failed, vat not found for partner %s."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:737
+#: code:addons/account_banking_debit_sit_gtt/models/account_payment_order.py:744
+#, python-format
+msgid "The entry number %s has failed, voluntary end date or exercise not found for partner %s"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: sql_constraint:account.payment.order:0
+msgid "The tax object must be at most 80 characters long."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_tax_object
+msgid "The tax object. Max 80 characters."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_charge_year
+msgid "The year in which the charge is charged"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_entity
+msgid "This code identifies the entity that sends the delegated charge to 'Diputación de Ciudad Real'.\n"
+"This parameter is set in the accounting configuration"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_config_settings_entity_code
+msgid "This code identifies the entity that sends the delegated charge to 'Tax management. County Council (SIT-GTT)'."
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_bank_payment_line_sit_gtt_ref
+msgid "This number indicates the payment reference if it has been made by Sit GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_invoice_sit_gtt_ref
+msgid "This number indicates the payment reference when has been made by SIT GTT"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,help:account_banking_debit_sit_gtt.field_account_payment_order_period
+msgid "Type of period settled.\n"
+"It will be applied to all transactions"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model.fields,field_description:account_banking_debit_sit_gtt.field_account_payment_order_value_type
+msgid "Value type"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: selection:account.payment.order,charge_type:0
+msgid "Voluntary"
+msgstr ""
+
+#. module: account_banking_debit_sit_gtt
+#: model:ir.model,name:account_banking_debit_sit_gtt.model_account_config_settings
+msgid "account.config.settings"
+msgstr ""
+

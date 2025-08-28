@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- Add SIT-GTT payment method -->
+        <record id="payment_method_sit_gtt" model="account.payment.method">
+            <field name="name">SIT-GTT</field>
+            <field name="code">debit_sit_gtt</field>
+            <field name="payment_type">inbound</field>
+            <field name="prefix">sit_gtt_</field>
+            <field name="bank_account_required">False</field>
+            <field name="mandate_required">False</field>
+        </record>
+
+        <!-- Sequence for value list_ref -->
+        <record model="ir.sequence" id="sit_gtt_value_list_refnum_seq">
+            <field name="name">Value list ref for SIT GTT</field>
+            <field name="code">sit_gtt_seq_value_list_refnum</field>
+            <field name="prefix"></field>
+            <field name="padding">6</field>
+        </record>
+
+    </data>
+</odoo>
